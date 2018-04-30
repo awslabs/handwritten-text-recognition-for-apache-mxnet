@@ -1,4 +1,5 @@
-# Hand-writing OCR with MXNet Gluon (CNN + biLSTM + CTC-loss)
+# Hand-writing OCR with MXNet Gluon 
+## CNN + biLSTM + CTC-loss
 
 ```python
 import math
@@ -74,13 +75,6 @@ def pre_processing(img_in):
 ```python
 plt.imshow(pre_processing('love.png'), cmap='Greys_r')
 ```
-
-
-
-
-    <matplotlib.image.AxesImage at 0x7fc18a3c84e0>
-
-
 
 
 ![png](images/output_6_1.png)
@@ -177,7 +171,7 @@ for i in range(20):
 ```
 
 
-![png](output_13_0.png)
+![png](images/output_13_0.png)
 
 
 ## Data Set creation
