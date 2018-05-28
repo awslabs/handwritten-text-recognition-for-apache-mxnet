@@ -76,8 +76,8 @@ class IAMDataset(dataset.ArrayDataset):
         self._xml_url = "http://www.fki.inf.unibe.ch/DBs/iamDB/data/xml/xml.tgz"
 
         if credentials == None:
-            if os.path.isfile("credentials.json"):
-                with open('credentials.json') as f:
+            if os.path.isfile(os.path.join(os.path.dirname(__file__), '..', 'credentials.json')):
+                with open(os.path.join(os.path.dirname(__file__), '..', 'credentials.json')) as f:
                     credentials = json.load(f)
                 self._credentials = (credentials["username"], credentials["password"])
             else:
@@ -94,13 +94,18 @@ class IAMDataset(dataset.ArrayDataset):
         self._output_data = output_data
 
         if self._output_data == "bb":
+            assert self._parse_method == "form", "Bounding box only works with form."
             _parse_methods = ["form", "line", "word"]
             error_message = "{} is not a possible output parsing method: {}".format(
                 output_parse_method, _parse_methods)
             assert output_parse_method in _parse_methods, error_message
             self._output_parse_method = output_parse_method
 
-        self.image_data_file_name = os.path.join(root, "image_data-{}-{}.plk".format(self._parse_method, self._output_data))
+            self.image_data_file_name = os.path.join(root, "image_data-{}-{}-{}.plk".format(
+                self._parse_method, self._output_data, self._output_parse_method))
+        else:
+            self.image_data_file_name = os.path.join(root, "image_data-{}-{}.plk".format(self._parse_method, self._output_data))
+
         self._root = root
         if not os.path.isdir(root):
             os.makedirs(root)
@@ -108,8 +113,51 @@ class IAMDataset(dataset.ArrayDataset):
         data = self._get_data()
         super(IAMDataset, self).__init__(data)
 
-    def _download(self, url):
+    @staticmethod
+    def _reporthook(count, block_size, total_size):
+        ''' Prints a process bar that is compatible with urllib.request.urlretrieve
+        '''
         toolbar_width = 40
+        percentage = float(count * block_size) / total_size * 100
+        # Taken from https://gist.github.com/sibosutd/c1d9ef01d38630750a1d1fe05c367eb8
+        sys.stdout.write('\r')
+        sys.stdout.write("Completed: [{:{}}] {:>3}%"
+                         .format('-' * int(percentage / (100.0 / toolbar_width)),
+                                 toolbar_width, int(percentage)))
+        sys.stdout.flush()
+
+    def _extract(self, archive_file, archive_type, output_dir):
+        ''' Helper function to extract archived files. Available for tar.tgz and zip files
+        Parameter
+        ---------
+        archive_file: str
+            Filepath to the archive file
+        archieve_type: str, options: [tar, zip]
+            Select the type of file you want to extract
+        output_dir: str
+            Location where you want to extract the files to
+        '''
+
+        _available_types = ["tar", "zip"]
+        error_message = "Archive_type {} is not an available option ({})".format(archieve_type, _available_types)
+        assert archive_type in _available_types, error_message
+        if archive_type == "tar":
+            tar = tarfile.open(archive_file, "r:gz")
+            tar.extractall(os.path.join(self._root, output_dir))
+            tar.close()
+        elif archive_type == "zip":
+            zip_ref = zipfile.ZipFile(archive_file, 'r')
+            zip_ref.extractall(os.path.join(self._root, output_dir))
+            zip_ref.close()
+
+    def _download(self, url):
+        ''' Helper function to download using the credentials provided
+        Parameter
+        ---------
+        url: str
+            The url of the file you want to download.
+        '''
+
         password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
         password_mgr.add_password(None, url, self._credentials[0], self._credentials[1])
         handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
@@ -117,53 +165,43 @@ class IAMDataset(dataset.ArrayDataset):
         urllib.request.install_opener(opener)
         opener.open(url)
         filename = os.path.basename(url)
-
         print("Downloading {}: ".format(filename)) 
-        def reporthook(count, block_size, total_size):
-            percentage = float(count * block_size) / total_size * 100
-            # Taken from https://gist.github.com/sibosutd/c1d9ef01d38630750a1d1fe05c367eb8
-            sys.stdout.write('\r')
-            sys.stdout.write("Completed: [{:{}}] {:>3}%"
-                             .format('-' * int(percentage / (100.0 / toolbar_width)),
-                                     toolbar_width, int(percentage)))
-            sys.stdout.flush()
-
-        urllib.request.urlretrieve(url,
-                                   reporthook=reporthook,
+        urllib.request.urlretrieve(url, reporthook=self._reporthook,
                                    filename=os.path.join(self._root, filename))[0]
         sys.stdout.write("\n")
 
     def _download_xml(self):
+        ''' Helper function to download and extract the xml of the IAM database
+        '''
         archive_file = os.path.join(self._root, os.path.basename(self._xml_url))
         if not os.path.isfile(archive_file):
             self._download(self._xml_url)
-            tar = tarfile.open(archive_file, "r:gz")
-            tar.extractall(os.path.join(self._root, "xml"))
-            tar.close()
-
+            self._extract(archive_file, archive_type="tar", output_dir="xml")
+            
     def _download_data(self):
+        ''' Helper function to download and extract the data of the IAM database
+        '''
         for url in self._data_urls:
             archive_file = os.path.join(self._root, os.path.basename(url))
             if not os.path.isfile(archive_file):
                 self._download(url)
-                tar = tarfile.open(archive_file, "r:gz")
-                tar.extractall(os.path.join(self._root, self._parse_method))
-                tar.close()
+                self._extract(archive_file, archive_type="tar", output_dir=self._parse_method)
 
     def _download_subject_list(self):
+        ''' Helper function to download and extract the subject list of the IAM database
+        '''
         url = "http://www.fki.inf.unibe.ch/DBs/iamDB/tasks/largeWriterIndependentTextLineRecognitionTask.zip"
         archive_file = os.path.join(self._root, os.path.basename(url))
         if not os.path.isfile(archive_file):
             self._download(url)
-            zip_ref = zipfile.ZipFile(archive_file, 'r')
-            zip_ref.extractall(os.path.join(self._root, "subject"))
-            zip_ref.close()
+            self._extract(archive_file, archive_type="zip", output_dir="subject")
         
-    def _pre_process_image(self, img_in):    
+    def _pre_process_image(self, img_in):
+        ratio = None # The ratio passed onto to scale the bounding box 
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
         # reduce the size of form images so that it can fit in memory.
         if self._parse_method == "form":
-            size = im.shape[:2] # old_size is in (height, width) format
+            size = im.shape[:2]
             if size[0] > self.MAX_IMAGE_SIZE_FORM[0] or size[1] > self.MAX_IMAGE_SIZE_FORM[1]:
                 ratio_w = float(self.MAX_IMAGE_SIZE_FORM[0])/size[0]
                 ratio_h = float(self.MAX_IMAGE_SIZE_FORM[1])/size[1]
@@ -181,21 +219,53 @@ class IAMDataset(dataset.ArrayDataset):
             if color < 230:
                 color = 230
             im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))
-
         img_arr = np.asarray(im)
-        return img_arr
+        return img_arr, ratio 
 
     def _get_bb_of_item(self, item):
-        # Find the coordinates of the left and right-most letters for the
-        # bounding box of the item
+        ''' Helper function to find the bounding box (bb) of an item in the xml file.
+        All the characters within the item are found and the left-most (min) and right-most (max + length)
+        are found. 
+        The bounding box emcompasses the left and right most characters in the x and y direction. 
+
+        Parameter
+        ---------
+        item: xml.etree object for a word/line/form.
+
+        Returns
+        -------
+        list
+            The bounding box [x, y, w, h] the encompasses the item.
+        '''
+
         character_list = [a for a in item.iter("cmp")]
+        if len(character_list) == 0: # To account for some punctuations that have no words
+            return None
         x1 = np.min([int(a.attrib['x']) for a in character_list])
         y1 = np.min([int(a.attrib['y']) for a in character_list])
         x2 = np.max([int(a.attrib['x']) + int(a.attrib['width']) for a in character_list])
         y2 = np.max([int(a.attrib['y']) + int(a.attrib['height'])for a in character_list])
         return [x1, y1, x2 - x1, y2 - y1]
     
-    def _get_output_data(self, item):
+    def _get_output_data(self, item, rescale_ratio):
+        ''' Function to obtain the output data (both text and bounding boxes).
+        Note that the bounding boxes are rescaled based on the rescale_ratio parameter.
+
+        Parameter
+        ---------
+        item: xml.etree 
+            XML object for a word/line/form.
+
+        rescale_ratio: float
+            Ratio obtained from function: _pre_process_image
+
+        Returns
+        -------
+
+        np.array
+            A numpy array ouf the output requested (text or the bounding box)
+        '''
+
         output_data = []
         if self._output_data == "text":
             if self._parse_method == "form":
@@ -208,23 +278,27 @@ class IAMDataset(dataset.ArrayDataset):
         else:
             for item_output in item.iter(self._output_parse_method):
                 bb = self._get_bb_of_item(item_output)
+                if bb == None: # Account for words with no letters
+                    continue
+                if rescale_ratio:
+                    bb = [bb_i * rescale_ratio for bb_i in bb]
                 output_data.append(bb)
         output_data = np.array(output_data)
         return output_data
             
     def _process_data(self):
+        ''' Function that iterates through the downloaded xml file to gather the input images and the
+        corresponding output.
+        
+        Returns
+        -------
+        pd.DataFrame
+            A pandas dataframe that contains the subject, image and output requested.
+        '''
+
         image_data = []
         xml_files = glob.glob(self._root + "/xml/*.xml")
-        toolbar_width = 40
-        print("Processing data...")
-        def reporthook(count, total_size):
-            percentage = float(count) / total_size * 100
-            # Taken from https://gist.github.com/sibosutd/c1d9ef01d38630750a1d1fe05c367eb8
-            sys.stdout.write('\r')
-            sys.stdout.write("Completed: [{:{}}] {:>3}%"
-                             .format('-' * int(percentage / (100.0 / toolbar_width)),
-                                     toolbar_width, int(percentage)))
-            sys.stdout.flush()
+        print("Processing data:")
 
         for i, xml_file in enumerate(xml_files):
             tree = ET.parse(xml_file)
@@ -237,17 +311,39 @@ class IAMDataset(dataset.ArrayDataset):
                     tmp_id_split = tmp_id.split("-")
                     image_id = os.path.join(tmp_id_split[0], tmp_id_split[0] + "-" + tmp_id_split[1], tmp_id)
                 image_filename = os.path.join(self._root, self._parse_method, image_id + ".png")
-                image_arr = self._pre_process_image(image_filename)
-                output_data = self._get_output_data(item)
+                image_arr, rescale_ratio = self._pre_process_image(image_filename)
+                output_data = self._get_output_data(item, rescale_ratio)
                 image_data.append([item.attrib["id"], image_arr, output_data])
-                reporthook(i, len(xml_files))
+                self._reporthook(i, 1, len(xml_files))
         image_data = pd.DataFrame(image_data, columns=["subject", "image", "output"])
         image_data.to_pickle(self.image_data_file_name, protocol=2)
         return image_data
 
-    def _process_subjects(self):
-        train_subject_lists = ["trainset", "validationset1", "validationset2"]
-        test_subject_lists = ["testset"]
+    def _process_subjects(self, train_subject_lists = ["trainset", "validationset1", "validationset2"],
+                          test_subject_lists = ["testset"]):
+        ''' Function to organise the list of subjects to training and testing.
+        The IAM dataset provides 4 files: trainset, validationset1, validationset2, and testset each
+        with a list of subjects.
+        
+        Parameters
+        ----------
+        
+        train_subject_lists: [str], default ["trainset", "validationset1", "validationset2"]
+            The filenames of the list of subjects to be used for training the model
+
+        test_subject_lists: [str], default ["testset"]
+            The filenames of the list of subjects to be used for testing the model
+
+        Returns
+        -------
+
+        train_subjects: [str]
+            A list of subjects used for training
+
+        test_subjects: [str]
+            A list of subjects used for testing
+        '''
+
         train_subjects = []
         test_subjects = []
         for train_list in train_subject_lists:
@@ -260,6 +356,9 @@ class IAMDataset(dataset.ArrayDataset):
         train_subjects = np.concatenate(train_subjects)
         test_subjects = np.concatenate(test_subjects)
         if self._parse_method == "form":
+        # For the form method, the "subject names" do not match the ones provided
+        # in the file. This clause transforms the subject names to match the file.
+            
             new_train_subjects = []
             for i in train_subjects:
                 form_subject_number = i[0].split("-")[0] + "-" + i[0].split("-")[1]
@@ -269,10 +368,45 @@ class IAMDataset(dataset.ArrayDataset):
                 form_subject_number = i[0].split("-")[0] + "-" + i[0].split("-")[1]
                 new_test_subjects.append(form_subject_number)
             train_subjects, test_subjects = new_train_subjects, new_test_subjects
-                
         return train_subjects, test_subjects
+
+    def _convert_subject_list(self, subject_list):
+        ''' Function to convert the list of subjects for the "word" parse method
+        
+        Parameters
+        ----------
+        
+        subject_lists: [str]
+            A list of subjects
+
+        Returns
+        -------
+
+        subject_lists: [str]
+            A list of subjects that is compatible with the "word" parse method
+
+        '''
+
+        if self._parse_method == "word":
+            new_subject_list = []
+            for sub in subject_list:
+                new_subject_number = "-".join(sub.split("-")[:3])
+                new_subject_list.append(new_subject_number)
+            return new_subject_list
+        else:
+            return subject_list
                 
     def _get_data(self):
+        ''' Function to get the data and to extract the data for training or testing
+        
+        Returns
+        -------
+
+        pd.DataFram
+            A dataframe (subject, image, and output) that contains only the training/testing data
+
+        '''
+
         # Get the data
         if not os.path.isdir(self._root):
             os.makedirs(self._root)
@@ -284,14 +418,15 @@ class IAMDataset(dataset.ArrayDataset):
             self._download_data()
             images_data = self._process_data()
 
-        # Split data into train and test
+        # Extract train or test data out
         self._download_subject_list()
         train_subjects, test_subjects = self._process_subjects()
         if self._train:
-            data = images_data[np.in1d(images_data["subject"], train_subjects)]
+            data = images_data[np.in1d(self._convert_subject_list(images_data["subject"]),
+                                       train_subjects)]
         else:
-            data = images_data[np.in1d(images_data["subject"], test_subjects)]
-
+            data = images_data[np.in1d(self._convert_subject_list(images_data["subject"]),
+                                       test_subjects)]
         return data
 
     def __getitem__(self, idx):
