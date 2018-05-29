@@ -133,7 +133,7 @@ class IAMDataset(dataset.ArrayDataset):
         ---------
         archive_file: str
             Filepath to the archive file
-        archieve_type: str, options: [tar, zip]
+        archive_type: str, options: [tar, zip]
             Select the type of file you want to extract
         output_dir: str
             Location where you want to extract the files to
