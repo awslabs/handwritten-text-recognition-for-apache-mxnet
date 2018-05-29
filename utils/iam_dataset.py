@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import zipfile
 import matplotlib.pyplot as plt
+import logging
 
 from mxnet.gluon.data import dataset
 from mxnet import nd
@@ -57,7 +58,7 @@ class IAMDataset(dataset.ArrayDataset):
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
     def __init__(self, parse_method, credentials=None,
-                 root=os.path.join('dataset', 'iamdataset'), 
+                 root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
                  output_parse_method=None, transform=None):
 
@@ -137,11 +138,11 @@ class IAMDataset(dataset.ArrayDataset):
         output_dir: str
             Location where you want to extract the files to
         '''
-
+        logging.info("Extracting {}".format(archive_file))
         _available_types = ["tar", "zip"]
-        error_message = "Archive_type {} is not an available option ({})".format(archieve_type, _available_types)
+        error_message = "Archive_type {} is not an available option ({})".format(archive_type, _available_types)
         assert archive_type in _available_types, error_message
-        if archive_type == "tar":
+        if archive_file == "tar":
             tar = tarfile.open(archive_file, "r:gz")
             tar.extractall(os.path.join(self._root, output_dir))
             tar.close()
@@ -157,7 +158,6 @@ class IAMDataset(dataset.ArrayDataset):
         url: str
             The url of the file you want to download.
         '''
-
         password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
         password_mgr.add_password(None, url, self._credentials[0], self._credentials[1])
         handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
@@ -174,6 +174,7 @@ class IAMDataset(dataset.ArrayDataset):
         ''' Helper function to download and extract the xml of the IAM database
         '''
         archive_file = os.path.join(self._root, os.path.basename(self._xml_url))
+        logging.info("Downloding xml from {}".format(self._xml_url))
         if not os.path.isfile(archive_file):
             self._download(self._xml_url)
             self._extract(archive_file, archive_type="tar", output_dir="xml")
@@ -182,6 +183,7 @@ class IAMDataset(dataset.ArrayDataset):
         ''' Helper function to download and extract the data of the IAM database
         '''
         for url in self._data_urls:
+            logging.info("Downloding data from {}".format(url))
             archive_file = os.path.join(self._root, os.path.basename(url))
             if not os.path.isfile(archive_file):
                 self._download(url)
@@ -191,6 +193,7 @@ class IAMDataset(dataset.ArrayDataset):
         ''' Helper function to download and extract the subject list of the IAM database
         '''
         url = "http://www.fki.inf.unibe.ch/DBs/iamDB/tasks/largeWriterIndependentTextLineRecognitionTask.zip"
+        logging.info("Downloding subject list from {}".format(url))
         archive_file = os.path.join(self._root, os.path.basename(url))
         if not os.path.isfile(archive_file):
             self._download(url)
@@ -299,6 +302,7 @@ class IAMDataset(dataset.ArrayDataset):
         image_data = []
         xml_files = glob.glob(self._root + "/xml/*.xml")
         print("Processing data:")
+        logging.info("Processing data")
 
         for i, xml_file in enumerate(xml_files):
             tree = ET.parse(xml_file)
@@ -412,6 +416,7 @@ class IAMDataset(dataset.ArrayDataset):
             os.makedirs(self._root)
 
         if os.path.isfile(self.image_data_file_name):
+            logging.info("Loading data from pickle")
             images_data = pickle.load(open(self.image_data_file_name, 'rb'))
         else:
             self._download_xml()
