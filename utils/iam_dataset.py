@@ -200,7 +200,6 @@ class IAMDataset(dataset.ArrayDataset):
             self._extract(archive_file, archive_type="zip", output_dir="subject")
         
     def _pre_process_image(self, img_in):
-        ratio = None # The ratio passed onto to scale the bounding box 
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
         # reduce the size of form images so that it can fit in memory.
         if self._parse_method == "form":
@@ -223,9 +222,9 @@ class IAMDataset(dataset.ArrayDataset):
                 color = 230
             im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))
         img_arr = np.asarray(im)
-        return img_arr, ratio 
+        return img_arr 
 
-    def _get_bb_of_item(self, item):
+    def _get_bb_of_item(self, item, height, width):
         ''' Helper function to find the bounding box (bb) of an item in the xml file.
         All the characters within the item are found and the left-most (min) and right-most (max + length)
         are found. 
@@ -235,10 +234,16 @@ class IAMDataset(dataset.ArrayDataset):
         ---------
         item: xml.etree object for a word/line/form.
 
+        height: int
+            Height of the form to calculate percentages of bounding boxes
+
+        width: int
+            Width of the form to calculate percentages of bounding boxes
+
         Returns
         -------
         list
-            The bounding box [x, y, w, h] the encompasses the item.
+            The bounding box [x, y, w, h] in percentages that encompasses the item.
         '''
 
         character_list = [a for a in item.iter("cmp")]
@@ -248,9 +253,14 @@ class IAMDataset(dataset.ArrayDataset):
         y1 = np.min([int(a.attrib['y']) for a in character_list])
         x2 = np.max([int(a.attrib['x']) + int(a.attrib['width']) for a in character_list])
         y2 = np.max([int(a.attrib['y']) + int(a.attrib['height'])for a in character_list])
+
+        x1 = float(x1) / width
+        x2 = float(x2) / width
+        y1 = float(y1) / height
+        y2 = float(y2) / height
         return [x1, y1, x2 - x1, y2 - y1]
     
-    def _get_output_data(self, item, rescale_ratio):
+    def _get_output_data(self, item, height, width):
         ''' Function to obtain the output data (both text and bounding boxes).
         Note that the bounding boxes are rescaled based on the rescale_ratio parameter.
 
@@ -259,8 +269,11 @@ class IAMDataset(dataset.ArrayDataset):
         item: xml.etree 
             XML object for a word/line/form.
 
-        rescale_ratio: float
-            Ratio obtained from function: _pre_process_image
+        height: int
+            Height of the form to calculate percentages of bounding boxes
+
+        width: int
+            Width of the form to calculate percentages of bounding boxes
 
         Returns
         -------
@@ -280,11 +293,9 @@ class IAMDataset(dataset.ArrayDataset):
                 output_data.append(item.attrib['text'])
         else:
             for item_output in item.iter(self._output_parse_method):
-                bb = self._get_bb_of_item(item_output)
+                bb = self._get_bb_of_item(item_output, height, width)
                 if bb == None: # Account for words with no letters
                     continue
-                if rescale_ratio:
-                    bb = [bb_i * rescale_ratio for bb_i in bb]
                 output_data.append(bb)
         output_data = np.array(output_data)
         return output_data
@@ -307,6 +318,7 @@ class IAMDataset(dataset.ArrayDataset):
         for i, xml_file in enumerate(xml_files):
             tree = ET.parse(xml_file)
             root = tree.getroot()
+            height, width = int(root.attrib["height"]), int(root.attrib["width"])
             for item in root.iter(self._parse_method):
                 if self._parse_method == "form":
                     image_id = item.attrib["id"]
@@ -315,8 +327,8 @@ class IAMDataset(dataset.ArrayDataset):
                     tmp_id_split = tmp_id.split("-")
                     image_id = os.path.join(tmp_id_split[0], tmp_id_split[0] + "-" + tmp_id_split[1], tmp_id)
                 image_filename = os.path.join(self._root, self._parse_method, image_id + ".png")
-                image_arr, rescale_ratio = self._pre_process_image(image_filename)
-                output_data = self._get_output_data(item, rescale_ratio)
+                image_arr = self._pre_process_image(image_filename)
+                output_data = self._get_output_data(item, height, width)
                 image_data.append([item.attrib["id"], image_arr, output_data])
                 self._reporthook(i, 1, len(xml_files))
         image_data = pd.DataFrame(image_data, columns=["subject", "image", "output"])
