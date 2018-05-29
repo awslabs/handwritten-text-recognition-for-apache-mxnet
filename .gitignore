@@ -1,1 +1,5 @@
 .ipynb_checkpoints
+*~
+handwritting/*
+dataset/*
+credentials.json
