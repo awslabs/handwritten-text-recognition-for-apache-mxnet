@@ -3,3 +3,5 @@
 handwritting/*
 dataset/*
 credentials.json
+logs/*
+nohup.out
