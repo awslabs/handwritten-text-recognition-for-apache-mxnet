@@ -41,20 +41,20 @@ def transform(data, label):
     label = label[0].astype(np.float32)
     return image, mx.nd.array(label)
 
-# def augment_transform(data, label):
-#     width_range = 0.05
-#     height_range = 0.05
+def augment_transform(data, label):
+    width_range = 0.05
+    height_range = 0.05
 
-#     ty = random.uniform(-height_range, height_range)
-#     tx = random.uniform(-width_range, width_range)
-#     st = tf.SimilarityTransform(translation=(tx * data.shape[1], ty* data.shape[0]))
-#     data = tf.warp(data, st)
+    ty = random.uniform(-height_range, height_range)
+    tx = random.uniform(-width_range, width_range)
+    st = tf.SimilarityTransform(translation=(tx*data.shape[1], ty*data.shape[0]))
+    data = tf.warp(data, st)
 
-#     label[0][0] = label[0][0] - tx
-#     label[0][1] = label[0][1] - ty
-#     return transform(data, label)
+    label[0][0] = label[0][0] - tx
+    label[0][1] = label[0][1] - ty
+    return transform(data*255., label)
     
-train_data = gluon.data.DataLoader(train_ds.transform(transform), batch_size, shuffle=True, num_workers=multiprocessing.cpu_count())
+train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, num_workers=multiprocessing.cpu_count())
 test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, num_workers=multiprocessing.cpu_count())
 
 def make_cnn():
@@ -116,7 +116,13 @@ for e in range(epochs):
         loss += loss_iou.mean()
         
         trainer.step(data.shape[0])
-    
+        if e % send_image_every_n == 0 and e > 0 and i == 0:
+            output = cnn(data)
+            data_np = data.asnumpy()
+            label_np = label.asnumpy()
+            pred_np = output.asnumpy()
+            train_output_image = draw_box_on_image(pred_np, label_np, data_np)
+
     for i, (data, label) in enumerate(test_data):
         data = data.as_in_context(ctx)
         label = label.as_in_context(ctx)
@@ -131,7 +137,7 @@ for e in range(epochs):
             data_np = data.asnumpy()
             label_np = label.asnumpy()
             pred_np = output.asnumpy()
-            output_image = draw_box_on_image(pred_np, label_np, data_np)
+            test_output_image = draw_box_on_image(pred_np, label_np, data_np)
 
     train_loss = float(loss.asscalar())/len(train_data)
     test_loss = float(test_loss.asscalar())/len(test_data)
@@ -143,9 +149,13 @@ for e in range(epochs):
     with SummaryWriter(logdir='./logs', verbose=False, flush_secs=5) as sw:
         sw.add_scalar('loss', {"train": train_loss, "test": test_loss}, global_step=e)
         if e % send_image_every_n == 0 and e > 0:
-            output_image[output_image<0] = 0
-            output_image[output_image>1] = 1
-            sw.add_image('bb_image', output_image, global_step=e)
+            train_output_image[train_output_image<0] = 0
+            train_output_image[train_output_image>1] = 1
+
+            test_output_image[test_output_image<0] = 0
+            test_output_image[test_output_image>1] = 1
+            sw.add_image('bb_train_image', train_output_image, global_step=e)
+            sw.add_image('bb_test_image', test_output_image, global_step=e)
 
     if e % save_every_n == 0 and e > 0:
         cnn.save_params("model_checkpoint/cnn_iou{}.params".format(e))

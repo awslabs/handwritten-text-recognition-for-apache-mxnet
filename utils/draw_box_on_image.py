@@ -15,12 +15,14 @@ def draw_box(bounding_box, image, line_type):
     (x, y, w, h) = bounding_box
     (x1, y1, x2, y2) = (x, y, x + w, y + h)
     (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
-    
     if y2 >= image_h:
         y2 = image_h - 1
-
     if x2 >= image_w:
         x2 = image_w - 1
+    if y1 >= image_h:
+        y1 = image_h - 1
+    if x1 >= image_w:
+        x1 = image_w - 1
 
     image = draw_line(image, y1, x1, y2, x1, line_type)
     image = draw_line(image, y2, x1, y2, x2, line_type)
