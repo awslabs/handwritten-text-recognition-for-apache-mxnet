@@ -49,18 +49,12 @@ class IAMDataset(dataset.ArrayDataset):
         If the bounding box (bb) was selected as an output_data_type, 
         this parameter can select which bb you want to obtain.
         Available options: [form, line, word]
-
-    transform: function, default None
-        A user defined callback that transforms each sample. For example:
-    ::
-        transform=lambda data, label: (data.astype(np.float32)/255, label)
-
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
-                 output_parse_method=None, transform=None):
+                 output_parse_method=None):
 
         _parse_methods = ["form", "line", "word"]
         error_message = "{} is not a possible parsing method: {}".format(
@@ -220,7 +214,7 @@ class IAMDataset(dataset.ArrayDataset):
             color = im[0][0]
             if color < 230:
                 color = 230
-            im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))
+            im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))                
         img_arr = np.asarray(im)
         return img_arr 
 
