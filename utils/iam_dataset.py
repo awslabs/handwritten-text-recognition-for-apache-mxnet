@@ -17,6 +17,18 @@ import logging
 from mxnet.gluon.data import dataset
 from mxnet import nd
 
+def crop_image(image, bb):
+    ''' Helper function to crop the image by the bounding box (in percentages)
+    '''
+    (x, y, w, h) = bb
+    x = x * image.shape[1]
+    y = y * image.shape[0]
+    w = w * image.shape[1]
+    h = h * image.shape[0]
+    (x1, y1, x2, y2) = (x, y, x + w, y + h)
+    (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
+    return image[y1:y2, x1:x2]
+
 class IAMDataset(dataset.ArrayDataset):
     """ The IAMDataset provides images of handwritten passages written by multiple
     individuals. The data is available at http://www.fki.inf.unibe.ch
@@ -28,7 +40,7 @@ class IAMDataset(dataset.ArrayDataset):
     ----------
     parse_method: str, Required
         To select the method of parsing the images of the passage
-        Available options: [form, line, word]
+        Available options: [form, form_bb, line, word]
 
     credentials: (str, str), Default None 
         Your (username, password) for the IAM dataset. Register at
@@ -54,15 +66,18 @@ class IAMDataset(dataset.ArrayDataset):
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
-                 output_parse_method=None):
+                 output_parse_method=None,
+                 parse_form_by_bb=False):
 
-        _parse_methods = ["form", "line", "word"]
+        _parse_methods = ["form", "form_bb", "line", "word"]
         error_message = "{} is not a possible parsing method: {}".format(
             parse_method, _parse_methods)
         assert parse_method in _parse_methods, error_message
         self._parse_method = parse_method
         url_partial = "http://www.fki.inf.unibe.ch/DBs/iamDB/data/{data_type}/{filename}.tgz"
         if self._parse_method == "form":
+            self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
+        if self._parse_method == "form_bb":
             self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
         elif self._parse_method == "line":
             self._data_urls = [url_partial.format(data_type="lines", filename="lines")]
@@ -89,7 +104,7 @@ class IAMDataset(dataset.ArrayDataset):
         self._output_data = output_data
 
         if self._output_data == "bb":
-            assert self._parse_method == "form", "Bounding box only works with form."
+            assert self._parse_method in ["form", "form_bb"], "Bounding box only works with form."
             _parse_methods = ["form", "line", "word"]
             error_message = "{} is not a possible output parsing method: {}".format(
                 output_parse_method, _parse_methods)
@@ -104,7 +119,7 @@ class IAMDataset(dataset.ArrayDataset):
         self._root = root
         if not os.path.isdir(root):
             os.makedirs(root)
-
+        
         data = self._get_data()
         super(IAMDataset, self).__init__(data)
 
@@ -192,11 +207,11 @@ class IAMDataset(dataset.ArrayDataset):
         if not os.path.isfile(archive_file):
             self._download(url)
             self._extract(archive_file, archive_type="zip", output_dir="subject")
-        
+    
     def _pre_process_image(self, img_in):
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
         # reduce the size of form images so that it can fit in memory.
-        if self._parse_method == "form":
+        if self._parse_method in ["form", "form_bb"]:
             size = im.shape[:2]
             if size[0] > self.MAX_IMAGE_SIZE_FORM[0] or size[1] > self.MAX_IMAGE_SIZE_FORM[1]:
                 ratio_w = float(self.MAX_IMAGE_SIZE_FORM[0])/size[0]
@@ -264,7 +279,6 @@ class IAMDataset(dataset.ArrayDataset):
         bb[1] = bb[1] - (new_h - bb[3])/2
         bb[2] = new_w
         bb[3] = new_h
-        
         return bb
     
     def _get_output_data(self, item, height, width):
@@ -321,21 +335,45 @@ class IAMDataset(dataset.ArrayDataset):
         xml_files = glob.glob(self._root + "/xml/*.xml")
         print("Processing data:")
         logging.info("Processing data")
-
         for i, xml_file in enumerate(xml_files):
             tree = ET.parse(xml_file)
             root = tree.getroot()
             height, width = int(root.attrib["height"]), int(root.attrib["width"])
-            for item in root.iter(self._parse_method):
-                if self._parse_method == "form":
+            
+            for item in root.iter(self._parse_method.split("_")[0]):
+                # Split _ to account for only taking the base "form", "line", "word" that is available in the IAM dataset
+                if self._parse_method in ["form", "form_bb"]:
                     image_id = item.attrib["id"]
                 else:
                     tmp_id = item.attrib["id"]
                     tmp_id_split = tmp_id.split("-")
                     image_id = os.path.join(tmp_id_split[0], tmp_id_split[0] + "-" + tmp_id_split[1], tmp_id)
-                image_filename = os.path.join(self._root, self._parse_method, image_id + ".png")
+                image_filename = os.path.join(self._root, self._parse_method.split("_")[0], image_id + ".png")
                 image_arr = self._pre_process_image(image_filename)
                 output_data = self._get_output_data(item, height, width)
+                if self._parse_method == "form_bb":
+                    bb = self._get_bb_of_item(item, height, width)
+                    image_arr_bb = crop_image(image_arr, bb)
+                    if self._output_data == "bb":
+                        (x1, y1, x2, y2) = (output_data[:, 0], output_data[:, 1], output_data[:, 0] + output_data[:, 2],
+                                            output_data[:, 1] + output_data[:, 3])
+                        (x1, y1, x2, y2) = (x1 * image_arr.shape[1], y1 * image_arr.shape[0], x2 * image_arr.shape[1],
+                                            y2 * image_arr.shape[0])
+                        
+                        new_x1 = x1 - bb[0] * image_arr.shape[1]
+                        new_y1 = y1 - bb[1] * image_arr.shape[0]
+                        new_x2 = x2 - bb[0] * image_arr.shape[1]
+                        new_y2 = y2 - bb[1] * image_arr.shape[0]
+                        new_bbs = np.zeros(shape=output_data.shape)
+                        new_bbs[:, 0] = new_x1 / image_arr_bb.shape[1]
+                        new_bbs[:, 1] = new_y1 / image_arr_bb.shape[0]
+                        new_bbs[:, 2] = (new_x2 - new_x1) / image_arr_bb.shape[1]
+                        new_bbs[:, 3] = (new_y2 - new_y1) / image_arr_bb.shape[0]
+                        
+                        output_data = new_bbs
+                        
+                    image_arr = image_arr_bb
+                        
                 image_data.append([item.attrib["id"], image_arr, output_data])
                 self._reporthook(i, 1, len(xml_files))
         image_data = pd.DataFrame(image_data, columns=["subject", "image", "output"])
@@ -378,10 +416,9 @@ class IAMDataset(dataset.ArrayDataset):
 
         train_subjects = np.concatenate(train_subjects)
         test_subjects = np.concatenate(test_subjects)
-        if self._parse_method == "form":
+        if self._parse_method in ["form", "form_bb"]:
         # For the form method, the "subject names" do not match the ones provided
         # in the file. This clause transforms the subject names to match the file.
-            
             new_train_subjects = []
             for i in train_subjects:
                 form_subject_number = i[0].split("-")[0] + "-" + i[0].split("-")[1]
