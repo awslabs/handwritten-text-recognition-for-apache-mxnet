@@ -2,13 +2,38 @@ from mxnet.gluon.loss import Loss
 from mxnet import gluon
 
 class IOU_loss(Loss):
+    r"""Calculates the iou between `pred` and `label`.
+
+    Implementation based on:
+        Yu, J., Jiang, Y., Wang, Z., Cao, Z., & Huang, T. (2016, October). Unitbox: An advanced object detection network.
+            # In Proceedings of the 2016 ACM on Multimedia Conference (pp. 516-520). ACM.
+            
+    Parameters
+    ----------
+    weight : float or None
+        Global scalar weight for loss.
+    batch_axis : int, default 0
+        The axis that represents mini-batch.
+
+
+    Inputs:
+        - **pred**: prediction tensor with arbitrary shape
+        - **label**: target tensor with the same size as pred.
+        - **sample_weight**: element-wise weighting tensor. Must be broadcastable
+          to the same shape as pred. For example, if pred has shape (64, 10)
+          and you want to weigh each sample in the batch separately,
+          sample_weight should have shape (64, 1).
+
+    Outputs:
+        - **loss**: IOU loss tensor with shape (batch_size,).
+    """
+
     def __init__(self, weight=1., batch_axis=0, **kwargs):
         super(IOU_loss, self).__init__(weight, batch_axis, **kwargs)
         
     def hybrid_forward(self, F, pred, label, sample_weight=None):
-        # source: https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
-        # Yu, J., Jiang, Y., Wang, Z., Cao, Z., & Huang, T. (2016, October). Unitbox: An advanced object detection network.
-        # In Proceedings of the 2016 ACM on Multimedia Conference (pp. 516-520). ACM.
+        # Interpreted from: https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+
         pred_area = pred[:, 2] * pred[:, 3]
         label_area = label[:, 2] * label[:, 3]
 
@@ -39,10 +64,8 @@ class IOU_loss(Loss):
         inter_area = (x_b - x_a) * (y_b - y_a)
 
         iou = F.log(inter_area) - F.log(pred_area + label_area - inter_area)
-        #iou = inter_area / (pred_area + label_area - inter_area)
         
         loss = gluon.loss._apply_weighting(F, iou, self._weight, sample_weight)
         loss = F.where(F.logical_not(overlaps), F.zeros(shape=overlaps.shape), loss)
         mean_loss = F.mean(loss, axis=self._batch_axis, exclude=True)
-        #print("ml = {}".format(mean_loss))
         return -mean_loss

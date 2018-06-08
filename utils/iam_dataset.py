@@ -258,7 +258,20 @@ class IAMDataset(dataset.ArrayDataset):
         x2 = float(x2) / width
         y1 = float(y1) / height
         y2 = float(y2) / height
-        return [x1, y1, x2 - x1, y2 - y1]
+        bb = [x1, y1, x2 - x1, y2 - y1]
+
+        # Expand the bounding box by 3% to relax the boundaries
+        s = 0.03
+
+        new_w = (1 + s) * bb[2]
+        new_h = (1 + s) * bb[3]
+
+        bb[0] = bb[0] - (new_w - bb[2])/2
+        bb[1] = bb[1] - (new_h - bb[3])/2
+        bb[2] = new_w
+        bb[3] = new_h
+        
+        return bb
     
     def _get_output_data(self, item, height, width):
         ''' Function to obtain the output data (both text and bounding boxes).
