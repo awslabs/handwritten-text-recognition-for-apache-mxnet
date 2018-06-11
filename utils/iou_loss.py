@@ -15,10 +15,9 @@ class IOU_loss(Loss):
     batch_axis : int, default 0
         The axis that represents mini-batch.
 
-
     Inputs:
-        - **pred**: prediction tensor with arbitrary shape
-        - **label**: target tensor with the same size as pred.
+        - **pred**: prediction tensor with shape [x, y, w, h] each in percentages
+        - **label**: target tensor with the shape [x, y, w, h] each in percentages
         - **sample_weight**: element-wise weighting tensor. Must be broadcastable
           to the same shape as pred. For example, if pred has shape (64, 10)
           and you want to weigh each sample in the batch separately,
@@ -32,8 +31,16 @@ class IOU_loss(Loss):
         super(IOU_loss, self).__init__(weight, batch_axis, **kwargs)
         
     def hybrid_forward(self, F, pred, label, sample_weight=None):
-        # Interpreted from: https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
-
+        '''
+        Interpreted from: https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+        Steps to calculate IOU
+        1) Calculate the area of the predicted and actual bounding boxes
+        2) Calculate the area of the intersection between the predicting and actual bounding box
+        3) Calculate the log IOU by: log(intersection area / (union area))
+        3) If the bounding boxes do not overlap with one another, set the iou to zero
+        4) Calculate the negative mean of the IOU
+        '''
+        
         pred_area = pred[:, 2] * pred[:, 3]
         label_area = label[:, 2] * label[:, 3]
 

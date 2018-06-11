@@ -3,6 +3,35 @@ from skimage.draw import line_aa
 import matplotlib.pyplot as plt
 
 def draw_line(image, y1, x1, y2, x2, line_type):
+    ''' Helper function to draw lines on an image. 
+  
+    Parameters
+    ----------
+    images: np.array
+        The correponding image.
+
+    y1: int
+        Starting y position of the line
+
+    x1: int
+        Starting x position of the line
+
+    y2: int
+        Ending y position of the line
+
+    x2: int
+        Ending x position of the line
+
+    line_type: str
+        Options of the line_type is dotted or full.
+
+    Returns
+    -------
+
+    images: np.array
+        Images with a line printed on them.
+    '''
+
     rr, cc, val = line_aa(y1, x1, y2, x2)
     if line_type == "dotted":
         rr = np.delete(rr, np.arange(0, rr.size, 5))
@@ -11,6 +40,28 @@ def draw_line(image, y1, x1, y2, x2, line_type):
     return image
     
 def draw_box(bounding_box, image, line_type):
+    ''' Helper function to draw bounding boxes on an image. 
+    This function calls draw_line four times
+
+    Parameters
+    ----------
+    bounding_box: [x, y, w, h]
+        The predicted bounding boxes in percentages
+
+    images: np.array
+        The correponding image.
+
+    line_type: str
+        Options of the line_type is dotted or full.
+        Will be passed onto the draw line function
+
+    Returns
+    -------
+
+    images: np.array
+        Image with bounding boxes printed on them.
+    '''
+
     image_h, image_w = image.shape[-2:]
     (x, y, w, h) = bounding_box
     (x1, y1, x2, y2) = (x, y, x + w, y + h)
