@@ -1,1 +1,8 @@
 .ipynb_checkpoints
+*~
+handwritting/*
+dataset/*
+credentials.json
+logs/*
+nohup.out
+model_checkpoint/*

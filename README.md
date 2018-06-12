@@ -541,3 +541,5 @@ plt.imshow(image, cmap='Greys_r')
 
 ![png](images/output_59_1.png)
 
+## Note:
+* To use test_iam_dataset.ipynb, create credentials.json using credentials.json.example and editing the appropriate field. The username and password can be obtained from http://www.fki.inf.unibe.ch/DBs/iamDB/iLogin/index.php.
