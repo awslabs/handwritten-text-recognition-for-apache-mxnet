@@ -23,7 +23,7 @@ def draw_line(image, y1, x1, y2, x2, line_type):
         Ending x position of the line
 
     line_type: str
-        Options of the line_type is dotted or full.
+        Options of the line_type: ["dotted", "full"].
 
     Returns
     -------
@@ -52,8 +52,8 @@ def draw_box(bounding_box, image, line_type):
         The correponding image.
 
     line_type: str
-        Options of the line_type is dotted or full.
-        Will be passed onto the draw line function
+        Options of the line_type: ["dotted", "full"].
+        Will be passed onto the draw_line function
 
     Returns
     -------

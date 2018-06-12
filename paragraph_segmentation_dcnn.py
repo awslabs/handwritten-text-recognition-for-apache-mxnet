@@ -1,6 +1,3 @@
-import sys
-sys.path.append("..")
-
 import multiprocessing
 import time
 import random
@@ -31,7 +28,7 @@ send_image_every_n = 20
 save_every_n = 100
 
 # pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 301 -n cnn_mse.params
-# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_iou.params
+# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params
 
 def transform(data, label):
     '''
@@ -60,6 +57,7 @@ def augment_transform(data, label):
     '''
     Function that randomly translates the input image by +-width_range and +-height_range.
     The labels (bounding boxes) are also translated by the same amount.
+    data and label are converted into tensors by calling the "transform" function.
     '''
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
@@ -120,7 +118,7 @@ def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_nam
         if e % send_image_every_n == 0 and e > 0 and i == 0:
             output_image = draw_box_on_image(output.asnumpy(), label.asnumpy(), data.asnumpy())
             
-    epoch_loss = float(total_loss .asscalar())/len(dataloader)
+    epoch_loss = float(total_loss.asscalar())/len(dataloader)
     
     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
@@ -167,7 +165,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     
     parser.add_argument("-l", "--loss", default="mse",
-                        help="Set loss function of the network")
+                        help="Set loss function of the network. Options: {}".format(loss_options))
     parser.add_argument("-e", "--epochs", default=300,
                         help="The number of epochs to run")
     parser.add_argument("-b", "--batch_size", default=32,
