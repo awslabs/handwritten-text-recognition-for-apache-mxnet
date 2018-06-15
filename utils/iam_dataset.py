@@ -29,6 +29,48 @@ def crop_image(image, bb):
     (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
     return image[y1:y2, x1:x2]
 
+def resize_image(image, desired_size):
+    ''' Helper function to resize an image while keeping the aspect ratio.
+    Parameter
+    ---------
+    
+    image: np.array
+        The image to be resized.
+
+    desired_size: (int, int)
+        The (height, width) of the resized image
+
+    Return
+    ------
+
+    image: np.array
+        The image of size = desired_size
+
+    bounding box: (int, int, int, int)
+        (x, y, w, h) in percentages of the resized image of the original
+    '''
+    size = image.shape[:2]
+    if size[0] > desired_size[0] or size[1] > desired_size[1]:
+        ratio_w = float(desired_size[0])/size[0]
+        ratio_h = float(desired_size[1])/size[1]
+        ratio = min(ratio_w, ratio_h)
+        new_size = tuple([int(x*ratio) for x in size])
+        image = cv2.resize(image, (new_size[1], new_size[0]))
+        size = image.shape
+            
+    delta_w = max(0, desired_size[1] - size[1])
+    delta_h = max(0, desired_size[0] - size[0])
+    top, bottom = delta_h//2, delta_h-(delta_h//2)
+    left, right = delta_w//2, delta_w-(delta_w//2)
+            
+    color = image[0][0]
+    if color < 230:
+        color = 230
+    image = cv2.copyMakeBorder(image, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))
+    crop_bb = (left/image.shape[1], top/image.shape[0], (image.shape[1] - right - left)/image.shape[1],
+               (image.shape[0] - bottom - top)/image.shape[0])
+    return image, crop_bb
+
 class IAMDataset(dataset.ArrayDataset):
     """ The IAMDataset provides images of handwritten passages written by multiple
     individuals. The data is available at http://www.fki.inf.unibe.ch
@@ -212,24 +254,7 @@ class IAMDataset(dataset.ArrayDataset):
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
         # reduce the size of form images so that it can fit in memory.
         if self._parse_method in ["form", "form_bb"]:
-            size = im.shape[:2]
-            if size[0] > self.MAX_IMAGE_SIZE_FORM[0] or size[1] > self.MAX_IMAGE_SIZE_FORM[1]:
-                ratio_w = float(self.MAX_IMAGE_SIZE_FORM[0])/size[0]
-                ratio_h = float(self.MAX_IMAGE_SIZE_FORM[1])/size[1]
-                ratio = min(ratio_w, ratio_h)
-                new_size = tuple([int(x*ratio) for x in size])
-                im = cv2.resize(im, (new_size[1], new_size[0]))
-                size = im.shape
-            
-            delta_w = max(0, self.MAX_IMAGE_SIZE_FORM[1] - size[1])
-            delta_h = max(0, self.MAX_IMAGE_SIZE_FORM[0] - size[0])
-            top, bottom = delta_h//2, delta_h-(delta_h//2)
-            left, right = delta_w//2, delta_w-(delta_w//2)
-            
-            color = im[0][0]
-            if color < 230:
-                color = 230
-            im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))                
+            im, _ = resize_image(im, self.MAX_IMAGE_SIZE_FORM)
         img_arr = np.asarray(im)
         return img_arr 
 
@@ -268,17 +293,6 @@ class IAMDataset(dataset.ArrayDataset):
         y1 = float(y1) / height
         y2 = float(y2) / height
         bb = [x1, y1, x2 - x1, y2 - y1]
-
-        # Expand the bounding box by 3% to relax the boundaries
-        s = 0.03
-
-        new_w = (1 + s) * bb[2]
-        new_h = (1 + s) * bb[3]
-
-        bb[0] = bb[0] - (new_w - bb[2])/2
-        bb[1] = bb[1] - (new_h - bb[3])/2
-        bb[2] = new_w
-        bb[3] = new_h
         return bb
     
     def _get_output_data(self, item, height, width):
@@ -320,7 +334,71 @@ class IAMDataset(dataset.ArrayDataset):
                 output_data.append(bb)
         output_data = np.array(output_data)
         return output_data
-            
+
+    def _change_bb_reference(self, bb, relative_bb, bb_reference_size, relative_bb_reference_size, output_size, operator):
+        ''' Helper function to convert bounding boxes relative into another bounding bounding box.
+        Parameter
+        --------
+        bb: [[int, int, int, int]]
+            Bounding boxes (x, y, w, h) in percentages to be converted.
+
+        relative_bb: [int, int, int, int]
+            Reference bounding box (in percentages) to convert bb to 
+
+        bb_reference_size: (int, int)
+            Size (h, w) in pixels of the image containing bb
+
+        relative_bb_reference_size: (int, int)
+            Size (h, w) in pixels of the image containing relative_bb
+
+        output_size: (int, int)
+            Size (h, w) in pixels of the output image
+
+        operator: string
+            Options ["plus", "minus"]. "plus" if relative_bb is within bb and "minus" if bb is within relative_bb
+
+        Returns
+        -------
+        bb: [[int, int, int, int]]
+            Bounding boxes (x, y, w, h) in percentages that are converted
+        
+        '''        
+        (x1, y1, x2, y2) = (bb[:, 0], bb[:, 1], bb[:, 0] + bb[:, 2], bb[:, 1] + bb[:, 3])
+        (x1, y1, x2, y2) = (x1 * bb_reference_size[1], y1 * bb_reference_size[0],
+                            x2 * bb_reference_size[1], y2 * bb_reference_size[0])
+
+        if operator == "plus":
+            new_x1 = (x1 + relative_bb[0] * relative_bb_reference_size[1]) / output_size[1]
+            new_y1 = (y1 + relative_bb[1] * relative_bb_reference_size[0]) / output_size[0]
+            new_x2 = (x2 + relative_bb[0] * relative_bb_reference_size[1]) / output_size[1]
+            new_y2 = (y2 + relative_bb[1] * relative_bb_reference_size[0]) / output_size[0]
+        else:
+            new_x1 = (x1 - relative_bb[0] * relative_bb_reference_size[1]) / output_size[1]
+            new_y1 = (y1 - relative_bb[1] * relative_bb_reference_size[0]) / output_size[0]
+            new_x2 = (x2 - relative_bb[0] * relative_bb_reference_size[1]) / output_size[1]
+            new_y2 = (y2 - relative_bb[1] * relative_bb_reference_size[0]) / output_size[0]
+
+        new_bbs = np.zeros(shape=bb.shape)
+        new_bbs[:, 0] = new_x1
+        new_bbs[:, 1] = new_y1
+        new_bbs[:, 2] = new_x2 - new_x1
+        new_bbs[:, 3] = new_y2 - new_y1
+        return new_bbs
+
+    def _crop_and_resize_form_bb(self, item, image_arr, output_data, height, width):
+        bb = self._get_bb_of_item(item, height, width)
+        image_arr_bb = crop_image(image_arr, bb)
+
+        if self._output_data == "bb":            
+            output_data = self._change_bb_reference(output_data, bb, image_arr.shape, image_arr.shape, image_arr_bb.shape, "minus")
+
+        image_arr_bb_, bb = resize_image(image_arr_bb, desired_size=(700, 700))
+
+        if self._output_data == "bb":
+            output_data = self._change_bb_reference(output_data, bb, image_arr_bb.shape, image_arr_bb_.shape, image_arr_bb_.shape, "plus")
+        image_arr = image_arr_bb_
+        return image_arr, output_data
+
     def _process_data(self):
         ''' Function that iterates through the downloaded xml file to gather the input images and the
         corresponding output.
@@ -330,7 +408,6 @@ class IAMDataset(dataset.ArrayDataset):
         pd.DataFrame
             A pandas dataframe that contains the subject, image and output requested.
         '''
-
         image_data = []
         xml_files = glob.glob(self._root + "/xml/*.xml")
         print("Processing data:")
@@ -352,28 +429,7 @@ class IAMDataset(dataset.ArrayDataset):
                 image_arr = self._pre_process_image(image_filename)
                 output_data = self._get_output_data(item, height, width)
                 if self._parse_method == "form_bb":
-                    bb = self._get_bb_of_item(item, height, width)
-                    image_arr_bb = crop_image(image_arr, bb)
-                    if self._output_data == "bb":
-                        (x1, y1, x2, y2) = (output_data[:, 0], output_data[:, 1], output_data[:, 0] + output_data[:, 2],
-                                            output_data[:, 1] + output_data[:, 3])
-                        (x1, y1, x2, y2) = (x1 * image_arr.shape[1], y1 * image_arr.shape[0], x2 * image_arr.shape[1],
-                                            y2 * image_arr.shape[0])
-                        
-                        new_x1 = x1 - bb[0] * image_arr.shape[1]
-                        new_y1 = y1 - bb[1] * image_arr.shape[0]
-                        new_x2 = x2 - bb[0] * image_arr.shape[1]
-                        new_y2 = y2 - bb[1] * image_arr.shape[0]
-                        new_bbs = np.zeros(shape=output_data.shape)
-                        new_bbs[:, 0] = new_x1 / image_arr_bb.shape[1]
-                        new_bbs[:, 1] = new_y1 / image_arr_bb.shape[0]
-                        new_bbs[:, 2] = (new_x2 - new_x1) / image_arr_bb.shape[1]
-                        new_bbs[:, 3] = (new_y2 - new_y1) / image_arr_bb.shape[0]
-                        
-                        output_data = new_bbs
-                        
-                    image_arr = image_arr_bb
-                        
+                    image_arr, output_data = self._crop_and_resize_form_bb(item, image_arr, output_data, height, width)
                 image_data.append([item.attrib["id"], image_arr, output_data])
                 self._reporthook(i, 1, len(xml_files))
         image_data = pd.DataFrame(image_data, columns=["subject", "image", "output"])
