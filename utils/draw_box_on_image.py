@@ -26,6 +26,14 @@ def draw_box(bounding_box, image, line_type, is_xywh=True):
         y1 = image_h - 1
     if x1 >= image_w:
         x1 = image_w - 1
+    if y2 < 0:
+        y2 = 0
+    if x2 < 0:
+        x2 =0
+    if y1 < 0:
+        y1 = 0
+    if x1 < 0:
+        x1 = 0
 
     image = draw_line(image, y1, x1, y2, x1, line_type)
     image = draw_line(image, y2, x1, y2, x2, line_type)
@@ -60,7 +68,6 @@ def draw_boxes_on_image(pred, label, images):
     image_h, image_w = images.shape[-2:]
     label[:, :, 0], label[:, :, 1] = label[:, :, 0] * image_w, label[:, :, 1] * image_h
     label[:, :, 2], label[:, :, 3] = label[:, :, 2] * image_w, label[:, :, 3] * image_h
-
     for i in range(len(pred)):
         pred_b = pred[i]
         pred_b[:, 0], pred_b[:, 1] = pred_b[:, 0] * image_w, pred_b[:, 1] * image_h
