@@ -77,8 +77,8 @@ def draw_boxes_on_image(pred, label, images):
         for j in range(pred_b.shape[0]):
             image = draw_box(pred_b[j, :], image, line_type="dotted")
 
-        for k in range(label.shape[1]):
-            image = draw_box(label[i, k, :], image, line_type="solid")
+        # for k in range(label.shape[1]):
+        #     image = draw_box(label[i, k, :], image, line_type="solid")
         images[i, 0, :, :] = image
     return images
 
