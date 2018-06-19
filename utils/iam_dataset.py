@@ -193,7 +193,7 @@ class IAMDataset(dataset.ArrayDataset):
         _available_types = ["tar", "zip"]
         error_message = "Archive_type {} is not an available option ({})".format(archive_type, _available_types)
         assert archive_type in _available_types, error_message
-        if archive_file == "tar":
+        if archive_type == "tar":
             tar = tarfile.open(archive_file, "r:gz")
             tar.extractall(os.path.join(self._root, output_dir))
             tar.close()
@@ -238,7 +238,7 @@ class IAMDataset(dataset.ArrayDataset):
             archive_file = os.path.join(self._root, os.path.basename(url))
             if not os.path.isfile(archive_file):
                 self._download(url)
-                self._extract(archive_file, archive_type="tar", output_dir=self._parse_method)
+                self._extract(archive_file, archive_type="tar", output_dir=self._parse_method.split("_")[0])
 
     def _download_subject_list(self):
         ''' Helper function to download and extract the subject list of the IAM database
@@ -416,7 +416,6 @@ class IAMDataset(dataset.ArrayDataset):
             tree = ET.parse(xml_file)
             root = tree.getroot()
             height, width = int(root.attrib["height"]), int(root.attrib["width"])
-            
             for item in root.iter(self._parse_method.split("_")[0]):
                 # Split _ to account for only taking the base "form", "line", "word" that is available in the IAM dataset
                 if self._parse_method in ["form", "form_bb"]:
