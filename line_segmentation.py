@@ -17,7 +17,8 @@ from mxnet.image import resize_short
 from mxboard import SummaryWriter
 from mxnet.gluon.model_zoo.vision import resnet18_v1
 
-ctx = mx.gpu()
+GPU_COUNT = 4
+ctx = [mx.gpu(i) for i in range(GPU_COUNT)]
 mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
@@ -54,9 +55,11 @@ checkpoint_dir, checkpoint_name = "model_checkpoint", "ssd.params"
 #     cnn.hybridize()
 #     return cnn
 
-def make_cnn():
-    pretrained = resnet18_v1(pretrained=True, ctx=ctx) #make_cnn()
-    first_weights = pretrained.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+def make_cnn():    
+    pretrained = resnet18_v1(pretrained=True, ctx=ctx)
+    pretrained_2 = resnet18_v1(pretrained=True, ctx=mx.cpu(0))
+    first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+    
     body = gluon.nn.HybridSequential()
     first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
     first_layer.initialize(mx.init.Normal(), ctx=ctx)
@@ -210,8 +213,8 @@ print("Number of training samples: {}".format(len(train_ds)))
 test_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=False)
 print("Number of testing samples: {}".format(len(test_ds)))
 
-train_data = gluon.data.DataLoader(train_ds.transform(transform), batch_size, shuffle=True, num_workers=multiprocessing.cpu_count()-2)
-test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, num_workers=multiprocessing.cpu_count()-2)
+train_data = gluon.data.DataLoader(train_ds.transform(transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
+test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 
 learning_rate = 0.0001
 epochs = 750
@@ -240,25 +243,34 @@ cls_metric = mx.metric.Accuracy()
 box_metric = mx.metric.MAE()
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, update_metric, save_cnn):
-    total_loss = nd.zeros(1, ctx)
-    for i, (x, y) in enumerate(dataloader):
-        x = x.as_in_context(ctx)
-        y = y.as_in_context(ctx)
+    total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
+    for i, (X, Y) in enumerate(dataloader):
+        X = gluon.utils.split_and_load(X, ctx)
+        Y = gluon.utils.split_and_load(Y, ctx)
         
         with autograd.record():
-            default_anchors, class_predictions, box_predictions = network(x)
-            box_target, box_mask, cls_target = training_targets(default_anchors, class_predictions, y)
-            # losses
-            loss_class = cls_loss(class_predictions, cls_target)
-            loss_box = box_loss(box_predictions, box_target, box_mask)
-            # sum all losses
-            loss = loss_class + loss_box
+            losses = []
+            for x, y in zip(X, Y):
+                default_anchors, class_predictions, box_predictions = network(x)
+                box_target, box_mask, cls_target = training_targets(default_anchors, class_predictions, y)
+                # losses
+                loss_class = cls_loss(class_predictions, cls_target)
+                loss_box = box_loss(box_predictions, box_target, box_mask)
+                # sum all losses
+                loss = loss_class + loss_box
+                losses.append(loss)
             
         if update_cnn:
-            loss.backward()
-            trainer.step(x.shape[0])
+            for loss in losses:
+                loss.backward()
+            step_size = 0
+            for x in X:
+                step_size += x.shape[0]
+            trainer.step(step_size)
 
-        total_loss += loss.mean()
+        for i, loss in enumerate(losses):
+            total_losses[i] += loss.mean()/len(ctx)
+            
         if update_metric:
             cls_metric.update([cls_target], [nd.transpose(class_predictions, (0, 2, 1))])
             box_metric.update([box_target], [box_predictions * box_mask])
@@ -282,10 +294,18 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
             labels = y[:, :, 1:].asnumpy()
             labels[:, :, 2] = labels[:, :, 2] - labels[:, :, 0]
             labels[:, :, 3] = labels[:, :, 3] - labels[:, :, 1] 
-            
-            output_image = draw_boxes_on_image(predicted_bb, labels, x.asnumpy())
 
-    epoch_loss = float(total_loss.asscalar())/len(dataloader)
+            with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
+                output_image = draw_boxes_on_image(predicted_bb, labels, x.asnumpy())
+                output_image[output_image<0] = 0
+                output_image[output_image>1] = 1
+                print("Number of predicted {} BBs = {}".format(print_name, number_of_bbs))
+                sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
+
+    total_loss = 0
+    for loss in total_losses:
+        total_loss = loss.asscalar()
+    epoch_loss = float(total_loss)/len(dataloader)
 
     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
         if update_metric:
@@ -293,13 +313,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
             name2, val2 = box_metric.get()
             sw.add_scalar(name1, {"test": val1}, global_step=e)
             sw.add_scalar(name2, {"test": val2}, global_step=e)
-
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
-        if e % send_image_every_n == 0 and e > 0:
-            output_image[output_image<0] = 0
-            output_image[output_image>1] = 1
-            print("Number of predicted {} BBs = {}".format(print_name, number_of_bbs))
-            sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
             
     if save_cnn and e % save_every_n == 0 and e > 0:
         network.save_params("{}/{}".format(checkpoint_dir, checkpoint_name))
