@@ -29,14 +29,14 @@ min_c = 0.01
 overlap_thres = 0.2
 topk = 20
 random_y_translation, random_x_translation = 0.05, 0.05
-learning_rate = 0.001
+learning_rate = 0.0001
 epochs = 1500
 random_remove_box = 0.15
 
 batch_size = 32 * len(ctx)
 print_every_n = 5
 send_image_every_n = 20
-save_every_n = 20
+save_every_n = 50
 checkpoint_dir, checkpoint_name = "model_checkpoint", "ssd.params"
 
 def make_cnn():    
@@ -45,11 +45,12 @@ def make_cnn():
     first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
     
     body = gluon.nn.HybridSequential()
-    first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-    first_layer.initialize(mx.init.Normal(), ctx=ctx)
-    first_layer.weight.set_data(first_weights)
-    body.add(first_layer)
-    body.add(*pretrained.features[1:-3])
+    with body.name_scope():
+        first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
+        first_layer.initialize(mx.init.Normal(), ctx=ctx)
+        first_layer.weight.set_data(first_weights)
+        body.add(first_layer)
+        body.add(*pretrained.features[1:-3])
     body.hybridize()
     return body
 
@@ -59,16 +60,17 @@ def class_predictor(num_anchors, num_classes):
 
 def box_predictor(num_anchors):
     pred = gluon.nn.HybridSequential()
-    pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=(3, 3), padding=1))
-    pred.add(gluon.nn.BatchNorm())
+    with pred.name_scope():
+        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=(3, 3), padding=1))
+        pred.add(gluon.nn.BatchNorm())
 
-    pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
-    pred.add(gluon.nn.BatchNorm())
+        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
+        pred.add(gluon.nn.BatchNorm())
 
-    pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
-    pred.add(gluon.nn.BatchNorm())
+        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
+        pred.add(gluon.nn.BatchNorm())
 
-    pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
+        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
 
     pred.hybridize()
     return pred
@@ -128,7 +130,7 @@ def ssd_forward(x, body, downsamples, class_preds, box_preds, sizes, ratios):
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
         super(SSD, self).__init__(**kwargs)
-        self.anchor_sizes = [[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]]
+        self.anchor_sizes = [[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]] #TODO: maybe reduce the number of types boxes?
         self.anchor_ratios = [[10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]] 
         self.num_classes = num_classes
 
@@ -210,7 +212,6 @@ print("Number of testing samples: {}".format(len(test_ds)))
 
 train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
-
 
 net = SSD(2)
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
@@ -307,7 +308,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
             
     if save_cnn and e % save_every_n == 0 and e > 0:
-        network.save_params("{}/{}".format(checkpoint_dir, checkpoint_name))
+        network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
 for e in range(epochs):
@@ -315,7 +316,7 @@ for e in range(epochs):
     box_metric.reset()
 
     log_dir = "./logs"
-    train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", update_cnn=True, update_metric=False, save_cnn=False)
+    train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", update_cnn=True, update_metric=False, save_cnn=True)
     test_loss = run_epoch(e, net, test_data, trainer, log_dir, print_name="test", update_cnn=False, update_metric=True, save_cnn=False)
     if e % print_every_n == 0:
         name1, val1 = cls_metric.get()
