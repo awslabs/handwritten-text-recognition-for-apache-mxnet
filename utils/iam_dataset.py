@@ -387,6 +387,17 @@ class IAMDataset(dataset.ArrayDataset):
 
     def _crop_and_resize_form_bb(self, item, image_arr, output_data, height, width):
         bb = self._get_bb_of_item(item, height, width)
+
+        # Expand the form bounding box by 5%
+        expand_bb_scale = 0.05
+        new_w = (1 + expand_bb_scale) * bb[2]
+        new_h = (1 + expand_bb_scale) * bb[3]
+        
+        bb[0] = bb[0] - (new_w - bb[2])/2
+        bb[1] = bb[1] - (new_h - bb[3])/2
+        bb[2] = new_w
+        bb[3] = new_h
+
         image_arr_bb = crop_image(image_arr, bb)
 
         if self._output_data == "bb":            

@@ -4,6 +4,7 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import argparse
 
 import mxnet as mx
 from mxnet.contrib.ndarray import MultiBoxPrior, MultiBoxTarget, MultiBoxDetection, box_nms
@@ -26,28 +27,17 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 from utils.draw_box_on_image import draw_boxes_on_image
 
-expand_bb_scale = 0.03
-min_c = 0.01
-overlap_thres = 0.20
-topk = 13
-epochs = 351
-learning_rate = 0.0001
-
-# learning_rate = 0.000001
-# maximum is 1% otherwise the words will be outside the box
-random_y_translation, random_x_translation = 0.01, 0.01
-random_remove_box = 0.15
-
-random_y_translation, random_x_translation = 0.00, 0.00
-random_remove_box = 0.00
-
-batch_size = 32 * len(ctx)
 print_every_n = 5
 send_image_every_n = 20
 save_every_n = 50
-checkpoint_dir, checkpoint_name = "model_checkpoint", "ssd.params"
 
-def make_cnn():    
+# To run:
+#    python line_segmentation.py
+
+def make_cnn():
+    '''
+    Create the feature extraction network of the SSD based on resnet34.
+    '''
     pretrained = resnet34_v1(pretrained=True, ctx=ctx)
     pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
     first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
@@ -63,10 +53,15 @@ def make_cnn():
     return body
 
 def class_predictor(num_anchors, num_classes):
-    """return a layer to predict classes"""
+    '''
+    Creates the category prediction network (takes input from each downsampled feature)
+    '''
     return gluon.nn.Conv2D(num_anchors * (num_classes + 1), 3, padding=1)
 
 def box_predictor(num_anchors):
+    '''
+    Creates the bounding box prediction network (takes input from each downsampled feature)
+    '''
     pred = gluon.nn.HybridSequential()
     with pred.name_scope():
         pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=(3, 3), padding=1))
@@ -84,8 +79,10 @@ def box_predictor(num_anchors):
     return pred
 
 def down_sample(num_filters):
-    """stack two Conv-BatchNorm-Relu blocks and then a pooling layer
-    to halve the feature size"""
+    '''
+    Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
+    downsample the image features by half.
+    '''
     out = gluon.nn.HybridSequential()
     for _ in range(2):
         out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
@@ -94,46 +91,18 @@ def down_sample(num_filters):
     out.add(gluon.nn.MaxPool2D(2))
     return out
 
-body = make_cnn()
-
 def flatten_prediction(pred):
+    '''
+    Helper function to flatten the predicted bounding boxes and categories
+    '''
     return nd.flatten(nd.transpose(pred, axes=(0, 2, 3, 1)))
 
 def concat_predictions(preds):
+    '''
+    Helper function to concatenate the predicted bounding boxes and categories
+    from different anchor box predictions
+    '''
     return nd.concat(*preds, dim=1)
-
-def ssd_model(num_anchors, num_classes):
-    downsamples = gluon.nn.Sequential()
-    class_preds = gluon.nn.Sequential()
-    box_preds = gluon.nn.Sequential()
-
-    downsamples.add(down_sample(128))
-    downsamples.add(down_sample(128))
-    downsamples.add(down_sample(128))
-
-    for scale in range(5):
-        class_preds.add(class_predictor(num_anchors, num_classes))
-        box_preds.add(box_predictor(num_anchors))
-
-    return body, downsamples, class_preds, box_preds
-
-def ssd_forward(x, body, downsamples, class_preds, box_preds, sizes, ratios):
-    x = body(x)
-
-    default_anchors = []
-    predicted_boxes = []
-    predicted_classes = []
-
-    for i in range(5):
-        default_anchors.append(MultiBoxPrior(x, sizes=sizes[i], ratios=ratios[i]))
-        predicted_boxes.append(flatten_prediction(box_preds[i](x)))
-        predicted_classes.append(flatten_prediction(class_preds[i](x)))
-        if i < 3:
-            x = downsamples[i](x)
-        elif i == 3:
-            x = nd.Pooling(x, global_pool=True, pool_type='max', kernel=(4, 4))
-
-    return default_anchors, predicted_classes, predicted_boxes
 
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
@@ -143,14 +112,54 @@ class SSD(gluon.Block):
         self.num_classes = num_classes
 
         with self.name_scope():
-            self.body, self.downsamples, self.class_preds, self.box_preds = ssd_model(4, num_classes)
+            self.body, self.downsamples, self.class_preds, self.box_preds = self.get_ssd_model(4, num_classes)
             self.downsamples.initialize(mx.init.Normal(), ctx=ctx)
             self.class_preds.initialize(mx.init.Normal(), ctx=ctx)
             self.box_preds.initialize(mx.init.Normal(), ctx=ctx)
 
+    def get_ssd_model(self, num_anchors, num_classes):
+        '''
+        Creates the SSD model that includes the image feature, downsample, category
+        and bounding boxes prediction networks.
+        '''
+        body = make_cnn()
+        downsamples = gluon.nn.Sequential()
+        class_preds = gluon.nn.Sequential()
+        box_preds = gluon.nn.Sequential()
+
+        downsamples.add(down_sample(128))
+        downsamples.add(down_sample(128))
+        downsamples.add(down_sample(128))
+
+        for scale in range(5):
+            class_preds.add(class_predictor(num_anchors, num_classes))
+            box_preds.add(box_predictor(num_anchors))
+
+        return body, downsamples, class_preds, box_preds
+
+    def ssd_forward(self, x):
+        '''
+        Helper function of the forward pass of the sdd
+        '''
+        x = self.body(x)
+
+        default_anchors = []
+        predicted_boxes = []
+        predicted_classes = []
+
+        for i in range(5):
+            default_anchors.append(MultiBoxPrior(x, sizes=self.anchor_sizes[i], ratios=self.anchor_ratios[i]))
+            predicted_boxes.append(flatten_prediction(self.box_preds[i](x)))
+            predicted_classes.append(flatten_prediction(self.class_preds[i](x)))
+            if i < 3:
+                x = self.downsamples[i](x)
+            elif i == 3:
+                x = nd.Pooling(x, global_pool=True, pool_type='max', kernel=(4, 4))
+
+        return default_anchors, predicted_classes, predicted_boxes
+
     def forward(self, x):
-        default_anchors, predicted_classes, predicted_boxes = ssd_forward(x, self.body, self.downsamples,
-            self.class_preds, self.box_preds, self.anchor_sizes, self.anchor_ratios)
+        default_anchors, predicted_classes, predicted_boxes = self.ssd_forward(x)
         # we want to concatenate anchors, class predictions, box predictions from different layers
         anchors = concat_predictions(default_anchors)
         box_preds = concat_predictions(predicted_boxes)
@@ -159,11 +168,25 @@ class SSD(gluon.Block):
         return anchors, class_preds, box_preds
     
 def training_targets(default_anchors, class_predicts, labels):
+    '''
+    Helper function to obtain the bounding boxes from the anchors.
+    '''
     class_predicts = nd.transpose(class_predicts, axes=(0, 2, 1))
     box_target, box_mask, cls_target = MultiBoxTarget(default_anchors, labels, class_predicts)
     return box_target, box_mask, cls_target
 
-def augment_transform(data, label):
+class SmoothL1Loss(gluon.loss.Loss):
+    '''
+    A SmoothL1loss function defined in https://gluon.mxnet.io/chapter08_computer-vision/object-detection.html
+    '''
+    def __init__(self, batch_axis=0, **kwargs):
+        super(SmoothL1Loss, self).__init__(None, batch_axis, **kwargs)
+
+    def hybrid_forward(self, F, output, label, mask):
+        loss = F.smooth_l1((output - label) * mask, scalar=1.0)
+        return F.mean(loss, self._batch_axis, exclude=True)
+
+def augment_transform(image, label):
     '''
     1) Function that randomly translates the input image by +-width_range and +-height_range.
     The labels (bounding boxes) are also translated by the same amount.
@@ -172,8 +195,9 @@ def augment_transform(data, label):
     '''
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
-    st = skimage_tf.SimilarityTransform(translation=(tx*data.shape[1], ty*data.shape[0]))
-    data = skimage_tf.warp(data, st, cval=1.0)
+
+    st = skimage_tf.SimilarityTransform(translation=(tx*image.shape[1], ty*image.shape[0]))
+    image = skimage_tf.warp(image, st, cval=1.0)
 
     label[:, 0] = label[:, 0] - tx/2 #NOTE: Check why it has to be halfed (found experimentally)
     label[:, 1] = label[:, 1] - ty/2
@@ -183,25 +207,27 @@ def augment_transform(data, label):
         if should_output_bb == False:
             (x, y, w, h) = label[i]
             (x1, y1, x2, y2) = (x, y, x + w, y + h)
-            (x1, y1, x2, y2) = (x1 * data.shape[1], y1 * data.shape[0],
-                                x2 * data.shape[1], y2 * data.shape[0])
+            (x1, y1, x2, y2) = (x1 * image.shape[1], y1 * image.shape[0],
+                                x2 * image.shape[1], y2 * image.shape[0])
             (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
             x1 = 0 if x1 < 0 else x1
             y1 = 0 if y1 < 0 else y1
-            image_h, image_w = data.shape
+            image_h, image_w = image.shape
             x2 = image_w if x2 > image_w else x2
             y2 = image_h if y2 > image_h else y2
 
             mean_value = 1.0 #np.mean(data[y1:y2, x1:x2])
-            data[y1:y2, x1:x2] = mean_value
+            image[y1:y2, x1:x2] = mean_value
                 
     augmented_labels = label[index, :]
-    return transform(data*255., augmented_labels)
+    return transform(image*255., augmented_labels)
 
 def transform(image, label):
     '''
-    Function that converts "data"" into the input image tensor for a CNN
-    Label is converted into a float tensor.
+    Function that converts resizes image into the input image tensor for a CNN.
+    The labels (bounding boxes) are expanded, converted into (x, y, x+w, y+h), and
+    zero padded to the maximum number of labels. Finally, it is converted into a float
+    tensor.
     '''
     max_label_n = 13
 
@@ -235,38 +261,6 @@ def transform(image, label):
     label_padded = mx.nd.array(label_padded)
     
     return image, label_padded
-
-train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
-print("Number of training samples: {}".format(len(train_ds)))
-
-test_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=False)
-print("Number of testing samples: {}".format(len(test_ds)))
-
-train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
-test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
-
-net = SSD(2)
-trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
-
-# data, label = train_ds[0]
-# data, _ = transform(data, label)
-# data = data.expand_dims(axis=0)
-# data = data.as_in_context(ctx)
-# net.summary(data)
-# import pdb; pdb.set_trace();
-
-cls_loss = gluon.loss.SoftmaxCrossEntropyLoss()
-class SmoothL1Loss(gluon.loss.Loss):
-    def __init__(self, batch_axis=0, **kwargs):
-        super(SmoothL1Loss, self).__init__(None, batch_axis, **kwargs)
-
-    def hybrid_forward(self, F, output, label, mask):
-        loss = F.smooth_l1((output - label) * mask, scalar=1.0)
-        return F.mean(loss, self._batch_axis, exclude=True)
-
-box_loss = SmoothL1Loss()
-cls_metric = mx.metric.Accuracy()
-box_metric = mx.metric.MAE()
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, update_metric, save_cnn):
     total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
@@ -344,16 +338,81 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
-# net.load_parameters("model_checkpoint/ssd_350.params")
-for e in range(epochs):
-    cls_metric.reset()
-    box_metric.reset()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
 
-    log_dir = "./logs"
-    train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", update_cnn=True, update_metric=False, save_cnn=True)
-    test_loss = run_epoch(e, net, test_data, trainer, log_dir, print_name="test", update_cnn=False, update_metric=True, save_cnn=False)
-    if e % print_every_n == 0:
-        name1, val1 = cls_metric.get()
-        name2, val2 = box_metric.get()
-        print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}, test {3}={4:.6f}, {5}={6:.6f}".format(e, train_loss, test_loss,
-                                                                                           name1, val1, name2, val2))
+    parser.add_argument("-b", "--expand_bb_scale", default=0.05,
+                        help="Scale to expand the bounding box")
+    parser.add_argument("-m", "--min_c", default=0.01,
+                        help="Minimum probability to be considered a bounding box (used in box_nms)")
+    parser.add_argument("-o", "--overlap_thres", default=0.2,
+                        help="Maximum overlap between bounding boxes")
+    parser.add_argument("-t", "--topk", default=20,
+                        help="Maximum number of bounding boxes on one slide")
+    
+    parser.add_argument("-e", "--epochs", default=751,
+                        help="Number of epochs to run")
+    parser.add_argument("-l", "--learning_rate", default=0.0001,
+                        help="Learning rate for training")
+    parser.add_argument("-s", "--batch_size", default=32,
+                        help="Batch size")
+
+    parser.add_argument("-x", "--random_x_translation", default=0.03,
+                        help="Randomly translation the image in the x direction (+ or -)")
+    parser.add_argument("-y", "--random_y_translation", default=0.03,
+                        help="Randomly translation the image in the y direction (+ or -)")
+    parser.add_argument("-r", "--random_remove_box", default=0.15,
+                        help="Randomly remove bounding boxes and texts with a probability of r")
+    
+    parser.add_argument("-d", "--log_dir", default="./logs",
+                        help="Directory to store the log files")
+    parser.add_argument("-c", "--checkpoint_dir", default="model_checkpoint",
+                        help="Directory to store the checkpoints")
+    parser.add_argument("-n", "--checkpoint_name", default="ssd.params",
+                        help="Name to store the checkpoints")
+
+    args = parser.parse_args()
+    expand_bb_scale = float(args.expand_bb_scale)
+    min_c = float(args.min_c)
+    overlap_thres = float(args.overlap_thres)
+    topk = int(args.topk)
+    
+    epochs = int(args.epochs)
+    learning_rate = float(args.learning_rate)
+    batch_size = int(args.batch_size) * len(ctx)
+
+    random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
+    random_remove_box = float(args.random_remove_box)
+
+    log_dir = args.log_dir
+    checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
+
+    train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
+    print("Number of training samples: {}".format(len(train_ds)))
+
+    test_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=False)
+    print("Number of testing samples: {}".format(len(test_ds)))
+
+    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
+    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
+
+    net = SSD(2)
+    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
+    
+    cls_loss = gluon.loss.SoftmaxCrossEntropyLoss()
+
+    box_loss = SmoothL1Loss()
+    cls_metric = mx.metric.Accuracy()
+    box_metric = mx.metric.MAE()
+
+    for e in range(epochs):
+        cls_metric.reset()
+        box_metric.reset()
+
+        train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", update_cnn=True, update_metric=False, save_cnn=True)
+        test_loss = run_epoch(e, net, test_data, trainer, log_dir, print_name="test", update_cnn=False, update_metric=True, save_cnn=False)
+        if e % print_every_n == 0:
+            name1, val1 = cls_metric.get()
+            name2, val2 = box_metric.get()
+            print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}, test {3}={4:.6f}, {5}={6:.6f}".format(e, train_loss, test_loss,
+                                                                                                           name1, val1, name2, val2))
