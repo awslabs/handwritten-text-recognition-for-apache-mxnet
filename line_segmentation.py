@@ -15,6 +15,7 @@ from mxnet import nd, autograd, gluon
 from mxnet.image import resize_short
 from mxboard import SummaryWriter
 from mxnet.gluon.model_zoo.vision import resnet34_v1
+np.seterr(all='raise')
 
 import multiprocessing
 
@@ -25,13 +26,20 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 from utils.draw_box_on_image import draw_boxes_on_image
 
+expand_bb_scale = 0.03
 min_c = 0.01
-overlap_thres = 0.2
-topk = 20
-random_y_translation, random_x_translation = 0.05, 0.05
+overlap_thres = 0.20
+topk = 13
+epochs = 351
 learning_rate = 0.0001
-epochs = 1500
+
+# learning_rate = 0.000001
+# maximum is 1% otherwise the words will be outside the box
+random_y_translation, random_x_translation = 0.01, 0.01
 random_remove_box = 0.15
+
+random_y_translation, random_x_translation = 0.00, 0.00
+random_remove_box = 0.00
 
 batch_size = 32 * len(ctx)
 print_every_n = 5
@@ -51,7 +59,7 @@ def make_cnn():
         first_layer.weight.set_data(first_weights)
         body.add(first_layer)
         body.add(*pretrained.features[1:-3])
-    body.hybridize()
+        body.hybridize()
     return body
 
 def class_predictor(num_anchors, num_classes):
@@ -157,17 +165,18 @@ def training_targets(default_anchors, class_predicts, labels):
 
 def augment_transform(data, label):
     '''
-    Function that randomly translates the input image by +-width_range and +-height_range.
+    1) Function that randomly translates the input image by +-width_range and +-height_range.
     The labels (bounding boxes) are also translated by the same amount.
+    2) Each line can also be randomly removed for augmentation. Labels are also reduced to correspond to this
     data and label are converted into tensors by calling the "transform" function.
     '''
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
-    st = skimage_tf.SimilarityTransform(translation=(tx*data.shape[1], ty*data.shape[0])) 
+    st = skimage_tf.SimilarityTransform(translation=(tx*data.shape[1], ty*data.shape[0]))
     data = skimage_tf.warp(data, st, cval=1.0)
 
-    label[:, 0] = label[:, 0] - tx
-    label[:, 1] = label[:, 1] - ty
+    label[:, 0] = label[:, 0] - tx/2 #NOTE: Check why it has to be halfed (found experimentally)
+    label[:, 1] = label[:, 1] - ty/2
     
     index = np.random.uniform(0, 1.0, size=label.shape[0]) > random_remove_box
     for i, should_output_bb in enumerate(index):
@@ -177,31 +186,54 @@ def augment_transform(data, label):
             (x1, y1, x2, y2) = (x1 * data.shape[1], y1 * data.shape[0],
                                 x2 * data.shape[1], y2 * data.shape[0])
             (x1, y1, x2, y2) = (int(x1), int(y1), int(x2), int(y2))
-            data[y1:y2, x1:x2] = 1.0
-    label = label[index, :]
+            x1 = 0 if x1 < 0 else x1
+            y1 = 0 if y1 < 0 else y1
+            image_h, image_w = data.shape
+            x2 = image_w if x2 > image_w else x2
+            y2 = image_h if y2 > image_h else y2
 
-    return transform(data*255., label)
+            mean_value = 1.0 #np.mean(data[y1:y2, x1:x2])
+            data[y1:y2, x1:x2] = mean_value
+                
+    augmented_labels = label[index, :]
+    return transform(data*255., augmented_labels)
 
 def transform(image, label):
-    max_label_n = 13
     '''
     Function that converts "data"" into the input image tensor for a CNN
     Label is converted into a float tensor.
-    '''    
+    '''
+    max_label_n = 13
+
+    # Resize the image
     image = np.expand_dims(image, axis=2)
     image = mx.nd.array(image)
-    # image = resize_short(image, 224)
     image = resize_short(image, int(700/2))
     image = image.transpose([2, 0, 1])/255.
-        
+
+    # Expand the bounding box by expand_bb_scale
+    bb = label
+    new_w = (1 + expand_bb_scale) * bb[:, 2]
+    new_h = (1 + expand_bb_scale) * bb[:, 3]
+    
+    bb[:, 0] = bb[:, 0] - (new_w - bb[:, 2])/2
+    bb[:, 1] = bb[:, 1] - (new_h - bb[:, 3])/2
+    bb[:, 2] = new_w
+    bb[:, 3] = new_h
+    label = bb 
+
+    # Convert the predicted bounding box from (x, y, w, h to (x, y, x + w, y + h)
     label = label.astype(np.float32)
     label[:, 2] = label[:, 0] + label[:, 2]
     label[:, 3] = label[:, 1] + label[:, 3]
+
+    # Zero pad the data
     label_n = label.shape[0]
     label_padded = np.zeros(shape=(max_label_n, 5))
     label_padded[:label_n, 1:] = label
     label_padded[:label_n, 0] = np.ones(shape=(1, label_n))
     label_padded = mx.nd.array(label_padded)
+    
     return image, label_padded
 
 train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
@@ -268,6 +300,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
         if update_metric:
             cls_metric.update([cls_target], [nd.transpose(class_predictions, (0, 2, 1))])
             box_metric.update([box_target], [box_predictions * box_mask])
+            
         if i == 0 and e % send_image_every_n == 0 and e > 0:
             cls_probs = nd.SoftmaxActivation(nd.transpose(class_predictions, (0, 2, 1)), mode='channel')
             output = MultiBoxDetection(*[cls_probs, box_predictions, default_anchors], force_suppress=True, clip=False)
@@ -285,7 +318,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
                 predicted_bb.append(predicted_bb_)
             labels = y[:, :, 1:].asnumpy()
             labels[:, :, 2] = labels[:, :, 2] - labels[:, :, 0]
-            labels[:, :, 3] = labels[:, :, 3] - labels[:, :, 1] 
+            labels[:, :, 3] = labels[:, :, 3] - labels[:, :, 1]
 
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 output_image = draw_boxes_on_image(predicted_bb, labels, x.asnumpy())
@@ -311,6 +344,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
+# net.load_parameters("model_checkpoint/ssd_350.params")
 for e in range(epochs):
     cls_metric.reset()
     box_metric.reset()
