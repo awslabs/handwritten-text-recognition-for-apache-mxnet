@@ -31,7 +31,7 @@ print_every_n = 5
 send_image_every_n = 20
 save_every_n = 50
 
-# Last run python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 751 --checkpoint_name ssd_750.params
+# Last run python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 200 --epoch 1001 --checkpoint_name ssd_1000.params
 
 # To run:
 #     python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 751 --checkpoint_name ssd_750.params
@@ -108,10 +108,13 @@ def concat_predictions(preds):
     '''
     return nd.concat(*preds, dim=1)
 
+anchor_layers = 4
+
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
         super(SSD, self).__init__(**kwargs)
-        self.anchor_sizes = [[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]] #TODO: maybe reduce the number of types boxes?
+        self.anchor_sizes = [[.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
+        #[[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]]
         self.anchor_ratios = [[10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]] 
         self.num_classes = num_classes
 
@@ -135,7 +138,7 @@ class SSD(gluon.Block):
         downsamples.add(down_sample(128))
         downsamples.add(down_sample(128))
 
-        for scale in range(5):
+        for scale in range(anchor_layers):
             class_preds.add(class_predictor(num_anchors, num_classes))
             box_preds.add(box_predictor(num_anchors))
 
@@ -151,7 +154,7 @@ class SSD(gluon.Block):
         predicted_boxes = []
         predicted_classes = []
 
-        for i in range(5):
+        for i in range(anchor_layers):
             default_anchors.append(MultiBoxPrior(x, sizes=self.anchor_sizes[i], ratios=self.anchor_ratios[i]))
             predicted_boxes.append(flatten_prediction(self.box_preds[i](x)))
             predicted_classes.append(flatten_prediction(self.class_preds[i](x)))
