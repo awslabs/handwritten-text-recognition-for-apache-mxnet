@@ -31,8 +31,12 @@ print_every_n = 5
 send_image_every_n = 20
 save_every_n = 50
 
+# Last run python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 751 --checkpoint_name ssd_750.params
+
 # To run:
-#    python line_segmentation.py
+#     python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 751 --checkpoint_name ssd_750.params
+# For fine_tuning:
+#    python line_segmentation.py -p ssd_550.params 
 
 def make_cnn():
     '''
@@ -370,6 +374,8 @@ if __name__ == "__main__":
                         help="Directory to store the checkpoints")
     parser.add_argument("-n", "--checkpoint_name", default="ssd.params",
                         help="Name to store the checkpoints")
+    parser.add_argument("-p", "--load_model", default=None,
+                        help="Model to load from")
 
     args = parser.parse_args()
     expand_bb_scale = float(args.expand_bb_scale)
@@ -386,6 +392,7 @@ if __name__ == "__main__":
 
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
+    load_model = args.load_model
 
     train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
@@ -397,6 +404,9 @@ if __name__ == "__main__":
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 
     net = SSD(2)
+    if load_model is not None:
+        net.load_parameters("{}/{}".format(checkpoint_dir, load_model))
+
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
     
     cls_loss = gluon.loss.SoftmaxCrossEntropyLoss()
