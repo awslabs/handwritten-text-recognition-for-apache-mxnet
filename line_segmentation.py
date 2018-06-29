@@ -108,14 +108,14 @@ def concat_predictions(preds):
     '''
     return nd.concat(*preds, dim=1)
 
-anchor_layers = 4
+anchor_layers = 7
 
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
         super(SSD, self).__init__(**kwargs)
-        self.anchor_sizes = [[.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
+        self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
         #[[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]]
-        self.anchor_ratios = [[10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]] 
+        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]] 
         self.num_classes = num_classes
 
         with self.name_scope():
