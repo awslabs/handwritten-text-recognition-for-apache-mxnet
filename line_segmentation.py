@@ -21,7 +21,6 @@ np.seterr(all='raise')
 import multiprocessing
 
 GPU_COUNT = 4
-ctx = [mx.gpu(i) for i in range(GPU_COUNT)]
 mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
@@ -38,109 +37,115 @@ save_every_n = 50
 # For fine_tuning:
 #    python line_segmentation.py -p ssd_550.params 
 
-def make_cnn():
-    '''
-    Create the feature extraction network of the SSD based on resnet34.
-    '''
-    pretrained = resnet34_v1(pretrained=True, ctx=ctx)
-    pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
-    first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
-    
-    body = gluon.nn.HybridSequential()
-    with body.name_scope():
-        first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-        first_layer.initialize(mx.init.Normal(), ctx=ctx)
-        first_layer.weight.set_data(first_weights)
-        body.add(first_layer)
-        body.add(*pretrained.features[1:-3])
-        body.hybridize()
-    return body
-
-def class_predictor(num_anchors, num_classes):
-    '''
-    Creates the category prediction network (takes input from each downsampled feature)
-    '''
-    return gluon.nn.Conv2D(num_anchors * (num_classes + 1), 3, padding=1)
-
-def box_predictor(num_anchors):
-    '''
-    Creates the bounding box prediction network (takes input from each downsampled feature)
-    '''
-    pred = gluon.nn.HybridSequential()
-    with pred.name_scope():
-        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=(3, 3), padding=1))
-        pred.add(gluon.nn.BatchNorm())
-
-        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
-        pred.add(gluon.nn.BatchNorm())
-
-        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
-        pred.add(gluon.nn.BatchNorm())
-
-        pred.add(gluon.nn.Conv2D(channels=num_anchors * 4, kernel_size=3, padding=1))
-
-    pred.hybridize()
-    return pred
-
-def down_sample(num_filters):
-    '''
-    Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
-    downsample the image features by half.
-    '''
-    out = gluon.nn.HybridSequential()
-    for _ in range(2):
-        out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
-        out.add(gluon.nn.BatchNorm(in_channels=num_filters))
-        out.add(gluon.nn.Activation('relu'))
-    out.add(gluon.nn.MaxPool2D(2))
-    return out
-
-def flatten_prediction(pred):
-    '''
-    Helper function to flatten the predicted bounding boxes and categories
-    '''
-    return nd.flatten(nd.transpose(pred, axes=(0, 2, 3, 1)))
-
-def concat_predictions(preds):
-    '''
-    Helper function to concatenate the predicted bounding boxes and categories
-    from different anchor box predictions
-    '''
-    return nd.concat(*preds, dim=1)
-
-anchor_layers = 7
-
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
         super(SSD, self).__init__(**kwargs)
         self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
-        #[[.75, .79], [.79, .84], [.81, .85], [.85, .89], [.88, .961]]
-        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]] 
+        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]]
+        self.num_anchors = len(self.anchor_sizes)
         self.num_classes = num_classes
 
         with self.name_scope():
-            self.body, self.downsamples, self.class_preds, self.box_preds = self.get_ssd_model(4, num_classes)
+            self.body, self.downsamples, self.class_preds, self.box_preds = self.get_ssd_model()
             self.downsamples.initialize(mx.init.Normal(), ctx=ctx)
             self.class_preds.initialize(mx.init.Normal(), ctx=ctx)
             self.box_preds.initialize(mx.init.Normal(), ctx=ctx)
 
-    def get_ssd_model(self, num_anchors, num_classes):
+    def get_body(self):
+        '''
+        Create the feature extraction network of the SSD based on resnet34.
+
+        Returns
+        -------
+        network: gluon.nn.HybridSequential
+            The body network for feature extraction based on resnet
+        
+        '''
+        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+        pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
+        first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+        
+        body = gluon.nn.HybridSequential()
+        with body.name_scope():
+            first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
+            first_layer.initialize(mx.init.Normal(), ctx=ctx)
+            first_layer.weight.set_data(first_weights)
+            body.add(first_layer)
+            body.add(*pretrained.features[1:-3])
+        return body
+
+    def get_class_predictor(self, num_anchors_predicted=4):
+        '''
+        Creates the category prediction network (takes input from each downsampled feature)
+
+        Parameters
+        ----------
+        
+        num_anchors_predicted: int, default 4
+            Given n sizes and m ratios, the number of boxes predicted is n+m-1.
+            e.g., sizes=[.1, .2], ratios=[1, 3, 5] the number of anchors predicted is 4.
+
+        Returns
+        -------
+
+        network: gluon.nn.HybridSequential
+            The class predictor network
+        '''
+        return gluon.nn.Conv2D(num_anchors_predicted*(self.num_classes + 1), kernel_size=3, padding=1)
+
+    def get_box_predictor(self, num_anchors_predicted=4):
+        '''
+        Creates the bounding box prediction network (takes input from each downsampled feature)
+        
+        Parameters
+        ----------
+        
+        num_anchors_predicted: int, default 4
+            Given n sizes and m ratios, the number of boxes predicted is n+m-1.
+            e.g., sizes=[.1, .2], ratios=[1, 3, 5] the number of anchors predicted is 4.
+
+        Returns
+        -------
+
+        pred: gluon.nn.HybridSequential
+            The box predictor network
+        '''
+        pred = gluon.nn.HybridSequential()
+        with pred.name_scope():
+            pred.add(gluon.nn.Conv2D(channels=num_anchors_predicted*4, kernel_size=3, padding=1))
+        return pred
+
+    def get_down_sampler(self, num_filters):
+        '''
+        Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
+        downsample the image features by half.
+        '''
+        out = gluon.nn.HybridSequential()
+        for _ in range(2):
+            out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
+            out.add(gluon.nn.BatchNorm(in_channels=num_filters))
+            out.add(gluon.nn.Activation('relu'))
+        out.add(gluon.nn.MaxPool2D(2))
+        out.hybridize()
+        return out
+
+    def get_ssd_model(self):
         '''
         Creates the SSD model that includes the image feature, downsample, category
         and bounding boxes prediction networks.
         '''
-        body = make_cnn()
+        body = self.get_body()
         downsamples = gluon.nn.Sequential()
         class_preds = gluon.nn.Sequential()
         box_preds = gluon.nn.Sequential()
 
-        downsamples.add(down_sample(128))
-        downsamples.add(down_sample(128))
-        downsamples.add(down_sample(128))
+        downsamples.add(self.get_down_sampler(128))
+        downsamples.add(self.get_down_sampler(128))
+        downsamples.add(self.get_down_sampler(128))
 
-        for scale in range(anchor_layers):
-            class_preds.add(class_predictor(num_anchors, num_classes))
-            box_preds.add(box_predictor(num_anchors))
+        for scale in range(self.num_anchors):
+            class_preds.add(self.get_class_predictor())
+            box_preds.add(self.get_box_predictor())
 
         return body, downsamples, class_preds, box_preds
 
@@ -154,33 +159,38 @@ class SSD(gluon.Block):
         predicted_boxes = []
         predicted_classes = []
 
-        for i in range(anchor_layers):
+        for i in range(self.num_anchors):
             default_anchors.append(MultiBoxPrior(x, sizes=self.anchor_sizes[i], ratios=self.anchor_ratios[i]))
-            predicted_boxes.append(flatten_prediction(self.box_preds[i](x)))
-            predicted_classes.append(flatten_prediction(self.class_preds[i](x)))
-            if i < 3:
+            predicted_boxes.append(self._flatten_prediction(self.box_preds[i](x)))
+            predicted_classes.append(self._flatten_prediction(self.class_preds[i](x)))
+            if i < len(self.downsamples):
                 x = self.downsamples[i](x)
             elif i == 3:
                 x = nd.Pooling(x, global_pool=True, pool_type='max', kernel=(4, 4))
-
         return default_anchors, predicted_classes, predicted_boxes
 
     def forward(self, x):
         default_anchors, predicted_classes, predicted_boxes = self.ssd_forward(x)
         # we want to concatenate anchors, class predictions, box predictions from different layers
-        anchors = concat_predictions(default_anchors)
-        box_preds = concat_predictions(predicted_boxes)
-        class_preds = concat_predictions(predicted_classes)
+        anchors = nd.concat(*default_anchors, dim=1)
+        box_preds = nd.concat(*predicted_boxes, dim=1)
+        class_preds = nd.concat(*predicted_classes, dim=1)
         class_preds = nd.reshape(class_preds, shape=(0, -1, self.num_classes + 1))
         return anchors, class_preds, box_preds
-    
-def training_targets(default_anchors, class_predicts, labels):
-    '''
-    Helper function to obtain the bounding boxes from the anchors.
-    '''
-    class_predicts = nd.transpose(class_predicts, axes=(0, 2, 1))
-    box_target, box_mask, cls_target = MultiBoxTarget(default_anchors, labels, class_predicts)
-    return box_target, box_mask, cls_target
+
+    def _flatten_prediction(self, pred):
+        '''
+        Helper function to flatten the predicted bounding boxes and categories
+        '''
+        return nd.flatten(nd.transpose(pred, axes=(0, 2, 3, 1)))
+
+    def training_targets(default_anchors, class_predicts, labels):
+        '''
+        Helper function to obtain the bounding boxes from the anchors.
+        '''
+        class_predicts = nd.transpose(class_predicts, axes=(0, 2, 1))
+        box_target, box_mask, cls_target = MultiBoxTarget(default_anchors, labels, class_predicts)
+        return box_target, box_mask, cls_target
 
 class SmoothL1Loss(gluon.loss.Loss):
     '''
@@ -270,6 +280,40 @@ def transform(image, label):
     return image, label_padded
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, update_metric, save_cnn):
+    '''
+    Run one epoch to train or test the SSD network
+    
+    Parameters
+    ----------
+        
+    e: int
+        The epoch number
+
+    network: nn.Gluon.HybridSequential
+        The SSD network
+
+    dataloader: gluon.data.DataLoader
+        The train or testing dataloader that is wrapped around the iam_dataset
+    
+    log_dir: Str
+        The directory to store the log files for mxboard
+
+    print_name: Str
+        Name to print for associating with the data. usually this will be "train" and "test"
+    
+    update_cnn: bool
+        Boolean to indicate whether or not the CNN should be updated. Update_cnn should only be set to true for the training data
+
+    save_cnn: bool
+        Boolean to indicate whether or not to save the CNN. 
+
+    Returns
+    -------
+
+    network: gluon.nn.HybridSequential
+        The class predictor network
+    '''
+
     total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
     for i, (X, Y) in enumerate(dataloader):
         X = gluon.utils.split_and_load(X, ctx)
@@ -279,7 +323,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
             losses = []
             for x, y in zip(X, Y):
                 default_anchors, class_predictions, box_predictions = network(x)
-                box_target, box_mask, cls_target = training_targets(default_anchors, class_predictions, y)
+                box_target, box_mask, cls_target = network.training_targets(default_anchors, class_predictions, y)
                 # losses
                 loss_class = cls_loss(class_predictions, cls_target)
                 loss_box = box_loss(box_predictions, box_target, box_mask)
@@ -347,6 +391,8 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("-g", "--cpu_count", default=4,
+                        help="Number of GPUs to use")
 
     parser.add_argument("-b", "--expand_bb_scale", default=0.05,
                         help="Scale to expand the bounding box")
@@ -381,6 +427,10 @@ if __name__ == "__main__":
                         help="Model to load from")
 
     args = parser.parse_args()
+    gpu_count = args.cpu_count
+
+    ctx = [mx.gpu(i) for i in range(gpu_count)]
+
     expand_bb_scale = float(args.expand_bb_scale)
     min_c = float(args.min_c)
     overlap_thres = float(args.overlap_thres)
@@ -397,6 +447,7 @@ if __name__ == "__main__":
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
     load_model = args.load_model
 
+
     train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
 
@@ -407,6 +458,7 @@ if __name__ == "__main__":
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 
     net = SSD(2)
+    net.hybridize()
     if load_model is not None:
         net.load_parameters("{}/{}".format(checkpoint_dir, load_model))
 
