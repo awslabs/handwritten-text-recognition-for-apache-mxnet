@@ -30,18 +30,22 @@ print_every_n = 5
 send_image_every_n = 20
 save_every_n = 50
 
-# Last run python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 200 --epoch 1001 --checkpoint_name ssd_1000.params
-
 # To run:
-#     python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 751 --checkpoint_name ssd_750.params
+#     python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401 --checkpoint_name ssd_400.params
 # For fine_tuning:
 #    python line_segmentation.py -p ssd_550.params 
 
 class SSD(gluon.Block):
     def __init__(self, num_classes, **kwargs):
         super(SSD, self).__init__(**kwargs)
+
+        # Seven sets of anchor boxes are defined. For each set, n=2 sizes and m=3 ratios are defined.
+        # Four anchor boxes (n + m - 1) are generated: 2 square anchor boxes based on the n=2 sizes and 2 rectanges based on
+        # the sizes and the ratios. See https://discuss.mxnet.io/t/question-regarding-ssd-algorithm/1307 for more information.
+        
         self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
-        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [10, 8, 6], [9, 7, 5], [7, 5, 3], [6, 4, 2], [5, 3, 1]]
+        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [1, 6, 8], [1, 5, 7], [1, 6, 8], [1, 7, 9], [1, 7, 10]]
+
         self.num_anchors = len(self.anchor_sizes)
         self.num_classes = num_classes
 
@@ -54,6 +58,8 @@ class SSD(gluon.Block):
     def get_body(self):
         '''
         Create the feature extraction network of the SSD based on resnet34.
+        The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
+        of the original resnet.
 
         Returns
         -------
@@ -64,6 +70,7 @@ class SSD(gluon.Block):
         pretrained = resnet34_v1(pretrained=True, ctx=ctx)
         pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
         first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+        # First weights could be replaced with individual channels.
         
         body = gluon.nn.HybridSequential()
         with body.name_scope():
@@ -74,14 +81,14 @@ class SSD(gluon.Block):
             body.add(*pretrained.features[1:-3])
         return body
 
-    def get_class_predictor(self, num_anchors_predicted=4):
+    def get_class_predictor(self, num_anchors_predicted):
         '''
         Creates the category prediction network (takes input from each downsampled feature)
 
         Parameters
         ----------
         
-        num_anchors_predicted: int, default 4
+        num_anchors_predicted: int
             Given n sizes and m ratios, the number of boxes predicted is n+m-1.
             e.g., sizes=[.1, .2], ratios=[1, 3, 5] the number of anchors predicted is 4.
 
@@ -93,14 +100,14 @@ class SSD(gluon.Block):
         '''
         return gluon.nn.Conv2D(num_anchors_predicted*(self.num_classes + 1), kernel_size=3, padding=1)
 
-    def get_box_predictor(self, num_anchors_predicted=4):
+    def get_box_predictor(self, num_anchors_predicted):
         '''
         Creates the bounding box prediction network (takes input from each downsampled feature)
         
         Parameters
         ----------
         
-        num_anchors_predicted: int, default 4
+        num_anchors_predicted: int
             Given n sizes and m ratios, the number of boxes predicted is n+m-1.
             e.g., sizes=[.1, .2], ratios=[1, 3, 5] the number of anchors predicted is 4.
 
@@ -144,8 +151,9 @@ class SSD(gluon.Block):
         downsamples.add(self.get_down_sampler(128))
 
         for scale in range(self.num_anchors):
-            class_preds.add(self.get_class_predictor())
-            box_preds.add(self.get_box_predictor())
+            num_anchors_predicted = len(self.anchor_sizes[0]) + len(self.anchor_ratios[0]) - 1
+            class_preds.add(self.get_class_predictor(num_anchors_predicted))
+            box_preds.add(self.get_box_predictor(num_anchors_predicted))
 
         return body, downsamples, class_preds, box_preds
 
@@ -184,7 +192,7 @@ class SSD(gluon.Block):
         '''
         return nd.flatten(nd.transpose(pred, axes=(0, 2, 3, 1)))
 
-    def training_targets(default_anchors, class_predicts, labels):
+    def training_targets(self, default_anchors, class_predicts, labels):
         '''
         Helper function to obtain the bounding boxes from the anchors.
         '''
@@ -233,8 +241,8 @@ def augment_transform(image, label):
             x2 = image_w if x2 > image_w else x2
             y2 = image_h if y2 > image_h else y2
 
-            mean_value = 1.0 #np.mean(data[y1:y2, x1:x2])
-            image[y1:y2, x1:x2] = mean_value
+            # Get the top left pixel of the bounding box
+            image[y1:y2, x1:x2] = image[y1, x1]
                 
     augmented_labels = label[index, :]
     return transform(image*255., augmented_labels)
@@ -251,7 +259,7 @@ def transform(image, label):
     # Resize the image
     image = np.expand_dims(image, axis=2)
     image = mx.nd.array(image)
-    image = resize_short(image, int(700/2))
+    image = resize_short(image, image_size)
     image = image.transpose([2, 0, 1])/255.
 
     # Expand the bounding box by expand_bb_scale
@@ -276,8 +284,69 @@ def transform(image, label):
     label_padded[:label_n, 1:] = label
     label_padded[:label_n, 0] = np.ones(shape=(1, label_n))
     label_padded = mx.nd.array(label_padded)
-    
     return image, label_padded
+
+def generate_output_image(box_predictions, default_anchors, cls_probs, box_target, box_mask, cls_target, x, y):
+    '''
+    Generate the image with the predicted and actual bounding boxes.
+    Parameters
+    ----------
+    box_predictions: nd.array
+        Bounding box predictions relative to the anchor boxes, output of the network
+
+    default_anchors: nd.array
+        Anchors used, output of the network
+    
+    cls_probs: nd.array
+        Output of nd.SoftmaxActivation(nd.transpose(class_predictions, (0, 2, 1)), mode='channel')
+        where class_predictions is the output of the network.
+
+    box_target: nd.array
+        Output classification probabilities from network.training_targets(default_anchors, class_predictions, y)
+
+    box_mask: nd.array
+        Output bounding box predictions from network.training_targets(default_anchors, class_predictions, y) 
+
+    cls_target: nd.array
+        Output targets from network.training_targets(default_anchors, class_predictions, y)
+    
+    x: nd.array
+       The input images
+
+    y: nd.array
+        The actual labels
+
+    Returns
+    -------
+    output_image: np.array
+        The images with the predicted and actual bounding boxes drawn on
+
+    number_of_bbs: int
+        The number of predicting bounding boxes
+    '''
+    output = MultiBoxDetection(*[cls_probs, box_predictions, default_anchors], force_suppress=True, clip=False)
+    output = box_nms(output, overlap_thresh=overlap_thres, valid_thresh=min_c, topk=topk)
+    output = output.asnumpy()
+
+    number_of_bbs = 0
+    predicted_bb = []
+    for b in range(output.shape[0]):
+        predicted_bb_ = output[b, output[b, :, 0] != -1]
+        predicted_bb_ = predicted_bb_[:, 2:]
+        number_of_bbs += predicted_bb_.shape[0]
+        predicted_bb_[:, 2] = predicted_bb_[:, 2] - predicted_bb_[:, 0]
+        predicted_bb_[:, 3] = predicted_bb_[:, 3] - predicted_bb_[:, 1]
+        predicted_bb.append(predicted_bb_)
+        
+    labels = y[:, :, 1:].asnumpy()
+    labels[:, :, 2] = labels[:, :, 2] - labels[:, :, 0]
+    labels[:, :, 3] = labels[:, :, 3] - labels[:, :, 1]
+
+    output_image = draw_boxes_on_image(predicted_bb, labels, x.asnumpy())
+    output_image[output_image<0] = 0
+    output_image[output_image>1] = 1
+
+    return output_image, number_of_bbs
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, update_metric, save_cnn):
     '''
@@ -348,28 +417,11 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
             
         if i == 0 and e % send_image_every_n == 0 and e > 0:
             cls_probs = nd.SoftmaxActivation(nd.transpose(class_predictions, (0, 2, 1)), mode='channel')
-            output = MultiBoxDetection(*[cls_probs, box_predictions, default_anchors], force_suppress=True, clip=False)
-            output = box_nms(output, overlap_thresh=overlap_thres, valid_thresh=min_c, topk=topk)
-            output = output.asnumpy()
-
-            number_of_bbs = 0
-            predicted_bb = []
-            for b in range(output.shape[0]):
-                predicted_bb_ = output[b, output[b, :, 0] != -1]
-                predicted_bb_ = predicted_bb_[:, 2:]
-                number_of_bbs += predicted_bb_.shape[0]
-                predicted_bb_[:, 2] = predicted_bb_[:, 2] - predicted_bb_[:, 0]
-                predicted_bb_[:, 3] = predicted_bb_[:, 3] - predicted_bb_[:, 1]
-                predicted_bb.append(predicted_bb_)
-            labels = y[:, :, 1:].asnumpy()
-            labels[:, :, 2] = labels[:, :, 2] - labels[:, :, 0]
-            labels[:, :, 3] = labels[:, :, 3] - labels[:, :, 1]
-
+            output_image, number_of_bbs = generate_output_image(box_predictions, default_anchors,
+                                                                cls_probs, box_target, box_mask,
+                                                                cls_target, x, y)
+            print("Number of predicted {} BBs = {}".format(print_name, number_of_bbs))
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
-                output_image = draw_boxes_on_image(predicted_bb, labels, x.asnumpy())
-                output_image[output_image<0] = 0
-                output_image[output_image>1] = 1
-                print("Number of predicted {} BBs = {}".format(print_name, number_of_bbs))
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
 
     total_loss = 0
@@ -391,24 +443,26 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-g", "--cpu_count", default=4,
+    parser.add_argument("-g", "--gpu_count", default=4,
                         help="Number of GPUs to use")
 
     parser.add_argument("-b", "--expand_bb_scale", default=0.05,
                         help="Scale to expand the bounding box")
     parser.add_argument("-m", "--min_c", default=0.01,
                         help="Minimum probability to be considered a bounding box (used in box_nms)")
-    parser.add_argument("-o", "--overlap_thres", default=0.2,
+    parser.add_argument("-o", "--overlap_thres", default=0.1,
                         help="Maximum overlap between bounding boxes")
-    parser.add_argument("-t", "--topk", default=20,
+    parser.add_argument("-t", "--topk", default=150,
                         help="Maximum number of bounding boxes on one slide")
     
-    parser.add_argument("-e", "--epochs", default=751,
+    parser.add_argument("-e", "--epochs", default=351,
                         help="Number of epochs to run")
     parser.add_argument("-l", "--learning_rate", default=0.0001,
                         help="Learning rate for training")
     parser.add_argument("-s", "--batch_size", default=32,
                         help="Batch size")
+    parser.add_argument("-w", "--image_size", default=350,
+                        help="Size of the input image (w and h), the value must be less than 700 pixels ")
 
     parser.add_argument("-x", "--random_x_translation", default=0.03,
                         help="Randomly translation the image in the x direction (+ or -)")
@@ -427,7 +481,7 @@ if __name__ == "__main__":
                         help="Model to load from")
 
     args = parser.parse_args()
-    gpu_count = args.cpu_count
+    gpu_count = args.gpu_count
 
     ctx = [mx.gpu(i) for i in range(gpu_count)]
 
@@ -439,6 +493,7 @@ if __name__ == "__main__":
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
     batch_size = int(args.batch_size) * len(ctx)
+    image_size = int(args.image_size)
 
     random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
     random_remove_box = float(args.random_remove_box)
