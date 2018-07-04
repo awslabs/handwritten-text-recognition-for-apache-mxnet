@@ -105,6 +105,7 @@ class IAMDataset(dataset.ArrayDataset):
         Available options: [form, line, word]
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
+    MAX_IMAGE_SIZE_LINE = (150, 2000)
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
@@ -255,6 +256,8 @@ class IAMDataset(dataset.ArrayDataset):
         # reduce the size of form images so that it can fit in memory.
         if self._parse_method in ["form", "form_bb"]:
             im, _ = resize_image(im, self.MAX_IMAGE_SIZE_FORM)
+        if self._parse_method == "line":
+            im, _ = resize_image(im, self.MAX_IMAGE_SIZE_LINE)
         img_arr = np.asarray(im)
         return img_arr 
 
