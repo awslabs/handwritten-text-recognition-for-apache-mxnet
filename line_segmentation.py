@@ -19,8 +19,6 @@ from mxnet.gluon.model_zoo.vision import resnet34_v1
 np.seterr(all='raise')
 
 import multiprocessing
-
-GPU_COUNT = 4
 mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
@@ -142,9 +140,9 @@ class SSD(gluon.Block):
         and bounding boxes prediction networks.
         '''
         body = self.get_body()
-        downsamples = gluon.nn.Sequential()
-        class_preds = gluon.nn.Sequential()
-        box_preds = gluon.nn.Sequential()
+        downsamples = gluon.nn.HybridSequential()
+        class_preds = gluon.nn.HybridSequential()
+        box_preds = gluon.nn.HybridSequential()
 
         downsamples.add(self.get_down_sampler(128))
         downsamples.add(self.get_down_sampler(128))
@@ -502,7 +500,6 @@ if __name__ == "__main__":
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
     load_model = args.load_model
 
-
     train_ds = IAMDataset("form_bb", output_data="bb", output_parse_method="line", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
 
@@ -534,5 +531,4 @@ if __name__ == "__main__":
         if e % print_every_n == 0:
             name1, val1 = cls_metric.get()
             name2, val2 = box_metric.get()
-            print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}, test {3}={4:.6f}, {5}={6:.6f}".format(e, train_loss, test_loss,
-                                                                                                           name1, val1, name2, val2))
+            print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}, test {3}={4:.6f}, {5}={6:.6f}".format(e, train_loss, test_loss, name1, val1, name2, val2))
