@@ -11,7 +11,6 @@ import numpy as np
 from skimage import transform as skimage_tf
 
 from mxnet import nd, autograd, gluon
-from mxnet.image import resize_short
 from mxboard import SummaryWriter
 from mxnet.gluon.model_zoo.vision import resnet34_v1
 np.seterr(all='raise')
@@ -22,9 +21,9 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 
 max_seq_len = 100
-print_every_n = 1
+print_every_n = 5
 save_every_n = 50
-send_image_every_n = 5
+send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
@@ -41,12 +40,12 @@ class EncoderLayer(gluon.Block):
             self.lstm = mx.gluon.rnn.LSTM(hidden_states, lstm_layers, bidirectional=True)
             
     def forward(self, x):
-        x = x.transpose((0,3,1,2))
+        x = x.transpose((0, 3, 1, 2))
         x = x.flatten()
         x = x.split(num_outputs=max_seq_len, axis = 1) # (SEQ_LEN, N, CHANNELS)
         x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
         x = self.lstm(x)
-        x = x.transpose((1, 0, 2)) # (N, SEQ_LEN, HIDDEN_UNITS)
+        x = x.transpose((1, 0, 2)) #(N, SEQ_LEN, HIDDEN_UNITS)
         return x
 
 class Network(gluon.Block):
@@ -59,7 +58,7 @@ class Network(gluon.Block):
             self.net.add(self.get_encoder())
             self.net.add(self.get_decoder())
         #self.net.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
-        
+
     def get_body(self):
         '''
         Create the feature extraction network of the SSD based on resnet34.
@@ -90,7 +89,7 @@ class Network(gluon.Block):
         encoder = gluon.nn.Sequential()
         encoder.add(EncoderLayer())
         encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
         return encoder
     
     def get_decoder(self):
@@ -102,17 +101,11 @@ class Network(gluon.Block):
     def forward(self, x):
         return self.net(x)
 
-def augment_transform(image, label):
-    ty = random.uniform(-random_y_translation, random_y_translation)
-    tx = random.uniform(-random_x_translation, random_x_translation)
-
-    st = skimage_tf.SimilarityTransform(translation=(tx*image.shape[1], ty*image.shape[0]))
-    augmented_image = skimage_tf.warp(image, st, cval=1.0)
-    return transform(augmented_image*255., label)
-
 def transform(image, label):
-    image = np.expand_dims(image, axis=0).astype(np.float32)/255.
-    # image = resize_short(nd.array(image), 50)
+    image = skimage_tf.resize(image, (30, 400), mode='constant')
+    image = np.expand_dims(image, axis=0).astype(np.float32)
+    if image[0, 0, 0] > 1:
+        image = image/255.
     
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
     i = 0
@@ -123,6 +116,14 @@ def transform(image, label):
             label_encoded[i] = alphabet_dict[letter]
             i += 1
     return image, label_encoded
+
+def augment_transform(image, label):
+    ty = random.uniform(-random_y_translation, random_y_translation)
+    tx = random.uniform(-random_x_translation, random_x_translation)
+
+    st = skimage_tf.SimilarityTransform(translation=(tx*image.shape[1], ty*image.shape[0]))
+    augmented_image = skimage_tf.warp(image, st, cval=1.0)
+    return transform(augmented_image*255., label)
 
 def decode(prediction):
     results = []
@@ -160,6 +161,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
             predictions = output.softmax().topk(axis=2).asnumpy()
             decoded_text = decode(predictions)
             output_image = draw_text_on_image(x.asnumpy(), decoded_text)
+            print("{} first decoded text = {}".format(print_name, decoded_text[0]))
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
 
@@ -170,7 +172,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         for x in X:
             step_size += x.shape[0]
         trainer.step(step_size)
-        
+
     total_loss = 0
     for loss in total_losses:
         total_loss += loss.asscalar()
@@ -187,10 +189,9 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
 if __name__ == "__main__":
     gpu_count = 4
     ctx = [mx.gpu(i) for i in range(gpu_count)]
-    expand_bb_scale = 0.05
     
     epochs = 500
-    learning_rate = 0.0001
+    learning_rate = 0.01
     batch_size = 32 * len(ctx)
 
     random_y_translation, random_x_translation = 0.03, 0.03
@@ -204,8 +205,8 @@ if __name__ == "__main__":
 
     test_ds = IAMDataset("line", output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
-
-    train_data = gluon.data.DataLoader(train_ds.transform(transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
+    
+    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 
     net = Network()
@@ -213,7 +214,7 @@ if __name__ == "__main__":
 
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
     
-    ctc_loss = gluon.loss.CTCLoss(weight=0.2)
+    ctc_loss = gluon.loss.CTCLoss()#weight=0.2)
 
     for e in range(epochs):
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 
