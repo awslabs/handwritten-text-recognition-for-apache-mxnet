@@ -20,8 +20,9 @@ mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
 
-max_seq_len = 100
-print_every_n = 5
+#max_seq_len = 100
+max_seq_len = 32
+print_every_n = 1
 save_every_n = 50
 send_image_every_n = 20
 
@@ -32,17 +33,15 @@ alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
 class EncoderLayer(gluon.Block):
-    def __init__(self, **kwargs):
+    def __init__(self, hidden_states=200, lstm_layers=1, **kwargs):
         super(EncoderLayer, self).__init__(**kwargs)
         with self.name_scope():
-            hidden_states = 200
-            lstm_layers = 2
             self.lstm = mx.gluon.rnn.LSTM(hidden_states, lstm_layers, bidirectional=True)
             
     def forward(self, x):
         x = x.transpose((0, 3, 1, 2))
         x = x.flatten()
-        x = x.split(num_outputs=max_seq_len, axis = 1) # (SEQ_LEN, N, CHANNELS)
+        x = x.split(num_outputs=max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
         x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
         x = self.lstm(x)
         x = x.transpose((1, 0, 2)) #(N, SEQ_LEN, HIDDEN_UNITS)
@@ -52,69 +51,118 @@ class Network(gluon.Block):
     def __init__(self, **kwargs):
         super(Network, self).__init__(**kwargs)
         self.p_dropout = 0.5
-        self.net = gluon.nn.Sequential()
-        with self.name_scope():
-            self.net.add(self.get_body())
-            self.net.add(self.get_encoder())
-            self.net.add(self.get_decoder())
-        #self.net.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        self.body = self.get_body()
+        self.encoder1 = self.get_encoder()
+        self.encoder2 = self.get_encoder()
+        # self.encoder3 = self.get_encoder()
+        self.decoder = self.get_decoder()
+        self.downsampler = self.get_down_sampler(32)
+
+    def get_down_sampler(self, num_filters):
+        '''
+        Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
+        downsample the image features by half.
+        '''
+        out = gluon.nn.HybridSequential()
+        for _ in range(2):
+            out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
+            out.add(gluon.nn.BatchNorm(in_channels=num_filters))
+            out.add(gluon.nn.Activation('relu'))
+        out.add(gluon.nn.MaxPool2D(2))
+        out.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        out.hybridize()
+        return out
 
     def get_body(self):
-        '''
-        Create the feature extraction network of the SSD based on resnet34.
-        The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
-        of the original resnet.
+        featurizer = gluon.nn.HybridSequential()
+        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
+        featurizer.add(gluon.nn.BatchNorm())
+        
+        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
+        featurizer.add(gluon.nn.MaxPool2D(pool_size=(2,2), strides=(2,2)))
+        
+        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
+        featurizer.add(gluon.nn.BatchNorm())
+        featurizer.add(gluon.nn.Dropout(self.p_dropout))
+        
+        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
+        featurizer.add(gluon.nn.BatchNorm())
+        featurizer.hybridize()
+        featurizer.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        return featurizer
 
-        Returns
-        -------
-        network: gluon.nn.HybridSequential
-            The body network for feature extraction based on resnet
+    # def get_body(self):
+    #     '''
+    #     Create the feature extraction network of the SSD based on resnet34.
+    #     The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
+    #     of the original resnet.
+
+    #     Returns
+    #     -------
+    #     network: gluon.nn.HybridSequential
+    #         The body network for feature extraction based on resnet
+    #     '''
         
-        '''
-        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
-        pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
-        first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
-        # First weights could be replaced with individual channels.
+    #     pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+    #     pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
+    #     first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+    #     # First weights could be replaced with individual channels.
         
-        body = gluon.nn.HybridSequential()
-        with body.name_scope():
-            first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=ctx)
-            first_layer.weight.set_data(first_weights)
-            body.add(first_layer)
-            body.add(*pretrained.features[1:-3])
-        return body
+    #     body = gluon.nn.HybridSequential()
+    #     with body.name_scope():
+    #         first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
+    #         first_layer.initialize(mx.init.Normal(), ctx=ctx)
+    #         first_layer.weight.set_data(first_weights)
+    #         body.add(first_layer)
+    #         body.add(*pretrained.features[1:-9])
+    #     return body
 
     def get_encoder(self):
         encoder = gluon.nn.Sequential()
         encoder.add(EncoderLayer())
         encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        encoder.collect_params().initialize(mx.init.Normal(), ctx=ctx)
         return encoder
     
     def get_decoder(self):
         alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
-        decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        decoder.collect_params().initialize(mx.init.Normal(), ctx=ctx)
         return decoder
 
     def forward(self, x):
-        return self.net(x)
+        features1 = self.body(x)
+        features2 = self.downsampler(features1)
+        # features3 = self.downsampler(features2)
+
+        hs1 = self.encoder1(features1)
+        hs2 = self.encoder2(features2)
+        hs = nd.concat(*[hs1, hs2], dim=1)
+
+        # hs3 = self.encoder3(features3)
+        # hs = nd.concat(*[hs1, hs2, hs3], dim=1)
+
+        output = self.decoder(hs)
+        return output
 
 def transform(image, label):
-    image = skimage_tf.resize(image, (30, 400), mode='constant')
+    image = skimage_tf.resize(image, (30, 150), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
     
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
     i = 0
-    for word in label:
-        # if i >= max_seq_len:
-        #     break
-        for letter in word:
-            label_encoded[i] = alphabet_dict[letter]
-            i += 1
+    for letter in label[0]:
+        label_encoded[i] = alphabet_dict[letter]
+        i += 1
+
+    # for word in label:
+    #     # if i >= max_seq_len:
+    #     #     break
+    #     for letter in word:
+    #         label_encoded[i] = alphabet_dict[letter]
+    #         i += 1
     return image, label_encoded
 
 def augment_transform(image, label):
@@ -140,23 +188,67 @@ def decode(prediction):
     words = [''.join(word) for word in results]
     return words
 
+# def run_epoch_multi(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
+#     total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
+#     for i, (X, Y) in enumerate(dataloader):
+#         X = gluon.utils.split_and_load(X, ctx)
+#         Y = gluon.utils.split_and_load(Y, ctx)
+
+#         with autograd.record():
+#             losses = []
+#             for x, y in zip(X, Y):
+#                 output = network(x)
+#                 loss_ctc = ctc_loss(output, y)
+#                 loss_ctc = (y != -1).sum(axis=1)*loss_ctc
+#                 losses.append(loss_ctc)
+
+#         if update_network:
+#             for loss in losses:
+#                 loss.backward()
+#         if i == 0 and e % send_image_every_n == 0 and e > 0:
+#             predictions = output.softmax().topk(axis=2).asnumpy()
+#             decoded_text = decode(predictions)
+#             output_image = draw_text_on_image(x.asnumpy(), decoded_text)
+#             print("{} first decoded text = {}".format(print_name, decoded_text[0]))
+#             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
+#                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
+
+#         for index, loss in enumerate(losses):
+#             total_losses[index] += loss.mean()/len(ctx)
+
+#         step_size = 0
+#         for x in X:
+#             step_size += x.shape[0]
+#         trainer.step(step_size)
+
+#     total_loss = 0
+#     for loss in total_losses:
+#         total_loss += loss.asscalar()
+#     epoch_loss = float(total_loss)/len(dataloader)
+
+#     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
+#         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
+
+#     if save_network and e % save_every_n == 0 and e > 0:
+#         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
+
+#     return epoch_loss
+
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
-    total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
-    for i, (X, Y) in enumerate(dataloader):
-        X = gluon.utils.split_and_load(X, ctx)
-        Y = gluon.utils.split_and_load(Y, ctx)
+    total_loss = nd.zeros(1, ctx)
+    for i, (x, y) in enumerate(dataloader):
+        x = x.as_in_context(ctx)
+        y = y.as_in_context(ctx)
 
         with autograd.record():
-            losses = []
-            for x, y in zip(X, Y):
-                output = network(x)
-                loss_ctc = ctc_loss(output, y)
-                loss_ctc = (y != -1).sum(axis=1)*loss_ctc
-                losses.append(loss_ctc)
+            output = network(x)
+            loss_ctc = ctc_loss(output, y)
+            loss_ctc = (y != -1).sum(axis=1)*loss_ctc
 
         if update_network:
-            for loss in losses:
-                loss.backward()
+            loss_ctc.backward()
+            trainer.step(x.shape[0])
+
         if i == 0 and e % send_image_every_n == 0 and e > 0:
             predictions = output.softmax().topk(axis=2).asnumpy()
             decoded_text = decode(predictions)
@@ -165,18 +257,9 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
 
-        for index, loss in enumerate(losses):
-            total_losses[index] += loss.mean()/len(ctx)
+        total_loss += loss_ctc.mean()
 
-        step_size = 0
-        for x in X:
-            step_size += x.shape[0]
-        trainer.step(step_size)
-
-    total_loss = 0
-    for loss in total_losses:
-        total_loss += loss.asscalar()
-    epoch_loss = float(total_loss)/len(dataloader)
+    epoch_loss = float(total_loss.asscalar())/len(dataloader)
 
     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
@@ -185,14 +268,15 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
 
     return epoch_loss
+
     
 if __name__ == "__main__":
-    gpu_count = 4
-    ctx = [mx.gpu(i) for i in range(gpu_count)]
+    gpu_count = 1
+    ctx = mx.gpu(0) #[mx.gpu(i) for i in range(gpu_count)]
     
     epochs = 500
-    learning_rate = 0.01
-    batch_size = 32 * len(ctx)
+    learning_rate = 0.0001
+    batch_size = 32# * len(ctx)
 
     random_y_translation, random_x_translation = 0.03, 0.03
 
@@ -200,21 +284,21 @@ if __name__ == "__main__":
     checkpoint_dir = "model_checkpoint"
     checkpoint_name = "handwriting.params"
 
-    train_ds = IAMDataset("line", output_data="text", train=True)
+    train_ds = IAMDataset("word", output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
 
-    test_ds = IAMDataset("line", output_data="text", train=False)
+    test_ds = IAMDataset("word", output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
-    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
-    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
+    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
+    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
 
     net = Network()
     net.hybridize()
 
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
     
-    ctc_loss = gluon.loss.CTCLoss()#weight=0.2)
+    ctc_loss = gluon.loss.CTCLoss(weight=0.2)
 
     for e in range(epochs):
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 

@@ -106,6 +106,7 @@ class IAMDataset(dataset.ArrayDataset):
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
     MAX_IMAGE_SIZE_LINE = (150, 2000)
+    MAX_IMAGE_SIZE_WORD = (30, 140)
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
@@ -253,11 +254,15 @@ class IAMDataset(dataset.ArrayDataset):
     
     def _pre_process_image(self, img_in):
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
+        if np.size(im) == 1: # skip if the image data is corrupt.
+            return None
         # reduce the size of form images so that it can fit in memory.
         if self._parse_method in ["form", "form_bb"]:
             im, _ = resize_image(im, self.MAX_IMAGE_SIZE_FORM)
         if self._parse_method == "line":
             im, _ = resize_image(im, self.MAX_IMAGE_SIZE_LINE)
+        if self._parse_method == "word":
+            im, _ = resize_image(im, self.MAX_IMAGE_SIZE_WORD)
         img_arr = np.asarray(im)
         return img_arr 
 
@@ -440,6 +445,8 @@ class IAMDataset(dataset.ArrayDataset):
                     image_id = os.path.join(tmp_id_split[0], tmp_id_split[0] + "-" + tmp_id_split[1], tmp_id)
                 image_filename = os.path.join(self._root, self._parse_method.split("_")[0], image_id + ".png")
                 image_arr = self._pre_process_image(image_filename)
+                if image_arr is None:
+                    continue
                 output_data = self._get_output_data(item, height, width)
                 if self._parse_method == "form_bb":
                     image_arr, output_data = self._crop_and_resize_form_bb(item, image_arr, output_data, height, width)
