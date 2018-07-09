@@ -8,6 +8,7 @@ import string
 import mxnet as mx
 import numpy as np
 from skimage import transform as skimage_tf
+from skimage import exposure
 
 from mxnet import nd, autograd, gluon
 from mxboard import SummaryWriter
@@ -150,9 +151,15 @@ def augment_transform(image, label):
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
 
-    st = skimage_tf.SimilarityTransform(translation=(tx*image.shape[1], ty*image.shape[0]))
-    augmented_image = skimage_tf.warp(image, st, cval=1.0)
+    sx = random.uniform(1 - random_y_scaling, 1 + random_y_scaling)
+    sy = random.uniform(1 - random_x_scaling, 1 + random_x_scaling)
 
+    s = random.uniform(-random_shearing, random_shearing)
+
+    st = skimage_tf.AffineTransform(scale=(sx, sy),
+                                    shear=s,
+                                    translation=(tx*image.shape[1], ty*image.shape[0]))
+    augmented_image = skimage_tf.warp(image, st, cval=1.0)
     return transform(augmented_image*255., label)
 
 def decode(prediction):
@@ -169,52 +176,6 @@ def decode(prediction):
         results.append(result)
     words = [''.join(word) for word in results]
     return words
-
-# def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
-#     total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
-#     for i, (X, Y) in enumerate(dataloader):
-#         X = gluon.utils.split_and_load(X, ctx)
-#         Y = gluon.utils.split_and_load(Y, ctx)
-
-#         with autograd.record():
-#             losses = []
-#             for x, y in zip(X, Y):
-#                 output = network(x)
-#                 loss_ctc = ctc_loss(output, y)
-#                 loss_ctc = (y != -1).sum(axis=1)*loss_ctc
-#                 losses.append(loss_ctc)
-
-#         if update_network:
-#             for loss in losses:
-#                 loss.backward()
-#         if i == 0 and e % send_image_every_n == 0 and e > 0:
-#             predictions = output.softmax().topk(axis=2).asnumpy()
-#             decoded_text = decode(predictions)
-#             output_image = draw_text_on_image(x.asnumpy(), decoded_text)
-#             print("{} first decoded text = {}".format(print_name, decoded_text[0]))
-#             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
-#                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
-
-#         for index, loss in enumerate(losses):
-#             total_losses[index] += loss.mean()/len(ctx)
-
-#         step_size = 0
-#         for x in X:
-#             step_size += x.shape[0]
-#         trainer.step(step_size)
-
-#     total_loss = 0
-#     for loss in total_losses:
-#         total_loss += loss.asscalar()
-#     epoch_loss = float(total_loss)/len(dataloader)
-
-#     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
-#         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
-
-#     if save_network and e % save_every_n == 0 and e > 0:
-#         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
-
-#     return epoch_loss
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
     total_loss = nd.zeros(1, ctx)
@@ -257,14 +218,20 @@ if __name__ == "__main__":
                         help="Number of epochs to run")
     parser.add_argument("-l", "--learning_rate", default=0.0001,
                         help="Learning rate for training")
-    parser.add_argument("-s", "--batch_size", default=128,
+    parser.add_argument("-s", "--batch_size", default=64,
                         help="Batch size")
 
     parser.add_argument("-x", "--random_x_translation", default=0.03,
                         help="Randomly translation the image in the x direction (+ or -)")
     parser.add_argument("-y", "--random_y_translation", default=0.03,
                         help="Randomly translation the image in the y direction (+ or -)")
-    
+    parser.add_argument("-j", "--random_x_scaling", default=0.10,
+                        help="Randomly scale the image in the x direction")
+    parser.add_argument("-k", "--random_y_scaling", default=0.10,
+                        help="Randomly scale the image in the y direction")
+    parser.add_argument("-p", "--random_shearing", default=0.5,
+                        help="Randomly shear the image in radians (+ or -)")
+
     parser.add_argument("-d", "--log_dir", default="./logs",
                         help="Directory to store the log files")
     parser.add_argument("-c", "--checkpoint_dir", default="model_checkpoint",
@@ -277,14 +244,16 @@ if __name__ == "__main__":
     
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
-    batch_size = int(args.batch_size)# * len(ctx)
+    batch_size = int(args.batch_size)
     
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
     batch_size = int(args.batch_size)
 
     random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
-
+    random_y_scaling, random_x_scaling = float(args.random_y_scaling), float(args.random_x_scaling)
+    random_shearing = float(args.random_shearing)
+    
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
 
