@@ -1,7 +1,6 @@
 import time
 import random
 import os
-import cv2
 import matplotlib.pyplot as plt
 import argparse
 import string
@@ -22,9 +21,9 @@ from utils.iam_dataset import IAMDataset
 
 #max_seq_len = 100
 max_seq_len = 32
-print_every_n = 1
+print_every_n = 5
 save_every_n = 50
-send_image_every_n = 20
+send_image_every_n = 10
 
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
@@ -56,7 +55,7 @@ class Network(gluon.Block):
         self.encoder2 = self.get_encoder()
         # self.encoder3 = self.get_encoder()
         self.decoder = self.get_decoder()
-        self.downsampler = self.get_down_sampler(32)
+        self.downsampler = self.get_down_sampler(64)
 
     def get_down_sampler(self, num_filters):
         '''
@@ -74,60 +73,42 @@ class Network(gluon.Block):
         return out
 
     def get_body(self):
-        featurizer = gluon.nn.HybridSequential()
-        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
-        featurizer.add(gluon.nn.BatchNorm())
-        
-        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
-        featurizer.add(gluon.nn.MaxPool2D(pool_size=(2,2), strides=(2,2)))
-        
-        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
-        featurizer.add(gluon.nn.BatchNorm())
-        featurizer.add(gluon.nn.Dropout(self.p_dropout))
-        
-        featurizer.add(gluon.nn.Conv2D(kernel_size=(3,3), padding=(1,1), channels=32, activation="relu"))
-        featurizer.add(gluon.nn.BatchNorm())
-        featurizer.hybridize()
-        featurizer.collect_params().initialize(mx.init.Normal(), ctx=ctx)
-        return featurizer
+        '''
+        Create the feature extraction network of the SSD based on resnet34.
+        The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
+        of the original resnet.
 
-    # def get_body(self):
-    #     '''
-    #     Create the feature extraction network of the SSD based on resnet34.
-    #     The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
-    #     of the original resnet.
-
-    #     Returns
-    #     -------
-    #     network: gluon.nn.HybridSequential
-    #         The body network for feature extraction based on resnet
-    #     '''
+        Returns
+        -------
+        network: gluon.nn.HybridSequential
+            The body network for feature extraction based on resnet
+        '''
         
-    #     pretrained = resnet34_v1(pretrained=True, ctx=ctx)
-    #     pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
-    #     first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
-    #     # First weights could be replaced with individual channels.
+        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+        pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
+        first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+        # First weights could be replaced with individual channels.
         
-    #     body = gluon.nn.HybridSequential()
-    #     with body.name_scope():
-    #         first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-    #         first_layer.initialize(mx.init.Normal(), ctx=ctx)
-    #         first_layer.weight.set_data(first_weights)
-    #         body.add(first_layer)
-    #         body.add(*pretrained.features[1:-9])
-    #     return body
+        body = gluon.nn.HybridSequential()
+        with body.name_scope():
+            first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
+            first_layer.initialize(mx.init.Normal(), ctx=ctx)
+            first_layer.weight.set_data(first_weights)
+            body.add(first_layer)
+            body.add(*pretrained.features[1:-4])
+        return body
 
     def get_encoder(self):
         encoder = gluon.nn.Sequential()
         encoder.add(EncoderLayer())
         encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
         return encoder
     
     def get_decoder(self):
         alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
-        decoder.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
         return decoder
 
     def forward(self, x):
@@ -146,7 +127,7 @@ class Network(gluon.Block):
         return output
 
 def transform(image, label):
-    image = skimage_tf.resize(image, (30, 150), mode='constant')
+    # image = skimage_tf.resize(image, (30, 150), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
@@ -171,6 +152,7 @@ def augment_transform(image, label):
 
     st = skimage_tf.SimilarityTransform(translation=(tx*image.shape[1], ty*image.shape[0]))
     augmented_image = skimage_tf.warp(image, st, cval=1.0)
+
     return transform(augmented_image*255., label)
 
 def decode(prediction):
@@ -188,7 +170,7 @@ def decode(prediction):
     words = [''.join(word) for word in results]
     return words
 
-# def run_epoch_multi(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
+# def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
 #     total_losses = [nd.zeros(1, ctx_i) for ctx_i in ctx]
 #     for i, (X, Y) in enumerate(dataloader):
 #         X = gluon.utils.split_and_load(X, ctx)
@@ -269,20 +251,42 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
 
     return epoch_loss
 
-    
 if __name__ == "__main__":
-    gpu_count = 1
-    ctx = mx.gpu(0) #[mx.gpu(i) for i in range(gpu_count)]
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-e", "--epochs", default=501,
+                        help="Number of epochs to run")
+    parser.add_argument("-l", "--learning_rate", default=0.0001,
+                        help="Learning rate for training")
+    parser.add_argument("-s", "--batch_size", default=128,
+                        help="Batch size")
+
+    parser.add_argument("-x", "--random_x_translation", default=0.03,
+                        help="Randomly translation the image in the x direction (+ or -)")
+    parser.add_argument("-y", "--random_y_translation", default=0.03,
+                        help="Randomly translation the image in the y direction (+ or -)")
     
-    epochs = 500
-    learning_rate = 0.0001
-    batch_size = 32# * len(ctx)
+    parser.add_argument("-d", "--log_dir", default="./logs",
+                        help="Directory to store the log files")
+    parser.add_argument("-c", "--checkpoint_dir", default="model_checkpoint",
+                        help="Directory to store the checkpoints")
+    parser.add_argument("-n", "--checkpoint_name", default="handwriting.params",
+                        help="Name to store the checkpoints")
+    args = parser.parse_args()
 
-    random_y_translation, random_x_translation = 0.03, 0.03
+    ctx = mx.gpu(0)
+    
+    epochs = int(args.epochs)
+    learning_rate = float(args.learning_rate)
+    batch_size = int(args.batch_size)# * len(ctx)
+    
+    epochs = int(args.epochs)
+    learning_rate = float(args.learning_rate)
+    batch_size = int(args.batch_size)
 
-    log_dir = "./logs"
-    checkpoint_dir = "model_checkpoint"
-    checkpoint_name = "handwriting.params"
+    random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
+
+    log_dir = args.log_dir
+    checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
 
     train_ds = IAMDataset("word", output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
@@ -290,7 +294,7 @@ if __name__ == "__main__":
     test_ds = IAMDataset("word", output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
-    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
+    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
 
     net = Network()
@@ -305,5 +309,5 @@ if __name__ == "__main__":
                                update_network=True, save_network=True)
         test_loss = run_epoch(e, net, test_data, trainer, log_dir, print_name="test", 
                               update_network=False, save_network=False)
-        if e % print_every_n == 0: # and e > 0:
+        if e % print_every_n == 0 and e > 0:
             print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}".format(e, train_loss, test_loss))
