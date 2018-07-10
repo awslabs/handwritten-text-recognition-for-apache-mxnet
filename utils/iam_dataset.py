@@ -105,7 +105,7 @@ class IAMDataset(dataset.ArrayDataset):
         Available options: [form, line, word]
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
-    MAX_IMAGE_SIZE_LINE = (150, 2000)
+    MAX_IMAGE_SIZE_LINE = (30, 400)
     MAX_IMAGE_SIZE_WORD = (30, 140)
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
