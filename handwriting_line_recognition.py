@@ -47,13 +47,17 @@ class EncoderLayer(gluon.Block):
         return x
 
 class Network(gluon.Block):
-    def __init__(self, **kwargs):
+    def __init__(self, num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1, **kwargs):
         super(Network, self).__init__(**kwargs)
         self.p_dropout = 0.5
-        self.body = self.get_body()
-        self.encoder1 = self.get_encoder()
-        self.encoder2 = self.get_encoder()
-        # self.encoder3 = self.get_encoder()
+        self.num_downsamples = num_downsamples
+        self.body = self.get_body(resnet_layer_id=resnet_layer_id)
+
+        self.encoders = gluon.nn.Sequential()
+        
+        for _ in range(self.num_downsamples):
+            encoder = self.get_encoder(lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
+            self.encoders.add(encoder)
         self.decoder = self.get_decoder()
         self.downsampler = self.get_down_sampler(64)
 
@@ -72,7 +76,7 @@ class Network(gluon.Block):
         out.hybridize()
         return out
 
-    def get_body(self):
+    def get_body(self, resnet_layer_id):
         '''
         Create the feature extraction network of the SSD based on resnet34.
         The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
@@ -95,12 +99,12 @@ class Network(gluon.Block):
             first_layer.initialize(mx.init.Normal(), ctx=ctx)
             first_layer.weight.set_data(first_weights)
             body.add(first_layer)
-            body.add(*pretrained.features[1:-4])
+            body.add(*pretrained.features[1:-resnet_layer_id])
         return body
 
-    def get_encoder(self):
+    def get_encoder(self, lstm_hidden_states, lstm_layers):
         encoder = gluon.nn.Sequential()
-        encoder.add(EncoderLayer())
+        encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
         encoder.add(gluon.nn.Dropout(self.p_dropout))
         encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
         return encoder
@@ -112,17 +116,15 @@ class Network(gluon.Block):
         return decoder
 
     def forward(self, x):
-        features1 = self.body(x)
-        features2 = self.downsampler(features1)
-        # features3 = self.downsampler(features2)
-
-        hs1 = self.encoder1(features1)
-        hs2 = self.encoder2(features2)
-        hs = nd.concat(*[hs1, hs2], dim=1)
-
-        # hs3 = self.encoder3(features3)
-        # hs = nd.concat(*[hs1, hs2, hs3], dim=1)
-
+        features = self.body(x)
+        hidden_states = []
+        hs = self.encoders[0](features)
+        hidden_states.append(hs)
+        for i, _ in enumerate(range(self.num_downsamples - 1)):
+            features = self.downsampler(features)
+            hs = self.encoders[i+1](features)
+            hidden_states.append(hs)
+        hs = nd.concat(*hidden_states, dim=1)
         output = self.decoder(hs)
         return output
 
@@ -186,7 +188,6 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         with autograd.record():
             output = network(x)
             loss_ctc = ctc_loss(output, y)
-            # loss_ctc = (y != -1).sum(axis=1)*loss_ctc # TODO: Remove this
 
         if update_network:
             loss_ctc.backward()
@@ -214,10 +215,25 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("-g", "--gpu_id", default=0,
+                        help="ID of the GPU to use")
+
+    parser.add_argument("-u", "--num_downsamples", default=2,
+                        help="Number of downsamples for the res net")
+    parser.add_argument("-q", "--resnet_layer_id", default=4,
+                        help="layer ID to obtain features from the resnet34")
+    parser.add_argument("-a", "--lstm_hidden_states", default=600,
+                        help="Number of hidden states for the LSTM encoder")
+    parser.add_argument("-o", "--lstm_layers", default=1,
+                        help="Number of layers for the LSTM")
+
     parser.add_argument("-e", "--epochs", default=501,
                         help="Number of epochs to run")
     parser.add_argument("-l", "--learning_rate", default=0.0001,
                         help="Learning rate for training")
+    parser.add_argument("-w", "--lr_scale", default=1,
+                        help="Number of layers for the LSTM")
+
     parser.add_argument("-s", "--batch_size", default=32,
                         help="Batch size")
 
@@ -240,10 +256,17 @@ if __name__ == "__main__":
                         help="Name to store the checkpoints")
     args = parser.parse_args()
 
-    ctx = mx.gpu(0)
+    gpu_id = int(args.gpu_id)
+    ctx = mx.gpu(gpu_id)
+    
+    num_downsamples = int(args.num_downsamples)
+    resnet_layer_id = int(args.resnet_layer_id)
+    lstm_hidden_states = int(args.lstm_hidden_states)
+    lstm_layers = int(args.lstm_layers)
     
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
+    lr_scale = float(args.lr_scale)
     batch_size = int(args.batch_size)
     
     epochs = int(args.epochs)
@@ -266,10 +289,13 @@ if __name__ == "__main__":
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
 
-    net = Network()
+    net = Network(num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1)
     net.hybridize()
 
-    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, })
+    schedule = mx.lr_scheduler.FactorScheduler(step=30, factor=lr_scale)
+    schedule.base_lr = 1
+
+    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule})
     
     ctc_loss = gluon.loss.CTCLoss(weight=0.2)
 
