@@ -222,7 +222,7 @@ if __name__ == "__main__":
                         help="Number of downsamples for the res net")
     parser.add_argument("-q", "--resnet_layer_id", default=4,
                         help="layer ID to obtain features from the resnet34")
-    parser.add_argument("-a", "--lstm_hidden_states", default=600,
+    parser.add_argument("-a", "--lstm_hidden_states", default=200,
                         help="Number of hidden states for the LSTM encoder")
     parser.add_argument("-o", "--lstm_layers", default=1,
                         help="Number of layers for the LSTM")
@@ -232,7 +232,9 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--learning_rate", default=0.0001,
                         help="Learning rate for training")
     parser.add_argument("-w", "--lr_scale", default=1,
-                        help="Number of layers for the LSTM")
+                        help="Amount the divide the learning rate")
+    parser.add_argument("-r", "--lr_period", default=30,
+                        help="Divides the learning rate after period")
 
     parser.add_argument("-s", "--batch_size", default=32,
                         help="Batch size")
@@ -267,12 +269,9 @@ if __name__ == "__main__":
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
     lr_scale = float(args.lr_scale)
+    lr_period = float(args.lr_period)
     batch_size = int(args.batch_size)
     
-    epochs = int(args.epochs)
-    learning_rate = float(args.learning_rate)
-    batch_size = int(args.batch_size)
-
     random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
     random_y_scaling, random_x_scaling = float(args.random_y_scaling), float(args.random_x_scaling)
     random_shearing = float(args.random_shearing)
@@ -289,11 +288,11 @@ if __name__ == "__main__":
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
 
-    net = Network(num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1)
+    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
     net.hybridize()
 
-    schedule = mx.lr_scheduler.FactorScheduler(step=30, factor=lr_scale)
-    schedule.base_lr = 1
+    schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
+    schedule.base_lr = learning_rate
 
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule})
     
