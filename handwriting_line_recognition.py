@@ -32,6 +32,11 @@ alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
 class EncoderLayer(gluon.Block):
+    '''
+    The encoder layer takes the image features from a CNN. The image features are transposed so that the LSTM 
+    slices of the image features can be sequentially fed into the LSTM from left to right (and back via the
+    bidirectional LSTM). 
+    '''
     def __init__(self, hidden_states=200, lstm_layers=1, **kwargs):
         super(EncoderLayer, self).__init__(**kwargs)
         with self.name_scope():
@@ -65,6 +70,17 @@ class Network(gluon.Block):
         '''
         Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
         downsample the image features by half.
+        
+        Parameters
+        ----------
+        num_filters: int
+            To select the number of filters in used the downsampling convolutional layer.
+
+        Returns
+        -------
+        network: gluon.nn.HybridSequential
+            The downsampler network that decreases the width and height of the image features by half.
+        
         '''
         out = gluon.nn.HybridSequential()
         for _ in range(2):
@@ -81,6 +97,12 @@ class Network(gluon.Block):
         Create the feature extraction network of the SSD based on resnet34.
         The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
         of the original resnet.
+        
+        Parameters
+        ----------
+        resnet_layer_id: int
+            The resnet_layer_id specifies which layer to take from 
+            the bottom of the network.
 
         Returns
         -------
@@ -103,6 +125,24 @@ class Network(gluon.Block):
         return body
 
     def get_encoder(self, lstm_hidden_states, lstm_layers):
+        '''
+        Creates an LSTM to learn the sequential component of the image features.
+        
+        Parameters
+        ----------
+        
+        lstm_hidden_states: int
+            The number of hidden states in the LSTM
+        
+        lstm_layers: int
+            The number of layers to stack the LSTM
+
+        Returns
+        -------
+        
+        network: gluon.nn.Sequential
+            The encoder network to learn the sequential information of the image features
+        '''
         encoder = gluon.nn.Sequential()
         encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
         encoder.add(gluon.nn.Dropout(self.p_dropout))
@@ -110,6 +150,9 @@ class Network(gluon.Block):
         return encoder
     
     def get_decoder(self):
+        '''
+        Creates a network to convert the output of the encoder into characters.
+        '''
         alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
         decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
@@ -129,27 +172,32 @@ class Network(gluon.Block):
         return output
 
 def transform(image, label):
+    '''
+    This function resizes the input image and converts so that it could be fed into the network.
+    Furthermore, the label (text) is one-hot encoded.
+    '''
     image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
     
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
-    # i = 0
-    # for letter in label[0]:
-    #     label_encoded[i] = alphabet_dict[letter]
-    #     i += 1
 
     i = 0
     for word in label:
-        # if i >= max_seq_len:
-        #     break
         for letter in word:
             label_encoded[i] = alphabet_dict[letter]   
             i += 1
     return image, label_encoded
 
 def augment_transform(image, label):
+    '''
+    This function randomly:
+        - translates the input image by +-width_range and +-height_range (percentage).
+        - scales the image by y_scaling and x_scaling (percentage)
+        - shears the image by shearing_factor (radians)
+    '''
+
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
 
@@ -165,6 +213,9 @@ def augment_transform(image, label):
     return transform(augmented_image*255., label)
 
 def decode(prediction):
+    '''
+    Returns the string given one-hot encoded vectors.
+    '''
     results = []
     for word in prediction:
         result = []
@@ -180,6 +231,40 @@ def decode(prediction):
     return words
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
+    '''
+    Run one epoch to train or test the CNN-biLSTM network
+    
+    Parameters
+    ----------
+        
+    e: int
+        The epoch number
+
+    network: nn.Gluon.HybridSequential
+        The CNN-biLSTM network
+
+    dataloader: gluon.data.DataLoader
+        The train or testing dataloader that is wrapped around the iam_dataset
+    
+    log_dir: Str
+        The directory to store the log files for mxboard
+
+    print_name: Str
+        Name to print for associating with the data. usually this will be "train" and "test"
+    
+    update_network: bool
+        Boolean to indicate whether or not the network should be updated. Update_network should only be set to true for the training data
+
+    save_network: bool
+        Boolean to indicate whether or not to save the network. 
+
+    Returns
+    -------
+    
+    epoch_loss: float
+        The loss of the current epoch
+    '''
+
     total_loss = nd.zeros(1, ctx)
     for i, (x, y) in enumerate(dataloader):
         x = x.as_in_context(ctx)
