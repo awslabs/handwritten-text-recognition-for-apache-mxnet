@@ -167,7 +167,7 @@ class Network(gluon.Block):
             features = self.downsampler(features)
             hs = self.encoders[i+1](features)
             hidden_states.append(hs)
-        hs = nd.concat(*hidden_states, dim=1)
+        hs = nd.concat(*hidden_states, dim=2)
         output = self.decoder(hs)
         return output
 

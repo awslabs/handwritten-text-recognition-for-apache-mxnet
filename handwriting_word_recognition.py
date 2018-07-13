@@ -119,7 +119,7 @@ class Network(gluon.Block):
 
         hs1 = self.encoder1(features1)
         hs2 = self.encoder2(features2)
-        hs = nd.concat(*[hs1, hs2], dim=1)
+        hs = nd.concat(*[hs1, hs2], dim=2)
 
         # hs3 = self.encoder3(features3)
         # hs = nd.concat(*[hs1, hs2, hs3], dim=1)
