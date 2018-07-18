@@ -7,14 +7,20 @@ from autocorrect import spell as simple_spellcheck
 from handwriting_line_recognition import Network as BiLSTMNetwork
 from handwriting_line_recognition import transform
 from handwriting_line_recognition import decode as topK_decode
+from handwriting_line_recognition import alphabet_dict
+
 from utils.noisy_sentences_dataset import Noisy_sentences_dataset
+
 from utils.max_flow import FlowNetwork
 
 def get_ns(train):
     ctx = mx.gpu(0)
     network = BiLSTMNetwork()
-    network.load_parameters("model_checkpoint/handwriting_line.params", ctx=ctx)
-    
+    # params = mx.ndarray.load("model_checkpoint/temp.params")
+    # print(params.keys())
+    # network.load_params("model_checkpoint/temp.params", ctx=ctx)
+    # import pdb; pdb.set_trace();    
+
     def noise_source_transform(image, text):
         image, _ = transform(image, text)
         image = nd.array(image)
@@ -52,39 +58,18 @@ def simple_spellchecker(prob):
         output += simple_spellcheck(word) + " "
     return output
 
-def max_flow(prob):
-    fn = FlowNetwork()
-    fn.addVertex('source', True, False)
-    fn.addVertex('drain', False, True)
-    import pdb; pdb.set_trace();    
-    for i in range(prob.shape[1]):
-        for j in range(prob.shape[2]):
-            vertex = str(i) + "_" + str(j)
-            fn.addVertex(vertex)
-            if i > 0:
-                for k in range(prob.shape[2]):
-                    previous_vertex = str(i - 1) + "_" + str(k)
-                    if prob[0, k, j] > 0.2:
-                        fn.addEdge(previous_vertex, vertex, prob[0, k, j])
-                    # edges.append((previous_vertex, vertex))
-            else:
-                fn.addEdge("source", vertex, prob[0, i, j])
-                # edges.append(("source", vertex))
-     
-    for i in range(prob.shape[2]):
-        fn.addEdge('199_' + str(i), 'drain', 1)
-    predicted = fn.calculateMaxFlow()
-    import pdb; pdb.set_trace();
-
-    predicted_text = topK_decode(np.argmax(prob, axis=2))[0]
-    
-    output = ""
-    for word in predicted_text.split(" "):
-        output += simple_spellcheck(word) + " "
-    return output
 
 if __name__ == "__main__":
     train_ns = get_ns(train=True)
+
+    from hmmlearn.hmm import MultinomialHMM
+    hmm = MultinomialHMM(n_components=3)
+    
+    for i in range(len(train_ns)):
+        prob, text = train_ns[i]
+        predicted_text = topK_decode(np.argmax(prob, axis=2))[0]
+        import pdb; pdb.set_trace();        
+    
     test_ns = get_ns(train=False)
     
     distances = []
@@ -98,10 +83,10 @@ if __name__ == "__main__":
         simple_spellchecker_text = simple_spellchecker(prob)
         ss_distance = levenshtein_distance(simple_spellchecker_text, text)
 
-        max_flow_text = max_flow(prob)
-        mf_distance = levenshtein_distance(max_flow_text, text)
+        # max_flow_text = max_flow(prob)
+        # mf_distance = levenshtein_distance(max_flow_text, text)
 
-        distances.append([topk_distance, ss_distance, mf_distance])
+        distances.append([topk_distance, ss_distance])#, mf_distance])
 
     distances = np.array(distances)
     mean_distance = np.mean(distances, axis=0)

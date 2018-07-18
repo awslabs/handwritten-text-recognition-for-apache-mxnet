@@ -1,106 +1,96 @@
 # source: https://brilliant.org/wiki/ford-fulkerson-algorithm/
 
-class Vertex:
-    def __init__(self, name, source=False, sink=False):
-        self.name = name
-        self.source = source
-        self.sink = sink
+# def get_max_flow_graph(prob):
+#     fn = FlowNetwork()
+#     fn.add_vertex('source')
+#     fn.add_vertex('drain')
+#     for i in range(prob.shape[0]):
+#         for j in range(prob.shape[1]):
+#             vertex = str(i) + "_" + str(j)
+#             fn.add_vertex(vertex)
+#             if i > 0:
+#                 for k in range(prob.shape[1]):
+#                     previous_vertex = str(i - 1) + "_" + str(k)
+#                     fn.add_edge(previous_vertex, vertex, w=prob[k, i])
+#             else:
+#                 fn.add_edge("source", vertex, w=prob[j, i])
+                
+#     for i in range(prob.shape[1]):
+#         fn.add_edge(str(prob.shape[0] - 1)+"_" + str(i), 'drain', w=0)
+#     flow = fn.max_flow(source="source", sink="drain")
 
-class Edge:
-    def __init__(self, start, end, capacity):
-        self.start = start
-        self.end = end
-        self.capacity = capacity
-        self.flow = 0
-        self.returnEdge = None
+# def max_flow(prob):
+#     '''
+#     Uses a maximum flow network to obtain multiple possible candidates for the sentence.
+#     1) Parse each word based spaces (if max probability is a space)
+#     2) Build a max flow network for each word
+#     3) Obtain candidates for each word and compare them to a spell checker.
+#     '''
+#     word_probs = []
+#     for i in range(prob.shape[1]):
+#         prob_i = prob[0, i, :]
+#         if np.argmax(prob_i) == alphabet_dict[" "]:
+#             probs = np.array(word_probs)
+#             get_max_flow_graph(probs)
+#         word_probs.append(prob_i)
+        
+#     predicted_text = topK_decode(np.argmax(prob, axis=2))[0]
+    
+#     output = ""
+#     for word in predicted_text.split(" "):
+#         output += simple_spellcheck(word) + " "
+#     return output
 
-class FlowNetwork:
+class Edge(object):  
+    def __init__(self, u, v, w):
+        self.source = u
+        self.sink = v
+        self.capacity = w
+
+    def __repr__(self):
+        return "%s->%s:%s" % (self.source, self.sink, self.capacity)
+
+
+class FlowNetwork(object):  
     def __init__(self):
-        self.vertices = []
-        self.network = {}
+        self.adj = {}
+        self.flow = {}
 
-    def getSource(self):
-        for vertex in self.vertices:
-            if vertex.source == True:
-                return vertex
-        return None
+    def add_vertex(self, vertex):
+        self.adj[vertex] = []
 
-    def getSink(self):
-        for vertex in self.vertices:
-            if vertex.sink == True:
-                return vertex
-        return None
+    def get_edges(self, v):
+        return self.adj[v]
 
-    def getVertex(self, name):
-        for vertex in self.vertices:
-            if name == vertex.name:
-                return vertex
+    def add_edge(self, u, v, w=0):
+        if u == v:
+            raise ValueError("u == v")
+        edge = Edge(u, v, w)
+        redge = Edge(v, u, 0)
+        edge.redge = redge
+        redge.redge = edge
+        self.adj[u].append(edge)
+        self.adj[v].append(redge)
+        self.flow[edge] = 0
+        self.flow[redge] = 0
 
-    def vertexInNetwork(self, name):
-        for vertex in self.vertices:
-            if vertex.name == name:
-                return True
-        return False
-
-    def getEdges(self):
-        allEdges = []
-        for vertex in self.network:
-            for edge in self.network[vertex]:
-                allEdges.append(edge)
-        return allEdges
-
-    def addVertex(self, name, source=False, sink=False):
-        if source == True and sink == True:
-            return "Vertex cannot be source and sink"
-        if self.vertexInNetwork(name):
-            return "Duplicate vertex"
-        if source == True:
-            if self.getSource() != None:
-                return "Source already Exists"
-        if sink == True:
-            if self.getSink() != None:
-                return "Sink already Exists"
-        newVertex = Vertex(name, source, sink)
-        self.vertices.append(newVertex)
-        self.network[newVertex.name] = []
-
-    def addEdge(self, start, end, capacity):
-        if start == end:
-            return "Cannot have same start and end"
-        if self.vertexInNetwork(start) == False:
-            return "Start vertex has not been added yet"
-        if self.vertexInNetwork(end) == False:
-            return "End vertex has not been added yet"
-        newEdge = Edge(start, end, capacity)
-        returnEdge = Edge(end, start, 0)
-        newEdge.returnEdge = returnEdge
-        returnEdge.returnEdge = newEdge
-        vertex = self.getVertex(start)
-        self.network[vertex.name].append(newEdge)
-        returnVertex = self.getVertex(end)
-        self.network[returnVertex.name].append(returnEdge)
-
-    def getPath(self, start, end, path):
-        if start == end:
+    def find_path(self, source, sink, path):
+        if source == sink:
             return path
-        for edge in self.network[start]:
-            residualCapacity = edge.capacity - edge.flow
-            if residualCapacity > 0 and not (edge, residualCapacity) in path:
-                result = self.getPath(edge.end, end, path + [(edge, residualCapacity)])
-                if result != None:
+        for edge in self.get_edges(source):
+            residual = edge.capacity - self.flow[edge]
+            if residual > 0 and edge not in path:
+                result = self.find_path(edge.sink, sink, path + [edge])
+                if result is not None:
                     return result
 
-    def calculateMaxFlow(self):
-        source = self.getSource()
-        sink = self.getSink()
-        if source == None or sink == None:
-            return "Network does not have source and sink"
-        path = self.getPath(source.name, sink.name, [])
-        while path != None:
-            flow = min(edge[1] for edge in path)
-            for edge, res in path:
-                edge.flow += flow
-                edge.returnEdge.flow -= flow
-            path = self.getPath(source.name, sink.name, [])
-        import pdb; pdb.set_trace();        
-        return sum(edge.flow for edge in self.network[source.name])
+    def max_flow(self, source, sink):
+        path = self.find_path(source, sink, [])
+        while path is not None:
+            residuals = [edge.capacity - self.flow[edge] for edge in path]
+            flow = min(residuals)
+            for edge in path:
+                self.flow[edge] += flow
+                self.flow[edge.redge] -= flow
+            path = self.find_path(source, sink, [])
+        return sum(self.flow[edge] for edge in self.get_edges(source))
