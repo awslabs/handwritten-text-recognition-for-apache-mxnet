@@ -27,20 +27,20 @@ class Ngram_dataset(dataset.ArrayDataset):
         if not os.path.isdir(root):
             os.makedirs(root)
         ds_location = os.path.join(root, "ngram_{}.pickle".format(name))
-        # if os.path.isfile(ds_location):
-        #     self.ngram_data = pickle.load(open(ds_location, 'rb'))
-        # else:
-        #     self.ngram_data = self._get_data()
-        #     pickle.dump(self.ngram_data, open(ds_location, 'wb'), protocol=2)
-        data = self._get_data()
+        if os.path.isfile(ds_location):
+            data = pickle.load(open(ds_location, 'rb'))
+        else:
+            data = self._get_data()
+            pickle.dump(data, open(ds_location, 'wb'), protocol=2)
+        # data = self._get_data()
         super(Ngram_dataset, self).__init__(data)
 
-    def _get_n_grams(self, text_arr, idx, pre):
+    def _get_n_grams(self, text_arr, idx, pre, n):
         output = []
         if pre:
-            indexes = range(idx - self.n, idx)
+            indexes = range(idx - n, idx)
         else:
-            indexes = range(idx + 1, idx + self.n + 1)
+            indexes = range(idx + 1, idx + n + 1)
         for i in indexes:
             if 0 <= i and i < len(text_arr):
                 word = text_arr[i]
@@ -127,22 +127,25 @@ class Ngram_dataset(dataset.ArrayDataset):
             text_arr = self._remove_empty_words(text_arr)
 
             for j in range(len(noisy_text_arr)):
-                pre_values_j = self._get_n_grams(text_arr, j, pre=True)
-                post_values_j = self._get_n_grams(text_arr, j, pre=False)
+                pre_values_j = self._get_n_grams(noisy_text_arr, j, pre=True, n=3)
+                post_values_j = self._get_n_grams(noisy_text_arr, j, pre=False, n=3)
 
                 for k in range(len(text_arr)):
-                    pre_values_k = self._get_n_grams(text_arr, k, pre=True)
-                    post_values_k = self._get_n_grams(text_arr, k, pre=False)
+                    pre_values_k = self._get_n_grams(text_arr, k, pre=True, n=3)
+                    post_values_k = self._get_n_grams(text_arr, k, pre=False, n=3)
 
                     if self._is_ngram_similar(pre_values_j, pre_values_k) and self._is_ngram_similar(post_values_j, post_values_k):
                         noisy_value = noisy_text_arr[j]
                         actual_value = text_arr[k]
-                        ngrams.append([pre_values_j, post_values_j, noisy_value, actual_value])
+
+                        pre_values = self._get_n_grams(text_arr, k, pre=True, n=self.n)
+                        post_values = self._get_n_grams(text_arr, k, pre=False, n=self.n)
+                        ngrams.append([pre_values, post_values, noisy_value, actual_value])
         return ngrams
                 
     def __getitem__(self, idx):
         pre_values, post_values, noisy_value, actual_value = self._data[0][idx]
         return pre_values, post_values, noisy_value, actual_value
 
-    # def __len__(self):
-    #     return len(self._data)
+    def __len__(self):
+        return len(self._data[0])
