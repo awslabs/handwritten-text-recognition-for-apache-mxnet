@@ -20,10 +20,9 @@ mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
 
-max_seq_len = 100
 print_every_n = 5
 save_every_n = 50
-send_image_every_n = 10
+send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
@@ -31,7 +30,14 @@ from utils.draw_text_on_image import draw_text_on_image
 alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
+ctx = mx.gpu(0)
+
 class EncoderLayer(gluon.Block):
+    '''
+    The encoder layer takes the image features from a CNN. The image features are transposed so that the LSTM 
+    slices of the image features can be sequentially fed into the LSTM from left to right (and back via the
+    bidirectional LSTM). 
+    '''
     def __init__(self, hidden_states=200, lstm_layers=1, **kwargs):
         super(EncoderLayer, self).__init__(**kwargs)
         with self.name_scope():
@@ -47,41 +53,78 @@ class EncoderLayer(gluon.Block):
         return x
 
 class Network(gluon.Block):
+    '''
+    The CNN-biLSTM to recognise handwriting text given an image of handwriten text.
+
+    Parameters
+    ----------
+
+    num_downsamples: int, default 2
+        The number of times to downsample the image features. Each time the features are downsampled, a new LSTM
+        is created. 
+
+    resnet_layer_id: int, default 4
+        The layer ID to obtain features from the resnet34
+
+    lstm_hidden_states: int, default 200
+        The number of hidden states used in the LSTMs
+
+    lstm_layers: int, default 1
+        The number of layers of LSTMs to use
+    '''
+    FEATURE_EXTRACTOR_FILTER = 64
     def __init__(self, num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1, **kwargs):
         super(Network, self).__init__(**kwargs)
         self.p_dropout = 0.5
         self.num_downsamples = num_downsamples
-        self.body = self.get_body(resnet_layer_id=resnet_layer_id)
+        with self.name_scope():
+            self.body = self.get_body(resnet_layer_id=resnet_layer_id)
 
-        self.encoders = gluon.nn.Sequential()
-        
-        for _ in range(self.num_downsamples):
-            encoder = self.get_encoder(lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
-            self.encoders.add(encoder)
-        self.decoder = self.get_decoder()
-        self.downsampler = self.get_down_sampler(64)
+            self.encoders = gluon.nn.Sequential()
+            with self.encoders.name_scope():
+                for _ in range(self.num_downsamples):
+                    encoder = self.get_encoder(lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
+                    self.encoders.add(encoder)
+            self.decoder = self.get_decoder()
+            self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
 
     def get_down_sampler(self, num_filters):
         '''
         Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
         downsample the image features by half.
+        
+        Parameters
+        ----------
+        num_filters: int
+            To select the number of filters in used the downsampling convolutional layer.
+        Returns
+        -------
+        network: gluon.nn.HybridSequential
+            The downsampler network that decreases the width and height of the image features by half.
+        
         '''
         out = gluon.nn.HybridSequential()
-        for _ in range(2):
-            out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
-            out.add(gluon.nn.BatchNorm(in_channels=num_filters))
-            out.add(gluon.nn.Activation('relu'))
-        out.add(gluon.nn.MaxPool2D(2))
-        out.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        with out.name_scope():
+            for _ in range(2):
+                out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
+                out.add(gluon.nn.BatchNorm(in_channels=num_filters))
+                out.add(gluon.nn.Activation('relu'))
+            out.add(gluon.nn.MaxPool2D(2))
+            out.collect_params().initialize(mx.init.Normal(), ctx=ctx)
         out.hybridize()
         return out
 
     def get_body(self, resnet_layer_id):
         '''
-        Create the feature extraction network of the SSD based on resnet34.
+        Create the feature extraction network based on resnet34.
         The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
         of the original resnet.
-
+        
+        Parameters
+        ----------
+        resnet_layer_id: int
+            The resnet_layer_id specifies which layer to take from 
+            the bottom of the network.
         Returns
         -------
         network: gluon.nn.HybridSequential
@@ -103,13 +146,36 @@ class Network(gluon.Block):
         return body
 
     def get_encoder(self, lstm_hidden_states, lstm_layers):
+        '''
+        Creates an LSTM to learn the sequential component of the image features.
+        
+        Parameters
+        ----------
+        
+        lstm_hidden_states: int
+            The number of hidden states in the LSTM
+        
+        lstm_layers: int
+            The number of layers to stack the LSTM
+        Returns
+        -------
+        
+        network: gluon.nn.Sequential
+            The encoder network to learn the sequential information of the image features
+        '''
+
         encoder = gluon.nn.Sequential()
-        encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
-        encoder.add(gluon.nn.Dropout(self.p_dropout))
+        with encoder.name_scope():
+            encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
+            encoder.add(gluon.nn.Dropout(self.p_dropout))
         encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
         return encoder
     
     def get_decoder(self):
+        '''
+        Creates a network to convert the output of the encoder into characters.
+        '''
+
         alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
         decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
@@ -124,32 +190,37 @@ class Network(gluon.Block):
             features = self.downsampler(features)
             hs = self.encoders[i+1](features)
             hidden_states.append(hs)
-        hs = nd.concat(*hidden_states, dim=1)
+        hs = nd.concat(*hidden_states, dim=2)
         output = self.decoder(hs)
         return output
 
 def transform(image, label):
+    '''
+    This function resizes the input image and converts so that it could be fed into the network.
+    Furthermore, the label (text) is one-hot encoded.
+    '''
+
     image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
     
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
-    # i = 0
-    # for letter in label[0]:
-    #     label_encoded[i] = alphabet_dict[letter]
-    #     i += 1
-
     i = 0
     for word in label:
-        # if i >= max_seq_len:
-        #     break
         for letter in word:
             label_encoded[i] = alphabet_dict[letter]   
             i += 1
     return image, label_encoded
 
 def augment_transform(image, label):
+    '''
+    This function randomly:
+        - translates the input image by +-width_range and +-height_range (percentage).
+        - scales the image by y_scaling and x_scaling (percentage)
+        - shears the image by shearing_factor (radians)
+    '''
+
     ty = random.uniform(-random_y_translation, random_y_translation)
     tx = random.uniform(-random_x_translation, random_x_translation)
 
@@ -165,6 +236,10 @@ def augment_transform(image, label):
     return transform(augmented_image*255., label)
 
 def decode(prediction):
+    '''
+    Returns the string given one-hot encoded vectors.
+    '''
+
     results = []
     for word in prediction:
         result = []
@@ -180,6 +255,35 @@ def decode(prediction):
     return words
 
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_network, save_network):
+    '''
+    Run one epoch to train or test the CNN-biLSTM network
+    
+    Parameters
+    ----------
+        
+    e: int
+        The epoch number
+    network: nn.Gluon.HybridSequential
+        The CNN-biLSTM network
+    dataloader: gluon.data.DataLoader
+        The train or testing dataloader that is wrapped around the iam_dataset
+    
+    log_dir: Str
+        The directory to store the log files for mxboard
+    print_name: Str
+        Name to print for associating with the data. usually this will be "train" and "test"
+    
+    update_network: bool
+        Boolean to indicate whether or not the network should be updated. Update_network should only be set to true for the training data
+    save_network: bool
+        Boolean to indicate whether or not to save the network. 
+    Returns
+    -------
+    
+    epoch_loss: float
+        The loss of the current epoch
+    '''
+
     total_loss = nd.zeros(1, ctx)
     for i, (x, y) in enumerate(dataloader):
         x = x.as_in_context(ctx)
@@ -200,6 +304,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
             print("{} first decoded text = {}".format(print_name, decoded_text[0]))
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
+        nd.waitall()
 
         total_loss += loss_ctc.mean()
 
@@ -209,7 +314,7 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
 
     if save_network and e % save_every_n == 0 and e > 0:
-        network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
+        network.save_params("{}/{}".format(checkpoint_dir, checkpoint_name))
 
     return epoch_loss
 
@@ -217,6 +322,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-g", "--gpu_id", default=0,
                         help="ID of the GPU to use")
+
+    parser.add_argument("-t", "--line_or_word", default="line",
+                        help="to choose the handwriting to train on words or lines")
 
     parser.add_argument("-u", "--num_downsamples", default=2,
                         help="Number of downsamples for the res net")
@@ -227,7 +335,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--lstm_layers", default=1,
                         help="Number of layers for the LSTM")
 
-    parser.add_argument("-e", "--epochs", default=501,
+    parser.add_argument("-e", "--epochs", default=121,
                         help="Number of epochs to run")
     parser.add_argument("-l", "--learning_rate", default=0.0001,
                         help="Learning rate for training")
@@ -256,11 +364,20 @@ if __name__ == "__main__":
                         help="Directory to store the checkpoints")
     parser.add_argument("-n", "--checkpoint_name", default="handwriting_line.params",
                         help="Name to store the checkpoints")
+    parser.add_argument("-m", "--load_model", default=None,
+                         help="Name of model to load")
     args = parser.parse_args()
 
     gpu_id = int(args.gpu_id)
     ctx = mx.gpu(gpu_id)
-    
+
+    line_or_word = args.line_or_word
+    assert line_or_word in ["line", "word"], "{} is not a value option in [\"line\", \"word\"]"
+    if line_or_word == "line":
+        max_seq_len = 100
+    else:
+        max_seq_len = 32
+
     num_downsamples = int(args.num_downsamples)
     resnet_layer_id = int(args.resnet_layer_id)
     lstm_hidden_states = int(args.lstm_hidden_states)
@@ -278,11 +395,12 @@ if __name__ == "__main__":
     
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
-
-    train_ds = IAMDataset("line", output_data="text", train=True)
+    load_model = args.load_model
+    
+    train_ds = IAMDataset(line_or_word, output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
 
-    test_ds = IAMDataset("line", output_data="text", train=False)
+    test_ds = IAMDataset(line_or_word, output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
@@ -290,13 +408,15 @@ if __name__ == "__main__":
 
     net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
     net.hybridize()
-
+    if load_model is not None:
+        net.load_parameters(checkpoint_dir + "/" + load_model)
+    
     schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
     schedule.base_lr = learning_rate
 
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule})
     
-    ctc_loss = gluon.loss.CTCLoss(weight=0.2)
+    ctc_loss = gluon.loss.CTCLoss()
 
     for e in range(epochs):
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 
