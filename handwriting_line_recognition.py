@@ -22,7 +22,7 @@ from utils.iam_dataset import IAMDataset
 
 print_every_n = 5
 save_every_n = 50
-send_image_every_n = 2
+send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
@@ -277,6 +277,8 @@ if __name__ == "__main__":
                         help="Directory to store the checkpoints")
     parser.add_argument("-n", "--checkpoint_name", default="handwriting_line.params",
                         help="Name to store the checkpoints")
+    parser.add_argument("-m", "--load_model", default=None,
+                         help="Name of model to load")
     args = parser.parse_args()
 
     gpu_id = int(args.gpu_id)
@@ -306,7 +308,8 @@ if __name__ == "__main__":
     
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
-
+    load_model = args.load_model
+    
     train_ds = IAMDataset(line_or_word, output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
 
@@ -318,7 +321,9 @@ if __name__ == "__main__":
 
     net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
     net.hybridize()
-
+    if load_model is not None:
+        net.load_parameters(checkpoint_dir + "/" + load_model)
+    
     schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
     schedule.base_lr = learning_rate
 
