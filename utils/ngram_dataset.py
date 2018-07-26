@@ -6,23 +6,35 @@ from mxnet.gluon.data import dataset
 class Ngram_dataset(dataset.ArrayDataset):
     '''
     The ngram_dataset takes a noisy_forms_dataset object and converts it into an ngram dataset.
-    That is, for each word i a tuple is created that contains:
-       * n words before
-       * n words after
-       * Noisy word i
-       * The actual word i
+    That is, for each word/characters i a tuple is created that contains:
+       * n words/characters before
+       * n words/characters after
+       * Noisy word/characters i
+       * The actual word/character i
 
     Parameters
     ----------
     passage_ds: Noisy_forms_dataset
         A noisy_forms_dataset object
 
-    name: 
+    name: string
+        An identifier for the temporary save file.
 
+    output_type: string, options: ["word", "character"]
+        Output data in terms of n characters of words
+
+    n: int, default 3
+        The number of characters to output
     '''
-    def __init__(self, passage_ds, name, n=3):
+    def __init__(self, passage_ds, name, output_type, n=3):
         self.passage_ds = passage_ds
         self.n = n
+        
+        output_type_options = ["word", "character"]
+        assert output_type in output_type_options, "{} is not a valid type. Available options: {}".format(
+            output_type, outptu_type_options)
+        self.output_type = output_type
+        
         root = os.path.join("dataset", "noisy_forms")
         if not os.path.isdir(root):
             os.makedirs(root)
@@ -32,7 +44,6 @@ class Ngram_dataset(dataset.ArrayDataset):
         else:
             data = self._get_data()
             pickle.dump(data, open(ds_location, 'wb'), protocol=2)
-        # data = self._get_data()
         super(Ngram_dataset, self).__init__(data)
 
     def _get_n_grams(self, text_arr, idx, pre, n):
@@ -140,7 +151,18 @@ class Ngram_dataset(dataset.ArrayDataset):
 
                         pre_values = self._get_n_grams(text_arr, k, pre=True, n=self.n)
                         post_values = self._get_n_grams(text_arr, k, pre=False, n=self.n)
-                        ngrams.append([pre_values, post_values, noisy_value, actual_value])
+                        if self.output_type == "word":
+                            ngrams.append([pre_values, post_values, noisy_value, actual_value])
+                        elif self.output_type == "character":
+                            noisy_full_string = pre_values + " " + noisy_value + " " + post_value
+                            actual_full_string = pre_values + " " + actual_value + " " + post_value
+                            noisy_index = len(pre_values) + 1
+                            for c in range(len(noisy_value)):
+                                new_pre_value = noisy_full_string[c-self.n:c]
+                                new_post_value = noisy_full_string[c:c+self.n]
+                                new_noisy_value = noisy_full_string[c]
+                                new_actual_value = actual_full_string[c]
+                                ngrams.append([new_pre_value, new_post_values, new_noisy_value, new_actual_value])
         return ngrams
                 
     def __getitem__(self, idx):
