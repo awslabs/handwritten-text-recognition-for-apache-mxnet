@@ -21,7 +21,7 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 
 print_every_n = 5
-save_every_n = 50
+save_every_n = 10
 send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
@@ -29,8 +29,6 @@ from utils.draw_text_on_image import draw_text_on_image
 
 alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
-
-ctx = mx.gpu(0)
 
 class EncoderLayer(gluon.Block):
     '''
@@ -73,10 +71,11 @@ class Network(gluon.Block):
         The number of layers of LSTMs to use
     '''
     FEATURE_EXTRACTOR_FILTER = 64
-    def __init__(self, num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1, **kwargs):
+    def __init__(self, num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1, ctx=mx.gpu(0), **kwargs):
         super(Network, self).__init__(**kwargs)
         self.p_dropout = 0.5
         self.num_downsamples = num_downsamples
+        self.ctx = ctx
         with self.name_scope():
             self.body = self.get_body(resnet_layer_id=resnet_layer_id)
 
@@ -110,7 +109,7 @@ class Network(gluon.Block):
                 out.add(gluon.nn.BatchNorm(in_channels=num_filters))
                 out.add(gluon.nn.Activation('relu'))
             out.add(gluon.nn.MaxPool2D(2))
-            out.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+            out.collect_params().initialize(mx.init.Normal(), ctx=self.ctx)
         out.hybridize()
         return out
 
@@ -131,7 +130,7 @@ class Network(gluon.Block):
             The body network for feature extraction based on resnet
         '''
         
-        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+        pretrained = resnet34_v1(pretrained=True, ctx=self.ctx)
         pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
         first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
         # First weights could be replaced with individual channels.
@@ -139,7 +138,7 @@ class Network(gluon.Block):
         body = gluon.nn.HybridSequential()
         with body.name_scope():
             first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=ctx)
+            first_layer.initialize(mx.init.Normal(), ctx=self.ctx)
             first_layer.weight.set_data(first_weights)
             body.add(first_layer)
             body.add(*pretrained.features[1:-resnet_layer_id])
@@ -168,7 +167,7 @@ class Network(gluon.Block):
         with encoder.name_scope():
             encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
             encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        encoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return encoder
     
     def get_decoder(self):
@@ -178,7 +177,7 @@ class Network(gluon.Block):
 
         alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
-        decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        decoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return decoder
 
     def forward(self, x):
@@ -399,14 +398,14 @@ if __name__ == "__main__":
     
     train_ds = IAMDataset(line_or_word, output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
-
+    
     test_ds = IAMDataset(line_or_word, output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
 
-    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
+    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers, ctx=ctx)
     net.hybridize()
     if load_model is not None:
         net.load_parameters(checkpoint_dir + "/" + load_model)

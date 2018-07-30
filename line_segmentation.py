@@ -34,7 +34,7 @@ save_every_n = 50
 #    python line_segmentation.py -p ssd_550.params 
 
 class SSD(gluon.Block):
-    def __init__(self, num_classes, **kwargs):
+    def __init__(self, num_classes, ctx, **kwargs):
         super(SSD, self).__init__(**kwargs)
 
         # Seven sets of anchor boxes are defined. For each set, n=2 sizes and m=3 ratios are defined.
@@ -46,12 +46,12 @@ class SSD(gluon.Block):
 
         self.num_anchors = len(self.anchor_sizes)
         self.num_classes = num_classes
-
+        self.ctx = ctx
         with self.name_scope():
             self.body, self.downsamples, self.class_preds, self.box_preds = self.get_ssd_model()
-            self.downsamples.initialize(mx.init.Normal(), ctx=ctx)
-            self.class_preds.initialize(mx.init.Normal(), ctx=ctx)
-            self.box_preds.initialize(mx.init.Normal(), ctx=ctx)
+            self.downsamples.initialize(mx.init.Normal(), ctx=self.ctx)
+            self.class_preds.initialize(mx.init.Normal(), ctx=self.ctx)
+            self.box_preds.initialize(mx.init.Normal(), ctx=self.ctx)
 
     def get_body(self):
         '''
@@ -65,7 +65,7 @@ class SSD(gluon.Block):
             The body network for feature extraction based on resnet
         
         '''
-        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+        pretrained = resnet34_v1(pretrained=True, ctx=self.ctx)
         pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
         first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
         # First weights could be replaced with individual channels.
@@ -73,7 +73,7 @@ class SSD(gluon.Block):
         body = gluon.nn.HybridSequential()
         with body.name_scope():
             first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=ctx)
+            first_layer.initialize(mx.init.Normal(), ctx=self.ctx)
             first_layer.weight.set_data(first_weights)
             body.add(first_layer)
             body.add(*pretrained.features[1:-3])
@@ -509,7 +509,7 @@ if __name__ == "__main__":
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard", num_workers=multiprocessing.cpu_count()-2)
 
-    net = SSD(2)
+    net = SSD(2, ctx=ctx)
     net.hybridize()
     if load_model is not None:
         net.load_parameters("{}/{}".format(checkpoint_dir, load_model))
