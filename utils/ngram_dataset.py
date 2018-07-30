@@ -144,25 +144,27 @@ class Ngram_dataset(dataset.ArrayDataset):
                 for k in range(len(text_arr)):
                     pre_values_k = self._get_n_grams(text_arr, k, pre=True, n=3)
                     post_values_k = self._get_n_grams(text_arr, k, pre=False, n=3)
-
                     if self._is_ngram_similar(pre_values_j, pre_values_k) and self._is_ngram_similar(post_values_j, post_values_k):
                         noisy_value = noisy_text_arr[j]
                         actual_value = text_arr[k]
-
                         pre_values = self._get_n_grams(text_arr, k, pre=True, n=self.n)
                         post_values = self._get_n_grams(text_arr, k, pre=False, n=self.n)
                         if self.output_type == "word":
                             ngrams.append([pre_values, post_values, noisy_value, actual_value])
                         elif self.output_type == "character":
-                            noisy_full_string = pre_values + " " + noisy_value + " " + post_value
-                            actual_full_string = pre_values + " " + actual_value + " " + post_value
-                            noisy_index = len(pre_values) + 1
+                            pre_values = [str(a) for a in pre_values]
+                            post_values = [str(a) for a in post_values]
+
+                            noisy_full_string = " ".join(pre_values) + " " + noisy_value + " " + " ".join(post_values)
+                            actual_full_string = " ".join(pre_values) + " " + actual_value + " " + " ".join(post_values)
+                            noisy_index = len(" ".join(pre_values)) + 1
                             for c in range(len(noisy_value)):
-                                new_pre_value = noisy_full_string[c-self.n:c]
-                                new_post_value = noisy_full_string[c:c+self.n]
-                                new_noisy_value = noisy_full_string[c]
-                                new_actual_value = actual_full_string[c]
-                                ngrams.append([new_pre_value, new_post_values, new_noisy_value, new_actual_value])
+                                idx = c + noisy_index
+                                new_pre_values = actual_full_string [idx-self.n:idx]
+                                new_post_values = actual_full_string [idx+1:idx+self.n + 1]
+                                new_noisy_values = noisy_full_string[idx]
+                                new_actual_values = actual_full_string[idx]
+                                ngrams.append([new_pre_values, new_post_values, new_noisy_values, new_actual_values])
         return ngrams
                 
     def __getitem__(self, idx):
