@@ -113,7 +113,7 @@ class IAMDataset(dataset.ArrayDataset):
                  output_parse_method=None,
                  parse_form_by_bb=False):
 
-        _parse_methods = ["form", "form_bb", "line", "word"]
+        _parse_methods = ["form", "form_original", "form_bb", "line", "word"]
         error_message = "{} is not a possible parsing method: {}".format(
             parse_method, _parse_methods)
         assert parse_method in _parse_methods, error_message
@@ -121,7 +121,9 @@ class IAMDataset(dataset.ArrayDataset):
         url_partial = "http://www.fki.inf.unibe.ch/DBs/iamDB/data/{data_type}/{filename}.tgz"
         if self._parse_method == "form":
             self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
-        if self._parse_method == "form_bb":
+        elif self._parse_method == "form_bb":
+            self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
+        elif self._parse_method == "form_original":
             self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
         elif self._parse_method == "line":
             self._data_urls = [url_partial.format(data_type="lines", filename="lines")]
@@ -327,7 +329,7 @@ class IAMDataset(dataset.ArrayDataset):
 
         output_data = []
         if self._output_data == "text":
-            if self._parse_method == "form":
+            if self._parse_method in ["form", "form_bb", "form_original"]:
                 text = ""
                 for line in item.iter('machine-print-line'):
                     text += line.attrib["text"] + "\n"
@@ -437,7 +439,7 @@ class IAMDataset(dataset.ArrayDataset):
             height, width = int(root.attrib["height"]), int(root.attrib["width"])
             for item in root.iter(self._parse_method.split("_")[0]):
                 # Split _ to account for only taking the base "form", "line", "word" that is available in the IAM dataset
-                if self._parse_method in ["form", "form_bb"]:
+                if self._parse_method in ["form", "form_bb", "form_original"]:
                     image_id = item.attrib["id"]
                 else:
                     tmp_id = item.attrib["id"]
@@ -492,7 +494,7 @@ class IAMDataset(dataset.ArrayDataset):
 
         train_subjects = np.concatenate(train_subjects)
         test_subjects = np.concatenate(test_subjects)
-        if self._parse_method in ["form", "form_bb"]:
+        if self._parse_method in ["form", "form_bb", "form_original"]:
         # For the form method, the "subject names" do not match the ones provided
         # in the file. This clause transforms the subject names to match the file.
             new_train_subjects = []

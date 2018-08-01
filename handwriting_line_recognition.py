@@ -21,7 +21,7 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 
 print_every_n = 5
-save_every_n = 10
+save_every_n = 50
 send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
@@ -36,15 +36,16 @@ class EncoderLayer(gluon.Block):
     slices of the image features can be sequentially fed into the LSTM from left to right (and back via the
     bidirectional LSTM). 
     '''
-    def __init__(self, hidden_states=200, lstm_layers=1, **kwargs):
+    def __init__(self, hidden_states=200, lstm_layers=1, max_seq_len=100, **kwargs):
         super(EncoderLayer, self).__init__(**kwargs)
+        self.max_seq_len = max_seq_len
         with self.name_scope():
             self.lstm = mx.gluon.rnn.LSTM(hidden_states, lstm_layers, bidirectional=True)
             
     def forward(self, x):
         x = x.transpose((0, 3, 1, 2))
         x = x.flatten()
-        x = x.split(num_outputs=max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
+        x = x.split(num_outputs=self.max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
         x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
         x = self.lstm(x)
         x = x.transpose((1, 0, 2)) #(N, SEQ_LEN, HIDDEN_UNITS)
@@ -81,11 +82,12 @@ class Network(gluon.Block):
 
             self.encoders = gluon.nn.Sequential()
             with self.encoders.name_scope():
-                for _ in range(self.num_downsamples):
+                for _ in range(0, self.num_downsamples):
                     encoder = self.get_encoder(lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
                     self.encoders.add(encoder)
             self.decoder = self.get_decoder()
-            self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
+            if self.num_downsamples > 1:
+                self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
 
     def get_down_sampler(self, num_filters):
         '''
@@ -185,7 +187,7 @@ class Network(gluon.Block):
         hidden_states = []
         hs = self.encoders[0](features)
         hidden_states.append(hs)
-        for i, _ in enumerate(range(self.num_downsamples - 1)):
+        for i in range(0, self.num_downsamples-1):
             features = self.downsampler(features)
             hs = self.encoders[i+1](features)
             hidden_states.append(hs)
@@ -198,7 +200,6 @@ def transform(image, label):
     This function resizes the input image and converts so that it could be fed into the network.
     Furthermore, the label (text) is one-hot encoded.
     '''
-
     image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
@@ -403,7 +404,7 @@ if __name__ == "__main__":
     print("Number of testing samples: {}".format(len(test_ds)))
     
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
-    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
+    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=4)
 
     net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers, ctx=ctx)
     net.hybridize()
