@@ -6,3 +6,4 @@ credentials.json
 logs/*
 nohup.out
 model_checkpoint/*
+*.bin.gz
