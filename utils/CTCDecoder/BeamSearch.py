@@ -44,12 +44,11 @@ def addBeam(beamState, labeling):
     if labeling not in beamState.entries:
         beamState.entries[labeling] = BeamEntry()
 
-def ctcBeamSearch(mat, classes, lm, k):
+def ctcBeamSearch(mat, classes, lm, k, beamWidth):
     "beam search as described by the paper of Hwang et al. and the paper of Graves et al."
 
     blankIdx = len(classes)
     maxT, maxC = mat.shape
-    beamWidth = 25
 
     # initialise beam state
     last = BeamState()
@@ -73,7 +72,10 @@ def ctcBeamSearch(mat, classes, lm, k):
 	    # in case of non-empty beam
             if labeling:
 		# probability of paths with repeated last char at the end
-                prNonBlank = last.entries[labeling].prNonBlank * mat[t, labeling[-1]]
+                try: 
+                    prNonBlank = last.entries[labeling].prNonBlank * mat[t, labeling[-1]]
+                except FloatingPointError:
+                    prNonBlank = 0
 
 	    # probability of paths ending with a blank
             prBlank = (last.entries[labeling].prTotal) * mat[t, blankIdx]

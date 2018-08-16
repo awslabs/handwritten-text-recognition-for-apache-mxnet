@@ -10,16 +10,20 @@ import re
 from collections import Counter
 from nltk.corpus import brown
 
+from nltk.probability import FreqDist
+from nltk.metrics import edit_distance
+
+from sympound import sympound
+import re
+from weighted_levenshtein import lev
+
 # Source: https://github.com/rameshjesswani/Semantic-Textual-Similarity/blob/master/nlp_basics/nltk/string_similarity.ipynb
 # Source: http://norvig.com/spell-correct.html
-
+    
 class WordSuggestor():
     def __init__(self):
         self.words = Counter(brown.words())
     
-    # def words(self, text):
-    #     return re.findall(r'\w+', text.lower())
-
     def P(self, word): 
         "Probability of `word`."
         N = sum(self.words.values())
@@ -50,57 +54,63 @@ class WordSuggestor():
     def edits2(self, word): 
         "All edits that are two edits away from `word`."
         return (e2 for e1 in self.edits1(word) for e2 in self.edits1(e1))
+
+class OcrDistanceMeasure():
+    def __init__(self):
+        self.substitute_costs = self.make_substitute_costs()
+        self.insertion_costs = self.make_insertion_costs()
+        self.deletion_costs = self.make_deletion_costs()
+
+    def make_substitute_costs(self):
+        #substitute_costs = np.ones((128, 128), dtype=np.float64)
+        substitute_costs = np.loadtxt('models/substitute_costs.txt', dtype=float)
+        return substitute_costs
+    
+    def make_insertion_costs(self):
+        insertion_costs = np.loadtxt('models/insertion_costs.txt', dtype=float)
+        #insertion_costs = np.ones(128, dtype=np.float64)
+        return insertion_costs
+    
+    def make_deletion_costs(self):
+        deletion_costs = np.loadtxt('models/deletion_costs.txt', dtype=float)
+        #deletion_costs = np.ones(128, dtype=np.float64)
+        return deletion_costs
+    
+    def __call__(self, input1, input2):
+        return lev(input1, input2, substitute_costs=self.substitute_costs,
+                  insert_costs=self.insertion_costs,
+                  delete_costs=self.deletion_costs)
     
 class LexiconSearch:
     def __init__(self):
         self.dictionary = enchant.Dict('en')
         self.word_suggestor = WordSuggestor()
-        self.stemmer = PorterStemmer()
-        
+        self.distance_measure = OcrDistanceMeasure()
+                
     def suggest_words(self, word):
-        return list(self.word_suggestor.candidates(word))
-    
-    def levenshtein_distance(self,s1,s2):
-        # nltk already have implemeted function
-        distance_btw_strings = edit_distance(s1,s2)
-        return distance_btw_strings
-    
-    def ngram(self,word,n):
-        grams = list(ngrams(word,n))
-        return grams
-        
-    def check_mistakes_in_sentence(self,sentence):
-        misspelled_words = []
-        self.check.set_text(sentence)
-        
-        for err in self.check:
-            misspelled_words.append(err.word)
+        candidates = list(self.word_suggestor.candidates(word))
+        output = []
+        for word in candidates:
+            if word[0].isupper():
+                output.append(word)
+            else:
+                if self.dictionary.check(word):
+                    output.append(word)
+        return output
             
-        if len(misspelled_words) == 0:
-            print(" No mistakes found")
-        return misspelled_words
-    
-    def jaccard(self,a,b):
-
-        union = list(set(a+b))
-        intersection = list(set(a) - (set(a)-set(b)))
-        jaccard_coeff = float(len(intersection))/len(union)
-        return jaccard_coeff
-
     def minimumEditDistance_spell_corrector(self,word):
-        
-        max_distance = 2
+        max_distance = 3
 
-        if (self.dictionary.check(word)):
+        if (self.dictionary.check(word.lower())):
             return word
 
         suggested_words = self.suggest_words(word)
+        #print("{} | {} ".format(word, suggested_words))
         num_modified_characters = []
         
-        if suggested_words != 0:
-            
+        if len(suggested_words) != 0:
             for sug_words in suggested_words:
-                num_modified_characters.append(self.levenshtein_distance(word,sug_words))
+                num_modified_characters.append(self.distance_measure(word, sug_words))
                 
             minimum_edit_distance = min(num_modified_characters)
             best_arg = num_modified_characters.index(minimum_edit_distance)
@@ -109,40 +119,5 @@ class LexiconSearch:
                 return best_suggestion
             else:
                 return word
-        else:
-            return word
-        
-    def ngram_spell_corrector(self, word):
-        exclude = set(string.punctuation)
-        word_without_punctuation = ''.join(ch for ch in word if ch not in exclude)
-
-        max_distance = 2
-        if word in string.punctuation:
-            return word
-        
-        if (self.dictionary.check(word)):
-            return word
-        suggested_words = self.suggest_words(word)
-        
-        num_modified_characters = []
-       
-        max_jaccard = []
-        list_of_sug_words = []
-        if suggested_words != 0:
-            
-            word_ngrams = self.ngram(word,2)
-
-            for sug_words in suggested_words:
-
-                if (self.levenshtein_distance(word,sug_words)) < 3 :
-
-                    sug_ngrams = self.ngram(sug_words,2)
-                    jac = self.jaccard(word_ngrams,sug_ngrams)
-                    max_jaccard.append(jac)
-                    list_of_sug_words.append(sug_words)
-            highest_jaccard = max(max_jaccard)
-            best_arg = max_jaccard.index(highest_jaccard)
-            word = list_of_sug_words[best_arg]
-            return word
         else:
             return word

@@ -29,7 +29,7 @@ from utils.draw_text_on_image import draw_text_on_image
 
 # import string
 # alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
-alphabet_encoding = ' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+alphabet_encoding = r' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
 class EncoderLayer(gluon.Block):
@@ -354,7 +354,6 @@ class Network2(gluon.Block):
         hs = nd.concat(*hidden_states, dim=2)
         # hs = gluon.nn.Dropout(self.p_dropout)(hs)
         decoded = self.decoder(hs)
-        # decoded = mx.nd.softmax(decoded, axis=2) # mx.nd.tanh(decoded, axis=2) #
         return decoded
 
 def transform(image, label):
@@ -362,7 +361,7 @@ def transform(image, label):
     This function resizes the input image and converts so that it could be fed into the network.
     Furthermore, the label (text) is one-hot encoded.
     '''
-    image = skimage_tf.resize(image, (30, 400), mode='constant')
+    #image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
@@ -370,8 +369,10 @@ def transform(image, label):
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
     i = 0
     for word in label:
+        word = word.replace("&quot", r'"')
+        word = word.replace("&amp", r'&')
         for letter in word:
-            label_encoded[i] = alphabet_dict[letter]   
+            label_encoded[i] = alphabet_dict[letter] 
             i += 1
     return image, label_encoded
 
@@ -458,8 +459,6 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         if update_network:
             loss_ctc.backward()
             trainer.step(x.shape[0])
-            # trainer[1].step(x.shape[0])
-            # trainer[2].step(x.shape[0])
 
         if i == 0 and e % send_image_every_n == 0 and e > 0:
             predictions = output.softmax().topk(axis=2).asnumpy()
@@ -581,10 +580,10 @@ if __name__ == "__main__":
     schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
     schedule.base_lr = learning_rate
 
-    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule})
+    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule, 'clip_gradient': 2})
     
     ctc_loss = gluon.loss.CTCLoss()
-
+    
     for e in range(epochs):
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 
                                update_network=True, save_network=True)
