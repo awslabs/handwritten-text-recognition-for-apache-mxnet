@@ -17,11 +17,11 @@ from nltk.metrics import edit_distance
 from sympound import sympound
 import re
 from weighted_levenshtein import lev
-
-# Source: https://github.com/rameshjesswani/Semantic-Textual-Similarity/blob/master/nlp_basics/nltk/string_similarity.ipynb
-# Source: http://norvig.com/spell-correct.html
     
 class WordSuggestor():
+    '''
+    Code obtained from http://norvig.com/spell-correct.html.
+    '''
     def __init__(self):
         self.words = Counter(brown.words())
     
@@ -57,14 +57,19 @@ class WordSuggestor():
         return (e2 for e1 in self.edits1(word) for e2 in self.edits1(e1))
 
 class OcrDistanceMeasure():
+    # Helper class to obtain a handwriting error weighted edit distance. The weighted edit distance class can be found in
+    # https://github.com/infoscout/weighted-levenshtein.
+    # Substitute_costs.txt, insertion_costs and deletion_costs are calculated in
+    # https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/model_distance.ipynb
+    
     def __init__(self):
         self.substitute_costs = self.make_substitute_costs()
         self.insertion_costs = self.make_insertion_costs()
         self.deletion_costs = self.make_deletion_costs()
 
     def make_substitute_costs(self):
-        #substitute_costs = np.ones((128, 128), dtype=np.float64)
         substitute_costs = np.loadtxt('models/substitute_costs.txt', dtype=float)
+        #substitute_costs = np.ones((128, 128), dtype=np.float64)
         return substitute_costs
     
     def make_insertion_costs(self):
@@ -83,6 +88,9 @@ class OcrDistanceMeasure():
                   delete_costs=self.deletion_costs)
     
 class LexiconSearch:
+    '''
+    Lexicon search was based on https://github.com/rameshjesswani/Semantic-Textual-Similarity/blob/master/nlp_basics/nltk/string_similarity.ipynb
+    '''
     def __init__(self):
         self.dictionary = enchant.Dict('en')
         self.word_suggestor = WordSuggestor()
@@ -106,7 +114,6 @@ class LexiconSearch:
             return word
 
         suggested_words = self.suggest_words(word)
-        #print("{} | {} ".format(word, suggested_words))
         num_modified_characters = []
         
         if len(suggested_words) != 0:

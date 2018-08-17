@@ -198,7 +198,6 @@ def transform(image, label):
     This function resizes the input image and converts so that it could be fed into the network.
     Furthermore, the label (text) is one-hot encoded.
     '''
-    #image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
