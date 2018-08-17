@@ -1,4 +1,5 @@
 import nltk
+import numpy as np
 from nltk.metrics import *
 from nltk.util import ngrams
 import enchant  # spell checker library pyenchant

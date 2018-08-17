@@ -27,8 +27,9 @@ send_image_every_n = 20
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
 
-# import string
-# alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
+# Best results:
+# python handwriting_line_recognition.py --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 128
+
 alphabet_encoding = r' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
@@ -192,170 +193,6 @@ class Network(gluon.Block):
         output = self.decoder(hs)
         return output
 
-class Network2(gluon.Block):
-    '''
-    The CNN-biLSTM to recognise handwriting text given an image of handwriten text.
-
-    Parameters
-    ----------
-
-    num_downsamples: int, default 2
-        The number of times to downsample the image features. Each time the features are downsampled, a new LSTM
-        is created. 
-
-    resnet_layer_id: int, default 4
-        The layer ID to obtain features from the resnet34
-
-    lstm_hidden_states: int, default 200
-        The number of hidden states used in the LSTMs
-
-    lstm_layers: int, default 1
-        The number of layers of LSTMs to use
-    '''
-    FEATURE_EXTRACTOR_FILTER = 64
-    def __init__(self, num_downsamples=2, resnet_layer_id=4, rnn_hidden_states=200, rnn_layers=1, max_seq_len=100, ctx=mx.gpu(0), **kwargs):
-        super(Network2, self).__init__(**kwargs)
-        self.rnn_hidden_states = rnn_hidden_states
-        self.max_seq_len = max_seq_len
-        self.p_dropout = 0.5
-        self.num_downsamples = num_downsamples
-        self.ctx = ctx
-        with self.name_scope():
-            self.body = self.get_body(resnet_layer_id=resnet_layer_id)
-
-            self.encoders = gluon.nn.Sequential()
-            with self.encoders.name_scope():
-                for _ in range(0, self.num_downsamples):
-                    encoder = self.get_encoder(rnn_hidden_states, rnn_layers)
-                    self.encoders.add(encoder)
-            self.decoder = self.get_decoder()
-            if self.num_downsamples > 1:
-                self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
-
-    def get_down_sampler(self, num_filters):
-        '''
-        Creates a two-stacked Conv-BatchNorm-Relu and then a pooling layer to
-        downsample the image features by half.
-        
-        Parameters
-        ----------
-        num_filters: int
-            To select the number of filters in used the downsampling convolutional layer.
-        Returns
-        -------
-        network: gluon.nn.HybridSequential
-            The downsampler network that decreases the width and height of the image features by half.
-        
-        '''
-        out = gluon.nn.HybridSequential()
-        with out.name_scope():
-            for _ in range(2):
-                out.add(gluon.nn.Conv2D(num_filters, 3, strides=1, padding=1))
-                out.add(gluon.nn.BatchNorm(in_channels=num_filters))
-                out.add(gluon.nn.Activation('relu'))
-            out.add(gluon.nn.MaxPool2D(2))
-            out.collect_params().initialize(mx.init.Normal(), ctx=self.ctx)
-        out.hybridize()
-        return out
-
-    def get_body(self, resnet_layer_id):
-        '''
-        Create the feature extraction network based on resnet34.
-        The first layer of the res-net is converted into grayscale by averaging the weights of the 3 channels
-        of the original resnet.
-        
-        Parameters
-        ----------
-        resnet_layer_id: int
-            The resnet_layer_id specifies which layer to take from 
-            the bottom of the network.
-        Returns
-        -------
-        network: gluon.nn.HybridSequential
-            The body network for feature extraction based on resnet
-        '''
-        
-        pretrained = resnet34_v1(pretrained=True, ctx=self.ctx)
-        pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
-        first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
-        # First weights could be replaced with individual channels.
-        
-        body = gluon.nn.HybridSequential()
-        with body.name_scope():
-            first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=self.ctx)
-            first_layer.weight.set_data(first_weights)
-            body.add(first_layer)
-            body.add(*pretrained.features[1:-resnet_layer_id])
-        return body
-
-    def get_encoder(self, rnn_hidden_states, rnn_layers):
-        '''
-        Creates an RNN to learn the sequential component of the image features.
-        
-        Parameters
-        ----------
-        
-        rnn_hidden_states: int
-            The number of hidden states in the RNN
-        
-        rnn_layers: int
-            The number of layers to stack the RNN
-        Returns
-        -------
-        
-        network: gluon.nn.Sequential
-            The encoder network to learn the sequential information of the image features
-        '''
-        encoder = gluon.nn.Sequential()
-        with encoder.name_scope():
-            encoder.add(mx.gluon.rnn.LSTM(rnn_hidden_states, rnn_layers, bidirectional=True))
-            encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
-        return encoder
-    
-    def get_decoder(self):
-        '''
-        Creates a network to convert the output of the encoder into characters.
-        '''
-        alphabet_size = len(alphabet_encoding) + 1
-        decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
-        decoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
-        return decoder
-
-    def transpose_features(self, features):
-        # Convert features into (SEQ_LEN, N, HIDDEN_UNITS)
-        x = features.transpose((0, 3, 1, 2))
-        x = x.flatten()
-        x = x.split(num_outputs=self.max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
-        x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
-        return x
-    
-    def forward(self, x):
-        batch_size = x.shape[0]
-        hidden_states = []
-        encoder_outputs = []
-        
-        features = self.body(x)
-        x = self.transpose_features(features)
-        encoder_outputs.append(x.transpose((1, 0, 2)))
-        
-        hs = self.encoders[0](x)
-        hs = hs.transpose((1, 0, 2))
-        hidden_states.append(hs)
-        for i in range(0, self.num_downsamples-1):
-            features = self.downsampler(features)
-            x = self.transpose_features(features)
-            encoder_outputs.append(x.transpose((1, 0, 2)))
-            hs = self.encoders[i+1](x)
-            hs = hs.transpose((1, 0, 2))
-            hidden_states.append(hs)
-
-        hs = nd.concat(*hidden_states, dim=2)
-        # hs = gluon.nn.Dropout(self.p_dropout)(hs)
-        decoded = self.decoder(hs)
-        return decoded
-
 def transform(image, label):
     '''
     This function resizes the input image and converts so that it could be fed into the network.
@@ -372,7 +209,7 @@ def transform(image, label):
         word = word.replace("&quot", r'"')
         word = word.replace("&amp", r'&')
         for letter in word:
-            label_encoded[i] = alphabet_dict[letter] 
+            label_encoded[i] = alphabet_dict[letter]
             i += 1
     return image, label_encoded
 
