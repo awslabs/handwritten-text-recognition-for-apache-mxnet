@@ -30,7 +30,7 @@ save_every_n = 100
 # pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 301 -n cnn_mse.params
 # fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params
 
-def transform(data, label):
+def transform(data, label, expand_bb_scale=0.03):
     '''
     Function that converts "data"" into the input image tensor for a CNN
     Label is converted into a float tensor.
@@ -128,7 +128,7 @@ def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_nam
             sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
             
     if save_cnn and e % save_every_n == 0 and e > 0:
-        network.save_params("{}/{}".format(checkpoint_dir, checkpoint_name))
+        network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
 def main():
@@ -142,9 +142,9 @@ def main():
     print("Number of testing samples: {}".format(len(test_ds)))
 
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size,
-                                       shuffle=True, num_workers=multiprocessing.cpu_count())
+                                       shuffle=True, num_workers=int(multiprocessing.cpu_count()/2))
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size,
-                                      shuffle=False, num_workers=multiprocessing.cpu_count())
+                                      shuffle=False, num_workers=int(multiprocessing.cpu_count()/2))
 
     cnn = make_cnn()
     if restore_checkpoint_name:

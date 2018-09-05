@@ -3,7 +3,7 @@ import random
 import os
 import matplotlib.pyplot as plt
 import argparse
-import string
+
 
 import mxnet as mx
 import numpy as np
@@ -21,16 +21,17 @@ mx.random.seed(1)
 from utils.iam_dataset import IAMDataset
 
 print_every_n = 5
-save_every_n = 50
+save_every_n = 10
 send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
 
-alphabet_encoding = string.ascii_letters+string.digits+string.punctuation+' '
-alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
+# Best results:
+# python handwriting_line_recognition.py --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 128
 
-ctx = mx.gpu(0)
+alphabet_encoding = r' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
 class EncoderLayer(gluon.Block):
     '''
@@ -38,15 +39,16 @@ class EncoderLayer(gluon.Block):
     slices of the image features can be sequentially fed into the LSTM from left to right (and back via the
     bidirectional LSTM). 
     '''
-    def __init__(self, hidden_states=200, lstm_layers=1, **kwargs):
+    def __init__(self, hidden_states=200, rnn_layers=1, max_seq_len=100, **kwargs):
+        self.max_seq_len = max_seq_len
         super(EncoderLayer, self).__init__(**kwargs)
         with self.name_scope():
-            self.lstm = mx.gluon.rnn.LSTM(hidden_states, lstm_layers, bidirectional=True)
+            self.lstm = mx.gluon.rnn.LSTM(hidden_states, rnn_layers, bidirectional=True)
             
     def forward(self, x):
         x = x.transpose((0, 3, 1, 2))
         x = x.flatten()
-        x = x.split(num_outputs=max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
+        x = x.split(num_outputs=self.max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
         x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
         x = self.lstm(x)
         x = x.transpose((1, 0, 2)) #(N, SEQ_LEN, HIDDEN_UNITS)
@@ -55,35 +57,32 @@ class EncoderLayer(gluon.Block):
 class Network(gluon.Block):
     '''
     The CNN-biLSTM to recognise handwriting text given an image of handwriten text.
-
     Parameters
     ----------
-
     num_downsamples: int, default 2
         The number of times to downsample the image features. Each time the features are downsampled, a new LSTM
         is created. 
-
     resnet_layer_id: int, default 4
         The layer ID to obtain features from the resnet34
-
     lstm_hidden_states: int, default 200
         The number of hidden states used in the LSTMs
-
     lstm_layers: int, default 1
         The number of layers of LSTMs to use
     '''
     FEATURE_EXTRACTOR_FILTER = 64
-    def __init__(self, num_downsamples=2, resnet_layer_id=4, lstm_hidden_states=200, lstm_layers=1, **kwargs):
+    def __init__(self, num_downsamples=2, resnet_layer_id=4, rnn_hidden_states=200, rnn_layers=1, max_seq_len=100, ctx=mx.gpu(0), **kwargs):
         super(Network, self).__init__(**kwargs)
         self.p_dropout = 0.5
         self.num_downsamples = num_downsamples
+        self.max_seq_len = max_seq_len
+        self.ctx = ctx
         with self.name_scope():
             self.body = self.get_body(resnet_layer_id=resnet_layer_id)
 
             self.encoders = gluon.nn.Sequential()
             with self.encoders.name_scope():
                 for _ in range(self.num_downsamples):
-                    encoder = self.get_encoder(lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
+                    encoder = self.get_encoder(rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers)
                     self.encoders.add(encoder)
             self.decoder = self.get_decoder()
             self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
@@ -110,7 +109,7 @@ class Network(gluon.Block):
                 out.add(gluon.nn.BatchNorm(in_channels=num_filters))
                 out.add(gluon.nn.Activation('relu'))
             out.add(gluon.nn.MaxPool2D(2))
-            out.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+            out.collect_params().initialize(mx.init.Normal(), ctx=self.ctx)
         out.hybridize()
         return out
 
@@ -131,7 +130,7 @@ class Network(gluon.Block):
             The body network for feature extraction based on resnet
         '''
         
-        pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+        pretrained = resnet34_v1(pretrained=True, ctx=self.ctx)
         pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
         first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
         # First weights could be replaced with individual channels.
@@ -139,24 +138,24 @@ class Network(gluon.Block):
         body = gluon.nn.HybridSequential()
         with body.name_scope():
             first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=ctx)
+            first_layer.initialize(mx.init.Normal(), ctx=self.ctx)
             first_layer.weight.set_data(first_weights)
             body.add(first_layer)
             body.add(*pretrained.features[1:-resnet_layer_id])
         return body
 
-    def get_encoder(self, lstm_hidden_states, lstm_layers):
+    def get_encoder(self, rnn_hidden_states, rnn_layers):
         '''
         Creates an LSTM to learn the sequential component of the image features.
         
         Parameters
         ----------
         
-        lstm_hidden_states: int
-            The number of hidden states in the LSTM
+        rnn_hidden_states: int
+            The number of hidden states in the RNN
         
-        lstm_layers: int
-            The number of layers to stack the LSTM
+        rnn_layers: int
+            The number of layers to stack the RNN
         Returns
         -------
         
@@ -166,9 +165,9 @@ class Network(gluon.Block):
 
         encoder = gluon.nn.Sequential()
         with encoder.name_scope():
-            encoder.add(EncoderLayer(hidden_states=lstm_hidden_states, lstm_layers=lstm_layers))
+            encoder.add(EncoderLayer(hidden_states=rnn_hidden_states, rnn_layers=rnn_layers))
             encoder.add(gluon.nn.Dropout(self.p_dropout))
-        encoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        encoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return encoder
     
     def get_decoder(self):
@@ -176,9 +175,9 @@ class Network(gluon.Block):
         Creates a network to convert the output of the encoder into characters.
         '''
 
-        alphabet_size = len(string.ascii_letters+string.digits+string.punctuation+' ') + 1
+        alphabet_size = len(alphabet_encoding) + 1
         decoder = mx.gluon.nn.Dense(units=alphabet_size, flatten=False)
-        decoder.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
+        decoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return decoder
 
     def forward(self, x):
@@ -199,17 +198,17 @@ def transform(image, label):
     This function resizes the input image and converts so that it could be fed into the network.
     Furthermore, the label (text) is one-hot encoded.
     '''
-
-    image = skimage_tf.resize(image, (30, 400), mode='constant')
     image = np.expand_dims(image, axis=0).astype(np.float32)
     if image[0, 0, 0] > 1:
         image = image/255.
-    
+    image = (image - 0.942532484060557) / 0.15926149044640417
     label_encoded = np.zeros(max_seq_len, dtype=np.float32)-1
     i = 0
     for word in label:
+        word = word.replace("&quot", r'"')
+        word = word.replace("&amp", r'&')
         for letter in word:
-            label_encoded[i] = alphabet_dict[letter]   
+            label_encoded[i] = alphabet_dict[letter]
             i += 1
     return image, label_encoded
 
@@ -300,7 +299,9 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         if i == 0 and e % send_image_every_n == 0 and e > 0:
             predictions = output.softmax().topk(axis=2).asnumpy()
             decoded_text = decode(predictions)
-            output_image = draw_text_on_image(x.asnumpy(), decoded_text)
+            image = x.asnumpy()
+            image = image * 0.15926149044640417 + 0.942532484060557            
+            output_image = draw_text_on_image(image, decoded_text)
             print("{} first decoded text = {}".format(print_name, decoded_text[0]))
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
@@ -330,10 +331,10 @@ if __name__ == "__main__":
                         help="Number of downsamples for the res net")
     parser.add_argument("-q", "--resnet_layer_id", default=4,
                         help="layer ID to obtain features from the resnet34")
-    parser.add_argument("-a", "--lstm_hidden_states", default=200,
-                        help="Number of hidden states for the LSTM encoder")
-    parser.add_argument("-o", "--lstm_layers", default=1,
-                        help="Number of layers for the LSTM")
+    parser.add_argument("-a", "--rnn_hidden_states", default=200,
+                        help="Number of hidden states for the RNN encoder")
+    parser.add_argument("-o", "--rnn_layers", default=1,
+                        help="Number of layers for the RNN")
 
     parser.add_argument("-e", "--epochs", default=121,
                         help="Number of epochs to run")
@@ -380,8 +381,8 @@ if __name__ == "__main__":
 
     num_downsamples = int(args.num_downsamples)
     resnet_layer_id = int(args.resnet_layer_id)
-    lstm_hidden_states = int(args.lstm_hidden_states)
-    lstm_layers = int(args.lstm_layers)
+    rnn_hidden_states = int(args.rnn_hidden_states)
+    rnn_layers = int(args.rnn_layers)
     
     epochs = int(args.epochs)
     learning_rate = float(args.learning_rate)
@@ -399,14 +400,15 @@ if __name__ == "__main__":
     
     train_ds = IAMDataset(line_or_word, output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
-
+    
     test_ds = IAMDataset(line_or_word, output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
-    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=multiprocessing.cpu_count()-2)
+    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=4)
 
-    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , lstm_hidden_states=lstm_hidden_states, lstm_layers=lstm_layers)
+    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers,
+                  max_seq_len=max_seq_len, ctx=ctx)
     net.hybridize()
     if load_model is not None:
         net.load_parameters(checkpoint_dir + "/" + load_model)
@@ -414,10 +416,10 @@ if __name__ == "__main__":
     schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
     schedule.base_lr = learning_rate
 
-    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule})
+    trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule, 'clip_gradient': 2})
     
     ctc_loss = gluon.loss.CTCLoss()
-
+    
     for e in range(epochs):
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 
                                update_network=True, save_network=True)
