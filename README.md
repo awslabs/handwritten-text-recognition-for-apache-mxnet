@@ -1,4 +1,4 @@
-# Hand-writing OCR with MXNet Gluon 
+# Handwritten Text Recognition (OCR) with MXNet Gluon 
 
 These notebooks have been created by [Jonathan Chung](https://github.com/jonomon), as part of his internship as Applied Scientist @ Amazon AI, in collaboration with [Thomas Delteil](https://github.com/ThomasDelteil) who built the original prototype.
 
@@ -36,7 +36,7 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 
 ## Appendix
 
-### Handwritten area
+### 1) Handwritten area
 
 #####  Model architecture
 
@@ -46,7 +46,7 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 
 ![](https://cdn-images-1.medium.com/max/800/1*HEb82jJp93I0EFgYlJhfAw.png) 
 
-### Line Detection
+### 2) Line Detection
 
 ##### Model architecture
 
@@ -56,7 +56,7 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 
 ![](https://cdn-images-1.medium.com/max/1000/1*JJGwLXJL-bV7zsfrfw84ew.png)
 
-### Handwritten text recognition
+### 3) Handwritten text recognition
 
 ##### Model architecture
 
