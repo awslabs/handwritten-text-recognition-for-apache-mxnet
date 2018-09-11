@@ -1,5 +1,4 @@
 # Hand-writing OCR with MXNet Gluon 
-## CNN + biLSTM + CTC-loss
 
 These notebooks have been created by [Jonathan Chung](https://github.com/jonomon), as part of his internship as Applied Scientist @ Amazon AI, in collaboration with [Thomas Delteil](https://github.com/ThomasDelteil) who built the original prototype.
 
@@ -35,34 +34,34 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 ## Dataset:
 * To use test_iam_dataset.ipynb, create credentials.json using credentials.json.example and editing the appropriate field. The username and password can be obtained from http://www.fki.inf.unibe.ch/DBs/iamDB/iLogin/index.php.
 
-## Appendinx
+## Appendix
 
 ### Handwritten area
 
-####  Model architecture
+#####  Model architecture
 
 ![](https://cdn-images-1.medium.com/max/1000/1*AggJmOXhjSySPf_4rPk4FA.png)
 
-#### Results
+##### Results
 
 ![](https://cdn-images-1.medium.com/max/800/1*HEb82jJp93I0EFgYlJhfAw.png) 
 
 ### Line Detection
 
-#### Model architecture
+##### Model architecture
 
 ![](https://cdn-images-1.medium.com/max/800/1*jMkO7hy-1f0ZFHT3S2iH0Q.png)
 
-#### Results
+##### Results
 
 ![](https://cdn-images-1.medium.com/max/1000/1*JJGwLXJL-bV7zsfrfw84ew.png)
 
 ### Handwritten text recognition
 
-#### Model architecture
+##### Model architecture
 
 ![](https://cdn-images-1.medium.com/max/800/1*JTbCUnKgAySN--zJqzqy0Q.png)
 
-#### Results
+##### Results
 
 ![](https://cdn-images-1.medium.com/max/2000/1*8lnqqlqomgdGshJB12dW1Q.png)
