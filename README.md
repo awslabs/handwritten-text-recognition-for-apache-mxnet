@@ -1,7 +1,7 @@
 # Hand-writing OCR with MXNet Gluon 
 ## CNN + biLSTM + CTC-loss
 
-These notebooks have been created by [Jonathan Chung](), as part of his internship as Applied Scientist @ Amazon AI, under the mentoring of [Thomas Delteil]() who built the original prototype.
+These notebooks have been created by [Jonathan Chung](https://github.com/jonomon), as part of his internship as Applied Scientist @ Amazon AI, in collaboration with [Thomas Delteil](https://github.com/ThomasDelteil) who built the original prototype.
 
 ![](https://cdn-images-1.medium.com/max/1000/1*nJ-ePgwhOjOhFH3lJuSuFA.png)
 
@@ -13,6 +13,7 @@ The pipeline is composed of 3 steps:
 The entire inference pipeline can be found in this [notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/handwriting_ocr.ipynb). See the *pretrained models* section for the pretrained models.
 
 A recorded talk detailing the approach is available on youtube. [[video](https://www.youtube.com/watch?v=xDcOdif4lj0)]
+
 The corresponding slides are available on slideshare. [[slides](https://www.slideshare.net/apachemxnet/ocr-with-mxnet-gluon)]
 
 ## Pretrained models:
