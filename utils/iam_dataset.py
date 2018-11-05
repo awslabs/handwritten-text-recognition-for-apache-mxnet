@@ -157,10 +157,10 @@ class IAMDataset(dataset.ArrayDataset):
             assert output_parse_method in _parse_methods, error_message
             self._output_parse_method = output_parse_method
 
-            self.image_data_file_name = os.path.join(root, "image_data-{}-{}-{}.plk".format(
+            self.image_data_file_name = os.path.join(root, "image_data-{}-{}-{}*.plk".format(
                 self._parse_method, self._output_data, self._output_parse_method))
         else:
-            self.image_data_file_name = os.path.join(root, "image_data-{}-{}.plk".format(self._parse_method, self._output_data))
+            self.image_data_file_name = os.path.join(root, "image_data-{}-{}*.plk".format(self._parse_method, self._output_data))
 
         self._root = root
         if not os.path.isdir(root):
@@ -419,6 +419,19 @@ class IAMDataset(dataset.ArrayDataset):
             output_data = self._change_bb_reference(output_data, bb, image_arr_bb.shape, image_arr_bb_.shape, image_arr_bb_.shape, "plus")
         image_arr = image_arr_bb_
         return image_arr, output_data
+    
+    def _save_dataframe_chunks(self, df, name):
+        for i, df_split in enumerate(np.array_split(df, 4)):
+            filename = name[:-5] + str(i) + ".plk" # remove *.plk in the filename
+            df_split.to_pickle(filename, protocol=2)
+            
+    def _load_dataframe_chunks(self, name):
+        image_data_chunks = []
+        for fn in sorted(glob.glob(name)):
+            df = pickle.load(open(fn, 'rb'))
+            image_data_chunks.append(df)
+        image_data = pd.concat(image_data_chunks)
+        return image_data
 
     def _process_data(self):
         ''' Function that iterates through the downloaded xml file to gather the input images and the
@@ -455,7 +468,7 @@ class IAMDataset(dataset.ArrayDataset):
                 image_data.append([item.attrib["id"], image_arr, output_data])
                 self._reporthook(i, 1, len(xml_files))
         image_data = pd.DataFrame(image_data, columns=["subject", "image", "output"])
-        image_data.to_pickle(self.image_data_file_name, protocol=2)
+        self._save_dataframe_chunks(image_data, self.image_data_file_name)
         return image_data
 
     def _process_subjects(self, train_subject_lists = ["trainset", "validationset1", "validationset2"],
@@ -549,9 +562,9 @@ class IAMDataset(dataset.ArrayDataset):
         if not os.path.isdir(self._root):
             os.makedirs(self._root)
 
-        if os.path.isfile(self.image_data_file_name):
+        if len(glob.glob(self.image_data_file_name)) > 0:
             logging.info("Loading data from pickle")
-            images_data = pickle.load(open(self.image_data_file_name, 'rb'))
+            images_data = self._load_dataframe_chunks(self.image_data_file_name)
         else:
             self._download_xml()
             self._download_data()
