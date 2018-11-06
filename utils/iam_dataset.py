@@ -103,6 +103,10 @@ class IAMDataset(dataset.ArrayDataset):
         If the bounding box (bb) was selected as an output_data_type, 
         this parameter can select which bb you want to obtain.
         Available options: [form, line, word]
+        
+    output_form_text_as_array: bool, default False
+        When output_data is set to text and the parse method is set to form or form_original,
+        if output_form_text_as_array is true, the output text will be a list of lines string
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
     MAX_IMAGE_SIZE_LINE = (30, 400)
@@ -111,7 +115,7 @@ class IAMDataset(dataset.ArrayDataset):
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 
                  train=True, output_data="text",
                  output_parse_method=None,
-                 parse_form_by_bb=False):
+                 output_form_text_as_array=False):
 
         _parse_methods = ["form", "form_original", "form_bb", "line", "word"]
         error_message = "{} is not a possible parsing method: {}".format(
@@ -165,6 +169,7 @@ class IAMDataset(dataset.ArrayDataset):
         self._root = root
         if not os.path.isdir(root):
             os.makedirs(root)
+        self._output_form_text_as_array = output_form_text_as_array
         
         data = self._get_data()
         super(IAMDataset, self).__init__(data)
@@ -331,7 +336,7 @@ class IAMDataset(dataset.ArrayDataset):
         if self._output_data == "text":
             if self._parse_method in ["form", "form_bb", "form_original"]:
                 text = ""
-                for line in item.iter('machine-print-line'):
+                for line in item.iter('line'):
                     text += line.attrib["text"] + "\n"
                 output_data.append(text)
             else:

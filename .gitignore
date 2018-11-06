@@ -8,3 +8,6 @@ nohup.out
 model_checkpoint/*
 *.bin.gz
 *__pycache__*
+tmp/*
+utils/sctk-*/
+models/*

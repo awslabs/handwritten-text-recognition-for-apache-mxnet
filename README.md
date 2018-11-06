@@ -65,3 +65,10 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 ##### Results
 
 ![](https://cdn-images-1.medium.com/max/2000/1*8lnqqlqomgdGshJB12dW1Q.png)
+
+## SClite installation
+1) Download sctk-2.4.10 ftp://jaguar.ncsl.nist.gov/pub/sctk-2.4.10-20151007-1312Z.tar.bz2
+2) Put it into the utils folder
+3) Untar sctk-2.4.10
+4) Install sctk-2.4.10 by following sctk-2.4.10/INSTALL
+5) Check sctk-2.4.10/bin contains built programs
