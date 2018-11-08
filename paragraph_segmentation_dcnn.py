@@ -28,8 +28,8 @@ print_every_n = 20
 send_image_every_n = 20
 save_every_n = 100
 
-# pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 301 -n cnn_mse.params
-# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params
+# pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 181 -n cnn_mse.params -y 0.15
+# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params -x 0 -y 0
 
 def transform(data, label, expand_bb_scale=0.03):
     '''
