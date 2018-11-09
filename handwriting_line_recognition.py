@@ -28,7 +28,7 @@ from utils.iam_dataset import IAMDataset
 from utils.draw_text_on_image import draw_text_on_image
 
 # Best results:
-# python handwriting_line_recognition.py --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 128
+# python handwriting_line_recognition.py --epochs 251 -n handwriting_line.params -g 0 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 128
 
 alphabet_encoding = r' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
@@ -207,6 +207,7 @@ def transform(image, label):
     for word in label:
         word = word.replace("&quot", r'"')
         word = word.replace("&amp", r'&')
+        word = word.replace('";', '\"')
         for letter in word:
             label_encoded[i] = alphabet_dict[letter]
             i += 1
