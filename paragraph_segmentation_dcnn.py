@@ -13,6 +13,7 @@ from skimage.draw import line_aa
 from skimage import transform as skimage_transform
 
 from mxnet import nd, autograd, gluon
+from mxnet.gluon.model_zoo.vision import resnet34_v1
 from mxnet.image import resize_short
 from mxboard import SummaryWriter
 
@@ -27,8 +28,8 @@ print_every_n = 20
 send_image_every_n = 20
 save_every_n = 100
 
-# pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 301 -n cnn_mse.params
-# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params
+# pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 181 -n cnn_mse.params -y 0.15
+# fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params -x 0 -y 0
 
 def transform(data, label, expand_bb_scale=0.03):
     '''
@@ -66,9 +67,39 @@ def augment_transform(data, label):
 
     label[0][0] = label[0][0] - tx
     label[0][1] = label[0][1] - ty
-    return transform(data*255., label)
     
+    return transform(data*255., label)
+
 def make_cnn():
+    p_dropout = 0.5
+    pretrained = resnet34_v1(pretrained=True, ctx=ctx)
+    pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
+    first_weights = pretrained_2.features[0].weight.data().mean(axis=1).expand_dims(axis=1)
+    # First weights could be replaced with individual channels.
+        
+    body = gluon.nn.HybridSequential()
+    with body.name_scope():
+        first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
+        first_layer.initialize(mx.init.Normal(), ctx=ctx)
+        first_layer.weight.set_data(first_weights)
+        body.add(first_layer)
+        body.add(*pretrained.features[1:6])
+        
+        output = gluon.nn.HybridSequential()
+        
+        output.add(gluon.nn.Flatten())
+        output.add(gluon.nn.Dense(64, activation='relu'))
+        output.add(gluon.nn.Dropout(p_dropout))
+        output.add(gluon.nn.Dense(64, activation='relu'))
+        output.add(gluon.nn.Dropout(p_dropout))
+        output.add(gluon.nn.Dense(4, activation='sigmoid'))
+
+        output.collect_params().initialize(mx.init.Normal(), ctx=ctx)
+        body.add(output)
+
+    return body
+    
+def make_cnn_old():
     p_dropout = 0.5
 
     cnn = gluon.nn.HybridSequential()
