@@ -99,7 +99,7 @@ def make_cnn():
 
     return body
     
-def make_cnn2():
+def make_cnn_old():
     p_dropout = 0.5
 
     cnn = gluon.nn.HybridSequential()
