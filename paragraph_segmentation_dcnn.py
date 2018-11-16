@@ -17,7 +17,7 @@ from mxnet.gluon.model_zoo.vision import resnet34_v1
 from mxnet.image import resize_short
 from mxboard import SummaryWriter
 
-ctx = mx.gpu()
+
 mx.random.seed(1)
 
 from utils.iam_dataset import IAMDataset
@@ -70,7 +70,7 @@ def augment_transform(data, label):
     
     return transform(data*255., label)
 
-def make_cnn():
+def make_cnn(ctx=mx.gpu()):
     p_dropout = 0.5
     pretrained = resnet34_v1(pretrained=True, ctx=ctx)
     pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
@@ -131,7 +131,7 @@ def make_cnn_old():
     cnn.collect_params().initialize(mx.init.Normal(), ctx=ctx)
     return cnn
 
-def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_name, update_cnn, save_cnn):
+def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_name, update_cnn, save_cnn, ctx=mx.gpu()):
     total_loss = nd.zeros(1, ctx)
     for i, (data, label) in enumerate(dataloader):
         data = data.as_in_context(ctx)
@@ -162,7 +162,7 @@ def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_nam
         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
-def main():
+def main(ctx=mx.gpu()):
     if not os.path.isdir(checkpoint_dir):
         os.makedirs(checkpoint_dir)
 
