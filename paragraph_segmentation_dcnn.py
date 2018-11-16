@@ -20,7 +20,7 @@ from mxboard import SummaryWriter
 
 mx.random.seed(1)
 
-from utils.iam_dataset import IAMDataset
+from utils.iam_dataset import IAMDataset, resize_image
 from utils.iou_loss import IOU_loss
 from utils.draw_box_on_image import draw_box_on_image
 
@@ -30,6 +30,18 @@ save_every_n = 100
 
 # pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 181 -n cnn_mse.params -y 0.15
 # fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params -x 0 -y 0
+
+def paragraph_segmentation_transform(image, image_size):
+    '''
+    Function used for inference to resize the image for paragraph segmentation
+    '''
+    resized_image, _ = resize_image(image, image_size)
+    
+    resized_image = mx.nd.array(resized_image).expand_dims(axis=2)
+    resized_image = mx.image.resize_short(resized_image, int(800/3))
+    resized_image = resized_image.transpose([2, 0, 1])/255.
+    resized_image = resized_image.expand_dims(axis=0)
+    return resized_image
 
 def transform(data, label, expand_bb_scale=0.03):
     '''

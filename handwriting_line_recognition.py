@@ -4,7 +4,6 @@ import os
 import matplotlib.pyplot as plt
 import argparse
 
-
 import mxnet as mx
 import numpy as np
 from skimage import transform as skimage_tf
@@ -18,7 +17,7 @@ np.seterr(all='raise')
 import multiprocessing
 mx.random.seed(1)
 
-from utils.iam_dataset import IAMDataset
+from utils.iam_dataset import IAMDataset, resize_image
 
 print_every_n = 1
 send_image_every_n = 20
@@ -192,6 +191,16 @@ class Network(gluon.HybridBlock):
         output = self.decoder(hs)
         return output
 
+def handwriting_recognition_transform(image, line_image_size):
+    '''
+    Resize and normalise the image to be fed into the network.
+    '''
+    image, _ = resize_image(image, line_image_size)
+    image = mx.nd.array(image)/255.
+    image = (image - 0.942532484060557) / 0.15926149044640417
+    image = image.expand_dims(0).expand_dims(0)
+    return image
+
 def transform(image, label):
     '''
     This function resizes the input image and converts so that it could be fed into the network.
@@ -233,6 +242,7 @@ def augment_transform(image, label):
                                     translation=(tx*image.shape[1], ty*image.shape[0]))
     augmented_image = skimage_tf.warp(image, st, cval=1.0)
     return transform(augmented_image*255., label)
+
 
 def decode(prediction):
     '''
