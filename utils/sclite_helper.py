@@ -143,14 +143,14 @@ class Sclite_helper():
         output_file = self._run_sclite(predicted_filename, actual_filename,
                                        mode, output="string")
 
-        match_tar = r'.*spk1   \| .* (\d*) \| (\d*.\d).*'
+        match_tar = r'.*Mean.*\|.* (\d*.\d) \| (\d*.\d).*'
         for line in output_file.readlines():
             match = re.match(match_tar, line.decode('utf-8'), re.M|re.I)
             if match:
                 number = match.group(1)
                 er = match.group(2)
         assert number != None and er != None, "Error in parsing output."
-        return int(number), 100.0 - float(er)
+        return float(number), 100.0 - float(er)
         
     def _make_sclite_files(self, predicted_filename="predicted.txt",
                            actual_filename="actual.txt"):
@@ -205,9 +205,15 @@ class Sclite_helper():
         return self._get_error_rate(mode="CER")
 
 if __name__ == "__main__":
-    actual = 'Jonathan loves to eat apples. This is the second sentence.'
-    predicted = 'Jonothon loves to eot. This is the second santense.'
     cls = Sclite_helper()
-    cls.print_cer_summary(predicted, actual)
-    num, er = cls.get_cer(predicted, actual)
+    actual1 = 'Jonathan loves to eat apples. This is the second sentence.'
+    predicted1 = 'Jonothon loves to eot. This is the second santense.'
+    
+    cls.add_text(predicted1, actual1)
+    actual2 = 'Jonathan loves to eat apples. This is the second sentence.'
+    predicted2 = 'Jonothan loves to eot. This is the second santense.'
+    cls.add_text(predicted2, actual2)
+
+    cls.print_cer_summary()
+    num, er = cls.get_cer()
     print(num, er)
