@@ -25,8 +25,8 @@ mx.random.seed(123)
 
 # Input sizes
 form_size = (1120, 800)
-segmented_paragraph_size = (700, 700)
-line_image_size = (30, 400)
+segmented_paragraph_size = (800, 800)
+line_image_size = (60, 800)
 
 # Parameters
 min_c = 0.01
@@ -47,7 +47,7 @@ denoise_func = get_arg_max
 if __name__ == '__main__':
     
     # Compute context
-    ctx = mx.gpu(0)
+    ctx = mx.gpu(1)
 
     # Models
     logging.info("Loading models...")
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     handwriting_line_recognition_net = HandwritingRecognitionNet(rnn_hidden_states=128,
                                                                  rnn_layers=2, ctx=ctx)
-    handwriting_line_recognition_net.load_parameters("models/handwriting_line_recognition5.params", ctx)
+    handwriting_line_recognition_net.load_parameters("model_checkpoint/handwriting_line7.params", ctx)
     logging.info("models loaded.")
 
     # Data
