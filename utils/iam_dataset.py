@@ -17,6 +17,8 @@ import logging
 from mxnet.gluon.data import dataset
 from mxnet import nd
 
+from utils.expand_bounding_box import expand_bounding_box
+
 def crop_image(image, bb):
     ''' Helper function to crop the image by the bounding box (in percentages)
     '''
@@ -70,6 +72,33 @@ def resize_image(image, desired_size):
     crop_bb = (left/image.shape[1], top/image.shape[0], (image.shape[1] - right - left)/image.shape[1],
                (image.shape[0] - bottom - top)/image.shape[0])
     return image, crop_bb
+
+def crop_handwriting_page(image, bb, image_size):
+    '''
+    Given an image and bounding box (bb) crop the input image based on the bounding box.
+    The final output image was scaled based on the image size.
+    
+    Parameters
+    ----------
+    image: np.array
+        Input form image
+    
+    bb: (x, y, w, h)
+        The bounding box in percentages to crop
+        
+    image_size: (h, w)
+        Image size to scale the output image to.
+        
+    Returns
+    -------
+    output_image: np.array
+        cropped image of size image_size.
+    '''
+    expanded_bb = expand_bounding_box(bb)
+    image = crop_image(image, expanded_bb)
+
+    image, _ = resize_image(image, desired_size=image_size)
+    return image
 
 class IAMDataset(dataset.ArrayDataset):
     """ The IAMDataset provides images of handwritten passages written by multiple
@@ -253,9 +282,9 @@ class IAMDataset(dataset.ArrayDataset):
         ''' Helper function to download and extract the subject list of the IAM database
         '''
         url = "http://www.fki.inf.unibe.ch/DBs/iamDB/tasks/largeWriterIndependentTextLineRecognitionTask.zip"
-        logging.info("Downloding subject list from {}".format(url))
         archive_file = os.path.join(self._root, os.path.basename(url))
         if not os.path.isfile(archive_file):
+            logging.info("Downloding subject list from {}".format(url))
             self._download(url)
             self._extract(archive_file, archive_type="zip", output_dir="subject")
     

@@ -17,10 +17,10 @@ from mxnet.gluon.model_zoo.vision import resnet34_v1
 from mxnet.image import resize_short
 from mxboard import SummaryWriter
 
-ctx = mx.gpu()
+
 mx.random.seed(1)
 
-from utils.iam_dataset import IAMDataset
+from utils.iam_dataset import IAMDataset, resize_image
 from utils.iou_loss import IOU_loss
 from utils.draw_box_on_image import draw_box_on_image
 
@@ -30,6 +30,18 @@ save_every_n = 100
 
 # pre-training: python paragraph_segmentation_dcnn.py -r 0.001 -e 181 -n cnn_mse.params -y 0.15
 # fine-tuning: python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params -x 0 -y 0
+
+def paragraph_segmentation_transform(image, image_size):
+    '''
+    Function used for inference to resize the image for paragraph segmentation
+    '''
+    resized_image, _ = resize_image(image, image_size)
+    
+    resized_image = mx.nd.array(resized_image).expand_dims(axis=2)
+    resized_image = mx.image.resize_short(resized_image, int(800/3))
+    resized_image = resized_image.transpose([2, 0, 1])/255.
+    resized_image = resized_image.expand_dims(axis=0)
+    return resized_image
 
 def transform(data, label, expand_bb_scale=0.03):
     '''
@@ -70,7 +82,7 @@ def augment_transform(data, label):
     
     return transform(data*255., label)
 
-def make_cnn():
+def make_cnn(ctx=mx.gpu()):
     p_dropout = 0.5
     pretrained = resnet34_v1(pretrained=True, ctx=ctx)
     pretrained_2 = resnet34_v1(pretrained=True, ctx=mx.cpu(0))
@@ -131,7 +143,7 @@ def make_cnn_old():
     cnn.collect_params().initialize(mx.init.Normal(), ctx=ctx)
     return cnn
 
-def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_name, update_cnn, save_cnn):
+def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_name, update_cnn, save_cnn, ctx=mx.gpu()):
     total_loss = nd.zeros(1, ctx)
     for i, (data, label) in enumerate(dataloader):
         data = data.as_in_context(ctx)
@@ -162,7 +174,7 @@ def run_epoch(e, network, dataloader, loss_function, trainer, log_dir, print_nam
         network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
     return epoch_loss
 
-def main():
+def main(ctx=mx.gpu()):
     if not os.path.isdir(checkpoint_dir):
         os.makedirs(checkpoint_dir)
 

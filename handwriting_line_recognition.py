@@ -4,7 +4,6 @@ import os
 import matplotlib.pyplot as plt
 import argparse
 
-
 import mxnet as mx
 import numpy as np
 from skimage import transform as skimage_tf
@@ -18,10 +17,9 @@ np.seterr(all='raise')
 import multiprocessing
 mx.random.seed(1)
 
-from utils.iam_dataset import IAMDataset
+from utils.iam_dataset import IAMDataset, resize_image
 
-print_every_n = 5
-save_every_n = 10
+print_every_n = 1
 send_image_every_n = 20
 
 from utils.iam_dataset import IAMDataset
@@ -33,7 +31,7 @@ from utils.draw_text_on_image import draw_text_on_image
 alphabet_encoding = r' !"#&\'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 alphabet_dict = {alphabet_encoding[i]:i for i in range(len(alphabet_encoding))}
 
-class EncoderLayer(gluon.Block):
+class EncoderLayer(gluon.HybridBlock):
     '''
     The encoder layer takes the image features from a CNN. The image features are transposed so that the LSTM 
     slices of the image features can be sequentially fed into the LSTM from left to right (and back via the
@@ -45,16 +43,16 @@ class EncoderLayer(gluon.Block):
         with self.name_scope():
             self.lstm = mx.gluon.rnn.LSTM(hidden_states, rnn_layers, bidirectional=True)
             
-    def forward(self, x):
+    def hybrid_forward(self, F, x):
         x = x.transpose((0, 3, 1, 2))
         x = x.flatten()
         x = x.split(num_outputs=self.max_seq_len, axis=1) # (SEQ_LEN, N, CHANNELS)
-        x = nd.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
+        x = F.concat(*[elem.expand_dims(axis=0) for elem in x], dim=0)
         x = self.lstm(x)
         x = x.transpose((1, 0, 2)) #(N, SEQ_LEN, HIDDEN_UNITS)
         return x
 
-class Network(gluon.Block):
+class Network(gluon.HybridBlock):
     '''
     The CNN-biLSTM to recognise handwriting text given an image of handwriten text.
     Parameters
@@ -79,9 +77,9 @@ class Network(gluon.Block):
         with self.name_scope():
             self.body = self.get_body(resnet_layer_id=resnet_layer_id)
 
-            self.encoders = gluon.nn.Sequential()
+            self.encoders = gluon.nn.HybridSequential()
             with self.encoders.name_scope():
-                for _ in range(self.num_downsamples):
+                for i in range(self.num_downsamples):
                     encoder = self.get_encoder(rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers)
                     self.encoders.add(encoder)
             self.decoder = self.get_decoder()
@@ -163,7 +161,7 @@ class Network(gluon.Block):
             The encoder network to learn the sequential information of the image features
         '''
 
-        encoder = gluon.nn.Sequential()
+        encoder = gluon.nn.HybridSequential()
         with encoder.name_scope():
             encoder.add(EncoderLayer(hidden_states=rnn_hidden_states, rnn_layers=rnn_layers))
             encoder.add(gluon.nn.Dropout(self.p_dropout))
@@ -180,7 +178,7 @@ class Network(gluon.Block):
         decoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return decoder
 
-    def forward(self, x):
+    def hybrid_forward(self, F, x):
         features = self.body(x)
         hidden_states = []
         hs = self.encoders[0](features)
@@ -189,9 +187,19 @@ class Network(gluon.Block):
             features = self.downsampler(features)
             hs = self.encoders[i+1](features)
             hidden_states.append(hs)
-        hs = nd.concat(*hidden_states, dim=2)
+        hs = F.concat(*hidden_states, dim=2)
         output = self.decoder(hs)
         return output
+
+def handwriting_recognition_transform(image, line_image_size):
+    '''
+    Resize and normalise the image to be fed into the network.
+    '''
+    image, _ = resize_image(image, line_image_size)
+    image = mx.nd.array(image)/255.
+    image = (image - 0.942532484060557) / 0.15926149044640417
+    image = image.expand_dims(0).expand_dims(0)
+    return image
 
 def transform(image, label):
     '''
@@ -234,6 +242,7 @@ def augment_transform(image, label):
                                     translation=(tx*image.shape[1], ty*image.shape[0]))
     augmented_image = skimage_tf.warp(image, st, cval=1.0)
     return transform(augmented_image*255., label)
+
 
 def decode(prediction):
     '''
@@ -284,46 +293,46 @@ def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_netwo
         The loss of the current epoch
     '''
 
-    total_loss = nd.zeros(1, ctx)
-    for i, (x, y) in enumerate(dataloader):
-        x = x.as_in_context(ctx)
-        y = y.as_in_context(ctx)
-
+    total_loss = [nd.zeros(1, ctx_) for ctx_ in ctx]
+    for i, (x_, y_) in enumerate(dataloader):
+        X = gluon.utils.split_and_load(x_, ctx)
+        Y = gluon.utils.split_and_load(y_, ctx)
         with autograd.record():
-            output = network(x)
-            loss_ctc = ctc_loss(output, y)
+            output = [network(x) for x in X]
+            loss_ctc = [ctc_loss(o, y) for o, y in zip(output, Y)]
 
         if update_network:
-            loss_ctc.backward()
-            trainer.step(x.shape[0])
+            [l.backward() for l in loss_ctc]
+            trainer.step(x_.shape[0])
 
         if i == 0 and e % send_image_every_n == 0 and e > 0:
-            predictions = output.softmax().topk(axis=2).asnumpy()
+            predictions = output[0][:4].softmax().topk(axis=2).asnumpy()
             decoded_text = decode(predictions)
-            image = x.asnumpy()
+            image = X[0][:4].asnumpy()
             image = image * 0.15926149044640417 + 0.942532484060557            
             output_image = draw_text_on_image(image, decoded_text)
             print("{} first decoded text = {}".format(print_name, decoded_text[0]))
             with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
                 sw.add_image('bb_{}_image'.format(print_name), output_image, global_step=e)
-        nd.waitall()
 
-        total_loss += loss_ctc.mean()
+        for i, l in enumerate(loss_ctc):
+            total_loss[i] += l.mean()
 
-    epoch_loss = float(total_loss.asscalar())/len(dataloader)
+    epoch_loss = float(sum([tl.asscalar() for tl in total_loss]))/(len(dataloader)*len(ctx))
 
     with SummaryWriter(logdir=log_dir, verbose=False, flush_secs=5) as sw:
         sw.add_scalar('loss', {print_name: epoch_loss}, global_step=e)
 
-    if save_network and e % save_every_n == 0 and e > 0:
-        network.save_params("{}/{}".format(checkpoint_dir, checkpoint_name))
+    if not update_network and epoch_loss < best_test_loss and save_network and e > 0:
+        network.save_parameters("{}/{}".format(checkpoint_dir, checkpoint_name))
+        print('saving with test loss {:.4f}'.format(epoch_loss))
 
     return epoch_loss
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-g", "--gpu_id", default=0,
-                        help="ID of the GPU to use")
+    parser.add_argument("-g", "--gpu_id", default="0",
+                        help="IDs of the GPU to use, -1 for CPU")
 
     parser.add_argument("-t", "--line_or_word", default="line",
                         help="to choose the handwriting to train on words or lines")
@@ -346,7 +355,7 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--lr_period", default=30,
                         help="Divides the learning rate after period")
 
-    parser.add_argument("-s", "--batch_size", default=32,
+    parser.add_argument("-s", "--batch_size", default=64,
                         help="Batch size")
 
     parser.add_argument("-x", "--random_x_translation", default=0.03,
@@ -370,8 +379,12 @@ if __name__ == "__main__":
                          help="Name of model to load")
     args = parser.parse_args()
 
-    gpu_id = int(args.gpu_id)
-    ctx = mx.gpu(gpu_id)
+    gpu_ids = [int(elem) for elem in args.gpu_id.split(",")]
+    
+    if gpu_ids == [-1]:
+        ctx=[mx.cpu()]
+    else:
+        ctx=[mx.gpu(i) for i in gpu_ids]
 
     line_or_word = args.line_or_word
     assert line_or_word in ["line", "word"], "{} is not a value option in [\"line\", \"word\"]"
@@ -399,20 +412,21 @@ if __name__ == "__main__":
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
     load_model = args.load_model
     
+    
+    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers,
+                  max_seq_len=max_seq_len, ctx=ctx)
+
+    if load_model is not None:
+        net.load_parameters(checkpoint_dir + "/" + load_model)
+        
     train_ds = IAMDataset(line_or_word, output_data="text", train=True)
     print("Number of training samples: {}".format(len(train_ds)))
     
     test_ds = IAMDataset(line_or_word, output_data="text", train=False)
     print("Number of testing samples: {}".format(len(test_ds)))
     
-    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="discard")
-    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=False, last_batch="discard")#, num_workers=4)
-
-    net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers,
-                  max_seq_len=max_seq_len, ctx=ctx)
-    net.hybridize()
-    if load_model is not None:
-        net.load_parameters(checkpoint_dir + "/" + load_model)
+    train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="rollover", num_workers=4*len(ctx))
+    test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=True, last_batch="discard", num_workers=4*len(ctx))
     
     schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
     schedule.base_lr = learning_rate
@@ -421,10 +435,14 @@ if __name__ == "__main__":
     
     ctc_loss = gluon.loss.CTCLoss()
     
+    best_test_loss = 999999999
     for e in range(epochs):
+        tic = time.time()
         train_loss = run_epoch(e, net, train_data, trainer, log_dir, print_name="train", 
-                               update_network=True, save_network=True)
+                               update_network=True, save_network=False)
         test_loss = run_epoch(e, net, test_data, trainer, log_dir, print_name="test", 
-                              update_network=False, save_network=False)
+                              update_network=False, save_network=True)
+        if test_loss < best_test_loss:
+            best_test_loss = test_loss
         if e % print_every_n == 0 and e > 0:
-            print("Epoch {0}, train_loss {1:.6f}, test_loss {2:.6f}".format(e, train_loss, test_loss))
+            print("Epoch {}, train_loss {:.6f}, test_loss {:.6f}, {:.4f}s".format(e, train_loss, test_loss, time.time()-tic))

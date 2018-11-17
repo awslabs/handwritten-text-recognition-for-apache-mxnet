@@ -346,6 +346,54 @@ def generate_output_image(box_predictions, default_anchors, cls_probs, box_targe
 
     return output_image, number_of_bbs
 
+def predict_bounding_boxes(net, image, min_c, overlap_thres, topk, ctx=mx.gpu()):
+    '''
+    Given the outputs of the dataset (image and bounding box) and the network, 
+    the predicted bounding boxes are provided.
+    
+    Parameters
+    ----------
+    net: SSD
+    The trained SSD network.
+    
+    image: np.array
+    A grayscale image of the handwriting passages.
+        
+    Returns
+    -------
+    predicted_bb: [(x, y, w, h)]
+    The predicted bounding boxes.
+    '''
+    image = mx.nd.array(image).expand_dims(axis=2)
+    image = mx.image.resize_short(image, 350)
+    image = image.transpose([2, 0, 1])/255.
+
+    image = image.as_in_context(ctx)
+    image = image.expand_dims(0)
+    
+    bb = np.zeros(shape=(13, 5))
+    bb = mx.nd.array(bb)
+    bb = bb.as_in_context(ctx)
+    bb = bb.expand_dims(axis=0)
+
+    default_anchors, class_predictions, box_predictions = net(image)
+           
+    box_target, box_mask, cls_target = net.training_targets(default_anchors, 
+                                                            class_predictions, bb)
+
+    cls_probs = mx.nd.SoftmaxActivation(mx.nd.transpose(class_predictions, (0, 2, 1)), mode='channel')
+
+    predicted_bb = MultiBoxDetection(*[cls_probs, box_predictions, default_anchors], force_suppress=True, clip=False)
+    predicted_bb = box_nms(predicted_bb, overlap_thresh=overlap_thres, valid_thresh=min_c, topk=topk)
+    predicted_bb = predicted_bb.asnumpy()
+    predicted_bb = predicted_bb[0, predicted_bb[0, :, 0] != -1]
+    predicted_bb = predicted_bb[:, 2:]
+    predicted_bb[:, 2] = predicted_bb[:, 2] - predicted_bb[:, 0]
+    predicted_bb[:, 3] = predicted_bb[:, 3] - predicted_bb[:, 1]
+
+    return predicted_bb
+
+
 def run_epoch(e, network, dataloader, trainer, log_dir, print_name, update_cnn, update_metric, save_cnn):
     '''
     Run one epoch to train or test the SSD network
