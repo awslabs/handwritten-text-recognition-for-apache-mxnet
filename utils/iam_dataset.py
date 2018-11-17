@@ -71,6 +71,7 @@ def resize_image(image, desired_size):
     image = cv2.copyMakeBorder(image, top, bottom, left, right, cv2.BORDER_CONSTANT, value=float(color))
     crop_bb = (left/image.shape[1], top/image.shape[0], (image.shape[1] - right - left)/image.shape[1],
                (image.shape[0] - bottom - top)/image.shape[0])
+    image[image > 230] = 255
     return image, crop_bb
 
 def crop_handwriting_page(image, bb, image_size):
@@ -138,7 +139,7 @@ class IAMDataset(dataset.ArrayDataset):
         if output_form_text_as_array is true, the output text will be a list of lines string
     """
     MAX_IMAGE_SIZE_FORM = (1120, 800)
-    MAX_IMAGE_SIZE_LINE = (30, 400)
+    MAX_IMAGE_SIZE_LINE = (60, 800)
     MAX_IMAGE_SIZE_WORD = (30, 140)
     def __init__(self, parse_method, credentials=None,
                  root=os.path.join(os.path.dirname(__file__), '..', 'dataset', 'iamdataset'), 

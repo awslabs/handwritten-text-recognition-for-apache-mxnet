@@ -80,7 +80,7 @@ class Network(gluon.HybridBlock):
             self.encoders = gluon.nn.HybridSequential()
             with self.encoders.name_scope():
                 for i in range(self.num_downsamples):
-                    encoder = self.get_encoder(rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers)
+                    encoder = self.get_encoder(rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers, max_seq_len=max_seq_len)
                     self.encoders.add(encoder)
             self.decoder = self.get_decoder()
             self.downsampler = self.get_down_sampler(self.FEATURE_EXTRACTOR_FILTER)
@@ -136,13 +136,13 @@ class Network(gluon.HybridBlock):
         body = gluon.nn.HybridSequential()
         with body.name_scope():
             first_layer = gluon.nn.Conv2D(channels=64, kernel_size=(7, 7), padding=(3, 3), strides=(2, 2), in_channels=1, use_bias=False)
-            first_layer.initialize(mx.init.Normal(), ctx=self.ctx)
+            first_layer.initialize(mx.init.Xavier(), ctx=self.ctx)
             first_layer.weight.set_data(first_weights)
             body.add(first_layer)
             body.add(*pretrained.features[1:-resnet_layer_id])
         return body
 
-    def get_encoder(self, rnn_hidden_states, rnn_layers):
+    def get_encoder(self, rnn_hidden_states, rnn_layers, max_seq_len):
         '''
         Creates an LSTM to learn the sequential component of the image features.
         
@@ -163,7 +163,7 @@ class Network(gluon.HybridBlock):
 
         encoder = gluon.nn.HybridSequential()
         with encoder.name_scope():
-            encoder.add(EncoderLayer(hidden_states=rnn_hidden_states, rnn_layers=rnn_layers))
+            encoder.add(EncoderLayer(hidden_states=rnn_hidden_states, rnn_layers=rnn_layers, max_seq_len=max_seq_len))
             encoder.add(gluon.nn.Dropout(self.p_dropout))
         encoder.collect_params().initialize(mx.init.Xavier(), ctx=self.ctx)
         return encoder
@@ -377,8 +377,12 @@ if __name__ == "__main__":
                         help="Name to store the checkpoints")
     parser.add_argument("-m", "--load_model", default=None,
                          help="Name of model to load")
+    parser.add_argument("-sl", "--max-seq-len", default=None,
+                         help="Maximum sequence length")
     args = parser.parse_args()
 
+    print(args)
+    
     gpu_ids = [int(elem) for elem in args.gpu_id.split(",")]
     
     if gpu_ids == [-1]:
@@ -388,11 +392,7 @@ if __name__ == "__main__":
 
     line_or_word = args.line_or_word
     assert line_or_word in ["line", "word"], "{} is not a value option in [\"line\", \"word\"]"
-    if line_or_word == "line":
-        max_seq_len = 100
-    else:
-        max_seq_len = 32
-
+        
     num_downsamples = int(args.num_downsamples)
     resnet_layer_id = int(args.resnet_layer_id)
     rnn_hidden_states = int(args.rnn_hidden_states)
@@ -411,7 +411,14 @@ if __name__ == "__main__":
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
     load_model = args.load_model
+    max_seq_len = args.max_seq_len
     
+    if max_seq_len is not None:
+        max_seq_len = int(max_seq_len)
+    elif line_or_word == "line":
+        max_seq_len = 100
+    else:
+        max_seq_len = 32
     
     net = Network(num_downsamples=num_downsamples, resnet_layer_id=resnet_layer_id , rnn_hidden_states=rnn_hidden_states, rnn_layers=rnn_layers,
                   max_seq_len=max_seq_len, ctx=ctx)
@@ -428,7 +435,7 @@ if __name__ == "__main__":
     train_data = gluon.data.DataLoader(train_ds.transform(augment_transform), batch_size, shuffle=True, last_batch="rollover", num_workers=4*len(ctx))
     test_data = gluon.data.DataLoader(test_ds.transform(transform), batch_size, shuffle=True, last_batch="discard", num_workers=4*len(ctx))
     
-    schedule = mx.lr_scheduler.FactorScheduler(step=lr_period, factor=lr_scale)
+    schedule = mx.lr_scheduler.FactorScheduler(step=lr_period*len(train_data), factor=lr_scale)
     schedule.base_lr = learning_rate
 
     trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': learning_rate, "lr_scheduler": schedule, 'clip_gradient': 2})
