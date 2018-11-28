@@ -176,7 +176,7 @@ def sort_bbs_line_by_line(bbs, y_overlap=0.2):
     # Split lines that are more than 1.5 of the others
     y_height = line_bbs[:, 3]
     y_height_diff = np.abs(y_height/np.median(y_height))
-    y_height_remove = y_height_diff > 1.5
+    y_height_remove = y_height_diff > 1.65
     
     new_line_bbs = []
     for i in range(line_bbs.shape[0]):
