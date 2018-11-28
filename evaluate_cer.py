@@ -25,14 +25,20 @@ mx.random.seed(123)
 
 # Input sizes
 form_size = (1120, 800)
-segmented_paragraph_size = (700, 700)
-line_image_size = (30, 400)
+segmented_paragraph_size = (800, 800)
+line_image_size = (60, 800)
 
 # Parameters
 min_c = 0.01
 overlap_thres = 0.001
 topk = 400
+rnn_hidden_states = 512
+rnn_layers = 2
+max_seq_len = 160
 
+recognition_model = "models/handwriting_line_sl_160_a_512_o_2.params"
+paragraph_segmentation_model = "models/paragraph_segmentation2.params"
+word_segmentation_model = "models/word_segmentation.params"
 
 def get_arg_max(prob):
     '''
@@ -47,19 +53,21 @@ denoise_func = get_arg_max
 if __name__ == '__main__':
     
     # Compute context
-    ctx = mx.gpu(0)
+    ctx = mx.gpu(1)
 
     # Models
     logging.info("Loading models...")
     paragraph_segmentation_net = ParagraphSegmentationNet(ctx)
-    paragraph_segmentation_net.load_parameters("models/paragraph_segmentation2.params", ctx)
+    paragraph_segmentation_net.load_parameters(paragraph_segmentation_model, ctx)
 
     word_segmentation_net = WordSegmentationNet(2, ctx=ctx)
-    word_segmentation_net.load_parameters("models/word_segmentation.params", ctx)
+    word_segmentation_net.load_parameters(word_segmentation_model, ctx)
 
-    handwriting_line_recognition_net = HandwritingRecognitionNet(rnn_hidden_states=128,
-                                                                 rnn_layers=2, ctx=ctx)
-    handwriting_line_recognition_net.load_parameters("models/handwriting_line_recognition5.params", ctx)
+    handwriting_line_recognition_net = HandwritingRecognitionNet(rnn_hidden_states=rnn_hidden_states,
+                                                                 rnn_layers=rnn_layers,
+                                                                 max_seq_len=max_seq_len,
+                                                                 ctx=ctx)
+    handwriting_line_recognition_net.load_parameters(recognition_model, ctx)
     logging.info("models loaded.")
 
     # Data
