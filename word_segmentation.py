@@ -29,9 +29,11 @@ send_image_every_n = 20
 save_every_n = 50
 
 # To run:
-#     python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401 --checkpoint_name ssd_400.params
+#     python word_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401 --checkpoint_name ssd_400.params
 # For fine_tuning:
-#    python line_segmentation.py -p ssd_550.params 
+#    python word_segmentation.py -p ssd_550.params 
+
+# python word_segmentation.py --min_c 0.05 --overlap_thres 0.001 --topk 400 --epoch 401 --checkpoint_name word_seg.params
 
 class SSD(gluon.Block):
     def __init__(self, num_classes, ctx, **kwargs):
@@ -41,8 +43,11 @@ class SSD(gluon.Block):
         # Four anchor boxes (n + m - 1) are generated: 2 square anchor boxes based on the n=2 sizes and 2 rectanges based on
         # the sizes and the ratios. See https://discuss.mxnet.io/t/question-regarding-ssd-algorithm/1307 for more information.
         
-        self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
-        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [1, 6, 8], [1, 5, 7], [1, 6, 8], [1, 7, 9], [1, 7, 10]]
+        #self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.4, .6], [.5, .7], [.6, .8], [.7, .9]]
+        #self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [1, 6, 8], [1, 5, 7], [1, 6, 8], [1, 7, 9], [1, 7, 10]]
+
+        self.anchor_sizes = [[.1, .2], [.2, .3], [.2, .4], [.3, .4], [.3, .5], [.4, .6]]
+        self.anchor_ratios = [[1, 3, 5], [1, 3, 5], [1, 6, 8], [1, 4, 7], [1, 6, 8], [1, 5, 7]]
 
         self.num_anchors = len(self.anchor_sizes)
         self.num_classes = num_classes
@@ -527,7 +532,7 @@ if __name__ == "__main__":
                         help="Model to load from")
 
     args = parser.parse_args()
-    gpu_count = args.gpu_count
+    gpu_count = int(args.gpu_count)
 
     ctx = [mx.gpu(i) for i in range(gpu_count)]
 

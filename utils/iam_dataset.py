@@ -95,8 +95,7 @@ def crop_handwriting_page(image, bb, image_size):
     output_image: np.array
         cropped image of size image_size.
     '''
-    expanded_bb = expand_bounding_box(bb)
-    image = crop_image(image, expanded_bb)
+    image = crop_image(image, bb)
 
     image, _ = resize_image(image, desired_size=image_size)
     return image
