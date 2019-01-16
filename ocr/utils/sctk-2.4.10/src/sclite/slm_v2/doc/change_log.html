@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<TITLE>
+Language Modeling Toolkit
+</TITLE>
+</HEAD>
+
+
+<BODY>
+<body bgcolor="ffffff">
+<H1 align=center> 
+The CMU-Cambridge Statistical Language Modeling Toolkit 
+</H1> 
+
+<H2 align=center> 
+History of changes
+</H2> 
+
+<H3>
+V2.00  June 17 1997
+</H3>
+
+Original Version
+
+<H3>
+V2.01  July 1 1997
+</H3>
+
+<p>Corrected "Usage" information in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>.</p>
+
+<p>Added percentage counts to n-gram hits chart in <a
+href="toolkit_documentation.html#evallm"><tt>evallm</tt></a>.</p>
+
+<p>Improved the documentation slightly.</p>
+
+<p>No longer refer to back-off weights as "alphas" in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>. So
+command line options like "-two_byte_alphas" and "-max_alpha" become
+"-two_byte_bo_weights" and "-max_bo_weight". The old forms are still
+supported, in order to provide consistency with V2.00.</p>
+
+<p>Tools now terminate in the event of unrecognised command-line
+arguments (previously they simply displayed a warning).</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#endiansh"><tt>endian.sh</tt></a>.</p>
+
+<H3>
+V2.02  July 11 1997
+</H3>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#mergeidngram"><tt>mergeidngram</tt></a>,
+so that it now writes binary files correctly.</p>
+
+<p>Corrected documentation of the <tt>-disc_ranges</tt> flag of <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>.</p>
+
+<p>Fixed <tt>-calc_mem</tt> option in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>.</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>
+which sometimes cause segmentation faults when trying to read .gzipped
+files as if they were uncompressed.</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a> which caused major problems when constructing
+closed vocabulary models from idngram streams with OOVs in them. The
+correct behaviour (which occurs now) is for a warning to be displayed,
+and any n-gram in the input stream with an OOV in it to be igrnored.</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#ngram2mgram"><tt>ngram2mgram</tt></a>
+which was causing it to handle the first and last lines of its input
+incorrectly.</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#wngram2idngram"><tt>wngram2idngram</tt></a>
+which caused a segmentation fault for unigrams.</p>
+
+<p>Fixed bug in the <tt>write_arpa</tt> function of <tt>write_lms.c</tt> so that we don't
+now have it trying to display a back-off weight for unigrams if we are
+only dealing with a unigram model.</p>
+
+<p>Fixed bugs in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>
+which caused problems with the creation of unigram models.</p>
+
+<p>Fixed bugs in <a
+href="toolkit_documentation.html#evallm"><tt>evallm</tt></a> which
+caused problems with reading ARPA format unigram models.</p>
+
+<H3>
+V2.03  Nov 10 1997
+</H3>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#wngram2idngram"><tt>wngram2idgram</tt></a>
+which caused problems if first OOV buffer became full.</p>
+
+<p>Changed temporary file names in <a
+href="toolkit_documentation.html#text2idngram"><tt>text2idngram</tt></a>,
+<a
+href="toolkit_documentation.html#text2wngram"><tt>text2wngram</tt></a>
+and <a
+href="toolkit_documentation.html#wngram2idngram"><tt>wngram2idgram</tt></a>
+such that they now contain the hostname and process id, to avoid
+clashes.</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#interpolate"><tt>interpolate</tt></a>,
+so that <tt>-probs</tt> option can now be used with <tt>-cv</tt></p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#evallm"><tt>evallm</tt></a> which
+caused problems reading ARPA format LMs when used with 4-grams,
+5-grams, etc. and cutoffs of > 0. (NOTE: This problem did not affect
+the *writing* of ARPA format LMs)</p>
+
+<p>Fixed bug in <a
+href="toolkit_documentation.html#idngram2lm"><tt>idngram2lm</tt></a>
+which caused problems if first n-gram fell below cutoff
+threshold. </p>
+
+<p>Changed behaviour of <a
+href="toolkit_documentation.html#evallm"><tt>evallm</tt></a> such that 
+P(A | B C) = 1 doesn't generate a warning anymore.</p>
+
+<hr size=4>
+
+<address>Philip Clarkson - prc14@eng.cam.ac.uk</address>
+
+</HTML>
+
+

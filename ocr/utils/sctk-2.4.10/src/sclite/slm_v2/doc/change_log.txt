@@ -1,0 +1,79 @@
+          The CMU-Cambridge Statistical Language Modeling Toolkit
+
+                             History of changes
+
+V2.00 June 17 1997
+
+Original Version
+
+V2.01 July 1 1997
+
+Corrected "Usage" information in idngram2lm.
+
+Added percentage counts to n-gram hits chart in evallm.
+
+Improved the documentation slightly.
+
+No longer refer to back-off weights as "alphas" in idngram2lm. So command
+line options like "-two_byte_alphas" and "-max_alpha" become
+"-two_byte_bo_weights" and "-max_bo_weight". The old forms are still
+supported, in order to provide consistency with V2.00.
+
+Tools now terminate in the event of unrecognised command-line arguments
+(previously they simply displayed a warning).
+
+Fixed bug in endian.sh.
+
+V2.02 July 11 1997
+
+Fixed bug in mergeidngram, so that it now writes binary files correctly.
+
+Corrected documentation of the -disc_ranges flag of idngram2lm.
+
+Fixed -calc_mem option in idngram2lm.
+
+Fixed bug in idngram2lm which sometimes cause segmentation faults when
+trying to read .gzipped files as if they were uncompressed.
+
+Fixed bug in idngram2lm which caused major problems when constructing closed
+vocabulary models from idngram streams with OOVs in them. The correct
+behaviour (which occurs now) is for a warning to be displayed, and any
+n-gram in the input stream with an OOV in it to be igrnored.
+
+Fixed bug in ngram2mgram which was causing it to handle the first and last
+lines of its input incorrectly.
+
+Fixed bug in wngram2idngram which caused a segmentation fault for unigrams.
+
+Fixed bug in the write_arpa function of write_lms.c so that we don't now
+have it trying to display a back-off weight for unigrams if we are only
+dealing with a unigram model.
+
+Fixed bugs in idngram2lm which caused problems with the creation of unigram
+models.
+
+Fixed bugs in evallm which caused problems with reading ARPA format unigram
+models.
+
+V2.03 Nov 10 1997
+
+Fixed bug in wngram2idgram which caused problems if first OOV buffer became
+full.
+
+Changed temporary file names in text2idngram, text2wngram and wngram2idgram
+such that they now contain the hostname and process id, to avoid clashes.
+
+Fixed bug in interpolate, so that -probs option can now be used with -cv
+
+Fixed bug in evallm which caused problems reading ARPA format LMs when used
+with 4-grams, 5-grams, etc. and cutoffs of > 0. (NOTE: This problem did not
+affect the *writing* of ARPA format LMs)
+
+Fixed bug in idngram2lm which caused problems if first n-gram fell below
+cutoff threshold.
+
+Changed behaviour of evallm such that P(A | B C) = 1 doesn't generate a
+warning anymore.
+
+----------------------------------------------------------------------------
+Philip Clarkson - prc14@eng.cam.ac.uk

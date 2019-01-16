@@ -1,0 +1,21 @@
+;; Comment
+* name "test.arab2003.glm"
+* desc "Testing file for Arabic"
+* copy_no_hit = 'T'
+;;
+;; Verbal Punctuation equivalences
+%أه  => %تردّد / [ ] __ [ ]
+أه   => %تردّد / [ ] __ [ ]
+%إيه => %تردّد / [ ] __ [ ]
+إيه  => %تردّد / [ ] __ [ ]
+%أم  => %تردّد / [ ] __ [ ]
+أم   => %تردّد / [ ] __ [ ]
+%أوو => %تردّد / [ ] __ [ ]
+أوو  => %تردّد / [ ] __ [ ]
+%هاي => %تردّد / [ ] __ [ ]
+هاي  => %تردّد / [ ] __ [ ]
+%مهم => %تردّد / [ ] __ [ ]
+مهم  => %تردّد / [ ] __ [ ]
+
+;;; This Rule will ONLY work IF tanween removal happens
+اخاف => MultiRule / [ ] __ [ ]

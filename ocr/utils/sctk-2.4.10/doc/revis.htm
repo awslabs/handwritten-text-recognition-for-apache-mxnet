@@ -1,0 +1,172 @@
+<!-- $Id: revis.htm,v 1.6 2004/08/30 15:10:38 jfiscus Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>SCLITE revisions</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="revisions_name_0">
+<strong>
+<A HREF="sclite.htm#sclite_name_0">Sclite</A> Revision.txt </A>
+</strong>
+</H1>
+<p>
+<pre>
+sclite 1.0 - Released July 27, 1995
+
+sclite 1.1 - Released September 27, 1995
+	- New/modified output options:
+	  * Added options to '-o':  'none' to not make any reports,
+ 	    'sgml' to create an sgml file for alignments, 'lur' for the
+ 	    labeled utterance report.
+	  * '-p'.  Pipes output of alignments to other sclite utilities.
+	    in the sgml format.
+	- New Input options:
+	  * '-P' accepts piped sgml format input from other sclite utilities.
+	  * '-e' identifies the input character encoding.
+	- New alignment options:
+	  * '-S' performs an inferred word segmentation algorithm rather
+	    than using the word segmentation of the reference and hyp files.
+	  * '-F' aligns fragments to words with matching substrings and scores
+	    them as correct.
+	  * Changed the -c option to include the optional flag "ASCIITOO"
+	    which also splits ascii words when doing a character alignment.
+	    Also added another flag, "DH", to delete hyphens from the ref and
+	    hyp transcripts before alingment.
+	- Fixes and Changes:
+	  * Modified the '-n' option to handle multiple hyp files.
+	  * Fixed a bug in 'parse_stm_line' to handle empty texts.
+	  * Modified the read function for a CTM file so that any length
+	    file will be properly read in.
+	- Compiled and tested using the HP-UX and DEC OSF1 native cc
+	  compilers.
+
+sclite 1.2 - Released March 8, 1996
+	- Corrected a bug in the lur report that was activated if a speaker
+	  had no reference words, but had errorneously hypothesized words.
+	- Added the sent, spk, and ovrdtl reports to sclite.
+	- Added the option to score CTM to CTM files.  This is essentially
+	  the same code used for the first SWB LVCSR evaluation, however, since
+	  the new network alignment routines were used unifying the alignment
+   	  into a single step, alignments will differ slightly from those 
+	  generated with the old scoring package.
+	- Added the "-T" option to do time-mediated alignments.
+	- Removed the size limitations in the report generation software,
+	  'rpg.c'.  There is still are hard limit on the length of characters
+	  for each cell of 200.
+	- Standardize program exit codes to be 0 for successfull execution
+	  and 1 for failed execution.
+	- Correct the handling of NULL alternatives in the hypothesis file.
+	  Scoring reference to hypothesis yields the same error rates as
+	  scoring hypothesis to reference.  The only difference is insertions
+	  are swapped with deletions.
+	- The installer now has the option to enable or disable alignments
+	  via GNU's diff.
+	- Added informative error messages when label definitions, which are
+	  used by the 'lur' report, have been improperly specified.
+
+sclite 1.2a - Released March 15, 1996
+	- Forgot one minor file in the distrubution, "sclite.c".
+
+sclite 1.3 - Released April 22, 1996
+	- Corrected a minor makefile inconsistency. (One file was compiled 
+	  twice).
+	- Changed Network_dp_align to optionally include NULLS in the output.
+	- Changed the -m option to now reduce either the reference or 
+	  hypothesis file, or both before alignment takes place.
+	- fixed an uninitialized variable in alex.c which became apparent
+	  in the 'dtl' and 'spk' reports.
+	- Corrected a argument passed to fill_STM_structure() in stm2ctm.c
+	  which caused a warning on some compilers.
+	- Added a bug report proceedures.
+
+Revision 1.4 - Released October 18, 1996
+	- Forced confidence values to flow through the entire data pipeline.
+	- Added the '-C' option to include 'normalized cross-entropy'
+	  statistics in all output files.
+	- Added algo2 for the inferred segmentation option '-S'
+	- Added "IGNORE_TIME_SEGMENT_IN_SCORING" as an allowable 
+	  transcript for an stm record.  See the stm file documentation for
+	  it's use.
+
+Revision 1.4a - Released May 29, 1997
+	- Cleaned the distribution to be ISO-9669 compatable
+
+Released under a different name, sctk Version 1.0
+	- Modified the label extraction function 'parse_input_comment_line'
+	  to ignore duplicate LABEL and CATEGORY lines.
+	- Added a sequence number to each PATH in alignment sequence so
+          that the input sequence of alignments can be reconstructed.
+	- Added the capability to keep track of reference confidence scores
+	  when aligning ref ctm's against hyp ctm's.
+	- Corrected the .pre dump of the alignment structure when the case
+	  sensitive flag is set.  The error was introduced by modifications.
+	- Fixed a problem in TEXT_strcasecmp().  It failed to handle the
+	  case where str1 was shorter than srt2.
+	- Fixed a problem in 'align.c/extract_speaker()' a NULL was not
+	  terminating each newly extracted speaker id.
+	- Revised the reports lut, sum, snt, spkr,ovr to handle speakers W/o
+	  any reference tokens, In the sum report, the speakers W/o	
+	  reference tokens are ignored when computing the speaker
+	  mean, sd, and median.
+ 	- fixed a  bug in tcslite.sh which output an error when test 5 was
+	  run and the use of gnudiff was not compiled in to sclite.
+	- fixed a bug in config.in which was propagated to config.sh.  The 
+	  problem was a missing backquote on "uname -s".
+	- Added error checking to the ctm2ctm alignment module.  No checking
+	  had been performed to make sure the ref and hyp files had the 
+	  same conversations and channels.
+	- Fixed a problem in 'expand_words_to_chars()' it was not deleting
+	  hyphens from single character words do to an incorrect conditional.
+	- Added a new way to score, 'Optionally Deletable'.  This required a
+	  major set of modifications and generalizations.
+	- Modified the character scoring proceedure so that confidence scores
+	  are imputed to the sub-characters making up the word.
+	- Corrected a bug in Compute_ROC:det.c which incorrectly incremented
+	  pointers.
+
+SCTK Version 1.1 - Released November 13, 1997
+	- Utility versions in this release: sclite V2.1, sc_stats V1.1
+	- added the Executive and Raw Executive Summaries to sc_stats.
+	- added the det curve to sc_stats so that combined plots are 
+	  produced.
+	- modified mapsswe test to handle arbitrary number of segments.
+	- Correct a bug in mtchprs.c which was free-ing a the test
+	  confindence array prematurely.
+
+SCTK Version 1.2
+	- added the prn report to sc_stats.   Prints N-system alignments together.
+	- Added option alignment by word-weighted-mediated alignments.
+		- Weight inputs include wwl file (-w) and LM file (-L).
+		- Added testing scripts and documentation examples.
+		- Added the .wws output format.
+	- Update .prf output to include word weights and other information.
+	- Add SLM toolkit v2 into the sctk package.
+		- modified config.in, makefile.in and the installation process
+	- Various internal structures modified to handle word weights.
+	- Compiles under Linux using gmake.
+	- Documetation changes, including additional comments concerning the 
+	  waveform id in the STM and CTM file formats.
+
+SCTK Version 1.2a
+        - Fixed an installation problem for Linux involving scfp.
+
+SCTK Version 1.2b - Released October 1, 2000
+	- Improved testing code to not report errors under Linux
+
+SCTK Version 1.2c - Released October 11, 2000
+	- Improved installation targets in makefile
+
+SCTK Version 1.3 - Release July 30, 2004
+        - Minor bug fixes for core dumps
+	- Added the ability to pass two tags attached to each word through the
+          scorer.   The tags are attached to the words by appending ';<string>'
+          to the word's text.  There can be up to two tags, and they may be empty.
+        - Added a '#' after NCE values in the .sys reports to indicate the
+          abscence of reference lexemes for a speaker.
+	- Expanded the buffers in the rpg.c suite of routines for report generation.
+        - Expanded the maximum alternation size to 10000 characters.
+        - Added a "Lattice" error rate calculation in the .prn reports.  It's the
+          percent of reference tokens not correct in any systems transcript.</pre>
+</body>
+</html>

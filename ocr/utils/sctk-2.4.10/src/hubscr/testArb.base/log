@@ -1,0 +1,21 @@
+test.arb2004.txt.ctm
+Filtering arabic file 'test.arb2004.txt.stm', stm format
+Filtering arabic file 'test.arb2004.txt.ctm', ctm format
+Scoring arabic Hyp 'test.arb2004.txt.ctm.filt' against ref 'test.arb2004.txt.stm.filt'
+sclite: 2.3 TK Version 1.3
+Begin alignment of Ref File: 'test.arb2004.txt.stm.filt' and Hyp File: 'test.arb2004.txt.ctm.filt'
+    Performing alignments for file 'test.arb2004'.
+        1 of 26 Segments For Channel 1.             2 of 26 Segments For Channel 1.             3 of 26 Segments For Channel 1.             4 of 26 Segments For Channel 1.             5 of 26 Segments For Channel 1.             6 of 26 Segments For Channel 1.             7 of 26 Segments For Channel 1.             8 of 26 Segments For Channel 1.             9 of 26 Segments For Channel 1.             10 of 26 Segments For Channel 1.             11 of 26 Segments For Channel 1.             12 of 26 Segments For Channel 1.             13 of 26 Segments For Channel 1.             14 of 26 Segments For Channel 1.             15 of 26 Segments For Channel 1.             16 of 26 Segments For Channel 1.             17 of 26 Segments For Channel 1.             18 of 26 Segments For Channel 1.             19 of 26 Segments For Channel 1.             20 of 26 Segments For Channel 1.             21 of 26 Segments For Channel 1.             22 of 26 Segments For Channel 1.             23 of 26 Segments For Channel 1.             24 of 26 Segments For Channel 1.             25 of 26 Segments For Channel 1.             26 of 26 Segments For Channel 1.     
+        1 of 19 Segments For Channel 2.             2 of 19 Segments For Channel 2.             3 of 19 Segments For Channel 2.             4 of 19 Segments For Channel 2.             5 of 19 Segments For Channel 2.             6 of 19 Segments For Channel 2.             7 of 19 Segments For Channel 2.             8 of 19 Segments For Channel 2.             9 of 19 Segments For Channel 2.             10 of 19 Segments For Channel 2.             11 of 19 Segments For Channel 2.             12 of 19 Segments For Channel 2.             13 of 19 Segments For Channel 2.             14 of 19 Segments For Channel 2.             15 of 19 Segments For Channel 2.             16 of 19 Segments For Channel 2.             17 of 19 Segments For Channel 2.             18 of 19 Segments For Channel 2.             19 of 19 Segments For Channel 2.     
+    Writing scoring report to 'test.arb2004.txt.ctm.filt.sys'
+    Writing raw scoring report to 'test.arb2004.txt.ctm.filt.raw'
+    Writing overall detailed scoring report 'test.arb2004.txt.ctm.filt.dtl'
+    Writing LUR scoring report to 'test.arb2004.txt.ctm.filt.lur'
+    Writing string alignments to 'test.arb2004.txt.ctm.filt.pra'
+    Writing string alignments to 'test.arb2004.txt.ctm.filt.prf'
+    Writing SGML string alignments to 'test.arb2004.txt.ctm.filt.sgml'
+    Skipping DET Curve, no confidence scores supplied.
+    Skipping Confidence Histogram, no confidence scores supplied.
+    Skipping Scaled Binned Histogram, no confidence scores supplied.
+
+Successful Completion

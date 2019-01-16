@@ -1,0 +1,23 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./csrnab1.hyp
+
+Speakers: 
+    0:  4t0
+
+Speaker sentences   0:  4t0   #utts: 2
+id: (4t0c0203)
+Scores: (#C #S #D #I) 186 5 6 1
+REF:  s o f a r t h i s y e a r t h e i n d u s t r y s l i d e h a s b e e n a p p a r e n t i n a l l e g a t i o n s o f i n s i d e r t r a d i n g b y f u n d m a n a g e r s U n * s a v O r Y f u n d s a l e s p r a c t i c e s a t b a n k s a n d T H E u s e o f h i g h r i s k d e r i v a t i v e s e c u r i t i e s i N n O R M a L l y c o n s e r v a t i v e m o n e y m a r k e t f u n d s 
+HYP:  s o f a r t h i s y e a r t h e i n d u s t r y s l i d e h a s b e e n a p p a r e n t i n a l l e g a t i o n s o f i n s i d e r t r a d i n g b y f u n d m a n a g e r s A n D s a v E r E f u n d s a l e s p r a c t i c e s a t b a n k s a n d * * * u s e o f h i g h r i s k d e r i v a t i v e s e c u r i t i e s i * n * * E a R l y c o n s e r v a t i v e m o n e y m a r k e t f u n d s 
+Eval:                                                                                                                                                                               S   I       S   S                                                         D D D                                                                     D   D D S   S                                                             
+
+id: (4t0c020f)
+Scores: (#C #S #D #I) 143 4 4 2
+REF:  m o r e o v e r i n v e s t o r s W H o c o m p a r e f U n d p r i c e s a n d p e r f o r m a n c e b y u s i n g w e e k e n d n e w s p a p e r s w o u l d h a v e h a d l i t t l e d a t a o n f i d e l i t y f u n d s p e r h a p s c * O s T i n g f i d e l i t y * s O M E n e w i n v e s t m e n t 
+HYP:  m o r e o v e r i n v e s t o r s * T o c o m p a r e f I n d p r i c e s a n d p e r f o r m a n c e b y u s i n g w e e k e n d n e w s p a p e r s w o u l d h a v e h a d l i t t l e d a t a o n f i d e l i t y f u n d s p e r h a p s c A U s * i n g f i d e l i t y ' s * * A n e w i n v e s t m e n t 
+Eval:                                   D S                   S                                                                                                                                                                                       I S   D                       I   D D S                           
+
+

@@ -1,0 +1,73 @@
+øŒ€€  øŒ€€¡ { øŒ€€¢ øŒ€€£ / øŒ€€¢ / øŒ€€¤ } øŒ€€¤ øŒ€€¥ øŒ€€¦ (f_0)
+øŒ€€  øŒ€€¡ { øŒ€€¢ / øŒ€€¢ øŒ€€£ / øŒ€€¤ } øŒ€€¤ øŒ€€¥ øŒ€€¦ (f_1)
+øŒ€€  øŒ€€¡ { øŒ€€¢ / øŒ€€¤ / øŒ€€¢ øŒ€€£ } øŒ€€¤ øŒ€€¥ øŒ€€¦ (f_2)
+øŒ€€  øŒ€€¡ { øŒ€€¢ / øŒ€€¤ / øŒ€€¢ øŒ€€£ } øŒ€€¥ øŒ€€¦ (f_3)
+øŒ€€  øŒ€€¡ øŒ€€¢ øŒ€€£ { øŒ€€¤ / øŒ€€¢ / @ } øŒ€€¥ øŒ€€¦ (f_4)
+øŒ€€  øŒ€€¡ øŒ€€¢ øŒ€€£ øŒ€€¤ { øŒ€€¤ / øŒ€€¢ / @ } øŒ€€¥ øŒ€€¦ (f_5)
+øŒ€€  øŒ€€¡ øŒ€€¢ øŒ€€£ { øŒ€€¤ / øŒ€€¢ / @ } øŒ€€¤ øŒ€€¥ øŒ€€¦ (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+øŒ€€´øŒ€€§ øŒ€€´øŒ€€§ øŒ€€§øŒ€€ øŒ€€£ øŒ€€  øŒ€€«øŒ€€®øŒ€€­øŒ€€¦ { øŒ€€ øŒ€€¦øŒ€€¤-øŒ€€®øŒ€€«øŒ€€£ / øŒ€€ øŒ€€¦øŒ€€¤ øŒ€€®øŒ€€«øŒ€€£ } øŒ€€¯øŒ€€±øŒ€€®øŒ€€¡øŒ€€«øŒ€€¤øŒ€€¬ øŒ€€®øŒ€€¥ øŒ€€¬øŒ€€¸ øŒ€€¡right (g_0)
+øŒ€€´øŒ€€§ øŒ€€´øŒ€€§ øŒ€€§øŒ€€ øŒ€€£ øŒ€€  øŒ€€«øŒ€€®øŒ€€­øŒ€€¦ { øŒ€€ øŒ€€¦øŒ€€¤ øŒ€€®øŒ€€«øŒ€€£ / øŒ€€ øŒ€€¦øŒ€€¤-øŒ€€®øŒ€€«øŒ€€£ } øŒ€€¯øŒ€€±øŒ€€®øŒ€€¡øŒ€€«øŒ€€¤øŒ€€¬ øŒ€€®øŒ€€¥ øŒ€€¬øŒ€€¸ øŒ€€¡right (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+øŒ€€  { øŒ€€¡ / øŒ€€¢øŒ€€£ } { øŒ€€¤ øŒ€€¥ / øŒ€€¤øŒ€€¥ } (h_0)
+øŒ€€  { øŒ€€¡ / øŒ€€¢øŒ€€£ / { øŒ€€¦ øŒ€€§ øŒ€€¨ / øŒ€€¦øŒ€€§ øŒ€€¨ / øŒ€€¦ øŒ€€¨øŒ€€§} øŒ€€¡øŒ€€£ } { øŒ€€¤ { øŒ€€¨ øŒ€€­ / øŒ€€³øŒ€€§ } øŒ€€¥ / øŒ€€¤øŒ€€¥ } (h_1)
+øŒ€€  { øŒ€€¡ / øŒ€€¢øŒ€€£ / { øŒ€€¦ øŒ€€§ øŒ€€¨ / øŒ€€¦øŒ€€§ øŒ€€¨ / øŒ€€¦ øŒ€€¨øŒ€€§} øŒ€€¡øŒ€€£ } { øŒ€€¤ { øŒ€€¨ øŒ€€­ / øŒ€€³øŒ€€§ } øŒ€€¥ / øŒ€€¤øŒ€€¥ } (h_2)
+;; Test a couple alternations in the hyp file
+øŒ€€³øŒ€€§øŒ€€¨øŒ€€² øŒ€€¨øŒ€€² øŒ€€³øŒ€€§øŒ€€¤ øŒ€€³øŒ€€¤øŒ€€­ (i_1)
+øŒ€€³øŒ€€§øŒ€€¨øŒ€€² øŒ€€¨øŒ€€² øŒ€€³øŒ€€§øŒ€€¤ øŒ€€³øŒ€€¤øŒ€€  (i_2)
+;; Check alternations in both the ref and hyp
+{øŒ€€³øŒ€€§øŒ€€¤ / øŒ€€³øŒ€€§øŒ€€¨øŒ€€²} øŒ€€¨øŒ€€² øŒ€€³øŒ€€§øŒ€€¤ øŒ€€³øŒ€€¤øŒ€€  (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+{øŒ€€¥øŒ€€¨-/øŒ€€¥øŒ€€¨øŒ€€¦-} øŒ€€³øŒ€€§- øŒ€€¥øŒ€€¨- -øŒ€€¨øŒ€€¢øŒ€€ªøŒ€€² {-øŒ€€«øŒ€€ª/-øŒ€€¨øŒ€€ª} -øŒ€€®øŒ€€¥øŒ€€¥øŒ€€¤øŒ€€¤ -øŒ€€§øŒ€€¨øŒ€€¬ øŒ€€¥øŒ€€¨øŒ€€­øŒ€€£ øŒ€€³øŒ€€§øŒ€€¤ øŒ€€¥øŒ€€¨øŒ€€²øŒ€€§ øŒ€€³øŒ€€¨øŒ€€¢øŒ€€ªøŒ€€² øŒ€€¬øŒ€€¨øŒ€€«øŒ€€ª øŒ€€¥øŒ€€¤øŒ€€¤ øŒ€€§øŒ€€¨øŒ€€¬ (i_4)
+;; Check deletions and substitutions of hyphenated words
+øŒ€€£øŒ€€¤øŒ€€« øŒ€€¥øŒ€€¨- øŒ€€£øŒ€€¤øŒ€€«øŒ€€žøŒ€€¶øŒ€€¨øŒ€€³øŒ€€§øŒ€€­øŒ€€´øŒ€€«øŒ€€« { øŒ€€¥øŒ€€¨ /@ } øŒ€€²øŒ€€ªøŒ€€¨øŒ€€¯ øŒ€€²øŒ€€ªøŒ€€¨øŒ€€¯ øŒ€€²øŒ€€´øŒ€€¡øŒ€€²øŒ€€³øŒ€€¨øŒ€€³øŒ€€´øŒ€€³øŒ€€¨øŒ€€®øŒ€€­ øŒ€€¥øŒ€€¨- øŒ€€²øŒ€€´øŒ€€¡øŒ€€žøŒ€€¶øŒ€€¨øŒ€€³øŒ€€§øŒ€€­øŒ€€´øŒ€€«øŒ€€« { øŒ€€¥øŒ€€¨- / @ } (i_5)
+;; Check to handle utterances without reference words 
+(empty-1)
+(empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-1)
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-2)
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-3)
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-4)
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-5)
+øŒ€€  { øŒ€€¢ / @ } øŒ€€£ (alt-6)
+øŒ€€  øŒ€€£ øŒ€€¤ (alt-7)
+øŒ€€  øŒ€€£ @ øŒ€€¤ (alt-8)
+øŒ€€  øŒ€€£ øŒ€€¢ (alt-9)
+;;; Check the handling of optionally deletable
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-1)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-2)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-3)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-4)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-5)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-6)
+øŒ€€¡ (øŒ€€¢) øŒ€€£ (od1-7)
+;;; ambiguous cases
+(øŒ€€ ) (øŒ€€¢) øŒ€€¡ øŒ€€£ øŒ€€¤ (od2-1)
+(øŒ€€ ) øŒ€€¢ (øŒ€€¡) øŒ€€£ øŒ€€¤ (od2-2)
+(øŒ€€ ) øŒ€€¢ øŒ€€¡ (øŒ€€£) øŒ€€¤ (od2-3)
+(øŒ€€ ) øŒ€€¢ øŒ€€¡ øŒ€€£ (øŒ€€¤) (od2-4)
+øŒ€€  (øŒ€€¢) (øŒ€€¡) øŒ€€£ øŒ€€¤ (od2-5)
+øŒ€€  (øŒ€€¢) øŒ€€¡ (øŒ€€£) øŒ€€¤ (od2-6)
+øŒ€€  (øŒ€€¢) øŒ€€¡ øŒ€€£ (øŒ€€¤) (od2-7)
+øŒ€€  øŒ€€¢ (øŒ€€¡) (øŒ€€£) øŒ€€¤ (od2-8)
+øŒ€€  øŒ€€¢ (øŒ€€¡) øŒ€€£ (øŒ€€¤) (od2-9)
+øŒ€€  øŒ€€¢ øŒ€€¡ (øŒ€€£) (øŒ€€¤) (od2-10)
+;;; Fragment interactions
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-1)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-2)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-3)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-4)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-5)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-6)
+øŒ€€¡ (øŒ€€¢-) øŒ€€£ (od3-7)
+øŒ€€¡ (øŒ€€³øŒ€€¤øŒ€€­-) (øŒ€€³øŒ€€§øŒ€€¤) øŒ€€¢øŒ€€ øŒ€€­ øŒ€€£ (od3-8)
+;;; Test passing through tags
+øŒ€€  øŒ€€ øŒ€€ \;a øŒ€€¡\;b\;b;hyp\;tag1;hyptag2 øŒ€€¡;reftag1 øŒ€€¢;;reftag2 øŒ€€£;reftag1;reftag2 (tags-1)
+øŒ€€  øŒ€€ øŒ€€ \;a øŒ€€¡\;b\;b;hyptag1;hyp\;tag2 øŒ€€¡;reftag1 øŒ€€¢;;reftag2 øŒ€€£;reftag1;reftag2 (tags-2)
+(tags-3)
+øŒ€€  øŒ€€ øŒ€€ \;a øŒ€€¡\;b\;b;hyp\;tag1;hyptag2 øŒ€€¡;reftag1 øŒ€€¢;;reftag2 øŒ€€£;reftag1;reftag2 (tags-4)
+{øŒ€€  øŒ€€ øŒ€€ \;a øŒ€€¡\;b\;b;hyp\;tag1;hyptag2 øŒ€€¡;reftag1 øŒ€€¢;;reftag2 øŒ€€£;reftag1;reftag2 / øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸ øŒ€€¸} (tags-5)

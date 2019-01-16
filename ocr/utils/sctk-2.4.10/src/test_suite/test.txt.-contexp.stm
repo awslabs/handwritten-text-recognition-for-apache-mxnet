@@ -1,0 +1,12 @@
+;; CATEGORY "0" "" ""
+;; LABEL "O" "Overall" "All Segments in the test set"
+test A test_A_inter_segment_gap 0  51.79 <O> 
+test A test_A 51.79  59.87 <O>  I DON'T DON'T 
+test A test_A_inter_segment_gap 59.87  63.34 <O> 
+test A test_A1 63.34  65.77 <O>  SHE DON'T FIFTY-FOU- FIVE-THREE-TW- N-N- 
+test A test_A_inter_segment_gap 65.77  73.34 <O> 
+test A test_A1 73.34  75.77 <O>  SHE IS 
+test A test_A_inter_segment_gap 75.77 999999.00 <O> 
+test B test_B_inter_segment_gap 0  51.34 <O> 
+test B test_B 51.34  51.77 <O>  SHE HAS A BLANK ONE AND HAS ANOTHER BLANK ONE 
+test B test_B_inter_segment_gap 51.77 999999.00 <O> 

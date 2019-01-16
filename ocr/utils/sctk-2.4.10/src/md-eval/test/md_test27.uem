@@ -1,0 +1,4 @@
+;;ag-to-rttm+uems-v21.pl (version v21) run on 2004 Aug 11 at 10:36:41
+;;command line:  ag-to-rttm+uems-v21.pl (version v21) -c -x -n -t 2 -r ../reference/dev04f/english/bnews/20010206_1830_1900_ABC_WNT.rttm -u ../reference/dev04f/english/bnews/20010206_1830_1900_ABC_WNT.uem -I ../reference/dev04f/english/bnews/20010206_1830_1900_ABC_WNT.aglist
+20010206_1830_1900_ABC_WNT 1 1317.255 1361.090
+20010206_1830_1900_ABC_WNT 1 1478.570 1685.049

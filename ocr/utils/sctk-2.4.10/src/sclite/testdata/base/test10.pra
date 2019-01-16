@@ -1,0 +1,93 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./mand_hyp.ctm
+
+Speakers: 
+    0:  ma_0029_a
+    1:  ma_0029_b
+
+Speaker sentences   0:  ma_0029_a   #utts: 4
+id: (ma_0029_a-000)
+File: ma_0029
+Channel: 1
+Scores: (#C #S #D #I) 1 1 0 1
+REF:  ** 哦 ok 
+HYP:  可 能 ok 
+Eval: I  S     
+
+id: (ma_0029_a-001)
+File: ma_0029
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  对 
+HYP:  对 
+Eval:    
+
+id: (ma_0029_a-002)
+File: ma_0029
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  对 
+HYP:  对 
+Eval:    
+
+id: (ma_0029_a-003)
+File: ma_0029
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  ok 
+HYP:  ok 
+Eval:    
+
+Speaker sentences   1:  ma_0029_b   #utts: 6
+id: (ma_0029_b-000)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 1 0 2 0
+REF:  对 因 为 
+HYP:  对 ** ** 
+Eval:    D  D  
+
+id: (ma_0029_b-001)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 3 0 1 0
+REF:  他 可 能 - 
+HYP:  他 可 能 * 
+Eval:          D 
+
+id: (ma_0029_b-002)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 10 0 1 0
+REF:  个 人 - 气 质 上 能 力 啊 以 及 
+HYP:  个 人 * 气 质 上 能 力 啊 以 及 
+Eval:       D                         
+
+id: (ma_0029_b-003)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  呃 
+HYP:  呃 
+Eval:    
+
+id: (ma_0029_b-004)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 18 0 0 2
+REF:  妯 娌 这 ** ** 这 个 人 际 关 系 这 方 面 的 一 些 手 段 啊 
+HYP:  妯 娌 这 因 为 这 个 人 际 关 系 这 方 面 的 一 些 手 段 啊 
+Eval:          I  I                                               
+
+id: (ma_0029_b-005)
+File: ma_0029
+Channel: 2
+Scores: (#C #S #D #I) 13 0 0 0
+REF:  都 影 响 这 个 可 能 不 是 我 一 个 人 
+HYP:  都 影 响 这 个 可 能 不 是 我 一 个 人 
+Eval:                                        
+
+

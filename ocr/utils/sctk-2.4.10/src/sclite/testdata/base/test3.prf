@@ -1,0 +1,812 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./lvc_hyp.ctm
+Ref file:      ./lvc_ref.stm
+Hyp file:      ./lvc_hyp.ctm
+
+Speaker Count: 4
+Speakers: 
+    0:  2347-a
+    1:  2347-b
+    2:  3129-a
+    3:  3129-b
+
+Utterance Label definitions:
+    Category: id: "0" title: "" description: ""
+    Category: id: "1" title: "Alternations" description: "Segments W or W/O Alternations"
+    Label: id: "O" title: "Overall" description: "Overall Scores"
+    Label: id: "WA" title: "With Alt" description: "Segments Containing Alternations"
+    Label: id: "NA" title: "NO Alt" description: "Segments Without Alternations"
+
+Speaker sentences   0:  2347-a   utt# 0 of 16
+id: (2347-a-000)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 4 3 0 1
+Ref times: t1= 1.06 t2= 3.47
+REF:  ****    I'VE    UM      a;s     far     as      i'm     CONCERNED 
+HYP:  THEY    PRIDE   ABOUT   a;s     far     as      i'm     I         
+H_T1: 0.05    1.02    1.65    1.94    2.12    2.38    2.48    2.83      
+H_T2: 0.29    1.31    1.93    2.11    2.37    2.47    2.82    3.47      
+Eval: I       S       S                                       S         
+
+Speaker sentences   0:  2347-a   utt# 1 of 16
+id: (2347-a-001)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 15 4 0 2
+Ref times: t1= 3.47 t2= 11.04
+REF:  I       FIND    THAT    the     young   women   have    lost    so      much    ***     because they    have    become  more    aggressive and     more    ****    DOMINATING 
+HYP:  ARE     FINE    BUT     the     young   women   have    lost    so      much    TOO     because they    have    become  more    aggressive and     more    JOBS    NEEDING    
+H_T1: 3.48    3.69    4.17    4.38    4.44    4.81    5.18    5.46    5.87    6.18    7.28    7.42    7.99    8.15    8.32    8.78    9.20       9.81    10.02   10.22   10.60      
+H_T2: 3.68    4.16    4.37    4.43    4.80    5.17    5.45    5.86    6.17    6.81    7.41    7.98    8.14    8.31    8.77    9.19    9.80       10.01   10.21   10.59   11.05      
+Eval: S       S       S                                                               I                                                                          I       S          
+
+Speaker sentences   0:  2347-a   utt# 2 of 16
+id: (2347-a-002)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 0 0 17
+Ref times: t1= 11.06 t2= 15.84
+REF:  **      ***     *       *****   ****    *****   *****   ****    ******  *****   *       ******** ******* ***     ***     ***     ******  
+HYP:  IT      AND     I       THINK   THAT    COMES   ABOUT   FROM    CALLED  BEING   A       DEFINITE FACTORY AND     THE     JOB     MARKET  
+H_T1: 11.06   11.14   11.28   11.40   11.71   11.93   12.33   12.68   13.01   13.32   13.73   13.80    14.33   14.90   15.06   15.12   15.47   
+H_T2: 11.13   11.27   11.39   11.70   11.92   12.32   12.67   13.00   13.31   13.72   13.79   14.32    14.89   15.05   15.11   15.46   15.83   
+Eval: I       I       I       I       I       I       I       I       I       I       I       I        I       I       I       I       I       
+
+Speaker sentences   0:  2347-a   utt# 3 of 16
+id: (2347-a-003)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 4 2 0 0
+Ref times: t1= 15.94 t2= 103.53
+REF:  NOW     i       would   like    i       YES     
+HYP:  WOW     i       would   like    i       GUESS   
+H_T1: 15.94   102.28  102.43  102.66  103.06  103.21  
+H_T2: 16.31   102.42  102.65  103.05  103.20  103.53  
+Eval: S                                       S       
+
+Speaker sentences   0:  2347-a   utt# 4 of 16
+id: (2347-a-004)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 0 21 0
+Ref times: t1= 103.55 t2= 109.17
+REF:  I       HAVE    WORKED  OUTSIDE OF      THE     HOME    AND     I       WAS     IN      ONE     OF      THOSE   SAFE    OCCUPATIONS I       WAS     A       SCHOOL  TEACHER 
+HYP:  *       ****    ******  ******* **      ***     ****    ***     *       ***     **      ***     **      *****   ****    *********** *       ***     *       ******  ******* 
+H_T1:                                                                                                                                                                             
+H_T2:                                                                                                                                                                             
+Eval: D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D           D       D       D       D       D       
+
+Speaker sentences   0:  2347-a   utt# 5 of 16
+id: (2347-a-005)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 13 4 0 1
+Ref times: t1= 109.90 t2= 115.43
+REF:  and     we      had     one     child   when    i       TAUGHT  for     my      two     year    **      CAREER  uh      we      UM      THEN    
+HYP:  and     we      had     one     child   when    i       CALLED  for     my      two     year    SO      WE'RE   uh      we      OF      THAT    
+H_T1: 109.90  110.12  110.30  110.56  110.86  111.38  111.54  111.67  112.05  112.27  112.46  112.76  113.01  113.25  114.18  114.42  114.95  115.20  
+H_T2: 110.11  110.29  110.55  110.85  111.37  111.53  111.66  112.04  112.26  112.45  112.75  113.00  113.24  113.62  114.41  114.78  115.19  115.41  
+Eval:                                                         S                                       I       S                       S       S       
+
+Speaker sentences   0:  2347-a   utt# 6 of 16
+id: (2347-a-006)
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 0 0 0
+Ref times: t1= 115.43 t2= 121.12
+
+Speaker sentences   0:  2347-a   utt# 7 of 16
+id: (2347-a-007)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 17 4 0 3
+Ref times: t1= 121.14 t2= 130.10
+REF:  home    WITH    those   children and     raised  those   children and     now     that    my      husband ****    ****    HAS     RETIRED I       am      back    **      substitute teaching which   
+HYP:  home    WHAT    those   children and     raised  those   children and     now     that    my      husband SAYS    FREE    TIRED   OF      FORD    am      back    TO      substitute teaching which   
+H_T1: 121.11  121.44  121.67  121.90   122.64  123.42  123.97  124.21   124.75  125.06  125.63  125.79  125.95  126.39  126.60  126.81  127.38  127.47  127.61  128.02  128.39  128.45     129.22   129.76  
+H_T2: 121.43  121.56  121.89  122.51   122.99  123.96  124.20  124.74   125.05  125.46  125.78  125.94  126.38  126.59  126.80  127.37  127.46  127.60  128.01  128.38  128.44  129.21     129.75   130.10  
+Eval:         S                                                                                                 I       I       S       S       S                       I                                   
+
+Speaker sentences   0:  2347-a   utt# 8 of 16
+id: (2347-a-008)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 16 3 2 4
+Ref times: t1= 130.53 t2= 137.01
+REF:  **      if      anyone  HAS     ever    been    involved in      ***     THAT    some    days    it's    fun     and     SOME    DAYS      you     wonder  why     you're  *       even    ******  BOTHERING 
+HYP:  IS      if      anyone  ***     ever    been    involved in      THE     BACK    some    days    it's    fun     and     ****    SOMETIMES you     wonder  why     you're  A       even    BOTHER  RINGS     
+H_T1: 130.11  130.52  130.72          131.25  131.45  131.65   132.11  132.24  132.30  132.89  133.12  133.43  133.64  134.08          134.30    134.81  134.95  135.29  135.57  135.86  135.89  136.23  136.73    
+H_T2: 130.19  130.71  131.15          131.44  131.64  132.10   132.23  132.29  132.67  133.11  133.42  133.63  134.07  134.29          134.80    134.94  135.28  135.56  135.85  135.88  136.22  136.72  137.08    
+Eval: I                       D                                        I       S                                               D       S                                         I               I       S         
+
+Speaker sentences   0:  2347-a   utt# 9 of 16
+id: (2347-a-009)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 8 11 0 2
+Ref times: t1= 137.10 t2= 144.48
+REF:  BECAUSE YOUR    fighting for     your    life    but     i       AM      a       *****   **      FIGHTER AND     I'VE    ALWAYS  BEEN       A       DISCIPLINARIAN uh      I'M     
+HYP:  PLOT    YEAR    fighting for     your    life    but     i       HAVE    a       FIRED   OR      NOT     FORD    STOOD   THE     DISCIPLINE AREA    AND            uh      I       
+H_T1: 137.31  137.98  138.15   138.62  138.89  139.06  139.63  139.96  140.36  140.62  140.67  141.02  141.19  141.38  141.61  141.85  141.92     142.48  142.80         143.39  144.17  
+H_T2: 137.58  138.14  138.61   138.88  139.05  139.62  139.95  140.21  140.61  140.66  141.01  141.18  141.37  141.60  141.84  141.91  142.47     142.79  142.90         143.70  144.33  
+Eval: S       S                                                        S               I       I       S       S       S       S       S          S       S                      S       
+
+Speaker sentences   0:  2347-a   utt# 10 of 16
+id: (2347-a-010)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 15 6 0 0
+Ref times: t1= 144.58 t2= 150.46
+REF:  i'm     not     REAL    SURE    THAT    the     young   girls   OF      TODAY   are     being   forced  into    the     job     market  as      many    of      THEM    
+HYP:  i'm     not     THAT    SHORT   BUT     the     young   girls   THAT'S  AND     are     being   forced  into    the     job     market  as      many    of      THE     
+H_T1: 144.52  144.73  145.02  145.20  145.69  145.92  146.06  146.36  146.74  147.06  147.32  147.50  147.78  148.39  148.67  148.78  149.11  149.53  149.85  150.15  150.27  
+H_T2: 144.72  145.01  145.19  145.68  145.91  146.05  146.35  146.73  147.05  147.31  147.49  147.77  148.38  148.66  148.77  149.10  149.52  149.84  150.14  150.26  150.38  
+Eval:                 S       S       S                               S       S                                                                                       S       
+
+Speaker sentences   0:  2347-a   utt# 11 of 16
+id: (2347-a-011)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 17 4 0 2
+Ref times: t1= 150.48 t2= 159.50
+REF:  ***     ****    IMPLY   i       think   they're going   IN      BY      choice  yes     and     and     i       have    no      problem with    THAT    but     i       think   the     
+HYP:  MAN     PLOT    IT      i       think   they're going   AND     LIKE    choice  yes     and     and     i       have    no      problem with    THERE   but     i       think   the     
+H_T1: 150.39  150.61  151.14  151.22  151.37  151.71  151.86  152.19  152.44  152.63  155.00  155.52  156.09  156.38  156.62  157.02  157.20  157.84  158.10  158.38  158.84  158.96  159.39  
+H_T2: 150.60  151.13  151.21  151.36  151.70  151.85  152.18  152.43  152.62  153.17  155.51  155.70  156.37  156.61  157.01  157.19  157.83  158.09  158.37  158.67  158.95  159.38  159.48  
+Eval: I       I       S                                       S       S                                                                               S                                       
+
+Speaker sentences   0:  2347-a   utt# 12 of 16
+id: (2347-a-012)
+Labels: <o,na>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 16 5 0 1
+Ref times: t1= 159.50 t2= 167.03
+REF:  MALE    needs   to      be      the     ***     DOMINANT person  and     i       think   too     many    OF      the     young   professional WIVES   IN      our     small   town    
+HYP:  MAIL    needs   to      be      the     JOB     OF       person  and     i       think   too     many    DOES    the     young   professional WIFE    AND     our     small   town    
+H_T1: 159.49  159.98  160.34  160.51  160.72  160.82  161.23   161.32  162.52  162.68  162.78  163.15  163.41  163.90  164.10  164.19  164.59       165.45  165.97  166.15  166.33  166.71  
+H_T2: 159.97  160.33  160.50  160.71  160.81  161.14  161.31   161.92  162.67  162.77  163.14  163.40  163.89  164.09  164.18  164.58  165.44       165.96  166.14  166.32  166.70  167.01  
+Eval: S                                       I       S                                                        S                                    S       S                               
+
+Speaker sentences   0:  2347-a   utt# 13 of 16
+id: (2347-a-013)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 14 3 0 3
+Ref times: t1= 167.04 t2= 176.37
+REF:  OF      five    thousand UM      are     not     **      letting that    happen  **      they    are     very    aggressive **      THEY'RE uh      they    almost  
+HYP:  TO      five    thousand LOSE    are     not     TO      letting that    happen  UH      they    are     very    aggressive UH      THERE   uh      they    almost  
+H_T1: 167.02  167.08  167.43   168.60  169.12  169.30  170.23  170.52  171.06  171.36  171.88  172.13  172.33  172.51  172.86     174.48  174.65  175.20  175.73  175.89  
+H_T2: 167.07  167.42  167.98   169.03  169.29  169.82  170.29  171.05  171.35  171.87  172.12  172.32  172.50  172.85  173.75     174.64  175.19  175.72  175.88  176.34  
+Eval: S                        S                       I                               I                                          I       S                               
+
+Speaker sentences   0:  2347-a   utt# 14 of 16
+id: (2347-a-014)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 13 4 0 3
+Ref times: t1= 176.39 t2= 182.98
+REF:  have    what    i       would   call    a       KILLER  **      KILLER  BEE     INSTINCT and     ****    ****    they    have    to      be      in      charge  
+HYP:  have    what    i       would   call    a       GIRLS   TO      KILL    A       B        and     THEY    WAYS    they    have    to      be      in      charge  
+H_T1: 176.35  176.66  176.81  176.99  177.15  177.47  177.50  178.04  178.10  178.54  178.57   179.07  179.44  180.56  181.10  181.29  181.62  181.75  181.95  182.02  
+H_T2: 176.58  176.80  176.98  177.14  177.46  177.49  178.03  178.09  178.53  178.56  179.06   179.26  179.66  181.09  181.28  181.61  181.74  181.94  182.01  182.82  
+Eval:                                                 S       I       S       S       S                I       I                                                       
+
+Speaker sentences   0:  2347-a   utt# 15 of 16
+id: (2347-a-015)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 14 7 1 5
+Ref times: t1= 183.11 t2= 299.63
+REF:  AND     and     i       i       think   they    lose    a       lot     **      ***     BY      what    i       ******  CALL    NEUTERING their   husbands UHHUH   oh      sure    ******  ***     UHHUH   HUH     UHHUH   
+HYP:  UH      and     i       i       think   they    lose    a       lot     TO      BUY     OF      what    i       CALLED  NEW     DURING    their   husbands *****   oh      sure    THAT'S  THE     WOMEN   UH      THE     
+H_T1: 183.11  183.70  183.92  184.29  184.43  184.77  184.99  185.34  185.37  185.92  186.00  186.22  186.30  186.52  186.70  187.04  187.24    187.55  187.73           240.79  240.99  242.12  242.38  242.69  268.93  299.03  
+H_T2: 183.48  183.91  184.04  184.42  184.76  184.98  185.33  185.36  185.91  185.99  186.21  186.29  186.51  186.69  187.03  187.23  187.54    187.72  188.36           240.98  241.54  242.37  242.45  242.75  269.18  299.09  
+Eval: S                                                                       I       I       S                       I       S       S                          D                       I       I       S       S       S       
+
+Speaker sentences   1:  2347-b   utt# 0 of 20
+id: (2347-b-000)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 5 4 5 0
+Ref times: t1= 0.00 t2= 20.51
+REF:  UM      ALL     RIGHT   UHHUH   OH      WELL    i       TEND    i       tend    to      agree   UM      IN      
+HYP:  **      ***     *****   *****   **      UH-HUH  i       LIKE    i       tend    to      agree   I       TEND    
+H_T1:                                         16.55   17.72   17.90   18.50   19.00   19.26   19.40   19.96   20.28   
+H_T2:                                         16.99   17.90   18.28   18.82   19.26   19.40   19.82   20.28   20.52   
+Eval: D       D       D       D       D       S               S                                       S       S       
+
+Speaker sentences   1:  2347-b   utt# 1 of 20
+id: (2347-b-001)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 12 2 1 0
+Ref times: t1= 20.51 t2= 25.06
+REF:  some    ways    i       think   it's    UM      i       think   IF      anything a       lot     of      UM      the     
+HYP:  some    ways    i       think   it's    **      i       think   OF      anything a       lot     of      FALLEN  the     
+H_T1: 20.52   20.74   20.94   21.02   21.36           21.68   21.90   22.24   22.38    23.00   23.06   23.48   23.70   24.88   
+H_T2: 20.74   20.94   21.02   21.36   21.62           21.90   22.24   22.38   23.00    23.06   23.48   23.68   24.20   25.06   
+Eval:                                         D                       S                                        S               
+
+Speaker sentences   1:  2347-b   utt# 2 of 20
+id: (2347-b-002)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 13 3 1 3
+Ref times: t1= 25.07 t2= 31.12
+REF:  changes that    have    occurred ***     UM      in      some    ways    *****   ***     THEY'RE for     the     better  because I       THINK   women   should  
+HYP:  changes that    have    occurred BUY     THEM    in      some    ways    THERE   FOR     THE     for     the     better  because *       THAT    women   should  
+H_T1: 25.06   25.72   25.88   26.06    26.78   27.22   27.48   27.70   28.06   28.42   28.68   29.02   29.10   29.28   29.38   29.70           30.00   30.26   30.70   
+H_T2: 25.72   25.88   26.06   26.72    27.22   27.34   27.70   28.06   28.42   28.68   28.78   29.10   29.28   29.38   29.70   30.00           30.12   30.68   31.12   
+Eval:                                  I       S                               I       I       S                                       D       S                       
+
+Speaker sentences   1:  2347-b   utt# 3 of 20
+id: (2347-b-003)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 14 5 2 0
+Ref times: t1= 31.12 t2= 35.86
+REF:  have    A       choice  AND     i       do      believe in      THE     BEING   able    to      have    A       choice  AS      to      AS      far     as      what    
+HYP:  have    MUCH    choice  ***     i       do      believe in      THOSE   AND     able    to      have    THE     choice  **      to      THING   far     as      what    
+H_T1: 31.12   31.46   31.74           32.32   32.44   32.60   32.94   33.08   33.52   33.90   34.12   34.20   34.38   34.46           35.00   35.16   35.34   35.62   35.74   
+H_T2: 31.42   31.74   32.26           32.44   32.60   32.94   33.08   33.44   33.90   34.12   34.20   34.38   34.46   34.90           35.14   35.34   35.62   35.74   35.90   
+Eval:         S               D                                       S       S                               S               D               S                               
+
+Speaker sentences   1:  2347-b   utt# 4 of 20
+id: (2347-b-004)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 15 11 2 0
+Ref times: t1= 35.89 t2= 43.64
+REF:  you     would   like    to      do      WITH    YOUR    LIFE    BUT     BY      the     same    token   and     i       KNOW    THIS    for     myself  because I'VE    WORKED  AND         i've    not     WORKED  UM      UM      
+HYP:  you     would   like    to      do      IF      YOU     LIKE    TO      BUY     the     same    token   and     i       ****    NOTICED for     myself  because ****    OF      WOODWORKING i've    not     HEARD   ALL     AND     
+H_T1: 35.90   36.02   36.16   36.44   36.54   36.70   36.80   36.90   37.08   37.18   37.34   37.46   37.78   39.00   39.12           39.22   39.58   39.68   40.28           40.56   40.70       41.20   41.36   42.02   42.88   43.22   
+H_T2: 36.02   36.16   36.44   36.54   36.70   36.80   36.90   37.08   37.18   37.34   37.46   37.78   38.30   39.12   39.22           39.58   39.68   40.28   40.56           40.70   41.20       41.34   41.66   42.40   43.22   43.38   
+Eval:                                         S       S       S       S       S                                               D       S                               D       S       S                           S       S       S       
+
+Speaker sentences   1:  2347-b   utt# 5 of 20
+id: (2347-b-005)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 21 11 1 5
+Ref times: t1= 43.64 t2= 54.81
+REF:  THAT    IT      makes   it      ****    ***     UM      SOMETIMES IT      makes   LIFE    more    difficult I       THINK   when    the     roles   now     **      ****    ***     ARE     LESS    DEFINED as      far     as      you     know    what    UM      women   should  or      should  not     be      
+HYP:  ****    CAN     makes   it      IT'S    GOT     SOME    OF        THE     makes   LIKE    more    difficult WHOLE   THING   when    the     roles   now     OR      WHAT    BUT     I       MEAN    I       as      far     as      you     know    what    WITH    women   should  or      should  not     be      
+H_T1:         43.54   43.92   44.38   44.54   45.02   45.52   45.72     45.84   45.92   46.18   46.42   46.74     47.12   47.56   47.82   48.02   48.10   48.72   49.18   49.66   50.14   50.36   50.62   51.32   51.50   51.62   51.96   52.26   52.40   52.52   52.90   53.30   53.76   54.04   54.12   54.36   54.62   
+H_T2:         43.92   44.38   44.54   44.88   45.52   45.72   45.84     45.92   46.18   46.40   46.72   47.10     47.50   47.82   48.02   48.10   48.70   49.10   49.56   50.08   50.36   50.62   50.88   51.50   51.62   51.96   52.18   52.40   52.52   52.88   53.30   53.76   54.04   54.12   54.36   54.62   54.74   
+Eval: D       S                       I       I       S       S         S               S                         S       S                                       I       I       I       S       S       S                                                       S                                                       
+
+Speaker sentences   1:  2347-b   utt# 6 of 20
+id: (2347-b-006)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 29 6 2 0
+Ref times: t1= 54.82 t2= 66.66
+REF:  doing   that    it      it      UM      it      can     make    LIFE    more    difficult THERE   ARE     more    things  to      work    OUT     i       know    when    i       was     working YOU     know    you     have    ALL     THESE   problems with    with    the     child   care    and     
+HYP:  doing   that    it      it      IT      it      can     make    LIKE    more    difficult *****   THEY'RE more    things  to      work    CHOICE  i       know    when    i       was     working THAT    know    you     have    ***     ALWAYS  problems with    with    the     child   care    and     
+H_T1: 54.74   55.36   56.42   56.70   56.98   57.08   57.24   57.42   57.72   58.00   58.22             58.74   58.88   59.16   60.04   60.20   60.54   61.04   61.20   61.34   61.50   61.56   61.78   62.24   62.40   62.52   62.66           62.90   63.26    63.80   65.06   65.30   65.46   65.92   66.44   
+H_T2: 55.26   55.74   56.70   56.98   57.08   57.24   57.42   57.72   58.00   58.22   58.74             58.88   59.16   59.62   60.20   60.54   61.04   61.20   61.34   61.50   61.56   61.78   62.24   62.40   62.52   62.66   62.90           63.26   63.80    64.04   65.26   65.46   65.92   66.44   66.66   
+Eval:                                 S                               S                         D       S                                       S                                                       S                               D       S                                                                
+
+Speaker sentences   1:  2347-b   utt# 7 of 20
+id: (2347-b-007)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 26 7 0 3
+Ref times: t1= 66.71 t2= 76.33
+REF:  and     with    ***     **      UM      PLEASING you     know    your    boss    ON      THE     job     SO      you     have    added   ******  STRESSES from    there   and     then    you     still   have    all     the     things  that    UM      that    you     need    to      do      
+HYP:  and     with    ALL     OF      THESE   THINGS   you     know    your    boss    LOT     OF      job     DO      you     have    added   STRESS  HE       from    there   and     then    you     still   have    all     the     things  that    ALL     that    you     need    to      do      
+H_T1: 66.66   67.16   67.56   67.82   68.14   68.40    68.78   68.96   69.06   69.26   69.62   69.90   69.98   70.40   70.50   70.62   70.76   71.10   71.52    71.66   71.84   72.10   72.20   72.32   72.46   72.74   73.04   73.20   73.34   73.96   74.28   75.24   75.40   75.56   75.78   75.92   
+H_T2: 67.16   67.44   67.82   68.02   68.40   68.76    68.96   69.06   69.26   69.62   69.90   69.98   70.34   70.50   70.62   70.76   71.10   71.52   71.66    71.84   72.10   72.20   72.32   72.46   72.74   73.04   73.20   73.34   73.80   74.28   74.60   75.40   75.56   75.78   75.92   76.24   
+Eval:                 I       I       S       S                                        S       S               S                               I       S                                                                                                S                                               
+
+Speaker sentences   1:  2347-b   utt# 8 of 20
+id: (2347-b-008)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 30 3 0 3
+Ref times: t1= 76.33 t2= 85.71
+REF:  at      home    ***     and     that    doesn't change  you     know    just    because YOUR    YOUR    going   out     of      the     house   for     so      many    hours   a       day     **      doesn't ****    uh      make    those   other   things  go      away    AND     the     
+HYP:  at      home    AND     and     that    doesn't change  you     know    just    because AND     YOU'RE  going   out     of      the     house   for     so      many    hours   a       day     HE      doesn't HAVE    uh      make    those   other   things  go      away    WAS     the     
+H_T1: 76.38   76.58   76.98   77.14   77.26   77.44   77.78   78.42   78.52   78.62   78.90   79.30   79.64   79.82   80.18   80.44   80.52   80.60   80.96   81.12   81.34   81.58   81.86   81.94   82.16   82.24   82.76   83.38   83.70   84.02   84.26   84.48   84.88   85.04   85.56   85.62   
+H_T2: 76.58   76.98   77.12   77.26   77.44   77.78   78.42   78.52   78.62   78.90   79.30   79.62   79.82   80.18   80.44   80.52   80.60   80.96   81.12   81.34   81.58   81.86   81.94   82.16   82.24   82.76   82.86   83.70   84.02   84.26   84.48   84.88   85.04   85.52   85.62   85.74   
+Eval:                 I                                                                       S       S                                                                                               I               I                                                               S               
+
+Speaker sentences   1:  2347-b   utt# 9 of 20
+id: (2347-b-009)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 24 6 1 2
+Ref times: t1= 85.76 t2= 98.90
+REF:  other   responsibilities are     still   important UM      so      UM      have    you     have    you     WORKED  outside *       also    and     ***     UM      feel    that    IT      that    WELL    HOW     do      you     feel    as      far     as      uh      what    
+HYP:  other   responsibilities are     still   important BUT     so      WELL    have    you     have    you     WORK    outside I       also    and     ALL     AND     feel    that    IS      that    ****    WHAT    do      you     feel    as      far     as      uh      what    
+H_T1: 85.74   85.92            86.94   87.00   87.36     88.64   89.91   90.31   90.93   91.17   91.53   91.73   91.93   92.37   92.97   93.03   93.59   93.93   94.41   94.71   95.05   95.43   95.65           95.97   96.51   96.59   96.73   97.07   97.23   97.59   98.43   98.67   
+H_T2: 85.92   86.94            87.00   87.36   88.06     89.22   90.31   90.85   91.17   91.47   91.73   91.93   92.37   92.97   93.03   93.59   93.91   94.39   94.59   95.05   95.41   95.63   95.95           96.51   96.59   96.73   97.07   97.23   97.59   97.83   98.67   98.95   
+Eval:                                                    S               S                                       S               I                       I       S                       S               D       S                                                                       
+
+Speaker sentences   1:  2347-b   utt# 10 of 20
+id: (2347-b-010)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 24 7 9 2
+Ref times: t1= 98.91 t2= 192.70
+REF:  would   be      a       HAPPY   medium  or      or      what    would   you     like    to      see     YES     UHHUH   UHHUH   YES     YES     right   BUT     YEAH    OH      I       i       think   so      YES     UHHUH   UHHUH   yeah    UHHUH   well    what    do      you     think   ******* *       THOUGH  uh      UM      i       
+HYP:  would   be      a       TWICE   medium  or      or      what    would   you     like    to      see     ***     *****   *****   ***     ***     right   ***     SO      UH      BUT     i       think   so      ***     *****   *****   yeah    YEAH    well    what    do      you     think   THEY'LL I       MEAN    uh      THEM    i       
+H_T1: 98.95   99.13   99.35   99.57   99.95   100.37  100.53  100.71  100.87  101.03  101.15  101.39  101.51                                          137.21          153.71  153.97  154.05  154.23  154.33  154.61                          154.87  180.46  189.26  189.62  189.82  189.90  190.06  190.42  190.68  191.02  191.48  191.82  192.51  
+H_T2: 99.13   99.35   99.57   99.95   100.37  100.53  100.71  100.87  101.03  101.15  101.39  101.51  101.93                                          137.65          153.97  154.05  154.23  154.33  154.61  154.87                          155.23  180.70  189.62  189.82  189.90  190.06  190.42  190.68  191.02  191.30  191.82  192.08  192.65  
+Eval:                         S                                                                               D       D       D       D       D               D       S       S       S                               D       D       D               S                                               I       I       S               S               
+
+Speaker sentences   1:  2347-b   utt# 11 of 20
+id: (2347-b-011)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 24 17 0 6
+Ref times: t1= 192.70 t2= 208.68
+REF:  DON'T   know    i       the     the     one     problem i       guess   i       have    AND     maybe   WHAT    so      many    women   younger WOMEN   NOW     ARE      CHOOSING to      *****   *       *****   **      GO      OUTSIDE IS      i       feel    that    in      general IN      this    **      SOCIETY THAT    BEING   AT      home    is      **      NOT     LOOKED  
+HYP:  IS      know    i       the     the     one     problem i       guess   i       have    BEEN    maybe   TWICE   so      many    women   younger WHEN    THE     NETWORKS USING    to      STILL   A       WHILE   SO      I       DON'T   KNOW    i       feel    that    in      general AND     this    IS      FOGGY   THEY    HAD     BEEN    home    is      NO      I'D     LOVE    
+H_T1: 192.65  192.85  192.95  193.35  193.71  194.76  195.16  195.58  195.70  196.02  196.10  196.40  196.54  196.90  197.24  197.52  197.92  198.38  198.78  199.02  199.12   199.64   200.22  201.12  201.38  201.40  201.66  201.94  202.08  202.28  202.42  202.56  202.84  203.10  203.26  203.80  203.90  204.20  204.34  205.54  205.76  206.08  206.66  207.46  207.74  207.98  208.32  
+H_T2: 192.85  192.95  193.23  193.63  194.15  195.06  195.58  195.70  196.02  196.10  196.40  196.54  196.90  197.24  197.52  197.88  198.38  198.78  199.02  199.12  199.64   200.18   200.66  201.38  201.40  201.66  201.94  202.08  202.28  202.42  202.56  202.84  203.08  203.26  203.80  203.90  204.20  204.34  205.00  205.76  206.06  206.52  207.26  207.74  207.98  208.30  208.60  
+Eval: S                                                                                       S               S                                       S       S       S        S                I       I       I       I       S       S       S                                               S               I       S       S       S       S                       I       S       S       
+
+Speaker sentences   1:  2347-b   utt# 12 of 20
+id: (2347-b-012)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 24 9 4 1
+Ref times: t1= 208.69 t2= 219.09
+REF:  **      UPON    AS      UM      A       job     in      itself  WHEREAS YOU     KNOW    YOU     HEAR    A       LOT     of      WOMEN   that    are     home    saying  that    it      is      a       job     in      itself  but     i       know    when    i       was     working and     I       i       
+HYP:  TO      POINT   OUT     ALL     THE     job     in      itself  ******* ***     ****    WHERE   THE     THE     ROLE    of      TO      that    are     home    saying  that    it      is      a       job     in      itself  but     i       know    when    i       was     working and     *       i       
+H_T1: 208.62  208.74  209.42  210.08  211.06  211.18  211.56  211.66                          212.28  212.42  212.76  212.96  213.14  213.36  213.68  213.82  213.92  214.28  214.76  215.08  215.24  215.46  215.52  215.86  215.98  216.44  216.60  216.72  216.92  217.18  217.30  217.56  218.72          219.00  
+H_T2: 208.74  209.42  209.80  210.50  211.18  211.56  211.66  212.28                          212.42  212.64  212.96  213.14  213.36  213.68  213.82  213.92  214.28  214.74  215.04  215.24  215.46  215.52  215.86  215.98  216.44  216.60  216.72  216.92  217.18  217.30  217.56  218.10  219.00          219.08  
+Eval: I       S       S       S       S                               D       D       D       S       S       S       S               S                                                                                                                                                               D               
+
+Speaker sentences   1:  2347-b   utt# 13 of 20
+id: (2347-b-013)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 9 3 1 2
+Ref times: t1= 219.10 t2= 223.67
+REF:  was     an      engineer SO      I       i       was     always  with    ****    ****    MEN     UM      and     they    
+HYP:  was     an      engineer **      AND     i       was     always  with    THEM    THEY    ALL     THAT    and     they    
+H_T1: 219.08  219.50  219.64           220.24  220.34  220.60  220.86  221.22  221.40  221.54  222.28  222.74  222.96  223.50  
+H_T2: 219.32  219.64  220.24           220.32  220.58  220.86  221.22  221.40  221.54  221.94  222.74  222.94  223.50  223.66  
+Eval:                          D       S                                       I       I       S       S                       
+
+Speaker sentences   1:  2347-b   utt# 14 of 20
+id: (2347-b-014)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 21 20 0 4
+Ref times: t1= 223.68 t2= 235.33
+REF:  were    single  many    of      them    and     i       TRIED   to      explain TO      THEM    WELL    MY      DAY     DOESN'T END     WHEN    I       LEAVE   AT      i       used    to      **      LEAVE   AT      THREE   keep    going   TO      eleven  at      night   and     ***     THEY    had     they    ***     **      USED    to      LOOK    DOWN    
+HYP:  were    single  many    of      them    and     i       TRY     to      explain OF      THE     MORE    LIKE    A       DOZEN   AND     ONE     DON'T   BELIEVE BUT     i       used    to      BE      SO      PRETTY  LIGHT   keep    going   FOR     eleven  at      night   and     DAY     HE      had     they    USE     TO      WANT    to      AT      HOME    
+H_T1: 223.66  223.78  224.28  224.56  224.66  224.78  224.88  224.98  225.28  225.36  225.80  225.88  225.96  226.18  226.44  226.56  226.92  227.36  227.74  227.96  228.40  228.64  228.74  228.98  229.08  229.22  229.42  229.90  230.32  230.64  231.12  231.22  231.74  231.86  232.22  232.48  232.66  232.76  233.88  234.08  234.44  234.56  234.84  234.94  235.10  
+H_T2: 223.78  224.28  224.56  224.66  224.78  224.88  224.98  225.28  225.36  225.80  225.88  225.96  226.18  226.44  226.56  226.90  227.34  227.72  227.96  228.40  228.64  228.74  228.98  229.08  229.22  229.38  229.90  230.26  230.64  231.12  231.22  231.74  231.86  232.16  232.48  232.66  232.76  233.22  234.08  234.44  234.56  234.84  234.94  235.10  235.34  
+Eval:                                                         S                       S       S       S       S       S       S       S       S       S       S       S                               I       S       S       S                       S                                       I       S                       I       I       S               S       S       
+
+Speaker sentences   1:  2347-b   utt# 15 of 20
+id: (2347-b-015)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 8 18 15 1
+Ref times: t1= 235.33 t2= 243.21
+REF:  ***     ON      women   THAT    WERE    HOME    THEY'D  SAY     OH      I       BET     you     go      home    AND     you     know    AT      LEAST   YOU     GET     OUT     OF      HERE    AT      THREE   AND     YOU     CAN     GO      home    and     PUT     YOUR    FEET    UP      AND     WATCH   SOAP    OPERAS  AND     I       
+HYP:  ALL     THE     women   ****    ****    ****    ******  WEAR    ON      THE     TELL    you     go      home    THEM    you     know    **      *****   ***     ***     ***     **      ****    WE'VE   GOT     YOUR    DRINK   IN      THE     home    and     ***     ****    ****    **      THAT    JUST    SO      I       AM      NOT     
+H_T1: 235.34  235.50  235.54                                  235.90  236.06  236.20  236.30  236.70  236.98  237.12  237.46  237.66  237.86                                                          238.04  238.40  238.88  239.08  239.50  239.56  239.66  240.00                                  240.20  240.50  241.54  241.90  242.76  242.96  
+H_T2: 235.50  235.54  235.90                                  236.06  236.20  236.30  236.60  236.98  237.12  237.46  237.66  237.86  238.04                                                          238.32  238.88  239.06  239.50  239.56  239.66  240.00  240.16                                  240.48  240.76  241.86  242.06  242.96  243.14  
+Eval: I       S               D       D       D       D       S       S       S       S                               S                       D       D       D       D       D       D       D       S       S       S       S       S       S                       D       D       D       D       S       S       S       S       S       S       
+
+Speaker sentences   1:  2347-b   utt# 16 of 20
+id: (2347-b-016)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 25 10 2 6
+Ref times: t1= 243.21 t2= 256.71
+REF:  used    to      be      INFURIATED ***     *****   *       ****    because they    really  had     no      ****    IDEA    what    was     involved ONCE    I       GOT     home    NOW     taking  care    of      them    running them    everywhere helping with    homework THE     BATH    THE     WHOLE   you     KNOW    everything ***     UM      and     
+HYP:  used    to      be      IF         YOU     WORRY   A       GOOD    because they    really  had     no      DOWN    OF      what    was     involved WANT    TO      GO      home    NOT     taking  care    of      them    running them    everywhere helping with    homework ***     ****    ABOUT   WELL    you     TO      everything ALL     THAT    and     
+H_T1: 243.14  243.42  243.50  243.64     243.98  244.16  244.46  244.64  244.86  245.46  245.68  246.10  246.36  246.66  247.16  248.00  248.26  248.44   249.02  249.26  249.38  249.54  249.90  250.20  250.58  250.84  250.92  251.04  251.40  251.58     252.08  252.46  252.62                   253.16  253.68  254.04  254.18  254.32     255.46  255.90  256.08  
+H_T2: 243.42  243.50  243.64  243.88     244.16  244.46  244.64  244.86  245.42  245.66  246.10  246.36  246.66  247.16  247.38  248.26  248.44  249.02   249.26  249.38  249.54  249.90  250.18  250.58  250.84  250.92  251.04  251.40  251.58  252.08     252.46  252.62  253.16                   253.64  254.04  254.18  254.32  254.86     255.90  256.04  256.68  
+Eval:                         S          I       I       I       I                                               I       S                                S       S       S               S                                                                                           D       D       S       S               S                  I       S               
+
+Speaker sentences   1:  2347-b   utt# 17 of 20
+id: (2347-b-017)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 28 7 2 6
+Ref times: t1= 256.80 t2= 271.58
+REF:  i       think   THAT    one     reason  THAT    so      many    YOUNGER women   *****   feel    **      **      *****   COMPELLED to      go      into    A       PROFESSION  is      that    they    feel    THAT    if      they    STAY    home    they    are     not     RESPECTED and     that    ***     **      being   home    is      not     a       
+HYP:  i       think   SOCIETY one     reason  TO      so      many    YOUNG   women   DON'T   feel    IT      IT      COMES   DOWN      to      go      into    *       PROFESSIONS is      that    they    feel    BUT     if      they    STAYED  home    they    are     not     ********* and     that    AND     AS      being   home    is      not     a       
+H_T1: 256.76  257.06  257.54  258.18  258.64  259.32  259.48  259.84  260.12  260.44  260.94  261.06  261.96  262.26  262.50  262.86    263.14  263.30  263.50          263.76      264.68  265.06  265.24  265.48  265.78  266.58  266.86  267.00  267.44  267.86  268.00  268.10            268.36  268.90  269.74  270.10  270.30  270.56  271.12  271.30  271.54  
+H_T2: 257.02  257.54  257.96  258.62  259.32  259.46  259.84  260.12  260.40  260.94  261.06  261.54  262.22  262.50  262.74  263.14    263.30  263.50  263.76          264.64      264.98  265.24  265.46  265.78  266.16  266.86  267.00  267.44  267.84  268.00  268.10  268.36            268.90  269.16  270.10  270.30  270.56  271.08  271.30  271.54  271.56  
+Eval:                 S                       S                       S               I               I       I       I       S                                 D       S                                           S                       S                                       D                         I       I                                               
+
+Speaker sentences   1:  2347-b   utt# 18 of 20
+id: (2347-b-018)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 26 10 1 3
+Ref times: t1= 271.59 t2= 281.87
+REF:  RESPECTABLE UM          POSITION   in      society and     there's a       lot     of      truth   to      that    AND     i       don't   know    how     you     feel    i       don't   KNOW    how     you     ***     FELT    when    you     were    home    and     ****    **      WHAT    KIND    OF      FEEDBACK you     GOT     
+HYP:  REAL        COMFORTABLE OPPOSITION in      society and     there's a       lot     of      truth   to      that    ***     i       don't   know    how     you     feel    i       don't   DON'T   how     you     CAN     TELL    when    you     were    home    and     WORK    ON      IT      AND     HE      BACKED   you     GLAD    
+H_T1: 271.56      271.86      272.99     273.97  274.17  274.79  274.93  275.13  275.17  275.47  275.55  275.99  276.09          276.37  276.45  276.63  276.69  276.85  277.11  277.85  277.97  278.11  278.21  278.37  278.47  278.75  279.15  279.41  279.51  279.69  280.05  280.13  280.35  280.51  280.63  280.73  280.95   281.35  281.51  
+H_T2: 271.82      272.56      273.87     274.17  274.77  274.93  275.13  275.17  275.47  275.55  275.95  276.09  276.37          276.45  276.63  276.69  276.85  277.11  277.47  277.97  278.11  278.21  278.37  278.47  278.63  279.11  279.41  279.51  279.69  280.05  280.13  280.35  280.51  280.63  280.71  280.93  281.33   281.51  281.85  
+Eval: S           S           S                                                                                          D                                                                       S                       I       S                                               I       I       S       S       S       S                S       
+
+Speaker sentences   1:  2347-b   utt# 19 of 20
+id: (2347-b-019)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 35 16 0 7
+Ref times: t1= 281.91 t2= 299.79
+REF:  BUT     i       can     see     WITH    THE     younger MEN     that    they    definitely ***     ARE     looking down    **      UPON    women   that    are     home    ***     and     yet     *       BY      THE     SAME    TOKEN   i       think   some    of      it      is      *       ******  JEALOUSY you     you     ONCE    IN      A       WHILE   you     hear    them    say     things  like    i       wish    i       had     THE     choice  you     ****    
+HYP:  THAT    i       can     see     WHAT    I       younger MAN     that    they    definitely EAT     CHOICE  looking down    MY      LAWN    women   that    are     home    AND     and     yet     I       DON'T   THINK   SO      GOOD    i       think   some    of      it      is      I       ALWAYS  SAY      you     you     WANT    TO      THAT    WALL    you     hear    them    say     things  like    i       wish    i       had     THAT    choice  you     KNOW    
+H_T1: 281.87  282.01  282.11  282.29  282.57  282.77  282.87  283.35  284.41  284.93  285.11     286.01  286.43  287.05  287.45  287.89  288.19  289.27  289.65  289.87  289.99  290.57  290.63  290.95  291.23  291.39  291.65  292.11  292.41  293.17  293.29  293.49  293.71  293.85  293.97  294.21  294.33  294.65   294.91  295.37  295.55  295.83  295.93  296.03  296.27  296.43  296.71  296.91  297.21  297.51  298.09  298.23  298.51  298.63  298.93  299.09  299.63  299.85  
+H_T2: 282.01  282.11  282.29  282.57  282.77  282.87  283.35  283.75  284.91  285.11  285.99     286.27  286.95  287.45  287.89  288.03  288.63  289.65  289.87  289.99  290.57  290.61  290.95  291.21  291.39  291.65  292.11  292.41  292.63  293.29  293.49  293.71  293.83  293.97  294.17  294.33  294.65  294.91   295.33  295.55  295.83  295.93  296.03  296.27  296.43  296.71  296.91  297.21  297.51  297.75  298.23  298.51  298.63  298.93  299.09  299.57  299.85  299.97  
+Eval: S                               S       S               S                                  I       S                       I       S                                       I                       I       S       S       S       S                                                       I       I       S                        S       S       S       S                                                                                       S                       I       
+
+Speaker sentences   2:  3129-a   utt# 0 of 5
+id: (3129-a-000)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 21 14 0 10
+Ref times: t1= 17.31 t2= 106.23
+REF:  ***     ***     yeah    exactly ****    **      OH      DID     you     do      the     *       diagnosis *****   OR      was     it      just    an      assumption ******  THAT    that's  probably the     part    that    ***     ******  FAILED  UHHUH   UHHUH   YEAH    I       KNOW    UM      when    working with    ***     THE     UM      FLASHERS there   is      
+HYP:  BUT     AND     yeah    exactly WELL    UH      YOU     DO      you     do      the     A       diagnosis NEVER   OH      was     it      just    an      assumption THAT'S  AND     that's  probably the     part    that    THE     UH-HUH  AND     SO      TO      SET     A       FINE    THOSE   when    working with    SEE     A       FLASH   YEARS    there   is      
+H_T1: 0.39    13.23   17.30   25.99   47.88   51.77   58.68   58.82   59.24   59.49   59.68   59.94   59.97     60.97   61.27   61.53   61.73   61.82   62.01   62.13      62.64   62.99   63.16   63.38    63.89   64.00   64.25   64.38   73.67   96.15   96.44   99.40   99.92   100.20  100.38  100.66  101.88  102.23  102.65  102.86  103.23  103.83  104.37   105.61  105.95  
+H_T2: 0.47    13.33   17.52   26.63   48.11   51.86   58.76   59.24   59.49   59.68   59.94   59.97   60.97     61.27   61.53   61.73   61.82   62.01   62.13   62.64      62.99   63.16   63.38   63.89    64.00   64.25   64.38   64.78   73.97   96.44   96.52   99.51   100.20  100.38  100.66  101.35  102.23  102.65  102.86  103.23  103.43  104.37  104.75   105.95  106.13  
+Eval: I       I                       I       I       S       S                               I                 I       S                                                  I       S                                                I       I       S       S       S       S       S       S       S                               I       S       S       S                        
+
+Speaker sentences   2:  3129-a   utt# 1 of 5
+id: (3129-a-001)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 12 15 10 1
+Ref times: t1= 106.23 t2= 127.18
+REF:  UM      usually A       a       special ****    FUSE    that    operates THE     FLASHERS DO      YOU     have    a       separate fuse    for     YOUR    HIGH    BEAM    as      opposed TO      YOUR    LOW     BEAM    DIAGRAM YEAH    I       DON'T   EVEN    KNOW    IF      MY      CURRENT CARS    HAVE    
+HYP:  SO      usually IS      a       special EVER    USE     that    operates TO      FLASH    YEARS   NOT     have    a       separate fuse    for     YOU     I       MEAN    as      opposed **      ****    ***     ****    ******* ****    *       *****   ****    ****    YEAR    MOLDING THE     HI      GRAMS   
+H_T1: 106.13  106.86  107.34  107.48  107.52  108.11  108.36  109.59  109.79   110.42  110.58   111.02  111.44  111.65  111.82  111.88   112.28  112.81  112.98  113.13  113.21  113.88  114.14                                                                                  114.45  114.60  117.42  121.73  122.04  
+H_T2: 106.50  107.34  107.48  107.52  108.11  108.36  109.58  109.79  110.42   110.58  111.02   111.36  111.65  111.82  111.88  112.28   112.81  112.98  113.13  113.21  113.78  114.14  114.45                                                                                  114.60  115.02  117.52  122.04  122.41  
+Eval: S               S                       I       S                        S       S        S       S                                                S       S       S                       D       D       D       D       D       D       D       D       D       D       S       S       S       S       S       
+
+Speaker sentences   2:  3129-a   utt# 2 of 5
+id: (3129-a-002)
+Labels: <o,na>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 0 0 41 0
+Ref times: t1= 127.21 t2= 142.44
+REF:  A       SEPARATE FUSE    I       KNOW    SOMETIMES WHEN    YOU     THINK   THERE   ARE     THINGS  RUNNING WHILE   THEY'RE AT      THE     SAME    UNIT    LIKE    THE     THE     HEADLAMP YOU     TEND    TO      THINK   WELL    THERE'S ONE     FUSE    OPERATING THE     WHOLE   THING   BUT     SOMETIMES THE     EXTRA   AMPERAGE THAT    
+HYP:  *       ******** ****    *       ****    ********* ****    ***     *****   *****   ***     ******  ******* *****   ******* **      ***     ****    ****    ****    ***     ***     ******** ***     ****    **      *****   ****    ******* ***     ****    ********* ***     *****   *****   ***     ********* ***     *****   ******** ****    
+H_T1:                                                                                                                                                                                                                                                                                                                                                  
+H_T2:                                                                                                                                                                                                                                                                                                                                                  
+Eval: D       D        D       D       D       D         D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D        D       D       D       D       D       D       D       D       D         D       D       D       D       D         D       D       D        D       
+
+Speaker sentences   2:  3129-a   utt# 3 of 5
+id: (3129-a-003)
+Labels: <o,na>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 12 6 21 2
+Ref times: t1= 142.46 t2= 170.18
+REF:  A       HIGH    BEAM    DRIVES  AS      OPPOSED TO      A       LOW     BEAM    REQUIRES THE     USE     OF      A       OF      A       MAYBE   A       HIGHER  FUSE    so      that's  a       possibility IS      THIS    A       A       mail    order   parts   house   that    specializes *****   IN      IN      parts   for     **      
+HYP:  *       ****    ****    ******  **      ******* **      *       ***     ****    ******** ***     ***     **      *       **      *       *****   *       ******  ****    so      that's  a       possibility STILL   THE     SO      THE     mail    order   parts   house   that    specializes SMACK   THE     AND     parts   for     OH      
+H_T1:                                                                                                                                                                          151.49  151.61  151.80  151.85      164.98  165.50  165.62  165.95  165.95  166.45  166.71  167.11  167.56  167.75      168.66  168.88  169.02  169.19  169.59  169.89  
+H_T2:                                                                                                                                                                          151.61  151.80  151.85  152.58      165.50  165.62  165.95  165.95  166.45  166.71  167.11  167.56  167.75  168.66      168.88  169.02  169.19  169.59  169.89  170.18  
+Eval: D       D       D       D       D       D       D       D       D       D       D        D       D       D       D       D       D       D       D       D       D                                           S       S       S       S                                                           I       S       S                       I       
+
+Speaker sentences   2:  3129-a   utt# 4 of 5
+id: (3129-a-004)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 17 18 1 29
+Ref times: t1= 170.19 t2= 272.80
+REF:  UM      old     imports **      WHO     UM      so      IT'S    not     *       J       c       ***     WHITNEY or      SOMEBODY  like    that    ****    ******  *       **      **      ***     YEAH    HAVE    YOU     FOUND   ANY     uh      **      uh      reliable import  service people  in      *****   *****   ******* **      **      **      **      *****   ***     **      ***     *****   *****   the     *       METROPLEX OH      YEAH    UHHUH   I'LL    be      **      ****    **      **      ****    DARNED  UHHUH   
+HYP:  **      old     imports DO      THE     AND     so      THAT'S  not     C       D       c       WAS     ME      or      SOMETHING like    that    IT'S    THAT'S  A       UH      US      THE     THIS    TONIGHT FROM    TO      ME      uh      SO      uh      reliable import  service people  in      THOSE   SMACK   COMPLEX SO      UH      SO      SO      CALLS   YET     OF      OUT     FLASH   SINCE   the     S       A         I       SAW     OF      ALL     be      TO      TURN    AT      AT      IT'S    I       DON'T   
+H_T1:         170.18  170.43  172.73  172.90  174.61  175.01  175.47  175.74  175.97  176.13  176.40  176.59  176.78  177.00  177.12    177.46  177.63  177.79  182.10  182.27  185.08  191.07  192.45  193.88  194.39  194.79  195.12  195.25  195.52  196.02  196.61  196.67   198.58  199.00  199.43  199.82  199.98  200.25  200.65  201.18  206.06  207.36  209.41  213.71  214.10  215.38  225.99  226.51  227.09  227.27  227.84  227.88    232.71  232.80  233.36  233.48  233.68  233.78  233.87  244.92  245.03  253.90  272.46  272.52  
+H_T2:         170.43  170.95  172.90  173.13  174.84  175.30  175.74  175.97  176.13  176.40  176.59  176.78  177.00  177.12  177.46    177.63  177.79  178.16  182.27  182.31  185.16  191.76  192.54  194.39  194.79  195.12  195.25  195.52  195.75  196.61  196.67  197.61   199.00  199.43  199.82  199.98  200.25  200.65  201.18  201.34  206.09  208.26  209.99  214.10  214.33  215.65  226.11  227.09  227.31  227.84  227.88  227.93    232.80  232.89  233.48  233.68  233.78  233.87  234.12  245.03  245.09  254.30  272.52  272.66  
+Eval: D                       I       S       S               S               I       S               I       S               S                         I       I       I       I       I       I       S       S       S       S       S               I                                                        I       I       I       I       I       I       I       I       I       I       I       I       I               I       S         S       S       S       S               I       I       I       I       I       S       S       
+
+Speaker sentences   3:  3129-b   utt# 0 of 20
+id: (3129-b-000)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 9 0 0
+Ref times: t1= 1.54 t2= 10.17
+REF:  well    TOM     just    tonight i       was     working on      my      car     out     of      necessity AND     i       had     uh      uh      HAD     A       LONG    AGE-OLD problem of      my      BRIGHT  LIGHTS  NOT     
+HYP:  well    UM      just    tonight i       was     working on      my      car     out     of      necessity IN      i       had     uh      uh      HAVE    ALONG   WHICH   GO      problem of      my      PRIVATE LIFE    UH      
+H_T1: 1.52    1.72    2.05    2.28    2.92    3.13    3.61    3.96    4.08    4.21    4.60    4.74    4.80      5.44    5.54    5.69    5.87    6.51    7.05    7.24    7.89    8.05    8.26    8.73    8.90    9.22    9.61    10.02   
+H_T2: 1.71    2.04    2.27    2.72    3.12    3.28    3.95    4.07    4.20    4.59    4.73    4.79    5.43      5.53    5.68    5.86    6.09    6.64    7.23    7.67    8.04    8.25    8.72    8.89    9.21    9.60    10.01   10.15   
+Eval:         S                                                                                                 S                                       S       S       S       S                               S       S       S       
+
+Speaker sentences   3:  3129-b   utt# 1 of 20
+id: (3129-b-001)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 14 11 4 0
+Ref times: t1= 10.22 t2= 19.43
+REF:  working uh      this    IS      the     TYPE    of      UM      SWITCH  where   you     FLIP    THE     THE     LEVER   THE     TURN    signal  ON      THE     column  and     WHEN    i       would   UM      PUT     it      in      
+HYP:  working uh      this    **      the     TOP     of      US      WHICH   where   you     ****    LET     UH      SOME    NEVER   TURNS   signal  **      ALMOST  column  and     THEN    i       would   **      THE     it      in      
+H_T1: 10.16   11.38   12.01           12.36   12.42   12.75   13.01   13.33   13.67   13.87           14.25   14.59   14.84   14.98   15.34   15.74           16.08   16.46   17.84   18.02   18.12   18.28           18.45   19.07   19.30   
+H_T2: 10.59   11.72   12.35           12.41   12.74   12.85   13.32   13.66   13.86   14.08           14.42   14.83   14.97   15.33   15.73   16.07           16.45   16.86   18.01   18.11   18.27   18.44           18.68   19.29   19.43   
+Eval:                         D               S               S       S                       D       S       S       S       S       S               D       S                       S                       D       S                       
+
+Speaker sentences   3:  3129-b   utt# 2 of 20
+id: (3129-b-002)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 13 3 1
+Ref times: t1= 19.45 t2= 31.62
+REF:  the     BRIGHT  LIGHT   position THE     LIGHTS  WOULD   go      out     completely which   is      even    worse   THAN    THEM    just    not     getting BRIGHT  AND     i       had     PRESUMED THAT      it      was     THE     SWITCH  AND     UM      this    is      *       uh      AN      
+HYP:  the     PRIVATE LIFE    position BUT     WHY     SHOULD  go      out     completely which   is      even    worse   IN      THE     just    not     getting RIGHT   I       i       had     ******** PRESENTED it      was     ***     SWEATS  THAT    THAT    this    is      A       uh      **      
+H_T1: 19.44   19.50   19.89   20.12    21.52   21.66   21.85   22.08   22.29   22.56      23.89   24.06   24.16   24.37   24.72   24.82   24.90   25.17   25.34   25.64   27.45   27.99   28.17            28.39     28.96   29.08           29.35   30.50   30.69   30.86   31.07   31.21   31.24           
+H_T2: 19.49   19.88   20.11   20.69    21.65   21.84   22.07   22.28   22.55   23.10      24.05   24.15   24.36   24.71   24.81   24.89   25.16   25.33   25.55   25.98   27.98   28.16   28.38            28.95     29.07   29.34           29.89   30.68   30.85   31.06   31.20   31.23   31.64           
+Eval:         S       S                S       S       S                                                                  S       S                               S       S                       D        S                         D       S       S       S                       I               D       
+
+Speaker sentences   3:  3129-b   utt# 3 of 20
+id: (3129-b-003)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 17 9 1 2
+Ref times: t1= 31.74 t2= 40.49
+REF:  older   car     it's    a       ******* ***     SEVENTY-TWO M_G     so      i       had     to      mail    order   the     part    uh      which   i       HAD     DONE    AND     TONIGHT I       WENT    OUT     AND     uh      at      
+HYP:  older   car     it's    a       SEVENTY T_V     AND         THE     so      i       had     to      mail    order   the     part    uh      which   i       ***     THAT    IT'S    AT      NIGHT   TIME    IN      IT      uh      at      
+H_T1: 31.65   32.08   32.54   32.70   32.77   33.21   33.56       33.66   34.91   35.06   35.16   35.31   35.40   35.63   35.88   35.95   36.87   37.07   37.28           37.52   37.75   37.92   37.98   38.29   38.74   39.16   39.93   40.39   
+H_T2: 32.07   32.53   32.69   32.76   33.20   33.55   33.65       33.71   35.05   35.15   35.30   35.39   35.62   35.87   35.94   36.35   37.06   37.27   37.44           37.74   37.91   37.97   38.28   38.73   39.15   39.24   40.22   40.49   
+Eval:                                 I       I       S           S                                                                                               D       S       S       S       S       S       S       S                       
+
+Speaker sentences   3:  3129-b   utt# 4 of 20
+id: (3129-b-004)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 22 17 4 1
+Ref times: t1= 40.50 t2= 52.28
+REF:  least   HOOKED  IN      THE     NEW     part    **      ONLY    TO      DISCOVER that    that    apparently is      not     THE     problem it's    not     IN      the     SWITCH  BECAUSE IT      DOES    THE     SAME    THING   WITH    THE     NEW     switch  so      I'LL    be      faced   with    having  to      return  that    product uh      AND     
+HYP:  least   ******  BUT     DIDN'T  THEY    part    OH      IT      IS      EVER     that    that    apparently is      not     A       problem it's    not     **      the     ******  ******* SWEETS  DID     IS      THAT    THAT    THEY    DID     KNOW    switch  so      ALL     be      faced   with    having  to      return  that    product uh      IN      
+H_T1: 40.50           41.07   41.24   41.59   41.71   42.38   42.56   42.68   43.00    43.28   43.91   44.03      44.41   44.53   44.75   44.78   45.20   45.34           45.58                   45.64   46.07   46.18   46.32   46.64   46.83   47.01   47.11   47.22   48.53   48.69   48.92   49.06   49.45   49.59   49.86   49.99   50.41   50.57   51.75   52.22   
+H_T2: 40.76           41.23   41.58   41.70   42.08   42.55   42.67   42.99   43.27    43.45   44.02   44.40      44.52   44.74   44.77   45.19   45.33   45.57           45.63                   46.06   46.17   46.31   46.46   46.82   46.94   47.10   47.21   47.64   48.68   48.91   49.05   49.44   49.58   49.85   49.98   50.40   50.56   51.05   52.21   52.31   
+Eval:         D       S       S       S               I       S       S       S                                                   S                               D               D       D       S       S       S       S       S       S       S       S                       S                                                                               S       
+
+Speaker sentences   3:  3129-b   utt# 5 of 20
+id: (3129-b-005)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 15 15 3 5
+Ref times: t1= 52.32 t2= 70.35
+REF:  hoping  that    uh      you     know    that    they    ****    WILL    ACCEPT  it      ALTHOUGH IT'S    BEEN    REMOVED FROM    the     BOX     it's    ******  OBVIOUSLY NOT     BEEN    REALLY  used    uh      I       HAD     DONE    what    DIAGNOSIS i       ****    ****    **      COULD   primarily BY      
+HYP:  hoping  that    uh      you     know    that    they    WERE    LOOKING WAS     it      ******** I       WAS     BETTER  BUT     the     IT      it's    HONEST  ABOUT     THAT    ON      THE     used    uh      *       IT      THAN    what    ********* i       KNOW    BACK    TO      GOOD    primarily ABOUT   
+H_T1: 52.32   52.74   52.96   53.28   53.37   53.47   53.60   53.73   53.85   54.07   54.32            54.96   55.10   55.29   55.52   55.80   55.86   56.26   56.42   56.80     57.09   57.21   57.35   57.43   65.14           65.69   67.97   68.21             68.46   68.64   69.02   69.23   69.33   69.59     70.16   
+H_T2: 52.73   52.95   53.27   53.36   53.46   53.59   53.72   53.84   54.06   54.31   54.44            55.09   55.28   55.51   55.79   55.85   56.25   56.41   56.79   57.08     57.20   57.34   57.42   57.97   65.68           65.74   68.20   68.45             68.63   68.83   69.22   69.32   69.58   70.15     70.37   
+Eval:                                                         I       S       S               D        S       S       S       S               S               I       S         S       S       S                       D       S       S               D                 I       I       I       S                 S       
+
+Speaker sentences   3:  3129-b   utt# 6 of 20
+id: (3129-b-006)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 20 11 6 3
+Ref times: t1= 70.35 t2= 84.03
+REF:  LOOKING AT      A       wiring  DIAGRAM THAT    i       did     have    OF      the     car     AND     UM      PRETTY  MUCH    decided ****    had     to      be      the     problem I       talked  to      one     MECHANIC ABOUT   it      AND     he      ******* **      SUSPECTED THE     SWITCH  also    uh      but     
+HYP:  MAKING  YOU     KNOW    wiring  BACK    RAMPANT i       did     have    **      the     car     ***     **      CARS    MESSED  decided THAT    had     to      be      the     problem I'VE    talked  to      one     ******** *****   it      ***     he      SUSPECT IT      THIS      WAY     IT'S    also    uh      but     
+H_T1: 70.38   70.71   70.83   70.93   71.40   71.78   72.12   72.19   72.40           72.70   72.76                   75.73   75.93   76.15   76.68   76.84   77.02   77.08   77.25   77.31   77.96   78.07   78.34   78.40                    80.25           80.34   80.49   81.05   81.15     81.39   81.54   81.66   83.08   83.89   
+H_T2: 70.70   70.82   70.92   71.39   71.77   72.11   72.18   72.39   72.69           72.75   73.14                   75.92   76.14   76.67   76.83   77.01   77.07   77.24   77.30   77.78   78.06   78.33   78.39   78.61                    80.33           80.48   81.04   81.14   81.38     81.53   81.65   82.16   83.53   84.01   
+Eval: S       S       S               S       S                               D                       D       D       S       S               I                                               S                               D        D               D               I       I       S         S       S                               
+
+Speaker sentences   3:  3129-b   utt# 7 of 20
+id: (3129-b-007)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 16 15 7 1
+Ref times: t1= 84.04 t2= 96.88
+REF:  I'VE    not     YEAH    I       REALLY    don't   KNOW    what    the     problem MIGHT   BE      IT      it      THE     OTHER   switch  could   be      the     MAIN    switch  ITSELF  UM      THAT    TURNS      the     LIGHTS  ON      OR      OFF     which   is      ON      the     ***     DASHBOARD UM      it      
+HYP:  I'M     not     ****    *       GENERALLY don't   ****    what    the     problem *****   THAT    THEY    it      YEAH    THEY'RE switch  could   be      the     SAME    switch  ******  **      ****    THEMSELVES the     CARS    A       LOT     OVERALL which   is      ALL     the     BAD     SPORT     BUT     it      
+H_T1: 84.02   84.20                   84.92     85.33           85.49   85.73   85.79           86.19   86.42   87.93   88.34   88.55   88.66   89.14   89.37   89.53   89.60   90.19                           90.68      92.21   92.29   92.67   92.72   93.10   94.34   94.61   94.72   94.83   94.91   95.17     96.54   96.73   
+H_T2: 84.19   84.43                   85.32     85.48           85.72   85.78   86.18           86.32   86.67   88.08   88.54   88.65   89.13   89.36   89.52   89.59   89.96   90.57                           91.18      92.28   92.66   92.71   93.09   93.61   94.60   94.71   94.82   94.90   95.16   95.60     96.72   96.87   
+Eval: S               D       D       S                 D                               D       S       S               S       S                                       S               D       D       D       S                  S       S       S       S                       S               I       S         S               
+
+Speaker sentences   3:  3129-b   utt# 8 of 20
+id: (3129-b-008)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 17 17 3 2
+Ref times: t1= 96.88 t2= 123.58
+REF:  MIGHT   be      tied    into    the     ***     EQUATION SOMEHOW BUT     I       i       don't   know    i       should  look    at      that    I       DON'T   remember ******* SEEING  ONE     IN      THE     UM      IN      the     DIAGRAM BUT     I'LL    HAVE    to      go      back    AND     LOOK    AT      
+HYP:  ABOUT   be      tied    into    the     SAY     SUB      AND     UH      UH      i       don't   know    i       should  look    at      that    THAT    I'LL    remember SITTING ON      AND     THEY    YEAH    AND     THEY    the     ******* BACK    BURNER  UH      to      go      back    ***     ****    THIS    
+H_T1: 96.88   97.11   97.23   97.54   97.91   98.05   98.56    98.80   100.31  114.06  115.18  115.49  115.81  116.07  116.17  116.43  116.61  116.74  116.98  117.45  117.66   117.97  118.32  118.61  118.79  118.88  120.35  120.55  121.30          121.36  121.66  122.49  122.76  122.90  122.99                  123.34  
+H_T2: 97.10   97.22   97.53   97.90   98.04   98.55   98.79    99.02   100.43  114.25  115.48  115.80  116.06  116.16  116.42  116.60  116.73  116.97  117.18  117.65  117.96   118.31  118.60  118.78  118.87  119.16  120.54  120.70  121.35          121.65  121.84  122.75  122.89  122.98  123.25                  123.52  
+Eval: S                                       I       S        S       S       S                                                                       S       S                I       S       S       S       S       S       S               D       S       S       S                               D       D       S       
+
+Speaker sentences   3:  3129-b   utt# 9 of 20
+id: (3129-b-009)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 22 14 1 5
+Ref times: t1= 123.65 t2= 164.18
+REF:  ****    THAT    uhhuh   yeah    that's  a       good    idea    ****    ****    ***     ****    WHAT    I'VE    TYPICALLY FOUND   WHEN    that    uh      companies are     pretty  good    about   accepting RETURNS ON      products like    THAT    WHEN    they're not     NEEDED  AFTER   ALL     AND     i       hope    THAT    that's  the     
+HYP:  IT'S    A       uhhuh   yeah    that's  a       good    idea    WELL    THAT    BUT     THEY    SAY     OUT     OF        ONE     TO      that    uh      companies are     pretty  good    about   accepting RETURN  SOME    products like    FOR     BUT     they're not     ******  THEY    DID     HAVE    i       hope    IT      that's  the     
+H_T1: 123.53  123.67  136.92  150.57  150.72  150.93  150.96  151.17  153.84  154.15  154.27  154.41  154.55  154.79  155.01    155.07  155.32  156.04  156.33  157.16    157.60  157.65  157.91  158.09  158.74    159.26  159.69  159.89   160.40  160.65  160.85  161.00  161.11          161.71  161.83  161.99  163.39  163.55  163.78  163.87  164.11  
+H_T2: 123.66  123.79  137.10  150.71  150.92  150.95  151.16  151.63  154.03  154.26  154.40  154.54  154.78  155.00  155.06    155.31  155.37  156.32  156.67  157.59    157.64  157.90  158.08  158.42  159.25    159.68  159.88  160.39   160.64  160.84  160.99  161.10  161.37          161.82  161.98  162.19  163.54  163.77  163.86  164.10  164.17  
+Eval: I       S                                                       I       I       I       I       S       S       S         S       S                                                                           S       S                        S       S                       D       S       S       S                       S                       
+
+Speaker sentences   3:  3129-b   utt# 10 of 20
+id: (3129-b-010)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 16 4 1
+Ref times: t1= 164.22 t2= 185.76
+REF:  case    this    time    right   exactly ***     IT'S    OUT     OF      UM      KANSAS  SOMEWHERE NO      it's    not     I       ALSO    got     A       piece   of      CHROME   for     THE     the     HOOD    THAT    THEY    HAD     indicated was     THE     RIGHT   PART    for     this    car     but     uh      IT      
+HYP:  case    this    time    right   exactly AND     NOW     THAT    I       CAN     IS      INTO      NOW     it's    not     UM      I'VE    got     HAD     piece   of      PROBLEMS for     ***     the     ****    A       GOOD    DAY     indicated was     ***     DRIVE   CAR     for     this    car     but     uh      **      
+H_T1: 164.18  164.55  164.70  171.09  171.56  172.78  172.94  173.16  173.33  173.44  173.80  175.12    178.19  178.46  178.61  179.69  179.99  180.11  180.25  180.30  180.62  180.68   181.22          181.40          181.81  181.99  182.34  182.94    183.61          183.83  184.14  184.37  184.54  184.71  185.03  185.33          
+H_T2: 164.54  164.69  165.03  171.39  172.09  172.93  173.15  173.32  173.43  173.79  173.97  175.47    178.45  178.60  178.86  179.98  180.10  180.24  180.29  180.61  180.67  181.21   181.39          181.53          181.87  182.33  182.71  183.60    183.82          184.13  184.36  184.53  184.70  185.02  185.32  185.54          
+Eval:                                         I       S       S       S       S       S       S         S                       S       S               S                       S                D               D       S       S       S                         D       S       S                                               D       
+
+Speaker sentences   3:  3129-b   utt# 11 of 20
+id: (3129-b-011)
+Labels: <o,na>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 24 13 4 1
+Ref times: t1= 185.79 t2= 205.65
+REF:  IS      not     *****   EITHER  it's    OBVIOUSLY DOESN'T QUITE   FIT     SO      IT      must    be      FOR      a       different year    SO      I'LL    HAVE    TO      TRY     TO      RETURN  that    as      well    well    i       had     one     person  that    i       USED    for     years   and     years   on      this    car     
+HYP:  IT'S    not     EIGHT   THERE   it's    ********* UH      OBVIOUS IT      DOESN'T THAT    must    be      DISTRICT a       different year    **      ****    ****    OH      THAT'S  PROPER  TERM    that    as      well    well    i       had     one     person  that    i       USE     for     years   and     years   on      this    car     
+H_T1: 185.68  185.94  186.17  186.34  186.52            186.90  187.19  187.61  187.69  189.76  189.88  190.10  190.23   190.47  190.50    190.87                          192.09  192.21  192.44  192.79  193.03  193.21  193.34  201.56  202.00  202.12  202.37  202.60  202.98  203.09  203.22  203.56  203.72  204.10  204.19  204.99  205.20  205.33  
+H_T2: 185.93  186.16  186.33  186.51  186.89            187.18  187.60  187.68  188.01  189.87  190.09  190.22  190.46   190.49  190.86    191.12                          192.20  192.43  192.78  193.02  193.20  193.33  193.71  201.80  202.11  202.36  202.59  202.97  203.08  203.21  203.55  203.71  204.09  204.18  204.71  205.19  205.32  205.69  
+Eval: S               I       S               D         S       S       S       S       S                       S                                  D       D       D       S       S       S       S                                                                                       S                                                               
+
+Speaker sentences   3:  3129-b   utt# 12 of 20
+id: (3129-b-012)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 16 13 8 1
+Ref times: t1= 205.66 t2= 217.79
+REF:  BECAUSE I'VE    OWNED   this    car     SINCE   IT      WAS     NEW     and     uh      BUT     IT'S    over    like    in      the     *****   BROOK   HOLLOW  INDUSTRIAL district DOWN    ON      STEMMONS   and     INWOOD  area    and     i       HADN'T  USED    HIM     for     SOME    years   AND     the     
+HYP:  ******* ****    ABOUT   this    car     *****   SUBJECT FOR     THEY    and     uh      ***     BASE    over    like    in      the     BROKE   ON      THAT'S  TRUE       district ****    **      DOWNSTAIRS and     ANYWAY  area    and     i       ******  HAD     EASY    for     I'VE    years   ***     the     
+H_T1:                 205.70  206.07  206.22          206.46  206.91  207.07  208.32  208.95          210.18  210.45  211.14  211.39  211.46  211.54  211.83  212.11  212.31     212.46                   212.91     213.51  214.33  214.63  216.03  216.37          216.46  216.70  216.96  217.10  217.38          217.69  
+H_T2:                 206.06  206.21  206.45          206.90  207.06  207.32  208.83  209.34          210.44  210.93  211.38  211.45  211.53  211.82  212.10  212.30  212.45     212.90                   213.50     213.71  214.62  215.06  216.36  216.45          216.69  216.95  217.09  217.37  217.68          217.74  
+Eval: D       D       S                       D       S       S       S                       D       S                                       I       S       S       S                   D       D       S                  S                               D       S       S               S               D               
+
+Speaker sentences   3:  3129-b   utt# 13 of 20
+id: (3129-b-013)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 18 12 3 1
+Ref times: t1= 217.80 t2= 228.34
+REF:  last    time    i       called  HIM     back    it      turned  out     THAT    HE      HAD     FURTHER specialized INSTEAD of      uh      all     IMPORT  CARS    HE      HAS     NARROWED IT      down    to      WHERE   HE      only    WORKS   on      uh      **      german  
+HYP:  last    time    i       called  CARDS   back    it      turned  out     ****    **      YET     FARTHER specialized THAT    of      uh      all     IN      FOR     CAR     IS      THERE    IS      down    to      *****   VERY    only    WORKED  on      uh      IN      german  
+H_T1: 217.75  218.02  218.12  218.21  218.50  218.59  218.88  218.96  219.20                  219.41  220.13  220.47      221.52  221.68  221.85  223.06  223.36  223.46  223.72  224.30  224.54   224.81  224.92  225.17          225.23  225.57  225.91  226.35  227.61  227.87  227.93  
+H_T2: 218.01  218.11  218.20  218.49  218.58  218.87  218.95  219.19  219.40                  219.81  220.46  221.25      221.67  221.84  222.11  223.35  223.45  223.71  224.08  224.53  224.80   224.91  225.16  225.22          225.56  225.90  226.34  226.56  227.86  227.92  228.29  
+Eval:                                 S                                       D       D       S       S                   S                               S       S       S       S       S        S                       D       S               S                       I               
+
+Speaker sentences   3:  3129-b   utt# 14 of 20
+id: (3129-b-014)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 15 8 0
+Ref times: t1= 228.39 t2= 243.05
+REF:  cars    and     german  CARS    i'm     not     sure    THAT    HE      WORKS   ON      MUCH    ELSE    AT      ALL     BUT     HE      DOESN'T work    ON      BRITISH CARS    ANY     MORE    and     GAVE    ME      THE     NAME    OF      somebody else    to      take    a       look    at      it      so      UM      uh      i       
+HYP:  cars    and     german  PET     i'm     not     sure    ****    **      *****   **      ****    THEY    WORKED  MYSELF  THAT    NOBODY  DOES    work    **      ALL     BRICK   CARDS   ANYMORE and     ****    **      EVERY   NIGHT   TO      somebody else    to      take    a       look    at      it      so      I'M     uh      i       
+H_T1: 228.30  229.32  232.18  232.47  233.98  234.12  234.27                                          234.45  234.63  234.91  235.46  235.56  235.91  236.13          236.40  236.50  236.81  237.22  238.46                  238.66  238.87  239.16  239.22   239.65  239.85  239.93  240.17  240.22  240.43  240.58  241.50  241.79  242.17  242.90  
+H_T2: 228.97  229.59  232.46  232.91  234.11  234.26  234.44                                          234.62  234.90  235.45  235.55  235.90  236.12  236.39          236.49  236.80  237.21  237.68  238.65                  238.86  239.15  239.21  239.64   239.84  239.92  240.16  240.21  240.42  240.57  240.64  241.78  241.99  242.67  243.04  
+Eval:                         S                               D       D       D       D       D       S       S       S       S       S       S               D       S       S       S       S               D       D       S       S       S                                                                                S                       
+
+Speaker sentences   3:  3129-b   utt# 15 of 20
+id: (3129-b-015)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 20 11 6 1
+Ref times: t1= 243.05 t2= 252.17
+REF:  MAY     have    to      check   with    that    person  AS      IT      turns   out     that    one     THAT    shop    IS      NEAR    WHERE   I       now     *       work    so      I'LL    UM      i       should  BE      ABLE    TO      TAKE    IT      IN      and     check   that    part    OUT     
+HYP:  MIGHT   have    to      check   with    that    person  **      IS      turns   out     that    one     PET     shop    THIS    YEAR    WE'RE   UH      now     I       work    so      ****    I       i       should  **      ****    **      ****    HAVE    TAKEN   and     check   that    part    YEAH    
+H_T1: 243.05  243.25  243.37  243.45  243.71  243.82  243.96          244.47  244.64  244.91  245.15  245.30  245.51  245.75  246.06  246.21  246.49  246.68  247.55  247.79  247.83  248.92          249.11  249.87  249.92                                  250.10  250.28  250.65  251.11  251.44  251.59  251.90  
+H_T2: 243.24  243.36  243.44  243.70  243.81  243.95  244.33          244.63  244.90  245.14  245.29  245.50  245.74  246.05  246.20  246.48  246.67  246.84  247.78  247.82  248.18  249.10          249.53  249.91  250.09                                  250.27  250.64  250.83  251.43  251.58  251.89  252.06  
+Eval: S                                                       D       S                                       S               S       S       S       S               I                       D       S                       D       D       D       D       S       S                                       S       
+
+Speaker sentences   3:  3129-b   utt# 16 of 20
+id: (3129-b-016)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 20 11 2 2
+Ref times: t1= 253.40 t2= 267.12
+REF:  I'VE    not     had     TO      to      EXCHANGE any     other   parts   **      recently BECAUSE THEY    WERE    DEFECTIVE NOW       I'VE    had     HAD     pretty  good    luck    i       just    ****    HOWEVER did     UM      have    to      get     a       a       uh      ONE     
+HYP:  HAVE    not     had     THE     to      SAVE     any     other   parts   OF      recently ******* ****    RECALL  EVER      EFFECTIVE HAVE    had     THAT    pretty  good    luck    i       just    KNOW    EVER    did     THAT    have    to      get     a       a       uh      WHY     
+H_T1: 253.37  253.53  253.69  253.89  254.26  254.40   254.92  255.15  255.34  255.83  255.94                   258.29  258.67    258.88    260.29  260.47  260.98  261.14  261.44  261.64  262.05  262.17  263.23  263.36  263.57  263.87  264.37  264.54  264.67  264.86  266.16  266.52  267.01  
+H_T2: 253.52  253.68  253.88  253.95  254.39  254.91   255.14  255.33  255.82  255.93  256.47                   258.66  258.87    259.46    260.46  260.64  261.13  261.43  261.63  262.04  262.16  262.48  263.35  263.56  263.86  264.15  264.53  264.66  264.85  265.01  266.51  266.79  267.13  
+Eval: S                       S               S                                I                D       D       S       S         S         S               S                                               I       S               S                                                       S       
+
+Speaker sentences   3:  3129-b   utt# 17 of 20
+id: (3129-b-017)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 20 13 4 3
+Ref times: t1= 267.13 t2= 281.24
+REF:  OF      THESE   jam     box     **      ***     PORTABLE DUAL    CASSETTE players ***     UM      REPAIRED i       PURCHASED it      at      sam's   and     i       HAD     ASSUMED THAT    it      had     a       ninety  day     warranty AND     i       should  HAVE    CHECKED more    carefully and     AND     DONE    A       
+HYP:  **      THEY    jam     box     OR      THE     BALL     GO      PERCENT  players AND     I'VE    REPAIR   i       BY        it      at      sam's   and     i       ***     ******* DECIDED it      had     a       ninety  day     warranty THAT    i       should  ****    GET     more    carefully and     DID     THAT    I       
+H_T1:         267.14  267.40  267.71  268.20  268.34  268.41   269.09  269.30   269.71  270.70  271.35  271.60   272.43  272.73    273.20  273.61  273.81  275.44  276.50                  276.75  277.23  277.33  277.49  277.54  277.86  278.06   278.74  278.88  279.00          279.48  279.69  279.81    280.26  280.72  281.02  281.15  
+H_T2:         267.27  267.70  268.08  268.33  268.40  268.77   269.29  269.70   270.31  270.78  271.59  272.14   272.62  273.19    273.60  273.80  274.40  275.95  276.74                  277.22  277.32  277.48  277.53  277.85  278.05  278.59   278.87  278.99  279.28          279.68  279.80  280.25    280.43  280.89  281.14  281.23  
+Eval: D       S                       I       I       S        S       S                I       S       S                S                                                 D       D       S                                                        S                       D       S                                 S       S       S       
+
+Speaker sentences   3:  3129-b   utt# 18 of 20
+id: (3129-b-018)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 21 9 3 0
+Ref times: t1= 281.34 t2= 291.74
+REF:  better  job     of      saving  THE     RECEIPT because UM      i       didn't  take    IT      in      right   away    AND     LET     A       whole   year    GO      by      uh      some    of      the     buttons DIDN'T  work    RIGHT   WHERE   YOU      had     
+HYP:  better  job     of      saving  HER     SEAT    because THE     i       didn't  take    AND     in      right   away    ***     THAT    THE     whole   year    AGO     by      uh      some    of      the     buttons DID     work    *****   *****   PROPERTY had     
+H_T1: 281.24  281.53  281.86  281.97  282.46  282.62  284.23  284.90  285.79  285.88  286.16  286.35  286.41  286.57  286.80          287.47  287.86  287.95  288.16  288.39  288.60  289.65  289.89  290.08  290.14  290.20  290.57  290.79                  291.10   291.62  
+H_T2: 281.52  281.85  281.96  282.45  282.61  283.02  284.66  285.30  285.87  286.15  286.34  286.40  286.56  286.79  287.36          287.63  287.94  288.15  288.38  288.59  289.02  289.88  290.07  290.13  290.19  290.56  290.78  291.09                  291.61   291.76  
+Eval:                                 S       S               S                               S                               D       S       S                       S                                                       S               D       D       S                
+
+Speaker sentences   3:  3129-b   utt# 19 of 20
+id: (3129-b-019)
+Labels: <o,na>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 14 8 6 1
+Ref times: t1= 291.77 t2= 300.06
+REF:  TO      ACTUALLY physically hold    THEM    down    TO      GET     IT      to      RECORD  OR      TO         PLAY      and     as      it      turned  out     it      had     a       ****    FULL    YEAR'S  WARRANTY and     i       COULD   
+HYP:  THAT    SHE      physically hold    IT      down    **      ***     **      to      ******  **      PITTSBURGH CORPORATE and     as      it      turned  out     it      had     a       FOUR    YEAR    FOR     THE      and     i       *****   
+H_T1: 291.77  291.93   292.10     292.64  292.96  293.03                          293.35                  293.46     293.95    295.86  296.47  296.55  296.76  297.05  297.25  297.36  297.54  297.60  297.88  298.07  298.50   299.53  299.76          
+H_T2: 291.92  292.09   292.63     292.95  293.02  293.34                          293.45                  293.94     294.38    296.26  296.54  296.75  297.04  297.24  297.35  297.53  297.59  297.87  298.06  298.39  298.55   299.75  299.84          
+Eval: S       S                           S               D       D       D               D       D       S          S                                                                         I       S       S       S                        D       
+
+

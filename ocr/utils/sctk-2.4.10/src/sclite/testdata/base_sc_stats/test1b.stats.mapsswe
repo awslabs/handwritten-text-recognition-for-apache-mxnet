@@ -1,0 +1,70 @@
+      SEGMENTATION REPORT FOR SYSTEMS
+              scoring/itword_20.ctm and scoring/itmono_8.ctm
+Minimum Number of Correct Boundary words 2
+
+  Number of Segments  3,     1.500 per sentence
+  Number of Sentences  2
+
+    # Ref wrds      Err scoring/itword_20.ctm   Err scoring/itmono_8.ctm
+---------------------------------------
+Totals   13              7           9
+
+Pct err               53.8%       69.2%
+
+
+
+
+
+
+                            McNemar test results
+                            ====================
+
+                                     scoring/itmono_8.ctm
+
+                                  corr     incorr
+      scoring/itword_20.ctm      corr     0          1
+	                 incorr     0          2
+The NULL Hypothesis:
+
+     The number unique utterance errors are equal for both systems.
+
+Alternate Hypothesis:
+
+     The number of unique utterance errors for both systems are NOT equal.
+Decision Analysis:
+
+     Assumptions:
+        A1: The distibution of unique utterance errors
+            follows the binomial distribution for N fair coin tosses.
+
+     Rejection criterion:
+        Reject the null hypothesis at the 95% confidence level based
+        on the following critical values table.  N is the sum of the
+        unique utterance errors for both systems being compared and
+        MIN(uue) is the minimum number of unique utterance
+        foe either system.
+
+          MIN(uue)      P(MIN(uue) | N=  1)
+          --------      -------------------
+               0               1.000
+
+     Decision:
+        There were MIN(uue)=0 unique utterance errors, the probability of
+        it occuring is 1.000, therefore the null hypothesis is ACCEPTED
+        There is no statistical difference between scoring/itword_20.ctm and scoring/itmono_8.ctm
+MTCH_PR_RESULTS (systems: scoring/itword_20.ctm scoring/itmono_8.ctm) (# segs: 3) (Seg per Sent: 1.500) (% Error: 53.85 69.23) (mean: -0.667) (std dev: 0.577) (Z Stat: -2.000) (Stat Diff: Yes)
+
+
+
+                COMPARISON MATRIX: FOR THE MATCHED PAIRS TEST
+        PECENTAGES ARE MEAN PCT ERROR/SEGMENT.  FIRST # IS LEFT SYSTEM
+                  Minimum Number of Correct Boundary words 2
+
+
+   |-----------------------------------------------------------------------|
+   |                       | scoring/itword_20.ctm |  scoring/itmono_8.ctm |
+   |-----------------------+-----------------------+-----------------------|
+   | scoring/itword_20.ctm |                       | scoring/itword_20.ctm |
+   |-----------------------+-----------------------+-----------------------|
+   |  scoring/itmono_8.ctm |                       |                       |
+   |-----------------------------------------------------------------------|

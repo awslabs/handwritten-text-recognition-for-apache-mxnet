@@ -1,0 +1,28 @@
+;; mdeval md_test5 ref rttm
+
+SPKR-INFO md_test5 1 <NA> <NA> <NA>         child        spkr1r <NA>
+SEGMENT   md_test5 1 10.0  6.0 <NA>         <NA>         spkr1r <NA>
+SPEAKER   md_test5 1 10.0  6.0 <NA>         <NA>         spkr1r <NA>
+SU        md_test5 1 10.0  3.0 <NA>         statement    spkr1r <NA>
+LEXEME    md_test5 1 10.0  1.0 firstWord    lex          spkr1r <NA>
+LEXEME    md_test5 1 11.0  1.0 T.'s         alpha        spkr1r <NA>
+LEXEME    md_test5 1 12.0  1.0 thirdWord    acronym      spkr1r <NA>
+SU        md_test5 1 13.0  3.0 <NA>         question     spkr1r <NA>
+LEXEME    md_test5 1 13.0  1.0 fourthWord   interjection spkr1r <NA>
+LEXEME    md_test5 1 14.0  1.0 fifthWord    propernoun   spkr1r <NA>
+LEXEME    md_test5 1 15.0  1.0 sixthWord    other        spkr1r <NA>
+SPKR-INFO md_test5 1 <NA> <NA> <NA>         unknown      name="<NA>" <NA>
+SEGMENT   md_test5 1 16.0  3.0 <NA>         <NA>         name="<NA>" <NA>
+SPEAKER   md_test5 1 16.0  3.0 <NA>         <NA>         name="<NA>" <NA>
+SU        md_test5 1 16.0  3.0 <NA>         backchannel  name="<NA>" <NA>
+LEXEME    md_test5 1 16.0  1.0 seventhWord  lex          name="<NA>" <NA>
+LEXEME    md_test5 1 17.0  1.0 eighthWord   lex          name="<NA>" <NA>
+LEXEME    md_test5 1 18.0  1.0 ninthWord    lex          name="<NA>" <NA>
+SPKR-INFO md_test5 1 <NA> <NA> <NA>         unknown      spkr=<spkr3r> <NA>
+SEGMENT   md_test5 1 19.0  3.0 <NA>         <NA>         spkr=<spkr3r> <NA>
+SPEAKER   md_test5 1 19.0  3.0 <NA>         <NA>         spkr=<spkr3r> <NA>
+;; Here we have an SU of type "other" -- it's a legal SU type in the RTTM spec
+SU        md_test5 1 19.0  3.0 <NA>         other        spkr=<spkr3r> <NA>
+LEXEME    md_test5 1 19.0  1.0 tenthWord    lex          spkr=<spkr3r> <NA>
+LEXEME    md_test5 1 20.0  1.0 eleventhWord lex          spkr=<spkr3r> <NA>
+LEXEME    md_test5 1 21.0  1.0 twelfthWord  lex          spkr=<spkr3r> <NA>

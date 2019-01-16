@@ -1,0 +1,73 @@
+Ġ ġ { Ģ ģ / Ģ / Ĥ } Ĥ ĥ Ħ (f_0)
+Ġ ġ { Ģ / Ģ ģ / Ĥ } Ĥ ĥ Ħ (f_1)
+Ġ ġ { Ģ / Ĥ / Ģ ģ } Ĥ ĥ Ħ (f_2)
+Ġ ġ { Ģ / Ĥ / Ģ ģ } ĥ Ħ (f_3)
+Ġ ġ Ģ ģ { Ĥ / Ģ / @ } ĥ Ħ (f_4)
+Ġ ġ Ģ ģ Ĥ { Ĥ / Ģ / @ } ĥ Ħ (f_5)
+Ġ ġ Ģ ģ { Ĥ / Ģ / @ } Ĥ ĥ Ħ (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+Ĵħ Ĵħ ħĠģ Ġ īĮĭĦ { ĠĦĤ-Įīģ / ĠĦĤ Įīģ } įıĮġīĤĬ Įĥ Ĭĸ ġright (g_0)
+Ĵħ Ĵħ ħĠģ Ġ īĮĭĦ { ĠĦĤ Įīģ / ĠĦĤ-Įīģ } įıĮġīĤĬ Įĥ Ĭĸ ġright (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+Ġ { ġ / Ģģ } { Ĥ ĥ / Ĥĥ } (h_0)
+Ġ { ġ / Ģģ / { Ħ ħ Ĩ / Ħħ Ĩ / Ħ Ĩħ} ġģ } { Ĥ { Ĩ ĭ / ĳħ } ĥ / Ĥĥ } (h_1)
+Ġ { ġ / Ģģ / { Ħ ħ Ĩ / Ħħ Ĩ / Ħ Ĩħ} ġģ } { Ĥ { Ĩ ĭ / ĳħ } ĥ / Ĥĥ } (h_2)
+;; Test a couple alternations in the hyp file
+ĳħĨĲ ĨĲ ĳħĤ ĳĤĭ (i_1)
+ĳħĨĲ ĨĲ ĳħĤ ĳĤĠ (i_2)
+;; Check alternations in both the ref and hyp
+{ĳħĤ / ĳħĨĲ} ĨĲ ĳħĤ ĳĤĠ (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+{ĥĨ-/ĥĨĦ-} ĳħ- ĥĨ- -ĨĢĪĲ {-īĪ/-ĨĪ} -ĮĥĥĤĤ -ħĨĬ ĥĨĭģ ĳħĤ ĥĨĲħ ĳĨĢĪĲ ĬĨīĪ ĥĤĤ ħĨĬ (i_4)
+;; Check deletions and substitutions of hyphenated words
+ģĤī ĥĨ- ģĤīĞĶĨĳħĭĴīī { ĥĨ /@ } ĲĪĨį ĲĪĨį ĲĴġĲĳĨĳĴĳĨĮĭ ĥĨ- ĲĴġĞĶĨĳħĭĴīī { ĥĨ- / @ } (i_5)
+;; Check to handle utterances without reference words 
+(empty-1)
+(empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+Ġ { Ģ / @ } ģ (alt-1)
+Ġ { Ģ / @ } ģ (alt-2)
+Ġ { Ģ / @ } ģ (alt-3)
+Ġ { Ģ / @ } ģ (alt-4)
+Ġ { Ģ / @ } ģ (alt-5)
+Ġ { Ģ / @ } ģ (alt-6)
+Ġ ģ Ĥ (alt-7)
+Ġ ģ @ Ĥ (alt-8)
+Ġ ģ Ģ (alt-9)
+;;; Check the handling of optionally deletable
+ġ (Ģ) ģ (od1-1)
+ġ (Ģ) ģ (od1-2)
+ġ (Ģ) ģ (od1-3)
+ġ (Ģ) ģ (od1-4)
+ġ (Ģ) ģ (od1-5)
+ġ (Ģ) ģ (od1-6)
+ġ (Ģ) ģ (od1-7)
+;;; ambiguous cases
+(Ġ) (Ģ) ġ ģ Ĥ (od2-1)
+(Ġ) Ģ (ġ) ģ Ĥ (od2-2)
+(Ġ) Ģ ġ (ģ) Ĥ (od2-3)
+(Ġ) Ģ ġ ģ (Ĥ) (od2-4)
+Ġ (Ģ) (ġ) ģ Ĥ (od2-5)
+Ġ (Ģ) ġ (ģ) Ĥ (od2-6)
+Ġ (Ģ) ġ ģ (Ĥ) (od2-7)
+Ġ Ģ (ġ) (ģ) Ĥ (od2-8)
+Ġ Ģ (ġ) ģ (Ĥ) (od2-9)
+Ġ Ģ ġ (ģ) (Ĥ) (od2-10)
+;;; Fragment interactions
+ġ (Ģ-) ģ (od3-1)
+ġ (Ģ-) ģ (od3-2)
+ġ (Ģ-) ģ (od3-3)
+ġ (Ģ-) ģ (od3-4)
+ġ (Ģ-) ģ (od3-5)
+ġ (Ģ-) ģ (od3-6)
+ġ (Ģ-) ģ (od3-7)
+ġ (ĳĤĭ-) (ĳħĤ) ĢĠĭ ģ (od3-8)
+;;; Test passing through tags
+Ġ ĠĠ\;a ġ\;b\;b;hyp\;tag1;hyptag2 ġ;reftag1 Ģ;;reftag2 ģ;reftag1;reftag2 (tags-1)
+Ġ ĠĠ\;a ġ\;b\;b;hyptag1;hyp\;tag2 ġ;reftag1 Ģ;;reftag2 ģ;reftag1;reftag2 (tags-2)
+(tags-3)
+Ġ ĠĠ\;a ġ\;b\;b;hyp\;tag1;hyptag2 ġ;reftag1 Ģ;;reftag2 ģ;reftag1;reftag2 (tags-4)
+{Ġ ĠĠ\;a ġ\;b\;b;hyp\;tag1;hyptag2 ġ;reftag1 Ģ;;reftag2 ģ;reftag1;reftag2 / ĸ ĸ ĸ ĸ ĸ ĸ ĸ ĸ ĸ ĸ ĸ ĸ} (tags-5)

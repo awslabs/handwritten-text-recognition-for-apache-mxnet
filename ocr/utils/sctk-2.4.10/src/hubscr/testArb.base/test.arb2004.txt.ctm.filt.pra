@@ -1,0 +1,431 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   test.arb2004.txt.ctm
+
+Speakers: 
+    0:  test.arb2004_A_inter_segment_gap
+    1:  test.arb2004_A
+    2:  test.arb2004_B
+    3:  test.arb2004_B_inter_segment_gap
+
+Speaker sentences   0:  test.arb2004_A_inter_segment_gap   #utts: 4
+id: (test.arb2004_A_inter_segment_gap-000)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_A_inter_segment_gap-001)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_A_inter_segment_gap-002)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_A_inter_segment_gap-003)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+Speaker sentences   1:  test.arb2004_A   #utts: 22
+id: (test.arb2004_A-000)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The previous two words are %>h 
+HYP:                %تردّد   The previous two words are %>h 
+Eval:                                                            
+
+id: (test.arb2004_A-001)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The previous two words are %<yh 
+HYP:                %تردّد   The previous two words are %<yh 
+Eval:                                                             
+
+id: (test.arb2004_A-002)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The previous two words are %>m 
+HYP:                %تردّد   The previous two words are %>m 
+Eval:                                                            
+
+id: (test.arb2004_A-003)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The previous two words are %>ww 
+HYP:                %تردّد   The previous two words are %>ww 
+Eval:                                                             
+
+id: (test.arb2004_A-004)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The two previous words are %hAy 
+HYP:                %تردّد   The two previous words are %hAy 
+Eval:                                                             
+
+id: (test.arb2004_A-005)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (%تردّد) The two previous words are %mhm 
+HYP:                %تردّد   The two previous words are %mhm 
+Eval:                                                             
+
+id: (test.arb2004_A-006)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+REF:  اهه اهه The two previous words are %>hh 
+HYP:  اهه اهه The two previous words are %>hh 
+Eval:                                               
+
+id: (test.arb2004_A-007)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 5 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is %>jnby 
+HYP:  The previous word is %>jnby 
+Eval:                             
+
+id: (test.arb2004_A-008)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 9 0 0 0
+Attributes: Case_sensitve 
+REF:  The data betweem %tdAxl and %tdAxl are overlapping speech 
+HYP:  The data betweem %tdAxl and %tdAxl are overlapping speech 
+Eval:                                                           
+
+id: (test.arb2004_A-009)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a silence %Smt 
+HYP:  The previous word is a silence %Smt 
+Eval:                                     
+
+id: (test.arb2004_A-010)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a pause %<nqTAE 
+HYP:  The previous word is a pause %<nqTAE 
+Eval:                                      
+
+id: (test.arb2004_A-011)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a noise %Djp. 
+HYP:  The previous word is a noise %Djp. 
+Eval:                                    
+
+id: (test.arb2004_A-012)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a breath %tnfs. 
+HYP:  The previous word is a breath %tnfs. 
+Eval:                                      
+
+id: (test.arb2004_A-013)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a cough %sEAl 
+HYP:  The previous word is a cough %sEAl 
+Eval:                                    
+
+id: (test.arb2004_A-014)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is a laugh %DHk 
+HYP:  The previous word is a laugh %DHk 
+Eval:                                   
+
+id: (test.arb2004_A-015)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  The previous word is peopletalk %>SwAt 
+HYP:  The previous word is peopletalk %>SwAt 
+Eval:                                        
+
+id: (test.arb2004_A-016)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 3 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span1 (Inside) 
+HYP:  Foreign span1 (Inside) 
+Eval:                        
+
+id: (test.arb2004_A-017)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span2 outside (Inside) 
+HYP:  Foreign span2 outside (Inside) 
+Eval:                                
+
+id: (test.arb2004_A-018)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span3 (Inside) outside 
+HYP:  Foreign span3 (Inside) outside 
+Eval:                                
+
+id: (test.arb2004_A-019)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 5 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span3 (Inside) outside (Inside) 
+HYP:  Foreign span3 (Inside) outside (Inside) 
+Eval:                                         
+
+id: (test.arb2004_A-020)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span3 (Inside) outside outside (Inside) 
+HYP:  Foreign span3 (Inside) outside outside (Inside) 
+Eval:                                                 
+
+id: (test.arb2004_A-021)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 10 0 0 0
+Attributes: Case_sensitve 
+REF:  Foreign span3 outside outside (Inside) outside outside (Inside) outside outside 
+HYP:  Foreign span3 outside outside (Inside) outside outside (Inside) outside outside 
+Eval:                                                                                 
+
+Speaker sentences   2:  test.arb2004_B   #utts: 11
+id: (test.arb2004_B-000)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 11 0 1 0
+Attributes: Case_sensitve 
+REF:  (إيوه) (%تردّد) (طبعا) Make sure unclear works (%تردّد) (طبعا) yeah (طبعا) (%تردّد) 
+HYP:  (إيوه) (%تردّد) (طبعا) Make sure unclear works                          ****                          
+Eval:                                                                                      D                             
+
+id: (test.arb2004_B-001)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  اه inital يآش medial ةآ final 
+HYP:  اه inital يآش medial ةآ final 
+Eval:                                      
+
+id: (test.arb2004_B-002)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  اههه inital يأش medial ةأ final 
+HYP:  اههه inital يأش medial ةأ final 
+Eval:                                          
+
+id: (test.arb2004_B-003)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  اه inital يإش medial ةإ final 
+HYP:  اه inital يإش medial ةإ final 
+Eval:                                      
+
+id: (test.arb2004_B-004)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+REF:  اه inital ياش medial ةا final 
+HYP:  اه inital ياش medial ةا final 
+Eval:                                      
+
+id: (test.arb2004_B-005)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+REF:  او او او او 
+HYP:  او او او او 
+Eval:                     
+
+id: (test.arb2004_B-006)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 3 0 0 0
+Attributes: Case_sensitve 
+REF:  (%تردّد) (بشتغل) (بالمناهج) 
+HYP:                                                
+Eval:                                               
+
+id: (test.arb2004_B-007)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  Tanween initial أبدا medial ابدا final ابدا 
+HYP:  Tanween initial أبدا medial ابدا final ابدا 
+Eval:                                                         
+
+id: (test.arb2004_B-008)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  Tanween initial إجراءات medial اجراءات final اجراءات 
+HYP:  Tanween initial إجراءات medial اجراءات final اجراءات 
+Eval:                                                                           
+
+id: (test.arb2004_B-009)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+REF:  Tanween initial اختطاف medial اختطاف final اختطاف 
+HYP:  Tanween initial اختطاف medial اختطاف final اختطاف 
+Eval:                                                                     
+
+id: (test.arb2004_B-010)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+REF:  Multiple Rules needed MultiRule 
+HYP:  Multiple Rules needed MultiRule 
+Eval:                                 
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   #utts: 8
+id: (test.arb2004_B_inter_segment_gap-000)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-001)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-002)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-003)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-004)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-005)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-006)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+id: (test.arb2004_B_inter_segment_gap-007)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+
+

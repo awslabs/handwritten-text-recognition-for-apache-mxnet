@@ -1,0 +1,5 @@
+File,Channel,RefSpeaker,SysSpeaker,isMapped,timeOverlap
+VT_20051027-1400,1,REF1,SYS1,mapped,2.5000
+VT_20051027-1400,1,REF1,SYS2,notmapped,2.5000
+VT_20051027-1400,1,REF2,SYS1,notmapped,0.2000
+VT_20051027-1400,1,REF2,SYS2,mapped,2.5000

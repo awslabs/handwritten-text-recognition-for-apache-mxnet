@@ -1,0 +1,11 @@
+;; CATEGORY "0" "" ""
+;; LABEL "O" "Overall" "All Segments in the test set"
+test.man2004 A test.man2004_A_inter_segment_gap 0   1.00 <O> 
+test.man2004 A test.man2004_A 1.0   2.00 <O>  ALONE (%HESITATION) BEG 诶这子 MID 这诶子 END 这子诶 
+test.man2004 A test.man2004_A 2.0   3.00 <O>  ALONE (%HESITATION) BEG 呃这子 MID 这呃子 END 这子呃 
+test.man2004 A test.man2004_A 3.0   4.00 <O>  ALONE (%HESITATION) BEG 嗯这子 MID 这嗯子 END 这子嗯 
+test.man2004 A test.man2004_A 4.0   5.00 <O>  ALONE (%HESITATION) BEG 呵这子 MID 这呵子 END 这子呵 
+test.man2004 A test.man2004_A 5.0   6.00 <O>  ALONE (%HESITATION) BEG 唔这子 MID 这唔子 END 这子唔 
+test.man2004 A test.man2004_A_inter_segment_gap 6.00 147.79 <O> 
+test.man2004 A test.man2004_A 147.79 153.00 <O>  然后 因为 离婚 然后 再 想 一下 自己 为 (SH-) (%HESITATION) 会不会 这样子 
+test.man2004 A test.man2004_A_inter_segment_gap 153.00 999999.00 <O> 

@@ -1,0 +1,47 @@
+;; md_test25 ref rttm
+;; An excerpt that blew up a previous version of md-eval
+
+SPKR-INFO    20010206_1830_1900_ABC_WNT   1     <NA>    <NA>  <NA>             adult_male           Peter_Jennings       <NA>                
+SPKR-INFO    20010206_1830_1900_ABC_WNT   1     <NA>    <NA>  <NA>             adult_male           Tim_Johnson          <NA>                
+SPEAKER      20010206_1830_1900_ABC_WNT   1 1028.061   2.560  <NA>             <NA>                 Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1028.061   0.520  amyloid          lex                  Tim_Johnson          <NA>                
+CB           20010206_1830_1900_ABC_WNT   1 1028.581    <NA>  <NA>             clausal              Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1028.581   0.180  the              lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1028.761   0.410  abnormal         lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1029.171   0.350  protein          lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1029.521   0.060  in               lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1029.581   0.070  the              lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1029.651   0.270  brain            lex                  Tim_Johnson          <NA>                
+SU           20010206_1830_1900_ABC_WNT   1 1029.961   2.111  <NA>             statement            Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1029.961   0.250  Unless           lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1030.211   0.110  we               lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1030.321   0.300  find             lex                  Tim_Johnson          <NA>                
+SEGMENT      20010206_1830_1900_ABC_WNT   1 1031.152   3.729  <NA>             <NA>                 Peter_Jennings       <NA>                
+SPEAKER      20010206_1830_1900_ABC_WNT   1 1031.192   0.230  <NA>             <NA>                 Peter_Jennings       <NA>                
+SU           20010206_1830_1900_ABC_WNT   1 1031.192   3.568  <NA>             statement            Peter_Jennings       <NA>                
+IP           20010206_1830_1900_ABC_WNT   1 1031.192    <NA>  <NA>             filler               Peter_Jennings       <NA>                
+FILLER       20010206_1830_1900_ABC_WNT   1 1031.192   0.230  <NA>             discourse_marker     Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.192   0.230  Well             lex                  Peter_Jennings       <NA>                
+SPEAKER      20010206_1830_1900_ABC_WNT   1 1031.272   0.800  <NA>             <NA>                 Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.272   0.150  those            lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.422   0.390  answers          lex                  Tim_Johnson          <NA>                
+SPEAKER      20010206_1830_1900_ABC_WNT   1 1031.732   3.028  <NA>             <NA>                 Peter_Jennings       <NA>                
+IP           20010206_1830_1900_ABC_WNT   1 1031.732    <NA>  <NA>             filler               Peter_Jennings       <NA>                
+FILLER       20010206_1830_1900_ABC_WNT   1 1031.732   0.170  <NA>             discourse_marker     Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.732   0.170  so               lex                  Peter_Jennings       <NA>                
+CB           20010206_1830_1900_ABC_WNT   1 1031.812    <NA>  <NA>             clausal              Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.812   0.130  we're            lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.902   0.340  remind           lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1031.942   0.130  doomed           lex                  Tim_Johnson          <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.242   0.060  us               lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.302   0.060  where            lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.500   0.200  we               lex                  Peter_Jennings       <NA>                
+EDIT         20010206_1830_1900_ABC_WNT   1 1032.700   0.090  <NA>             other                Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.700   0.090  are              un-lex               Peter_Jennings       <NA>                
+IP           20010206_1830_1900_ABC_WNT   1 1032.790    <NA>  <NA>             edit                 Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.790   0.180  are              lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1032.970   0.310  on               lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1033.280   0.370  drugs            lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1033.650   0.180  and              lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1033.830   0.230  early            lex                  Peter_Jennings       <NA>                
+LEXEME       20010206_1830_1900_ABC_WNT   1 1034.060   0.700  diagnosis        lex                  Peter_Jennings       <NA>                

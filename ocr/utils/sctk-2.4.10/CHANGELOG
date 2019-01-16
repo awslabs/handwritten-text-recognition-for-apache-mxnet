@@ -1,0 +1,352 @@
+SCTK Version 2.4.10 - Release October 15, 2014
+  [*] Added the case conversion for Babel's UTF-8 of Mongolian and Guarani data.  Changes for 
+      Guarani include handling of two-UTF characters representing G~.
+
+SCTK Version 2.4.9 - Release October 15, 2014
+  [*] Removed the use of getopt in acomp.pl and def_art.pl
+  [*] rfilter typdef reassignment to char to an unsigned char replaced with a new typedef 'Char'
+      to support new GCC.
+  [*] Added the sclite_tolower utility to handle case conversion via sclite's library.
+  [*] Added the case conversion for Babel's UTF-8 of Kazakh, Cebuano, Kurmanji, and Lithuanian
+
+SCTK Version 2.4.8 - Release March 29, 2013
+  [*] Added the case conversion for Babel's UTF-8 of Vietnamese and Turkisoh.
+
+SCTK Version 2.4.1 - Release March 12, 2012
+  [*] Fixed compilation issue
+
+SCTK Version 2.4.0 - Release November 10, 2009
+  [*] Fixed asclite to handle rttm properly when _ are present in the ref
+  [/] The transcript filter, csrfilt.sh, now only modifies the transcript during
+       the filter process rather than up-casing all ASCII characters.
+  [/] The scoring routines that relied on up-cased text were modified to accept
+       the change.
+  [/] Hubscr uem filtering is applied to asclite and mdeval 
+  [-] removed unwanted gif images for align2html
+
+SCTK Version 2.3.11 - Release April 8, 2009
+  [+] rttmValidator can handle RTTM slat and RTTM without SPKR-INFO
+
+SCTK Version 2.3.10 - Release March 6, 2009
+  [*] Fixed tests
+
+SCTK Version 2.3.9 - Release March 5, 2009
+  [*] Compile with gcc 4.3.
+
+SCTK Version 2.3.8 - Release March 4, 2009
+  [*] Fix slat test when gnuplot is not installed.
+
+SCTK Version 2.3.7 - Release March 3, 2009
+  [*] Revisite slatreport.
+
+SCTK Version 2.3.6 - Release February 26, 2009
+  [*] Fixed install and makefile.
+
+SCTK Version 2.3.5 - Release February 26, 2009
+  [*] Fixed slatreport makefile behavior.
+
+SCTK Version 2.3.4 - Release February 24, 2009
+  [/] Added SLAT report computation and doc updates.
+
+SCTK Version 2.3.3 - Release February 20, 2009
+  [+] Added SLAT report and handling by asclite.
+
+SCTK Version 2.3.2 - Release January 12, 2009
+  [/] Changed BZip2 to LZMA.
+
+SCTK Version 2.3.1 - Release January 6, 2009
+  [/] Changed miniLZO to BZip2.
+
+SCTK Version 2.3 - Release September 5, 2008
+  [+] Code optimization.
+  [+] Added label and category information in asclite SGML for STM files. 
+
+SCTK Version 2.3-rc2c - Release May 8, 2008
+  [+] Check if the character " is not in a RTTM file.
+  [/] Changed the sclite compilation flags.
+
+SCTK Version 2.3-rc2b - Release May 6, 2008
+  [*] Fixed an asclite bug went more than 32768 segment are added to the structure.
+  [/] Changed the asclite compilation flags.
+
+SCTK Version 2.3-rc2 - Release November 26, 2007
+  [*] Fixed the exit code, for a fatal error, it exists with a non 0 value.
+  [/] Change the error/Info message when filtering.
+  [+] Added information in the documentation for asclite regarding the 
+      UEM filtering.
+
+SCTK Version 2.3-rc1 - Release September 21, 2007
+  [*] Fixed asclite when no input given
+  [*] Fixed mapsswe segmentation code 
+  [+] Added UEM inplementation directly to asclite
+  [+] -wordalign-cost options for asclite adding some cost variance
+      depending in the word syntactic distance
+  [+] Added Time base cost model trigger with '-time-base-cost' in asclite
+  [+] Generic/Rover full implementation in asclite
+  [+] Added cumulative table to HTML reports
+  [+] Added man and HTML docs for tools
+  [/] Changed the speaker auto-overlap behavior from internal to command-
+      line options for asclite
+  [/] Inter Segment Gaps by default for every file type in asclite
+  [/] Update headers disclaimer and file format
+  [+] Added rttmValidator
+  [+] Added stmValidator
+  [+] Added ctmValidator
+  
+SCTK Version 2.2.4 - Release May 1, 2007
+  [+] Added block size and force compression in hubscr.pl
+  [+] Added block size limit to 1GB
+  [+] Added block computation less aggressive to allow bigger block size
+  [*] Fixed linking issue for RTTM and STM files in cause of empty segment
+  [*] Fixed display issue with align2html
+
+SCTK Version 2.2.3 - Release April 18, 2007
+  [*] Fix the time computation in html report when ISG vs. empty segment
+  [/] Fix computation percentage for this table of html display
+  [/] Better handling on exceptions to drop segment groups from alignments
+  [/] Change some outputs to debug level instead of info level
+  [/] Better handling of the memory threshold
+  [/] Changed from ucl library to lzo library for compression
+  [+] Safer memory deallocation in the LCM
+  [+] Minimum command line option to drop the small alignments
+  
+SCTK Version 2.2.2 - Release March 23, 2007
+  [/] Speed up the use of Compression Matrix by not using System Timer
+  [/] New implementation of the compressed Levenshtein Matrix to avoid
+      overhead creation
+  [*] Fix the output report file generation for asclite
+
+SCTK Version 2.2.1 - Release March 13, 2007
+  [*] Fixed the sequence number in SGML when using RTTM Refs
+  [+] Added Difficulty limit
+
+SCTK Version 2.2.0 - Release March 12, 2007
+  [*] test: fixed some tests
+  [*] core: fixed align2html display
+  [+] core: added compression to align bigger matrices
+  [+] core: added pruning using time
+
+SCTK Version 2.1.7 - Release February 22, 2007
+  [*] test: fixed some tests
+  [*] core: fixed floating point issue
+
+SCTK Version 2.1.6 - Release February 21, 2007
+  [+] tools: new display for align2html
+  [*] test: fixed some tests
+  [*] core: fixed sorting issues
+
+SCTK Version 2.1.5 - Release February 9, 2007
+  [+] core: asclite handles speakers preferences for alignment
+  [+] core: asclite handles rttm as references and hypotheses
+  [+] core: asclite has a new option '-adaptive-cost' that restricts the
+            alignment with the time
+  [+] core: asclite has a new option '-spkr-align' that handle the new
+            SASTT alignment requirement for speaker mapping
+  [+] core: asclite output a new level of log displaying the alignment 
+            and the group of segments used for the alignment
+  [+] core: asclite has a new error output: speaker error
+  [+] tools: mergectm2rttm script to merged ctm into rttm file
+  [+] tools: md-eval for speaker alignment
+  [+] tools: align2html to display graphical alignment in HTML/Javascript
+  [*] core: fix bugs that ignore tokens and segments in the alignments
+  [*] core: fix the pruning time based algorithm
+  [*] core: fix the floating point bug in asclite
+  [/] core: asclite options '-time-prune' and '-word-time-align' require 
+            milliseconds instead of seconds in the commandline
+
+SCTK Version 2.1.4 - Release May 19, 2006
+  [+] Updated asclite to handle 64-bits
+  [+] Updated asclite with caching information (increase speed +5-10%)
+  
+SCTK Version 2.1.3 - Release April 21, 2006
+  [+] Updated toolkit to handle rttm file format
+
+SCTK Version 2.1.2 - Release April 4, 2006
+  [*] Updated asclite with bugfix and memory usage
+  
+SCTK Version 2.1.1 - Release December 5, 2005
+  [*] Hotfix 64bits and Alpha platforms (Thanks to David Huggins-Daines).
+
+SCTK Version 2.1 - Release June 3, 2005
+  [*] Fixed csrfilt.sh to respect hyphens in optionally deletable fragments.	
+ 
+SCTK Version 2.0 Beta 6 - Release May 2005
+  [+] Added asclite
+  
+SCTK Version 2.0 Beta 5 - Release October 22, 2004
+  [+] Added Mandarin hesitations to chfilt.pl and utf_filt.pl
+
+SCTK Version 2.0 Beta 4 - Release October 18, 2004
+  [/] Modified tanweenFilt to remove all tanween characters.
+  [*] Fixed a bug in tanweenFilt and hamzaNorm to also change optionally
+      deletable words.   
+
+SCTK Version 2.0 Beta 3 - Release October 5, 2004
+  [/] Fixed the install for rfilter1
+  [+] Added an option to chfilt.pl to map channel id's A or B to 1 and 2 respectively.
+  [+] Added a new program tanweenFilt.pl
+
+SCTK Version 2.0 Beta 1 - Release August 30, 2004
+  [/] Restructured release directories.  'src' now includes many programs
+  [+] Integrated in all programs in the 'tranfilt' package
+  [*] make install now makes move programs to 'bin'
+  [+] hamzaNorm is a new program.
+  [/] 2004 Arabic transcripts are now handled by hubscr and chfilt.
+
+SCTK Version 1.3 - Release July 30, 2004
+  [*] Minor bug fixes for core dumps
+  [+] Added the ability to pass two tags attached to each word through the
+      scorer.   The tags are attached to the words by appending ';<string>'
+      to the word's text.  There can be up to two tags, and they may be empty.
+  [+] Added a '#' after NCE values in the .sys reports to indicate the
+      abscence of reference lexemes for a speaker.
+  [/] Expanded the buffers in the rpg.c suite of routines for report generation.
+  [/] Expanded the maximum alternation size to 10000 characters.
+  [+] Added a "Lattice" error rate calculation in the .prn reports.  It's the
+      percent of reference tokens not correct in any systems transcript.
+
+SCTK Version 1.2c - Release October 11, 2000
+  [/] Improved installation targets in makefile
+
+SCTK Version 1.2b - Release October 1, 2000
+  [/] Improved testing code to not report errors under Linux
+   
+SCTK Version 1.2a
+  [*] Fixed an installation problem for Linux involving scfp.
+
+SCTK Version 1.2
+  [+] added the prn report to sc_stats.   Prints N-system alignments together.
+  [+] Added option alignment by word-weighted-mediated alignments.
+  [/] Weight inputs include wwl file (-w) and LM file (-L).
+  [+] Added testing scripts and documentation examples.
+  [+] Added the .wws output format.
+  [/] Update .prf output to include word weights and other information.
+  [+] Add SLM toolkit v2 into the sctk package.
+  [/] modified config.in, makefile.in and the installation process
+  [/] Various internal structures modified to handle word weights.
+  [/] Compiles under Linux using gmake.
+  [/] Documetation changes, including additional comments concerning the 
+      waveform id in the STM and CTM file formats.
+
+SCTK Version 1.1 - Release November 13, 1997
+  [/] Utility versions in this release: sclite V2.1, sc_stats V1.1
+  [+] added the Executive and Raw Executive Summaries to sc_stats.
+  [+] added the det curve to sc_stats so that combined plots are produced.
+  [/] modified mapsswe test to handle arbitrary number of segments
+  [*] Correct a bug in mtchprs.c which was free-ing a the test confindence
+      array prematurely.
+
+SCTK Version 1.0
+  [/] Release under new name SCTK
+  [/] Modified the label extraction function 'parse_input_comment_line'
+      to ignore duplicate LABEL and CATEGORY lines.
+  [+] Added a sequence number to each PATH in alignment sequence so
+      that the input sequence of alignments can be reconstructed.
+  [+] Added the capability to keep track of reference confidence scores
+      when aligning ref ctm's against hyp ctm's.
+  [*] Corrected the .pre dump of the alignment structure when the case
+      sensitive flag is set.  The error was introduced by modifications.
+  [*] Fixed a problem in TEXT_strcasecmp().  It failed to handle the
+      case where str1 was shorter than srt2.
+  [*] Fixed a problem in 'align.c/extract_speaker()' a NULL was not
+      terminating each newly extracted speaker id.
+  [/] Revised the reports lut, sum, snt, spkr,ovr to handle speakers W/o
+      any reference tokens, In the sum report, the speakers W/o	
+      reference tokens are ignored when computing the speaker
+      mean, sd, and median.
+  [*] fixed a  bug in tcslite.sh which output an error when test 5 was
+      run and the use of gnudiff was not compiled in to sclite.
+  [*] fixed a bug in config.in which was propagated to config.sh.  The 
+      problem was a missing backquote on "uname -s".
+  [+] Added error checking to the ctm2ctm alignment module.  No checking
+      had been performed to make sure the ref and hyp files had the 
+      same conversations and channels.
+  [/] Fixed a problem in 'expand_words_to_chars()' it was not deleting
+      hyphens from single character words do to an incorrect conditional.
+  [+] Added a new way to score, 'Optionally Deletable'.  This required a
+      major set of modifications and generalizations.
+  [/] Modified the character scoring proceedure so that confidence scores
+      are imputed to the sub-characters making up the word.
+  [*] Corrected a bug in Compute_ROC:det.c which incorrectly incremented
+      pointers.
+
+SCLITE Version 1.4a - Release May 29, 1997
+  [/] Cleaned the distribution to be ISO-9669 compatable
+
+SCLITE Version 1.4 - Release October 18, 1996
+  [/] Forced confidence values to flow through the entire data pipeline.
+  [+] Added the '-C' option to include 'normalized cross-entropy'
+      statistics in all output files.
+  [+] Added algo2 for the inferred segmentation option '-S'
+  [+] Added "IGNORE_TIME_SEGMENT_IN_SCORING" as an allowable 
+      transcript for an stm record.  See the stm file documentation for
+      it's use.
+
+SCLITE Version 1.3 - Release April 22, 1996
+  [*] Corrected a minor makefile inconsistency. (One file was compiled 
+      twice).
+  [/] Changed Network_dp_align to optionally include NULLS in the output.
+  [/] Changed the -m option to now reduce either the reference or 
+      hypothesis file, or both before alignment takes place.
+  [*] fixed an uninitialized variable in alex.c which became apparent
+      in the 'dtl' and 'spk' reports.
+  [*] Corrected a argument passed to fill_STM_structure() in stm2ctm.c
+      which caused a warning on some compilers.
+  [+] Added a bug report proceedures.
+
+SCLITE Version 1.2a - Release March 15, 1996
+  [*] Forgot one minor file in the distrubution, "sclite.c".
+
+SCLITE Version 1.2 - Release March 8, 1996
+  [*] Corrected a bug in the lur report that was activated if a speaker
+      had no reference words, but had errorneously hypothesized words.
+  [+] Added the sent, spk, and ovrdtl reports to sclite.
+  [+] Added the option to score CTM to CTM files.  This is essentially
+      the same code used for the first SWB LVCSR evaluation, however, since
+      the new network alignment routines were used unifying the alignment
+  	   into a single step, alignments will differ slightly from those 
+      generated with the old scoring package.
+  [+] Added the "-T" option to do time-mediated alignments.
+  [-] Removed the size limitations in the report generation software,
+      'rpg.c'.  There is still are hard limit on the length of characters
+      for each cell of 200.
+  [/] Standardize program exit codes to be 0 for successfull execution
+      and 1 for failed execution.
+  [*] Correct the handling of NULL alternatives in the hypothesis file.
+      Scoring reference to hypothesis yields the same error rates as
+      scoring hypothesis to reference.  The only difference is insertions
+      are swapped with deletions.
+  [+] The installer now has the option to enable or disable alignments
+      via GNU's diff.
+  [+] Added informative error messages when label definitions, which are
+      used by the 'lur' report, have been improperly specified.
+
+SCLITE Version 1.1 - Release September 27, 1995
+  [+] New/modified output options:
+      * Added options to '-o':  'none' to not make any reports,
+	     'sgml' to create an sgml file for alignments, 'lur' for the
+	     labeled utterance report.
+      * '-p'.  Pipes output of alignments to other sclite utilities.
+       in the sgml format.
+  [+] New Input options:
+      * '-P' accepts piped sgml format input from other sclite utilities.
+      * '-e' identifies the input character encoding.
+  [+] New alignment options:
+      * '-S' performs an inferred word segmentation algorithm rather
+        than using the word segmentation of the reference and hyp files.
+      * '-F' aligns fragments to words with matching substrings and scores
+        them as correct.
+      * Changed the -c option to include the optional flag "ASCIITOO"
+        which also splits ascii words when doing a character alignment.
+        Also added another flag, "DH", to delete hyphens from the ref and
+        hyp transcripts before alingment.
+  [*] Fixes and Changes:
+      * Modified the '-n' option to handle multiple hyp files.
+      * Fixed a bug in 'parse_stm_line' to handle empty texts.
+      * Modified the read function for a CTM file so that any length
+        file will be properly read in.
+  [/] Compiled and tested using the HP-UX and DEC OSF1 native cc
+      compilers.
+
+SCLITE Version 1.0 - Release July 27, 1995
+  [+] Initial Release

@@ -1,0 +1,14 @@
+Filtering Files:
+   Filtering english file 'sastt-case1.ref.rttm', rttm format
+   Filtering english file 'sastt-case1.sys.rttm', rttm format
+Scoring english Hyp 'sastt-case1.sys.rttm.filt' against ref 'sastt-case1.ref.rttm.filt'
+sclite: 2.10 TK Version 1.3
+Loading Piped input. . . 1 systems loaded.
+    Writing overall detailed scoring report 'sastt-case1.sys.rttm.filt.dtl'
+    Writing string alignments to 'sastt-case1.sys.rttm.filt.pra'
+    Writing string alignments to 'sastt-case1.sys.rttm.filt.prf'
+    Skipping DET Curve, no confidence scores supplied.
+    Skipping Confidence Histogram, no confidence scores supplied.
+    Skipping Scaled Binned Histogram, no confidence scores supplied.
+
+Successful Completion

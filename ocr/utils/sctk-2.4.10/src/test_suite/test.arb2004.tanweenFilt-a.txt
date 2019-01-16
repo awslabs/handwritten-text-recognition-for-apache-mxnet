@@ -1,0 +1,33 @@
+1.0 2.0 A: %أه أه  The previous two words are %>h
+2.0 3.0 A: %إيه إيه The previous two words are %<yh
+3.0 4.0 A: %أم أم The previous two words are %>m
+4.0 5.0 A: %أوو أوو The previous two words are %>ww
+5.0 6.0 A: %هاي هاي The two previous words are %hAy
+6.0 7.0 A: %مهم مهم The two previous words are %mhm
+7.0 8.0 A: %أهه أهه  The two previous words are %>hh
+8.0 9.0 A: %أجنبي The previous word is %>jnby
+9.0 10.0 A: %تداخل (( الموضوع واتكلموا )) %تداخل\ The data betweem %tdAxl and %tdAxl\ are overlapping speech
+11.0 12.0 A: %صمت The previous word is a silence %Smt
+12.0 13.0 A: %إنقطاع The previous word is a pause %<nqTAE
+14.0 15.0 A: %ضجّة The previous word is a noise  %Dj~p
+15.0 16.0 A: %تنفّس The previous word is a breath %tnf~s
+16.0 17.0 A: %سعال  The previous word is a cough %sEAl
+17.0 18.0 A: %ضحك  The previous word is a laugh %DHk
+18.0 19.0 A: %أصوات  The previous word is peopletalk %>SwAt
+19.0 19.1 A: Foreign span1 <foreign language="english"> Inside </foreign>
+19.1 19.2 A: Foreign span2 %أجنبي outside <foreign language="english"> Inside </foreign>
+19.2 19.3 A: Foreign span3 <foreign language="english"> Inside </foreign> outside %أجنبي 
+19.3 19.4 A: Foreign span3 <foreign language="english"> Inside </foreign> outside <foreign language="english"> Inside </foreign>
+19.4 19.5 A: Foreign span3 <foreign language="english"> Inside </foreign> outside %أجنبي outside <foreign language="english"> Inside </foreign>
+19.5 19.6 A: Foreign span3 outside %أجنبي outside <foreign language="english"> Inside </foreign> outside %أجنبي outside <foreign language="english"> Inside </foreign>  outside %أجنبي outside
+0.0 1.0 B:   (( إيوه %ضجّة %مهم %ضجّة طبعا ))  Make sure unclear works ((%مهم طبعا )) yeah (( طبعا  %مهم))
+2.0 3.0 B: آه inital يآش medial ةآ final
+4.0 5.0 B: أههه inital يأش medial ةأ final
+6.0 7.0 B: إه inital يإش medial ةإ final
+8.0 9.0 B: اه inital ياش medial ةا final
+10.0 11.0 B: آو أو إو او
+12.0 13.0 B: %ضجّة (( أه بشتغل بالمناهج )) 
+14.0 15.0 B: Tanween initial أبدا medial أبدا final أبدا  
+15.0 16.0 B: Tanween initial إجراءات medial إجراءات final إجراءات  
+16.0 17.0 B: Tanween initial اختطاف medial اختطاف final اختطاف 
+17.0 18.0 B: Multiple Rules needed اخاف 

@@ -1,0 +1,71 @@
+<!-- $Id: sctk.htm,v 1.2 2004/08/30 14:54:03 jfiscus Exp $ -->
+<HTML>
+<HEAD>
+<CENTER><TITLE>NIST Scoring Toolkit Version 2.0beta</TITLE></CENTER>
+<B><BIG><CENTER> Welcome to the NIST Scoring Toolkit Version 2.0 Beta 1</CENTER></BIG></B>
+</HEAD>
+<BODY><p><hr>
+
+The NIST Scoring Toolkit (SCTK) is a collection of software tools
+designed to score benchmark test evaluations of Automatic Speech
+Recognition (ASR) Systems.  The toolkit is currently used by NIST,
+benchmark test participants, and reserchers worldwide to as a common
+scoring engine.
+
+<P> This is a beta version release of SCTK which now includes the
+tranfilt software package.  The documentation has not been fully
+integrated because of time limitations.  </P>
+
+
+<P>
+This version of SCTK contains several programs:
+<P>
+<B><A HREF="sclite.htm">sclite</A></B>
+
+<UL>
+<P>SCTK has at its core, sclite (Score-Lite), which is a flexible
+Dynamic Programming alignment engine used to "align" errorful
+hypothesized texts, such as output from an ASR system, to the correct
+reference texts.  After alignment, sclite generates a veriety of
+summary as well as detailed scoring reports.
+<P>
+This version of sclite comes bundled with the 
+<A HREF="../src/slm_v2/doc/toolkit_documentation.html"> CMU-Cambridge Statistical Language
+Modeling Toolkit v2.</A>  The toolkit is used to compute word-weights based on an N-gram language
+model.  The directory 'src/slm_v2' contains the complete distribution and is automatically
+compiled by the installation scripts.
+
+</UL>
+
+<B><A HREF="sc_stats.htm">sc_stats</A></B> <UL> <P>While sclite aligns
+and scores a single system, sc_stats will compare system performance
+between more than one system, so long as the systems under test have  been
+ran on identical test data and using an identical test paradigm.  Inter-System
+comparisons are made by running tests paired-comparison statistical
+significance tests.  </UL>
+
+<B><A HREF="rover.htm">rover</A></B> <UL> <P>Rover - Recognition
+Output Voting Error Reduction, is a tool which combines an arbitrary
+number for ASR system outputs into a composite Word Transition network
+which is then searched an scored to retrieve the best scoring word
+sequence.
+
+<P>The program is documented in the paper <A HREF="rover/rover.htm">
+A post-processing system to yield reduced word error rates: Recognizer
+Output Voting Error Reduction (ROVER)</A> presented at the 1997 IEEE Workshop
+on Automatic Speech Recognition and Understanding.  The paper is also
+available in <A HREF="rover/rover.ps"> postscript.</a>
+
+<B>hubscr</B> <UL> Wrapper script for scoring DARPA STT evaluations </UL>
+<B>rfilter1</B> <UL> Transcription normalization filter engine </UL>
+<B>csrfilt </B> <UL> Transcription normalization wrapper script </UL>
+<B>chfilt </B> <UL> CallHome/Switchboard style transcript filter </UL>
+<B>hamzaNorm </B> <UL> Arabic Hamza+alif transcript normalization filter </UL>
+<B>acomp </B> <UL> Automatic compound word expansion filter </UL>
+<B>def_art </B> <UL> Aribic definate article striping program </UL>
+<B>utf_filt </B> <UL> UTF file format transcription filter </UL>
+
+
+</BODY>
+</HTML>
+ 

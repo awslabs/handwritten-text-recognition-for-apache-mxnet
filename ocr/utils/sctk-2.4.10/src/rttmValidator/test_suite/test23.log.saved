@@ -1,0 +1,3 @@
+ERROR: Word at 0.000 doesn't belong to any SU object; see line 7
+ERROR: Word at 5.600 doesn't belong to any SU object; see line 23
+Validation aborted

@@ -1,0 +1,17 @@
+;; CATEGORY "0" "" ""
+;; LABEL "O" "Overall" "Overall"
+;;
+;; CATEGORY "1" "Hub4 Focus Conditions" ""
+;; LABEL "F0" "Baseline//Broadcast//Speech" ""
+;; LABEL "F1" "Spontaneous//Broadcast//Speech" ""
+;; LABEL "F2" "Speech Over//Telephone//Channels" ""
+;; LABEL "F3" "Speech in the//Presence of//Background Music" ""
+;; LABEL "F4" "Speech Under//Degraded//Acoustic Conditions" ""
+;; LABEL "F5" "Speech from//Non-Native//Speakers" ""
+;; LABEL "FX" "All other speech" ""
+;; CATEGORY "2" "Speaker Sex" ""
+;; LABEL "female" "Female" ""
+;; LABEL "male"   "Male" ""
+;; LABEL "child"   "Child" ""
+;; LABEL "unk"   "Unknown" ""
+20040422_110000_CCTV 1 reporter_1 1.000000 1.000000 <o,f2,female> (%hesitation) ÚÀ (%hesitation) ßÀ (%hesitation) àÅ (%hesitation) ºÇ (%hesitation) ßí 

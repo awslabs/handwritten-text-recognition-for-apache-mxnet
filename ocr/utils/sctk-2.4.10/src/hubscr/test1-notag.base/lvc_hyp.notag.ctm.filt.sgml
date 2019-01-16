@@ -1,0 +1,336 @@
+<SYSTEM title="lvc_hyp.notag.ctm" ref_fname="lvc_refe.notag.noat.stm.filt" hyp_fname="lvc_hyp.notag.ctm.filt" creation_date="Thu Apr 30 19:59:59 2009" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="inter_segment_gap">
+<PATH id="(inter_segment_gap-000)" word_cnt="1" file="2347" channel="a" sequence="0" R_T1="0.000" R_T2="1.060" word_aux="h_t1+t2">
+I,,"they",0.050+0.290
+</PATH>
+<PATH id="(inter_segment_gap-001)" word_cnt="0" file="2347" channel="a" sequence="3" R_T1="11.040" R_T2="11.060" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-002)" word_cnt="0" file="2347" channel="a" sequence="5" R_T1="15.840" R_T2="15.940" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-003)" word_cnt="0" file="2347" channel="a" sequence="7" R_T1="103.530" R_T2="103.550" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-004)" word_cnt="0" file="2347" channel="a" sequence="9" R_T1="109.170" R_T2="109.900" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-005)" word_cnt="0" file="2347" channel="a" sequence="12" R_T1="121.120" R_T2="121.140" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-006)" word_cnt="1" file="2347" channel="a" sequence="14" R_T1="130.100" R_T2="130.530" word_aux="h_t1+t2">
+I,,"is",130.110+130.190
+</PATH>
+<PATH id="(inter_segment_gap-007)" word_cnt="0" file="2347" channel="a" sequence="16" R_T1="137.010" R_T2="137.100" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-008)" word_cnt="0" file="2347" channel="a" sequence="18" R_T1="144.480" R_T2="144.580" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-009)" word_cnt="0" file="2347" channel="a" sequence="20" R_T1="150.460" R_T2="150.480" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-010)" word_cnt="0" file="2347" channel="a" sequence="23" R_T1="167.030" R_T2="167.040" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-011)" word_cnt="0" file="2347" channel="a" sequence="25" R_T1="176.370" R_T2="176.390" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-012)" word_cnt="0" file="2347" channel="a" sequence="27" R_T1="182.980" R_T2="183.110" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-013)" word_cnt="0" file="2347" channel="a" sequence="29" R_T1="299.630" R_T2="9999.000" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-014)" word_cnt="0" file="2347" channel="b" sequence="32" R_T1="25.060" R_T2="25.070" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-015)" word_cnt="0" file="2347" channel="b" sequence="35" R_T1="35.860" R_T2="35.890" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-016)" word_cnt="0" file="2347" channel="b" sequence="38" R_T1="54.810" R_T2="54.820" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-017)" word_cnt="0" file="2347" channel="b" sequence="40" R_T1="66.660" R_T2="66.710" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-018)" word_cnt="0" file="2347" channel="b" sequence="43" R_T1="85.710" R_T2="85.760" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-019)" word_cnt="0" file="2347" channel="b" sequence="45" R_T1="98.900" R_T2="98.910" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-020)" word_cnt="1" file="2347" channel="b" sequence="48" R_T1="208.680" R_T2="208.690" word_aux="h_t1+t2">
+I,,"to",208.620+208.740
+</PATH>
+<PATH id="(inter_segment_gap-021)" word_cnt="0" file="2347" channel="b" sequence="50" R_T1="219.090" R_T2="219.100" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-022)" word_cnt="0" file="2347" channel="b" sequence="52" R_T1="223.670" R_T2="223.680" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-023)" word_cnt="0" file="2347" channel="b" sequence="56" R_T1="256.710" R_T2="256.800" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-024)" word_cnt="0" file="2347" channel="b" sequence="58" R_T1="271.580" R_T2="271.590" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-025)" word_cnt="0" file="2347" channel="b" sequence="60" R_T1="281.870" R_T2="281.910" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-026)" word_cnt="1" file="2347" channel="b" sequence="62" R_T1="299.790" R_T2="9999.000" word_aux="h_t1+t2">
+I,,"know",299.850+299.970
+</PATH>
+<PATH id="(inter_segment_gap-027)" word_cnt="3" file="3129" channel="a" sequence="63" R_T1="0.000" R_T2="17.310" word_aux="h_t1+t2">
+I,,"but",0.390+0.470:I,,"and",13.230+13.330:I,,"we",13.330+13.490
+</PATH>
+<PATH id="(inter_segment_gap-028)" word_cnt="0" file="3129" channel="a" sequence="66" R_T1="127.180" R_T2="127.210" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-029)" word_cnt="0" file="3129" channel="a" sequence="68" R_T1="142.440" R_T2="142.460" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-030)" word_cnt="0" file="3129" channel="a" sequence="70" R_T1="170.180" R_T2="170.190" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-031)" word_cnt="0" file="3129" channel="a" sequence="72" R_T1="272.800" R_T2="9999.000" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-032)" word_cnt="0" file="3129" channel="b" sequence="73" R_T1="0.000" R_T2="1.540" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-033)" word_cnt="0" file="3129" channel="b" sequence="75" R_T1="10.170" R_T2="10.220" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-034)" word_cnt="0" file="3129" channel="b" sequence="77" R_T1="19.430" R_T2="19.450" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-035)" word_cnt="0" file="3129" channel="b" sequence="79" R_T1="31.620" R_T2="31.740" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-036)" word_cnt="0" file="3129" channel="b" sequence="81" R_T1="40.490" R_T2="40.500" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-037)" word_cnt="0" file="3129" channel="b" sequence="83" R_T1="52.280" R_T2="52.320" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-038)" word_cnt="0" file="3129" channel="b" sequence="86" R_T1="84.030" R_T2="84.040" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-039)" word_cnt="1" file="3129" channel="b" sequence="89" R_T1="123.580" R_T2="123.650" word_aux="h_t1+t2">
+I,,"it's",123.530+123.660
+</PATH>
+<PATH id="(inter_segment_gap-040)" word_cnt="0" file="3129" channel="b" sequence="91" R_T1="164.180" R_T2="164.220" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-041)" word_cnt="0" file="3129" channel="b" sequence="93" R_T1="185.760" R_T2="185.790" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-042)" word_cnt="0" file="3129" channel="b" sequence="95" R_T1="205.650" R_T2="205.660" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-043)" word_cnt="0" file="3129" channel="b" sequence="96" R_T1="217.790" R_T2="217.800" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-044)" word_cnt="0" file="3129" channel="b" sequence="98" R_T1="228.340" R_T2="228.390" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-045)" word_cnt="0" file="3129" channel="b" sequence="101" R_T1="252.170" R_T2="253.400" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-046)" word_cnt="0" file="3129" channel="b" sequence="102" R_T1="267.120" R_T2="267.130" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-047)" word_cnt="0" file="3129" channel="b" sequence="103" R_T1="281.240" R_T2="281.340" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-048)" word_cnt="0" file="3129" channel="b" sequence="105" R_T1="291.740" R_T2="291.770" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(inter_segment_gap-049)" word_cnt="0" file="3129" channel="b" sequence="107" R_T1="300.060" R_T2="9999.000" word_aux="h_t1+t2">
+
+</PATH>
+</SPEAKER>
+<SPEAKER id="2347-a">
+<PATH id="(2347-a-000)" word_cnt="7" file="2347" channel="a" sequence="1" R_T1="1.060" R_T2="3.470" word_aux="h_t1+t2">
+S,"i've","pride",1.020+1.310:S,"um","about",1.650+1.930:C,"as","as",1.940+2.110:C,"far","far",2.120+2.370:C,"as","as",2.380+2.470:C,"i'm","i'm",2.480+2.820:S,"concerned","i",2.830+3.470
+</PATH>
+<PATH id="(2347-a-001)" word_cnt="22" file="2347" channel="a" sequence="2" R_T1="3.470" R_T2="11.040" word_aux="h_t1+t2">
+S,"i","are",3.480+3.680:S,"find","fine",3.690+4.160:S,"that","but",4.170+4.370:C,"the","the",4.380+4.430:C,"young","young",4.440+4.800:C,"women","women",4.810+5.170:C,"have","have",5.180+5.450:C,"lost","lost",5.460+5.860:C,"so","so",5.870+6.170:C,"much","much",6.180+6.810:I,,"too",7.280+7.410:C,"because","because",7.420+7.980:C,"they","they",7.990+8.140:C,"have","have",8.150+8.310:C,"become","become",8.320+8.770:C,"more","more",8.780+9.190:C,"aggressive","aggressive",9.200+9.800:D,"-a",,:C,"and","and",9.810+10.010:C,"more","more",10.020+10.210:I,,"jobs",10.220+10.590:S,"dominating","needing",10.600+11.050
+</PATH>
+<PATH id="(2347-a-002)" word_cnt="17" file="2347" channel="a" sequence="4" R_T1="11.060" R_T2="15.840" word_aux="h_t1+t2">
+I,,"it",11.060+11.130:I,,"and",11.140+11.270:I,,"i",11.280+11.390:I,,"think",11.400+11.700:I,,"that",11.710+11.920:I,,"comes",11.930+12.320:I,,"about",12.330+12.670:I,,"from",12.680+13.000:I,,"called",13.010+13.310:I,,"being",13.320+13.720:I,,"a",13.730+13.790:I,,"definite",13.800+14.320:I,,"factory",14.330+14.890:I,,"and",14.900+15.050:I,,"the",15.060+15.110:I,,"job",15.120+15.460:I,,"market",15.470+15.830
+</PATH>
+<PATH id="(2347-a-003)" word_cnt="6" file="2347" channel="a" sequence="6" R_T1="15.940" R_T2="103.530" word_aux="h_t1+t2">
+S,"now","wow",15.940+16.310:C,"i","i",102.280+102.420:C,"would","would",102.430+102.650:C,"like","like",102.660+103.050:C,"i","i",103.060+103.200:S,"yes","guess",103.210+103.530
+</PATH>
+<PATH id="(2347-a-004)" word_cnt="21" file="2347" channel="a" sequence="8" R_T1="103.550" R_T2="109.170" word_aux="h_t1+t2">
+D,"i",,:D,"have",,:D,"worked",,:D,"outside",,:D,"of",,:D,"the",,:D,"home",,:D,"and",,:D,"i",,:D,"was",,:D,"in",,:D,"one",,:D,"of",,:D,"those",,:D,"safe",,:D,"occupations",,:D,"i",,:D,"was",,:D,"a",,:D,"school",,:D,"teacher",,
+</PATH>
+<PATH id="(2347-a-005)" word_cnt="18" file="2347" channel="a" sequence="10" R_T1="109.900" R_T2="115.430" word_aux="h_t1+t2">
+C,"and","and",109.900+110.110:C,"we","we",110.120+110.290:C,"had","had",110.300+110.550:C,"one","one",110.560+110.850:C,"child","child",110.860+111.370:C,"when","when",111.380+111.530:C,"i","i",111.540+111.660:S,"taught","called",111.670+112.040:C,"for","for",112.050+112.260:C,"my","my",112.270+112.450:C,"two","two",112.460+112.750:C,"year","year",112.760+113.000:I,,"so",113.010+113.240:S,"career","we're",113.250+113.620:C,"uh","uh",114.180+114.410:C,"we","we",114.420+114.780:S,"um","of",114.950+115.190:S,"then","that",115.200+115.410
+</PATH>
+<PATH id="(2347-a-006)" word_cnt="0" file="2347" channel="a" sequence="11" R_T1="115.430" R_T2="121.120" word_aux="h_t1+t2">
+
+</PATH>
+<PATH id="(2347-a-007)" word_cnt="24" file="2347" channel="a" sequence="13" R_T1="121.140" R_T2="130.100" word_aux="h_t1+t2">
+C,"home","home",121.110+121.430:S,"with","what",121.440+121.560:C,"those","those",121.670+121.890:C,"children","children",121.900+122.510:C,"and","and",122.640+122.990:C,"raised","raised",123.420+123.960:C,"those","those",123.970+124.200:C,"children","children",124.210+124.740:C,"and","and",124.750+125.050:C,"now","now",125.060+125.460:C,"that","that",125.630+125.780:C,"my","my",125.790+125.940:C,"husband","husband",125.950+126.380:I,,"says",126.390+126.590:I,,"free",126.600+126.800:S,"has","tired",126.810+127.370:S,"retired","of",127.380+127.460:S,"i","ford",127.470+127.600:C,"am","am",127.610+128.010:C,"back","back",128.020+128.380:I,,"to",128.390+128.440:C,"substitute","substitute",128.450+129.210:C,"teaching","teaching",129.220+129.750:C,"which","which",129.760+130.100
+</PATH>
+<PATH id="(2347-a-008)" word_cnt="24" file="2347" channel="a" sequence="15" R_T1="130.530" R_T2="137.010" word_aux="h_t1+t2">
+C,"if","if",130.520+130.710:C,"anyone","anyone",130.720+131.150:D,"has",,:C,"ever","ever",131.250+131.440:C,"been","been",131.450+131.640:C,"involved","involved",131.650+132.100:C,"in","in",132.110+132.230:I,,"the",132.240+132.290:S,"that","back",132.300+132.670:C,"some","some",132.890+133.110:C,"days","days",133.120+133.420:C,"it's","it's",133.430+133.630:C,"fun","fun",133.640+134.070:C,"and","and",134.080+134.290:D,"some",,:S,"days","sometimes",134.300+134.800:C,"you","you",134.810+134.940:C,"wonder","wonder",134.950+135.280:C,"why","why",135.290+135.560:C,"you're","you're",135.570+135.850:I,,"a",135.860+135.880:C,"even","even",135.890+136.220:I,,"bother",136.230+136.720:S,"bothering","rings",136.730+137.080
+</PATH>
+<PATH id="(2347-a-009)" word_cnt="21" file="2347" channel="a" sequence="17" R_T1="137.100" R_T2="144.480" word_aux="h_t1+t2">
+S,"because","plot",137.310+137.580:S,"your","year",137.980+138.140:C,"fighting","fighting",138.150+138.610:C,"for","for",138.620+138.880:C,"your","your",138.890+139.050:C,"life","life",139.060+139.620:C,"but","but",139.630+139.950:C,"i","i",139.960+140.210:S,"am","have",140.360+140.610:C,"a","a",140.620+140.660:I,,"fired",140.670+141.010:I,,"or",141.020+141.180:S,"fighter","not",141.190+141.370:S,"and","ford",141.380+141.600:S,"i've","stood",141.610+141.840:S,"always","the",141.850+141.910:S,"been","discipline",141.920+142.470:S,"a","area",142.480+142.790:S,"disciplinarian","and",142.800+142.900:C,"uh","uh",143.390+143.700:S,"i'm","i",144.170+144.330
+</PATH>
+<PATH id="(2347-a-010)" word_cnt="21" file="2347" channel="a" sequence="19" R_T1="144.580" R_T2="150.460" word_aux="h_t1+t2">
+C,"i'm","i'm",144.520+144.720:C,"not","not",144.730+145.010:S,"real","that",145.020+145.190:S,"sure","short",145.200+145.680:S,"that","but",145.690+145.910:C,"the","the",145.920+146.050:C,"young","young",146.060+146.350:C,"girls","girls",146.360+146.730:S,"of","that's",146.740+147.050:S,"today","and",147.060+147.310:C,"are","are",147.320+147.490:C,"being","being",147.500+147.770:C,"forced","forced",147.780+148.380:C,"into","into",148.390+148.660:C,"the","the",148.670+148.770:C,"job","job",148.780+149.100:C,"market","market",149.110+149.520:C,"as","as",149.530+149.840:C,"many","many",149.850+150.140:C,"of","of",150.150+150.260:S,"them","the",150.270+150.380
+</PATH>
+<PATH id="(2347-a-011)" word_cnt="23" file="2347" channel="a" sequence="21" R_T1="150.480" R_T2="159.500" word_aux="h_t1+t2">
+I,,"man",150.390+150.600:I,,"plot",150.610+151.130:S,"imply","it",151.140+151.210:C,"i","i",151.220+151.360:C,"think","think",151.370+151.700:C,"they're","they're",151.710+151.850:C,"going","going",151.860+152.180:S,"in","and",152.190+152.430:S,"by","like",152.440+152.620:C,"choice","choice",152.630+153.170:C,"yes","yes",155.000+155.510:C,"and","and",155.520+155.700:C,"and","and",156.090+156.370:C,"i","i",156.380+156.610:C,"have","have",156.620+157.010:C,"no","no",157.020+157.190:C,"problem","problem",157.200+157.830:C,"with","with",157.840+158.090:S,"that","there",158.100+158.370:C,"but","but",158.380+158.670:C,"i","i",158.840+158.950:C,"think","think",158.960+159.380:C,"the","the",159.390+159.480
+</PATH>
+<PATH id="(2347-a-012)" word_cnt="22" file="2347" channel="a" sequence="22" R_T1="159.500" R_T2="167.030" word_aux="h_t1+t2">
+S,"male","mail",159.490+159.970:C,"needs","needs",159.980+160.330:C,"to","to",160.340+160.500:C,"be","be",160.510+160.710:C,"the","the",160.720+160.810:I,,"job",160.820+161.140:S,"dominant","of",161.230+161.310:C,"person","person",161.320+161.920:C,"and","and",162.520+162.670:C,"i","i",162.680+162.770:C,"think","think",162.780+163.140:C,"too","too",163.150+163.400:C,"many","many",163.410+163.890:S,"of","does",163.900+164.090:C,"the","the",164.100+164.180:C,"young","young",164.190+164.580:C,"professional","professional",164.590+165.440:S,"wives","wife",165.450+165.960:S,"in","and",165.970+166.140:C,"our","our",166.150+166.320:C,"small","small",166.330+166.700:C,"town","town",166.710+167.010
+</PATH>
+<PATH id="(2347-a-013)" word_cnt="20" file="2347" channel="a" sequence="24" R_T1="167.040" R_T2="176.370" word_aux="h_t1+t2">
+S,"of","to",167.020+167.070:C,"five","five",167.080+167.420:C,"thousand","thousand",167.430+167.980:S,"um","lose",168.600+169.030:C,"are","are",169.120+169.290:C,"not","not",169.300+169.820:I,,"to",170.230+170.290:C,"letting","letting",170.520+171.050:C,"that","that",171.060+171.350:C,"happen","happen",171.360+171.870:I,,"uh",171.880+172.120:C,"they","they",172.130+172.320:C,"are","are",172.330+172.500:C,"very","very",172.510+172.850:C,"aggressive","aggressive",172.860+173.750:I,,"uh",174.480+174.640:S,"they're","there",174.650+175.190:C,"uh","uh",175.200+175.720:C,"they","they",175.730+175.880:C,"almost","almost",175.890+176.340
+</PATH>
+<PATH id="(2347-a-014)" word_cnt="20" file="2347" channel="a" sequence="26" R_T1="176.390" R_T2="182.980" word_aux="h_t1+t2">
+C,"have","have",176.350+176.580:C,"what","what",176.660+176.800:C,"i","i",176.810+176.980:C,"would","would",176.990+177.140:C,"call","call",177.150+177.460:C,"a","a",177.470+177.490:S,"killer","girls",177.500+178.030:S,"e-","to",178.040+178.090:S,"killer","kill",178.100+178.530:S,"bee","a",178.540+178.560:S,"instinct","b",178.570+179.060:C,"and","and",179.070+179.260:I,,"they",179.440+179.660:I,,"ways",180.560+181.090:C,"they","they",181.100+181.280:C,"have","have",181.290+181.610:C,"to","to",181.620+181.740:C,"be","be",181.750+181.940:C,"in","in",181.950+182.010:C,"charge","charge",182.020+182.820
+</PATH>
+<PATH id="(2347-a-015)" word_cnt="28" file="2347" channel="a" sequence="28" R_T1="183.110" R_T2="299.630" word_aux="h_t1+t2">
+S,"and","uh",183.110+183.480:C,"and","and",183.700+183.910:C,"i","i",183.920+184.040:D,"th-",,:C,"i","i",184.290+184.420:C,"think","think",184.430+184.760:C,"they","they",184.770+184.980:C,"lose","lose",184.990+185.330:C,"a","a",185.340+185.360:C,"lot","lot",185.370+185.910:I,,"to",185.920+185.990:I,,"buy",186.000+186.210:S,"by","of",186.220+186.290:C,"what","what",186.300+186.510:C,"i","i",186.520+186.690:I,,"called",186.700+187.030:S,"call","new",187.040+187.230:S,"neutering","during",187.240+187.540:C,"their","their",187.550+187.720:C,"husbands","husbands",187.730+188.360:D,"uhhuh",,:C,"oh","oh",240.790+240.980:C,"sure","sure",240.990+241.540:I,,"that's",242.120+242.370:I,,"the",242.380+242.450:S,"uhhuh","women",242.690+242.750:S,"huh","uh",268.930+269.180:S,"uhhuh","the",299.030+299.090
+</PATH>
+</SPEAKER>
+<SPEAKER id="2347-b">
+<PATH id="(2347-b-000)" word_cnt="14" file="2347" channel="b" sequence="30" R_T1="0.000" R_T2="20.510" word_aux="h_t1+t2">
+C,"uh","uh",16.550+16.770:D,"all",,:D,"right",,:D,"uhhuh",,:D,"oh",,:S,"well","huh",16.770+16.990:C,"i","i",17.720+17.900:S,"tend","like",17.900+18.280:C,"i","i",18.500+18.820:C,"tend","tend",19.000+19.260:C,"to","to",19.260+19.400:C,"agree","agree",19.400+19.820:S,"um","i",19.960+20.280:S,"in","tend",20.280+20.520
+</PATH>
+<PATH id="(2347-b-001)" word_cnt="15" file="2347" channel="b" sequence="31" R_T1="20.510" R_T2="25.060" word_aux="h_t1+t2">
+C,"some","some",20.520+20.740:C,"ways","ways",20.740+20.940:C,"i","i",20.940+21.020:C,"think","think",21.020+21.360:C,"it's","it's",21.360+21.620:D,"um",,:C,"i","i",21.680+21.900:C,"think","think",21.900+22.240:S,"if","of",22.240+22.380:C,"anything","anything",22.380+23.000:C,"a","a",23.000+23.060:C,"lot","lot",23.060+23.480:C,"of","of",23.480+23.680:S,"um","fallen",23.700+24.200:C,"the","the",24.880+25.060
+</PATH>
+<PATH id="(2347-b-002)" word_cnt="20" file="2347" channel="b" sequence="33" R_T1="25.070" R_T2="31.120" word_aux="h_t1+t2">
+C,"changes","changes",25.060+25.720:C,"that","that",25.720+25.880:C,"have","have",25.880+26.060:C,"occurred","occurred",26.060+26.720:I,,"buy",26.780+27.220:S,"um","them",27.220+27.340:C,"in","in",27.480+27.700:C,"some","some",27.700+28.060:C,"ways","ways",28.060+28.420:I,,"there",28.420+28.680:I,,"for",28.680+28.780:S,"they're","the",29.020+29.100:C,"for","for",29.100+29.280:C,"the","the",29.280+29.380:C,"better","better",29.380+29.700:C,"because","because",29.700+30.000:D,"i",,:S,"think","that",30.000+30.120:C,"women","women",30.260+30.680:C,"should","should",30.700+31.120
+</PATH>
+<PATH id="(2347-b-003)" word_cnt="21" file="2347" channel="b" sequence="34" R_T1="31.120" R_T2="35.860" word_aux="h_t1+t2">
+C,"have","have",31.120+31.420:S,"a","much",31.460+31.740:C,"choice","choice",31.740+32.260:D,"and",,:C,"i","i",32.320+32.440:C,"do","do",32.440+32.600:C,"believe","believe",32.600+32.940:C,"in","in",32.940+33.080:S,"the","those",33.080+33.440:S,"being","and",33.520+33.900:C,"able","able",33.900+34.120:C,"to","to",34.120+34.200:C,"have","have",34.200+34.380:S,"a","the",34.380+34.460:C,"choice","choice",34.460+34.900:D,"as",,:C,"to","to",35.000+35.140:S,"as","thing",35.160+35.340:C,"far","far",35.340+35.620:C,"as","as",35.620+35.740:C,"what","what",35.740+35.900
+</PATH>
+<PATH id="(2347-b-004)" word_cnt="28" file="2347" channel="b" sequence="36" R_T1="35.890" R_T2="43.640" word_aux="h_t1+t2">
+C,"you","you",35.900+36.020:C,"would","would",36.020+36.160:C,"like","like",36.160+36.440:C,"to","to",36.440+36.540:C,"do","do",36.540+36.700:S,"with","if",36.700+36.800:S,"your","you",36.800+36.900:S,"life","like",36.900+37.080:S,"but","to",37.080+37.180:S,"by","buy",37.180+37.340:C,"the","the",37.340+37.460:C,"same","same",37.460+37.780:C,"token","token",37.780+38.300:C,"and","and",39.000+39.120:C,"i","i",39.120+39.220:D,"know",,:S,"this","noticed",39.220+39.580:C,"for","for",39.580+39.680:C,"myself","myself",39.680+40.280:C,"because","because",40.280+40.560:D,"i've",,:S,"worked","of",40.560+40.700:S,"and","woodworking",40.700+41.200:C,"i've","i've",41.200+41.340:C,"not","not",41.360+41.660:S,"worked","heard",42.020+42.400:S,"um","all",42.880+43.220:S,"um","and",43.220+43.380
+</PATH>
+<PATH id="(2347-b-005)" word_cnt="38" file="2347" channel="b" sequence="37" R_T1="43.640" R_T2="54.810" word_aux="h_t1+t2">
+D,"that",,:S,"it","can",43.540+43.920:C,"makes","makes",43.920+44.380:C,"it","it",44.380+44.540:I,,"it's",44.540+44.880:I,,"got",45.020+45.520:S,"um","some",45.520+45.720:S,"sometimes","of",45.720+45.840:S,"it","the",45.840+45.920:C,"makes","makes",45.920+46.180:S,"life","like",46.180+46.400:C,"more","more",46.420+46.720:C,"difficult","difficult",46.740+47.100:S,"i","whole",47.120+47.500:S,"think","thing",47.560+47.820:C,"when","when",47.820+48.020:C,"the","the",48.020+48.100:C,"roles","roles",48.100+48.700:C,"now","now",48.720+49.100:I,,"or",49.180+49.560:I,,"what",49.660+50.080:I,,"but",50.140+50.360:S,"are","i",50.360+50.620:S,"less","mean",50.620+50.880:S,"defined","i",51.320+51.500:C,"as","as",51.500+51.620:C,"far","far",51.620+51.960:C,"as","as",51.960+52.180:C,"you","you",52.260+52.400:C,"know","know",52.400+52.520:C,"what","what",52.520+52.880:S,"um","with",52.900+53.300:C,"women","women",53.300+53.760:C,"should","should",53.760+54.040:C,"or","or",54.040+54.120:C,"should","should",54.120+54.360:C,"not","not",54.360+54.620:C,"be","be",54.620+54.740
+</PATH>
+<PATH id="(2347-b-006)" word_cnt="37" file="2347" channel="b" sequence="39" R_T1="54.820" R_T2="66.660" word_aux="h_t1+t2">
+C,"doing","doing",54.740+55.260:C,"that","that",55.360+55.740:C,"it","it",56.420+56.700:C,"it","it",56.700+56.980:S,"um","it",56.980+57.080:C,"it","it",57.080+57.240:C,"can","can",57.240+57.420:C,"make","make",57.420+57.720:S,"life","like",57.720+58.000:C,"more","more",58.000+58.220:C,"difficult","difficult",58.220+58.740:D,"there",,:S,"are","they're",58.740+58.880:C,"more","more",58.880+59.160:C,"things","things",59.160+59.620:C,"to","to",60.040+60.200:C,"work","work",60.200+60.540:S,"out","choice",60.540+61.040:C,"i","i",61.040+61.200:C,"know","know",61.200+61.340:C,"when","when",61.340+61.500:C,"i","i",61.500+61.560:C,"was","was",61.560+61.780:C,"working","working",61.780+62.240:S,"you","that",62.240+62.400:C,"know","know",62.400+62.520:C,"you","you",62.520+62.660:C,"have","have",62.660+62.900:D,"all",,:S,"these","always",62.900+63.260:C,"problems","problems",63.260+63.800:C,"with","with",63.800+64.040:C,"with","with",65.060+65.260:C,"the","the",65.300+65.460:C,"child","child",65.460+65.920:C,"care","care",65.920+66.440:C,"and","and",66.440+66.660
+</PATH>
+<PATH id="(2347-b-007)" word_cnt="37" file="2347" channel="b" sequence="41" R_T1="66.710" R_T2="76.330" word_aux="h_t1+t2">
+C,"and","and",66.660+67.160:C,"with","with",67.160+67.440:I,,"all",67.560+67.820:I,,"of",67.820+68.020:S,"um","these",68.140+68.400:S,"pleasing","things",68.400+68.760:C,"you","you",68.780+68.960:C,"know","know",68.960+69.060:C,"your","your",69.060+69.260:C,"boss","boss",69.260+69.620:S,"on","lot",69.620+69.900:S,"the","of",69.900+69.980:C,"job","job",69.980+70.340:S,"so","do",70.400+70.500:C,"you","you",70.500+70.620:C,"have","have",70.620+70.760:C,"added","added",70.760+71.100:I,,"stress",71.100+71.520:S,"stresses","he",71.520+71.660:C,"from","from",71.660+71.840:C,"there","there",71.840+72.100:C,"and","and",72.100+72.200:C,"then","then",72.200+72.320:C,"you","you",72.320+72.460:C,"still","still",72.460+72.740:C,"have","have",72.740+73.040:C,"all","all",73.040+73.200:C,"the","the",73.200+73.340:C,"things","things",73.340+73.800:C,"that","that",73.960+74.280:S,"um","all",74.280+74.600:C,"that","that",75.240+75.400:C,"you","you",75.400+75.560:C,"need","need",75.560+75.780:C,"to","to",75.780+75.920:C,"do","do",75.920+76.240:I,,"it",76.240+76.380
+</PATH>
+<PATH id="(2347-b-008)" word_cnt="36" file="2347" channel="b" sequence="42" R_T1="76.330" R_T2="85.710" word_aux="h_t1+t2">
+D,"at",,:C,"home","home",76.580+76.980:C,"a-","and",76.980+77.120:C,"and","and",77.140+77.260:C,"that","that",77.260+77.440:C,"doesn't","doesn't",77.440+77.780:C,"change","change",77.780+78.420:C,"you","you",78.420+78.520:C,"know","know",78.520+78.620:C,"just","just",78.620+78.900:C,"because","because",78.900+79.300:S,"your","and",79.300+79.620:S,"your","you're",79.640+79.820:C,"going","going",79.820+80.180:C,"out","out",80.180+80.440:C,"of","of",80.440+80.520:C,"the","the",80.520+80.600:C,"house","house",80.600+80.960:C,"for","for",80.960+81.120:C,"so","so",81.120+81.340:C,"many","many",81.340+81.580:C,"hours","hours",81.580+81.860:C,"a","a",81.860+81.940:C,"day","day",81.940+82.160:I,,"he",82.160+82.240:C,"doesn't","doesn't",82.240+82.760:I,,"have",82.760+82.860:C,"uh","uh",83.380+83.700:C,"make","make",83.700+84.020:C,"those","those",84.020+84.260:C,"other","other",84.260+84.480:C,"things","things",84.480+84.880:C,"go","go",84.880+85.040:C,"away","away",85.040+85.520:S,"and","was",85.560+85.620:C,"the","the",85.620+85.740
+</PATH>
+<PATH id="(2347-b-009)" word_cnt="33" file="2347" channel="b" sequence="44" R_T1="85.760" R_T2="98.900" word_aux="h_t1+t2">
+C,"other","other",85.740+85.920:C,"responsibilities","responsibilities",85.920+86.940:C,"are","are",86.940+87.000:C,"still","still",87.000+87.360:C,"important","important",87.360+88.060:S,"um","but",88.640+89.220:C,"so","so",89.910+90.310:S,"um","well",90.310+90.850:C,"have","have",90.930+91.170:C,"you","you",91.170+91.470:C,"have","have",91.530+91.730:C,"you","you",91.730+91.930:S,"worked","work",91.930+92.370:C,"outside","outside",92.370+92.970:I,,"i",92.970+93.030:C,"also","also",93.030+93.590:C,"and","and",93.590+93.910:I,,"all",93.930+94.390:S,"um","and",94.410+94.590:C,"feel","feel",94.710+95.050:C,"that","that",95.050+95.410:S,"it","is",95.430+95.630:C,"that","that",95.650+95.950:D,"well",,:S,"how","what",95.970+96.510:C,"do","do",96.510+96.590:C,"you","you",96.590+96.730:C,"feel","feel",96.730+97.070:C,"as","as",97.070+97.230:C,"far","far",97.230+97.590:C,"as","as",97.590+97.830:C,"uh","uh",98.430+98.670:C,"what","what",98.670+98.950
+</PATH>
+<PATH id="(2347-b-010)" word_cnt="43" file="2347" channel="b" sequence="46" R_T1="98.910" R_T2="192.700" word_aux="h_t1+t2">
+C,"would","would",98.950+99.130:C,"be","be",99.130+99.350:C,"a","a",99.350+99.570:S,"happy","twice",99.570+99.950:C,"medium","medium",99.950+100.370:C,"or","or",100.370+100.530:C,"or","or",100.530+100.710:C,"what","what",100.710+100.870:C,"would","would",100.870+101.030:C,"you","you",101.030+101.150:C,"like","like",101.150+101.390:C,"to","to",101.390+101.510:C,"see","see",101.510+101.930:D,"yes",,:D,"uhhuh",,:D,"uhhuh",,:D,"yes",,:D,"yes",,:C,"right","right",137.210+137.650:D,"but",,:D,"yeah",,:S,"oh","so",153.710+153.970:S,"i","uh",153.970+154.050:C,"b-","but",154.050+154.230:C,"i","i",154.230+154.330:C,"think","think",154.330+154.610:C,"so","so",154.610+154.870:D,"yes",,:D,"uhhuh",,:D,"uhhuh",,:C,"yeah","yeah",154.870+155.230:S,"uhhuh","yeah",180.460+180.700:C,"well","well",189.260+189.620:C,"what","what",189.620+189.820:C,"do","do",189.820+189.900:C,"you","you",189.900+190.060:C,"think","think",190.060+190.420:I,,"they'll",190.420+190.680:I,,"i",190.680+191.020:S,"though","mean",191.020+191.300:C,"uh","uh",191.480+191.820:S,"um","them",191.820+192.080:C,"i","i",192.510+192.650
+</PATH>
+<PATH id="(2347-b-011)" word_cnt="47" file="2347" channel="b" sequence="47" R_T1="192.700" R_T2="208.680" word_aux="h_t1+t2">
+S,"don't","is",192.650+192.850:C,"know","know",192.850+192.950:C,"i","i",192.950+193.230:C,"the","the",193.350+193.630:C,"the","the",193.710+194.150:C,"one","one",194.760+195.060:C,"problem","problem",195.160+195.580:C,"i","i",195.580+195.700:C,"guess","guess",195.700+196.020:C,"i","i",196.020+196.100:C,"have","have",196.100+196.400:S,"and","been",196.400+196.540:C,"maybe","maybe",196.540+196.900:S,"what","twice",196.900+197.240:C,"so","so",197.240+197.520:C,"many","many",197.520+197.880:C,"women","women",197.920+198.380:C,"younger","younger",198.380+198.780:S,"women","when",198.780+199.020:S,"now","the",199.020+199.120:S,"are","networks",199.120+199.640:S,"choosing","using",199.640+200.180:C,"to","to",200.220+200.660:I,,"still",201.120+201.380:I,,"a",201.380+201.400:I,,"while",201.400+201.660:I,,"so",201.660+201.940:S,"go","i",201.940+202.080:S,"outside","don't",202.080+202.280:S,"is","know",202.280+202.420:C,"i","i",202.420+202.560:C,"feel","feel",202.560+202.840:C,"that","that",202.840+203.080:C,"in","in",203.100+203.260:C,"general","general",203.260+203.800:S,"in","and",203.800+203.900:C,"this","this",203.900+204.200:I,,"is",204.200+204.340:S,"society","foggy",204.340+205.000:S,"that","they",205.540+205.760:S,"being","had",205.760+206.060:S,"at","been",206.080+206.520:C,"home","home",206.660+207.260:C,"is","is",207.460+207.740:I,,"no",207.740+207.980:S,"not","i'd",207.980+208.300:S,"looked","love",208.320+208.600
+</PATH>
+<PATH id="(2347-b-012)" word_cnt="37" file="2347" channel="b" sequence="49" R_T1="208.690" R_T2="219.090" word_aux="h_t1+t2">
+S,"upon","point",208.740+209.420:S,"as","out",209.420+209.800:S,"um","all",210.080+210.500:S,"a","the",211.060+211.180:C,"job","job",211.180+211.560:C,"in","in",211.560+211.660:C,"itself","itself",211.660+212.280:D,"whereas",,:D,"you",,:D,"know",,:S,"you","where",212.280+212.420:S,"hear","the",212.420+212.640:S,"a","the",212.760+212.960:S,"lot","role",212.960+213.140:C,"of","of",213.140+213.360:S,"women","to",213.360+213.680:C,"that","that",213.680+213.820:C,"are","are",213.820+213.920:C,"home","home",213.920+214.280:C,"saying","saying",214.280+214.740:C,"that","that",214.760+215.040:C,"it","it",215.080+215.240:C,"is","is",215.240+215.460:C,"a","a",215.460+215.520:C,"job","job",215.520+215.860:C,"in","in",215.860+215.980:C,"itself","itself",215.980+216.440:C,"but","but",216.440+216.600:C,"i","i",216.600+216.720:C,"know","know",216.720+216.920:C,"when","when",216.920+217.180:C,"i","i",217.180+217.300:C,"was","was",217.300+217.560:C,"working","working",217.560+218.100:C,"and","and",218.720+219.000:D,"i",,:C,"i","i",219.000+219.080
+</PATH>
+<PATH id="(2347-b-013)" word_cnt="16" file="2347" channel="b" sequence="51" R_T1="219.100" R_T2="223.670" word_aux="h_t1+t2">
+C,"was","was",219.080+219.320:D,"a-",,:C,"an","an",219.500+219.640:C,"engineer","engineer",219.640+220.240:D,"so",,:S,"i","and",220.240+220.320:C,"i","i",220.340+220.580:C,"was","was",220.600+220.860:C,"always","always",220.860+221.220:C,"with","with",221.220+221.400:I,,"them",221.400+221.540:I,,"they",221.540+221.940:S,"men","all",222.280+222.740:S,"um","that",222.740+222.940:C,"and","and",222.960+223.500:C,"they","they",223.500+223.660
+</PATH>
+<PATH id="(2347-b-014)" word_cnt="45" file="2347" channel="b" sequence="53" R_T1="223.680" R_T2="235.330" word_aux="h_t1+t2">
+C,"were","were",223.660+223.780:C,"single","single",223.780+224.280:C,"many","many",224.280+224.560:C,"of","of",224.560+224.660:C,"them","them",224.660+224.780:C,"and","and",224.780+224.880:C,"i","i",224.880+224.980:S,"tried","try",224.980+225.280:C,"to","to",225.280+225.360:C,"explain","explain",225.360+225.800:S,"to","of",225.800+225.880:S,"them","the",225.880+225.960:S,"well","more",225.960+226.180:S,"my","like",226.180+226.440:S,"day","a",226.440+226.560:S,"doesn't","dozen",226.560+226.900:S,"end","and",226.920+227.340:S,"when","one",227.360+227.720:S,"i","don't",227.740+227.960:S,"leave","believe",227.960+228.400:S,"at","but",228.400+228.640:C,"i","i",228.640+228.740:C,"used","used",228.740+228.980:C,"to","to",228.980+229.080:I,,"be",229.080+229.220:S,"leave","so",229.220+229.380:S,"at","pretty",229.420+229.900:S,"three","light",229.900+230.260:C,"keep","keep",230.320+230.640:C,"going","going",230.640+231.120:S,"to","for",231.120+231.220:C,"eleven","eleven",231.220+231.740:C,"at","at",231.740+231.860:C,"night","night",231.860+232.160:C,"and","and",232.220+232.480:I,,"day",232.480+232.660:S,"they","he",232.660+232.760:C,"had","had",232.760+233.220:C,"they","they",233.880+234.080:I,,"use",234.080+234.440:I,,"to",234.440+234.560:S,"used","want",234.560+234.840:C,"to","to",234.840+234.940:S,"look","at",234.940+235.100:S,"down","home",235.100+235.340
+</PATH>
+<PATH id="(2347-b-015)" word_cnt="42" file="2347" channel="b" sequence="54" R_T1="235.330" R_T2="243.210" word_aux="h_t1+t2">
+I,,"all",235.340+235.500:S,"on","the",235.500+235.540:C,"women","women",235.540+235.900:D,"that",,:D,"were",,:D,"home",,:D,"they'd",,:S,"say","wear",235.900+236.060:S,"oh","on",236.060+236.200:S,"i","the",236.200+236.300:S,"bet","tell",236.300+236.600:C,"you","you",236.700+236.980:C,"go","go",236.980+237.120:C,"home","home",237.120+237.460:S,"and","them",237.460+237.660:C,"you","you",237.660+237.860:C,"know","know",237.860+238.040:D,"at",,:D,"least",,:D,"you",,:D,"get",,:D,"out",,:D,"of",,:D,"here",,:S,"at","we've",238.040+238.320:S,"three","got",238.400+238.880:S,"and","your",238.880+239.060:S,"you","drink",239.080+239.500:S,"can","in",239.500+239.560:S,"go","the",239.560+239.660:C,"home","home",239.660+240.000:C,"and","and",240.000+240.160:D,"put",,:D,"your",,:D,"feet",,:D,"up",,:S,"and","that",240.200+240.480:S,"watch","just",240.500+240.760:S,"soap","so",241.540+241.860:S,"operas","i",241.900+242.060:S,"and","am",242.760+242.960:S,"i","not",242.960+243.140
+</PATH>
+<PATH id="(2347-b-016)" word_cnt="43" file="2347" channel="b" sequence="55" R_T1="243.210" R_T2="256.710" word_aux="h_t1+t2">
+C,"used","used",243.140+243.420:C,"to","to",243.420+243.500:C,"be","be",243.500+243.640:I,,"if",243.640+243.880:I,,"you",243.980+244.160:I,,"worry",244.160+244.460:S,"infuriated","a",244.460+244.640:S,"be-","good",244.640+244.860:C,"because","because",244.860+245.420:C,"they","they",245.460+245.660:C,"really","really",245.680+246.100:C,"had","had",246.100+246.360:C,"no","no",246.360+246.660:I,,"down",246.660+247.160:S,"idea","of",247.160+247.380:C,"what","what",248.000+248.260:C,"was","was",248.260+248.440:C,"involved","involved",248.440+249.020:S,"once","want",249.020+249.260:S,"i","to",249.260+249.380:S,"got","go",249.380+249.540:C,"home","home",249.540+249.900:S,"now","not",249.900+250.180:C,"taking","taking",250.200+250.580:C,"care","care",250.580+250.840:C,"of","of",250.840+250.920:C,"them","them",250.920+251.040:C,"running","running",251.040+251.400:C,"them","them",251.400+251.580:C,"everywhere","everywhere",251.580+252.080:C,"helping","helping",252.080+252.460:C,"with","with",252.460+252.620:C,"homework","homework",252.620+253.160:D,"the",,:D,"bath",,:S,"the","about",253.160+253.640:S,"whole","well",253.680+254.040:C,"you","you",254.040+254.180:S,"know","to",254.180+254.320:C,"everything","everything",254.320+254.860:I,,"all",255.460+255.900:S,"um","that",255.900+256.040:C,"and","and",256.080+256.680
+</PATH>
+<PATH id="(2347-b-017)" word_cnt="43" file="2347" channel="b" sequence="57" R_T1="256.800" R_T2="271.580" word_aux="h_t1+t2">
+C,"i","i",256.760+257.020:C,"think","think",257.060+257.540:S,"that","society",257.540+257.960:C,"one","one",258.180+258.620:C,"reason","reason",258.640+259.320:S,"that","to",259.320+259.460:C,"so","so",259.480+259.840:C,"many","many",259.840+260.120:S,"younger","young",260.120+260.400:C,"women","women",260.440+260.940:I,,"don't",260.940+261.060:C,"feel","feel",261.060+261.540:I,,"it",261.960+262.220:I,,"it",262.260+262.500:S,"im-","comes",262.500+262.740:S,"compelled","down",262.860+263.140:C,"to","to",263.140+263.300:C,"go","go",263.300+263.500:C,"into","into",263.500+263.760:D,"a",,:S,"profession","professions",263.760+264.640:C,"is","is",264.680+264.980:C,"that","that",265.060+265.240:C,"they","they",265.240+265.460:C,"feel","feel",265.480+265.780:S,"that","but",265.780+266.160:C,"if","if",266.580+266.860:C,"they","they",266.860+267.000:S,"stay","stayed",267.000+267.440:C,"home","home",267.440+267.840:C,"they","they",267.860+268.000:C,"are","are",268.000+268.100:C,"not","not",268.100+268.360:D,"respected",,:C,"and","and",268.360+268.900:C,"that","that",268.900+269.160:I,,"and",269.740+270.100:I,,"as",270.100+270.300:C,"being","being",270.300+270.560:C,"home","home",270.560+271.080:C,"is","is",271.120+271.300:C,"not","not",271.300+271.540:C,"a","a",271.540+271.560
+</PATH>
+<PATH id="(2347-b-018)" word_cnt="40" file="2347" channel="b" sequence="59" R_T1="271.590" R_T2="281.870" word_aux="h_t1+t2">
+S,"respectable","real",271.560+271.820:S,"um","comfortable",271.860+272.560:S,"position","opposition",272.990+273.870:C,"in","in",273.970+274.170:C,"society","society",274.170+274.770:C,"and","and",274.790+274.930:C,"there's","there's",274.930+275.130:C,"a","a",275.130+275.170:C,"lot","lot",275.170+275.470:C,"of","of",275.470+275.550:C,"truth","truth",275.550+275.950:C,"to","to",275.990+276.090:C,"that","that",276.090+276.370:D,"and",,:C,"i","i",276.370+276.450:C,"don't","don't",276.450+276.630:C,"know","know",276.630+276.690:C,"how","how",276.690+276.850:C,"you","you",276.850+277.110:C,"feel","feel",277.110+277.470:C,"i","i",277.850+277.970:C,"don't","don't",277.970+278.110:S,"know","don't",278.110+278.210:C,"how","how",278.210+278.370:C,"you","you",278.370+278.470:I,,"can",278.470+278.630:S,"felt","tell",278.750+279.110:C,"when","when",279.150+279.410:C,"you","you",279.410+279.510:C,"were","were",279.510+279.690:C,"home","home",279.690+280.050:C,"and","and",280.050+280.130:I,,"work",280.130+280.350:I,,"on",280.350+280.510:S,"what","it",280.510+280.630:S,"kind","and",280.630+280.710:S,"of","he",280.730+280.930:S,"feedback","backed",280.950+281.330:C,"you","you",281.350+281.510:S,"got","glad",281.510+281.850
+</PATH>
+<PATH id="(2347-b-019)" word_cnt="57" file="2347" channel="b" sequence="61" R_T1="281.910" R_T2="299.790" word_aux="h_t1+t2">
+S,"but","that",281.870+282.010:C,"i","i",282.010+282.110:C,"can","can",282.110+282.290:C,"see","see",282.290+282.570:S,"with","what",282.570+282.770:S,"the","i",282.770+282.870:C,"younger","younger",282.870+283.350:S,"men","man",283.350+283.750:C,"that","that",284.410+284.910:C,"they","they",284.930+285.110:C,"definitely","definitely",285.110+285.990:I,,"eat",286.010+286.270:S,"are","choice",286.430+286.950:C,"looking","looking",287.050+287.450:C,"down","down",287.450+287.890:I,,"my",287.890+288.030:S,"upon","lawn",288.190+288.630:C,"women","women",289.270+289.650:C,"that","that",289.650+289.870:C,"are","are",289.870+289.990:C,"home","home",289.990+290.570:I,,"and",290.570+290.610:C,"and","and",290.630+290.950:C,"yet","yet",290.950+291.210:I,,"i",291.230+291.390:S,"by","don't",291.390+291.650:S,"the","think",291.650+292.110:S,"same","so",292.110+292.410:S,"token","good",292.410+292.630:C,"i","i",293.170+293.290:C,"think","think",293.290+293.490:C,"some","some",293.490+293.710:C,"of","of",293.710+293.830:C,"it","it",293.850+293.970:C,"is","is",293.970+294.170:I,,"i",294.210+294.330:I,,"always",294.330+294.650:S,"jealousy","say",294.650+294.910:C,"you","you",294.910+295.330:C,"you","you",295.370+295.550:S,"once","want",295.550+295.830:S,"in","to",295.830+295.930:S,"a","that",295.930+296.030:S,"while","wall",296.030+296.270:C,"you","you",296.270+296.430:C,"hear","hear",296.430+296.710:C,"them","them",296.710+296.910:C,"say","say",296.910+297.210:C,"things","things",297.210+297.510:C,"like","like",297.510+297.750:C,"i","i",298.090+298.230:C,"wish","wish",298.230+298.510:C,"i","i",298.510+298.630:C,"had","had",298.630+298.930:S,"the","that",298.930+299.090:C,"choice","choice",299.090+299.570:C,"you","you",299.630+299.850
+</PATH>
+</SPEAKER>
+<SPEAKER id="3129-a">
+<PATH id="(3129-a-000)" word_cnt="44" file="3129" channel="a" sequence="64" R_T1="17.310" R_T2="106.230" word_aux="h_t1+t2">
+C,"yeah","yeah",17.300+17.520:C,"exactly","exactly",25.990+26.630:I,,"well",47.880+48.110:I,,"uh",51.770+51.860:S,"oh","you",58.680+58.760:S,"did","do",58.820+59.240:C,"you","you",59.240+59.490:C,"do","do",59.490+59.680:C,"the","the",59.680+59.940:I,,"a",59.940+59.970:C,"diagnosis","diagnosis",59.970+60.970:I,,"never",60.970+61.270:S,"or","oh",61.270+61.530:C,"was","was",61.530+61.730:C,"it","it",61.730+61.820:C,"just","just",61.820+62.010:C,"an","an",62.010+62.130:C,"assumption","assumption",62.130+62.640:I,,"that's",62.640+62.990:S,"that","and",62.990+63.160:C,"that's","that's",63.160+63.380:C,"probably","probably",63.380+63.890:C,"the","the",63.890+64.000:C,"part","part",64.000+64.250:C,"that","that",64.250+64.380:I,,"the",64.380+64.780:I,,"uh",73.670+73.820:I,,"huh",73.820+73.970:S,"failed","and",96.150+96.440:S,"uhhuh","so",96.440+96.520:S,"uhhuh","to",99.400+99.510:S,"yeah","set",99.920+100.200:S,"i","a",100.200+100.380:S,"know","fine",100.380+100.660:S,"um","those",100.660+101.350:C,"when","when",101.880+102.230:C,"working","working",102.230+102.650:C,"with","with",102.650+102.860:I,,"see",102.860+103.230:S,"the","a",103.230+103.430:S,"um","flash",103.830+104.370:S,"flashers","years",104.370+104.750:C,"there","there",105.610+105.950:S,"is","was",105.950+106.130
+</PATH>
+<PATH id="(3129-a-001)" word_cnt="38" file="3129" channel="a" sequence="65" R_T1="106.230" R_T2="127.180" word_aux="h_t1+t2">
+S,"um","so",106.130+106.500:C,"usually","usually",106.860+107.340:S,"a","is",107.340+107.480:C,"a","a",107.480+107.520:C,"special","special",107.520+108.110:I,,"ever",108.110+108.360:S,"fuse","use",108.360+109.580:C,"that","that",109.590+109.790:C,"operates","operates",109.790+110.420:S,"the","to",110.420+110.580:S,"flashers","flash",110.580+111.020:S,"do","years",111.020+111.360:S,"you","not",111.440+111.650:C,"have","have",111.650+111.820:C,"a","a",111.820+111.880:C,"separate","separate",111.880+112.280:C,"fuse","fuse",112.280+112.810:C,"for","for",112.810+112.980:S,"your","you",112.980+113.130:S,"high","i",113.130+113.210:S,"beam","mean",113.210+113.780:C,"as","as",113.880+114.140:C,"opposed","opposed",114.140+114.450:D,"to",,:D,"your",,:D,"low",,:D,"beam",,:D,"diagram",,:D,"yeah",,:D,"i",,:D,"don't",,:D,"even",,:D,"know",,:S,"if","year",114.450+114.600:S,"my","molding",114.600+115.020:S,"current","the",117.420+117.520:S,"cars","hi",121.730+122.040:S,"have","grams",122.040+122.410
+</PATH>
+<PATH id="(3129-a-002)" word_cnt="41" file="3129" channel="a" sequence="67" R_T1="127.210" R_T2="142.440" word_aux="h_t1+t2">
+D,"a",,:D,"separate",,:D,"fuse",,:D,"i",,:D,"know",,:D,"sometimes",,:D,"when",,:D,"you",,:D,"think",,:D,"there",,:D,"are",,:D,"things",,:D,"running",,:D,"while",,:D,"they're",,:D,"at",,:D,"the",,:D,"same",,:D,"unit",,:D,"like",,:D,"the",,:D,"the",,:D,"headlamp",,:D,"you",,:D,"tend",,:D,"to",,:D,"think",,:D,"well",,:D,"there's",,:D,"one",,:D,"fuse",,:D,"operating",,:D,"the",,:D,"whole",,:D,"thing",,:D,"but",,:D,"sometimes",,:D,"the",,:D,"extra",,:D,"amperage",,:D,"that",,
+</PATH>
+<PATH id="(3129-a-003)" word_cnt="41" file="3129" channel="a" sequence="69" R_T1="142.460" R_T2="170.180" word_aux="h_t1+t2">
+D,"a",,:D,"high",,:D,"beam",,:D,"drives",,:D,"as",,:D,"opposed",,:D,"to",,:D,"a",,:D,"low",,:D,"beam",,:D,"requires",,:D,"the",,:D,"use",,:D,"of",,:D,"a",,:D,"of",,:D,"a",,:D,"maybe",,:D,"a",,:D,"higher",,:D,"fuse",,:C,"so","so",151.490+151.610:C,"that's","that's",151.610+151.800:C,"a","a",151.800+151.850:C,"possibility","possibility",151.850+152.580:S,"is","still",164.980+165.500:S,"this","the",165.500+165.620:S,"a","so",165.620+165.950:S,"a","the",165.950+165.950:C,"mail","mail",165.950+166.450:C,"order","order",166.450+166.710:C,"parts","parts",166.710+167.110:C,"house","house",167.110+167.560:C,"that","that",167.560+167.750:C,"specializes","specializes",167.750+168.660:I,,"smack",168.660+168.880:S,"in","the",168.880+169.020:S,"in","and",169.020+169.190:C,"parts","parts",169.190+169.590:C,"for","for",169.590+169.890:I,,"oh",169.890+170.180
+</PATH>
+<PATH id="(3129-a-004)" word_cnt="65" file="3129" channel="a" sequence="71" R_T1="170.190" R_T2="272.800" word_aux="h_t1+t2">
+D,"um",,:C,"old","old",170.180+170.430:C,"imports","imports",170.430+170.950:I,,"do",172.730+172.900:S,"who","the",172.900+173.130:S,"um","and",174.610+174.840:C,"so","so",175.010+175.300:S,"it's","that's",175.470+175.740:C,"not","not",175.740+175.970:I,,"c",175.970+176.130:S,"j","d",176.130+176.400:C,"c","c",176.400+176.590:I,,"was",176.590+176.780:S,"whitney","me",176.780+177.000:C,"or","or",177.000+177.120:S,"somebody","something",177.120+177.460:C,"like","like",177.460+177.630:C,"that","that",177.630+177.790:I,,"it's",177.790+178.160:I,,"that's",182.100+182.270:I,,"a",182.270+182.310:I,,"uh",185.080+185.160:I,,"us",191.070+191.760:I,,"the",192.450+192.540:S,"yeah","this",193.880+194.390:S,"have","tonight",194.390+194.790:S,"you","from",194.790+195.120:S,"found","to",195.120+195.250:S,"any","me",195.250+195.520:C,"uh","uh",195.520+195.750:I,,"so",196.020+196.610:C,"uh","uh",196.610+196.670:C,"reliable","reliable",196.670+197.610:C,"import","import",198.580+199.000:C,"service","service",199.000+199.430:C,"people","people",199.430+199.820:C,"in","in",199.820+199.980:I,,"those",199.980+200.250:I,,"smack",200.250+200.650:I,,"complex",200.650+201.180:I,,"so",201.180+201.340:I,,"uh",206.060+206.090:I,,"so",207.360+208.260:I,,"so",209.410+209.990:I,,"calls",213.710+214.100:I,,"yet",214.100+214.330:I,,"of",215.380+215.650:I,,"out",225.990+226.110:I,,"flash",226.510+227.090:I,,"since",227.090+227.310:C,"the","the",227.270+227.840:I,,"s",227.840+227.880:S,"metroplex","a",227.880+227.930:S,"oh","i",232.710+232.800:S,"yeah","saw",232.800+232.890:S,"uhhuh","of",233.360+233.480:S,"i'll","all",233.480+233.680:C,"be","be",233.680+233.780:I,,"to",233.780+233.870:I,,"turn",233.870+234.120:I,,"at",244.920+245.030:I,,"at",245.030+245.090:I,,"it's",253.900+254.300:S,"darned","i",272.460+272.520:S,"uhhuh","don't",272.520+272.660
+</PATH>
+</SPEAKER>
+<SPEAKER id="3129-b">
+<PATH id="(3129-b-000)" word_cnt="29" file="3129" channel="b" sequence="74" R_T1="1.540" R_T2="10.170" word_aux="h_t1+t2">
+C,"well","well",1.520+1.710:S,"tom","um",1.720+2.040:C,"just","just",2.050+2.270:C,"tonight","tonight",2.280+2.720:C,"i","i",2.920+3.120:C,"was","was",3.130+3.280:C,"working","working",3.610+3.950:C,"on","on",3.960+4.070:C,"my","my",4.080+4.200:C,"car","car",4.210+4.590:C,"out","out",4.600+4.730:C,"of","of",4.740+4.790:C,"necessity","necessity",4.800+5.430:S,"and","in",5.440+5.530:C,"i","i",5.540+5.680:C,"had","had",5.690+5.860:C,"uh","uh",5.870+6.090:C,"uh","uh",6.510+6.640:D,"had",,:S,"a","have",7.050+7.230:S,"long","along",7.240+7.670:S,"age","which",7.890+8.040:S,"old","go",8.050+8.250:C,"problem","problem",8.260+8.720:C,"of","of",8.730+8.890:C,"my","my",8.900+9.210:S,"bright","private",9.220+9.600:S,"lights","life",9.610+10.010:S,"not","uh",10.020+10.150
+</PATH>
+<PATH id="(3129-b-001)" word_cnt="29" file="3129" channel="b" sequence="76" R_T1="10.220" R_T2="19.430" word_aux="h_t1+t2">
+C,"working","working",10.160+10.590:C,"uh","uh",11.380+11.720:C,"this","this",12.010+12.350:D,"is",,:C,"the","the",12.360+12.410:S,"type","top",12.420+12.740:C,"of","of",12.750+12.850:S,"um","us",13.010+13.320:S,"switch","which",13.330+13.660:C,"where","where",13.670+13.860:C,"you","you",13.870+14.080:D,"flip",,:S,"the","let",14.250+14.420:S,"the","uh",14.590+14.830:S,"lever","some",14.840+14.970:S,"the","never",14.980+15.330:S,"turn","turns",15.340+15.730:C,"signal","signal",15.740+16.070:D,"on",,:S,"the","almost",16.080+16.450:C,"column","column",16.460+16.860:C,"and","and",17.840+18.010:S,"when","then",18.020+18.110:C,"i","i",18.120+18.270:C,"would","would",18.280+18.440:D,"um",,:S,"put","the",18.450+18.680:C,"it","it",19.070+19.290:C,"in","in",19.300+19.430
+</PATH>
+<PATH id="(3129-b-002)" word_cnt="36" file="3129" channel="b" sequence="78" R_T1="19.450" R_T2="31.620" word_aux="h_t1+t2">
+C,"the","the",19.440+19.490:S,"bright","private",19.500+19.880:S,"light","life",19.890+20.110:C,"position","position",20.120+20.690:S,"the","but",21.520+21.650:S,"lights","why",21.660+21.840:S,"would","should",21.850+22.070:C,"go","go",22.080+22.280:C,"out","out",22.290+22.550:C,"completely","completely",22.560+23.100:C,"which","which",23.890+24.050:C,"is","is",24.060+24.150:C,"even","even",24.160+24.360:C,"worse","worse",24.370+24.710:S,"than","in",24.720+24.810:S,"them","the",24.820+24.890:C,"just","just",24.900+25.160:C,"not","not",25.170+25.330:C,"getting","getting",25.340+25.550:S,"bright","right",25.640+25.980:S,"and","i",27.450+27.980:C,"i","i",27.990+28.160:C,"had","had",28.170+28.380:D,"presumed",,:S,"that","presented",28.390+28.950:C,"it","it",28.960+29.070:C,"was","was",29.080+29.340:D,"the",,:S,"switch","sweats",29.350+29.890:S,"and","that",30.500+30.680:S,"um","that",30.690+30.850:C,"this","this",30.860+31.060:C,"is","is",31.070+31.200:I,,"a",31.210+31.230:C,"uh","uh",31.240+31.640:D,"an",,
+</PATH>
+<PATH id="(3129-b-003)" word_cnt="29" file="3129" channel="b" sequence="80" R_T1="31.740" R_T2="40.490" word_aux="h_t1+t2">
+C,"older","older",31.650+32.070:C,"car","car",32.080+32.530:C,"it's","it's",32.540+32.690:C,"a","a",32.700+32.760:C,"seventy","seventy",32.770+33.200:I,,"tv",33.210+33.550:S,"two","and",33.560+33.650:S,"mg","the",33.660+33.710:C,"so","so",34.910+35.050:C,"i","i",35.060+35.150:C,"had","had",35.160+35.300:C,"to","to",35.310+35.390:C,"mail","mail",35.400+35.620:C,"order","order",35.630+35.870:C,"the","the",35.880+35.940:C,"part","part",35.950+36.350:C,"uh","uh",36.870+37.060:C,"which","which",37.070+37.270:C,"i","i",37.280+37.440:D,"had",,:S,"done","that",37.520+37.740:S,"and","it's",37.750+37.910:S,"tonight","at",37.920+37.970:S,"i","night",37.980+38.280:S,"went","time",38.290+38.730:S,"out","in",38.740+39.150:S,"and","it",39.160+39.240:C,"uh","uh",39.930+40.220:C,"at","at",40.390+40.490
+</PATH>
+<PATH id="(3129-b-004)" word_cnt="44" file="3129" channel="b" sequence="82" R_T1="40.500" R_T2="52.280" word_aux="h_t1+t2">
+C,"least","least",40.500+40.760:D,"hooked",,:S,"in","but",41.070+41.230:S,"the","didn't",41.240+41.580:S,"new","they",41.590+41.700:C,"part","part",41.710+42.080:I,,"oh",42.380+42.550:S,"only","it",42.560+42.670:S,"to","is",42.680+42.990:S,"discover","ever",43.000+43.270:C,"that","that",43.280+43.450:C,"that","that",43.910+44.020:C,"apparently","apparently",44.030+44.400:C,"is","is",44.410+44.520:C,"not","not",44.530+44.740:S,"the","a",44.750+44.770:C,"problem","problem",44.780+45.190:C,"it's","it's",45.200+45.330:C,"not","not",45.340+45.570:D,"in",,:C,"the","the",45.580+45.630:D,"switch",,:D,"because",,:S,"it","sweets",45.640+46.060:S,"does","did",46.070+46.170:S,"the","is",46.180+46.310:S,"same","that",46.320+46.460:S,"thing","that",46.640+46.820:S,"with","they",46.830+46.940:S,"the","did",47.010+47.100:S,"new","know",47.110+47.210:C,"switch","switch",47.220+47.640:C,"so","so",48.530+48.680:S,"i'll","all",48.690+48.910:C,"be","be",48.920+49.050:C,"faced","faced",49.060+49.440:C,"with","with",49.450+49.580:C,"having","having",49.590+49.850:C,"to","to",49.860+49.980:C,"return","return",49.990+50.400:C,"that","that",50.410+50.560:C,"product","product",50.570+51.050:C,"uh","uh",51.750+52.210:S,"and","in",52.220+52.310
+</PATH>
+<PATH id="(3129-b-005)" word_cnt="38" file="3129" channel="b" sequence="84" R_T1="52.320" R_T2="70.350" word_aux="h_t1+t2">
+C,"hoping","hoping",52.320+52.730:C,"that","that",52.740+52.950:C,"uh","uh",52.960+53.270:C,"you","you",53.280+53.360:C,"know","know",53.370+53.460:C,"that","that",53.470+53.590:C,"they","they",53.600+53.720:I,,"were",53.730+53.840:S,"will","looking",53.850+54.060:S,"accept","was",54.070+54.310:C,"it","it",54.320+54.440:D,"although",,:S,"it's","i",54.960+55.090:S,"been","was",55.100+55.280:S,"removed","better",55.290+55.510:S,"from","but",55.520+55.790:C,"the","the",55.800+55.850:S,"box","it",55.860+56.250:C,"it's","it's",56.260+56.410:I,,"honest",56.420+56.790:S,"obviously","about",56.800+57.080:S,"not","that",57.090+57.200:S,"been","on",57.210+57.340:S,"really","the",57.350+57.420:C,"used","used",57.430+57.970:C,"uh","uh",65.140+65.680:D,"i",,:S,"had","it",65.690+65.740:S,"done","than",67.970+68.200:C,"what","what",68.210+68.450:D,"diagnosis",,:C,"i","i",68.460+68.630:I,,"know",68.640+68.830:I,,"back",69.020+69.220:I,,"to",69.230+69.320:S,"could","good",69.330+69.580:C,"primarily","primarily",69.590+70.150:S,"by","about",70.160+70.370
+</PATH>
+<PATH id="(3129-b-006)" word_cnt="40" file="3129" channel="b" sequence="85" R_T1="70.350" R_T2="84.030" word_aux="h_t1+t2">
+S,"looking","making",70.380+70.700:S,"at","you",70.710+70.820:S,"a","know",70.830+70.920:C,"wiring","wiring",70.930+71.390:S,"diagram","back",71.400+71.770:S,"that","rampant",71.780+72.110:C,"i","i",72.120+72.180:C,"did","did",72.190+72.390:C,"have","have",72.400+72.690:D,"of",,:C,"the","the",72.700+72.750:C,"car","car",72.760+73.140:D,"and",,:D,"um",,:S,"pretty","cars",75.730+75.920:S,"much","messed",75.930+76.140:C,"decided","decided",76.150+76.670:I,,"that",76.680+76.830:C,"had","had",76.840+77.010:C,"to","to",77.020+77.070:C,"be","be",77.080+77.240:C,"the","the",77.250+77.300:C,"problem","problem",77.310+77.780:S,"i","i've",77.960+78.060:C,"talked","talked",78.070+78.330:C,"to","to",78.340+78.390:C,"one","one",78.400+78.610:D,"mechanic",,:D,"about",,:C,"it","it",80.250+80.330:D,"and",,:C,"he","he",80.340+80.480:I,,"suspect",80.490+81.040:I,,"it",81.050+81.140:S,"suspected","this",81.150+81.380:S,"the","way",81.390+81.530:S,"switch","it's",81.540+81.650:C,"also","also",81.660+82.160:C,"uh","uh",83.080+83.530:C,"but","but",83.890+84.010
+</PATH>
+<PATH id="(3129-b-007)" word_cnt="39" file="3129" channel="b" sequence="87" R_T1="84.040" R_T2="96.880" word_aux="h_t1+t2">
+S,"i've","i'm",84.020+84.190:C,"not","not",84.200+84.430:D,"yeah",,:D,"i",,:S,"really","generally",84.920+85.320:C,"don't","don't",85.330+85.480:D,"know",,:C,"what","what",85.490+85.720:C,"the","the",85.730+85.780:C,"problem","problem",85.790+86.180:D,"might",,:S,"be","that",86.190+86.320:S,"it","they",86.420+86.670:C,"it","it",87.930+88.080:S,"the","yeah",88.340+88.540:S,"other","they're",88.550+88.650:C,"switch","switch",88.660+89.130:C,"could","could",89.140+89.360:C,"be","be",89.370+89.520:C,"the","the",89.530+89.590:S,"main","same",89.600+89.960:C,"switch","switch",90.190+90.570:D,"itself",,:D,"um",,:D,"that",,:S,"turns","themselves",90.680+91.180:C,"the","the",92.210+92.280:S,"lights","cars",92.290+92.660:S,"on","a",92.670+92.710:S,"or","lot",92.720+93.090:S,"off","overall",93.100+93.610:C,"which","which",94.340+94.600:C,"is","is",94.610+94.710:S,"on","all",94.720+94.820:C,"the","the",94.830+94.900:I,,"bad",94.910+95.160:S,"dashboard","sport",95.170+95.600:S,"um","but",96.540+96.720:C,"it","it",96.730+96.870
+</PATH>
+<PATH id="(3129-b-008)" word_cnt="39" file="3129" channel="b" sequence="88" R_T1="96.880" R_T2="123.580" word_aux="h_t1+t2">
+S,"might","about",96.880+97.100:C,"be","be",97.110+97.220:C,"tied","tied",97.230+97.530:C,"into","into",97.540+97.900:C,"the","the",97.910+98.040:I,,"say",98.050+98.550:S,"equation","sub",98.560+98.790:S,"somehow","and",98.800+99.020:S,"but","uh",100.310+100.430:S,"i","uh",114.060+114.250:C,"i","i",115.180+115.480:C,"don't","don't",115.490+115.800:C,"know","know",115.810+116.060:C,"i","i",116.070+116.160:C,"should","should",116.170+116.420:C,"look","look",116.430+116.600:C,"at","at",116.610+116.730:C,"that","that",116.740+116.970:S,"i","that",116.980+117.180:S,"don't","i'll",117.450+117.650:C,"remember","remember",117.660+117.960:I,,"sitting",117.970+118.310:S,"seeing","on",118.320+118.600:S,"one","and",118.610+118.780:S,"in","they",118.790+118.870:S,"the","yeah",118.880+119.160:S,"um","and",120.350+120.540:S,"in","they",120.550+120.700:C,"the","the",121.300+121.350:D,"diagram",,:S,"but","back",121.360+121.650:S,"i'll","burner",121.660+121.840:S,"have","uh",122.490+122.750:C,"to","to",122.760+122.890:C,"go","go",122.900+122.980:C,"back","back",122.990+123.250:D,"and",,:D,"look",,:S,"at","this",123.340+123.520
+</PATH>
+<PATH id="(3129-b-009)" word_cnt="41" file="3129" channel="b" sequence="90" R_T1="123.650" R_T2="164.180" word_aux="h_t1+t2">
+S,"that","a",123.670+123.790:C,"uhhuh","uhhuh",136.920+137.100:C,"yeah","yeah",150.570+150.710:C,"that's","that's",150.720+150.920:C,"a","a",150.930+150.950:C,"good","good",150.960+151.160:C,"idea","idea",151.170+151.630:I,,"well",153.840+154.030:I,,"that",154.150+154.260:I,,"but",154.270+154.400:I,,"they",154.410+154.540:S,"what","say",154.550+154.780:S,"i've","out",154.790+155.000:S,"typically","of",155.010+155.060:S,"found","one",155.070+155.310:S,"when","to",155.320+155.370:C,"that","that",156.040+156.320:C,"uh","uh",156.330+156.670:C,"companies","companies",157.160+157.590:C,"are","are",157.600+157.640:C,"pretty","pretty",157.650+157.900:C,"good","good",157.910+158.080:C,"about","about",158.090+158.420:C,"accepting","accepting",158.740+159.250:S,"returns","return",159.260+159.680:S,"on","some",159.690+159.880:C,"products","products",159.890+160.390:C,"like","like",160.400+160.640:S,"that","for",160.650+160.840:S,"when","but",160.850+160.990:C,"they're","they're",161.000+161.100:C,"not","not",161.110+161.370:D,"needed",,:S,"after","they",161.710+161.820:S,"all","did",161.830+161.980:S,"and","have",161.990+162.190:C,"i","i",163.390+163.540:C,"hope","hope",163.550+163.770:S,"that","it",163.780+163.860:C,"that's","that's",163.870+164.100:C,"the","the",164.110+164.170
+</PATH>
+<PATH id="(3129-b-010)" word_cnt="40" file="3129" channel="b" sequence="92" R_T1="164.220" R_T2="185.760" word_aux="h_t1+t2">
+C,"case","case",164.180+164.540:C,"this","this",164.550+164.690:C,"time","time",164.700+165.030:C,"right","right",171.090+171.390:C,"exactly","exactly",171.560+172.090:I,,"and",172.780+172.930:S,"it's","now",172.940+173.150:S,"out","that",173.160+173.320:S,"of","i",173.330+173.430:S,"um","can",173.440+173.790:S,"kansas","is",173.800+173.970:S,"somewhere","into",175.120+175.470:S,"no","now",178.190+178.450:C,"it's","it's",178.460+178.600:C,"not","not",178.610+178.860:S,"i","um",179.690+179.980:S,"also","i've",179.990+180.100:C,"got","got",180.110+180.240:S,"a","had",180.250+180.290:C,"piece","piece",180.300+180.610:C,"of","of",180.620+180.670:S,"chrome","problems",180.680+181.210:C,"for","for",181.220+181.390:D,"the",,:C,"the","the",181.400+181.530:D,"hood",,:S,"that","a",181.810+181.870:S,"they","good",181.990+182.330:S,"had","day",182.340+182.710:C,"indicated","indicated",182.940+183.600:C,"was","was",183.610+183.820:D,"the",,:S,"right","drive",183.830+184.130:S,"part","car",184.140+184.360:C,"for","for",184.370+184.530:C,"this","this",184.540+184.700:C,"car","car",184.710+185.020:C,"but","but",185.030+185.320:C,"uh","uh",185.330+185.540:D,"it",,
+</PATH>
+<PATH id="(3129-b-011)" word_cnt="42" file="3129" channel="b" sequence="94" R_T1="185.790" R_T2="205.650" word_aux="h_t1+t2">
+S,"is","it's",185.680+185.930:C,"not","not",185.940+186.160:I,,"eight",186.170+186.330:S,"either","there",186.340+186.510:C,"it's","it's",186.520+186.890:D,"obviously",,:S,"doesn't","uh",186.900+187.180:S,"quite","obvious",187.190+187.600:S,"fit","it",187.610+187.680:S,"so","doesn't",187.690+188.010:S,"it","that",189.760+189.870:C,"must","must",189.880+190.090:C,"be","be",190.100+190.220:S,"for","district",190.230+190.460:C,"a","a",190.470+190.490:C,"different","different",190.500+190.860:C,"year","year",190.870+191.120:D,"so",,:D,"i'll",,:D,"have",,:S,"to","oh",192.090+192.200:S,"try","that's",192.210+192.430:S,"to","proper",192.440+192.780:S,"return","term",192.790+193.020:C,"that","that",193.030+193.200:C,"as","as",193.210+193.330:C,"well","well",193.340+193.710:C,"well","well",201.560+201.800:C,"i","i",202.000+202.110:C,"had","had",202.120+202.360:C,"one","one",202.370+202.590:C,"person","person",202.600+202.970:C,"that","that",202.980+203.080:C,"i","i",203.090+203.210:S,"used","use",203.220+203.550:C,"for","for",203.560+203.710:C,"years","years",203.720+204.090:C,"and","and",204.100+204.180:C,"years","years",204.190+204.710:C,"on","on",204.990+205.190:C,"this","this",205.200+205.320:C,"car","car",205.330+205.690
+</PATH>
+<PATH id="(3129-b-012)" word_cnt="34" file="3129" channel="b" sequence="97" R_T1="217.800" R_T2="228.340" word_aux="h_t1+t2">
+C,"last","last",217.750+218.010:C,"time","time",218.020+218.110:C,"i","i",218.120+218.200:C,"called","called",218.210+218.490:S,"him","cards",218.500+218.580:C,"back","back",218.590+218.870:C,"it","it",218.880+218.950:C,"turned","turned",218.960+219.190:C,"out","out",219.200+219.400:D,"that",,:D,"he",,:S,"had","yet",219.410+219.810:S,"further","farther",220.130+220.460:C,"specialized","specialized",220.470+221.250:S,"instead","that",221.520+221.670:C,"of","of",221.680+221.840:C,"uh","uh",221.850+222.110:C,"all","all",223.060+223.350:S,"import","in",223.360+223.450:S,"cars","for",223.460+223.710:S,"he","car",223.720+224.080:S,"has","is",224.300+224.530:S,"narrowed","there",224.540+224.800:S,"it","is",224.810+224.910:C,"down","down",224.920+225.160:C,"to","to",225.170+225.220:D,"where",,:S,"he","very",225.230+225.560:C,"only","only",225.570+225.900:S,"works","worked",225.910+226.340:C,"on","on",226.350+226.560:C,"uh","uh",227.610+227.860:I,,"in",227.870+227.920:C,"german","german",227.930+228.290
+</PATH>
+<PATH id="(3129-b-013)" word_cnt="42" file="3129" channel="b" sequence="99" R_T1="228.390" R_T2="243.050" word_aux="h_t1+t2">
+C,"cars","cars",228.300+228.970:C,"and","and",229.320+229.590:C,"german","german",232.180+232.460:S,"cars","pet",232.470+232.910:C,"i'm","i'm",233.980+234.110:C,"not","not",234.120+234.260:C,"sure","sure",234.270+234.440:D,"that",,:D,"he",,:D,"works",,:D,"on",,:D,"much",,:S,"else","they",234.450+234.620:S,"at","worked",234.630+234.900:S,"all","myself",234.910+235.450:S,"but","that",235.460+235.550:S,"he","nobody",235.560+235.900:S,"doesn't","does",235.910+236.120:C,"work","work",236.130+236.390:D,"on",,:S,"british","all",236.400+236.490:S,"cars","brick",236.500+236.800:S,"any","cards",236.810+237.210:S,"more","anymore",237.220+237.680:C,"and","and",238.460+238.650:D,"gave",,:D,"me",,:S,"the","every",238.660+238.860:S,"name","night",238.870+239.150:S,"of","to",239.160+239.210:C,"somebody","somebody",239.220+239.640:C,"else","else",239.650+239.840:C,"to","to",239.850+239.920:C,"take","take",239.930+240.160:C,"a","a",240.170+240.210:C,"look","look",240.220+240.420:C,"at","at",240.430+240.570:C,"it","it",240.580+240.640:C,"so","so",241.500+241.780:S,"um","i'm",241.790+241.990:C,"uh","uh",242.170+242.670:C,"i","i",242.900+243.040
+</PATH>
+<PATH id="(3129-b-014)" word_cnt="38" file="3129" channel="b" sequence="100" R_T1="243.050" R_T2="252.170" word_aux="h_t1+t2">
+S,"may","might",243.050+243.240:C,"have","have",243.250+243.360:C,"to","to",243.370+243.440:C,"check","check",243.450+243.700:C,"with","with",243.710+243.810:C,"that","that",243.820+243.950:C,"person","person",243.960+244.330:D,"as",,:S,"it","is",244.470+244.630:C,"turns","turns",244.640+244.900:C,"out","out",244.910+245.140:C,"that","that",245.150+245.290:C,"one","one",245.300+245.500:S,"that","pet",245.510+245.740:C,"shop","shop",245.750+246.050:S,"is","this",246.060+246.200:S,"near","year",246.210+246.480:S,"where","we're",246.490+246.670:S,"i","uh",246.680+246.840:C,"now","now",247.550+247.780:I,,"i",247.790+247.820:C,"work","work",247.830+248.180:C,"so","so",248.920+249.100:D,"i'll",,:S,"um","i",249.110+249.530:C,"i","i",249.870+249.910:C,"should","should",249.920+250.090:D,"be",,:D,"able",,:D,"to",,:D,"take",,:S,"it","have",250.100+250.270:S,"in","taken",250.280+250.640:C,"and","and",250.650+250.830:C,"check","check",251.110+251.430:C,"that","that",251.440+251.580:C,"part","part",251.590+251.890:S,"out","yeah",251.900+252.060
+</PATH>
+<PATH id="(3129-b-015)" word_cnt="33" file="3129" channel="b" sequence="104" R_T1="281.340" R_T2="291.740" word_aux="h_t1+t2">
+C,"better","better",281.240+281.520:C,"job","job",281.530+281.850:C,"of","of",281.860+281.960:C,"saving","saving",281.970+282.450:S,"the","her",282.460+282.610:S,"receipt","seat",282.620+283.020:C,"because","because",284.230+284.660:S,"um","the",284.900+285.300:C,"i","i",285.790+285.870:C,"didn't","didn't",285.880+286.150:C,"take","take",286.160+286.340:S,"it","and",286.350+286.400:C,"in","in",286.410+286.560:C,"right","right",286.570+286.790:C,"away","away",286.800+287.360:D,"and",,:S,"let","that",287.470+287.630:S,"a","the",287.860+287.940:C,"whole","whole",287.950+288.150:C,"year","year",288.160+288.380:S,"go","ago",288.390+288.590:C,"by","by",288.600+289.020:C,"uh","uh",289.650+289.880:C,"some","some",289.890+290.070:C,"of","of",290.080+290.130:C,"the","the",290.140+290.190:C,"buttons","buttons",290.200+290.560:S,"didn't","did",290.570+290.780:C,"work","work",290.790+291.090:D,"right",,:D,"where",,:S,"you","property",291.100+291.610:C,"had","had",291.620+291.760
+</PATH>
+<PATH id="(3129-b-016)" word_cnt="29" file="3129" channel="b" sequence="106" R_T1="291.770" R_T2="300.060" word_aux="h_t1+t2">
+S,"to","that",291.770+291.920:S,"actually","she",291.930+292.090:C,"physically","physically",292.100+292.630:C,"hold","hold",292.640+292.950:S,"them","it",292.960+293.020:C,"down","down",293.030+293.340:D,"to",,:D,"get",,:D,"it",,:C,"to","to",293.350+293.450:D,"record",,:D,"or",,:S,"to","pittsburgh",293.460+293.940:S,"play","corporate",293.950+294.380:C,"and","and",295.860+296.260:C,"as","as",296.470+296.540:C,"it","it",296.550+296.750:C,"turned","turned",296.760+297.040:C,"out","out",297.050+297.240:C,"it","it",297.250+297.350:C,"had","had",297.360+297.530:C,"a","a",297.540+297.590:I,,"four",297.600+297.870:S,"full","year",297.880+298.060:S,"year's","for",298.070+298.390:S,"warranty","the",298.500+298.550:C,"and","and",299.530+299.750:C,"i","i",299.760+299.840:D,"could",,
+</PATH>
+</SPEAKER>
+</SYSTEM>

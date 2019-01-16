@@ -1,0 +1,8 @@
+../src/RTTMValidator-v04.pl (version v04) run on 2004 Apr 22 at 16:49:21
+command line:  ../src/RTTMValidator-v04.pl (version v04) -i test32.rttm
+ERROR: Speaker 1 has SU partially overlapping with NOSCORE tag at 4.220; see line 23
+ERROR: Speaker 2 has SPEAKER partially overlapping with NOSCORE tag at 20.670; see line 26
+ERROR: Speaker 2 has LEXEME partially overlapping with NOSCORE tag at 23.820; see line 39
+ERROR: Speaker 2 has EDIT partially overlapping with NOSCORE tag at 23.820; see line 38
+ERROR: Speaker 2 has SU partially overlapping with NOSCORE tag at 23.820; see line 37
+Validation aborted

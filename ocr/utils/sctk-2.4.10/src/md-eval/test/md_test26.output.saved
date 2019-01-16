@@ -1,0 +1,1058 @@
+command line (run on 2004 Oct 29 at 14:17:55):  ../src/md-eval-v19a.pl -af -e -D -d -W -w -t 1.0 -l 2 -u md_test26.uem -r md_test26.ref.rttm -s md_test26.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+Word alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        everybody lex     1317.36 1317.82 peter_jennin        everybody lex     (1317.36 1317.82) 1317.36 1317.82 peter_jennin
+   1   -   -   0            loves lex     1317.82 1318.04 peter_jennin            loves lex     (1317.82 1318.04) 1317.82 1318.04 peter_jennin
+   1   -   -   0        dinosaurs lex     1318.04 1318.78 peter_jennin        dinosaurs lex     (1318.04 1318.78) 1318.04 1318.78 peter_jennin
+   1   -   -   0              the lex     1318.78 1318.84 peter_jennin              the lex     (1318.78 1318.84) 1318.78 1318.84 peter_jennin
+   1   -   -   0           twenty lex     1318.84 1319.08 peter_jennin           twenty lex     (1318.84 1319.08) 1318.84 1319.08 peter_jennin
+   1   -   -   0            three lex     1319.08 1319.32 peter_jennin            three lex     (1319.08 1319.32) 1319.08 1319.32 peter_jennin
+   1   -   -   0             foot lex     1319.33 1319.54 peter_jennin             foot lex     (1319.33 1319.54) 1319.33 1319.54 peter_jennin
+   1   -   -   0             long lex     1319.54 1319.88 peter_jennin             long lex     (1319.54 1319.88) 1319.54 1319.88 peter_jennin
+   1   -   -   0         fourteen lex     1319.88 1320.44 peter_jennin         fourteen lex     (1319.88 1320.44) 1319.88 1320.44 peter_jennin
+   1   -   -   0             foot lex     1320.44 1320.68 peter_jennin             foot lex     (1320.44 1320.68) 1320.44 1320.68 peter_jennin
+   1   -   -   0             high lex     1320.68 1321.12 peter_jennin             high lex     (1320.68 1321.12) 1320.68 1321.12 peter_jennin
+   1   -   -   0    tyrannosaurus lex     1321.12 1322.06 peter_jennin    tyrannosaurus lex     (1321.12 1322.06) 1321.12 1322.06 peter_jennin
+   1   -   -   0             cost lex     1322.79 1323.10 peter_jennin             cost lex     (1322.79 1323.10) 1322.79 1323.10 peter_jennin
+   1   -   -   0            three lex     1323.10 1323.28 peter_jennin            three lex     (1323.10 1323.28) 1323.10 1323.28 peter_jennin
+   1   -   -   0          hundred lex     1323.28 1323.53 peter_jennin          hundred lex     (1323.28 1323.53) 1323.28 1323.53 peter_jennin
+   1   -   -   0         thousand lex     1323.53 1323.89 peter_jennin         thousand lex     (1323.53 1323.89) 1323.53 1323.89 peter_jennin
+   1   -   -   0          dollars lex     1323.89 1324.40 peter_jennin          dollars lex     (1323.89 1324.40) 1323.89 1324.40 peter_jennin
+   1   -   -   0             when lex     1325.61 1325.84 peter_jennin             when lex     (1325.61 1325.84) 1325.61 1325.84 peter_jennin
+   1   -   -   0               we lex     1325.84 1325.96 peter_jennin               we lex     (1325.84 1325.96) 1325.84 1325.96 peter_jennin
+   1   -   -   0             come lex     1325.96 1326.17 peter_jennin             come lex     (1325.96 1326.17) 1325.96 1326.17 peter_jennin
+   1   -   -   0             back lex     1326.17 1326.50 peter_jennin             back lex     (1326.17 1326.50) 1326.17 1326.50 peter_jennin
+   1   -   -   0              the lex     1326.80 1326.98 peter_jennin              the lex     (1326.80 1326.98) 1326.80 1326.98 peter_jennin
+   1   -   -   0            great lex     1326.98 1327.35 peter_jennin            great lex     (1326.98 1327.35) 1326.98 1327.35 peter_jennin
+   1   -   -   0     communicator lex     1327.35 1328.01 peter_jennin     communicator lex     (1327.35 1328.01) 1327.35 1328.01 peter_jennin
+   1   -   -   0            those lex     1329.24 1329.55 ronald_reaga            those lex     (1329.24 1329.55) 1329.24 1329.55 ronald_reaga
+   1   -   -   0             last lex     1329.55 1329.88 ronald_reaga             last lex     (1329.55 1329.88) 1329.55 1329.88 ronald_reaga
+   1   -   -   0              few lex     1329.88 1330.04 ronald_reaga              few lex     (1329.88 1330.04) 1329.88 1330.04 ronald_reaga
+   1   -   -   0            weeks lex     1330.04 1330.36 ronald_reaga            weeks lex     (1330.04 1330.36) 1330.04 1330.36 ronald_reaga
+   1   -   -   0             have lex     1330.36 1330.49 ronald_reaga             have lex     (1330.36 1330.49) 1330.36 1330.49 ronald_reaga
+   1   -   -   0           really lex     1330.49 1330.72 ronald_reaga           really lex     (1330.49 1330.72) 1330.49 1330.72 ronald_reaga
+   1   -   -   0             been lex     1330.72 1330.87 ronald_reaga             been lex     (1330.72 1330.87) 1330.72 1330.87 ronald_reaga
+   1   -   -   0           hectic lex     1330.87 1331.26 ronald_reaga           hectic lex     (1330.87 1331.26) 1330.87 1331.26 ronald_reaga
+   1   -   -   0             what lex     1331.26 1331.43 ronald_reaga             what lex     (1331.26 1331.43) 1331.26 1331.43 ronald_reaga
+   1   -   -   0             with lex     1331.43 1331.61 ronald_reaga             with lex     (1331.43 1331.61) 1331.43 1331.61 ronald_reaga
+   1   -   -   0            libya lex     1331.61 1332.10 ronald_reaga            libya lex     (1331.61 1332.10) 1331.61 1332.10 ronald_reaga
+   1   -   -   0        nicaragua lex     1332.65 1333.43 ronald_reaga        nicaragua lex     (1332.65 1333.43) 1332.65 1333.43 ronald_reaga
+   1   -   -   0              and lex     1334.06 1334.16 ronald_reaga              and lex     (1334.06 1334.16) 1334.06 1334.16 ronald_reaga
+   1   -   -   0              the lex     1334.16 1334.24 ronald_reaga              the lex     (1334.16 1334.24) 1334.16 1334.24 ronald_reaga
+   1   -   -   0           budget lex     1334.24 1334.70 ronald_reaga           budget lex     (1334.24 1334.70) 1334.24 1334.70 ronald_reaga
+   1   -   -   0              and lex     1334.70 1334.94 ronald_reaga              and lex     (1334.70 1334.94) 1334.70 1334.94 ronald_reaga
+   1   -   -   0            taxes lex     1334.94 1335.57 ronald_reaga            taxes lex     (1334.94 1335.57) 1334.94 1335.57 ronald_reaga
+   1   -   -   0                i lex     1336.61 1336.67 ronald_reaga                i lex     (1336.61 1336.67) 1336.61 1336.67 ronald_reaga
+   1   -   -   0            don't lex     1336.67 1336.79 ronald_reaga            don't lex     (1336.67 1336.79) 1336.67 1336.79 ronald_reaga
+   1   -   -   0             know lex     1336.79 1336.87 ronald_reaga             know lex     (1336.79 1336.87) 1336.79 1336.87 ronald_reaga
+   1   -   -   0            about lex     1336.87 1337.16 ronald_reaga            about lex     (1336.87 1337.16) 1336.87 1337.16 ronald_reaga
+   1   -   -   0              you lex     1337.16 1337.36 ronald_reaga              you lex     (1337.16 1337.36) 1337.16 1337.36 ronald_reaga
+   1   -   -   0              but lex     1337.36 1337.47 ronald_reaga              but lex     (1337.36 1337.47) 1337.36 1337.47 ronald_reaga
+   1   -   -   0             i've lex     1337.47 1337.63 ronald_reaga             i've lex     (1337.47 1337.63) 1337.47 1337.63 ronald_reaga
+   1   -   -   0             been lex     1337.63 1337.73 ronald_reaga             been lex     (1337.63 1337.73) 1337.63 1337.73 ronald_reaga
+   1   -   -   0          working lex     1337.73 1338.13 ronald_reaga          working lex     (1337.73 1338.13) 1337.73 1338.13 ronald_reaga
+   1   -   -   0             long lex     1338.13 1338.40 ronald_reaga             long lex     (1338.13 1338.40) 1338.13 1338.40 ronald_reaga
+   1   -   -   0            hours lex     1338.40 1338.82 ronald_reaga            hours lex     (1338.40 1338.82) 1338.40 1338.82 ronald_reaga
+   1   -   -   0             i've lex     1338.82 1339.00 ronald_reaga             i've lex     (1338.82 1339.00) 1338.82 1339.00 ronald_reaga
+   1   -   -   0           really lex     1339.00 1339.21 ronald_reaga           really lex     (1339.00 1339.21) 1339.00 1339.21 ronald_reaga
+   1   -   -   0             been lex     1339.21 1339.38 ronald_reaga             been lex     (1339.21 1339.38) 1339.21 1339.38 ronald_reaga
+   1   -   -   0          burning lex     1339.38 1339.72 ronald_reaga          burning lex     (1339.38 1339.72) 1339.38 1339.72 ronald_reaga
+   1   -   -   0              the lex     1339.72 1339.78 ronald_reaga              the lex     (1339.72 1339.78) 1339.72 1339.78 ronald_reaga
+   1   -   -   0           midday lex     1339.78 1340.30 ronald_reaga           midday lex     (1339.78 1340.30) 1339.78 1340.30 ronald_reaga
+   1   -   -   0              oil lex     1340.30 1340.60 ronald_reaga              oil lex     (1340.30 1340.60) 1340.30 1340.60 ronald_reaga
+   1   -   -   0             [ns] lex     1340.60 1344.36 ronald_reaga             [ns] lex     (1340.60 1344.36) 1340.60 1344.36 ronald_reaga
+   1   -   -   0                i lex     1344.36 1344.47 ronald_reaga                i lex     (1344.36 1344.47) 1344.36 1344.47 ronald_reaga
+   1   -   -   0             just lex     1344.47 1344.73 ronald_reaga             just lex     (1344.47 1344.73) 1344.47 1344.73 ronald_reaga
+   1   -   -   0            can't lex     1344.73 1345.09 ronald_reaga            can't lex     (1344.73 1345.09) 1344.73 1345.09 ronald_reaga
+   1   -   -   0             wait lex     1345.09 1345.28 ronald_reaga             wait lex     (1345.09 1345.28) 1345.09 1345.28 ronald_reaga
+   1   -   -   0               to lex     1345.36 1345.48 ronald_reaga               to lex     (1345.36 1345.48) 1345.36 1345.48 ronald_reaga
+   1   -   -   0       accomplish lex     1345.48 1346.13 ronald_reaga       accomplish lex     (1345.48 1346.13) 1345.48 1346.13 ronald_reaga
+   1   -   -   0               it lex     1346.13 1346.25 ronald_reaga               it lex     (1346.13 1346.25) 1346.13 1346.25 ronald_reaga
+   1   -   -   0             [ns] lex     1346.25 1347.02 ronald_reaga             [ns] lex     (1346.25 1347.02) 1346.25 1347.02 ronald_reaga
+   1   -   -   0                i lex     1347.02 1349.97 ronald_reaga                i lex     (1347.02 1349.97) 1347.02 1349.97 ronald_reaga
+   1   -   -   0             will lex     1350.00 1350.31 ronald_reaga             will lex     (1350.00 1350.31) 1350.00 1350.31 ronald_reaga
+   1   -   -   0              not lex     1350.31 1350.65 ronald_reaga              not lex     (1350.31 1350.65) 1350.31 1350.65 ronald_reaga
+   1   -   -   0             make lex     1350.65 1351.01 ronald_reaga             make lex     (1350.65 1351.01) 1350.65 1351.01 ronald_reaga
+   1   -   -   0              age lex     1351.01 1351.39 ronald_reaga              age lex     (1351.01 1351.39) 1351.01 1351.39 ronald_reaga
+   1   -   -   0               an lex     1351.39 1351.48 ronald_reaga               an lex     (1351.39 1351.48) 1351.39 1351.48 ronald_reaga
+   1   -   -   0            issue lex     1351.48 1351.88 ronald_reaga            issue lex     (1351.48 1351.88) 1351.48 1351.88 ronald_reaga
+   1   -   -   0               of lex     1351.88 1351.96 ronald_reaga               of lex     (1351.88 1351.96) 1351.88 1351.96 ronald_reaga
+   1   -   -   0             this lex     1351.96 1352.20 ronald_reaga             this lex     (1351.96 1352.20) 1351.96 1352.20 ronald_reaga
+   1   -   -   0         campaign lex     1352.20 1352.75 ronald_reaga         campaign lex     (1352.20 1352.75) 1352.20 1352.75 ronald_reaga
+   1   -   -   0                i lex     1352.92 1353.11 ronald_reaga                i lex     (1352.92 1353.11) 1352.92 1353.11 ronald_reaga
+   1   -   -   0               am lex     1353.11 1353.25 ronald_reaga               am lex     (1353.11 1353.25) 1353.11 1353.25 ronald_reaga
+   1   -   -   0              not lex     1353.25 1353.45 ronald_reaga              not lex     (1353.25 1353.45) 1353.25 1353.45 ronald_reaga
+   1   -   -   0            going lex     1353.45 1353.71 ronald_reaga            going lex     (1353.45 1353.71) 1353.45 1353.71 ronald_reaga
+   1   -   -   0               to lex     1353.71 1353.85 ronald_reaga               to lex     (1353.71 1353.85) 1353.71 1353.85 ronald_reaga
+   1   -   -   0          exploit lex     1353.85 1354.36 ronald_reaga          exploit lex     (1353.85 1354.36) 1353.85 1354.36 ronald_reaga
+   1   -   -   0              for lex     1354.87 1355.30 ronald_reaga              for lex     (1354.87 1355.30) 1354.87 1355.30 ronald_reaga
+   1   -   -   0        political lex     1355.77 1356.15 ronald_reaga        political lex     (1355.77 1356.15) 1355.77 1356.15 ronald_reaga
+   1   -   -   0         purposes lex     1356.15 1356.83 ronald_reaga         purposes lex     (1356.15 1356.83) 1356.15 1356.83 ronald_reaga
+   1   -   -   0               my lex     1357.29 1357.65 ronald_reaga               my lex     (1357.29 1357.65) 1357.29 1357.65 ronald_reaga
+   1   -   -   0       opponent's lex     1357.65 1358.33 ronald_reaga       opponent's lex     (1357.65 1358.33) 1357.65 1358.33 ronald_reaga
+   1   -   -   0            youth lex     1358.41 1358.79 ronald_reaga            youth lex     (1358.41 1358.79) 1358.41 1358.79 ronald_reaga
+   1   -   -   0              and lex     1358.79 1358.92 ronald_reaga              and lex     (1358.79 1358.92) 1358.79 1358.92 ronald_reaga
+   1   -   -   0     inexperience lex     1358.92 1359.70 ronald_reaga     inexperience lex     (1358.92 1359.70) 1358.92 1359.70 ronald_reaga
+   1   -   -   0            those lex     1369.24 1369.55 ronald_reaga            those lex     (1369.24 1369.55) 1369.24 1369.55 ronald_reaga
+   1   -   -   0             last lex     1369.55 1369.88 ronald_reaga             last lex     (1369.55 1369.88) 1369.55 1369.88 ronald_reaga
+   1   -   -   0              few lex     1369.88 1370.04 ronald_reaga              few lex     (1369.88 1370.04) 1369.88 1370.04 ronald_reaga
+   1   -   -   0            weeks lex     1370.04 1370.36 ronald_reaga            weeks lex     (1370.04 1370.36) 1370.04 1370.36 ronald_reaga
+   1   -   -   0          finally lex     1479.31 1479.61 peter_jennin          finally lex     (1479.31 1479.61) 1479.31 1479.61 peter_jennin
+   1   -   -   0             this lex     1479.61 1479.77 peter_jennin             this lex     (1479.61 1479.77) 1479.61 1479.77 peter_jennin
+   1   -   -   0          evening lex     1479.77 1480.02 peter_jennin          evening lex     (1479.77 1480.02) 1479.77 1480.02 peter_jennin
+   1   -   -   0           ronald lex     1480.02 1480.31 peter_jennin           ronald lex     (1480.02 1480.31) 1480.02 1480.31 peter_jennin
+   1   -   -   0           reagan lex     1480.31 1480.69 peter_jennin           reagan lex     (1480.31 1480.69) 1480.31 1480.69 peter_jennin
+   1   -   -   0             only lex     1480.78 1481.13 peter_jennin             only lex     (1480.78 1481.13) 1480.78 1481.13 peter_jennin
+   1   -   -   0              the lex     1481.13 1481.24 peter_jennin              the lex     (1481.13 1481.24) 1481.13 1481.24 peter_jennin
+   1   -   -   0            third lex     1481.24 1481.61 peter_jennin            third lex     (1481.24 1481.61) 1481.24 1481.61 peter_jennin
+   1   -   -   0        president lex     1481.61 1482.26 peter_jennin        president lex     (1481.61 1482.26) 1481.61 1482.26 peter_jennin
+   1   -   -   0               to lex     1482.26 1482.39 peter_jennin               to lex     (1482.26 1482.39) 1482.26 1482.39 peter_jennin
+   1   -   -   0            reach lex     1482.39 1482.82 peter_jennin            reach lex     (1482.39 1482.82) 1482.39 1482.82 peter_jennin
+   1   -   -   0           ninety lex     1482.82 1483.27 peter_jennin           ninety lex     (1482.82 1483.27) 1482.82 1483.27 peter_jennin
+   1   -   -   0        listening lex     1483.93 1484.28 peter_jennin        listening lex     (1483.93 1484.28) 1483.93 1484.28 peter_jennin
+   1   -   -   0               to lex     1484.28 1484.36 peter_jennin               to lex     (1484.28 1484.36) 1484.28 1484.36 peter_jennin
+   1   -   -   0              the lex     1484.36 1484.45 peter_jennin              the lex     (1484.36 1484.45) 1484.36 1484.45 peter_jennin
+   1   -   -   0           debate lex     1484.45 1484.83 peter_jennin           debate lex     (1484.45 1484.83) 1484.45 1484.83 peter_jennin
+   1   -   -   0               in lex     1484.83 1484.99 peter_jennin               in lex     (1484.83 1484.99) 1484.83 1484.99 peter_jennin
+   1   -   -   0              the lex     1484.99 1485.17 peter_jennin              the lex     (1484.99 1485.17) 1484.99 1485.17 peter_jennin
+   1   -   -   0           latest lex     1485.21 1485.58 peter_jennin           latest lex     (1485.21 1485.58) 1485.21 1485.58 peter_jennin
+   1   -   -   0     presidential lex     1485.58 1486.06 peter_jennin     presidential lex     (1485.58 1486.06) 1485.58 1486.06 peter_jennin
+   1   -   -   0         campaign lex     1486.06 1486.48 peter_jennin         campaign lex     (1486.06 1486.48) 1486.06 1486.48 peter_jennin
+   1   -   -   0            about lex     1486.48 1486.69 peter_jennin            about lex     (1486.48 1486.69) 1486.48 1486.69 peter_jennin
+   1   -   -   0              the lex     1486.69 1486.76 peter_jennin              the lex     (1486.69 1486.76) 1486.69 1486.76 peter_jennin
+   1   -   -   0             size lex     1486.76 1487.10 peter_jennin             size lex     (1486.76 1487.10) 1486.76 1487.10 peter_jennin
+   1   -   -   0               of lex     1487.10 1487.20 peter_jennin               of lex     (1487.10 1487.20) 1487.10 1487.20 peter_jennin
+   1   -   -   0       government lex     1487.20 1487.67 peter_jennin       government lex     (1487.20 1487.67) 1487.20 1487.67 peter_jennin
+   1   -   -   0              and lex     1487.67 1487.82 peter_jennin              and lex     (1487.67 1487.82) 1487.67 1487.82 peter_jennin
+   1   -   -   0            taxes lex     1487.82 1488.24 peter_jennin            taxes lex     (1487.82 1488.24) 1487.82 1488.24 peter_jennin
+   1   -   -   0              and lex     1488.24 1488.32 peter_jennin              and lex     (1488.24 1488.32) 1488.24 1488.32 peter_jennin
+   1   -   -   0          missile lex     1488.32 1488.56 peter_jennin          missile lex     (1488.32 1488.56) 1488.32 1488.56 peter_jennin
+   1   -   -   0          defense lex     1488.56 1488.89 peter_jennin          defense lex     (1488.56 1488.89) 1488.56 1488.89 peter_jennin
+   1   -   -   0          systems lex     1488.89 1489.36 peter_jennin          systems lex     (1488.89 1489.36) 1488.89 1489.36 peter_jennin
+   1   -   -   0               is lex     1489.96 1490.18 peter_jennin               is lex     (1489.96 1490.18) 1489.96 1490.18 peter_jennin
+   1   -   -   0               to lex     1490.18 1490.28 peter_jennin               to lex     (1490.18 1490.28) 1490.18 1490.28 peter_jennin
+   1   -   -   0               be lex     1490.28 1490.43 peter_jennin               be lex     (1490.28 1490.43) 1490.28 1490.43 peter_jennin
+   1   -   -   0         reminded lex     1490.43 1490.94 peter_jennin         reminded lex     (1490.43 1490.94) 1490.43 1490.94 peter_jennin
+   1   -   -   0               of lex     1490.94 1491.00 peter_jennin               of lex     (1490.94 1491.00) 1490.94 1491.00 peter_jennin
+   1   -   -   0              how lex     1491.00 1491.12 peter_jennin              how lex     (1491.00 1491.12) 1491.00 1491.12 peter_jennin
+   1   -   -   0             much lex     1491.12 1491.33 peter_jennin             much lex     (1491.12 1491.33) 1491.12 1491.33 peter_jennin
+   1   -   -   0        influence lex     1491.33 1491.73 peter_jennin        influence lex     (1491.33 1491.73) 1491.33 1491.73 peter_jennin
+   1   -   -   0              mr. lex     1491.73 1491.98 peter_jennin              mr. lex     (1491.73 1491.98) 1491.73 1491.98 peter_jennin
+   1   -   -   0           reagan lex     1491.98 1492.29 peter_jennin           reagan lex     (1491.98 1492.29) 1491.98 1492.29 peter_jennin
+   1   -   -   0              had lex     1492.29 1492.67 peter_jennin              had lex     (1492.29 1492.67) 1492.29 1492.67 peter_jennin
+   1   -   -   0               on lex     1492.67 1492.86 peter_jennin               on lex     (1492.67 1492.86) 1492.67 1492.86 peter_jennin
+   1   -   -   0              the lex     1492.86 1492.96 peter_jennin              the lex     (1492.86 1492.96) 1492.86 1492.96 peter_jennin
+   1   -   -   0           debate lex     1492.96 1493.36 peter_jennin           debate lex     (1492.96 1493.36) 1492.96 1493.36 peter_jennin
+   1   -   -   0            about lex     1493.36 1493.66 peter_jennin            about lex     (1493.36 1493.66) 1493.36 1493.66 peter_jennin
+   1   -   -   0         national lex     1493.66 1494.09 peter_jennin         national lex     (1493.66 1494.09) 1493.66 1494.09 peter_jennin
+   1   -   -   0             life lex     1494.09 1494.52 peter_jennin             life lex     (1494.09 1494.52) 1494.09 1494.52 peter_jennin
+   1   -   -   0              and lex     1494.96 1495.25 peter_jennin              and lex     (1494.96 1495.25) 1494.96 1495.25 peter_jennin
+   1   -   -   0        america's lex     1495.25 1495.81 peter_jennin        america's lex     (1495.25 1495.81) 1495.25 1495.81 peter_jennin
+   1   -   -   0             role lex     1495.81 1496.14 peter_jennin             role lex     (1495.81 1496.14) 1495.81 1496.14 peter_jennin
+   1   -   -   0               in lex     1496.14 1496.36 peter_jennin               in lex     (1496.14 1496.36) 1496.14 1496.36 peter_jennin
+   1   -   -   0              the lex     1496.36 1496.44 peter_jennin              the lex     (1496.36 1496.44) 1496.36 1496.44 peter_jennin
+   1   -   -   0            world lex     1496.44 1496.90 peter_jennin            world lex     (1496.44 1496.90) 1496.44 1496.90 peter_jennin
+   1   -   -   0               he lex     1497.47 1497.99 peter_jennin               he lex     (1497.47 1497.99) 1497.47 1497.99 peter_jennin
+   1   -   -   0              and lex     1497.99 1498.27 peter_jennin              and lex     (1497.99 1498.27) 1497.99 1498.27 peter_jennin
+   1   -   -   0             mrs. lex     1498.27 1498.61 peter_jennin             mrs. lex     (1498.27 1498.61) 1498.27 1498.61 peter_jennin
+   1   -   -   0           reagan lex     1498.61 1498.99 peter_jennin           reagan lex     (1498.61 1498.99) 1498.61 1498.99 peter_jennin
+   1   -   -   0             have lex     1498.99 1499.19 peter_jennin             have lex     (1498.99 1499.19) 1498.99 1499.19 peter_jennin
+   1   -   -   0             been lex     1499.19 1499.36 peter_jennin             been lex     (1499.19 1499.36) 1499.19 1499.36 peter_jennin
+   1   -   -   0          married lex     1499.36 1499.77 peter_jennin          married lex     (1499.36 1499.77) 1499.36 1499.77 peter_jennin
+   1   -   -   0              for lex     1499.77 1500.05 peter_jennin              for lex     (1499.77 1500.05) 1499.77 1500.05 peter_jennin
+   1   -   -   0            forty lex     1500.05 1500.34 peter_jennin            forty lex     (1500.05 1500.34) 1500.05 1500.34 peter_jennin
+   1   -   -   0            eight lex     1500.34 1500.63 peter_jennin            eight lex     (1500.34 1500.63) 1500.34 1500.63 peter_jennin
+   1   -   -   0            years lex     1500.63 1500.97 peter_jennin            years lex     (1500.63 1500.97) 1500.63 1500.97 peter_jennin
+   1   -   -   0              now lex     1500.97 1501.15 peter_jennin              now lex     (1500.97 1501.15) 1500.97 1501.15 peter_jennin
+   1   -   -   0            she's lex     1501.15 1501.42 peter_jennin            she's lex     (1501.15 1501.42) 1501.15 1501.42 peter_jennin
+   1   -   -   0             been lex     1501.42 1501.55 peter_jennin             been lex     (1501.42 1501.55) 1501.42 1501.55 peter_jennin
+   1   -   -   0              his lex     1501.55 1501.73 peter_jennin              his lex     (1501.55 1501.73) 1501.55 1501.73 peter_jennin
+   1   -   -   0            great lex     1501.73 1502.01 peter_jennin            great lex     (1501.73 1502.01) 1501.73 1502.01 peter_jennin
+   1   -   -   0        protector lex     1502.01 1502.60 peter_jennin        protector lex     (1502.01 1502.60) 1502.01 1502.60 peter_jennin
+   1   -   -   0               in lex     1503.08 1503.26 peter_jennin               in lex     (1503.08 1503.26) 1503.08 1503.26 peter_jennin
+   1   -   -   0               so lex     1503.26 1503.45 peter_jennin               so lex     (1503.26 1503.45) 1503.26 1503.45 peter_jennin
+   1   -   -   0             many lex     1503.45 1503.70 peter_jennin             many lex     (1503.45 1503.70) 1503.45 1503.70 peter_jennin
+   1   -   -   0             ways lex     1503.70 1504.13 peter_jennin             ways lex     (1503.70 1504.13) 1503.70 1504.13 peter_jennin
+   1   -   -   0           always lex     1504.27 1504.86 peter_jennin           always lex     (1504.27 1504.86) 1504.27 1504.86 peter_jennin
+   1   -   -   0             such lex     1504.86 1505.15 peter_jennin             such lex     (1504.86 1505.15) 1504.86 1505.15 peter_jennin
+   1   -   -   0                a lex     1505.15 1505.18 peter_jennin                a lex     (1505.15 1505.18) 1505.15 1505.18 peter_jennin
+   1   -   -   0         vigorous lex     1505.18 1505.65 peter_jennin         vigorous lex     (1505.18 1505.65) 1505.18 1505.65 peter_jennin
+   1   -   -   0              man lex     1505.65 1506.04 peter_jennin              man lex     (1505.65 1506.04) 1505.65 1506.04 peter_jennin
+   1   -   -   0             even lex     1506.55 1506.82 peter_jennin             even lex     (1506.55 1506.82) 1506.55 1506.82 peter_jennin
+   1   -   -   0             with lex     1506.82 1507.02 peter_jennin             with lex     (1506.82 1507.02) 1506.82 1507.02 peter_jennin
+   1   -   -   0      alzheimer's lex     1507.02 1507.63 peter_jennin      alzheimer's lex     (1507.02 1507.63) 1507.02 1507.63 peter_jennin
+   1   -   -   0          disease lex     1507.63 1508.23 peter_jennin          disease lex     (1507.63 1508.23) 1507.63 1508.23 peter_jennin
+   1   -   -   0              and lex     1508.36 1508.50 peter_jennin              and lex     (1508.36 1508.50) 1508.36 1508.50 peter_jennin
+   1   -   -   0             such lex     1508.50 1508.74 peter_jennin             such lex     (1508.50 1508.74) 1508.50 1508.74 peter_jennin
+   1   -   -   0                a lex     1508.74 1508.81 peter_jennin                a lex     (1508.74 1508.81) 1508.74 1508.81 peter_jennin
+   1   -   -   0             long lex     1508.81 1509.37 peter_jennin             long lex     (1508.81 1509.37) 1508.81 1509.37 peter_jennin
+   1   -   -   0     relationship lex     1509.37 1510.15 peter_jennin     relationship lex     (1509.37 1510.15) 1509.37 1510.15 peter_jennin
+   1   -   -   0             with lex     1510.52 1510.74 peter_jennin             with lex     (1510.52 1510.74) 1510.52 1510.74 peter_jennin
+   1   -   -   0              the lex     1510.74 1510.83 peter_jennin              the lex     (1510.74 1510.83) 1510.74 1510.83 peter_jennin
+   1   -   -   0           public lex     1510.83 1511.17 peter_jennin           public lex     (1510.83 1511.17) 1510.83 1511.17 peter_jennin
+   1   -   -   0          tonight lex     1511.97 1512.50 peter_jennin          tonight lex     (1511.97 1512.50) 1511.97 1512.50 peter_jennin
+   1   -   -   0               we lex     1512.50 1512.79 peter_jennin               we lex     (1512.50 1512.79) 1512.50 1512.79 peter_jennin
+   1   -   -   0             hear lex     1512.79 1513.09 peter_jennin             hear lex     (1512.79 1513.09) 1512.79 1513.09 peter_jennin
+   1   -   -   0             from lex     1513.09 1513.29 peter_jennin             from lex     (1513.09 1513.29) 1513.09 1513.29 peter_jennin
+   1   -   -   0                a lex     1513.29 1513.32 peter_jennin                a lex     (1513.29 1513.32) 1513.29 1513.32 peter_jennin
+   1   -   -   0            woman lex     1513.32 1513.63 peter_jennin            woman lex     (1513.32 1513.63) 1513.32 1513.63 peter_jennin
+   1   -   -   0              who lex     1513.63 1513.83 peter_jennin              who lex     (1513.63 1513.83) 1513.63 1513.83 peter_jennin
+   1   -   -   0              has lex     1513.83 1513.98 peter_jennin              has lex     (1513.83 1513.98) 1513.83 1513.98 peter_jennin
+   1   -   -   0              had lex     1513.98 1514.30 peter_jennin              had lex     (1513.98 1514.30) 1513.98 1514.30 peter_jennin
+   1   -   -   0               as lex     1514.30 1514.61 peter_jennin               as lex     (1514.30 1514.61) 1514.30 1514.61 peter_jennin
+   1   -   -   0             long lex     1514.61 1515.04 peter_jennin             long lex     (1514.61 1515.04) 1514.61 1515.04 peter_jennin
+   1   -   -   0                a lex     1515.04 1515.12 peter_jennin                a lex     (1515.04 1515.12) 1515.04 1515.12 peter_jennin
+   1   -   -   0     relationship lex     1515.12 1515.75 peter_jennin     relationship lex     (1515.12 1515.75) 1515.12 1515.75 peter_jennin
+   1   -   -   0               as lex     1515.75 1515.91 peter_jennin               as lex     (1515.75 1515.91) 1515.75 1515.91 peter_jennin
+   1   -   -   0           anyone lex     1515.91 1516.44 peter_jennin           anyone lex     (1515.91 1516.44) 1515.91 1516.44 peter_jennin
+   1   -   -   0          outside lex     1516.82 1517.32 peter_jennin          outside lex     (1516.82 1517.32) 1516.82 1517.32 peter_jennin
+   1   -   -   0              the lex     1517.32 1517.41 peter_jennin              the lex     (1517.32 1517.41) 1517.32 1517.41 peter_jennin
+   1   -   -   0           family lex     1517.41 1517.86 peter_jennin           family lex     (1517.41 1517.86) 1517.41 1517.86 peter_jennin
+   1   -   -   0              and lex     1518.46 1518.55 peter_jennin              and lex     (1518.46 1518.55) 1518.46 1518.55 peter_jennin
+   1   -   -   0               we lex     1518.55 1518.73 peter_jennin               we lex     (1518.55 1518.73) 1518.55 1518.73 peter_jennin
+   1   -   -   0             know lex     1518.73 1518.95 peter_jennin             know lex     (1518.73 1518.95) 1518.73 1518.95 peter_jennin
+   1   -   -   0             this lex     1518.95 1519.18 peter_jennin             this lex     (1518.95 1519.18) 1518.95 1519.18 peter_jennin
+   1   -   -   0          because lex     1519.18 1519.53 peter_jennin          because lex     (1519.18 1519.53) 1519.18 1519.53 peter_jennin
+   1   -   -   0              for lex     1519.53 1519.68 peter_jennin              for lex     (1519.53 1519.68) 1519.53 1519.68 peter_jennin
+   1   -   -   0             half lex     1519.68 1520.05 peter_jennin             half lex     (1519.68 1520.05) 1519.68 1520.05 peter_jennin
+   1   -   -   0                a lex     1520.05 1520.10 peter_jennin                a lex     (1520.05 1520.10) 1520.05 1520.10 peter_jennin
+   1   -   -   0          century lex     1520.10 1520.68 peter_jennin          century lex     (1520.10 1520.68) 1520.10 1520.68 peter_jennin
+   1   -   -   0             they lex     1521.09 1521.23 peter_jennin             they lex     (1521.09 1521.23) 1521.09 1521.23 peter_jennin
+   1   -   -   0            wrote lex     1521.23 1521.57 peter_jennin            wrote lex     (1521.23 1521.57) 1521.23 1521.57 peter_jennin
+   1   -   -   0               to lex     1521.57 1521.73 peter_jennin               to lex     (1521.57 1521.73) 1521.57 1521.73 peter_jennin
+   1   -   -   0             each lex     1521.73 1521.91 peter_jennin             each lex     (1521.73 1521.91) 1521.73 1521.91 peter_jennin
+   1   -   -   0            other lex     1521.91 1522.17 peter_jennin            other lex     (1521.91 1522.17) 1521.91 1522.17 peter_jennin
+   1   -   -   0           here's lex     1522.88 1523.09 peter_jennin           here's lex     (1522.88 1523.09) 1522.88 1523.09 peter_jennin
+   1   -   -   0               a. lex     1523.09 1523.21 peter_jennin               a. lex     (1523.09 1523.21) 1523.09 1523.21 peter_jennin
+   1   -   -   0               b. lex     1523.21 1523.31 peter_jennin               b. lex     (1523.21 1523.31) 1523.21 1523.31 peter_jennin
+   1   -   -   0             c.'s lex     1523.31 1523.52 peter_jennin             c.'s lex     (1523.31 1523.52) 1523.31 1523.52 peter_jennin
+   1   -   -   0            aaron lex     1523.52 1523.78 peter_jennin            aaron lex     (1523.52 1523.78) 1523.52 1523.78 peter_jennin
+   1   -   -   0            brown lex     1523.78 1523.98 peter_jennin            brown lex     (1523.78 1523.98) 1523.78 1523.98 peter_jennin
+   1   -   -   0                a lex     1527.34 1527.41 aaron_brown                 a lex     (1527.34 1527.41) 1527.34 1527.41 aaron_brown 
+   1   -   -   0             half lex     1527.41 1527.65 aaron_brown              half lex     (1527.41 1527.65) 1527.41 1527.65 aaron_brown 
+   1   -   -   0          century lex     1527.65 1528.11 aaron_brown           century lex     (1527.65 1528.11) 1527.65 1528.11 aaron_brown 
+   1   -   -   0              ago lex     1528.11 1528.41 aaron_brown               ago lex     (1528.11 1528.41) 1528.11 1528.41 aaron_brown 
+   1   -   -   0         lorraine lex     1528.41 1528.89 aaron_brown          lorraine lex     (1528.41 1528.89) 1528.41 1528.89 aaron_brown 
+   1   -   -   0           wagner lex     1528.89 1529.30 aaron_brown            wagner lex     (1528.89 1529.30) 1528.89 1529.30 aaron_brown 
+   1   -   -   0              was lex     1529.30 1529.49 aaron_brown               was lex     (1529.30 1529.49) 1529.30 1529.49 aaron_brown 
+   1   -   -   0                a lex     1529.49 1529.55 aaron_brown                 a lex     (1529.49 1529.55) 1529.49 1529.55 aaron_brown 
+   1   -   -   0              kid lex     1529.55 1529.87 aaron_brown               kid lex     (1529.55 1529.87) 1529.55 1529.87 aaron_brown 
+   1   -   -   0             with lex     1529.87 1530.00 aaron_brown              with lex     (1529.87 1530.00) 1529.87 1530.00 aaron_brown 
+   1   -   -   0                a lex     1530.00 1530.05 aaron_brown                 a lex     (1530.00 1530.05) 1530.00 1530.05 aaron_brown 
+   1   -   -   0            crush lex     1530.05 1530.56 aaron_brown             crush lex     (1530.05 1530.56) 1530.05 1530.56 aaron_brown 
+   1   -   -   0              and lex     1530.97 1531.08 aaron_brown               and lex     (1530.97 1531.08) 1530.97 1531.08 aaron_brown 
+   1   -   -   0              the lex     1531.08 1531.21 aaron_brown               the lex     (1531.08 1531.21) 1531.08 1531.21 aaron_brown 
+   1   -   -   0           object lex     1531.21 1531.74 aaron_brown            object lex     (1531.21 1531.74) 1531.21 1531.74 aaron_brown 
+   1   -   -   0               of lex     1531.74 1531.87 aaron_brown                of lex     (1531.74 1531.87) 1531.74 1531.87 aaron_brown 
+   1   -   -   0              her lex     1531.87 1531.99 aaron_brown               her lex     (1531.87 1531.99) 1531.87 1531.99 aaron_brown 
+   1   -   -   0        affection lex     1531.99 1532.61 aaron_brown         affection lex     (1531.99 1532.61) 1531.99 1532.61 aaron_brown 
+   1   -   -   0              and lex     1532.89 1533.07 aaron_brown               and lex     (1532.89 1533.07) 1532.89 1533.07 aaron_brown 
+   1   -   -   0              her lex     1533.07 1533.26 aaron_brown               her lex     (1533.07 1533.26) 1533.07 1533.26 aaron_brown 
+   1   -   -   0     considerable lex     1533.26 1534.17 aaron_brown      considerable lex     (1533.26 1534.17) 1533.26 1534.17 aaron_brown 
+   1   -   -   0        attention lex     1534.17 1534.79 aaron_brown         attention lex     (1534.17 1534.79) 1534.17 1534.79 aaron_brown 
+   1   -   -   0              was lex     1535.41 1535.56 aaron_brown               was lex     (1535.41 1535.56) 1535.41 1535.56 aaron_brown 
+   1   -   -   0                a lex     1535.56 1535.63 aaron_brown                 a lex     (1535.56 1535.63) 1535.56 1535.63 aaron_brown 
+   1   -   -   0            hunky lex     1535.63 1536.02 aaron_brown             hunky lex     (1535.63 1536.02) 1535.63 1536.02 aaron_brown 
+   1   -   -   0            young lex     1536.02 1536.25 aaron_brown             young lex     (1536.02 1536.25) 1536.02 1536.25 aaron_brown 
+   1   -   -   0            actor lex     1536.25 1536.57 aaron_brown             actor lex     (1536.25 1536.57) 1536.25 1536.57 aaron_brown 
+   1   -   -   0            named lex     1536.57 1536.76 aaron_brown             named lex     (1536.57 1536.76) 1536.57 1536.76 aaron_brown 
+   1   -   -   0           ronald lex     1536.76 1537.09 aaron_brown            ronald lex     (1536.76 1537.09) 1536.76 1537.09 aaron_brown 
+   1   -   -   0           reagan lex     1537.09 1537.40 aaron_brown            reagan lex     (1537.09 1537.40) 1537.09 1537.40 aaron_brown 
+   1   -   -   0             mary lex     1537.75 1538.30 ronald_reaga             mary lex     (1537.75 1538.30) 1537.75 1538.30 ronald_reaga
+   1   -   -   0              she lex     1539.18 1539.43 aaron_brown               she lex     (1539.18 1539.43) 1539.18 1539.43 aaron_brown 
+   1   -   -   0            wrote lex     1539.43 1539.63 aaron_brown             wrote lex     (1539.43 1539.63) 1539.43 1539.63 aaron_brown 
+   1   -   -   0                a lex     1539.63 1539.69 aaron_brown                 a lex     (1539.63 1539.69) 1539.63 1539.69 aaron_brown 
+   1   -   -   0              fan lex     1539.69 1540.01 aaron_brown               fan lex     (1539.69 1540.01) 1539.69 1540.01 aaron_brown 
+   1   -   -   0           letter lex     1540.01 1540.34 aaron_brown            letter lex     (1540.01 1540.34) 1540.01 1540.34 aaron_brown 
+   1   -   -   0               he lex     1540.34 1540.81 aaron_brown                he lex     (1540.34 1540.81) 1540.34 1540.81 aaron_brown 
+   1   -   -   0             sent lex     1541.09 1541.35 aaron_brown              sent lex     (1541.09 1541.35) 1541.09 1541.35 aaron_brown 
+   1   -   -   0               an lex     1541.35 1541.44 aaron_brown                an lex     (1541.35 1541.44) 1541.35 1541.44 aaron_brown 
+   1   -   -   0      autographed lex     1541.44 1542.00 aaron_brown       autographed lex     (1541.44 1542.00) 1541.44 1542.00 aaron_brown 
+   1   -   -   0          picture lex     1542.00 1542.44 aaron_brown           picture lex     (1542.00 1542.44) 1542.00 1542.44 aaron_brown 
+   1   -   -   0              and lex     1543.09 1543.29 aaron_brown               and lex     (1543.09 1543.29) 1543.09 1543.29 aaron_brown 
+   1   -   -   0              did lex     1543.29 1543.47 aaron_brown               did lex     (1543.29 1543.47) 1543.29 1543.47 aaron_brown 
+   1   -   -   0              you lex     1543.47 1543.56 aaron_brown               you lex     (1543.47 1543.56) 1543.47 1543.56 aaron_brown 
+   1   -   -   0             take lex     1543.56 1543.82 aaron_brown              take lex     (1543.56 1543.82) 1543.56 1543.82 aaron_brown 
+   1   -   -   0             that lex     1543.82 1543.98 aaron_brown              that lex     (1543.82 1543.98) 1543.82 1543.98 aaron_brown 
+   1   -   -   0          picture lex     1543.98 1544.30 aaron_brown           picture lex     (1543.98 1544.30) 1543.98 1544.30 aaron_brown 
+   1   -   -   0               to lex     1544.30 1544.38 aaron_brown                to lex     (1544.30 1544.38) 1544.30 1544.38 aaron_brown 
+   1   -   -   0           school lex     1544.38 1544.87 aaron_brown            school lex     (1544.38 1544.87) 1544.38 1544.87 aaron_brown 
+   1   -   -   0              and lex     1544.87 1544.97 aaron_brown               and lex     (1544.87 1544.97) 1544.87 1544.97 aaron_brown 
+   1   -   -   0             show lex     1544.97 1545.16 aaron_brown              show lex     (1544.97 1545.16) 1544.97 1545.16 aaron_brown 
+   1   -   -   0               it lex     1545.16 1545.22 aaron_brown                it lex     (1545.16 1545.22) 1545.16 1545.22 aaron_brown 
+   1   -   -   0               to lex     1545.36 1545.46 aaron_brown                to lex     (1545.36 1545.46) 1545.36 1545.46 aaron_brown 
+   1   -   -   0               oh lex     1545.36 1545.66 lorraine_wag               oh lex     (1545.36 1545.66) 1545.36 1545.66 lorraine_wag
+   1   -   -   0          friends lex     1545.46 1545.71 aaron_brown           friends lex     (1545.46 1545.71) 1545.46 1545.71 aaron_brown 
+   1   -   -   0                i lex     1545.66 1545.77 lorraine_wag                i lex     (1545.66 1545.77) 1545.66 1545.77 lorraine_wag
+   1   -   -   0             took lex     1545.86 1546.11 lorraine_wag             took lex     (1545.86 1546.11) 1545.86 1546.11 lorraine_wag
+   1   -   -   0               it lex     1546.11 1546.20 lorraine_wag               it lex     (1546.11 1546.20) 1546.11 1546.20 lorraine_wag
+   1   -   -   0               to lex     1546.20 1546.33 lorraine_wag               to lex     (1546.20 1546.33) 1546.20 1546.33 lorraine_wag
+   1   -   -   0        everybody lex     1546.33 1547.03 lorraine_wag        everybody lex     (1546.33 1547.03) 1546.33 1547.03 lorraine_wag
+   1   -   -   0               uh fp      1547.03 1547.10 lorraine_wag               uh fp      (1547.03 1547.10) 1547.03 1547.10 lorraine_wag
+   1   -   -   0             that lex     1547.10 1547.33 lorraine_wag             that lex     (1547.10 1547.33) 1547.10 1547.33 lorraine_wag
+   1   -   -   0              you lex     1547.33 1547.48 lorraine_wag              you lex     (1547.33 1547.48) 1547.33 1547.48 lorraine_wag
+   1   -   -   0              can lex     1547.48 1547.65 lorraine_wag              can lex     (1547.48 1547.65) 1547.48 1547.65 lorraine_wag
+   1   -   -   0          imagine lex     1547.65 1548.27 lorraine_wag          imagine lex     (1547.65 1548.27) 1547.65 1548.27 lorraine_wag
+   1   -   -   0           anyone lex     1548.68 1549.08 lorraine_wag           anyone lex     (1548.68 1549.08) 1548.68 1549.08 lorraine_wag
+   1   -   -   0                i lex     1549.08 1549.24 lorraine_wag                i lex     (1549.08 1549.24) 1549.08 1549.24 lorraine_wag
+   1   -   -   0             knew lex     1549.24 1549.54 lorraine_wag             knew lex     (1549.24 1549.54) 1549.24 1549.54 lorraine_wag
+   1   -   -   0               in lex     1549.54 1549.65 lorraine_wag               in lex     (1549.54 1549.65) 1549.54 1549.65 lorraine_wag
+   1   -   -   0               my lex     1549.65 1549.83 lorraine_wag               my lex     (1549.65 1549.83) 1549.65 1549.83 lorraine_wag
+   1   -   -   0             life lex     1549.83 1550.24 lorraine_wag             life lex     (1549.83 1550.24) 1549.83 1550.24 lorraine_wag
+   1   -   -   0              had lex     1550.24 1550.46 lorraine_wag              had lex     (1550.24 1550.46) 1550.24 1550.46 lorraine_wag
+   1   -   -   0               to lex     1550.46 1550.60 lorraine_wag               to lex     (1550.46 1550.60) 1550.46 1550.60 lorraine_wag
+   1   -   -   0              had lex     1550.60 1550.80 lorraine_wag              had lex     (1550.60 1550.80) 1550.60 1550.80 lorraine_wag
+   1   -   -   0                i frag    1550.80 1550.94 lorraine_wag                i frag    (1550.80 1550.94) 1550.80 1550.94 lorraine_wag
+   1   -   -   0              saw lex     1551.05 1551.33 lorraine_wag              saw lex     (1551.05 1551.33) 1551.05 1551.33 lorraine_wag
+   1   -   -   0             that lex     1551.33 1551.58 lorraine_wag             that lex     (1551.33 1551.58) 1551.33 1551.58 lorraine_wag
+   1   -   -   0          picture lex     1551.58 1551.97 lorraine_wag          picture lex     (1551.58 1551.97) 1551.58 1551.97 lorraine_wag
+
+EDIT alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0            other EDIT    1550.24 1550.60 lorraine_wag            other EDIT    (1550.24 1550.60) 1550.24 1550.60 lorraine_wag
+   1   -   -   0            other EDIT    1550.60 1550.94 lorraine_wag            other EDIT    (1550.60 1550.94) 1550.60 1550.94 lorraine_wag
+
+FILLER alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0     filled_pause FILLER  1547.03 1547.10 lorraine_wag     filled_pause FILLER  (1547.03 1547.10) 1547.03 1547.10 lorraine_wag
+
+IP alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0           filler IP      1547.03 1547.03 lorraine_wag           filler IP      (1547.03 1547.03) 1547.03 1547.03 lorraine_wag
+   1   -   -   0             edit IP      1550.60 1550.60 lorraine_wag             edit IP      (1550.60 1550.60) 1550.60 1550.60 lorraine_wag
+   1   -   -   0             edit IP      1550.94 1550.94 lorraine_wag             edit IP      (1550.94 1550.94) 1550.94 1550.94 lorraine_wag
+
+SU alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        statement SU      1317.36 1318.78 peter_jennin        statement SU      (1317.36 1318.78) 1317.36 1318.78 peter_jennin
+   1   -   -   0        statement SU      1318.78 1324.41 peter_jennin        statement SU      (1318.78 1324.41) 1318.78 1324.41 peter_jennin
+   1   -   -   0        statement SU      1325.61 1328.01 peter_jennin        statement SU      (1325.61 1328.01) 1325.61 1328.01 peter_jennin
+   1   -   -   0        statement SU      1329.24 1335.57 ronald_reaga        statement SU      (1329.24 1335.57) 1329.24 1335.57 ronald_reaga
+   1   -   -   0        statement SU      1336.61 1337.36 ronald_reaga        statement SU      (1336.61 1337.36) 1336.61 1337.36 ronald_reaga
+   1   -   -   0        statement SU      1337.36 1338.82 ronald_reaga        statement SU      (1337.36 1338.82) 1337.36 1338.82 ronald_reaga
+   1   -   -   0        statement SU      1338.82 1340.60 ronald_reaga        statement SU      (1338.82 1340.60) 1338.82 1340.60 ronald_reaga
+   1   -   -   0        statement SU      1340.60 1346.25 ronald_reaga        statement SU      (1340.60 1346.25) 1340.60 1346.25 ronald_reaga
+   1   -   -   0        statement SU      1346.25 1352.75 ronald_reaga        statement SU      (1346.25 1352.75) 1346.25 1352.75 ronald_reaga
+   1   -   -   0        statement SU      1352.92 1359.70 ronald_reaga        statement SU      (1352.92 1359.70) 1352.92 1359.70 ronald_reaga
+   1   -   -   0        statement SU      1479.31 1483.27 peter_jennin        statement SU      (1479.31 1483.27) 1479.31 1483.27 peter_jennin
+   1   -   -   0        statement SU      1483.93 1496.90 peter_jennin        statement SU      (1483.93 1496.90) 1483.93 1496.90 peter_jennin
+   1   -   -   0        statement SU      1497.47 1501.15 peter_jennin        statement SU      (1497.47 1501.15) 1497.47 1501.15 peter_jennin
+   1   -   -   0        statement SU      1501.15 1504.13 peter_jennin        statement SU      (1501.15 1504.13) 1501.15 1504.13 peter_jennin
+   1   -   -   0        statement SU      1504.27 1508.23 peter_jennin        statement SU      (1504.27 1508.23) 1504.27 1508.23 peter_jennin
+   1   -   -   0        statement SU      1508.36 1511.17 peter_jennin        statement SU      (1508.36 1511.17) 1508.36 1511.17 peter_jennin
+   1   -   -   0        statement SU      1511.97 1517.86 peter_jennin        statement SU      (1511.97 1517.86) 1511.97 1517.86 peter_jennin
+   1   -   -   0        statement SU      1518.46 1522.17 peter_jennin        statement SU      (1518.46 1522.17) 1518.46 1522.17 peter_jennin
+   1   -   -   0        statement SU      1522.88 1523.98 peter_jennin        statement SU      (1522.88 1523.98) 1522.88 1523.98 peter_jennin
+   1   -   -   0        statement SU      1527.34 1530.56 aaron_brown         statement SU      (1527.34 1530.56) 1527.34 1530.56 aaron_brown 
+   1   -   -   0        statement SU      1530.97 1537.40 aaron_brown         statement SU      (1530.97 1537.40) 1530.97 1537.40 aaron_brown 
+   1   -   -   0        statement SU      1537.75 1538.30 ronald_reaga        statement SU      (1537.75 1538.30) 1537.75 1538.30 ronald_reaga
+   1   -   -   0        statement SU      1539.18 1540.34 aaron_brown         statement SU      (1539.18 1540.34) 1539.18 1540.34 aaron_brown 
+   1   -   -   0        statement SU      1540.34 1542.44 aaron_brown         statement SU      (1540.34 1542.44) 1540.34 1542.44 aaron_brown 
+   1   -   -   0         question SU      1543.09 1545.71 aaron_brown          question SU      (1543.09 1545.71) 1543.09 1545.71 aaron_brown 
+   1   -   -   0      backchannel SU      1545.36 1545.66 lorraine_wag      backchannel SU      (1545.36 1545.66) 1545.36 1545.66 lorraine_wag
+   1   -   -   0        statement SU      1545.66 1548.27 lorraine_wag        statement SU      (1545.66 1548.27) 1545.66 1548.27 lorraine_wag
+   1   -   -   0        statement SU      1548.68 1551.97 lorraine_wag        statement SU      (1548.68 1551.97) 1548.68 1551.97 lorraine_wag
+
+Chronological display of sys data aligned with ref data for file '20010206_1830_1900_ABC_WNT', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     peter_jennings      1317.26         |        |
+beg SPEAKER  adult_ma peter_jennings      1317.36         |        |
+                                          1317.36         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1317.36        
+beg SU       statemen peter_jennings      1317.36         | SU1    |beg SU       statemen peter_jennings=>pet 1317.36        
+    LEXEME   lex      EVERYBODY           1317.36 1317.82 | LX1    |    LEXEME   lex      EVERYBODY           1317.36 1317.82
+    LEXEME   lex      LOVES           1317.82 1318.04 | LX2    |    LEXEME   lex      LOVES           1317.82 1318.04
+    LEXEME   lex      DINOSAURS           1318.04 1318.78 | LX3    |    LEXEME   lex      DINOSAURS           1318.04 1318.78
+end SU       statemen peter_jennings              1318.78 | SU1    |end SU       statemen peter_jennings=>pet         1318.78
+beg SU       statemen peter_jennings      1318.78         | SU2    |beg SU       statemen peter_jennings=>pet 1318.78        
+    LEXEME   lex      THE           1318.78 1318.84 | LX4    |    LEXEME   lex      THE           1318.78 1318.84
+    LEXEME   lex      TWENTY           1318.84 1319.08 | LX5    |    LEXEME   lex      TWENTY           1318.84 1319.08
+    LEXEME   lex      THREE           1319.08 1319.32 | LX6    |    LEXEME   lex      THREE           1319.08 1319.32
+    LEXEME   lex      FOOT           1319.33 1319.54 | LX7    |    LEXEME   lex      FOOT           1319.33 1319.54
+    LEXEME   lex      LONG           1319.54 1319.88 | LX8    |    LEXEME   lex      LONG           1319.54 1319.88
+    LEXEME   lex      FOURTEEN           1319.88 1320.44 | LX9    |    LEXEME   lex      FOURTEEN           1319.88 1320.44
+    LEXEME   lex      FOOT           1320.44 1320.68 | LX10   |    LEXEME   lex      FOOT           1320.44 1320.68
+    LEXEME   lex      HIGH           1320.68 1321.12 | LX11   |    LEXEME   lex      HIGH           1320.68 1321.12
+    LEXEME   lex      TYRANNOSAURUS           1321.12 1322.06 | LX12   |    LEXEME   lex      TYRANNOSAURUS           1321.12 1322.06
+end SPEAKER  adult_ma peter_jennings              1322.06 |        |
+                                                  1322.06 |        |end SPEAKER  adult_ma peter_jennings=>pet         1322.06
+    NON-LEX  breath   BREATH           1322.71 1322.78 |        |
+beg SPEAKER  adult_ma peter_jennings      1322.79         |        |
+                                          1322.79         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1322.79        
+    LEXEME   lex      COST           1322.79 1323.10 | LX13   |    LEXEME   lex      COST           1322.79 1323.10
+    LEXEME   lex      THREE           1323.10 1323.28 | LX14   |    LEXEME   lex      THREE           1323.10 1323.28
+    LEXEME   lex      HUNDRED           1323.28 1323.53 | LX15   |    LEXEME   lex      HUNDRED           1323.28 1323.53
+    LEXEME   lex      THOUSAND           1323.53 1323.89 | LX16   |    LEXEME   lex      THOUSAND           1323.53 1323.89
+    LEXEME   lex      DOLLARS           1323.89 1324.40 | LX17   |    LEXEME   lex      DOLLARS           1323.89 1324.40
+end SU       statemen peter_jennings              1324.41 | SU2    |end SU       statemen peter_jennings=>pet         1324.41
+end SPEAKER  adult_ma peter_jennings              1324.40 |        |
+                                                  1324.40 |        |end SPEAKER  adult_ma peter_jennings=>pet         1324.40
+    NON-LEX  breath   BREATH           1324.96 1325.52 |        |
+end SEGMENT  <na>     peter_jennings              1325.57 |        |
+beg SEGMENT  <na>     peter_jennings      1325.57         |        |
+beg SPEAKER  adult_ma peter_jennings      1325.61         |        |
+                                          1325.61         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1325.61        
+beg SU       statemen peter_jennings      1325.61         | SU3    |beg SU       statemen peter_jennings=>pet 1325.61        
+    LEXEME   lex      WHEN           1325.61 1325.84 | LX18   |    LEXEME   lex      WHEN           1325.61 1325.84
+    LEXEME   lex      WE           1325.84 1325.96 | LX19   |    LEXEME   lex      WE           1325.84 1325.96
+    LEXEME   lex      COME           1325.96 1326.17 | LX20   |    LEXEME   lex      COME           1325.96 1326.17
+    LEXEME   lex      BACK           1326.17 1326.50 | LX21   |    LEXEME   lex      BACK           1326.17 1326.50
+    CB       clausal  peter_jennings      1326.50         |        |
+    LEXEME   lex      THE           1326.80 1326.98 | LX22   |    LEXEME   lex      THE           1326.80 1326.98
+    LEXEME   lex      GREAT           1326.98 1327.35 | LX23   |    LEXEME   lex      GREAT           1326.98 1327.35
+    LEXEME   lex      COMMUNICATOR           1327.35 1328.01 | LX24   |    LEXEME   lex      COMMUNICATOR           1327.35 1328.01
+end SU       statemen peter_jennings              1328.01 | SU3    |end SU       statemen peter_jennings=>pet         1328.01
+end SPEAKER  adult_ma peter_jennings              1328.01 |        |
+                                                  1328.01 |        |end SPEAKER  adult_ma peter_jennings=>pet         1328.01
+end SEGMENT  <na>     peter_jennings              1328.17 |        |
+beg SEGMENT  <na>     ronald_reagan       1328.17         |        |
+beg SPEAKER  adult_ma ronald_reagan       1329.24         |        |
+                                          1329.24         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1329.24        
+beg SU       statemen ronald_reagan       1329.24         | SU4    |beg SU       statemen ronald_reagan=>rona 1329.24        
+    LEXEME   lex      THOSE           1329.24 1329.55 | LX25   |    LEXEME   lex      THOSE           1329.24 1329.55
+    LEXEME   lex      LAST           1329.55 1329.88 | LX26   |    LEXEME   lex      LAST           1329.55 1329.88
+    LEXEME   lex      FEW           1329.88 1330.04 | LX27   |    LEXEME   lex      FEW           1329.88 1330.04
+    LEXEME   lex      WEEKS           1330.04 1330.36 | LX28   |    LEXEME   lex      WEEKS           1330.04 1330.36
+    LEXEME   lex      HAVE           1330.36 1330.49 | LX29   |    LEXEME   lex      HAVE           1330.36 1330.49
+    LEXEME   lex      REALLY           1330.49 1330.72 | LX30   |    LEXEME   lex      REALLY           1330.49 1330.72
+    LEXEME   lex      BEEN           1330.72 1330.87 | LX31   |    LEXEME   lex      BEEN           1330.72 1330.87
+    LEXEME   lex      HECTIC           1330.87 1331.26 | LX32   |    LEXEME   lex      HECTIC           1330.87 1331.26
+    CB       clausal  ronald_reagan       1331.26         |        |
+    LEXEME   lex      WHAT           1331.26 1331.43 | LX33   |    LEXEME   lex      WHAT           1331.26 1331.43
+    LEXEME   lex      WITH           1331.43 1331.61 | LX34   |    LEXEME   lex      WITH           1331.43 1331.61
+    LEXEME   lex      LIBYA           1331.61 1332.10 | LX35   |    LEXEME   lex      LIBYA           1331.61 1332.10
+end SPEAKER  adult_ma ronald_reagan               1332.10 |        |
+                                                  1332.10 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1332.10
+beg SPEAKER  adult_ma ronald_reagan       1332.65         |        |
+                                          1332.65         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1332.65        
+    LEXEME   lex      NICARAGUA           1332.65 1333.43 | LX36   |    LEXEME   lex      NICARAGUA           1332.65 1333.43
+end SPEAKER  adult_ma ronald_reagan               1333.43 |        |
+                                                  1333.43 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1333.43
+beg SPEAKER  adult_ma ronald_reagan       1334.06         |        |
+                                          1334.06         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1334.06        
+    LEXEME   lex      AND           1334.06 1334.16 | LX37   |    LEXEME   lex      AND           1334.06 1334.16
+    LEXEME   lex      THE           1334.16 1334.24 | LX38   |    LEXEME   lex      THE           1334.16 1334.24
+    LEXEME   lex      BUDGET           1334.24 1334.70 | LX39   |    LEXEME   lex      BUDGET           1334.24 1334.70
+    LEXEME   lex      AND           1334.70 1334.94 | LX40   |    LEXEME   lex      AND           1334.70 1334.94
+    LEXEME   lex      TAXES           1334.94 1335.57 | LX41   |    LEXEME   lex      TAXES           1334.94 1335.57
+end SU       statemen ronald_reagan               1335.57 | SU4    |end SU       statemen ronald_reagan=>rona         1335.57
+end SPEAKER  adult_ma ronald_reagan               1335.57 |        |
+                                                  1335.57 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1335.57
+beg SPEAKER  adult_ma ronald_reagan       1336.61         |        |
+                                          1336.61         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1336.61        
+beg SU       statemen ronald_reagan       1336.61         | SU5    |beg SU       statemen ronald_reagan=>rona 1336.61        
+    LEXEME   lex      I           1336.61 1336.67 | LX42   |    LEXEME   lex      I           1336.61 1336.67
+    LEXEME   lex      DON'T           1336.67 1336.79 | LX43   |    LEXEME   lex      DON'T           1336.67 1336.79
+    LEXEME   lex      KNOW           1336.79 1336.87 | LX44   |    LEXEME   lex      KNOW           1336.79 1336.87
+    LEXEME   lex      ABOUT           1336.87 1337.16 | LX45   |    LEXEME   lex      ABOUT           1336.87 1337.16
+    LEXEME   lex      YOU           1337.16 1337.36 | LX46   |    LEXEME   lex      YOU           1337.16 1337.36
+end SU       statemen ronald_reagan               1337.36 | SU5    |end SU       statemen ronald_reagan=>rona         1337.36
+beg SU       statemen ronald_reagan       1337.36         | SU6    |beg SU       statemen ronald_reagan=>rona 1337.36        
+    LEXEME   lex      BUT           1337.36 1337.47 | LX47   |    LEXEME   lex      BUT           1337.36 1337.47
+    LEXEME   lex      I'VE           1337.47 1337.63 | LX48   |    LEXEME   lex      I'VE           1337.47 1337.63
+    LEXEME   lex      BEEN           1337.63 1337.73 | LX49   |    LEXEME   lex      BEEN           1337.63 1337.73
+    LEXEME   lex      WORKING           1337.73 1338.13 | LX50   |    LEXEME   lex      WORKING           1337.73 1338.13
+    LEXEME   lex      LONG           1338.13 1338.40 | LX51   |    LEXEME   lex      LONG           1338.13 1338.40
+    LEXEME   lex      HOURS           1338.40 1338.82 | LX52   |    LEXEME   lex      HOURS           1338.40 1338.82
+end SU       statemen ronald_reagan               1338.82 | SU6    |end SU       statemen ronald_reagan=>rona         1338.82
+beg SU       statemen ronald_reagan       1338.82         | SU7    |beg SU       statemen ronald_reagan=>rona 1338.82        
+    LEXEME   lex      I'VE           1338.82 1339.00 | LX53   |    LEXEME   lex      I'VE           1338.82 1339.00
+    LEXEME   lex      REALLY           1339.00 1339.21 | LX54   |    LEXEME   lex      REALLY           1339.00 1339.21
+    LEXEME   lex      BEEN           1339.21 1339.38 | LX55   |    LEXEME   lex      BEEN           1339.21 1339.38
+    LEXEME   lex      BURNING           1339.38 1339.72 | LX56   |    LEXEME   lex      BURNING           1339.38 1339.72
+    LEXEME   lex      THE           1339.72 1339.78 | LX57   |    LEXEME   lex      THE           1339.72 1339.78
+    LEXEME   lex      MIDDAY           1339.78 1340.30 | LX58   |    LEXEME   lex      MIDDAY           1339.78 1340.30
+    LEXEME   lex      OIL           1340.30 1340.60 | LX59   |    LEXEME   lex      OIL           1340.30 1340.60
+end SU       statemen ronald_reagan               1340.60 | SU7    |end SU       statemen ronald_reagan=>rona         1340.60
+beg SU       statemen ronald_reagan       1340.60         | SU8    |beg SU       statemen ronald_reagan=>rona 1340.60        
+    LEXEME   lex      [NS]           1340.60 1344.36 | LX60   |    LEXEME   lex      [NS]           1340.60 1344.36
+    LEXEME   lex      I           1344.36 1344.47 | LX61   |    LEXEME   lex      I           1344.36 1344.47
+    LEXEME   lex      JUST           1344.47 1344.73 | LX62   |    LEXEME   lex      JUST           1344.47 1344.73
+    LEXEME   lex      CAN'T           1344.73 1345.09 | LX63   |    LEXEME   lex      CAN'T           1344.73 1345.09
+    LEXEME   lex      WAIT           1345.09 1345.28 | LX64   |    LEXEME   lex      WAIT           1345.09 1345.28
+    LEXEME   lex      TO           1345.36 1345.48 | LX65   |    LEXEME   lex      TO           1345.36 1345.48
+    LEXEME   lex      ACCOMPLISH           1345.48 1346.13 | LX66   |    LEXEME   lex      ACCOMPLISH           1345.48 1346.13
+    LEXEME   lex      IT           1346.13 1346.25 | LX67   |    LEXEME   lex      IT           1346.13 1346.25
+end SU       statemen ronald_reagan               1346.25 | SU8    |end SU       statemen ronald_reagan=>rona         1346.25
+beg SU       statemen ronald_reagan       1346.25         | SU9    |beg SU       statemen ronald_reagan=>rona 1346.25        
+    LEXEME   lex      [NS]           1346.25 1347.02 | LX68   |    LEXEME   lex      [NS]           1346.25 1347.02
+    LEXEME   lex      I           1347.02 1349.97 | LX69   |    LEXEME   lex      I           1347.02 1349.97
+    LEXEME   lex      WILL           1350.00 1350.31 | LX70   |    LEXEME   lex      WILL           1350.00 1350.31
+    LEXEME   lex      NOT           1350.31 1350.65 | LX71   |    LEXEME   lex      NOT           1350.31 1350.65
+    LEXEME   lex      MAKE           1350.65 1351.01 | LX72   |    LEXEME   lex      MAKE           1350.65 1351.01
+    LEXEME   lex      AGE           1351.01 1351.39 | LX73   |    LEXEME   lex      AGE           1351.01 1351.39
+    LEXEME   lex      AN           1351.39 1351.48 | LX74   |    LEXEME   lex      AN           1351.39 1351.48
+    LEXEME   lex      ISSUE           1351.48 1351.88 | LX75   |    LEXEME   lex      ISSUE           1351.48 1351.88
+    LEXEME   lex      OF           1351.88 1351.96 | LX76   |    LEXEME   lex      OF           1351.88 1351.96
+    LEXEME   lex      THIS           1351.96 1352.20 | LX77   |    LEXEME   lex      THIS           1351.96 1352.20
+    LEXEME   lex      CAMPAIGN           1352.20 1352.75 | LX78   |    LEXEME   lex      CAMPAIGN           1352.20 1352.75
+end SU       statemen ronald_reagan               1352.75 | SU9    |end SU       statemen ronald_reagan=>rona         1352.75
+beg SU       statemen ronald_reagan       1352.92         | SU10   |beg SU       statemen ronald_reagan=>rona 1352.92        
+    LEXEME   lex      I           1352.92 1353.11 | LX79   |    LEXEME   lex      I           1352.92 1353.11
+    LEXEME   lex      AM           1353.11 1353.25 | LX80   |    LEXEME   lex      AM           1353.11 1353.25
+    LEXEME   lex      NOT           1353.25 1353.45 | LX81   |    LEXEME   lex      NOT           1353.25 1353.45
+    LEXEME   lex      GOING           1353.45 1353.71 | LX82   |    LEXEME   lex      GOING           1353.45 1353.71
+    LEXEME   lex      TO           1353.71 1353.85 | LX83   |    LEXEME   lex      TO           1353.71 1353.85
+    LEXEME   lex      EXPLOIT           1353.85 1354.36 | LX84   |    LEXEME   lex      EXPLOIT           1353.85 1354.36
+end SPEAKER  adult_ma ronald_reagan               1354.36 |        |
+                                                  1354.36 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1354.36
+    NON-LEX  breath   BREATH           1354.70 1354.87 |        |
+beg SPEAKER  adult_ma ronald_reagan       1354.87         |        |
+                                          1354.87         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1354.87        
+    LEXEME   lex      FOR           1354.87 1355.30 | LX85   |    LEXEME   lex      FOR           1354.87 1355.30
+    LEXEME   lex      POLITICAL           1355.77 1356.15 | LX86   |    LEXEME   lex      POLITICAL           1355.77 1356.15
+    LEXEME   lex      PURPOSES           1356.15 1356.83 | LX87   |    LEXEME   lex      PURPOSES           1356.15 1356.83
+    LEXEME   lex      MY           1357.29 1357.65 | LX88   |    LEXEME   lex      MY           1357.29 1357.65
+    LEXEME   lex      OPPONENT'S           1357.65 1358.33 | LX89   |    LEXEME   lex      OPPONENT'S           1357.65 1358.33
+    LEXEME   lex      YOUTH           1358.41 1358.79 | LX90   |    LEXEME   lex      YOUTH           1358.41 1358.79
+    LEXEME   lex      AND           1358.79 1358.92 | LX91   |    LEXEME   lex      AND           1358.79 1358.92
+    LEXEME   lex      INEXPERIENCE           1358.92 1359.70 | LX92   |    LEXEME   lex      INEXPERIENCE           1358.92 1359.70
+end SU       statemen ronald_reagan               1359.70 | SU10   |end SU       statemen ronald_reagan=>rona         1359.70
+end SPEAKER  adult_ma ronald_reagan               1359.70 |        |
+                                                  1359.70 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1359.70
+end SEGMENT  <na>     ronald_reagan               1359.74 |        |
+beg NOSCORE  <na>     <na>                1361.09         |        |
+beg SEGMENT  <na>     ronald_reagan       1368.17         |        |
+beg SPEAKER  adult_ma ronald_reagan       1369.24         |        |
+                                          1369.24         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1369.24        
+    LEXEME   lex      THOSE           1369.24 1369.55 | LX93   |    LEXEME   lex      THOSE           1369.24 1369.55
+    LEXEME   lex      LAST           1369.55 1369.88 | LX94   |    LEXEME   lex      LAST           1369.55 1369.88
+    LEXEME   lex      FEW           1369.88 1370.04 | LX95   |    LEXEME   lex      FEW           1369.88 1370.04
+    LEXEME   lex      WEEKS           1370.04 1370.36 | LX96   |    LEXEME   lex      WEEKS           1370.04 1370.36
+end SPEAKER  adult_ma ronald_reagan               1372.10 |        |
+                                                  1372.10 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1372.10
+end SEGMENT  <na>     ronald_reagan               1399.74 |        |
+end NOSCORE  <na>     <na>                        1478.57 |        |
+beg SEGMENT  <na>     peter_jennings      1478.57         |        |
+    NON-LEX  lipsmack LIP-SMACK           1478.61 1478.78 |        |
+    NON-LEX  breath   BREATH           1478.78 1479.31 |        |
+beg SPEAKER  adult_ma peter_jennings      1479.31         |        |
+                                          1479.31         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1479.31        
+beg SU       statemen peter_jennings      1479.31         | SU11   |beg SU       statemen peter_jennings=>pet 1479.31        
+    LEXEME   lex      FINALLY           1479.31 1479.61 | LX97   |    LEXEME   lex      FINALLY           1479.31 1479.61
+    LEXEME   lex      THIS           1479.61 1479.77 | LX98   |    LEXEME   lex      THIS           1479.61 1479.77
+    LEXEME   lex      EVENING           1479.77 1480.02 | LX99   |    LEXEME   lex      EVENING           1479.77 1480.02
+    LEXEME   lex      RONALD           1480.02 1480.31 | LX100  |    LEXEME   lex      RONALD           1480.02 1480.31
+    LEXEME   lex      REAGAN           1480.31 1480.69 | LX101  |    LEXEME   lex      REAGAN           1480.31 1480.69
+    LEXEME   lex      ONLY           1480.78 1481.13 | LX102  |    LEXEME   lex      ONLY           1480.78 1481.13
+    LEXEME   lex      THE           1481.13 1481.24 | LX103  |    LEXEME   lex      THE           1481.13 1481.24
+    LEXEME   lex      THIRD           1481.24 1481.61 | LX104  |    LEXEME   lex      THIRD           1481.24 1481.61
+    LEXEME   lex      PRESIDENT           1481.61 1482.26 | LX105  |    LEXEME   lex      PRESIDENT           1481.61 1482.26
+    LEXEME   lex      TO           1482.26 1482.39 | LX106  |    LEXEME   lex      TO           1482.26 1482.39
+    LEXEME   lex      REACH           1482.39 1482.82 | LX107  |    LEXEME   lex      REACH           1482.39 1482.82
+    LEXEME   lex      NINETY           1482.82 1483.27 | LX108  |    LEXEME   lex      NINETY           1482.82 1483.27
+end SU       statemen peter_jennings              1483.27 | SU11   |end SU       statemen peter_jennings=>pet         1483.27
+end SPEAKER  adult_ma peter_jennings              1483.27 |        |
+                                                  1483.27 |        |end SPEAKER  adult_ma peter_jennings=>pet         1483.27
+    NON-LEX  lipsmack LIP-SMACK           1483.27 1483.42 |        |
+    NON-LEX  breath   BREATH           1483.42 1483.93 |        |
+beg SPEAKER  adult_ma peter_jennings      1483.93         |        |
+                                          1483.93         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1483.93        
+beg SU       statemen peter_jennings      1483.93         | SU12   |beg SU       statemen peter_jennings=>pet 1483.93        
+    LEXEME   lex      LISTENING           1483.93 1484.28 | LX109  |    LEXEME   lex      LISTENING           1483.93 1484.28
+    LEXEME   lex      TO           1484.28 1484.36 | LX110  |    LEXEME   lex      TO           1484.28 1484.36
+    LEXEME   lex      THE           1484.36 1484.45 | LX111  |    LEXEME   lex      THE           1484.36 1484.45
+    LEXEME   lex      DEBATE           1484.45 1484.83 | LX112  |    LEXEME   lex      DEBATE           1484.45 1484.83
+    LEXEME   lex      IN           1484.83 1484.99 | LX113  |    LEXEME   lex      IN           1484.83 1484.99
+    LEXEME   lex      THE           1484.99 1485.17 | LX114  |    LEXEME   lex      THE           1484.99 1485.17
+    LEXEME   lex      LATEST           1485.21 1485.58 | LX115  |    LEXEME   lex      LATEST           1485.21 1485.58
+    LEXEME   lex      PRESIDENTIAL           1485.58 1486.06 | LX116  |    LEXEME   lex      PRESIDENTIAL           1485.58 1486.06
+    LEXEME   lex      CAMPAIGN           1486.06 1486.48 | LX117  |    LEXEME   lex      CAMPAIGN           1486.06 1486.48
+    LEXEME   lex      ABOUT           1486.48 1486.69 | LX118  |    LEXEME   lex      ABOUT           1486.48 1486.69
+    LEXEME   lex      THE           1486.69 1486.76 | LX119  |    LEXEME   lex      THE           1486.69 1486.76
+    LEXEME   lex      SIZE           1486.76 1487.10 | LX120  |    LEXEME   lex      SIZE           1486.76 1487.10
+    LEXEME   lex      OF           1487.10 1487.20 | LX121  |    LEXEME   lex      OF           1487.10 1487.20
+    LEXEME   lex      GOVERNMENT           1487.20 1487.67 | LX122  |    LEXEME   lex      GOVERNMENT           1487.20 1487.67
+    LEXEME   lex      AND           1487.67 1487.82 | LX123  |    LEXEME   lex      AND           1487.67 1487.82
+    LEXEME   lex      TAXES           1487.82 1488.24 | LX124  |    LEXEME   lex      TAXES           1487.82 1488.24
+    LEXEME   lex      AND           1488.24 1488.32 | LX125  |    LEXEME   lex      AND           1488.24 1488.32
+    LEXEME   lex      MISSILE           1488.32 1488.56 | LX126  |    LEXEME   lex      MISSILE           1488.32 1488.56
+    LEXEME   lex      DEFENSE           1488.56 1488.89 | LX127  |    LEXEME   lex      DEFENSE           1488.56 1488.89
+    LEXEME   lex      SYSTEMS           1488.89 1489.36 | LX128  |    LEXEME   lex      SYSTEMS           1488.89 1489.36
+end SPEAKER  adult_ma peter_jennings              1489.36 |        |
+                                                  1489.36 |        |end SPEAKER  adult_ma peter_jennings=>pet         1489.36
+    NON-LEX  breath   BREATH           1489.36 1489.96 |        |
+beg SPEAKER  adult_ma peter_jennings      1489.96         |        |
+                                          1489.96         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1489.96        
+    LEXEME   lex      IS           1489.96 1490.18 | LX129  |    LEXEME   lex      IS           1489.96 1490.18
+    LEXEME   lex      TO           1490.18 1490.28 | LX130  |    LEXEME   lex      TO           1490.18 1490.28
+    LEXEME   lex      BE           1490.28 1490.43 | LX131  |    LEXEME   lex      BE           1490.28 1490.43
+    LEXEME   lex      REMINDED           1490.43 1490.94 | LX132  |    LEXEME   lex      REMINDED           1490.43 1490.94
+    LEXEME   lex      OF           1490.94 1491.00 | LX133  |    LEXEME   lex      OF           1490.94 1491.00
+    LEXEME   lex      HOW           1491.00 1491.12 | LX134  |    LEXEME   lex      HOW           1491.00 1491.12
+    LEXEME   lex      MUCH           1491.12 1491.33 | LX135  |    LEXEME   lex      MUCH           1491.12 1491.33
+    LEXEME   lex      INFLUENCE           1491.33 1491.73 | LX136  |    LEXEME   lex      INFLUENCE           1491.33 1491.73
+    LEXEME   lex      MR.           1491.73 1491.98 | LX137  |    LEXEME   lex      MR.           1491.73 1491.98
+    LEXEME   lex      REAGAN           1491.98 1492.29 | LX138  |    LEXEME   lex      REAGAN           1491.98 1492.29
+    LEXEME   lex      HAD           1492.29 1492.67 | LX139  |    LEXEME   lex      HAD           1492.29 1492.67
+    LEXEME   lex      ON           1492.67 1492.86 | LX140  |    LEXEME   lex      ON           1492.67 1492.86
+    LEXEME   lex      THE           1492.86 1492.96 | LX141  |    LEXEME   lex      THE           1492.86 1492.96
+    LEXEME   lex      DEBATE           1492.96 1493.36 | LX142  |    LEXEME   lex      DEBATE           1492.96 1493.36
+    LEXEME   lex      ABOUT           1493.36 1493.66 | LX143  |    LEXEME   lex      ABOUT           1493.36 1493.66
+    LEXEME   lex      NATIONAL           1493.66 1494.09 | LX144  |    LEXEME   lex      NATIONAL           1493.66 1494.09
+    LEXEME   lex      LIFE           1494.09 1494.52 | LX145  |    LEXEME   lex      LIFE           1494.09 1494.52
+    NON-LEX  breath   BREATH           1494.52 1494.96 |        |
+    LEXEME   lex      AND           1494.96 1495.25 | LX146  |    LEXEME   lex      AND           1494.96 1495.25
+    LEXEME   lex      AMERICA'S           1495.25 1495.81 | LX147  |    LEXEME   lex      AMERICA'S           1495.25 1495.81
+    LEXEME   lex      ROLE           1495.81 1496.14 | LX148  |    LEXEME   lex      ROLE           1495.81 1496.14
+    LEXEME   lex      IN           1496.14 1496.36 | LX149  |    LEXEME   lex      IN           1496.14 1496.36
+    LEXEME   lex      THE           1496.36 1496.44 | LX150  |    LEXEME   lex      THE           1496.36 1496.44
+    LEXEME   lex      WORLD           1496.44 1496.90 | LX151  |    LEXEME   lex      WORLD           1496.44 1496.90
+end SU       statemen peter_jennings              1496.90 | SU12   |end SU       statemen peter_jennings=>pet         1496.90
+end SPEAKER  adult_ma peter_jennings              1496.90 |        |
+                                                  1496.90 |        |end SPEAKER  adult_ma peter_jennings=>pet         1496.90
+    NON-LEX  breath   BREATH           1497.08 1497.44 |        |
+    NON-LEX  lipsmack LIP-SMACK           1497.44 1497.47 |        |
+beg SPEAKER  adult_ma peter_jennings      1497.47         |        |
+                                          1497.47         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1497.47        
+beg SU       statemen peter_jennings      1497.47         | SU13   |beg SU       statemen peter_jennings=>pet 1497.47        
+    LEXEME   lex      HE           1497.47 1497.99 | LX152  |    LEXEME   lex      HE           1497.47 1497.99
+    LEXEME   lex      AND           1497.99 1498.27 | LX153  |    LEXEME   lex      AND           1497.99 1498.27
+    LEXEME   lex      MRS.           1498.27 1498.61 | LX154  |    LEXEME   lex      MRS.           1498.27 1498.61
+    LEXEME   lex      REAGAN           1498.61 1498.99 | LX155  |    LEXEME   lex      REAGAN           1498.61 1498.99
+    LEXEME   lex      HAVE           1498.99 1499.19 | LX156  |    LEXEME   lex      HAVE           1498.99 1499.19
+    LEXEME   lex      BEEN           1499.19 1499.36 | LX157  |    LEXEME   lex      BEEN           1499.19 1499.36
+    LEXEME   lex      MARRIED           1499.36 1499.77 | LX158  |    LEXEME   lex      MARRIED           1499.36 1499.77
+    LEXEME   lex      FOR           1499.77 1500.05 | LX159  |    LEXEME   lex      FOR           1499.77 1500.05
+    LEXEME   lex      FORTY           1500.05 1500.34 | LX160  |    LEXEME   lex      FORTY           1500.05 1500.34
+    LEXEME   lex      EIGHT           1500.34 1500.63 | LX161  |    LEXEME   lex      EIGHT           1500.34 1500.63
+    LEXEME   lex      YEARS           1500.63 1500.97 | LX162  |    LEXEME   lex      YEARS           1500.63 1500.97
+    LEXEME   lex      NOW           1500.97 1501.15 | LX163  |    LEXEME   lex      NOW           1500.97 1501.15
+end SU       statemen peter_jennings              1501.15 | SU13   |end SU       statemen peter_jennings=>pet         1501.15
+beg SU       statemen peter_jennings      1501.15         | SU14   |beg SU       statemen peter_jennings=>pet 1501.15        
+    LEXEME   lex      SHE'S           1501.15 1501.42 | LX164  |    LEXEME   lex      SHE'S           1501.15 1501.42
+    LEXEME   lex      BEEN           1501.42 1501.55 | LX165  |    LEXEME   lex      BEEN           1501.42 1501.55
+    LEXEME   lex      HIS           1501.55 1501.73 | LX166  |    LEXEME   lex      HIS           1501.55 1501.73
+    LEXEME   lex      GREAT           1501.73 1502.01 | LX167  |    LEXEME   lex      GREAT           1501.73 1502.01
+    LEXEME   lex      PROTECTOR           1502.01 1502.60 | LX168  |    LEXEME   lex      PROTECTOR           1502.01 1502.60
+    NON-LEX  breath   BREATH           1502.60 1503.08 |        |
+    LEXEME   lex      IN           1503.08 1503.26 | LX169  |    LEXEME   lex      IN           1503.08 1503.26
+    LEXEME   lex      SO           1503.26 1503.45 | LX170  |    LEXEME   lex      SO           1503.26 1503.45
+    LEXEME   lex      MANY           1503.45 1503.70 | LX171  |    LEXEME   lex      MANY           1503.45 1503.70
+    LEXEME   lex      WAYS           1503.70 1504.13 | LX172  |    LEXEME   lex      WAYS           1503.70 1504.13
+end SU       statemen peter_jennings              1504.13 | SU14   |end SU       statemen peter_jennings=>pet         1504.13
+beg SU       statemen peter_jennings      1504.27         | SU15   |beg SU       statemen peter_jennings=>pet 1504.27        
+    LEXEME   lex      ALWAYS           1504.27 1504.86 | LX173  |    LEXEME   lex      ALWAYS           1504.27 1504.86
+    LEXEME   lex      SUCH           1504.86 1505.15 | LX174  |    LEXEME   lex      SUCH           1504.86 1505.15
+    LEXEME   lex      A           1505.15 1505.18 | LX175  |    LEXEME   lex      A           1505.15 1505.18
+    LEXEME   lex      VIGOROUS           1505.18 1505.65 | LX176  |    LEXEME   lex      VIGOROUS           1505.18 1505.65
+    LEXEME   lex      MAN           1505.65 1506.04 | LX177  |    LEXEME   lex      MAN           1505.65 1506.04
+end SPEAKER  adult_ma peter_jennings              1506.04 |        |
+                                                  1506.04 |        |end SPEAKER  adult_ma peter_jennings=>pet         1506.04
+    NON-LEX  breath   BREATH           1506.04 1506.55 |        |
+beg SPEAKER  adult_ma peter_jennings      1506.55         |        |
+                                          1506.55         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1506.55        
+    LEXEME   lex      EVEN           1506.55 1506.82 | LX178  |    LEXEME   lex      EVEN           1506.55 1506.82
+    LEXEME   lex      WITH           1506.82 1507.02 | LX179  |    LEXEME   lex      WITH           1506.82 1507.02
+    LEXEME   lex      ALZHEIMER'S           1507.02 1507.63 | LX180  |    LEXEME   lex      ALZHEIMER'S           1507.02 1507.63
+    LEXEME   lex      DISEASE           1507.63 1508.23 | LX181  |    LEXEME   lex      DISEASE           1507.63 1508.23
+end SU       statemen peter_jennings              1508.23 | SU15   |end SU       statemen peter_jennings=>pet         1508.23
+beg SU       statemen peter_jennings      1508.36         | SU16   |beg SU       statemen peter_jennings=>pet 1508.36        
+    LEXEME   lex      AND           1508.36 1508.50 | LX182  |    LEXEME   lex      AND           1508.36 1508.50
+    LEXEME   lex      SUCH           1508.50 1508.74 | LX183  |    LEXEME   lex      SUCH           1508.50 1508.74
+    LEXEME   lex      A           1508.74 1508.81 | LX184  |    LEXEME   lex      A           1508.74 1508.81
+    LEXEME   lex      LONG           1508.81 1509.37 | LX185  |    LEXEME   lex      LONG           1508.81 1509.37
+    LEXEME   lex      RELATIONSHIP           1509.37 1510.15 | LX186  |    LEXEME   lex      RELATIONSHIP           1509.37 1510.15
+    NON-LEX  breath   BREATH           1510.15 1510.52 |        |
+    LEXEME   lex      WITH           1510.52 1510.74 | LX187  |    LEXEME   lex      WITH           1510.52 1510.74
+    LEXEME   lex      THE           1510.74 1510.83 | LX188  |    LEXEME   lex      THE           1510.74 1510.83
+    LEXEME   lex      PUBLIC           1510.83 1511.17 | LX189  |    LEXEME   lex      PUBLIC           1510.83 1511.17
+end SU       statemen peter_jennings              1511.17 | SU16   |end SU       statemen peter_jennings=>pet         1511.17
+end SPEAKER  adult_ma peter_jennings              1511.17 |        |
+                                                  1511.17 |        |end SPEAKER  adult_ma peter_jennings=>pet         1511.17
+    NON-LEX  lipsmack LIP-SMACK           1511.17 1511.52 |        |
+    NON-LEX  breath   BREATH           1511.52 1511.97 |        |
+beg SPEAKER  adult_ma peter_jennings      1511.97         |        |
+                                          1511.97         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1511.97        
+beg SU       statemen peter_jennings      1511.97         | SU17   |beg SU       statemen peter_jennings=>pet 1511.97        
+    LEXEME   lex      TONIGHT           1511.97 1512.50 | LX190  |    LEXEME   lex      TONIGHT           1511.97 1512.50
+    LEXEME   lex      WE           1512.50 1512.79 | LX191  |    LEXEME   lex      WE           1512.50 1512.79
+    LEXEME   lex      HEAR           1512.79 1513.09 | LX192  |    LEXEME   lex      HEAR           1512.79 1513.09
+    LEXEME   lex      FROM           1513.09 1513.29 | LX193  |    LEXEME   lex      FROM           1513.09 1513.29
+    LEXEME   lex      A           1513.29 1513.32 | LX194  |    LEXEME   lex      A           1513.29 1513.32
+    LEXEME   lex      WOMAN           1513.32 1513.63 | LX195  |    LEXEME   lex      WOMAN           1513.32 1513.63
+    LEXEME   lex      WHO           1513.63 1513.83 | LX196  |    LEXEME   lex      WHO           1513.63 1513.83
+    LEXEME   lex      HAS           1513.83 1513.98 | LX197  |    LEXEME   lex      HAS           1513.83 1513.98
+    LEXEME   lex      HAD           1513.98 1514.30 | LX198  |    LEXEME   lex      HAD           1513.98 1514.30
+    LEXEME   lex      AS           1514.30 1514.61 | LX199  |    LEXEME   lex      AS           1514.30 1514.61
+    LEXEME   lex      LONG           1514.61 1515.04 | LX200  |    LEXEME   lex      LONG           1514.61 1515.04
+    LEXEME   lex      A           1515.04 1515.12 | LX201  |    LEXEME   lex      A           1515.04 1515.12
+    LEXEME   lex      RELATIONSHIP           1515.12 1515.75 | LX202  |    LEXEME   lex      RELATIONSHIP           1515.12 1515.75
+    LEXEME   lex      AS           1515.75 1515.91 | LX203  |    LEXEME   lex      AS           1515.75 1515.91
+    LEXEME   lex      ANYONE           1515.91 1516.44 | LX204  |    LEXEME   lex      ANYONE           1515.91 1516.44
+    NON-LEX  breath   BREATH           1516.44 1516.82 |        |
+    LEXEME   lex      OUTSIDE           1516.82 1517.32 | LX205  |    LEXEME   lex      OUTSIDE           1516.82 1517.32
+    LEXEME   lex      THE           1517.32 1517.41 | LX206  |    LEXEME   lex      THE           1517.32 1517.41
+    LEXEME   lex      FAMILY           1517.41 1517.86 | LX207  |    LEXEME   lex      FAMILY           1517.41 1517.86
+end SU       statemen peter_jennings              1517.86 | SU17   |end SU       statemen peter_jennings=>pet         1517.86
+end SPEAKER  adult_ma peter_jennings              1517.86 |        |
+                                                  1517.86 |        |end SPEAKER  adult_ma peter_jennings=>pet         1517.86
+    NON-LEX  breath   BREATH           1517.86 1518.46 |        |
+beg SPEAKER  adult_ma peter_jennings      1518.46         |        |
+                                          1518.46         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1518.46        
+beg SU       statemen peter_jennings      1518.46         | SU18   |beg SU       statemen peter_jennings=>pet 1518.46        
+    LEXEME   lex      AND           1518.46 1518.55 | LX208  |    LEXEME   lex      AND           1518.46 1518.55
+    LEXEME   lex      WE           1518.55 1518.73 | LX209  |    LEXEME   lex      WE           1518.55 1518.73
+    LEXEME   lex      KNOW           1518.73 1518.95 | LX210  |    LEXEME   lex      KNOW           1518.73 1518.95
+    LEXEME   lex      THIS           1518.95 1519.18 | LX211  |    LEXEME   lex      THIS           1518.95 1519.18
+    CB       clausal  peter_jennings      1519.18         |        |
+    LEXEME   lex      BECAUSE           1519.18 1519.53 | LX212  |    LEXEME   lex      BECAUSE           1519.18 1519.53
+    LEXEME   lex      FOR           1519.53 1519.68 | LX213  |    LEXEME   lex      FOR           1519.53 1519.68
+    LEXEME   lex      HALF           1519.68 1520.05 | LX214  |    LEXEME   lex      HALF           1519.68 1520.05
+    LEXEME   lex      A           1520.05 1520.10 | LX215  |    LEXEME   lex      A           1520.05 1520.10
+    LEXEME   lex      CENTURY           1520.10 1520.68 | LX216  |    LEXEME   lex      CENTURY           1520.10 1520.68
+    LEXEME   lex      THEY           1521.09 1521.23 | LX217  |    LEXEME   lex      THEY           1521.09 1521.23
+    LEXEME   lex      WROTE           1521.23 1521.57 | LX218  |    LEXEME   lex      WROTE           1521.23 1521.57
+    LEXEME   lex      TO           1521.57 1521.73 | LX219  |    LEXEME   lex      TO           1521.57 1521.73
+    LEXEME   lex      EACH           1521.73 1521.91 | LX220  |    LEXEME   lex      EACH           1521.73 1521.91
+    LEXEME   lex      OTHER           1521.91 1522.17 | LX221  |    LEXEME   lex      OTHER           1521.91 1522.17
+end SU       statemen peter_jennings              1522.17 | SU18   |end SU       statemen peter_jennings=>pet         1522.17
+end SPEAKER  adult_ma peter_jennings              1522.17 |        |
+                                                  1522.17 |        |end SPEAKER  adult_ma peter_jennings=>pet         1522.17
+beg SPEAKER  adult_ma peter_jennings      1522.88         |        |
+                                          1522.88         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1522.88        
+beg SU       statemen peter_jennings      1522.88         | SU19   |beg SU       statemen peter_jennings=>pet 1522.88        
+    LEXEME   lex      HERE'S           1522.88 1523.09 | LX222  |    LEXEME   lex      HERE'S           1522.88 1523.09
+    LEXEME   alpha    A.           1523.09 1523.21 | LX223  |    LEXEME   alpha    A.           1523.09 1523.21
+    LEXEME   alpha    B.           1523.21 1523.31 | LX224  |    LEXEME   alpha    B.           1523.21 1523.31
+    LEXEME   alpha    C.'S           1523.31 1523.52 | LX225  |    LEXEME   alpha    C.'S           1523.31 1523.52
+    LEXEME   lex      AARON           1523.52 1523.78 | LX226  |    LEXEME   lex      AARON           1523.52 1523.78
+    LEXEME   lex      BROWN           1523.78 1523.98 | LX227  |    LEXEME   lex      BROWN           1523.78 1523.98
+end SU       statemen peter_jennings              1523.98 | SU19   |end SU       statemen peter_jennings=>pet         1523.98
+end SPEAKER  adult_ma peter_jennings              1523.98 |        |
+                                                  1523.98 |        |end SPEAKER  adult_ma peter_jennings=>pet         1523.98
+end SEGMENT  <na>     peter_jennings              1524.13 |        |
+beg SEGMENT  <na>     aaron_brown         1527.30         |        |
+beg SPEAKER  adult_ma aaron_brown         1527.34         |        |
+                                          1527.34         |        |beg SPEAKER  adult_ma aaron_brown=>aaron_ 1527.34        
+beg SU       statemen aaron_brown         1527.34         | SU20   |beg SU       statemen aaron_brown=>aaron_ 1527.34        
+    LEXEME   lex      A           1527.34 1527.41 | LX228  |    LEXEME   lex      A           1527.34 1527.41
+    LEXEME   lex      HALF           1527.41 1527.65 | LX229  |    LEXEME   lex      HALF           1527.41 1527.65
+    LEXEME   lex      CENTURY           1527.65 1528.11 | LX230  |    LEXEME   lex      CENTURY           1527.65 1528.11
+    LEXEME   lex      AGO           1528.11 1528.41 | LX231  |    LEXEME   lex      AGO           1528.11 1528.41
+    LEXEME   lex      LORRAINE           1528.41 1528.89 | LX232  |    LEXEME   lex      LORRAINE           1528.41 1528.89
+    LEXEME   lex      WAGNER           1528.89 1529.30 | LX233  |    LEXEME   lex      WAGNER           1528.89 1529.30
+    LEXEME   lex      WAS           1529.30 1529.49 | LX234  |    LEXEME   lex      WAS           1529.30 1529.49
+    LEXEME   lex      A           1529.49 1529.55 | LX235  |    LEXEME   lex      A           1529.49 1529.55
+    LEXEME   lex      KID           1529.55 1529.87 | LX236  |    LEXEME   lex      KID           1529.55 1529.87
+    LEXEME   lex      WITH           1529.87 1530.00 | LX237  |    LEXEME   lex      WITH           1529.87 1530.00
+    LEXEME   lex      A           1530.00 1530.05 | LX238  |    LEXEME   lex      A           1530.00 1530.05
+    LEXEME   lex      CRUSH           1530.05 1530.56 | LX239  |    LEXEME   lex      CRUSH           1530.05 1530.56
+end SU       statemen aaron_brown                 1530.56 | SU20   |end SU       statemen aaron_brown=>aaron_         1530.56
+    NON-LEX  breath   BREATH           1530.56 1530.97 |        |
+beg SU       statemen aaron_brown         1530.97         | SU21   |beg SU       statemen aaron_brown=>aaron_ 1530.97        
+    LEXEME   lex      AND           1530.97 1531.08 | LX240  |    LEXEME   lex      AND           1530.97 1531.08
+    LEXEME   lex      THE           1531.08 1531.21 | LX241  |    LEXEME   lex      THE           1531.08 1531.21
+    LEXEME   lex      OBJECT           1531.21 1531.74 | LX242  |    LEXEME   lex      OBJECT           1531.21 1531.74
+    LEXEME   lex      OF           1531.74 1531.87 | LX243  |    LEXEME   lex      OF           1531.74 1531.87
+    LEXEME   lex      HER           1531.87 1531.99 | LX244  |    LEXEME   lex      HER           1531.87 1531.99
+    LEXEME   lex      AFFECTION           1531.99 1532.61 | LX245  |    LEXEME   lex      AFFECTION           1531.99 1532.61
+    LEXEME   lex      AND           1532.89 1533.07 | LX246  |    LEXEME   lex      AND           1532.89 1533.07
+    LEXEME   lex      HER           1533.07 1533.26 | LX247  |    LEXEME   lex      HER           1533.07 1533.26
+    LEXEME   lex      CONSIDERABLE           1533.26 1534.17 | LX248  |    LEXEME   lex      CONSIDERABLE           1533.26 1534.17
+    LEXEME   lex      ATTENTION           1534.17 1534.79 | LX249  |    LEXEME   lex      ATTENTION           1534.17 1534.79
+end SPEAKER  adult_ma aaron_brown                 1534.79 |        |
+                                                  1534.79 |        |end SPEAKER  adult_ma aaron_brown=>aaron_         1534.79
+    NON-LEX  breath   BREATH           1534.79 1535.13 |        |
+beg SPEAKER  adult_ma aaron_brown         1535.41         |        |
+                                          1535.41         |        |beg SPEAKER  adult_ma aaron_brown=>aaron_ 1535.41        
+    LEXEME   lex      WAS           1535.41 1535.56 | LX250  |    LEXEME   lex      WAS           1535.41 1535.56
+    LEXEME   lex      A           1535.56 1535.63 | LX251  |    LEXEME   lex      A           1535.56 1535.63
+    LEXEME   lex      HUNKY           1535.63 1536.02 | LX252  |    LEXEME   lex      HUNKY           1535.63 1536.02
+    LEXEME   lex      YOUNG           1536.02 1536.25 | LX253  |    LEXEME   lex      YOUNG           1536.02 1536.25
+    LEXEME   lex      ACTOR           1536.25 1536.57 | LX254  |    LEXEME   lex      ACTOR           1536.25 1536.57
+    LEXEME   lex      NAMED           1536.57 1536.76 | LX255  |    LEXEME   lex      NAMED           1536.57 1536.76
+    LEXEME   lex      RONALD           1536.76 1537.09 | LX256  |    LEXEME   lex      RONALD           1536.76 1537.09
+    LEXEME   lex      REAGAN           1537.09 1537.40 | LX257  |    LEXEME   lex      REAGAN           1537.09 1537.40
+end SU       statemen aaron_brown                 1537.40 | SU21   |end SU       statemen aaron_brown=>aaron_         1537.40
+end SPEAKER  adult_ma aaron_brown                 1537.40 |        |
+                                                  1537.40 |        |end SPEAKER  adult_ma aaron_brown=>aaron_         1537.40
+end SEGMENT  <na>     aaron_brown                 1537.45 |        |
+beg SEGMENT  <na>     ronald_reagan       1537.45         |        |
+beg SPEAKER  adult_ma ronald_reagan       1537.75         |        |
+                                          1537.75         |        |beg SPEAKER  adult_ma ronald_reagan=>rona 1537.75        
+beg SU       statemen ronald_reagan       1537.75         | SU22   |beg SU       statemen ronald_reagan=>rona 1537.75        
+    LEXEME   lex      MARY           1537.75 1538.30 | LX258  |    LEXEME   lex      MARY           1537.75 1538.30
+end SU       statemen ronald_reagan               1538.30 | SU22   |end SU       statemen ronald_reagan=>rona         1538.30
+end SPEAKER  adult_ma ronald_reagan               1538.30 |        |
+                                                  1538.30 |        |end SPEAKER  adult_ma ronald_reagan=>rona         1538.30
+end SEGMENT  <na>     ronald_reagan               1539.14 |        |
+beg SEGMENT  <na>     aaron_brown         1539.14         |        |
+beg SPEAKER  adult_ma aaron_brown         1539.18         |        |
+                                          1539.18         |        |beg SPEAKER  adult_ma aaron_brown=>aaron_ 1539.18        
+beg SU       statemen aaron_brown         1539.18         | SU23   |beg SU       statemen aaron_brown=>aaron_ 1539.18        
+    LEXEME   lex      SHE           1539.18 1539.43 | LX259  |    LEXEME   lex      SHE           1539.18 1539.43
+    LEXEME   lex      WROTE           1539.43 1539.63 | LX260  |    LEXEME   lex      WROTE           1539.43 1539.63
+    LEXEME   lex      A           1539.63 1539.69 | LX261  |    LEXEME   lex      A           1539.63 1539.69
+    LEXEME   lex      FAN           1539.69 1540.01 | LX262  |    LEXEME   lex      FAN           1539.69 1540.01
+    LEXEME   lex      LETTER           1540.01 1540.34 | LX263  |    LEXEME   lex      LETTER           1540.01 1540.34
+end SU       statemen aaron_brown                 1540.34 | SU23   |end SU       statemen aaron_brown=>aaron_         1540.34
+beg SU       statemen aaron_brown         1540.34         | SU24   |beg SU       statemen aaron_brown=>aaron_ 1540.34        
+    LEXEME   lex      HE           1540.34 1540.81 | LX264  |    LEXEME   lex      HE           1540.34 1540.81
+    LEXEME   lex      SENT           1541.09 1541.35 | LX265  |    LEXEME   lex      SENT           1541.09 1541.35
+    LEXEME   lex      AN           1541.35 1541.44 | LX266  |    LEXEME   lex      AN           1541.35 1541.44
+    LEXEME   lex      AUTOGRAPHED           1541.44 1542.00 | LX267  |    LEXEME   lex      AUTOGRAPHED           1541.44 1542.00
+    LEXEME   lex      PICTURE           1542.00 1542.44 | LX268  |    LEXEME   lex      PICTURE           1542.00 1542.44
+end SU       statemen aaron_brown                 1542.44 | SU24   |end SU       statemen aaron_brown=>aaron_         1542.44
+end SPEAKER  adult_ma aaron_brown                 1542.44 |        |
+                                                  1542.44 |        |end SPEAKER  adult_ma aaron_brown=>aaron_         1542.44
+beg SPEAKER  adult_ma aaron_brown         1543.09         |        |
+                                          1543.09         |        |beg SPEAKER  adult_ma aaron_brown=>aaron_ 1543.09        
+beg SU       question aaron_brown         1543.09         | SU25   |beg SU       question aaron_brown=>aaron_ 1543.09        
+    LEXEME   lex      AND           1543.09 1543.29 | LX269  |    LEXEME   lex      AND           1543.09 1543.29
+    LEXEME   lex      DID           1543.29 1543.47 | LX270  |    LEXEME   lex      DID           1543.29 1543.47
+    LEXEME   lex      YOU           1543.47 1543.56 | LX271  |    LEXEME   lex      YOU           1543.47 1543.56
+    LEXEME   lex      TAKE           1543.56 1543.82 | LX272  |    LEXEME   lex      TAKE           1543.56 1543.82
+    LEXEME   lex      THAT           1543.82 1543.98 | LX273  |    LEXEME   lex      THAT           1543.82 1543.98
+    LEXEME   lex      PICTURE           1543.98 1544.30 | LX274  |    LEXEME   lex      PICTURE           1543.98 1544.30
+    LEXEME   lex      TO           1544.30 1544.38 | LX275  |    LEXEME   lex      TO           1544.30 1544.38
+    LEXEME   lex      SCHOOL           1544.38 1544.87 | LX276  |    LEXEME   lex      SCHOOL           1544.38 1544.87
+    CB       coordina aaron_brown         1544.87         |        |
+    LEXEME   lex      AND           1544.87 1544.97 | LX277  |    LEXEME   lex      AND           1544.87 1544.97
+    LEXEME   lex      SHOW           1544.97 1545.16 | LX278  |    LEXEME   lex      SHOW           1544.97 1545.16
+    LEXEME   lex      IT           1545.16 1545.22 | LX279  |    LEXEME   lex      IT           1545.16 1545.22
+beg SEGMENT  <na>     lorraine_wagner     1545.27         |        |
+beg SPEAKER  adult_fe lorraine_wagner     1545.36         |        |
+                                          1545.36         |        |beg SPEAKER  adult_fe lorraine_wagner=>lo 1545.36        
+beg SU       backchan lorraine_wagner     1545.36         | SU26   |beg SU       backchan lorraine_wagner=>lo 1545.36        
+beg LEXEME   lex      TO           1545.36         | LX280  |
+beg LEXEME   lex      OH           1545.36         | LX281  |
+                                          1545.36         | LX280  |beg LEXEME   lex      TO           1545.36        
+                                          1545.36         | LX281  |beg LEXEME   lex      OH           1545.36        
+end LEXEME   lex      TO                   1545.46 | LX280  |end LEXEME   lex      TO                   1545.46
+beg LEXEME   lex      FRIENDS           1545.46         | LX282  |beg LEXEME   lex      FRIENDS           1545.46        
+end LEXEME   lex      OH                   1545.66 | LX281  |end LEXEME   lex      OH                   1545.66
+end SU       backchan lorraine_wagner             1545.66 | SU26   |end SU       backchan lorraine_wagner=>lo         1545.66
+beg SU       statemen lorraine_wagner     1545.66         | SU27   |beg SU       statemen lorraine_wagner=>lo 1545.66        
+beg LEXEME   lex      I           1545.66         | LX283  |beg LEXEME   lex      I           1545.66        
+end LEXEME   lex      FRIENDS                   1545.71 | LX282  |end LEXEME   lex      FRIENDS                   1545.71
+end SU       question aaron_brown                 1545.71 | SU25   |end SU       question aaron_brown=>aaron_         1545.71
+end SPEAKER  adult_ma aaron_brown                 1545.71 |        |
+                                                  1545.71 |        |end SPEAKER  adult_ma aaron_brown=>aaron_         1545.71
+end LEXEME   lex      I                   1545.77 | LX283  |end LEXEME   lex      I                   1545.77
+end SEGMENT  <na>     aaron_brown                 1545.82 |        |
+    LEXEME   lex      TOOK           1545.86 1546.11 | LX284  |    LEXEME   lex      TOOK           1545.86 1546.11
+    LEXEME   lex      IT           1546.11 1546.20 | LX285  |    LEXEME   lex      IT           1546.11 1546.20
+    LEXEME   lex      TO           1546.20 1546.33 | LX286  |    LEXEME   lex      TO           1546.20 1546.33
+    LEXEME   lex      EVERYBODY           1546.33 1547.03 | LX287  |    LEXEME   lex      EVERYBODY           1546.33 1547.03
+beg FILLER   filled_p lorraine_wagner     1547.03         | FL1    |beg FILLER   filled_p lorraine_wagner=>lo 1547.03        
+    IP       filler   lorraine_wagner     1547.03         | IP1    |    IP       filler   lorraine_wagner=>lo 1547.03        
+    LEXEME   fp       UH           1547.03 1547.10 | LX288  |    LEXEME   fp       UH           1547.03 1547.10
+end FILLER   filled_p lorraine_wagner             1547.10 | FL1    |end FILLER   filled_p lorraine_wagner=>lo         1547.10
+    LEXEME   lex      THAT           1547.10 1547.33 | LX289  |    LEXEME   lex      THAT           1547.10 1547.33
+    LEXEME   lex      YOU           1547.33 1547.48 | LX290  |    LEXEME   lex      YOU           1547.33 1547.48
+    LEXEME   lex      CAN           1547.48 1547.65 | LX291  |    LEXEME   lex      CAN           1547.48 1547.65
+    LEXEME   lex      IMAGINE           1547.65 1548.27 | LX292  |    LEXEME   lex      IMAGINE           1547.65 1548.27
+end SU       statemen lorraine_wagner             1548.27 | SU27   |end SU       statemen lorraine_wagner=>lo         1548.27
+    NON-LEX  breath   BREATH           1548.27 1548.68 |        |
+beg SU       statemen lorraine_wagner     1548.68         | SU28   |beg SU       statemen lorraine_wagner=>lo 1548.68        
+    LEXEME   lex      ANYONE           1548.68 1549.08 | LX293  |    LEXEME   lex      ANYONE           1548.68 1549.08
+    LEXEME   lex      I           1549.08 1549.24 | LX294  |    LEXEME   lex      I           1549.08 1549.24
+    LEXEME   lex      KNEW           1549.24 1549.54 | LX295  |    LEXEME   lex      KNEW           1549.24 1549.54
+    LEXEME   lex      IN           1549.54 1549.65 | LX296  |    LEXEME   lex      IN           1549.54 1549.65
+    LEXEME   lex      MY           1549.65 1549.83 | LX297  |    LEXEME   lex      MY           1549.65 1549.83
+    LEXEME   lex      LIFE           1549.83 1550.24 | LX298  |    LEXEME   lex      LIFE           1549.83 1550.24
+beg EDIT     other    lorraine_wagner     1550.24         | ED1    |beg EDIT     other    lorraine_wagner=>lo 1550.24        
+    LEXEME   lex      HAD           1550.24 1550.46 | LX299  |    LEXEME   lex      HAD           1550.24 1550.46
+    LEXEME   lex      TO           1550.46 1550.60 | LX300  |    LEXEME   lex      TO           1550.46 1550.60
+end EDIT     other    lorraine_wagner             1550.60 | ED1    |end EDIT     other    lorraine_wagner=>lo         1550.60
+beg EDIT     other    lorraine_wagner     1550.60         | ED2    |beg EDIT     other    lorraine_wagner=>lo 1550.60        
+    IP       edit     lorraine_wagner     1550.60         | IP2    |    IP       edit     lorraine_wagner=>lo 1550.60        
+    LEXEME   lex      HAD           1550.60 1550.80 | LX301  |    LEXEME   lex      HAD           1550.60 1550.80
+    LEXEME   frag     I           1550.80 1550.94 | LX302  |    LEXEME   frag     I           1550.80 1550.94
+end EDIT     other    lorraine_wagner             1550.94 | ED2    |end EDIT     other    lorraine_wagner=>lo         1550.94
+    IP       edit     lorraine_wagner     1550.94         | IP3    |    IP       edit     lorraine_wagner=>lo 1550.94        
+    LEXEME   lex      SAW           1551.05 1551.33 | LX303  |    LEXEME   lex      SAW           1551.05 1551.33
+    LEXEME   lex      THAT           1551.33 1551.58 | LX304  |    LEXEME   lex      THAT           1551.33 1551.58
+    LEXEME   lex      PICTURE           1551.58 1551.97 | LX305  |    LEXEME   lex      PICTURE           1551.58 1551.97
+end SU       statemen lorraine_wagner             1551.97 | SU28   |end SU       statemen lorraine_wagner=>lo         1551.97
+end SPEAKER  adult_fe lorraine_wagner             1551.97 |        |
+                                                  1551.97 |        |end SPEAKER  adult_fe lorraine_wagner=>lo         1551.97
+end SEGMENT  <na>     lorraine_wagner             1552.35 |        |
+
+*** Performance analysis for EDITs ***  overall error SCORE = 0.00%
+
+EDIT word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               4       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection statistics -- in terms of # of EDITs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection confusion matrix -- in terms of # of EDITs
+           ALL - ref\sys     other        {Miss}
+                   other       2             0  
+
+                    {FA}       0  
+
+EDIT word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for FILLERs ***  overall error SCORE = 0.00%
+
+FILLER word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection statistics -- in terms of # of FILLERs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       1       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection confusion matrix -- in terms of # of FILLERs
+           ALL - ref\sys  filled_p        {Miss}
+            filled_pause       1             0  
+
+                    {FA}       0  
+
+FILLER word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    1    -    -    -      0
+           END:    0      -    -    -    1    -    -    -      0
+
+*** Performance analysis for IPs ***  overall error SCORE = 0.00%
+
+IP (exact) detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               3       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection statistics -- in terms of # of IPs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               3       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       3       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection confusion matrix -- in terms of # of IPs
+           ALL - ref\sys      edit    filler        {Miss}
+                    edit       2         0             0  
+                  filler       0         1             0  
+
+                    {FA}       0         0  
+
+IP word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    3    -    -    -      0
+           END:    0      -    -    -    3    -    -    -      0
+
+*** Performance analysis for SUs ***  overall error SCORE = 0.00%
+
+SU (exact) end detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              28       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection statistics -- in terms of # of SUs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              28       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT      28       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  backchan  question  statemen        {Miss}
+             backchannel       1         0         0             0  
+                question       0         1         0             0  
+               statement       0         0        26             0  
+
+                    {FA}       0         0         0  
+
+SU word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -   28    -    -    -      0
+           END:    0      -    -    -   28    -    -    -      0
+
+*** Performance analysis for Speaker Diarization for f=20010206_1830_1900_ABC_WNT ***
+
+    EVAL TIME =    250.31 secs
+  EVAL SPEECH =     98.80 secs ( 39.5 percent of evaluated time)
+  SCORED TIME =    240.49 secs ( 96.1 percent of evaluated time)
+SCORED SPEECH =     96.31 secs ( 40.0 percent of scored time)
+   EVAL WORDS =    301        
+ SCORED WORDS =    301         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     96.67 secs (100.4 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=20010206_1830_1900_ABC_WNT)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male            MISS              
+adult_female              1 /  25.0%          0 /   0.0%          0 /   0.0%
+adult_male                0 /   0.0%          3 /  75.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male            MISS              
+adult_female           6.21 /   6.4%       0.36 /   0.4%       0.00 /   0.0%
+adult_male             0.36 /   0.4%      90.46 /  93.6%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =    250.31 secs
+  EVAL SPEECH =     98.80 secs ( 39.5 percent of evaluated time)
+  SCORED TIME =    240.49 secs ( 96.1 percent of evaluated time)
+SCORED SPEECH =     96.31 secs ( 40.0 percent of scored time)
+   EVAL WORDS =    301        
+ SCORED WORDS =    301         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     96.67 secs (100.4 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male            MISS              
+adult_female              1 /  25.0%          0 /   0.0%          0 /   0.0%
+adult_male                0 /   0.0%          3 /  75.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male            MISS              
+adult_female           6.21 /   6.4%       0.36 /   0.4%       0.00 /   0.0%
+adult_male             0.36 /   0.4%      90.46 /  93.6%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------

@@ -1,0 +1,10 @@
+
+51.34 51.77 B: she ((has)) a (()) ((blank one)) and (( has )) another (( )) (( blank one))
+
+51.79 59.87 A: I <contraction e_form="[do=>do][n't=>not]">don't  <contraction e_form="[do=>do][n't=>not]">don't 
+
+63.34 65.77 A1: she (( {noise} )) ((<contraction e_form="[do=>do][n't=>not]">don't)) <noise> fifty-fou- five-three-tw- n-n-
+
+73.34 75.77 A1: ((<foreign language="mandarin">she is</foreign>))
+
+

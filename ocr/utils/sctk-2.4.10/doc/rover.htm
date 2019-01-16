@@ -1,0 +1,165 @@
+<!-- $Id: rover.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML>
+<HEAD>
+<CENTER><TITLE>rover</TITLE>
+</HEAD>
+<BODY></CENTER><p>
+<CENTER><STRONG><FONT COLOR=red SIZE=17> WORK IN PROGRESS </FONT></STRONG></CENTER>
+<hr>
+
+<H1> 
+<A NAME="rover_name_0">
+NAME</A>
+</H1>
+rover - Recognition Output Voting Error Reduction
+<p><p><hr>
+
+<H1> <A NAME="rover_synopsis_0"> SYNOPSIS</A> </H1>
+rover [ -sT -a alpha -c Nconf -f level -l width ] ( -h hypfile ctm )+ -o outfile -m meth
+
+<p><B>Input Options </B>
+<UL> 
+    -h hypfile ctm
+	<UL>
+                Define the hypothesis file and it's format. This option
+                must be used more than once.  Currently, only the ctm format
+		is recgnized.
+	</UL>
+</UL>
+<p><B>Output Options </B>
+<UL>
+    -o outfile
+	<UL>  Define the output file.  (Will be same format as hyps)
+	</UL>
+    -f level
+	<UL>    Defines feedback mode, default is 1
+	</UL>
+    -l width   
+	<UL> Defines the line width.
+	</UL>
+</UL>
+<p><B>Voting Options </B>
+<UL>
+    -m meth 
+	<UL> Set the voting method 'meth' to one of the following:
+	<BR>
+	<BR>
+          oracle   -> output the fully alternated transcript<BR>
+          meth1    -> alpha = -a , conf = -c, choose highest avg<BR>
+          maxconf  -> <A HREF="rover/rover.htm#Section2.2.2">Voting by Using Maximum Confidence Score</A><BR>
+          avgconf  -> <A HREF="rover/rover.htm#Section2.2.2">Voting by Average Conf. Score</A><BR>
+          maxconfa -> 
+		<UL>
+		Same as maxconf, but set the confidence score for
+		the NULL transition arcs to be the number of NULL transition
+		arcs in the correspondence set divided by the number of input
+		systems.
+		</UL>
+          putat    -> Output the putative hit format
+	</UL>
+    -a alpha   <UL> Set Alpha to 'alpha'.  Alpha is the tradeoff between 
+                    using word occurrence counts and confidence scores.
+		    By default alpha is 1.0 </UL>
+    -c Nconf 
+		<UL> Set confidence score associated with NULL transition
+		arcs to 'Nconf'.  Default: 0.0
+		</UL>
+</UL>
+<p><B>Alignment Options </B>
+<UL>
+
+    -s        
+	<UL>  Do Case-sensitive alignments.
+	</UL>
+    -T  <UL>  Use time information, (if available), to calculated word-to-
+                word distances.
+	</UL>
+</UL>
+
+</STRONG>
+<p>
+<H1> <A NAME="rover_description_0">DESCRIPTION</A></H1>
+<p>
+
+Rover is a tool combine hypothesized word outputs of multiple
+recognition systems and select the best scoring word sequence. 
+Rover is part of the <A HREF="sctk.htm">NIST SCTK</A> Scoring Tookit. A
+number of different output formats can be generated and different
+scoring functions can be specified.  A more complete description of
+the rover system can be found in the paper <A HREF="rover/rover.htm">
+A post-processing system to yield reduced word error rates: Recognizer
+Output Voting Error Reduction (ROVER).</A> 
+
+<p> The ROVER system is implemented in two modules. First, the system
+outputs from two or more ASR systems are combined into a single word
+transition network. The network is created using a modification of the
+dynamic programming alignment protocol traditionally used by NIST to
+evaluate ASR technology. Once the network is generated, the second
+module evaluates each branching point using a voting scheme, which
+selects the best scoring word (with the highest number of votes) for
+the new transcription.  The following figure depicts the the overall
+system architecture.
+
+<P ALIGN="JUSTIFY"><IMG SRC="rover/image2.gif" WIDTH=288 HEIGHT=114></P>
+
+<p>
+
+The heart of the Rover program is the ability to combine system
+outputs of mulitple recognition systems using an iterative Dynamic
+Programming alignment protocol into a single, composite Word
+Transition Network (WTN).  The protocol is fully described in the
+<A HREF="rover/rover.htm#Section2.1">
+	Section 2.1. RECOGNITION OUTPUT ALIGNMENT MODULE </A> of the paper.
+
+<p>
+
+Once the composite WTN is produced, each correspondence set (CS) is
+evaluated using the selected scoring function.  <A
+HREF="rover/rover.htm#Section2.2"> Section 2.2. WTN VOTING SEARCH
+MODULE:</A> describes the voting process in detail.
+
+There are three voting schemes described in the paper:
+
+<UL>
+<A HREF="rover/rover.htm#Section2.2.1"> By Word Frequency </A>
+	<UL> To use word frequency as the scoring function, use	the options
+	    '-m avgconf -a 1.0 -c 0.0'.  By setting -a to 1.0, the tradeoff
+	    between  word occurrences and confidence scores, only the 
+	    word occurrences are used.
+	</UL>
+</UL>
+<UL> 
+<A HREF="rover/rover.htm#Section2.2.2"> By Average Confidence Scores </A>
+	<UL> The '-m avgconf' option make the voting function use
+	average confidence scores.
+	</UL>
+</UL>
+<UL>
+<A HREF="rover/rover.htm#Section2.2.3"> By Word Maximum Confidence Scores </A>
+	<UL> The '-m maxconf' option make the voting function use
+	the maximum confidence per word as the scoring metric.
+	</UL>
+</UL>
+
+
+<UL>
+</UL>
+
+
+
+<h1> REVISION HISTORY </h1>
+<ul>
+This is the initial release.
+</ul>
+<h1> BUGS/COMMENTS </h1>
+<ul>
+
+Please contact Jon Fiscus at NIST with any bug reports or comments at
+the email address 
+<A HREF="mailto:jonathan.fiscus@nist.gov">jonathan.fiscus@nist.gov </A> or
+by phone, (301)-975-3182.  Please include the version number of rover,
+and any other relevant information such as OS, compiler, etc.  </ul>
+
+</BODY>
+</HTML>
+ 

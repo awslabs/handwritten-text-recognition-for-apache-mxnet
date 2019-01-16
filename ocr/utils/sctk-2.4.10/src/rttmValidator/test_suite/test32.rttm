@@ -1,0 +1,43 @@
+;; RTTMValidator test32.rttm - test for object that partially overlaps with noscore regions
+;; EXP-ID: expt_03f_su_eval_eng_bnews_spch_1
+
+SPKR-INFO test32 1 <NA> <NA> <NA> unknown 1 <NA>
+SPKR-INFO test32 1 <NA> <NA> <NA> unknown 2 <NA>
+;; complete overlap with noscore is ok
+NOSCORE	test32 1 0.670 4.550 <NA> <NA> <NA> <NA>
+SPEAKER test32 1 0.670 4.550 <NA> <NA> 1 <NA>
+SU 	test32 1 0.670 3.140 <NA> statement 1 0.708209
+LEXEME 	test32 1 0.670 0.190 IT lex 1 1
+LEXEME 	test32 1 0.870 0.270 IS lex 1 1
+LEXEME 	test32 1 1.150 0.450 FIFTEEN lex 1 1
+LEXEME 	test32 1 1.610 0.370 HOURS lex 1 1
+LEXEME 	test32 1 1.990 0.600 UNIVERSAL lex 1 1
+LEXEME 	test32 1 2.600 0.410 TIME lex 1 1
+LEXEME 	test32 1 3.020 0.200 FROM lex 1 1
+LEXEME 	test32 1 3.230 0.580 WASHINGTON lex 1 1
+SU 	test32 1 3.820 0.390 <NA> statement 1 0.951884
+EDIT 	test32 1 3.820 0.220 <NA> other 1 1
+LEXEME 	test32 1 3.820 0.220 THIS lex 1 1
+IP 	test32 1 4.040 <NA> <NA> edit 1 1
+LEXEME 	test32 1 4.050 0.160 IS lex 1 1
+SU 	test32 1 4.220 3.000 <NA> statement 1 0.951884
+LEXEME 	test32 1 4.220 1.000 UH lex 1 1
+;; partial overlap with noscore is not ok
+SPEAKER test32 1 20.670 4.550 <NA> <NA> 2 <NA>
+SU 	test32 1 20.670 3.140 <NA> statement 2 0.708209
+LEXEME 	test32 1 20.670 0.190 IT lex 2 1
+LEXEME 	test32 1 20.870 0.270 IS lex 2 1
+LEXEME 	test32 1 21.150 0.450 FIFTEEN lex 2 1
+LEXEME 	test32 1 21.610 0.370 HOURS lex 2 1
+LEXEME 	test32 1 21.990 0.600 UNIVERSAL lex 2 1
+LEXEME 	test32 1 22.600 0.410 TIME lex 2 1
+LEXEME 	test32 1 23.020 0.200 FROM lex 2 1
+LEXEME 	test32 1 23.230 0.580 WASHINGTON lex 2 1
+NOSCORE	test32 1 23.820 0.200 <NA> <NA> <NA> <NA>
+SU 	test32 1 23.820 0.390 <NA> statement 2 0.951884
+EDIT 	test32 1 23.820 0.220 <NA> other 2 1
+LEXEME 	test32 1 23.820 0.220 THIS lex 2 1
+IP 	test32 1 24.040 <NA> <NA> edit 2 1
+LEXEME 	test32 1 24.050 0.160 IS lex 2 1
+SU 	test32 1 24.220 3.000 <NA> statement 2 0.951884
+LEXEME 	test32 1 24.220 1.000 UH lex 2 1

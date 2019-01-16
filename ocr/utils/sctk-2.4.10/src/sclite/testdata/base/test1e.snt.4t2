@@ -1,0 +1,350 @@
+===============================================================================
+
+                     SENTENCE LEVEL REPORT FOR THE SYSTEM:
+    Name: ./csrnab.hyp
+
+===============================================================================
+
+
+SPEAKER 4t2
+id: (4t2c0201)
+Scores: (#C #S #D #I) 29 2 0 2
+REF:  COTT corporation the canadian bottler of private label soft drinks that has ***** * MESMERIZED the stock market 
+HYP:  CAR  corporation the canadian bottler of private label soft drinks that has MEANT A RISE       the stock market 
+Eval: S                                                                           I     I S                           
+
+>> REF:  with its marketing gains in recent years now has the short sellers on its tail 
+>> HYP:  with its marketing gains in recent years now has the short sellers on its tail 
+>> Eval:                                                                                
+
+Correct               =   93.5%   29   ( 29)
+Substitutions         =    6.5%    2   (  2)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    6.5%    2   (  2)
+
+Errors                =   12.9%    4   (  4)
+
+Ref. words            =           31   ( 31)
+Hyp. words            =           33   ( 33)
+Aligned words         =           33   ( 33)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0202)
+Scores: (#C #S #D #I) 28 1 0 0
+REF:  its shares fell four point eight seven five dollars canadian on wednesday to twenty point one two five dollars 
+HYP:  its shares fell four point eight seven five dollars canadian on wednesday to twenty point one two five dollars 
+Eval:                                                                                                                
+
+>> REF:  on the toronto stock exchange A   decline of twenty percent 
+>> HYP:  on the toronto stock exchange THE decline of twenty percent 
+>> Eval:                               S                             
+
+Correct               =   96.6%   28   ( 57)
+Substitutions         =    3.4%    1   (  3)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  2)
+
+Errors                =    3.4%    1   (  5)
+
+Ref. words            =           29   ( 60)
+Hyp. words            =           29   ( 62)
+Aligned words         =           29   ( 62)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0203)
+Scores: (#C #S #D #I) 10 0 0 0
+REF:  early last week the stock was trading above thirty dollars 
+HYP:  early last week the stock was trading above thirty dollars 
+Eval:                                                            
+
+Correct               =  100.0%   10   ( 67)
+Substitutions         =    0.0%    0   (  3)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  2)
+
+Errors                =    0.0%    0   (  5)
+
+Ref. words            =           10   ( 70)
+Hyp. words            =           10   ( 72)
+Aligned words         =           10   ( 72)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0204)
+Scores: (#C #S #D #I) 23 2 0 1
+REF:  the company's stock also plummeted wednesday in the UNITED states falling three point five dollars * UNITED 
+HYP:  the company's stock also plummeted wednesday in the NINE   states falling three point five dollars A NIGHT  
+Eval:                                                     S                                              I S      
+
+>> REF:  states to fourteen point five dollars in nasdaq trading 
+>> HYP:  states to fourteen point five dollars in nasdaq trading 
+>> Eval:                                                         
+
+Correct               =   92.0%   23   ( 90)
+Substitutions         =    8.0%    2   (  5)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    4.0%    1   (  3)
+
+Errors                =   12.0%    3   (  8)
+
+Ref. words            =           25   ( 95)
+Hyp. words            =           26   ( 98)
+Aligned words         =           26   ( 98)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0205)
+Scores: (#C #S #D #I) 30 5 0 0
+REF:  many ANALYSTS ARE    saying THAT COTT WHILE still expanding rapidly will fall short of its projected growth rate 
+HYP:  many NOW      SISTER saying THE  CARD WAS   still expanding rapidly will fall short of its projected growth rate 
+Eval:      S        S             S    S    S                                                                          
+
+>> REF:  because of increasingly aggressive price cutting by its two largest american rivals coca cola and pepsi cola 
+>> HYP:  because of increasingly aggressive price cutting by its two largest american rivals coca cola and pepsi cola 
+>> Eval:                                                                                                              
+
+Correct               =   85.7%   30   (120)
+Substitutions         =   14.3%    5   ( 10)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  3)
+
+Errors                =   14.3%    5   ( 13)
+
+Ref. words            =           35   (130)
+Hyp. words            =           35   (133)
+Aligned words         =           35   (133)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0206)
+Scores: (#C #S #D #I) 25 2 0 1
+REF:  COTT has also been dogged by allegations that it has inflated its declared profits by using ** UNORTHODOX 
+HYP:  KHAN has also been dogged by allegations that it has inflated its declared profits by using AN ORTHODOX   
+Eval: S                                                                                           I  S          
+
+>> REF:  accounting practices and that it is running out of cash 
+>> HYP:  accounting practices and that it is running out of cash 
+>> Eval:                                                         
+
+Correct               =   92.6%   25   (145)
+Substitutions         =    7.4%    2   ( 12)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    3.7%    1   (  4)
+
+Errors                =   11.1%    3   ( 16)
+
+Ref. words            =           27   (157)
+Hyp. words            =           28   (161)
+Aligned words         =           28   (161)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0207)
+Scores: (#C #S #D #I) 31 2 0 1
+REF:  the company rejects the charges as deliberate *** MISINFORMATION put out by short sellers speculators who sell 
+HYP:  the company rejects the charges as deliberate MS. INFORMATION    put out by short sellers speculators who sell 
+Eval:                                               I   S                                                            
+
+>> REF:  borrowed shares hoping the market price will fall before they have to repay the SHARES' original owners 
+>> HYP:  borrowed shares hoping the market price will fall before they have to repay the SHARES  original owners 
+>> Eval:                                                                                 S                       
+
+Correct               =   93.9%   31   (176)
+Substitutions         =    6.1%    2   ( 14)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    3.0%    1   (  5)
+
+Errors                =    9.1%    3   ( 19)
+
+Ref. words            =           33   (190)
+Hyp. words            =           34   (195)
+Aligned words         =           34   (195)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0208)
+Scores: (#C #S #D #I) 9 1 0 0
+REF:  COTT has even taken some of its detractors to court 
+HYP:  KHAN has even taken some of its detractors to court 
+Eval: S                                                   
+
+Correct               =   90.0%    9   (185)
+Substitutions         =   10.0%    1   ( 15)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =   10.0%    1   ( 20)
+
+Ref. words            =           10   (200)
+Hyp. words            =           10   (205)
+Aligned words         =           10   (205)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c0209)
+Scores: (#C #S #D #I) 29 4 0 0
+REF:  a memorandum from a toronto research firm equity research associates incorporated questioning the health of 
+HYP:  a memorandum from a toronto research firm equity research associates incorporated questioning the health of 
+Eval:                                                                                                             
+
+>> REF:  COTT'S cash flow prompted A   suit by COTT  earlier this year seeking FOURTEEN million dollars canadian in damages 
+>> HYP:  COPS   cash flow prompted THE suit by COURT earlier this year seeking FORTY    million dollars canadian in damages 
+>> Eval: S                         S           S                               S                                            
+
+Correct               =   87.9%   29   (214)
+Substitutions         =   12.1%    4   ( 19)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =   12.1%    4   ( 24)
+
+Ref. words            =           33   (233)
+Hyp. words            =           33   (238)
+Aligned words         =           33   (238)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020a)
+Scores: (#C #S #D #I) 27 1 0 0
+REF:  in addition questions have been raised by COTT'S failure so far to issue its annual report for the fiscal year 
+HYP:  in addition questions have been raised by COX    failure so far to issue its annual report for the fiscal year 
+Eval:                                           S                                                                    
+
+>> REF:  that ended january twenty ninth nineteen ninety four 
+>> HYP:  that ended january twenty ninth nineteen ninety four 
+>> Eval:                                                      
+
+Correct               =   96.4%   27   (241)
+Substitutions         =    3.6%    1   ( 20)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =    3.6%    1   ( 25)
+
+Ref. words            =           28   (261)
+Hyp. words            =           28   (266)
+Aligned words         =           28   (266)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020b)
+Scores: (#C #S #D #I) 26 0 0 0
+REF:  the report must include full financial statements and the assurance of its outside auditors coopers and lybrand 
+HYP:  the report must include full financial statements and the assurance of its outside auditors coopers and lybrand 
+Eval:                                                                                                                 
+
+>> REF:  that the statements conform to generally accepted accounting principles 
+>> HYP:  that the statements conform to generally accepted accounting principles 
+>> Eval:                                                                         
+
+Correct               =  100.0%   26   (267)
+Substitutions         =    0.0%    0   ( 20)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =    0.0%    0   ( 25)
+
+Ref. words            =           26   (287)
+Hyp. words            =           26   (292)
+Aligned words         =           26   (292)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020c)
+Scores: (#C #S #D #I) 17 1 0 0
+REF:  COTT invited some canadian and american analysts to its toronto headquarters wednesday to talk about the 
+HYP:  KOCH invited some canadian and american analysts to its toronto headquarters wednesday to talk about the 
+Eval: S                                                                                                        
+
+>> REF:  company's prospects 
+>> HYP:  company's prospects 
+>> Eval:                     
+
+Correct               =   94.4%   17   (284)
+Substitutions         =    5.6%    1   ( 21)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =    5.6%    1   ( 26)
+
+Ref. words            =           18   (305)
+Hyp. words            =           18   (310)
+Aligned words         =           18   (310)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020d)
+Scores: (#C #S #D #I) 15 3 0 0
+REF:  A   university of chicago professor ROMAN   WEIL was brought in to help field questions on the accounting matters 
+HYP:  THE university of chicago professor ROAMING WILD was brought in to help field questions on the accounting matters 
+Eval: S                                   S       S                                                                     
+
+Correct               =   83.3%   15   (299)
+Substitutions         =   16.7%    3   ( 24)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  5)
+
+Errors                =   16.7%    3   ( 29)
+
+Ref. words            =           18   (323)
+Hyp. words            =           18   (328)
+Aligned words         =           18   (328)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020e)
+Scores: (#C #S #D #I) 40 6 0 1
+REF:  the host AT the meeting which was CLOSED to the press was the company's chairman and chief executive officer 
+HYP:  the host OF the meeting which was CLOSE  to the press was the company's chairman and chief executive officer 
+Eval:          S                        S                                                                          
+
+>> REF:  gerald ***** PENCER forty nine an entrepreneur WHOSE last big venture financial trustco capital limited was 
+>> HYP:  gerald PENCE ARE    forty nine an entrepreneur WAS   last big venture financial trustco capital limited was 
+>> Eval:        I     S                                 S                                                            
+
+>> REF:  one of the larger canadian business failure COLLAPSES OF the last decade 
+>> HYP:  one of the larger canadian business failure COLLAPSE  IS the last decade 
+>> Eval:                                             S         S                  
+
+Correct               =   87.0%   40   (339)
+Substitutions         =   13.0%    6   ( 30)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    2.2%    1   (  6)
+
+Errors                =   15.2%    7   ( 36)
+
+Ref. words            =           46   (369)
+Hyp. words            =           47   (375)
+Aligned words         =           47   (375)
+
+-------------------------------------------------------------------------------
+
+id: (4t2c020f)
+Scores: (#C #S #D #I) 30 5 0 4
+REF:  according to jacques ** ***** KAVAFIAN an analyst at *** **** LEVESQUE BEAUBIEN GEOFFRION incorporated a 
+HYP:  according to jacques OF MAFIA IN       an analyst at THE DESK GOBIE    AND      JAFFRAY   incorporated a 
+Eval:                      I  I     S                      I   I    S        S        S                        
+
+>> REF:  montreal brokerage house represented at the meeting PENCER  and other senior executives acknowledge that the 
+>> HYP:  montreal brokerage house represented at the meeting SPENCER and other senior executives acknowledge that the 
+>> Eval:                                                     S                                                        
+
+>> REF:  company's growth rate would drop dramatically this year 
+>> HYP:  company's growth rate would drop dramatically this year 
+>> Eval:                                                         
+
+Correct               =   85.7%   30   (369)
+Substitutions         =   14.3%    5   ( 35)
+Deletions             =    0.0%    0   (  0)
+Insertions            =   11.4%    4   ( 10)
+
+Errors                =   25.7%    9   ( 45)
+
+Ref. words            =           35   (404)
+Hyp. words            =           39   (414)
+Aligned words         =           39   (414)
+
+-------------------------------------------------------------------------------
+

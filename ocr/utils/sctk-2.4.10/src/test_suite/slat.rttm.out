@@ -1,0 +1,51 @@
+Conditions:
+  FILE: ALL
+  CHANNEL: ALL
+  NAME: ALL
+  TYPE: LEXEME
+  SUBTYPE: lex
+
+Sample Processing Latency Begin Time Based (SPLb):
+  Mean: 10.003
+  Standard Deviation: 1.980
+  Distribution:
+     3.142 -  4.451: 11
+     4.451 -  5.760: 57
+     5.760 -  7.069: 262
+     7.069 -  8.378: 598
+     8.378 -  9.687: 1034
+     9.687 - 10.997: 1133
+    10.997 - 12.306: 818
+    12.306 - 13.615: 429
+    13.615 - 14.924: 113
+    14.924 - 16.233: 31
+
+Sample Processing Latency Mid-point Time Based (SPLm):
+  Mean: 9.886
+  Standard Deviation: 1.981
+  Distribution:
+     3.072 -  4.374: 14
+     4.374 -  5.675: 60
+     5.675 -  6.977: 265
+     6.977 -  8.278: 604
+     8.278 -  9.580: 1009
+     9.580 - 10.882: 1144
+    10.882 - 12.183: 812
+    12.183 - 13.485: 436
+    13.485 - 14.786: 110
+    14.786 - 16.088: 32
+
+Sample Processing Latency End Time Based (SPLe):
+  Mean: 9.768
+  Standard Deviation: 1.985
+  Distribution:
+     3.002 -  4.296: 16
+     4.296 -  5.590: 58
+     5.590 -  6.884: 268
+     6.884 -  8.178: 613
+     8.178 -  9.472: 1011
+     9.472 - 10.767: 1124
+    10.767 - 12.061: 813
+    12.061 - 13.355: 436
+    13.355 - 14.649: 114
+    14.649 - 15.943: 33

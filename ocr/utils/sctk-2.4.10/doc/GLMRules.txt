@@ -1,0 +1,89 @@
+File GMLRules.txt  V. 2.0   11/12/96  NIST/WMF
+
+1. General.
+
+   The rules that program "rfilter1" uses are simple string-rewriting
+rules of the form
+
+    A => B
+or
+    A => B / C __ D
+
+  where A, B, C, and D are character strings.
+
+   Each of these strings may contain internal spaces.  Strings may be
+bounded with either square brackets or single quotation marks, in
+order to allow beginning and ending spaces.
+
+   The main purpose of using rules like this is to provide
+documentation of a string-rewriting process that is easily understood.
+
+   Examples:
+
+     CANCELLED => CANCELED ;; per AHD
+     [  ] => [ ] ;; reduce 2 spaces to 1
+     Falkner => Faulkner / [William ] __ 
+     JETLINER => JET LINER
+     VIDEOTAPE => VIDEO TAPE / [ ] __ [ ]
+
+ 2. Application Algorithm.
+
+   In rewriting the input string into the output string, a character
+cursor is moved from the start to the end of the input string.  At
+each position, the list of rules in the specified rule file is
+searched from top to bottom.  The first rule (if any) that is found to
+match the input string with the first character of its input field (A)
+lined up at the cursor position is applied by concatenating its output
+field (B) onto the output string and advancing the cursor by the
+number of characters in the rule's input field (A).  If no rule
+matches, then the input character pointed to by the cursor is either
+passed on to the output string or ignored, depending on a switch
+setting, and the cursor position is advanced by one.
+
+   An indexing scheme is used for speed, but the logical effect is
+still as if a linear search were done on the rules in their order as
+they are in the rules file.
+
+  3. Comments.
+
+   The token denoting comments is taken to be the first token in the
+first line of the file of rules.  Anything on a line following this
+comment flag is ignored by the program.
+
+   4. Header Information.
+
+   At the beginning of a file of rules, certain information may be
+given in keyword/value format in "auxiliary" lines that begin with
+"*".  The value must be the only token in the line bounded by quotes,
+either single or double; the keyword itself just must be some token on
+the line.
+
+   Here are the current keywords and values:
+
+  KEYWORD     VALUE
+   NAME       The name of the rules, for documentation.
+   DESC       A description of the rules, for documentation.
+  FORMAT      NIST1 : context-free rules only (the default)
+              NIST2 : context-sensitive rules
+MAX_NRULES      <N> : the number of rules to allocate space for.
+COPY_NO_HIT     "T" / "YES"/ "TRUE" : if no rule hits, copy input
+                "F" / "NO" / "FALSE": if no rule hits, skip input
+CASE_SENSITIVE  "T" / "YES" / "TRUE" : case-sensitive matching.
+                "F" / "NO" / "FALSE" : case-insensitive matching.
+
+  Both the keyword and its value (when alphabetic) may be upper- or
+lower-case.
+
+  Examples:
+
+   * NAME = "spcor1.rls"
+   * DESC : "Spelling Correction Rules #1"
+   * FORMAT = 'NIST2'
+   * MAX_NRULES = '200'
+   * COPY_NO_HIT = 'T'
+   * CASE_SENSITIVE = 'F'
+
+
+History: 
+  V2.0 - part of the tranfilt distribution as rules.doc
+  V2.1 - Moved to SCTK

@@ -1,0 +1,488 @@
+===============================================================================
+
+                     SENTENCE LEVEL REPORT FOR THE SYSTEM:
+    Name: ./csrnab.hyp
+
+===============================================================================
+
+
+SPEAKER 4t1
+id: (4t1c0201)
+Scores: (#C #S #D #I) 17 1 0 0
+REF:  yields on taxable money market mutual funds rose slightly in the latest week while tax exempt yields DROPPED 
+HYP:  yields on taxable money market mutual funds rose slightly in the latest week while tax exempt yields DROP    
+Eval:                                                                                                      S       
+
+Correct               =   94.4%   17   ( 17)
+Substitutions         =    5.6%    1   (  1)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    5.6%    1   (  1)
+
+Ref. words            =           18   ( 18)
+Hyp. words            =           18   ( 18)
+Aligned words         =           18   ( 18)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0202)
+Scores: (#C #S #D #I) 39 0 0 0
+REF:  i. b. c. donoghue's average seven day compound yield on taxable funds rose to three point six six percent from 
+HYP:  i. b. c. donoghue's average seven day compound yield on taxable funds rose to three point six six percent from 
+Eval:                                                                                                                
+
+>> REF:  three point six four percent in the week ended tuesday according to money fund report an ashland 
+>> HYP:  three point six four percent in the week ended tuesday according to money fund report an ashland 
+>> Eval:                                                                                                  
+
+>> REF:  massachusetts newsletter 
+>> HYP:  massachusetts newsletter 
+>> Eval:                          
+
+Correct               =  100.0%   39   ( 56)
+Substitutions         =    0.0%    0   (  1)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  1)
+
+Ref. words            =           39   ( 57)
+Hyp. words            =           39   ( 57)
+Aligned words         =           39   ( 57)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0203)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  compound yields assume reinvestment of dividends 
+HYP:  compound yields assume reinvestment of dividends 
+Eval:                                                  
+
+Correct               =  100.0%    6   ( 62)
+Substitutions         =    0.0%    0   (  1)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  1)
+
+Ref. words            =            6   ( 63)
+Hyp. words            =            6   ( 63)
+Aligned words         =            6   ( 63)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0204)
+Scores: (#C #S #D #I) 26 1 0 0
+REF:  the average seven day compound yield on tax free money funds fell to two point ZERO  three percent from two 
+HYP:  the average seven day compound yield on tax free money funds fell to two point SEVEN three percent from two 
+Eval:                                                                                S                            
+
+>> REF:  point two one percent the newsletter said 
+>> HYP:  point two one percent the newsletter said 
+>> Eval:                                           
+
+Correct               =   96.3%   26   ( 88)
+Substitutions         =    3.7%    1   (  2)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    3.7%    1   (  2)
+
+Ref. words            =           27   ( 90)
+Hyp. words            =           27   ( 90)
+Aligned words         =           27   ( 90)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0205)
+Scores: (#C #S #D #I) 40 0 0 0
+REF:  the latest yield is equivalent to a taxable three point one seven percent for an investor in the thirty six 
+HYP:  the latest yield is equivalent to a taxable three point one seven percent for an investor in the thirty six 
+Eval:                                                                                                             
+
+>> REF:  percent tax bracket and to three point three six percent for someone paying thirty nine point six percent in taxes 
+>> HYP:  percent tax bracket and to three point three six percent for someone paying thirty nine point six percent in taxes 
+>> Eval:                                                                                                                    
+
+Correct               =  100.0%   40   (128)
+Substitutions         =    0.0%    0   (  2)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  2)
+
+Ref. words            =           40   (130)
+Hyp. words            =           40   (130)
+Aligned words         =           40   (130)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0206)
+Scores: (#C #S #D #I) 35 4 0 0
+REF:  tax exempt yields typically DROP at this time of year because of a reduced supply of securities as many 
+HYP:  tax exempt yields typically JOB  at this time of year because of a reduced supply of securities as many 
+Eval:                             S                                                                           
+
+>> REF:  municipalities REACH   the JUNE   thirty end of THEIR fiscal year said walter frank chief economist of the 
+>> HYP:  municipalities REACHED the AEGEAN thirty end of THE   fiscal year said walter frank chief economist of the 
+>> Eval:                S           S                    S                                                          
+
+>> REF:  money fund report 
+>> HYP:  money fund report 
+>> Eval:                   
+
+Correct               =   89.7%   35   (163)
+Substitutions         =   10.3%    4   (  6)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =   10.3%    4   (  6)
+
+Ref. words            =           39   (169)
+Hyp. words            =           39   (169)
+Aligned words         =           39   (169)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0207)
+Scores: (#C #S #D #I) 19 0 0 0
+REF:  taxable yields meanwhile have been rising steadily for several months in response to increases in short term 
+HYP:  taxable yields meanwhile have been rising steadily for several months in response to increases in short term 
+Eval:                                                                                                              
+
+>> REF:  interest rates 
+>> HYP:  interest rates 
+>> Eval:                
+
+Correct               =  100.0%   19   (182)
+Substitutions         =    0.0%    0   (  6)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  6)
+
+Ref. words            =           19   (188)
+Hyp. words            =           19   (188)
+Aligned words         =           19   (188)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0208)
+Scores: (#C #S #D #I) 70 0 0 0
+REF:  money fund report says the average seven day simple yield on taxable funds rose to three point five nine percent 
+HYP:  money fund report says the average seven day simple yield on taxable funds rose to three point five nine percent 
+Eval:                                                                                                                  
+
+>> REF:  from three point five seven percent in the latest week while the average thirty day simple yield increased to 
+>> HYP:  from three point five seven percent in the latest week while the average thirty day simple yield increased to 
+>> Eval:                                                                                                               
+
+>> REF:  three point five three percent from three point four six percent and the average thirty day compound yield 
+>> HYP:  three point five three percent from three point four six percent and the average thirty day compound yield 
+>> Eval:                                                                                                            
+
+>> REF:  went to three point five nine percent from three point five two percent 
+>> HYP:  went to three point five nine percent from three point five two percent 
+>> Eval:                                                                         
+
+Correct               =  100.0%   70   (252)
+Substitutions         =    0.0%    0   (  6)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  6)
+
+Ref. words            =           70   (258)
+Hyp. words            =           70   (258)
+Aligned words         =           70   (258)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c0209)
+Scores: (#C #S #D #I) 50 3 1 1
+REF:  although assets of the taxable funds tracked by money fund report remained stable at about four hundred seventy 
+HYP:  although assets of the taxable funds tracked by money fund report remained stable at about four hundred seventy 
+Eval:                                                                                                                 
+
+>> REF:  two point six seven billion dollars twelve funds that just began reporting to the newsletter added three 
+>> HYP:  two point six seven billion dollars twelve funds that just began reporting to the newsletter added three 
+>> Eval:                                                                                                          
+
+>> REF:  point seven five billion dollars to assets *** OFFSETTING WITHDRAWALS FROM    the six hundred sixty funds 
+>> HYP:  point seven five billion dollars to assets ARE SETTING    WHICH       RALSTON the six hundred sixty funds 
+>> Eval:                                            I   S          S           S                                   
+
+>> REF:  that WERE already included 
+>> HYP:  that **** already included 
+>> Eval:      D                     
+
+Correct               =   92.6%   50   (302)
+Substitutions         =    5.6%    3   (  9)
+Deletions             =    1.9%    1   (  1)
+Insertions            =    1.9%    1   (  1)
+
+Errors                =    9.3%    5   ( 11)
+
+Ref. words            =           54   (312)
+Hyp. words            =           54   (312)
+Aligned words         =           55   (313)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020a)
+Scores: (#C #S #D #I) 30 5 0 1
+REF:  individual investors **** WITHDREW just over two billion dollars from the four hundred fifty two funds 
+HYP:  individual investors WITH JURY     just over two billion dollars from the four hundred fifty two funds 
+Eval:                      I    S                                                                            
+
+>> REF:  AND          INSTITUTIONAL investors pulled about one point seven billion dollars from two hundred eight 
+>> HYP:  INSTITUTIONS OR            investors pulled about one point seven billion dollars from two hundred eight 
+>> Eval: S            S                                                                                           
+
+>> REF:  funds according to the NEWSLETTER'S DATA  
+>> HYP:  funds according to the NEWSLETTER   STATE 
+>> Eval:                        S            S     
+
+Correct               =   85.7%   30   (332)
+Substitutions         =   14.3%    5   ( 14)
+Deletions             =    0.0%    0   (  1)
+Insertions            =    2.9%    1   (  2)
+
+Errors                =   17.1%    6   ( 17)
+
+Ref. words            =           35   (347)
+Hyp. words            =           36   (348)
+Aligned words         =           36   (349)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020b)
+Scores: (#C #S #D #I) 27 1 0 0
+REF:  assets of tax free funds declined by nine hundred forty five point six million dollars to one hundred thirteen 
+HYP:  assets of tax free funds declined by nine hundred forty five point six million dollars to one hundred thirteen 
+Eval:                                                                                                                
+
+>> REF:  point nine one billion dollars money FUNDS report said 
+>> HYP:  point nine one billion dollars money FUND  report said 
+>> Eval:                                      S                 
+
+Correct               =   96.4%   27   (359)
+Substitutions         =    3.6%    1   ( 15)
+Deletions             =    0.0%    0   (  1)
+Insertions            =    0.0%    0   (  2)
+
+Errors                =    3.6%    1   ( 18)
+
+Ref. words            =           28   (375)
+Hyp. words            =           28   (376)
+Aligned words         =           28   (377)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020c)
+Scores: (#C #S #D #I) 33 1 0 0
+REF:  however four new funds added about three hundred seventy one million dollars to assets indicating that investors 
+HYP:  however four new funds added about three hundred seventy one million dollars to assets indicating that investors 
+Eval:                                                                                                                  
+
+>> REF:  IN  three hundred fifty one other tax free funds actually withdrew about one point three billion dollars 
+>> HYP:  AND three hundred fifty one other tax free funds actually withdrew about one point three billion dollars 
+>> Eval: S                                                                                                        
+
+Correct               =   97.1%   33   (392)
+Substitutions         =    2.9%    1   ( 16)
+Deletions             =    0.0%    0   (  1)
+Insertions            =    0.0%    0   (  2)
+
+Errors                =    2.9%    1   ( 19)
+
+Ref. words            =           34   (409)
+Hyp. words            =           34   (410)
+Aligned words         =           34   (411)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020d)
+Scores: (#C #S #D #I) 28 0 0 1
+REF:  average maturity of the taxable funds' investments which include treasury bills *** other government securities 
+HYP:  average maturity of the taxable funds' investments which include treasury bills AND other government securities 
+Eval:                                                                                 I                               
+
+>> REF:  and commercial paper short term corporate i. o. u.s remained at forty five days 
+>> HYP:  and commercial paper short term corporate i. o. u.s remained at forty five days 
+>> Eval:                                                                                 
+
+Correct               =  100.0%   28   (420)
+Substitutions         =    0.0%    0   ( 16)
+Deletions             =    0.0%    0   (  1)
+Insertions            =    3.6%    1   (  3)
+
+Errors                =    3.6%    1   ( 20)
+
+Ref. words            =           28   (437)
+Hyp. words            =           29   (439)
+Aligned words         =           29   (440)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020e)
+Scores: (#C #S #D #I) 20 0 0 0
+REF:  average maturity of the tax exempt portfolios primarily short term municipal securities lengthened by two days 
+HYP:  average maturity of the tax exempt portfolios primarily short term municipal securities lengthened by two days 
+Eval:                                                                                                                
+
+>> REF:  to forty four days 
+>> HYP:  to forty four days 
+>> Eval:                    
+
+Correct               =  100.0%   20   (440)
+Substitutions         =    0.0%    0   ( 16)
+Deletions             =    0.0%    0   (  1)
+Insertions            =    0.0%    0   (  3)
+
+Errors                =    0.0%    0   ( 20)
+
+Ref. words            =           20   (457)
+Hyp. words            =           20   (459)
+Aligned words         =           20   (460)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020f)
+Scores: (#C #S #D #I) 10 4 1 0
+REF:  today's PET PEEVE WHY DO     CERTAIN people insist on vacationing in the south of france 
+HYP:  today's *** CUT   THE WIDEST AND     people insist on vacationing in the south of france 
+Eval:         D   S     S   S      S                                                           
+
+Correct               =   66.7%   10   (450)
+Substitutions         =   26.7%    4   ( 20)
+Deletions             =    6.7%    1   (  2)
+Insertions            =    0.0%    0   (  3)
+
+Errors                =   33.3%    5   ( 25)
+
+Ref. words            =           15   (472)
+Hyp. words            =           14   (473)
+Aligned words         =           15   (475)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020g)
+Scores: (#C #S #D #I) 16 4 0 1
+REF:  david BROOKS  couldn't resist that ** EFFETE phrase in his june fifteenth editorial PIECE i get no kicks ON this game 
+HYP:  david BROCK'S couldn't resist that IF THE    phrase in his june fifteenth editorial P.'S  i get no kicks IN this game 
+Eval:       S                            I  S                                             S                    S            
+
+Correct               =   80.0%   16   (466)
+Substitutions         =   20.0%    4   ( 24)
+Deletions             =    0.0%    0   (  2)
+Insertions            =    5.0%    1   (  4)
+
+Errors                =   25.0%    5   ( 30)
+
+Ref. words            =           20   (492)
+Hyp. words            =           21   (494)
+Aligned words         =           21   (496)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020h)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  what's wrong with simply southern france 
+HYP:  what's wrong with simply southern france 
+Eval:                                          
+
+Correct               =  100.0%    6   (472)
+Substitutions         =    0.0%    0   ( 24)
+Deletions             =    0.0%    0   (  2)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =    0.0%    0   ( 30)
+
+Ref. words            =            6   (498)
+Hyp. words            =            6   (500)
+Aligned words         =            6   (502)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020i)
+Scores: (#C #S #D #I) 8 0 1 0
+REF:  could one vacation in the south OF new jersey 
+HYP:  could one vacation in the south ** new jersey 
+Eval:                                 D             
+
+Correct               =   88.9%    8   (480)
+Substitutions         =    0.0%    0   ( 24)
+Deletions             =   11.1%    1   (  3)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =   11.1%    1   ( 31)
+
+Ref. words            =            9   (507)
+Hyp. words            =            8   (508)
+Aligned words         =            9   (511)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020j)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  i think not 
+HYP:  i think not 
+Eval:             
+
+Correct               =  100.0%    3   (483)
+Substitutions         =    0.0%    0   ( 24)
+Deletions             =    0.0%    0   (  3)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =    0.0%    0   ( 31)
+
+Ref. words            =            3   (510)
+Hyp. words            =            3   (511)
+Aligned words         =            3   (514)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020k)
+Scores: (#C #S #D #I) 4 0 0 0
+REF:  so too with france 
+HYP:  so too with france 
+Eval:                    
+
+Correct               =  100.0%    4   (487)
+Substitutions         =    0.0%    0   ( 24)
+Deletions             =    0.0%    0   (  3)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =    0.0%    0   ( 31)
+
+Ref. words            =            4   (514)
+Hyp. words            =            4   (515)
+Aligned words         =            4   (518)
+
+-------------------------------------------------------------------------------
+
+id: (4t1c020l)
+Scores: (#C #S #D #I) 22 8 0 0
+REF:  the practice is almost as annoying as giving ONESELF THREE PUBLIC   names such as the ARCHITECT FRANK WRIGHT OR  
+HYP:  the practice is almost as annoying as giving ONE     SOUTH REPUBLIC names such as the ARCTIC    FRANC WRITE  OUR 
+Eval:                                              S       S     S                          S         S     S      S   
+
+>> REF:  first lady hillary clinton but that's a PEEVE for another day 
+>> HYP:  first lady hillary clinton but that's a PLEA  for another day 
+>> Eval:                                         S                     
+
+Correct               =   73.3%   22   (509)
+Substitutions         =   26.7%    8   ( 32)
+Deletions             =    0.0%    0   (  3)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =   26.7%    8   ( 39)
+
+Ref. words            =           30   (544)
+Hyp. words            =           30   (545)
+Aligned words         =           30   (548)
+
+-------------------------------------------------------------------------------
+

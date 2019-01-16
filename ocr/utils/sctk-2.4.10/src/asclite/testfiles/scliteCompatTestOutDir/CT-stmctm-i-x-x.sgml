@@ -1,0 +1,26 @@
+<SYSTEM title="CT-stmctm-i-x-x" ref_fname="stmctm.stm" hyp_fname="stmctm.ctm" creation_date="" format="2.4" frag_corr="FALSE" opt_del="FALSE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="comb">
+<PATH id="(comb-000)" word_cnt="4" file="comb" channel="1" sequence="0" R_T1="0.000" R_T2="1.000" word_aux="h_t1+t2">
+C,"a","a",0.000+0.100:S,"b-","b",0.100+0.200:S,"(c-)","c",0.200+0.300:S,"(d)","d",0.300+0.400
+</PATH>
+<PATH id="(comb-001)" word_cnt="4" labels="<>" file="comb" channel="1" sequence="1" R_T1="1.000" R_T2="2.000" word_aux="h_t1+t2">
+C,"a","a",1.000+1.100:S,"b","b-",1.100+1.200:S,"c","(c-)",1.200+1.300:S,"d","(d)",1.300+1.400
+</PATH>
+</SPEAKER>
+<SPEAKER id="f">
+<PATH id="(f-000)" word_cnt="7" labels="<>" file="f" channel="1" sequence="2" R_T1="0.000" R_T2="1.000" word_aux="h_t1+t2">
+C,"a","a",0.000+0.100:C,"b","b",0.100+0.200:C,"c","c",0.200+0.300:C,"d","d",0.300+0.400:C,"e","e",0.400+0.500:C,"f","f",0.500+0.600:C,"g","g",0.600+0.700
+</PATH>
+<PATH id="(f-001)" word_cnt="7" labels="<>" file="f" channel="1" sequence="3" R_T1="1.000" R_T2="2.000" word_aux="h_t1+t2">
+C,"a","a",1.000+1.100:C,"b","b",1.100+1.200:C,"c","c",1.200+1.300:C,"d","d",1.300+1.400:C,"e","e",1.400+1.500:C,"f","f",1.500+1.600:C,"g","g",1.600+1.700
+</PATH>
+<PATH id="(f-002)" word_cnt="0" labels="<>" file="f" channel="1" sequence="4" R_T1="3.000" R_T2="4.000" word_aux="h_t1+t2">
+
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="f" channel="1" sequence="5" R_T1="2.000" R_T2="3.000" word_aux="h_t1+t2">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

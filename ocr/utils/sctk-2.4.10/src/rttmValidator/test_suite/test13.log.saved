@@ -1,0 +1,3 @@
+ERROR: Invalid LEXEME subtype; see field (7) in line 11
+ERROR: Invalid A/P subtype; see field (7) in line 17
+Validation aborted

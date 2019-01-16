@@ -1,0 +1,6 @@
+File,Channel,RefSpeaker,SysSpeaker,isMapped,timeOverlap
+ICSI_20011030-1030_d*_NONE,1,fe016,fe016,mapped,30.0000
+VT_20051027-1400,1,Ref1,Sys1,mapped,3.0000
+VT_20051027-1400,1,Ref1,Sys2,notmapped,2.5000
+VT_20051027-1400,1,Ref2,Sys1,notmapped,0.2000
+VT_20051027-1400,1,Ref2,Sys2,mapped,3.2000

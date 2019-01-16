@@ -1,0 +1,11 @@
+;; CATEGORY "0" "" ""
+;; CATEGORY "1" "Alternations" "Segments W or W/O Alternations"
+;; LABEL "O" "Overall" "Overall Scores"
+;; LABEL "WA" "With Alt" "Segments Containing Alternations"
+;; LABEL "NA" "NO Alt" "Segments Without Alternations"
+2347 a 2347-a 1.06 3.47 <O,WA> i've { um / uh } as far as i'm concerned
+2347 a 2347-a 3.47 11.04 <O,WA> i find that the young women have lost so much because they have become more aggressive { -a / @ } and more dominating
+2347 a 2347-a 11.06 15.84 <O,NA>
+2347 a 2347-a 15.94 103.53 <O,WA> now i would like { um / uh / i } yes
+2347 a 2347-a 103.55 109.17 <O,NA> i have worked outside of the home and i was in one of those safe occupations i was a school teacher
+2347 b 2347-b 0.00 300.00 <O,NA>

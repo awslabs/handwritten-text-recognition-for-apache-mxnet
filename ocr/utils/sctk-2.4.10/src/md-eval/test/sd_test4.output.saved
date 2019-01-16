@@ -1,0 +1,708 @@
+command line (run on 2004 Oct 29 at 14:13:45):  ../src/md-eval-v19a.pl -1 -v -e -d -D -m -af -c 0.0 -T 0.0 -u sd_test4.uem -r sd_test4.ref.rttm -s sd_test4.sys.rttm
+
+Time-based metadata alignment
+
+Metadata evaluation parameters:
+    time-optimized metadata mapping
+        max gap between matching metadata events = 0.0 sec
+        max extent to match for SU's = 0.5 sec
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0.0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+FILLER alignment and scoring details for channel 1 of file 20010228_2100_2200_MNB_NBW
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       tbeg    tend speaker     
+   1   1   -   -     filled_pause FILLER    93.98   94.16 brian_willia              --- ---        ---     ---  ---         
+
+IP alignment and scoring details for channel 1 of file 20010228_2100_2200_MNB_NBW
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       tbeg    tend speaker     
+   1   1   -   -           filler IP        93.98   93.98 brian_willia              --- ---        ---     ---  ---         
+
+SU alignment and scoring details for channel 1 of file 20010228_2100_2200_MNB_NBW
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       tbeg    tend speaker     
+   1   1   -   -        statement SU        21.47   22.04 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        22.04   29.05 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        29.05   33.53 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        33.87   35.83 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        35.83   38.91 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        39.09   47.76 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        48.12   53.49 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        53.76   60.15 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        60.15   63.84 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        64.20   75.49 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        75.95   85.24 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        85.72   92.35 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU        93.11   97.73 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       220.26  221.27 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       221.28  223.44 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       223.44  224.54 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       224.54  226.46 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       226.47  227.94 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       227.94  230.44 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       230.75  234.46 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       234.71  238.32 brian_willia              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       239.93  242.12 george_lewis              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       242.12  251.68 george_lewis              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       252.08  254.77 george_lewis              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       255.30  263.86 george_lewis              --- ---        ---     ---  ---         
+   1   1   -   -        statement SU       264.32  266.20 george_lewis              --- ---        ---     ---  ---         
+'brian_williams' => 'cwm0006'
+     0.17 secs matched to 'ctm0001'
+    93.17 secs matched to 'cwm0006'
+'george_lewis' => 'cwm0007'
+    25.21 secs matched to 'cwm0007'
+beg/dur/end =  10.795/ 10.677/ 21.472; REF = (); SYS = ()
+beg/dur/end =  21.472/  0.018/ 21.490; REF = (brian_williams); SYS = ()
+beg/dur/end =  21.490/  9.970/ 31.460; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  31.460/  2.072/ 33.532; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  33.872/ 10.288/ 44.160; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  44.160/  3.602/ 47.762; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  48.122/ 14.480/ 62.602; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  62.892/  0.950/ 63.842; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  64.202/  8.458/ 72.660; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  72.660/ 12.582/ 85.242; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  85.722/  6.518/ 92.240; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  92.240/  0.112/ 92.352; REF = (brian_williams); SYS = (ctm0001)
+beg/dur/end =  92.352/  0.760/ 93.112; REF = (); SYS = (ctm0001)
+beg/dur/end =  93.112/  0.058/ 93.170; REF = (brian_williams); SYS = (ctm0001)
+beg/dur/end =  93.170/  4.370/ 97.540; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end =  97.540/  0.192/ 97.732; REF = (brian_williams); SYS = ()
+beg/dur/end =  97.732/  3.608/101.340; REF = (); SYS = ()
+beg/dur/end = 101.340/  0.510/101.850; REF = (); SYS = (cwf0002)
+beg/dur/end = 101.850/ 29.930/131.780; REF = (); SYS = ()
+beg/dur/end = 131.780/  7.520/139.300; REF = (); SYS = (cwf0002)
+beg/dur/end = 139.300/ 56.680/195.980; REF = (); SYS = ()
+beg/dur/end = 195.980/  8.610/204.590; REF = (); SYS = (cwm0009)
+beg/dur/end = 204.590/  8.490/213.080; REF = (); SYS = ()
+beg/dur/end = 213.080/  5.490/218.570; REF = (); SYS = (cwf0002)
+beg/dur/end = 218.570/  1.695/220.265; REF = (); SYS = (cwm0006)
+beg/dur/end = 220.265/ 10.180/230.445; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end = 230.745/  3.710/234.455; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end = 234.705/  3.610/238.315; REF = (brian_williams); SYS = (cwm0006)
+beg/dur/end = 238.315/  0.715/239.030; REF = (); SYS = (cwm0006)
+beg/dur/end = 239.030/  0.901/239.931; REF = (); SYS = (cwm0007)
+beg/dur/end = 239.931/  7.910/247.841; REF = (george_lewis); SYS = (cwm0007)
+beg/dur/end = 248.161/  6.610/254.771; REF = (george_lewis); SYS = (cwm0007)
+beg/dur/end = 254.771/  0.239/255.010; REF = (); SYS = (cwm0007)
+beg/dur/end = 255.010/  0.291/255.301; REF = (); SYS = (cwm0007)
+beg/dur/end = 255.301/  4.600/259.901; REF = (george_lewis); SYS = (cwm0007)
+beg/dur/end = 260.431/  5.770/266.201; REF = (george_lewis); SYS = (cwm0007)
+
+Chronological display of sys data aligned with ref data for file '20010228_2100_2200_MNB_NBW', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     brian_williams         0.00         |        |
+beg NO_RT_ME <na>     brian_williams         0.04         |        |
+beg SPEAKER  adult_ma brian_williams         0.04         |        |
+                                             0.10         |        |beg SPEAKER  adult_ma cwm0006=>brian_will    0.10        
+end NO_RT_ME <na>     brian_williams                 1.16 |        |
+    CB       clausal  brian_williams         3.59         |        |
+                                                    10.67 |        |end SPEAKER  adult_ma cwm0006=>brian_will           10.67
+end SPEAKER  adult_ma brian_williams                10.68 |        |
+end SEGMENT  <na>     brian_williams                10.79 |        |
+beg SEGMENT  <na>     brian_williams        21.35         |        |
+beg SPEAKER  adult_ma brian_williams        21.47         |        |
+beg SU       statemen brian_williams        21.47         | *Miss* |
+beg LEXEME   lex      GOOD                  21.47         |        |
+                                            21.49         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   21.49        
+end LEXEME   lex      GOOD                          21.64 |        |
+    LEXEME   lex      EVENING                  21.64   22.04 |        |
+end SU       statemen brian_williams                22.04 | *Miss* |
+beg SU       statemen brian_williams        22.04         | *Miss* |
+    LEXEME   lex      IT                  22.04   22.20 |        |
+    LEXEME   lex      WAS                  22.20   22.43 |        |
+    LEXEME   lex      A                  22.43   22.58 |        |
+    LEXEME   lex      LONG                  22.58   23.19 |        |
+    LEXEME   lex      AND                  23.19   23.44 |        |
+    LEXEME   lex      STEADY                  23.44   24.01 |        |
+    LEXEME   lex      AND                  24.01   24.28 |        |
+    LEXEME   lex      ROLLING                  24.28   25.02 |        |
+    LEXEME   lex      JOLT                  25.02   25.49 |        |
+    LEXEME   lex      IN                  25.49   25.82 |        |
+    LEXEME   lex      SOME                  25.82   26.22 |        |
+    LEXEME   lex      PLACES                  26.22   26.85 |        |
+    LEXEME   lex      OVER                  26.85   27.22 |        |
+    LEXEME   lex      THIRTY                  27.22   27.71 |        |
+    LEXEME   lex      SECONDS                  27.71   28.25 |        |
+    LEXEME   lex      IN                  28.25   28.36 |        |
+    LEXEME   lex      DURATION                  28.36   29.05 |        |
+end SU       statemen brian_williams                29.05 | *Miss* |
+beg SU       statemen brian_williams        29.05         | *Miss* |
+    LEXEME   lex      THE                  29.05   29.16 |        |
+    LEXEME   lex      PEOPLE                  29.16   29.57 |        |
+    LEXEME   lex      WHO                  29.57   29.69 |        |
+    LEXEME   lex      SURVIVED                  29.69   30.30 |        |
+    LEXEME   lex      IT                  30.30   30.42 |        |
+    LEXEME   lex      SAID                  30.42   30.68 |        |
+    CB       clausal  brian_williams        30.68         |        |
+    LEXEME   lex      IT                  30.68   30.78 |        |
+    LEXEME   lex      FELT                  30.78   31.08 |        |
+    LEXEME   lex      LIKE                  31.08   31.36 |        |
+                                                    31.46 |        |end SPEAKER  adult_ma cwm0006=>brian_will           31.46
+                                            31.46         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   31.46        
+    LEXEME   lex      SEVERAL                  31.59   32.13 |        |
+    LEXEME   lex      HOURS                  32.13   32.67 |        |
+    LEXEME   lex      AT                  32.67   32.94 |        |
+    LEXEME   lex      THE                  32.94   33.04 |        |
+    LEXEME   lex      TIME                  33.04   33.53 |        |
+end SU       statemen brian_williams                33.53 | *Miss* |
+beg NON-LEX  breath   BREATH                  33.53         |        |
+                                                    33.69 |        |end SPEAKER  adult_ma cwm0006=>brian_will           33.69
+                                            33.69         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   33.69        
+end NON-LEX  breath   BREATH                          33.87 |        |
+beg SU       statemen brian_williams        33.87         | *Miss* |
+    LEXEME   lex      IT                  33.87   34.08 |        |
+    LEXEME   lex      LEFT                  34.08   34.47 |        |
+    LEXEME   lex      BUILDINGS                  34.47   35.11 |        |
+    LEXEME   lex      IN                  35.11   35.36 |        |
+    LEXEME   lex      RUBBLE                  35.36   35.83 |        |
+end SU       statemen brian_williams                35.83 | *Miss* |
+beg SU       statemen brian_williams        35.83         | *Miss* |
+    LEXEME   lex      IT                  35.83   36.10 |        |
+    LEXEME   lex      LEFT                  36.10   36.41 |        |
+    LEXEME   lex      NERVES                  36.41   36.90 |        |
+    LEXEME   lex      FRAYED                  36.90   37.37 |        |
+    LEXEME   lex      IN                  37.37   37.47 |        |
+    LEXEME   lex      THE                  37.47   37.57 |        |
+    LEXEME   lex      PACIFIC                  37.57   38.09 |        |
+    LEXEME   lex      NORTHWEST                  38.09   38.91 |        |
+end SU       statemen brian_williams                38.91 | *Miss* |
+beg SU       statemen brian_williams        39.09         | *Miss* |
+    LEXEME   lex      AND                  39.09   39.35 |        |
+    LEXEME   lex      IN                  39.35   39.56 |        |
+    LEXEME   lex      AN                  39.56   39.67 |        |
+    LEXEME   lex      INSTANT                  39.67   40.24 |        |
+    LEXEME   lex      THE                  40.24   40.34 |        |
+    LEXEME   lex      POSSIBILITY                  40.34   41.36 |        |
+    LEXEME   lex      OF                  41.36   41.51 |        |
+    LEXEME   lex      AN                  41.51   41.62 |        |
+    LEXEME   lex      EARTHQUAKE                  41.62   42.24 |        |
+    LEXEME   lex      REASSERTED                  42.24   43.28 |        |
+    LEXEME   lex      ITSELF                  43.28   43.97 |        |
+                                                    44.16 |        |end SPEAKER  adult_ma cwm0006=>brian_will           44.16
+                                            44.16         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   44.16        
+    LEXEME   lex      AS                  44.35   44.56 |        |
+    LEXEME   lex      PART                  44.56   44.92 |        |
+    LEXEME   lex      OF                  44.92   45.13 |        |
+    LEXEME   lex      THE                  45.13   45.21 |        |
+    LEXEME   lex      WAY                  45.21   45.62 |        |
+    LEXEME   lex      OF                  45.62   45.78 |        |
+    LEXEME   lex      LIFE                  45.78   46.17 |        |
+    LEXEME   lex      IN                  46.17   46.34 |        |
+    LEXEME   lex      THE                  46.34   46.43 |        |
+    LEXEME   lex      PACIFIC                  46.43   47.00 |        |
+    LEXEME   lex      NORTHWEST                  47.00   47.76 |        |
+end SU       statemen brian_williams                47.76 | *Miss* |
+    NON-LEX  breath   BREATH                  47.76   48.12 |        |
+beg SU       statemen brian_williams        48.12         | *Miss* |
+    LEXEME   lex      THIS                  48.12   48.32 |        |
+    LEXEME   lex      EARTHQUAKE                  48.32   48.94 |        |
+    CB       clausal  brian_williams        48.94         |        |
+    LEXEME   lex      SIX                  49.00   49.37 |        |
+    LEXEME   lex      POINT                  49.37   49.70 |        |
+    LEXEME   lex      EIGHT                  49.70   49.93 |        |
+    LEXEME   lex      IN                  49.93   50.10 |        |
+    LEXEME   lex      MAGNITUDE                  50.10   50.84 |        |
+    LEXEME   lex      TOOK                  50.84   51.05 |        |
+    LEXEME   lex      PLACE                  51.05   51.42 |        |
+    LEXEME   lex      OF                  51.42   51.51 |        |
+    LEXEME   lex      COURSE                  51.51   51.89 |        |
+    LEXEME   lex      DURING                  51.89   52.25 |        |
+    LEXEME   lex      THE                  52.25   52.37 |        |
+    LEXEME   lex      TELEVISION                  52.37   53.00 |        |
+    LEXEME   lex      AGE                  53.00   53.49 |        |
+end SU       statemen brian_williams                53.49 | *Miss* |
+beg SU       statemen brian_williams        53.76         | *Miss* |
+    LEXEME   lex      AS                  53.76   54.00 |        |
+    LEXEME   lex      YOU                  54.00   54.12 |        |
+    LEXEME   lex      MIGHT                  54.12   54.39 |        |
+    LEXEME   lex      IMAGINE                  54.39   54.94 |        |
+    LEXEME   lex      CAMERAS                  54.99   55.58 |        |
+    LEXEME   lex      WERE                  55.58   55.72 |        |
+    LEXEME   lex      ROLLING                  55.72   56.21 |        |
+    LEXEME   lex      IN                  56.21   56.41 |        |
+    LEXEME   lex      SEVERAL                  56.41   56.91 |        |
+    LEXEME   lex      VENUES                  56.91   57.49 |        |
+    LEXEME   lex      TODAY                  57.49   58.00 |        |
+    LEXEME   lex      WHEN                  58.27   58.59 |        |
+    LEXEME   lex      THE                  58.59   58.76 |        |
+    LEXEME   lex      EARTH                  58.76   59.00 |        |
+    LEXEME   lex      STARTED                  59.00   59.46 |        |
+    LEXEME   lex      TO                  59.46   59.58 |        |
+    LEXEME   lex      SHAKE                  59.58   60.15 |        |
+end SU       statemen brian_williams                60.15 | *Miss* |
+beg SU       statemen brian_williams        60.15         | *Miss* |
+    LEXEME   lex      MANY                  60.15   60.52 |        |
+    LEXEME   lex      PEOPLE                  60.52   60.88 |        |
+    LEXEME   lex      STARTED                  60.88   61.38 |        |
+    LEXEME   lex      RUNNING                  61.38   61.75 |        |
+    LEXEME   lex      OUT                  61.75   61.95 |        |
+    LEXEME   lex      OF                  61.95   62.06 |        |
+    LEXEME   lex      BUILDINGS                  62.06   62.60 |        |
+    NON-LEX  breath   BREATH                  62.60   62.89 |        |
+    LEXEME   lex      INTO                  62.89   63.17 |        |
+    LEXEME   lex      THE                  63.17   63.30 |        |
+    LEXEME   lex      STREET                  63.30   63.84 |        |
+end SU       statemen brian_williams                63.84 | *Miss* |
+    NON-LEX  breath   BREATH                  63.84   64.20 |        |
+beg SU       statemen brian_williams        64.20         | *Miss* |
+    LEXEME   lex      IN                  64.20   64.34 |        |
+    LEXEME   lex      A                  64.34   64.42 |        |
+    LEXEME   lex      GYMNASIUM                  64.42   65.35 |        |
+    LEXEME   lex      IN                  65.35   65.61 |        |
+    LEXEME   lex      A                  65.61   65.69 |        |
+    LEXEME   lex      NEWS                  65.69   66.13 |        |
+    LEXEME   lex      ROOM                  66.13   66.38 |        |
+    LEXEME   lex      AT                  66.52   66.66 |        |
+    LEXEME   lex      A                  66.66   66.74 |        |
+    LEXEME   lex      SEATTLE                  66.74   67.35 |        |
+    LEXEME   lex      CITY                  67.35   67.67 |        |
+    LEXEME   lex      COUNCIL                  67.67   68.13 |        |
+    LEXEME   lex      MEETING                  68.13   68.46 |        |
+    LEXEME   lex      THE                  68.77   68.90 |        |
+    LEXEME   lex      CAMERAS                  68.90   69.44 |        |
+    LEXEME   lex      ROLLED                  69.44   69.96 |        |
+    LEXEME   lex      AT                  69.96   70.23 |        |
+    LEXEME   lex      TEN                  70.23   70.71 |        |
+    LEXEME   lex      FIFTY                  70.75   71.27 |        |
+    LEXEME   lex      FOUR                  71.27   71.79 |        |
+    LEXEME   alpha    A.                  71.79   72.17 |        |
+    LEXEME   alpha    M.                  72.17   72.53 |        |
+                                                    72.66 |        |end SPEAKER  adult_ma cwm0006=>brian_will           72.66
+                                            72.66         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   72.66        
+    LEXEME   lex      WHEN                  72.84   73.08 |        |
+    LEXEME   lex      THE                  73.08   73.27 |        |
+    LEXEME   lex      EARTH                  73.27   73.58 |        |
+    LEXEME   lex      STARTED                  73.65   74.12 |        |
+    LEXEME   lex      TO                  74.12   74.20 |        |
+    LEXEME   lex      SHAKE                  74.20   74.69 |        |
+    LEXEME   lex      IN                  74.69   74.89 |        |
+    LEXEME   lex      SEATTLE                  74.89   75.49 |        |
+end SU       statemen brian_williams                75.49 | *Miss* |
+beg SU       statemen brian_williams        75.95         | *Miss* |
+    LEXEME   lex      IT                  75.95   76.08 |        |
+    LEXEME   lex      ACTUALLY                  76.08   76.68 |        |
+    LEXEME   lex      WAS                  76.68   76.95 |        |
+    LEXEME   lex      FELT                  76.95   77.43 |        |
+    LEXEME   lex      FROM                  77.43   77.70 |        |
+    LEXEME   lex      AS                  77.70   77.87 |        |
+    LEXEME   lex      FAR                  77.87   78.19 |        |
+    LEXEME   lex      NORTH                  78.19   78.60 |        |
+    LEXEME   lex      AS                  78.60   78.91 |        |
+    LEXEME   lex      THE                  78.91   79.01 |        |
+    LEXEME   lex      CANADIAN                  79.01   79.69 |        |
+    LEXEME   lex      BORDER                  79.69   80.09 |        |
+    LEXEME   lex      EAST                  80.35   80.82 |        |
+    LEXEME   lex      TO                  80.82   80.95 |        |
+    LEXEME   lex      SALT                  80.95   81.33 |        |
+    LEXEME   lex      LAKE                  81.33   81.57 |        |
+    LEXEME   lex      CITY                  81.57   81.99 |        |
+    LEXEME   lex      AND                  81.99   82.26 |        |
+    LEXEME   lex      SOUTH                  82.26   82.80 |        |
+    LEXEME   lex      TO                  82.80   82.93 |        |
+    LEXEME   lex      POINTS                  82.93   83.33 |        |
+    LEXEME   lex      WE                  83.33   83.54 |        |
+    LEXEME   lex      ARE                  83.54   83.67 |        |
+    LEXEME   lex      STILL                  83.67   84.05 |        |
+    LEXEME   lex      HEARING                  84.05   84.39 |        |
+    LEXEME   lex      FROM                  84.39   84.70 |        |
+    LEXEME   lex      TONIGHT                  84.70   85.24 |        |
+end SU       statemen brian_williams                85.24 | *Miss* |
+    NON-LEX  breath   BREATH                  85.24   85.72 |        |
+beg SU       statemen brian_williams        85.72         | *Miss* |
+    LEXEME   lex      OUR                  85.72   85.92 |        |
+    LEXEME   lex      FIRST                  85.92   86.26 |        |
+    LEXEME   lex      REPORT                  86.26   86.70 |        |
+    LEXEME   lex      THIS                  86.70   86.93 |        |
+    LEXEME   lex      HOUR                  86.93   87.28 |        |
+    LEXEME   lex      FROM                  87.28   87.55 |        |
+    LEXEME   alpha    N.                  87.55   87.74 |        |
+    LEXEME   alpha    B.                  87.74   87.89 |        |
+    LEXEME   alpha    C.                  87.89   88.07 |        |
+    LEXEME   lex      NEWS                  88.07   88.32 |        |
+    LEXEME   lex      CORRESPONDENT                  88.32   89.10 |        |
+    LEXEME   lex      GEORGE                  89.42   89.89 |        |
+    LEXEME   lex      LEWIS                  89.89   90.44 |        |
+    LEXEME   lex      WILL                  90.44   90.61 |        |
+    LEXEME   lex      BE                  90.61   90.76 |        |
+    LEXEME   lex      COMING                  90.76   91.13 |        |
+    LEXEME   lex      UP                  91.13   91.29 |        |
+    LEXEME   lex      IN                  91.38   91.58 |        |
+    LEXEME   lex      JUST                  91.58   91.91 |        |
+    LEXEME   lex      A                  91.91   91.95 |        |
+beg LEXEME   lex      MOMENT                  91.95         |        |
+                                                    92.24 |        |end SPEAKER  adult_ma cwm0006=>brian_will           92.24
+                                            92.24         |        |beg SPEAKER  adult_ma ctm0001               92.24        
+end LEXEME   lex      MOMENT                          92.35 |        |
+end SU       statemen brian_williams                92.35 | *Miss* |
+end SPEAKER  adult_ma brian_williams                92.35 |        |
+beg SPEAKER  adult_ma brian_williams        93.11         |        |
+beg SU       statemen brian_williams        93.11         | *Miss* |
+beg LEXEME   lex      WE                  93.11         |        |
+                                                    93.17 |        |end SPEAKER  adult_ma ctm0001                       93.17
+                                            93.17         |        |beg SPEAKER  adult_ma cwm0006=>brian_will   93.17        
+end LEXEME   lex      WE                          93.37 |        |
+    LEXEME   lex      WANT                  93.37   93.65 |        |
+    LEXEME   lex      TO                  93.65   93.98 |        |
+beg FILLER   filled_p brian_williams        93.98         | *Miss* |
+    IP       filler   brian_williams        93.98         | *Miss* |
+    LEXEME   fp       UH                  93.98   94.16 |        |
+end FILLER   filled_p brian_williams                94.16 | *Miss* |
+    LEXEME   lex      FIRST                  94.16   94.55 |        |
+    LEXEME   lex      PAUSE                  94.55   94.98 |        |
+    LEXEME   lex      AND                  94.98   95.12 |        |
+    LEXEME   lex      TAKE                  95.12   95.35 |        |
+    LEXEME   lex      A                  95.35   95.41 |        |
+    LEXEME   lex      LOOK                  95.41   95.67 |        |
+    LEXEME   lex      AT                  95.67   95.82 |        |
+    LEXEME   lex      SOME                  95.82   96.03 |        |
+    LEXEME   lex      OF                  96.03   96.09 |        |
+    LEXEME   lex      THE                  96.09   96.15 |        |
+    LEXEME   lex      VIDEO                  96.15   96.45 |        |
+    LEXEME   lex      TAPE                  96.45   96.81 |        |
+    LEXEME   lex      WHEN                  96.81   96.96 |        |
+    LEXEME   lex      THE                  96.96   97.04 |        |
+    LEXEME   lex      QUAKE                  97.04   97.38 |        |
+beg LEXEME   lex      HIT                  97.38         |        |
+                                                    97.54 |        |end SPEAKER  adult_ma cwm0006=>brian_will           97.54
+end LEXEME   lex      HIT                          97.73 |        |
+end SU       statemen brian_williams                97.73 | *Miss* |
+end SPEAKER  adult_ma brian_williams                97.73 |        |
+end SEGMENT  <na>     brian_williams                99.31 |        |
+                                           101.34  101.85 |        |    SPEAKER  adult_fe cwf0002              101.34  101.85
+                                           131.78  139.30 |        |    SPEAKER  adult_fe cwf0002              131.78  139.30
+                                           195.98  204.59 |        |    SPEAKER  adult_ma cwm0009              195.98  204.59
+                                           213.08  218.57 |        |    SPEAKER  adult_fe cwf0002              213.08  218.57
+                                           218.57         |        |beg SPEAKER  adult_ma cwm0006=>brian_will  218.57        
+beg SEGMENT  <na>     brian_williams       220.21         |        |
+beg SPEAKER  adult_ma brian_williams       220.26         |        |
+beg SU       statemen brian_williams       220.26         | *Miss* |
+    LEXEME   lex      THAT'S                 220.26  220.57 |        |
+    LEXEME   lex      WHAT                 220.57  220.70 |        |
+    LEXEME   lex      IT                 220.71  220.80 |        |
+    LEXEME   lex      LOOKED                 220.79  221.03 |        |
+beg LEXEME   lex      LIKE                 221.03         |        |
+end SU       statemen brian_williams               221.27 | *Miss* |
+end LEXEME   lex      LIKE                         221.28 |        |
+beg SU       statemen brian_williams       221.28         | *Miss* |
+    LEXEME   lex      THAT'S                 221.28  221.55 |        |
+    LEXEME   lex      WHAT                 221.54  221.72 |        |
+    LEXEME   lex      IT                 221.72  221.84 |        |
+    LEXEME   lex      FELT                 221.84  222.22 |        |
+    LEXEME   lex      LIKE                 222.22  222.45 |        |
+    LEXEME   lex      TO                 222.46  222.58 |        |
+    LEXEME   lex      THOSE                 222.57  222.86 |        |
+    LEXEME   lex      INVOLVED                 222.87  223.45 |        |
+end SU       statemen brian_williams               223.44 | *Miss* |
+beg SU       statemen brian_williams       223.44         | *Miss* |
+    LEXEME   lex      AT                 223.44  223.53 |        |
+    LEXEME   lex      A                 223.53  223.56 |        |
+    LEXEME   lex      CITY                 223.56  223.88 |        |
+    LEXEME   lex      COUNCIL                 223.88  224.28 |        |
+    LEXEME   lex      MEETING                 224.28  224.55 |        |
+end SU       statemen brian_williams               224.54 | *Miss* |
+beg SU       statemen brian_williams       224.54         | *Miss* |
+    LEXEME   lex      THE                 224.54  224.63 |        |
+    LEXEME   lex      NEWS                 224.63  224.88 |        |
+    LEXEME   lex      ROOM                 224.88  224.99 |        |
+    LEXEME   lex      OF                 224.99  225.12 |        |
+    LEXEME   alpha    M.                 225.12  225.25 |        |
+    LEXEME   alpha    S.                 225.25  225.41 |        |
+    LEXEME   alpha    N.                 225.41  225.50 |        |
+    LEXEME   alpha    B.                 225.50  225.66 |        |
+    LEXEME   alpha    C.                 225.66  225.84 |        |
+    LEXEME   lex      DOT                 225.84  226.13 |        |
+beg LEXEME   lex      COM                 226.13         |        |
+end SU       statemen brian_williams               226.46 | *Miss* |
+end LEXEME   lex      COM                         226.47 |        |
+beg SU       statemen brian_williams       226.47         | *Miss* |
+    LEXEME   lex      A                 226.47  226.53 |        |
+    LEXEME   lex      HIGH                 226.53  226.70 |        |
+    LEXEME   lex      SCHOOL                 226.71  227.01 |        |
+    LEXEME   lex      BASKETBALL                 227.00  227.64 |        |
+    LEXEME   lex      GAME                 227.65  227.95 |        |
+end SU       statemen brian_williams               227.94 | *Miss* |
+beg SU       statemen brian_williams       227.94         | *Miss* |
+    LEXEME   lex      AND                 227.94  228.03 |        |
+    LEXEME   lex      THE                 228.03  228.11 |        |
+    LEXEME   lex      MAYOR'S                 228.10  228.51 |        |
+    LEXEME   lex      OFFICE                 228.51  228.90 |        |
+    LEXEME   lex      JUST                 228.91  229.16 |        |
+    LEXEME   lex      PRIOR                 229.16  229.47 |        |
+    LEXEME   lex      TO                 229.47  229.59 |        |
+    LEXEME   lex      A                 229.59  229.64 |        |
+    LEXEME   lex      PRESS                 229.63  229.92 |        |
+    LEXEME   lex      CONFERENCE                 229.93  230.45 |        |
+end SU       statemen brian_williams               230.44 | *Miss* |
+beg NON-LEX  breath   BREATH                 230.44         |        |
+                                                   230.58 |        |end SPEAKER  adult_ma cwm0006=>brian_will          230.58
+                                           230.58         |        |beg SPEAKER  adult_ma cwm0006=>brian_will  230.58        
+end NON-LEX  breath   BREATH                         230.75 |        |
+beg SU       statemen brian_williams       230.75         | *Miss* |
+    LEXEME   lex      THE                 230.75  230.86 |        |
+    LEXEME   lex      GOVERNOR                 230.85  231.38 |        |
+    LEXEME   lex      OF                 231.38  231.47 |        |
+    LEXEME   lex      WASHINGTON                 231.47  232.09 |        |
+    LEXEME   lex      TONIGHT                 232.09  232.53 |        |
+    LEXEME   lex      PUTTING                 232.53  232.78 |        |
+    LEXEME   lex      THE                 232.78  232.88 |        |
+    LEXEME   lex      DAMAGE                 232.88  233.38 |        |
+    LEXEME   lex      IN                 233.38  233.59 |        |
+    LEXEME   lex      THE                 233.59  233.72 |        |
+    LEXEME   lex      BILLIONS                 233.72  234.46 |        |
+end SU       statemen brian_williams               234.46 | *Miss* |
+    NON-LEX  breath   BREATH                 234.46  234.71 |        |
+beg SU       statemen brian_williams       234.71         | *Miss* |
+    LEXEME   alpha    N.                 234.71  234.90 |        |
+    LEXEME   alpha    B.                 234.90  235.05 |        |
+    LEXEME   alpha    C.                 235.04  235.20 |        |
+    LEXEME   lex      NEWS                 235.21  235.44 |        |
+    LEXEME   lex      CORRESPONDENT                 235.44  236.09 |        |
+    LEXEME   lex      GEORGE                 236.09  236.45 |        |
+    LEXEME   lex      LEWIS                 236.44  236.83 |        |
+    LEXEME   lex      ON                 236.84  236.97 |        |
+    LEXEME   lex      THE                 236.97  237.09 |        |
+    LEXEME   lex      ASSESSMENT                 237.09  237.61 |        |
+    LEXEME   lex      SO                 237.60  237.83 |        |
+    LEXEME   lex      FAR                 237.84  238.31 |        |
+end SU       statemen brian_williams               238.32 | *Miss* |
+end SPEAKER  adult_ma brian_williams               238.31 |        |
+end SEGMENT  <na>     brian_williams               238.45 |        |
+beg SEGMENT  <na>     george_lewis         238.45         |        |
+                                                   239.03 |        |end SPEAKER  adult_ma cwm0006=>brian_will          239.03
+                                           239.03         |        |beg SPEAKER  adult_ma cwm0007=>george_lew  239.03        
+beg SPEAKER  adult_ma george_lewis         239.93         |        |
+beg SU       statemen george_lewis         239.93         | *Miss* |
+    LEXEME   lex      THE                 239.93  240.03 |        |
+    LEXEME   lex      QUAKE                 240.03  240.34 |        |
+    LEXEME   lex      CATCHES                 240.34  240.94 |        |
+    LEXEME   lex      EVERYONE                 240.94  241.45 |        |
+    LEXEME   lex      OFF                 241.45  241.75 |        |
+    LEXEME   lex      GUARD                 241.75  242.12 |        |
+end SU       statemen george_lewis                 242.12 | *Miss* |
+beg SU       statemen george_lewis         242.12         | *Miss* |
+    LEXEME   lex      [NS]                 242.12  243.45 |        |
+    LEXEME   lex      AT                 243.45  243.56 |        |
+    LEXEME   lex      A                 243.56  243.60 |        |
+    LEXEME   lex      MICROSOFT                 243.60  244.25 |        |
+    LEXEME   lex      MEETING                 244.25  244.59 |        |
+    LEXEME   lex      IN                 244.59  244.69 |        |
+    LEXEME   lex      SEATTLE                 244.69  245.29 |        |
+    LEXEME   lex      AS                 245.29  245.41 |        |
+    LEXEME   lex      SEEN                 245.41  245.68 |        |
+    LEXEME   lex      ON                 245.68  245.80 |        |
+    LEXEME   lex      THIS                 245.80  245.99 |        |
+    LEXEME   lex      TAPE                 245.99  246.29 |        |
+    LEXEME   lex      FROM                 246.29  246.46 |        |
+    LEXEME   lex      STATION                 246.46  246.91 |        |
+    LEXEME   alpha    K.                 246.91  247.18 |        |
+    LEXEME   alpha    I.                 247.18  247.38 |        |
+    LEXEME   alpha    R.                 247.38  247.62 |        |
+    LEXEME   alpha    O.                 247.62  247.84 |        |
+    CB       clausal  george_lewis         247.84         |        |
+    NON-LEX  breath   BREATH                 247.84  248.16 |        |
+    LEXEME   lex      THE                 248.16  248.27 |        |
+    LEXEME   lex      AUDITORIUM                 248.27  248.88 |        |
+    LEXEME   lex      SHAKES                 248.88  249.39 |        |
+    LEXEME   lex      AS                 249.39  249.54 |        |
+    LEXEME   lex      BILL                 249.54  249.79 |        |
+    LEXEME   lex      GATES                 249.79  250.14 |        |
+    LEXEME   lex      PREPARES                 250.14  250.68 |        |
+    LEXEME   lex      TO                 250.68  250.81 |        |
+    LEXEME   lex      ADDRESS                 250.81  251.18 |        |
+    LEXEME   lex      THE                 251.18  251.28 |        |
+    LEXEME   lex      CROWD                 251.28  251.68 |        |
+end SU       statemen george_lewis                 251.68 | *Miss* |
+beg SU       statemen george_lewis         252.08         | *Miss* |
+    LEXEME   lex      THE                 252.08  252.17 |        |
+    LEXEME   lex      MEETING                 252.17  252.49 |        |
+    LEXEME   lex      BREAKS                 252.49  252.82 |        |
+    LEXEME   lex      UP                 252.82  253.06 |        |
+    LEXEME   lex      AND                 253.06  253.19 |        |
+    LEXEME   lex      GATES                 253.19  253.53 |        |
+    LEXEME   lex      IS                 253.53  253.70 |        |
+    LEXEME   lex      QUICKLY                 253.70  254.04 |        |
+    LEXEME   lex      HUSTLED                 254.04  254.40 |        |
+    LEXEME   lex      AWAY                 254.40  254.77 |        |
+end SU       statemen george_lewis                 254.77 | *Miss* |
+end SPEAKER  adult_ma george_lewis                 254.77 |        |
+                                                   255.01 |        |end SPEAKER  adult_ma cwm0007=>george_lew          255.01
+                                           255.01         |        |beg SPEAKER  adult_ma cwm0007=>george_lew  255.01        
+beg SPEAKER  adult_ma george_lewis         255.30         |        |
+beg SU       statemen george_lewis         255.30         | *Miss* |
+    LEXEME   lex      CRACKS                 255.30  255.69 |        |
+    LEXEME   lex      APPEAR                 255.69  255.97 |        |
+    LEXEME   lex      IN                 255.97  256.04 |        |
+    LEXEME   lex      THE                 256.04  256.15 |        |
+    LEXEME   lex      DOME                 256.15  256.48 |        |
+    LEXEME   lex      OF                 256.48  256.59 |        |
+    LEXEME   lex      THE                 256.59  256.65 |        |
+    LEXEME   lex      WASHINGTON                 256.65  257.20 |        |
+    LEXEME   lex      STATE                 257.20  257.52 |        |
+    LEXEME   lex      CAPITOL                 257.52  258.02 |        |
+    LEXEME   lex      AT                 258.02  258.16 |        |
+    LEXEME   lex      OLYMPIA                 258.16  258.64 |        |
+    LEXEME   lex      NEAR                 258.64  258.80 |        |
+    LEXEME   lex      THE                 258.80  258.91 |        |
+    LEXEME   lex      QUAKE'S                 258.91  259.31 |        |
+    LEXEME   lex      EPICENTER                 259.31  259.90 |        |
+end SPEAKER  adult_ma george_lewis                 259.90 |        |
+    CB       clausal  george_lewis         259.90         |        |
+    NON-LEX  breath   BREATH                 259.90  260.43 |        |
+beg SPEAKER  adult_ma george_lewis         260.43         |        |
+    LEXEME   lex      AS                 260.43  260.63 |        |
+    LEXEME   lex      INSIDE                 260.63  261.20 |        |
+    LEXEME   lex      PEOPLE                 261.20  261.52 |        |
+    LEXEME   lex      FLEE                 261.52  261.86 |        |
+    LEXEME   lex      FROM                 261.86  262.04 |        |
+    LEXEME   lex      THE                 262.04  262.13 |        |
+    LEXEME   lex      CHAMBERS                 262.13  262.67 |        |
+    LEXEME   lex      OF                 262.67  262.76 |        |
+    LEXEME   lex      THE                 262.76  262.84 |        |
+    LEXEME   lex      STATE                 262.84  263.17 |        |
+    LEXEME   lex      LEGISLATURE                 263.17  263.86 |        |
+end SU       statemen george_lewis                 263.86 | *Miss* |
+beg SU       statemen george_lewis         264.32         | *Miss* |
+    LEXEME   lex      THE                 264.32  264.45 |        |
+    LEXEME   lex      AUTHORITIES                 264.45  264.99 |        |
+    LEXEME   lex      BEGIN                 264.99  265.28 |        |
+    LEXEME   lex      TO                 265.28  265.37 |        |
+    LEXEME   lex      TALLY                 265.37  265.73 |        |
+    LEXEME   lex      THE                 265.73  265.85 |        |
+    LEXEME   lex      DAMAGE                 265.85  266.20 |        |
+end SU       statemen george_lewis                 266.20 | *Miss* |
+end SPEAKER  adult_ma george_lewis                 266.20 |        |
+                                                   266.31 |        |end SPEAKER  adult_ma cwm0007=>george_lew          266.31
+end SEGMENT  <na>     george_lewis                 266.45 |        |
+
+*** Performance analysis for FILLERs ***  overall error SCORE = 100.00%
+
+FILLER word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       1     0     0   100.00   0.00   0.00   100.00 100.00
+
+FILLER detection statistics -- in terms of # of FILLERs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       1     0     0   100.00   0.00   0.00   100.00 100.00
+f=20010228_2100_2200_MNB_NBW       1       1     0     0   100.00   0.00   0.00   100.00 100.00
+
+FILLER detection confusion matrix -- in terms of # of FILLERs
+           ALL - ref\sys  filled_p        {Miss}
+            filled_pause       0             1  
+
+                    {FA}       0  
+
+*** Performance analysis for IPs ***  overall error SCORE = 100.00%
+
+IP (exact) detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       1     0     0   100.00   0.00   0.00   100.00 100.00
+
+IP detection statistics -- in terms of # of IPs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       1     0     0   100.00   0.00   0.00   100.00 100.00
+f=20010228_2100_2200_MNB_NBW       1       1     0     0   100.00   0.00   0.00   100.00 100.00
+
+IP detection confusion matrix -- in terms of # of IPs
+           ALL - ref\sys    filler        {Miss}
+                  filler       0             1  
+
+                    {FA}       0  
+
+*** Performance analysis for SUs ***  overall error SCORE = 100.00%
+
+SU (exact) end detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              26      26     0     0   100.00   0.00   0.00   100.00 100.00
+
+SU detection statistics -- in terms of # of SUs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              26      26     0     0   100.00   0.00   0.00   100.00 100.00
+f=20010228_2100_2200_MNB_NBW      26      26     0     0   100.00   0.00   0.00   100.00 100.00
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  statemen        {Miss}
+               statement       0            26  
+
+                    {FA}       0  
+
+*** Performance analysis for Speaker Diarization for f=20010228_2100_2200_MNB_NBW ***
+
+    EVAL TIME =    255.41 secs
+  EVAL SPEECH =    118.76 secs ( 46.5 percent of evaluated time)
+  SCORED TIME =    252.18 secs ( 98.7 percent of evaluated time)
+SCORED SPEECH =    116.06 secs ( 46.0 percent of scored time)
+   EVAL WORDS =    354        
+ SCORED WORDS =    354         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.21 secs (  0.1 percent of scored time)
+FALARM SPEECH =     26.73 secs ( 10.6 percent of scored time)
+ MISSED WORDS =      1         (  0.3 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =    116.06 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.21 secs (  0.2 percent of scored speaker time)
+FALARM SPEAKER TIME =     26.73 secs ( 23.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.17 secs (  0.1 percent of scored speaker time)
+SPEAKER ERROR WORDS =      1         (  0.3 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 23.36 percent of scored speaker time  `(f=20010228_2100_2200_MNB_NBW)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male            MISS              
+adult_male                0 /   0.0%          2 / 100.0%          0 /   0.0%
+  FALSE ALARM             1 /  50.0%          2 / 100.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male            MISS              
+adult_male             0.00 /   0.0%     115.85 /  99.8%       0.21 /   0.2%
+  FALSE ALARM         13.52 /  11.6%      13.21 /  11.4%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =    255.41 secs
+  EVAL SPEECH =    118.76 secs ( 46.5 percent of evaluated time)
+  SCORED TIME =    252.18 secs ( 98.7 percent of evaluated time)
+SCORED SPEECH =    116.06 secs ( 46.0 percent of scored time)
+   EVAL WORDS =    354        
+ SCORED WORDS =    354         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.21 secs (  0.1 percent of scored time)
+FALARM SPEECH =     26.73 secs ( 10.6 percent of scored time)
+ MISSED WORDS =      1         (  0.3 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =    116.06 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.21 secs (  0.2 percent of scored speaker time)
+FALARM SPEAKER TIME =     26.73 secs ( 23.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.17 secs (  0.1 percent of scored speaker time)
+SPEAKER ERROR WORDS =      1         (  0.3 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 23.36 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male            MISS              
+adult_male                0 /   0.0%          2 / 100.0%          0 /   0.0%
+  FALSE ALARM             1 /  50.0%          2 / 100.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male            MISS              
+adult_male             0.00 /   0.0%     115.85 /  99.8%       0.21 /   0.2%
+  FALSE ALARM         13.52 /  11.6%      13.21 /  11.4%
+---------------------------------------------

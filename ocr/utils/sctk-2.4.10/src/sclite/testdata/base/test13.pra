@@ -1,0 +1,189 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./tima_hyp.ctm
+
+Speakers: 
+    0:  5555-a
+    1:  5555-b
+
+Speaker sentences   0:  5555-a   #utts: 13
+id: (5555-a-0000)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 30 9 2 1
+REF:  okay HUH  what do you think about it UHHUH  THAT'S **** yeah i think THAT'S UM i think it's a LITTLE CRAZY   i WORKED with spanish people for about two years and just IT WAS incredible to me TO see the things 
+HYP:  okay WELL what do you think about it UH-HUH IT     SAYS yeah i think THAT   SO i think it's a THAT   BECAUSE i WORK   with spanish people for about two years and just ** IS  incredible to me ** see the things 
+Eval:      S                               S      S      I                 S      S                 S      S         S                                                       D  S                    D                 
+
+id: (5555-a-0001)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 35 12 3 2
+REF:  that they had to go THROUGH WHEN THEY WERE REALLY some of the best workers RIGHT right EXACTLY yeah i think you know i think IN a lot of ways THE LAW  IS GOOD because IT   TRIES to **** to protect *** you know the people who are in the states UHHUH  
+HYP:  that they had to go ******* TO   ONE  OF   THOSE  some of the best workers ***** right I       yeah i think you know i think ** a lot of ways OF  LOSS TO IT   because IT'S NICE  to HAVE to protect AND you know the people who are in the states UH-HUH 
+Eval:                     D       S    S    S    S                               D           S                                     D                S   S    S  S            S    S        I               I                                             S      
+
+id: (5555-a-0002)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 28 17 2 6
+REF:  *** *** OH  YOU'RE KIDDING SOUNDS LIKE a LOT OF FUN YEAH  IT'S amazing to me how *** how many THINGS THEY would allow to * OCCUR BEFORE you know you CAN    come in *** right YEAH it's kind of ***** FRUSTRATING TOO for those who ARE legitimate now you know i think 
+HYP:  ALL YOU CAN FOR    THE     HECK   OF   a *** TO LET FUNNY AS   amazing to me how THE how many SEEMS  IT   would allow to A CARE  FOR    you know you SHOULD come in AND right IT'S it's kind of FRESH AND         SEE for those who *** legitimate now you know i think 
+Eval: I   I   S   S      S       S      S      D   S  S   S     S                      I            S      S                   I S     S                   S              I         S                 I     S           S                 D                                   
+
+id: (5555-a-0003)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 29 16 6 0
+REF:  UHHUH right exactly and i think it's important THAT THEY you know THEY ALLOW   a good number of people IN EVERY YEAR because really THEY'RE THE ONES WHO  WORK THE  HARDEST and do THE JOBS   that that we don't want to DO and i just I DON'T KNOW i have PERSONALLY 
+HYP:  I     right exactly and i think it's important IN   DAY  you know **** THEY'LL a good number of people ** HAVE  YOU  because really ******* *** **** THEN ONCE WITH OURS    and do IT  SOUNDS that that we don't want to TO and i just * AND   AND  i have PERSON     
+Eval: S                                              S    S             D    S                               D  S     S                   D       D   D    S    S    S    S              S   S                                 S             D S     S           S          
+
+id: (5555-a-0004)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 26 6 6 0
+REF:  I have a problem with it i think that you know IF someone wants to come in and they can prove that they're going to work and THEY'RE GOING TO   BE  a GOOD CITIZEN THAT WE            SHOULDN'T CLOSE 
+HYP:  * have a problem with it i think that you know ** someone wants to come in and they can prove that they're going to work and ******* ***** THEY GET a **** ******* BIG  CONSIDERATION THE       WAS   
+Eval: D                                              D                                                                             D       D     S    S     D    D       S    S             S         S     
+
+id: (5555-a-0005)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 32 7 8 0
+REF:  OUR DOOR AND you know i i believe that IF someone goes on welfare that's when YOU you know SEND THEM BACK TO    THEIR country and i think a lot of times WE'RE so busy trying to keep THEM OUT THAT WE'RE   spending twice as much money 
+HYP:  *** **** *** you know i i believe that ** someone goes on welfare that's when *** you know **** SOME OF   MATCH IT    country and i think a lot of times ARE   so busy trying to keep **** *** THE  MONTHLY spending twice as much money 
+Eval: D   D    D                             D                                      D            D    S    S    S     S                                        S                            D    D   S    S                                    
+
+id: (5555-a-0006)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 27 6 1 0
+REF:  as WE  would JUST  ALLOWING them IN  and yeah and that's that's what i think YOU KNOW i i have to laugh because like i said i WORKED with a lot of those and 
+HYP:  as YOU would STILL ON       them AND and yeah and that's that's what i think *** AND  i i have to laugh because like i said i WORK   with a lot of those and 
+Eval:    S         S     S             S                                           D   S                                            S                              
+
+id: (5555-a-0007)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 36 9 5 2
+REF:  THEY'D been ** DEPORTED two or three times and just basically WHAT they do is they get CAUGHT WHEN THEY WANTED to go HOME FOR christmas OR for any ** OTHER time BUT  i think you know i think ALL IN all there's a lot of improvements i think the general idea 
+HYP:  IT'S   been TO PUERTO   two or three times and just basically **** they do is they get ****** COME AND  WANT   to go **** TO  christmas ** for any OF THE   time THAT i think you know i think *** ON all there's a lot of improvements i think the general idea 
+Eval: S           I  S                                              D                        D      S    S    S            D    S             D          I  S          S                             D   S                                                             
+
+id: (5555-a-0008)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 29 10 4 3
+REF:  is GOOD but but THERE could be some WORK DONE in the area well good ** anyway DO YOU have anything else in the ** the subject UM THAT YOU   MIGHT WANT   to TALK ABOUT yeah ** ABSOLUTELY i think a lot of times we take 
+HYP:  is IT   but but THEY  could be some WITH AND  in the area well good AT anyway ** TO  have anything else in the UH the subject ** **** THERE I     WANTED to **** A     yeah SO THAT       i think a lot of times we take 
+Eval:    S            S                   S    S                          I         D  S                             I              D  D    S     S     S         D    S          I  S                                         
+
+id: (5555-a-0009)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 32 13 4 0
+REF:  you know basically who WE want to because if YOU  if YOU HAVE CONNECTIONS IT'S A          LOT       EASIER to get in yeah AND i think you know it should be more of A   THING THAT'S based upon someone's INTENT YOU      KNOW and THAT it should be equal to all 
+HYP:  you know basically who ** want to because if YEAH if *** **** *********** THE  CONNECTION SOCIETIES AND    to get in yeah BUT i think you know it should be more of THE THEME IT'S   based upon someone's AND    THINKING OH   and THEN it should be equal to all 
+Eval:                        D                     S       D   D    D           S    S          S         S                     S                                         S   S     S                           S      S        S        S                              
+
+id: (5555-a-0010)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 23 9 7 3
+REF:  AND THEN not like ** the UNITED STATES  basically ** it's THAT not WHO YOU KNOW it **** DOESN'T become a thing OF WHO  you know but but how the type of person you ARE AND IT   SHOULD be based on THOSE 
+HYP:  *** THE  not like IN the ****** ESTATES basically IT it's **** not THE NOW DID  it DOES IT      become a thing ** IFFY you know but but how the type of person you *** *** KNOW I      be based on ***** 
+Eval: D   S             I      D      S                 I       D        S   S   S       I    S                      D  S                                                D   D   S    S                  D     
+
+id: (5555-a-0011)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 16 27 3 3
+REF:  KIND OF  things SO THE  GOOD people like PROBABLY YOUR husband can get IN  WELL GREAT YEP well **** LET'S  SEE   IS  THERE ANYTHING ELSE I   BELIEVE IN   NO   i'm not SURE HOW  LONG THEY'RE SUPPOSED to be BUT  i've enjoyed it it's GOOD    HEARING YOUR *** * point 
+HYP:  **** THE things ** THAT GET  people like UH       THE  husband can get OUT AND  GOOD  SO  well THIS SEASON SINCE AND LEAVE IT       ON   THE FACT    THAT WELL i'm not **** SHOW ON   I       SUPPOSE  to be THAT i've enjoyed it it's GETTING A       YEAR AND A point 
+Eval: D    S          D  S    S                S        S                    S   S    S     S        I    S      S     S   S     S        S    S   S       S    S            D    S    S    S       S              S                         S       S       S    I   I       
+
+id: (5555-a-0012)
+File: 5555
+Channel: a
+Scores: (#C #S #D #I) 18 15 4 0
+REF:  of view and i think that's NEAT I THINK  WE AGREE A    LOT ON  THAT   and I'VE LEARNED something from it well THANKS I'M GLAD   YOU'RE HOME YOU   have a good evening ALL RIGHT thanks bye bye 
+HYP:  of view and i think that's **** A THAT'S A  GREAT DEAL UH  AND THAT'S and I    WANT    something from it well ****** *** THINGS AND    I    DON'T have a good evening *** I     thanks bye bye 
+Eval:                            D    S S      S  S     S    S   S   S          S    S                              D      D   S      S      S    S                         D   S                    
+
+Speaker sentences   1:  5555-b   #utts: 9
+id: (5555-b-0000)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 30 4 1 4
+REF:  ** OH well immigration I   KNOW   THEY'RE really strict right now because my **** ** husband is from out of the country and THE uh *** we had to go through a whole very long process to uh to 
+HYP:  UH UM well immigration AND THAT'S ANOTHER really strict right now because my HAND IT husband is from out of the country and *** uh BUT we had to go through a whole very long process to uh to 
+Eval: I  S                   S   S      S                                          I    I                                         D      I                                                           
+
+id: (5555-b-0001)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 28 6 2 2
+REF:  ** assure **** the government that he was uh MARRYING ME      and not to be A     RESIDENT HERE UHHUH yeah that's true i mean you can't just come over TO the country because UM you want to you 
+HYP:  UH assure THAT the government that he was uh ******** MARRIED and not to be THERE ISN'T    IT   HAVE  yeah that's true i mean you can't just come over ** the country because UP you want to you 
+Eval: I         I                                  D        S                     S     S        S    S                                                      D                      S                  
+
+id: (5555-b-0002)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 28 14 5 2
+REF:  know THAT'S NOT GOOD ENOUGH YOU HAVE TO  HAVE A   have to have a DARN good reason OF  political or whatever not A not A GOOD easy way to get IN  exactly my mother UM  actually KNEW A    woman *** * in another state that used to marry MEN 
+HYP:  know ****** *** IF   I      CAN THAT CAN COME AND have to have a DIET good reason THE political or whatever not * not * AS   easy way to get AND exactly my mother I'M actually **** KNOW woman AND I in another state that used to marry AND 
+Eval:      D      D   S    S      S   S    S   S    S                  S                S                             D     D S                    S                     S            D    S          I   I                                     S   
+
+id: (5555-b-0003)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 12 12 5 0
+REF:  JUST SHE'D never even MEET THEM AND  she'd just get MONEY FOR IT HUHUH SO  UM EXACTLY but i mean WITH   the NEW laws IT'S it's tough NOW EXACTLY 
+HYP:  BUT  SHE   never even MEAN I    MEAN she'd just get ***** *** MY UH    YOU I  TRUE    but i mean WITHIN the *** laws IN   it's tough *** ******* 
+Eval: S    S                S    S    S                   D     D   S  S     S   S  S                  S          D        S               D   D       
+
+id: (5555-b-0004)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 27 7 5 0
+REF:  well AND YOU KNOW UM   my grandparents came to this country just wanting a better life you know AND they got here but now it's A  you know IT'S SO STRICT     that you can't JUST DO THAT i agree 
+HYP:  well *** I   YEAH YEAH my grandparents came to this country just wanting a better life you know IT  they got here but now it's UH you know **** IT FRUSTRATES that you can't **** ** **** i agree 
+Eval:      D   S   S    S                                                                             S                              S           D    S  S                         D    D  D            
+
+id: (5555-b-0005)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 15 24 6 4
+REF:  exactly IF THEY'RE NOT GOING TO   BE  ON  WELFARE or or whatever THEY'RE GOING TO BE   A   PRODUCTIVE   CITIZEN yeah ** well THINK OF    HOW     MANY ILLEGAL ALIENS have * have have *** BEEN UM  YEAH SENT back *** TO MEXICO just to find THEIR way back THAT'S RIGHT 
+HYP:  exactly ** ******* BUT I     HAVE THE I'M FAIR    or or whatever ******* ***** ** THEY GET DISCONNECTED SINCE   yeah UH well I     DON'T BELIEVE IT   WELL    AND    have A have have THE AND  THE AND  SIT  back AND I  SKIED  just to find A     way back ****** THINK 
+Eval:         D  D       S   S     S    S   S   S                      D       D     D  S    S   S            S            I       S     S     S       S    S       S           I           I   S    S   S    S         I   S  S                   S              D      S     
+
+id: (5555-b-0006)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 20 11 4 4
+REF:  THAT'S OUR MONEY YES  that's TRUE i *** i THINK **** ** i agree UM i UM   BOY this is SPUR OF     THE moment um BUT I    i i DON'T really see any any *** changes that i think 
+HYP:  ****** AND SOME  YEAH that's AND  i AND i CAN   TAKE IT i agree AS i WELL I   this is **** SPREAD A   moment um *** THAT i i ***** really see any any AND changes that i think 
+Eval: D      S   S     S           S      I     S     I    I          S    S    S           D    S      S             D   S        D                        I                        
+
+id: (5555-b-0007)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 22 13 6 2
+REF:  ARE REALLY blatant right now other THAN  i think THEY OUGHT TO TAKE IN  ON    a CASE BY  case basis *** **** and NOT NECESSARILY make it a UM political REFUGEE EXACTLY CONNECTIONS AND money yeah i AGREE yeah well we got him 
+HYP:  *** WE     blatant right now other THING i think **** ***** ** THAT HAD TAKEN a CAKE THE case basis AND THAT and SO  WE          make it a ** political ******* ROUGH   EXPECTATION THE money yeah i HAD   yeah well we got him 
+Eval: D   S                              S             D    D     D  S    S   S       S    S              I   I        S   S                     D            D       S       S           S                S                          
+
+id: (5555-b-0008)
+File: 5555
+Channel: b
+Scores: (#C #S #D #I) 21 10 15 9
+REF:  ** PAST that *** *** ** but UM i **** THAT i know there's a lot of OTHER people OUT THERE PROBABLY DO A GOOD JOB HERE i think THAT'S it ***** ***** ** IS this like A  VERY SHORT call I DID TOO  well it was nice **** TALKING to YOU YOU TOO BYE 
+HYP:  TO AND  that AND PUT IT but ** i HAVE TO   i know there's a lot of THE   people *** ***** ******** ** * **** *** THAT i think ****** it COULD COUNT TO DO this like OF THEY SURE  call * *** YEAH well it was nice TALK IT      to *** *** *** *** 
+Eval: I  S         I   I   I      D    I    S                            S            D   D     D        D  D D    D   S            D         I     I     I  S            S  S    S          D D   S                     I    S          D   D   D   D   
+
+

@@ -1,0 +1,135 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   sastt-case2.sys.rttm
+Ref file:      sastt-case2.ref.rttm.filt
+Hyp file:      sastt-case2.sys.rttm.filt
+Creation date: "Fri May  1 15:00:36 2009"
+Fragment Correct Flag Set
+Optionally Deletable Flag Set
+
+Speaker Count: 5
+Speakers: 
+    0:  SUB48
+    1:  SUB49
+    2:  SUB57
+    3:  SUB34
+    4:  inter_segment_gap
+
+
+Speaker sentences   0:  SUB48   utt# 0 of 2
+id: (SUB48-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 1 0
+Ref times: t1= 934.44 t2= 934.70
+REF:  TWO     
+R_T1: 934.44  
+R_T2: 934.70  
+HYP:  ***     
+H_T1:         
+H_T2:         
+CONF:         
+Eval: D       
+
+Speaker sentences   1:  SUB49   utt# 0 of 2
+id: (SUB49-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 2 0
+Ref times: t1= 934.62 t2= 935.19
+REF:  TWO     SHEETS  
+R_T1: 934.62  934.76  
+R_T2: 934.76  935.19  
+HYP:  ***     ******  
+H_T1:                 
+H_T2:                 
+CONF:                 
+Eval: D       D       
+
+Speaker sentences   2:  SUB57   utt# 0 of 1
+id: (SUB57-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 3 0 7 0
+Ref times: t1= 935.02 t2= 937.62
+REF:  OKAY    BECAUSE THEN    i       I       I'D     (%uh)   I'M     (m-)    MISSING 
+R_T1: 935.02  935.36  935.62  935.76  935.96  936.23  936.42  936.54  936.87  937.07  
+R_T2: 935.36  935.62  935.76  935.90  936.09  936.42  936.49  936.87  937.03  937.62  
+HYP:  ****    ******* ****    i       *       ***             ***             ******* 
+H_T1:                         935.75                  0.00            0.00            
+H_T2:                         936.50                  0.00            0.00            
+CONF:                         0.3899                  0.0000          0.0000          
+Eval: D       D       D               D       D               D               D       
+
+Speaker sentences   3:  SUB34   utt# 0 of 2
+id: (SUB34-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 3 0
+Ref times: t1= 935.29 t2= 935.86
+REF:  SHOULD  BE      TWO     
+R_T1: 935.29  935.48  935.58  
+R_T2: 935.48  935.58  935.86  
+HYP:  ******  **      ***     
+H_T1:                         
+H_T2:                         
+CONF:                         
+Eval: D       D       D       
+
+Speaker sentences   1:  SUB49   utt# 1 of 2
+id: (SUB49-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 1 2 0 0
+Ref times: t1= 935.57 t2= 935.88
+REF:  SHE     IS      (shee-) 
+R_T1: 935.57  935.64  935.71  
+R_T2: 935.64  935.71  935.88  
+HYP:  SHE     IS              
+H_T1: 935.62  935.69  0.00    
+H_T2: 935.69  935.75  0.00    
+CONF: 0.3878  0.3878  0.0000  
+Eval: S       S               
+
+Speaker sentences   0:  SUB48   utt# 1 of 2
+id: (SUB48-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 4 4 3 0
+Ref times: t1= 936.48 t2= 939.33
+REF:  SO      WE      have    THE     a       B.      s.      AND     A       M.      s.'s    
+R_T1: 936.48  937.17  937.26  937.42  937.72  937.87  938.04  938.39  938.56  938.66  938.91  
+R_T2: 936.93  937.26  937.42  937.57  937.87  938.04  938.39  938.56  938.66  938.91  939.33  
+HYP:  SO      **      have    ***     a       L.      s.      ***     I.      HAVE    s.'s    
+H_T1: 936.50          937.21          937.48  938.08  938.13          938.39  938.70  938.83  
+H_T2: 936.82          937.48          937.84  938.13  938.39          938.70  938.83  939.38  
+CONF: 0.3990          0.5330          0.7921  0.8056  0.4316          0.6605  0.3896  0.8326  
+Eval: S       D               D               S               D       S       S               
+
+Speaker sentences   3:  SUB34   utt# 1 of 2
+id: (SUB34-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 1 4 0
+Ref times: t1= 938.13 t2= 939.12
+REF:  THIS    IS      HIS     SECOND  SHEET   
+R_T1: 938.13  938.34  938.44  938.57  938.89  
+R_T2: 938.34  938.44  938.57  938.89  939.12  
+HYP:  V.      **      ***     ******  *****   
+H_T1: 937.84                                  
+H_T2: 938.08                                  
+CONF: 0.3716                                  
+Eval: S       D       D       D       D       
+
+Speaker sentences   4:  inter_segment_gap   utt# 0 of 1
+id: (Inter_Segment_Gap-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 0 0
+Ref times: t1= 939.33 t2= 939.38
+
+

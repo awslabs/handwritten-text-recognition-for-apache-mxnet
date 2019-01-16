@@ -1,0 +1,13 @@
+;;This is an RTTM file.  Each record contains 9 whitespace separated fields:
+;;1:type 2:file 3:chnl 4:tbeg 5:tdur 6:ortho 7:subtype 8:spkrname 9:conf
+SPKR-INFO    test35   1     <NA>    <NA>  <NA>             adult_male           Alistair_Yates       <NA>
+SPEAKER      test35   1  944.060  17.201  <NA>             <NA>                 Alistair_Yates       <NA>
+SU           test35   1  944.060  10.380  <NA>             statement            Alistair_Yates       <NA>
+LEXEME       test35   1  953.050   0.560  officials        lex                  Alistair_Yates       <NA>
+LEXEME       test35   1  953.610   0.260  and              lex                  Alistair_Yates       <NA>
+EDIT         test35   1  953.870   0.570  <NA>             other                Alistair_Yates       <NA>
+LEXEME       test35   1  953.870   0.570  supporters       lex                  Alistair_Yates       <NA>
+IP           test35   1  954.440    <NA>  <NA>             edit                 Alistair_Yates       <NA>
+SEGMENT      test35   1  954.638   2.024  <NA>             <NA>                 Alistair_Yates       <NA>
+SU           test35   1  954.858   3.304  <NA>             statement            Alistair_Yates       <NA>
+LEXEME       test35   1  954.858   0.070  The              lex                  Alistair_Yates       <NA>

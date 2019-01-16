@@ -1,0 +1,181 @@
+<SYSTEM title="CT-trn-i-F-D" ref_fname="trn.ref" hyp_fname="trn.hyp" creation_date="" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="f">
+<PATH id="(f_0)" word_cnt="7" sequence="0">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_1)" word_cnt="7" sequence="1">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_2)" word_cnt="7" sequence="2">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_3)" word_cnt="7" sequence="3">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":I,,"e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_4)" word_cnt="7" sequence="4">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_5)" word_cnt="7" sequence="5">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+<PATH id="(f_6)" word_cnt="7" sequence="6">
+C,"a","a":C,"b","b":C,"c","c":C,"d","d":C,"e","e":C,"f","f":C,"g","g"
+</PATH>
+</SPEAKER>
+<SPEAKER id="g">
+<PATH id="(g_0)" word_cnt="10" sequence="7">
+C,"uh","uh":C,"uh","uh":S,"had","have":S,"a","along":S,"long","which":S,"age-old","go":C,"problem","problem":C,"of","of":C,"my","my":S,"bright","private"
+</PATH>
+<PATH id="(g_1)" word_cnt="10" sequence="8">
+C,"uh","uh":C,"uh","uh":S,"had","have":S,"a","along":S,"long","which":S,"age-old","go":C,"problem","problem":C,"of","of":C,"my","my":S,"bright","private"
+</PATH>
+</SPEAKER>
+<SPEAKER id="h">
+<PATH id="(h_0)" word_cnt="3" sequence="9">
+C,"a","a":C,"b","b":C,"ef","ef"
+</PATH>
+<PATH id="(h_1)" word_cnt="8" sequence="10">
+C,"a","a":C,"gh","gh":C,"i","i":C,"bd","bd":C,"e","e":I,,"i":C,"th","th":C,"f","f"
+</PATH>
+<PATH id="(h_2)" word_cnt="9" sequence="11">
+C,"a","a":C,"gh","gh":C,"i","i":C,"bd","bd":C,"e","e":C,"i","i":C,"n","n":I,,"th":C,"f","f"
+</PATH>
+</SPEAKER>
+<SPEAKER id="i">
+<PATH id="(i_1)" word_cnt="5" sequence="12">
+I,,"th":S,"this","e":C,"is","is":S,"the","th":S,"ten","en"
+</PATH>
+<PATH id="(i_2)" word_cnt="5" sequence="13">
+I,,"th":S,"this","e":C,"is","is":S,"the","th":S,"tea","en"
+</PATH>
+<PATH id="(i_3)" word_cnt="5" sequence="14">
+I,,"th":S,"the","is":C,"is","is":S,"the","th":S,"tea","en"
+</PATH>
+<PATH id="(i_4)" word_cnt="14" sequence="15">
+C,"fi-","find":C,"th-","the":C,"fi-","fish":C,"-icks","ticks":C,"-lk","milk":S,"-offee","fee":C,"-him","him":C,"find","fi-":C,"the","th-":C,"fish","fi-":C,"ticks","-icks":C,"milk","-lk":S,"fee","-offee":C,"him","-him"
+</PATH>
+<PATH id="(i_5)" word_cnt="9" sequence="16">
+C,"del","del":D,"fi-",:C,"del_withnull","del_withnull":C,"skip","skip":C,"skip","skip":C,"substitution","substitution":S,"fi-","flag":C,"sub_withnull","sub_withnull":I,,"flag"
+</PATH>
+</SPEAKER>
+<SPEAKER id="empty">
+<PATH id="(empty-1)" word_cnt="10" sequence="17">
+I,,"a":I,,"b":I,,"c":I,,"e":I,,"f":I,,"g":I,,"h":I,,"i":I,,"j":S,"salt_","k"
+</PATH>
+<PATH id="(empty-2)" word_cnt="3" sequence="18">
+I,,"d":I,,"e":I,,"f"
+</PATH>
+</SPEAKER>
+<SPEAKER id="alt">
+<PATH id="(alt-1)" word_cnt="3" sequence="19">
+C,"a","a":C,"c","c":C,"d","d"
+</PATH>
+<PATH id="(alt-2)" word_cnt="4" sequence="20">
+C,"a","a":C,"c","c":I,,"i":C,"d","d"
+</PATH>
+<PATH id="(alt-3)" word_cnt="2" sequence="21">
+C,"a","a":C,"d","d"
+</PATH>
+<PATH id="(alt-6)" word_cnt="2" sequence="22">
+C,"a","a":C,"d","d"
+</PATH>
+<PATH id="(alt-7)" word_cnt="3" sequence="23">
+C,"a","a":C,"d","d":C,"e","e"
+</PATH>
+<PATH id="(alt-8)" word_cnt="3" sequence="24">
+C,"a","a":C,"d","d":C,"e","e"
+</PATH>
+<PATH id="(alt-9)" word_cnt="3" sequence="25">
+C,"a","a":D,"d",:C,"c","c"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od1">
+<PATH id="(od1-1)" word_cnt="3" sequence="26">
+C,"b","b":C,"(c)","":S,"d","e"
+</PATH>
+<PATH id="(od1-2)" word_cnt="3" sequence="27">
+C,"b","b":C,"(c)","c":S,"d","e"
+</PATH>
+<PATH id="(od1-3)" word_cnt="4" sequence="28">
+C,"b","b":C,"(c)","":C,"d","d":I,,"e"
+</PATH>
+<PATH id="(od1-4)" word_cnt="4" sequence="29">
+C,"b","b":C,"(c)","c":I,,"i":S,"d","e"
+</PATH>
+<PATH id="(od1-5)" word_cnt="4" sequence="30">
+C,"b","b":I,,"s":S,"(c)","i":S,"d","e"
+</PATH>
+<PATH id="(od1-6)" word_cnt="3" sequence="31">
+D,"b",:C,"(c)","":S,"d","e"
+</PATH>
+<PATH id="(od1-7)" word_cnt="3" sequence="32">
+D,"b",:C,"(c)","":S,"d","f"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od2">
+<PATH id="(od2-1)" word_cnt="5" sequence="33">
+C,"(a)","":C,"(c)","":S,"b","s":S,"d","s":S,"e","s"
+</PATH>
+<PATH id="(od2-2)" word_cnt="5" sequence="34">
+C,"(a)","":S,"c","s":C,"(b)","":S,"d","s":S,"e","s"
+</PATH>
+<PATH id="(od2-3)" word_cnt="5" sequence="35">
+C,"(a)","":S,"c","s":S,"b","s":C,"(d)","":S,"e","s"
+</PATH>
+<PATH id="(od2-4)" word_cnt="5" sequence="36">
+C,"(a)","":S,"c","s":S,"b","s":S,"d","s":C,"(e)",""
+</PATH>
+<PATH id="(od2-5)" word_cnt="5" sequence="37">
+S,"a","s":C,"(c)","":C,"(b)","":S,"d","s":S,"e","s"
+</PATH>
+<PATH id="(od2-6)" word_cnt="5" sequence="38">
+S,"a","s":C,"(c)","":S,"b","s":C,"(d)","":S,"e","s"
+</PATH>
+<PATH id="(od2-7)" word_cnt="5" sequence="39">
+S,"a","s":C,"(c)","":S,"b","s":S,"d","s":C,"(e)",""
+</PATH>
+<PATH id="(od2-8)" word_cnt="5" sequence="40">
+S,"a","s":S,"c","s":C,"(b)","":C,"(d)","":S,"e","s"
+</PATH>
+<PATH id="(od2-9)" word_cnt="5" sequence="41">
+S,"a","s":S,"c","s":C,"(b)","":S,"d","s":C,"(e)",""
+</PATH>
+<PATH id="(od2-10)" word_cnt="5" sequence="42">
+S,"a","s":S,"c","s":S,"b","s":C,"(d)","":C,"(e)",""
+</PATH>
+</SPEAKER>
+<SPEAKER id="od3">
+<PATH id="(od3-1)" word_cnt="3" sequence="43">
+C,"b","b":C,"(c-)","":S,"d","e"
+</PATH>
+<PATH id="(od3-2)" word_cnt="3" sequence="44">
+C,"b","b":C,"(c-)","c":S,"d","e"
+</PATH>
+<PATH id="(od3-3)" word_cnt="4" sequence="45">
+C,"b","b":C,"(c-)","":C,"d","d":I,,"e"
+</PATH>
+<PATH id="(od3-4)" word_cnt="4" sequence="46">
+C,"b","b":C,"(c-)","c":I,,"i":S,"d","e"
+</PATH>
+<PATH id="(od3-5)" word_cnt="4" sequence="47">
+C,"b","b":I,,"s":S,"(c-)","i":S,"d","e"
+</PATH>
+<PATH id="(od3-6)" word_cnt="3" sequence="48">
+D,"b",:C,"(c-)","":S,"d","e"
+</PATH>
+<PATH id="(od3-7)" word_cnt="3" sequence="49">
+D,"b",:C,"(c-)","":S,"d","f"
+</PATH>
+<PATH id="(od3-8)" word_cnt="5" sequence="50">
+C,"b","b":C,"(ten-)","ten":C,"(the)","the":D,"can",:S,"d","and"
+</PATH>
+</SPEAKER>
+<SPEAKER id="comb">
+<PATH id="(comb-1)" word_cnt="4" sequence="51">
+C,"a","a":C,"b-","b":C,"(c-)","c":C,"(d)","d"
+</PATH>
+<PATH id="(comb-2)" word_cnt="4" sequence="52">
+C,"a","a":C,"b","b-":C,"c","(c-)":C,"d","(d)"
+</PATH>
+</SPEAKER>
+</SYSTEM>

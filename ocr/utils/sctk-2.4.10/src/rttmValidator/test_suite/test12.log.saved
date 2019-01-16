@@ -1,0 +1,4 @@
+ERROR: Expected confidence value to be a number or <NA>; see field (9) in line 8
+ERROR: Expected confidence value to be [0,1]; see field (9) in line 11
+ERROR: Expected confidence value to be [0,1]; see field (9) in line 13
+Validation aborted

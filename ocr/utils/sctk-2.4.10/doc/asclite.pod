@@ -1,0 +1,310 @@
+=head1 NAME
+
+asclite - Multi-dimensional alignment program.
+
+=head1 SYNOPSIS
+
+	asclite <Input Options> [<Alignment Options>] [<Output Options>] [Scoring Report Options>]
+
+=head1 DESCRIPTION
+
+Asclite is multi-dimensional extension of the Dynamic Programming solution to Levenshtein Edit Distance calculations capable of evaluating STT and SASTT systems during periods of overlapping, simultaneous speech. It handles different input formats: RTTM, CTM, STM, and TRN and generates several data and statistical formats: SGML, SUM, RSUM, and Alignment Information. STDOUT is used to generate reports and STDERR is used for logging purposes. The alignment information is considered as a log information.
+
+=head1 USAGE
+
+Examples:
+
+	asclite -r example.rttm rttm -h example2.rttm rttm Example -adaptive-cost -f 6 -o sgml
+	asclite -r example.rttm rttm -h example2.rttm rttm Example -f 0 -o sum stdout
+
+=head1 OPTIONS
+
+=over
+
+=item B<Input Options:>
+
+=over
+
+=item B<-r <reffilename> [ rttm | stm | trn ]>
+
+Defines the reference file and its format.
+The default format is 'trn'.
+
+=item B<-h <hypfilename> [ ctm | rttm | trn ] [ <title> ]>
+
+Defines the hypothesis file, its format, and the 'title' used for reports. The default title is the filename.
+This option may be used more than once.
+The default format is 'trn'.
+
+=item B<-i <ids>>
+
+Set the utterance id type (for trn mode only)
+
+=back
+
+=item B<Filter Options:>
+
+=over
+
+=item B<-spkrautooverlap [ ref | hyp | both ]>
+
+Check if the speakers are self-overlaping or not.
+
+=item B<-uem <uemfilename> [ ref | hyp | both ]>
+
+Apply the UEM rules.
+The default value is 'both'.
+
+=item B<-noisg>
+
+Do not creates the Inter Segment Gaps.
+
+=back
+
+=item B<Alignment Options:>
+
+=over
+
+=item B<-s>
+
+Do case-sensitive alignments.
+
+=item B<-F>
+
+Score fragments as correct.
+
+=item B<-D [ ref | hyp | both ]>
+
+Score optional tokens as correct based on the flag's value:
+hyp: a hypothesis word is optional and the work is deleted,
+ref: a reference word is optional and the word is inserted,
+both: both 'ref' and 'hyp' are in effect.
+The default value is 'both'.
+
+=item B<-time-base-cost>
+
+Used the time base cost model for the alignment (Note that only ctm and rttm format are supported for this mode).
+
+=item B<-time-prune <time_threshold>>
+
+Activates the time pruning optimization with allowed error of <time_threshold> millisecond(s).
+
+=item B<-word-time-align <time_threshold>>
+
+Activates the time optimization for word alignment with allowed error of <time_threshold> millisecond(s).
+
+=item B<-spkr-align <mdm_spkr_align_file_csv>>
+
+Activates the speaker alignment optimization regarding the <mdm_spkr_align_file_csv> csv file.
+
+=item B<-adaptive-cost>
+
+Activates the adaptive cost based on the time.
+
+=item B<-wordalign-cost>
+
+Activates the word align cost based on the edit distance.
+
+=item B<-overlap-limit <max_nb_of_overlaping speaker>>
+
+Change the maximum number of overlaping speaker (default: 1).
+
+=item B<-memory-compression <block_KB>>
+
+Set the memory compression with compressed <block_KB> KB block (default: off / recommanded: 64).
+
+=item B<-force-memory-compression>
+
+Force the memory compression.
+
+=item B<-memory-limit <max_GB>>
+
+Set the maximum memory allocation in GB for the LCM (default: 2.0).
+If <max_GB> is smaller then 2 GB then every segmentation above <max_GB> will not be aligned.
+If <max_GB> is bigger 2 GB and memory compression has been activated then every segmentation above <max_GB> will not be aligned and every segmentation between 2 GB and <max_GB> will be aligned.
+If <max_GB> is bigger 2 GB and memory compression has not been activated every segmentation above 2 GB will not be aligned.
+
+=item B<-difficulty-limit <max_GB>>
+
+Set the maximum difficulty limit in GB for the LCM (disabled).
+Every segmentation above this limit will not be aligned.
+
+=item B<-min-difficulty-limit <max_GB>>
+
+Set the min difficulty limit in GB for the LCM (disabled).
+Every segmentation below this limit will not be aligned.
+
+=item B<-generic-cost>
+
+This options trigger the generic cost model computing the results disregarding the notion of hyp and ref, the results will be a multiple-alignment.
+The hypotheses files are the only input.
+There is only one output sgml.
+
+=back
+
+=item B<Output Options:>
+
+=over
+
+=item B<-O <output_dir>>
+
+Writes all output files into output_dir.
+The default directory is the hypfile's.
+
+=item B<-f <level>>
+
+Defines feedback mode.
+The default value is 4.
+Silent: 0.
+Alignment: 6.
+Alignment only: 7.
+
+=item B<-l <width>>
+
+Defines the line width used for reports.
+
+=back
+
+=item B<Scoring Report Options:>
+
+=over
+
+=item B<-o [ sum | rsum | sgml ] [ sdtout ]>
+
+Defines the output reports.
+The default value is 'sum stdout'.
+
+=back
+
+=item B<Other options:>
+
+=over
+
+=item B<-h>, B<--help>
+
+Display the help.
+
+=head1 BUGS
+
+No known bugs.
+
+=head1 NOTES
+
+=head2 Cost Models
+
+There 2 different cost models used in ASCLITE: Word-base cost and Time-base cost.
+
+=head3 Word-base cost
+
+The default one is based on the words.
+It assigns costs regarding the action taken on the word (correct, insertion, deletion, substitution, etc.):
+Correct (the two word are aligned together but have not the same syntax) [cost of 0], Substitution (the two word are aligned together and have the same syntax) [cost of 400], Deletion (word that appears in the hypothesis but not in the system output) [cost of 300], Insertion (word that not appears in the hypothesis but in the system output).
+
+If there is no distinction between hypotheses and system outputs, it uses a 'generic' cost model.
+The 'generic' cost model is not working on pair of words but by set of words; the set of words representing the state of the alignment matrix. It calculates the number of 'insertions' and 'deletions' and the number of words that have the same syntax. It adds the costs of all the insertions and deletions, plus the cost of correct to the maximum number of words which have the same syntax and the cost of substitution to the rest, and this to the set of words.
+
+=head3 Time-base cost
+
+The second one is based on the times.
+It assigns costs regarding the times of the words. The cost if the sum of the differences between the begin times and end times of the words.
+
+For example:
+
+	B   E
+	|---| is the word in the timeline.
+	***** is the difference.
+	
+	       B        E
+	Word1: |-------|******   
+	Word2: *****|--------|
+	            B        E
+
+	Cost: 11 (number of *)
+	
+
+If there is no distinction between hypotheses and system outputs, it uses a 'generic' cost model.
+The 'generic' cost model, as for thw word-base model, is not working on pair of words but by set of words; the set of words representing the state of the alignment matrix.
+It uses the minimum and maximum times of all the words. Uses that times to calculates the costs by adding the differences between the minimum time versus the begin times, and the maximum time versus the end times.
+For the deletions, it just add to the cost the difference between the 2 maxima.
+
+For example:
+
+	B   E
+	|---| is the word in the timeline.
+	***** is the difference.
+	
+	       
+	Word1:     **|------------|*****   
+	Word2:     *****|--------|******
+	Word3:     **|---|**************
+	Word4:     |--------|***********
+	Deletion1: *********************
+	Word5:     ************|-------|
+       
+	Cost: 78 (number of *)
+   
+
+=head2 Filtering
+
+=head3 UEM and References
+
+The UEM filtering works as both a filter and a semantic checker.   The times within the UEM and reference files are expected to be coherent meaning there are no UEM segment times that are within the bounds of a reference segment.
+
+It works as a filter because it keeps and scores only the reference segments that are encapsulated by the begin/end time definitions in the UEM (Seg4 in the example).  Conversely, reference segments fully outside the UEM (Seg5-6 in the example) are removed from the scoring. If there is no UEM entry defined for a particular file/channel, then the segments with the same file/channel are removed as well.
+
+It works as a checker by detecting if some segments are not fully inside (or outside) the UEM time definitions (Seg1-3 in the example).  These conditions are fatal errors.
+
+	B   E
+	|---| is the segment in the timeline.
+
+
+	UEM:       |-------------|
+	Seg1:  |-------|                   [out - error]
+	Seg2:                   |-------|  [out - error]
+	Seg3:   |-------------------|      [out - error]
+	Seg4:        |-------|             [ in -  ok  ]
+	Seg5:  |--|                        [out - info ]
+	Seg6:                       |---|  [out - info ]
+
+The program reports an error when a reference segment is not fully inside the UEM (Seg1-3 in the example) then exits. If a reference segment is fully outside the UEM (Seg5-6 in the example) then asclite outputs informational messages about the segment.
+
+Where errors are found in the UEM filtering, asclite exits.
+
+=head3 UEM and Hypotheses
+
+The UEM filtering works not with the begin and end time of every hypothesis segments/tokens, but rather the mid-time. If the mid-time is outside the UEM time definitions then the segment/token is removed from scoring and an information message is outputted.
+
+=head2 Publications
+
+[1] B<Multiple Dimension Levenshtein Edit Distance Calculations for Evaluating Automatic Speech Recognition Systems During Simultaneous Speech>, Jonathan Fiscus, Jerome Ajot, Nicolas Radde and Christophe Laprun, Proceedings of Language Resources and Evaluation (LREC), Genoa, Italy, May 2006.
+
+=head1 AUTHORS
+
+=item Jerome Ajot <jerome.ajot@nist.gov>
+
+=item Jon Fiscus <jon.fiscus@nist.gov>
+
+=item Nicolas Radde <retired>
+
+=item Chris Laprun <retired>
+
+=head1 COPYRIGHT
+
+Public Domain
+
+=head1 DISCLAIMER 
+
+This software was developed at the National Institute of Standards and Technology by 
+employees of the Federal Government in the course of their official duties. Pursuant
+to title 17 Section 105 of the United States Code this software is not subject to
+copyright protection and is in the public domain. ASCLITE is an experimental system.
+NIST assumes no responsibility whatsoever for its use by other parties, and makes no
+guarantees, expressed or implied, about its quality, reliability, or any other
+characteristic. We would appreciate acknowledgement if the software is used.
+
+THIS SOFTWARE IS PROVIDED "AS IS."  With regard to this software, NIST MAKES NO EXPRESS
+OR IMPLIED WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING MERCHANTABILITY,
+OR FITNESS FOR A PARTICULAR PURPOSE.
+
+=cut
+

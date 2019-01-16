@@ -1,0 +1,47 @@
+;; CATEGORY "0" "" ""
+;; LABEL "O" "Overall" "All Segments in the test set"
+test.arb2004 A test.arb2004_A_inter_segment_gap 0   1.00  
+test.arb2004 A test.arb2004_A 1.0   2.00   (%تردّد) (%تردّد) The previous two words are %>h 
+test.arb2004 A test.arb2004_A 2.0   3.00   (%تردّد) (%تردّد) The previous two words are %<yh 
+test.arb2004 A test.arb2004_A 3.0   4.00   (%تردّد) (%تردّد) The previous two words are %>m 
+test.arb2004 A test.arb2004_A 4.0   5.00   (%تردّد) (%تردّد) The previous two words are %>ww 
+test.arb2004 A test.arb2004_A 5.0   6.00   (%تردّد) (%تردّد) The two previous words are %hAy 
+test.arb2004 A test.arb2004_A 6.0   7.00   (%تردّد) (%تردّد) The two previous words are %mhm 
+test.arb2004 A test.arb2004_A 7.0   8.00   أهه أهه The two previous words are %>hh 
+test.arb2004 A test.arb2004_A 8.0   9.00   The previous word is %>jnby 
+test.arb2004 A test.arb2004_A 9.0  10.00   The data betweem %tdAxl and %tdAxl\ are overlapping speech 
+test.arb2004 A test.arb2004_A_inter_segment_gap 10.00  11.00  
+test.arb2004 A test.arb2004_A 11.0  12.00   The previous word is a silence %Smt 
+test.arb2004 A test.arb2004_A 12.0  13.00   The previous word is a pause %<nqTAE 
+test.arb2004 A test.arb2004_A_inter_segment_gap 13.00  14.00  
+test.arb2004 A test.arb2004_A 14.0  15.00   The previous word is a noise %Djp. 
+test.arb2004 A test.arb2004_A 15.0  16.00   The previous word is a breath %tnfs. 
+test.arb2004 A test.arb2004_A 16.0  17.00   The previous word is a cough %sEAl 
+test.arb2004 A test.arb2004_A 17.0  18.00   The previous word is a laugh %DHk 
+test.arb2004 A test.arb2004_A 18.0  19.00   The previous word is peopletalk %>SwAt 
+test.arb2004 A test.arb2004_A 19.0  19.10   Foreign span1 (Inside) 
+test.arb2004 A test.arb2004_A 19.1  19.20   Foreign span2 outside (Inside) 
+test.arb2004 A test.arb2004_A 19.2  19.30   Foreign span3 (Inside) outside 
+test.arb2004 A test.arb2004_A 19.3  19.40   Foreign span3 (Inside) outside (Inside) 
+test.arb2004 A test.arb2004_A 19.4  19.50   Foreign span3 (Inside) outside outside (Inside) 
+test.arb2004 A test.arb2004_A 19.5  19.60   Foreign span3 outside outside (Inside) outside outside (Inside) outside outside 
+test.arb2004 A test.arb2004_A_inter_segment_gap 19.60 999999.00  
+test.arb2004 B test.arb2004_B 0.0   1.00   (إيوه) (%تردّد) (طبعا) Make sure unclear works (%تردّد) (طبعا) yeah (طبعا) (%تردّد) 
+test.arb2004 B test.arb2004_B_inter_segment_gap 1.00   2.00  
+test.arb2004 B test.arb2004_B 2.0   3.00   آه inital يآش medial ةآ final 
+test.arb2004 B test.arb2004_B_inter_segment_gap 3.00   4.00  
+test.arb2004 B test.arb2004_B 4.0   5.00   أههه inital يأش medial ةأ final 
+test.arb2004 B test.arb2004_B_inter_segment_gap 5.00   6.00  
+test.arb2004 B test.arb2004_B 6.0   7.00   إه inital يإش medial ةإ final 
+test.arb2004 B test.arb2004_B_inter_segment_gap 7.00   8.00  
+test.arb2004 B test.arb2004_B 8.0   9.00   اه inital ياش medial ةا final 
+test.arb2004 B test.arb2004_B_inter_segment_gap 9.00  10.00  
+test.arb2004 B test.arb2004_B 10.0  11.00   آو أو إو او 
+test.arb2004 B test.arb2004_B_inter_segment_gap 11.00  12.00  
+test.arb2004 B test.arb2004_B 12.0  13.00   (%تردّد) (بشتغل) (بالمناهج) 
+test.arb2004 B test.arb2004_B_inter_segment_gap 13.00  14.00  
+test.arb2004 B test.arb2004_B 14.0  15.00   Tanween initial ًأبدا medial أبًدا final أبدا 
+test.arb2004 B test.arb2004_B 15.0  16.00   Tanween initial ٌإجراءات medial إجراٌءات final إجراءات 
+test.arb2004 B test.arb2004_B 16.0  17.00   Tanween initial ٍاختطاف medial اختطٍاف final اختطاف 
+test.arb2004 B test.arb2004_B 17.0  18.00   Multiple Rules needed اخاف 
+test.arb2004 B test.arb2004_B_inter_segment_gap 18.00 999999.00  

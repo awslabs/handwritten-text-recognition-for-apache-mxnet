@@ -1,0 +1,29 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./test.turkish.hyp
+
+Speakers: 
+    0:  spkr1
+
+Speaker sentences   0:  spkr1   #utts: 3
+id: (spkr1-1)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  güngören'den habibler ışık ktü'yü açılacaktır cumhuriyeti eğitimini 
+HYP:  güngören'den habibler ışık ktü'yü açılacaktır cumhuriyeti eğitimini 
+Eval:                                                                                
+
+id: (spkr1-2)
+Scores: (#C #S #D #I) 0 0 7 0
+REF:  GÜNGÖREN'DEN HABİBLER IŞIK   KTÜ'YÜ AÇILACAKTIR   CUMHURİYETİ EĞİTİMİNİ 
+HYP:  ************** ******** ******* ******** ************** *********** ********** 
+Eval: D              D        D       D        D              D           D          
+
+id: (spkr1-3)
+Scores: (#C #S #D #I) 0 0 0 7
+REF:  ************** ******** ******* ******** ************** *********** ********** 
+HYP:  GÜNGÖREN'DEN HABİBLER IŞIK   KTÜ'YÜ AÇILACAKTIR   CUMHURİYETİ EĞİTİMİNİ 
+Eval: I              I        I       I        I              I           I          
+
+

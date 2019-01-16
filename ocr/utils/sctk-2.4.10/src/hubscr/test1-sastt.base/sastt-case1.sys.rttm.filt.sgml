@@ -1,0 +1,20 @@
+<SYSTEM title="sastt-case1.sys.rttm" ref_fname="sastt-case1.ref.rttm.filt" hyp_fname="sastt-case1.sys.rttm.filt" creation_date="Mon May 11 13:31:08 2009" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="fe016">
+<PATH id="(fe016-000)" word_cnt="18" file="ICSI_20011030-1030_d*_NONE" channel="1" sequence="3" R_T1="1.000" R_T2="31.000" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+C,"so","so",1.000+1.500,1.000+1.500,fe016,false:C,"so","so",1.500+2.000,1.500+2.000,fe016,false:C,"so","so",2.000+2.500,2.000+2.500,fe016,false:C,"so","so",2.500+3.000,2.500+3.000,fe016,false:C,"(me-me-)","(me-me-)",3.000+4.000,3.000+4.000,fe016,false:C,"she","she",5.000+5.500,5.000+5.500,fe016,false:C,"is","is",5.500+6.000,5.500+6.000,fe016,false:C,"s.'s","s.'s",6.000+7.000,6.000+7.000,fe016,false:C,"john","john",7.000+8.000,7.000+8.000,fe016,false:C,"recursive","recursive",8.000+9.000,8.000+9.000,fe016,false:C,"(she)","",9.000+9.500,,,:C,"(is)","",9.500+10.000,,,:C,"(she)","",10.000+11.000,,,:C,"(is)","",11.000+12.000,,,:C,"(she)","",12.000+12.500,,,:C,"(is)","",12.500+13.000,,,:C,"(she)","",13.000+14.000,,,:C,"(is)","",14.000+15.000,,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="Ref1">
+<PATH id="(Ref1-000)" word_cnt="6" file="VT_20051027-1400" channel="1" sequence="18" R_T1="100.000" R_T2="105.800" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+I,,"y",,100.500+101.000,Sys1,false:S,"t","u",101.000+101.400,101.000+101.400,Sys1,false:C,"a","a",101.400+102.000,101.400+101.900,Sys1,false:D,"b",,102.000+103.000,,,:D,"c",,103.000+104.200,,,:S,"f","f",104.200+105.800,104.500+105.200,Sys2,true
+</PATH>
+</SPEAKER>
+<SPEAKER id="Ref2">
+<PATH id="(Ref2-000)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="23" R_T1="103.300" R_T2="105.200" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+S,"g","g",103.300+104.100,101.900+103.500,Sys1,true:S,"h","d",104.100+105.200,102.800+104.000,Sys2,false
+</PATH>
+<PATH id="(Ref2-001)" word_cnt="3" file="VT_20051027-1400" channel="1" sequence="27" R_T1="105.500" R_T2="107.500" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+C,"x","x",105.500+106.200,105.200+106.200,Sys2,false:I,,"z",,106.200+106.900,Sys2,false:S,"t","y",106.200+107.500,106.900+107.300,Sys2,false
+</PATH>
+</SPEAKER>
+</SYSTEM>

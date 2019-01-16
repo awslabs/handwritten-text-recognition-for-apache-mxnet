@@ -1,0 +1,28 @@
+<SYSTEM title="overlap.ctm" ref_fname="overlap.stm" hyp_fname="overlap.ctm" creation_date="" format="2.4" frag_corr="FALSE" opt_del="FALSE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="tbvstt">
+<PATH id="(tbvstt-000)" word_cnt="26" labels="<o,male,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="0" R_T1="107.675" R_T2="110.695" word_aux="h_t1+t2">
+D,"(%hesitation)",,:D,"with",,:C,"among","among",108.740+109.050:C,"each","each",109.050+109.250:C,"other","other",109.250+109.400:D,"quiet",,:D,"significantly",,:D,"(%hesitation)",,:D,"i",,:D,"i",,:D,"i",,:S,"seem","like",109.530+109.690:C,"to","to",109.730+109.820:D,"remember",,:D,"something",,:D,"about",,:D,"some",,:D,"of",,:D,"this",,:D,"some",,:D,"of",,:D,"the",,:D,"(%hesitation)",,:S,"surveillance","read",109.820+109.990:S,"technology","because",109.990+110.280:S,"like","i",110.410+110.500
+</PATH>
+<PATH id="(tbvstt-001)" word_cnt="10" labels="<o,male,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="5" R_T1="110.859" R_T2="115.267" word_aux="h_t1+t2">
+I,,"i",111.460+111.810:I,,"seriously",111.810+112.270:I,,"about",112.270+112.510:I,,"the",112.650+112.820:I,,"some",113.240+113.360:I,,"of",113.360+113.460:I,,"the",113.460+113.780:I,,"surveillance",113.890+114.380:I,,"technology",114.380+114.920:I,,"like",114.920+115.080
+</PATH>
+</SPEAKER>
+<SPEAKER id="cou">
+<PATH id="(cou-000)" word_cnt="4" labels="<o,female,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="1" R_T1="107.825" R_T2="108.925" word_aux="h_t1+t2">
+D,"you",,:D,"do",,:D,"not",,:D,"say",,
+</PATH>
+<PATH id="(cou-001)" word_cnt="1" labels="<o,female,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="4" R_T1="110.700" R_T2="111.400" word_aux="h_t1+t2">
+D,"yeah",,
+</PATH>
+</SPEAKER>
+<SPEAKER id="ywtktm">
+<PATH id="(ywtktm-000)" word_cnt="1" labels="<o,male,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="2" R_T1="108.275" R_T2="110.700" word_aux="h_t1+t2">
+D,"yeah",,
+</PATH>
+</SPEAKER>
+<SPEAKER id="nwxrpl">
+<PATH id="(nwxrpl-000)" word_cnt="1" labels="<o,male,c1>" file="cmu_20030109-1530_d_none" channel="1" sequence="3" R_T1="109.225" R_T2="111.450" word_aux="h_t1+t2">
+D,"disagreement",,
+</PATH>
+</SPEAKER>
+</SYSTEM>

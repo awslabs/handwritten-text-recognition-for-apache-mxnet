@@ -1,0 +1,6 @@
+ERROR: SPKR-INFO should not have any duration; see field (5) in line 5
+ERROR: Expected duration to be a number; see field (5) in line 9
+ERROR: Expected start time to be a number; see field (4) in line 11
+ERROR: Expected start time to be a number; see field (4) in line 12
+ERROR: Negative duration; see field (5) in line 8
+Validation aborted

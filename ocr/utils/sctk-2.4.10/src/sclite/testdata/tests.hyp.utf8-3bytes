@@ -1,0 +1,74 @@
+ठ ड ढ ण त थ द (f_0)
+ठ ड ढ ण त थ द (f_1)
+ठ ड ढ ण त थ द (f_2)
+ठ ड ढ ण त थ द (f_3)
+ठ ड ढ ण त थ द (f_4)
+ठ ड ढ ण त थ द (f_5)
+ठ ड ढ ण त थ द (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+ऴध ऴध धठवत ठफमभद शधनढध दम यऱमडफतब मथ बस यऱनवठळत (g_0)
+ऴध ऴध धठवत ठफमभद शधनढध दम यऱमडफतब मथ बस यऱनवठळत (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+ठ {डढ / ड } { त ण / तथ} (h_0)
+ठ दध न डण त न ळध थ (h_1)
+ठ दध न डण त न भ ळध थ (h_2)
+;; Test a couple alternations in the hyp file
+ळध {त/नल} नल {ळध/ळ} तभ (i_1)
+ळध {त/नल} नल {ळध/ळ} तभ (i_2)
+;; Check alternations in both the ref and hyp
+ळध { {त / @} नल {श ठल / न / ल / @ } / ण नल } नल {ळध/ळ} तभ (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+थनभण ळधत थनलध ळनढपल बनफप थतत धनब {थन-/थनद-} ळध- थन- -नढपल {-फप/-नप} -मथथतत -धनब (i_4)
+;; Check deletions and substitutions of hyphenated words
+णतफ णतफञशनळधभऴफफ लपनय लपनय लऴडलळनळऴळनमभ थफठद लऴडञशनळधभऴफफ थफठद (i_5)
+;; Check to handle utterances without reference words 
+ठ ड ढ त थ द ध न ऩ प  (empty-1)
+ण त थ (empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+ठ ढ ण (alt-1)
+ठ ढ न ण (alt-2)
+ठ ण (alt-3)
+ठ {ढ / @} ण (alt-4)
+ठ {@ / ढ} ण (alt-5)
+ठ {ण / @} ण (alt-6)
+ठ ण @ त (alt-7)
+ठ ण त (alt-8)
+ठ {त- / @} ढ (alt-9)
+;;; Check the handling of optionally deletable
+ड त (od1-1)
+ड ढ त (od1-2)
+ड ण त (od1-3)
+ड ढ न त (od1-4)
+ड ल न त (od1-5)
+त (od1-6)
+थ (od1-7)
+;;;;;;;;;;;;;;;;;;;
+;;; ambiguous cases
+ल ल ल (od2-1)
+ल ल ल (od2-2)
+ल ल ल (od2-3)
+ल ल ल (od2-4)
+ल ल ल (od2-5)
+ल ल ल (od2-6)
+ल ल ल (od2-7)
+ल ल ल (od2-8)
+ल ल ल (od2-9)
+ल ल ल (od2-10)
+;;; Fragment interactions
+ड त (od3-1)
+ड ढ त (od3-2)
+ड ण त (od3-3)
+ड ढ न त (od3-4)
+ड ल न त (od3-5)
+त (od3-6)
+थ (od3-7)
+ड ळतभ ळधत ठभण (od3-8)
+;;; Test passing through tags
+ठ ठठ\;a ड\;b\;b;hyp\;tag1;hyptag2 ड;hyptag1 ढ;;hyptag2 ण;hyptag1;hyptag2 (tags-1)
+(tags-2)
+ठ ठठ\;a ड\;b\;b;hyptag1;hyp\;tag2 ड;hyptag1 ढ;;hyptag2 ण;hyptag1;hyptag2 (tags-3)
+z ठठ\;a ड\;b\;b;hyptag1;hyptag2 स;hyptag1 ष;;hyptag2 श;hyptag1;hyptag2 (tags-4)
+{ z ठठ\;a ड\;b\;b;hyptag1;hyptag2 स;hyptag1 ष;;hyptag2 श;hyptag1;hyptag2 / ष ष ष ष ष ष ष ष ष ष ष ष ष } (tags-5)

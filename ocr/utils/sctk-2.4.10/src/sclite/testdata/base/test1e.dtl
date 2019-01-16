@@ -1,0 +1,445 @@
+DETAILED OVERALL REPORT FOR THE SYSTEM: ./csrnab.hyp
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          51
+ with errors                             74.5%   (  38)
+
+   with substitions                      70.6%   (  36)
+   with deletions                        13.7%   (   7)
+   with insertions                       33.3%   (  17)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   12.0%   ( 169)
+
+Percent Correct           =   89.8%   (1263)
+
+Percent Substitution      =    9.3%   ( 131)
+Percent Deletions         =    0.9%   (  12)
+Percent Insertions        =    1.8%   (  26)
+Percent Word Accuracy     =   88.0%
+
+
+Ref. words                =           (1406)
+Hyp. words                =           (1420)
+Aligned words             =           (1432)
+
+CONFUSION PAIRS                  Total                 (128)
+                                 With >=  1 occurances (128)
+
+   1:    3  ->  a ==> the
+   2:    2  ->  cott ==> khan
+   3:    1  ->  a ==> to
+   4:    1  ->  administered ==> minister
+   5:    1  ->  analysts ==> now
+   6:    1  ->  and ==> institutions
+   7:    1  ->  architect ==> arctic
+   8:    1  ->  are ==> sister
+   9:    1  ->  at ==> and
+  10:    1  ->  at ==> of
+  11:    1  ->  at ==> the
+  12:    1  ->  beaubien ==> and
+  13:    1  ->  botched ==> posh
+  14:    1  ->  brooks ==> brock's
+  15:    1  ->  certain ==> and
+  16:    1  ->  closed ==> close
+  17:    1  ->  collapses ==> collapse
+  18:    1  ->  correct ==> trek
+  19:    1  ->  costing ==> causing
+  20:    1  ->  cott ==> car
+  21:    1  ->  cott ==> card
+  22:    1  ->  cott ==> court
+  23:    1  ->  cott ==> koch
+  24:    1  ->  cott's ==> cops
+  25:    1  ->  cott's ==> cox
+  26:    1  ->  data ==> dated
+  27:    1  ->  data ==> state
+  28:    1  ->  day's ==> is
+  29:    1  ->  deadlines ==> airlines
+  30:    1  ->  direct ==> director
+  31:    1  ->  disheartening ==> tightening
+  32:    1  ->  do ==> widest
+  33:    1  ->  dollar ==> lure
+  34:    1  ->  drop ==> job
+  35:    1  ->  dropped ==> drop
+  36:    1  ->  effected ==> effective
+  37:    1  ->  effete ==> the
+  38:    1  ->  eight ==> mae
+  39:    1  ->  either ==> into
+  40:    1  ->  entrusted ==> infested
+  41:    1  ->  eyes ==> eye
+  42:    1  ->  fess ==> fast
+  43:    1  ->  fidelity ==> fidelity's
+  44:    1  ->  for ==> freed
+  45:    1  ->  fourteen ==> forty
+  46:    1  ->  frank ==> franc
+  47:    1  ->  from ==> of
+  48:    1  ->  from ==> ralston
+  49:    1  ->  fund ==> different
+  50:    1  ->  fund ==> find
+  51:    1  ->  fund ==> refund
+  52:    1  ->  funds ==> fund
+  53:    1  ->  funds ==> some
+  54:    1  ->  geoffrion ==> jaffray
+  55:    1  ->  have ==> it
+  56:    1  ->  in ==> and
+  57:    1  ->  incorrect ==> increased
+  58:    1  ->  institutional ==> or
+  59:    1  ->  it ==> they
+  60:    1  ->  its ==> it's
+  61:    1  ->  jamieson ==> and
+  62:    1  ->  jane ==> genius
+  63:    1  ->  june ==> aegean
+  64:    1  ->  kavafian ==> in
+  65:    1  ->  levesque ==> gobie
+  66:    1  ->  lied ==> relied
+  67:    1  ->  listed ==> illicit
+  68:    1  ->  mesmerized ==> rise
+  69:    1  ->  misinformation ==> information
+  70:    1  ->  money ==> many
+  71:    1  ->  newsletter's ==> newsletter
+  72:    1  ->  newspaper ==> byrd
+  73:    1  ->  newspapers ==> praised
+  74:    1  ->  normally ==> early
+  75:    1  ->  of ==> is
+  76:    1  ->  offsetting ==> setting
+  77:    1  ->  on ==> in
+  78:    1  ->  oneself ==> one
+  79:    1  ->  or ==> our
+  80:    1  ->  peeve ==> cut
+  81:    1  ->  peeve ==> plea
+  82:    1  ->  pencer ==> are
+  83:    1  ->  pencer ==> spencer
+  84:    1  ->  piece ==> p.'s
+  85:    1  ->  problem ==> pal
+  86:    1  ->  public ==> republic
+  87:    1  ->  reach ==> reached
+  88:    1  ->  report ==> reports
+  89:    1  ->  roman ==> roaming
+  90:    1  ->  self ==> south
+  91:    1  ->  shared ==> insured
+  92:    1  ->  shares' ==> shares
+  93:    1  ->  some ==> a
+  94:    1  ->  someone ==> on
+  95:    1  ->  standard ==> if
+  96:    1  ->  that ==> the
+  97:    1  ->  the ==> a
+  98:    1  ->  the ==> today
+  99:    1  ->  their ==> little
+ 100:    1  ->  their ==> the
+ 101:    1  ->  though ==> the
+ 102:    1  ->  three ==> south
+ 103:    1  ->  titan ==> tighten
+ 104:    1  ->  to ==> florida
+ 105:    1  ->  to ==> too
+ 106:    1  ->  to ==> two
+ 107:    1  ->  trillion ==> to
+ 108:    1  ->  two ==> trying
+ 109:    1  ->  united ==> night
+ 110:    1  ->  united ==> nine
+ 111:    1  ->  unknowingly ==> the
+ 112:    1  ->  unorthodox ==> orthodox
+ 113:    1  ->  unsavory ==> save
+ 114:    1  ->  up ==> that
+ 115:    1  ->  wasn't ==> was
+ 116:    1  ->  weil ==> wild
+ 117:    1  ->  were ==> and
+ 118:    1  ->  were ==> for
+ 119:    1  ->  while ==> was
+ 120:    1  ->  who ==> and
+ 121:    1  ->  who ==> to
+ 122:    1  ->  whose ==> was
+ 123:    1  ->  why ==> the
+ 124:    1  ->  withdrawals ==> which
+ 125:    1  ->  withdrew ==> jury
+ 126:    1  ->  would ==> but
+ 127:    1  ->  wright ==> write
+ 128:    1  ->  zero ==> seven
+     -------
+       131
+
+
+
+INSERTIONS                       Total                 (22)
+                                 With >=  1 occurances (22)
+
+   1:    3  ->  a
+   2:    2  ->  and
+   3:    2  ->  the
+   4:    1  ->  an
+   5:    1  ->  are
+   6:    1  ->  desk
+   7:    1  ->  funds'
+   8:    1  ->  if
+   9:    1  ->  jean
+  10:    1  ->  knowing
+  11:    1  ->  mafia
+  12:    1  ->  meant
+  13:    1  ->  mr.
+  14:    1  ->  ms.
+  15:    1  ->  mystery
+  16:    1  ->  new
+  17:    1  ->  of
+  18:    1  ->  on
+  19:    1  ->  pence
+  20:    1  ->  stunned
+  21:    1  ->  this
+  22:    1  ->  with
+     -------
+        26
+
+
+
+DELETIONS                        Total                 (10)
+                                 With >=  1 occurances (10)
+
+   1:    2  ->  and
+   2:    2  ->  were
+   3:    1  ->  at
+   4:    1  ->  blow
+   5:    1  ->  if
+   6:    1  ->  looked
+   7:    1  ->  of
+   8:    1  ->  pet
+   9:    1  ->  the
+  10:    1  ->  they
+     -------
+        12
+
+
+
+SUBSTITUTIONS                    Total                 (106)
+                                 With >=  1 occurances (106)
+
+   1:    6  ->  cott
+   2:    4  ->  a
+   3:    3  ->  at
+   4:    3  ->  fund
+   5:    3  ->  to
+   6:    2  ->  cott's
+   7:    2  ->  data
+   8:    2  ->  from
+   9:    2  ->  funds
+  10:    2  ->  peeve
+  11:    2  ->  pencer
+  12:    2  ->  the
+  13:    2  ->  their
+  14:    2  ->  united
+  15:    2  ->  were
+  16:    2  ->  who
+  17:    1  ->  administered
+  18:    1  ->  analysts
+  19:    1  ->  and
+  20:    1  ->  architect
+  21:    1  ->  are
+  22:    1  ->  beaubien
+  23:    1  ->  botched
+  24:    1  ->  brooks
+  25:    1  ->  certain
+  26:    1  ->  closed
+  27:    1  ->  collapses
+  28:    1  ->  correct
+  29:    1  ->  costing
+  30:    1  ->  day's
+  31:    1  ->  deadlines
+  32:    1  ->  direct
+  33:    1  ->  disheartening
+  34:    1  ->  do
+  35:    1  ->  dollar
+  36:    1  ->  drop
+  37:    1  ->  dropped
+  38:    1  ->  effected
+  39:    1  ->  effete
+  40:    1  ->  eight
+  41:    1  ->  either
+  42:    1  ->  entrusted
+  43:    1  ->  eyes
+  44:    1  ->  fess
+  45:    1  ->  fidelity
+  46:    1  ->  for
+  47:    1  ->  fourteen
+  48:    1  ->  frank
+  49:    1  ->  geoffrion
+  50:    1  ->  have
+  51:    1  ->  in
+  52:    1  ->  incorrect
+  53:    1  ->  institutional
+  54:    1  ->  it
+  55:    1  ->  its
+  56:    1  ->  jamieson
+  57:    1  ->  jane
+  58:    1  ->  june
+  59:    1  ->  kavafian
+  60:    1  ->  levesque
+  61:    1  ->  lied
+  62:    1  ->  listed
+  63:    1  ->  mesmerized
+  64:    1  ->  misinformation
+  65:    1  ->  money
+  66:    1  ->  newsletter's
+  67:    1  ->  newspaper
+  68:    1  ->  newspapers
+  69:    1  ->  normally
+  70:    1  ->  of
+  71:    1  ->  offsetting
+  72:    1  ->  on
+  73:    1  ->  oneself
+  74:    1  ->  or
+  75:    1  ->  piece
+  76:    1  ->  problem
+  77:    1  ->  public
+  78:    1  ->  reach
+  79:    1  ->  report
+  80:    1  ->  roman
+  81:    1  ->  self
+  82:    1  ->  shared
+  83:    1  ->  shares'
+  84:    1  ->  some
+  85:    1  ->  someone
+  86:    1  ->  standard
+  87:    1  ->  that
+  88:    1  ->  though
+  89:    1  ->  three
+  90:    1  ->  titan
+  91:    1  ->  trillion
+  92:    1  ->  two
+  93:    1  ->  unknowingly
+  94:    1  ->  unorthodox
+  95:    1  ->  unsavory
+  96:    1  ->  up
+  97:    1  ->  wasn't
+  98:    1  ->  weil
+  99:    1  ->  while
+ 100:    1  ->  whose
+ 101:    1  ->  why
+ 102:    1  ->  withdrawals
+ 103:    1  ->  withdrew
+ 104:    1  ->  would
+ 105:    1  ->  wright
+ 106:    1  ->  zero
+     -------
+       131
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (106)
+                                 With >=  1 occurances (106)
+
+   1:   10  ->  the
+   2:    7  ->  and
+   3:    3  ->  to
+   4:    3  ->  was
+   5:    2  ->  a
+   6:    2  ->  in
+   7:    2  ->  is
+   8:    2  ->  khan
+   9:    2  ->  of
+  10:    2  ->  south
+  11:    1  ->  aegean
+  12:    1  ->  airlines
+  13:    1  ->  arctic
+  14:    1  ->  are
+  15:    1  ->  brock's
+  16:    1  ->  but
+  17:    1  ->  byrd
+  18:    1  ->  car
+  19:    1  ->  card
+  20:    1  ->  causing
+  21:    1  ->  close
+  22:    1  ->  collapse
+  23:    1  ->  cops
+  24:    1  ->  court
+  25:    1  ->  cox
+  26:    1  ->  cut
+  27:    1  ->  dated
+  28:    1  ->  different
+  29:    1  ->  director
+  30:    1  ->  drop
+  31:    1  ->  early
+  32:    1  ->  effective
+  33:    1  ->  eye
+  34:    1  ->  fast
+  35:    1  ->  fidelity's
+  36:    1  ->  find
+  37:    1  ->  florida
+  38:    1  ->  for
+  39:    1  ->  forty
+  40:    1  ->  franc
+  41:    1  ->  freed
+  42:    1  ->  fund
+  43:    1  ->  genius
+  44:    1  ->  gobie
+  45:    1  ->  if
+  46:    1  ->  illicit
+  47:    1  ->  increased
+  48:    1  ->  infested
+  49:    1  ->  information
+  50:    1  ->  institutions
+  51:    1  ->  insured
+  52:    1  ->  into
+  53:    1  ->  it
+  54:    1  ->  it's
+  55:    1  ->  jaffray
+  56:    1  ->  job
+  57:    1  ->  jury
+  58:    1  ->  koch
+  59:    1  ->  little
+  60:    1  ->  lure
+  61:    1  ->  mae
+  62:    1  ->  many
+  63:    1  ->  minister
+  64:    1  ->  newsletter
+  65:    1  ->  night
+  66:    1  ->  nine
+  67:    1  ->  now
+  68:    1  ->  on
+  69:    1  ->  one
+  70:    1  ->  or
+  71:    1  ->  orthodox
+  72:    1  ->  our
+  73:    1  ->  p.'s
+  74:    1  ->  pal
+  75:    1  ->  plea
+  76:    1  ->  posh
+  77:    1  ->  praised
+  78:    1  ->  ralston
+  79:    1  ->  reached
+  80:    1  ->  refund
+  81:    1  ->  relied
+  82:    1  ->  reports
+  83:    1  ->  republic
+  84:    1  ->  rise
+  85:    1  ->  roaming
+  86:    1  ->  save
+  87:    1  ->  setting
+  88:    1  ->  seven
+  89:    1  ->  shares
+  90:    1  ->  sister
+  91:    1  ->  some
+  92:    1  ->  spencer
+  93:    1  ->  state
+  94:    1  ->  that
+  95:    1  ->  they
+  96:    1  ->  tighten
+  97:    1  ->  tightening
+  98:    1  ->  today
+  99:    1  ->  too
+ 100:    1  ->  trek
+ 101:    1  ->  trying
+ 102:    1  ->  two
+ 103:    1  ->  which
+ 104:    1  ->  widest
+ 105:    1  ->  wild
+ 106:    1  ->  write
+     -------
+       131
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

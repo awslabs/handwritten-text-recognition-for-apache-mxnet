@@ -1,0 +1,44 @@
+;; mdeval md_test2 ref rttm
+;; SU from 7.0 to 9.99 is completely before tbeg in the UEM--it shouldn't count
+
+SPKR-INFO md_test2 1 <NA> <NA>  <NA>         adult_male   spkr0r <NA>
+SEGMENT   md_test2 1  7.0  2.99 <NA>         <NA>         spkr0r <NA>
+SPEAKER   md_test2 1  7.0  2.99 <NA>         <NA>         spkr0r <NA>
+SU        md_test2 1  7.0  2.99 <NA>         statement    spkr0r <NA>
+LEXEME    md_test2 1  7.0  1.0  firstWord    lex          spkr0r <NA>
+LEXEME    md_test2 1  8.0  1.0  secondWord   lex          spkr0r <NA>
+LEXEME    md_test2 1  9.0  0.99 thirdWord    lex          spkr0r <NA>
+
+SPKR-INFO md_test2 1 <NA> <NA>  <NA>         child        spkr1r <NA>
+SEGMENT   md_test2 1 10.0  6.0  <NA>         <NA>         spkr1r <NA>
+SPEAKER   md_test2 1 10.0  6.0  <NA>         <NA>         spkr1r <NA>
+SU        md_test2 1 10.0  3.0  <NA>         statement    spkr1r <NA>
+LEXEME    md_test2 1 10.0  1.0  firstWord    lex          spkr1r <NA>
+LEXEME    md_test2 1 11.0  1.0  T.'s         alpha        spkr1r <NA>
+LEXEME    md_test2 1 12.0  1.0  thirdWord    acronym      spkr1r <NA>
+
+;; SU type mismatch: ref=incomplete sys=question
+SU        md_test2 1 13.0  3.0  <NA>         incomplete   spkr1r <NA>
+LEXEME    md_test2 1 13.0  1.0  fourthWord   interjection spkr1r <NA>
+LEXEME    md_test2 1 14.0  1.0  fifthWord    propernoun   spkr1r <NA>
+LEXEME    md_test2 1 15.0  1.0  sixthWord    other        spkr1r <NA>
+
+SPKR-INFO md_test2 1 <NA> <NA>  <NA>         adult_female spkr2r <NA>
+SEGMENT   md_test2 1 16.0  3.0  <NA>         <NA>         spkr2r <NA>
+SPEAKER   md_test2 1 16.0  3.0  <NA>         <NA>         spkr2r <NA>
+SU        md_test2 1 16.0  3.0  <NA>         backchannel  spkr2r <NA>
+LEXEME    md_test2 1 16.0  1.0  seventhWord  lex          spkr2r <NA>
+LEXEME    md_test2 1 17.0  1.0  eighthWord   lex          spkr2r <NA>
+LEXEME    md_test2 1 18.0  1.0  ninthWord    lex          spkr2r <NA>
+
+SPKR-INFO md_test2 1 <NA> <NA>  <NA>         child        spkr3r <NA>
+SEGMENT   md_test2 1 19.0  3.0  <NA>         <NA>         spkr3r <NA>
+SPEAKER   md_test2 1 19.0  3.0  <NA>         <NA>         spkr3r <NA>
+;; The following SU ends just *after* the end of scored time in the UEM
+;; That currently (March 26, 2004) causes the SU to *not* be scored
+SU        md_test2 1 19.0  3.0  <NA>         question   spkr3r <NA>
+LEXEME    md_test2 1 19.0  0.5  tenthWord    lex          spkr3r <NA>
+LEXEME    md_test2 1 19.5  0.5  eleventhWord lex          spkr3r <NA>
+;; the end of twelfthWord is just after the end of scored time in the UEM 
+;; but that should not affect the scoring output
+LEXEME    md_test2 1 20.0  2.0  twelfthWord  lex          spkr3r <NA>

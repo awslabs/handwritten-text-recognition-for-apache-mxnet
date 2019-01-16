@@ -1,0 +1,36 @@
+<SYSTEM title="sastt-case2.sys.rttm" ref_fname="sastt-case2.ref.rttm.filt" hyp_fname="sastt-case2.sys.rttm.filt" creation_date="Fri May  1 15:00:36 2009" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="SUB48">
+<PATH id="(SUB48-000)" word_cnt="1" file="VT_20051027-1400" channel="1" sequence="4" R_T1="934.443" R_T2="934.703" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+D,"two",,934.443+934.703,,,,
+</PATH>
+<PATH id="(SUB48-001)" word_cnt="11" file="VT_20051027-1400" channel="1" sequence="24" R_T1="936.477" R_T2="939.327" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+S,"so","so",936.477+936.927,936.505+936.815,0.398979,1,true:D,"we",,937.167+937.257,,,,:C,"have","have",937.257+937.417,937.205+937.475,0.533006,2,false:D,"the",,937.417+937.567,,,,:C,"a","a",937.717+937.867,937.475+937.835,0.792132,2,false:S,"b.","l.",937.867+938.037,938.075+938.135,0.805565,2,false:C,"s.","s.",938.037+938.387,938.135+938.395,0.431594,2,false:D,"and",,938.387+938.557,,,,:S,"a","i.",938.557+938.657,938.395+938.695,0.660484,2,false:S,"m.","have",938.657+938.907,938.695+938.825,0.389649,2,false:C,"s.'s","s.'s",938.907+939.327,938.825+939.375,0.832603,2,false
+</PATH>
+</SPEAKER>
+<SPEAKER id="SUB49">
+<PATH id="(SUB49-000)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="6" R_T1="934.618" R_T2="935.188" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+D,"two",,934.618+934.758,,,,:D,"sheets",,934.758+935.188,,,,
+</PATH>
+<PATH id="(SUB49-001)" word_cnt="3" file="VT_20051027-1400" channel="1" sequence="15" R_T1="935.568" R_T2="935.878" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+S,"she","she",935.568+935.638,935.625+935.690,0.387832,1,true:S,"is","is",935.638+935.708,935.690+935.755,0.387832,1,true:C,"(shee-)","",935.708+935.878,,,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="SUB57">
+<PATH id="(SUB57-000)" word_cnt="10" file="VT_20051027-1400" channel="1" sequence="9" R_T1="935.023" R_T2="937.623" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+D,"okay",,935.023+935.363,,,,:D,"because",,935.363+935.623,,,,:D,"then",,935.623+935.763,,,,:C,"i","i",935.763+935.903,935.755+936.505,0.389866,1,false:D,"i",,935.963+936.093,,,,:D,"i'd",,936.233+936.423,,,,:C,"(%uh)","",936.423+936.493,,,,:D,"i'm",,936.543+936.873,,,,:C,"(m-)","",936.873+937.033,,,,:D,"missing",,937.073+937.623,,,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="SUB34">
+<PATH id="(SUB34-000)" word_cnt="3" file="VT_20051027-1400" channel="1" sequence="11" R_T1="935.294" R_T2="935.864" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+D,"should",,935.294+935.484,,,,:D,"be",,935.484+935.584,,,,:D,"two",,935.584+935.864,,,,
+</PATH>
+<PATH id="(SUB34-001)" word_cnt="5" file="VT_20051027-1400" channel="1" sequence="35" R_T1="938.126" R_T2="939.116" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+S,"this","v.",938.126+938.336,937.835+938.075,0.371553,2,false:D,"is",,938.336+938.436,,,,:D,"his",,938.436+938.566,,,,:D,"second",,938.566+938.886,,,,:D,"sheet",,938.886+939.116,,,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="VT_20051027-1400" channel="1" sequence="36" R_T1="939.327" R_T2="939.375" word_aux="r_t1+t2,h_t1+t2,h_conf,h_spkr,h_isSpkrSub">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

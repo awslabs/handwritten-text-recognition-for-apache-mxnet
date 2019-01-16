@@ -1,0 +1,46 @@
+,------------------------------------------------------------------------------.
+|                  Composite Report of All Significance Tests                  |
+|                                For the  Test                                 |
+|                                                                              |
+|                            Test Name                            Abbrev.      |
+|      ------------------------------------------------------     -------      |
+|            Matched Pair Sentence Segment (Word Error)             MP         |
+|      Signed Paired Comparison (Speaker Word Error Rate (%))       SI         |
+|        Wilcoxon Signed Rank (Speaker Word Error Rate (%))         WI         |
+|                     McNemar (Sentence Error)                      MN         |
+|                                                                              |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|   Test    ||                | lvc_hyp.ctm | lvc_hyp2.ctm  ||      Test       |
+|  Abbrev.  ||                |             |               ||     Abbrev.     |
+|-----------++----------------+-------------+---------------++-----------------|
+|    MP     ||  lvc_hyp.ctm   |             |  ~   1.000    ||       MP        |
+|    SI     ||                |             |  ~   1.000    ||       SI        |
+|    WI     ||                |             |  ~   1.000    ||       WI        |
+|    MN     ||                |             |  ~   1.000    ||       MN        |
+|-----------++----------------+-------------+---------------++-----------------|
+|    MP     ||  lvc_hyp2.ctm  |             |               ||       MP        |
+|    SI     ||                |             |               ||       SI        |
+|    WI     ||                |             |               ||       WI        |
+|    MN     ||                |             |               ||       MN        |
+|------------------------------------------------------------------------------|
+|  These significance tests are all two-tailed tests with the null hypothesis  |
+|  that there is no performance difference between the two systems.            |
+|                                                                              |
+|  The first column indicates if the test finds a significant difference       |
+|  at the level of p=0.05.  It consists of '~' if no difference is             |
+|  found at this significance level.  If a difference at this level is         |
+|  found, this column indicates the system with the higher value on the        |
+|  performance statistic utilized by the particular test.                      |
+|                                                                              |
+|  The second column specifies the minimum value of p for which the test       |
+|  finds a significant difference at the level of p.                           |
+|                                                                              |
+|  The third column indicates if the test finds a significant difference       |
+|  at the level of p=0.001 ("***"), at the level of p=0.01, but not            |
+|  p=0.001 ("**"), or at the level of p=0.05, but not p=0.01 ("*").            |
+|                                                                              |
+|  A test finds significance at level p if, assuming the null hypothesis,      |
+|  the probability of the test statistic having a value at least as            |
+|  extreme as that actually found, is no more than p.                          |
+`------------------------------------------------------------------------------'

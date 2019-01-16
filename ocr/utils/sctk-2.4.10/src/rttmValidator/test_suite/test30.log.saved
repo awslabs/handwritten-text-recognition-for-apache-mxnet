@@ -1,0 +1,4 @@
+../src/RTTMValidator-v04.pl (version v04) run on 2004 Apr 22 at 16:49:20
+command line:  ../src/RTTMValidator-v04.pl (version v04) -i test30.rttm
+ERROR: FILLER (4.210, 5.21) has an IP at 4.210 with a bad subtype
+Validation aborted

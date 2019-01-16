@@ -1,0 +1,78 @@
+=head1 NAME
+
+align2html.pl - Script that generate an HTML representation of the alignments issued from asclite.
+
+=head1 SYNOPSIS
+
+	align2html.pl -i alignfile -o outputdir [ -m mapfile ]
+
+=head1 DESCRIPTION
+
+The script is taking in input the sdterr output from asclite Alignment Output) (launched with the option -f 6 or -f 7). Using the alignment output, it recreates the graphs of the segments and generates a graphical representation of the multi-dimension alignment. It also generates basic statistical information (Correct, Insertion, ...) regarding the overlap and Segment Group information.
+Using the -m option will add the information of the mapped speaker in every Segment Group representaion file.
+
+=head1 USAGE
+
+Examples:
+
+	align2html.pl -a align.csv -o output_directory
+	align2html.pl -a align.csv -o output_directory -m map_file
+
+=head1 OPTIONS
+
+=over
+
+=item B<Required file arguments:>
+
+=over
+
+=item B<-a>, B<--alignfile <alignfile>>
+
+The Alignment file from asclite.
+
+=item B<-o>, B<--output <outputdir>>
+
+The output directory where the files will be generated.
+
+=back
+
+=item B<Options:>
+
+=over
+
+=item B<-m>,B<--mapfile <mapfile>>
+
+The map file allowing to display the speaker mapping information used during the alignment. Use the same mapfile used when asclite was lunched.
+
+=back
+
+=item B<Other options:>
+
+=over
+
+=item B<-h>, B<--help>
+
+Display the help.
+
+=head1 BUGS
+
+No known bugs.
+
+=head1 NOTES
+
+=head1 AUTHORS
+
+=item Jerome Ajot <jerome.ajot@nist.gov>
+
+=head1 COPYRIGHT
+
+NIST Public Domain
+
+=head1 DISCLAIMER 
+
+This software was developed at the National Institute of Standards and Technology by employees of the Federal Government in the course of their official duties.  Pursuant to Title 17 Section 105 of the United States Code this software is not subject to copyright protection within the United States and is in the public domain. This software is an experimental system. NIST assumes no responsibility whatsoever for its use by any party.
+
+THIS SOFTWARE IS PROVIDED "AS IS." With regard to this software, NIST MAKES NO EXPRESS OR IMPLIED WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+=cut
+

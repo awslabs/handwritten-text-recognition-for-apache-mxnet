@@ -1,0 +1,22 @@
+;; mdeval md_test10 ref rttm
+;; Matching filler and edit, but although corresponding words overlap,
+;; ... they are offset.  Thus, the sys word times should warp, and the
+;; ... sys metadata should move with the words.
+SPKR-INFO md_test10 1 <NA> <NA>  <NA>              adult_female spkr1r <NA>
+SPEAKER   md_test10 1 10.0 18.0  <NA>              <NA>         spkr1r <NA>
+SU        md_test10 1 10.0 18.0  <NA>              statement    spkr1r <NA>
+
+LEXEME    md_test10 1 10.0  3.9  firstWord-I       lex          spkr1r <NA>
+
+IP        md_test10 1 14.0  <NA> <NA>              filler       spkr1r <NA>
+FILLER    md_test10 1 14.0  2.0  <NA>              filled_pause spkr1r <NA>
+LEXEME    md_test10 1 14.0  1.9  secondWord-Uh     fp           spkr1r <NA>
+
+LEXEME    md_test10 1 16.0  3.9  thirdWord-will    lex          spkr1r <NA>
+
+EDIT      md_test10 1 20.0  1.9  <NA>              revision     spkr1r <NA>
+LEXEME    md_test10 1 20.0  1.9  fourthWord-drive  lex          spkr1r <NA>
+IP        md_test10 1 21.9  <NA> <NA>              edit         spkr1r <NA>
+
+LEXEME    md_test10 1 22.0  3.9  fifthWord-fly     lex          spkr1r <NA>
+

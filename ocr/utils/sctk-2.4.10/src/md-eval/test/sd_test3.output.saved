@@ -1,0 +1,211 @@
+command line (run on 2004 Oct 29 at 14:13:44):  ../src/md-eval-v19a.pl -1 -v -e -d -D -m -af -c 0.0 -T 0.0 -u sd_test3.uem -r sd_test3.ref.rttm -s sd_test3.sys.rttm
+
+Time-based metadata alignment
+
+Metadata evaluation parameters:
+    time-optimized metadata mapping
+        max gap between matching metadata events = 0.0 sec
+        max extent to match for SU's = 0.5 sec
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0.0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+Word alignment and scoring details for channel 1 of file sd_test3
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       tbeg    tend speaker     
+   1   -   -   0        firstword lex       10.00   11.00 spkr1r              firstword lex       10.00   11.00 spkr1s      
+   1   -   -   0       secondword lex       11.00   11.80 spkr1r             secondword lex       11.00   11.80 spkr1s      
+   1   -   -   0        thirdword lex       13.20   14.00 spkr2r              thirdword lex       13.20   14.00 spkr2s      
+   1   -   -   0       fourthword lex       14.00   15.00 spkr2r             fourthword lex       14.00   15.00 spkr2s      
+   1   -   -   0        fifthword lex       15.00   16.00 spkr3r              fifthword lex       15.00   16.00 spkr3s      
+   1   -   -   0        sixthword lex       19.00   20.00 spkr3r              sixthword lex       19.00   20.00 spkr3s      
+   1   -   -   0      seventhword lex       20.00   20.60 spkr4r            seventhword lex       20.00   20.60 spkr4s      
+   1   -   -   0       eighthword lex       22.40   23.00 spkr4r             eighthword lex       22.40   23.00 spkr4s      
+   1   -   -   0        ninthword lex       23.00   24.00 spkr4r              ninthword lex       23.00   24.00 spkr4s      
+
+SU alignment and scoring details for channel 1 of file sd_test3
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       tbeg    tend speaker     
+   1   -   -   0        statement SU        10.00   14.00 spkr1r              statement SU        10.00   14.00 spkr1s      
+   1   -   -   0        statement SU        11.90   14.00 spkr2r              statement SU        11.90   14.00 spkr2s      
+   1   -   -   0        statement SU        14.00   15.00 spkr2r              statement SU        14.00   15.00 spkr2s      
+   1   -   -   0        statement SU        15.00   20.00 spkr3r              statement SU        15.00   20.00 spkr3s      
+   1   -   -   0      backchannel SU        20.00   24.00 spkr4r            backchannel SU        20.00   24.00 spkr4s      
+'spkr1r' => 'spkr1s'
+     3.10 secs matched to 'spkr1s'
+'spkr2r' => 'spkr2s'
+     1.90 secs matched to 'spkr2s'
+'spkr3r' => 'spkr3s'
+     5.00 secs matched to 'spkr3s'
+'spkr4r' => 'spkr4s'
+     4.00 secs matched to 'spkr4s'
+beg/dur/end =  10.000/  1.800/ 11.800; REF = (spkr1r); SYS = (spkr1s)
+beg/dur/end =  13.100/  1.900/ 15.000; REF = (spkr2r); SYS = (spkr2s)
+beg/dur/end =  15.000/  1.500/ 16.500; REF = (spkr3r); SYS = (spkr3s)
+beg/dur/end =  18.500/  1.500/ 20.000; REF = (spkr3r); SYS = (spkr3s)
+beg/dur/end =  20.000/  0.600/ 20.600; REF = (spkr4r); SYS = (spkr4s)
+beg/dur/end =  22.400/  1.600/ 24.000; REF = (spkr4r); SYS = (spkr4s)
+
+Chronological display of sys data aligned with ref data for file 'sd_test3', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     spkr1r                10.00         |        |
+beg SPEAKER  child    spkr1r                10.00         |        |
+                                            10.00         |        |beg SPEAKER  child    spkr1s=>spkr1r        10.00        
+beg SU       statemen spkr1r                10.00         | SU1    |beg SU       statemen spkr1s=>spkr1r        10.00        
+    LEXEME   lex      FIRSTWORD             10.00   11.00 | LX1    |    LEXEME   lex      FIRSTWORD             10.00   11.00
+    LEXEME   lex      SECONDWORD             11.00   11.80 | LX2    |    LEXEME   lex      SECONDWORD             11.00   11.80
+beg SU       statemen spkr2r                11.90         | SU2    |beg SU       statemen spkr2s=>spkr2r        11.90        
+    NON-LEX  sneeze   AHTCHOO             12.00   13.00 |        |
+end SPEAKER  child    spkr1r                        13.10 |        |
+                                                    13.10 |        |end SPEAKER  child    spkr1s=>spkr1r                13.10
+beg SPEAKER  adult_ma spkr2r                13.10         |        |
+                                            13.10         |        |beg SPEAKER  adult_ma spkr2s=>spkr2r        13.10        
+    LEXEME   lex      THIRDWORD             13.20   14.00 | LX3    |    LEXEME   lex      THIRDWORD             13.20   14.00
+end SU       statemen spkr1r                        14.00 | SU1    |
+end SU       statemen spkr2r                        14.00 | SU2    |
+                                                    14.00 | SU1    |end SU       statemen spkr1s=>spkr1r                14.00
+                                                    14.00 | SU2    |end SU       statemen spkr2s=>spkr2r                14.00
+beg SU       statemen spkr2r                14.00         | SU3    |beg SU       statemen spkr2s=>spkr2r        14.00        
+    LEXEME   lex      FOURTHWORD             14.00   15.00 | LX4    |    LEXEME   lex      FOURTHWORD             14.00   15.00
+end SU       statemen spkr2r                        15.00 | SU3    |end SU       statemen spkr2s=>spkr2r                15.00
+end SPEAKER  adult_ma spkr2r                        15.00 |        |
+                                                    15.00 |        |end SPEAKER  adult_ma spkr2s=>spkr2r                15.00
+end SEGMENT  <na>     spkr1r                        15.00 |        |
+beg SEGMENT  <na>     spkr3r                15.00         |        |
+beg SPEAKER  unknown  spkr3r                15.00         |        |
+                                            15.00         |        |beg SPEAKER  unknown  spkr3s=>spkr3r        15.00        
+beg SU       statemen spkr3r                15.00         | SU4    |beg SU       statemen spkr3s=>spkr3r        15.00        
+    LEXEME   lex      FIFTHWORD             15.00   16.00 | LX5    |    LEXEME   lex      FIFTHWORD             15.00   16.00
+    NON-LEX  breath   HHHHHHH             17.00   18.00 |        |
+    LEXEME   other    SIXTHWORD             19.00   20.00 | LX6    |    LEXEME   other    SIXTHWORD             19.00   20.00
+end SU       statemen spkr3r                        20.00 | SU4    |end SU       statemen spkr3s=>spkr3r                20.00
+end SPEAKER  unknown  spkr3r                        20.00 |        |
+                                                    20.00 |        |end SPEAKER  unknown  spkr3s=>spkr3r                20.00
+end SEGMENT  <na>     spkr3r                        20.00 |        |
+beg SEGMENT  <na>     spkr4r                20.00         |        |
+beg SPEAKER  adult_fe spkr4r                20.00         |        |
+                                            20.00         |        |beg SPEAKER  adult_fe spkr4s=>spkr4r        20.00        
+beg SU       backchan spkr4r                20.00         | SU5    |beg SU       backchan spkr4s=>spkr4r        20.00        
+    LEXEME   lex      SEVENTHWORD             20.00   20.60 | LX7    |    LEXEME   lex      SEVENTHWORD             20.00   20.60
+    NON-LEX  laugh    HAHHAH             21.00   22.00 |        |
+    LEXEME   lex      EIGHTHWORD             22.40   23.00 | LX8    |    LEXEME   lex      EIGHTHWORD             22.40   23.00
+    LEXEME   lex      NINTHWORD             23.00   24.00 | LX9    |    LEXEME   lex      NINTHWORD             23.00   24.00
+end SU       backchan spkr4r                        24.00 | SU5    |end SU       backchan spkr4s=>spkr4r                24.00
+end SPEAKER  adult_fe spkr4r                        24.00 |        |
+                                                    24.00 |        |end SPEAKER  adult_fe spkr4s=>spkr4r                24.00
+end SEGMENT  <na>     spkr4r                        24.00 |        |
+
+*** Performance analysis for SUs ***  overall error SCORE = 0.00%
+
+SU (exact) end detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               5       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection statistics -- in terms of # of SUs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               5       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=sd_test3                         5       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  backchan  statemen        {Miss}
+             backchannel       1         0             0  
+               statement       0         4             0  
+
+                    {FA}       0         0  
+
+SU word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    5    -    -    -      0
+           END:    0      -    -    -    5    -    -    -      0
+
+*** Performance analysis for Speaker Diarization for f=sd_test3 ***
+
+    EVAL TIME =     14.00 secs
+  EVAL SPEECH =     14.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =      8.90 secs ( 63.6 percent of evaluated time)
+SCORED SPEECH =      8.90 secs (100.0 percent of scored time)
+   EVAL WORDS =      9        
+ SCORED WORDS =      9         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =      8.90 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=sd_test3)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male          child               unknown               MISS              
+adult_female              1 /  25.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+adult_male                0 /   0.0%          1 /  25.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+child                     0 /   0.0%          0 /   0.0%          1 /  25.0%          0 /   0.0%          0 /   0.0%
+unknown                   0 /   0.0%          0 /   0.0%          0 /   0.0%          1 /  25.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male          child               unknown               MISS              
+adult_female           2.20 /  24.7%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+adult_male             0.00 /   0.0%       1.90 /  21.3%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+child                  0.00 /   0.0%       0.00 /   0.0%       1.80 /  20.2%       0.00 /   0.0%       0.00 /   0.0%
+unknown                0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       3.00 /  33.7%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =     14.00 secs
+  EVAL SPEECH =     14.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =      8.90 secs ( 63.6 percent of evaluated time)
+SCORED SPEECH =      8.90 secs (100.0 percent of scored time)
+   EVAL WORDS =      9        
+ SCORED WORDS =      9         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =      8.90 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female        adult_male          child               unknown               MISS              
+adult_female              1 /  25.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+adult_male                0 /   0.0%          1 /  25.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+child                     0 /   0.0%          0 /   0.0%          1 /  25.0%          0 /   0.0%          0 /   0.0%
+unknown                   0 /   0.0%          0 /   0.0%          0 /   0.0%          1 /  25.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female        adult_male          child               unknown               MISS              
+adult_female           2.20 /  24.7%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+adult_male             0.00 /   0.0%       1.90 /  21.3%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+child                  0.00 /   0.0%       0.00 /   0.0%       1.80 /  20.2%       0.00 /   0.0%       0.00 /   0.0%
+unknown                0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       3.00 /  33.7%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------

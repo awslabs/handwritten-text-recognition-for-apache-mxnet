@@ -1,0 +1,150 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(sclite.c)
+
+dnl Checks for programs.
+AC_PROG_CC
+dnl AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+
+dnl Checks for libraries.
+dnl Replace `main' with a function in -lm:
+AC_CHECK_LIB(m, main)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(unistd.h)
+
+dnl If gcc is used, check the system.  If it's any of the below,
+dnl add OPTIONS to CFLAGS
+if test "$CC" = "cc" ; then
+    echo "Setting default CFLAGS for Native cc"
+    case "`uname -s`" in
+	OSF1)   CFLAGS="$CFLAGS -std1"; export CFLAGS;;
+	HP-UX) CFLAGS="$CFLAGS -Ae"; export CFLAGS;;
+    esac
+fi
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+dnl Checks for library functions.
+dnl AC_FUNC_VPRINTF
+dnl AC_CHECK_FUNCS(strdup)
+dnl AC_CHECK_FUNC(readpipe)
+
+AC_PATH_PROGS(INSTALL, install cp copy)
+
+echo ""
+echo "!!!!!!!!!!!!!   USER INFORMATION NEEDED   !!!!!!!!!!!!!"
+echo "Sclite has the ability to use GNU's 'diff' program as means to"
+echo "align reference and hypothesis strings.  Currently, no evaluations"
+echo "have used GNU-DIFF for alignments, so it may be un-neccessary for"
+echo "you to enable its use.  Also, some versions of GNU's diff, V2.8.1,"
+echo "will not work with GB encoded Mandarin characters and test6 of the"
+echo "test suite will fail."
+echo ""
+echo "    Do you want to enable alignments via GNU's 'diff'.  yes or no"
+echo ""
+ans=""
+while test "$ans" = "" ; do 
+	read ans
+	ans=`echo $ans | tr 'A-Z' 'a-z'`
+	if test "$ans" = "no" ; then
+		echo "Disabling GNU-DIFF alignments"
+	elif test "$ans" = "yes" ; then
+		echo "Enabling GNU-DIFF alignments"
+	else
+		echo "Error: You must respond either yes or no"
+		ans=""
+	fi
+done
+
+CFLAGS_BEFORE_DIFF=$CFLAGS
+if test "$ans" = "yes" ; then
+  AC_PATH_PROGS(DIFF, gnudiff diffgnu gdiff diff)
+  case "$DIFF" in
+    *gdiff)
+      # Carefully avoid gdiff for X as found on SGI systems.
+      DISPLAY= gdiff /dev/null /dev/null > /dev/null 2>&1 || DIFF=""
+      if test -z "$DIFF" ; then
+	  echo "    Not using $DIFF, it's an X window executable"
+	  AC_PATH_PROGS(NDIFF, diff)
+	  DIFF=$NDIFF
+      fi
+      ;;
+  esac
+  if test -z "$DIFF" ; then
+    echo "Error: Unable to locate 'diff'"
+    exit 1
+  fi
+  echo "    Making sure diff supports '-y'"
+  if test ! -z "`$DIFF -y /dev/null /dev/null 2>&1`" ; then
+    echo "Error: $DIFF does not support '-y'.  Install GNU's diff"
+    exit 1
+  fi
+  CFLAGS="$CFLAGS -DDIFF_EXE=\\\"\$(GNUDIFF)\\\""
+else
+  DIFF=""
+fi
+
+echo ""
+echo "!!!!!!!!!!!!!   USER INFORMATION NEEDED   !!!!!!!!!!!!!"
+echo ""
+echo "In support of the LVCSR/HUB-5 evaluations, a newly defined DP"
+echo "alignment cost function has been incorporated into SCTK.  The cost"
+echo "function is defined to be a function of language model probabilities."
+echo "In order to compute the LM probabilities, the CMU-Cambridge SLM"
+echo "Toolkit - V2 has been included in SCTK.  The compilation including"
+echo "the SLM toolkit is optionally, depending on your needs."
+echo ""
+echo "    Do you want to compile in the CMU-Cambridge SLM toolkit?.  yes or no"
+echo ""
+ans=""
+SLM_DEFS=""
+while test "$ans" = "" ; do 
+	read ans
+	ans=`echo $ans | tr 'A-Z' 'a-z'`
+	if test "$ans" = "no" ; then
+		echo "Disabling Compilation of CMU-Cambridge SLM "
+		SLM_TARGETS=""
+	elif test "$ans" = "yes" ; then
+		echo "Enabling Compilation of CMU-Cambridge SLM "
+                echo "    Checking for Un-expanded tar archive of SLM"
+                if test -f slm_v2.tar ; then
+                        echo "        Expanding tar file"
+                        tar xf slm_v2.tar
+                        rm slm_v2.tar
+                fi
+		echo "    Checking Endian-ness for SLM toolkit"
+		echo 'main(){short s=1; char *b=(char *)&s; printf("%s",(*b==0)?"Big":"Little");}' > x.c
+		$CC $CFLAGS_BEFORE_DIFF x.c -o a.out
+		endian=`./a.out`
+		rm -f a.out x.c
+
+		if test "$endian" = "Little" ; then
+			SLM_DEFS="-DSLM_SWAP_BYTES"
+			echo "        Little-endian machine"
+		else
+			echo "        Big-endian machine"
+		fi
+		CFLAGS="$CFLAGS -DWITH_SLM"
+		SLM_TARGETS="slm_v2/lib/SLM2.a"
+		cat slm_v2/src/makefile.in | \
+			sed "s/@CC@/$CC/" | \
+			sed "s/@SCTK_FLAGS@/$CFLAGS_BEFORE_DIFF/" | \
+			sed "s/@SLM_DEFS@/$SLM_DEFS/"  > slm_v2/src/makefile
+	else
+		echo "Error: You must respond either yes or no"
+		ans=""
+	fi
+done
+
+AC_SUBST(SLM_DEFS)		
+AC_SUBST(SLM_TARGETS)		
+
+dnl Check to see nist.local exists, if it does, define AT_NIST
+echo "Checking installation site"
+test -f nist.local && CFLAGS="$CFLAGS -DAT_NIST -DPEDANTIC -ansi -pedantic -pedantic-errors -Wall -Wstrict-prototypes -Wmissing-prototypes -DWARN_ZERO_MALLOC"
+
+AC_OUTPUT(Makefile)

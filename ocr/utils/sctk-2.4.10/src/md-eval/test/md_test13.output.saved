@@ -1,0 +1,28 @@
+command line (run on 2004 Oct 29 at 14:17:48):  ../src/md-eval-v19a.pl -af -e -D -d -W -w -t 1.0 -l 2 -u md_test13.uem -r md_test13.ref.rttm -s md_test13.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          

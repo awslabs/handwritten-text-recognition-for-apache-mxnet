@@ -1,0 +1,35 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./test.cantonese.ctm
+
+Speakers: 
+    0:  spkr1
+
+Speaker sentences   0:  spkr1   #utts: 3
+id: (spkr1-000)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 9 2 3 2
+REF:  食 左 ****** 啦 我 喺    度 (<HES>) 整 野 煲汤 煲 FRED 攞 **** 汤    
+HYP:  食 左 左左 啦 我 喺喺 度 ******* *** 野 煲汤 煲 **** 攞 FRED 汤汤 
+Eval:         I              S          D       D                  D        I    S      
+
+id: (spkr1-001)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 6 1 1 1
+REF:  煲 煲 ****** 定 佢 放学       饮 啊 嘛 
+HYP:  煲 煲 煲煲 定 佢 放学放学 饮 *** 嘛 
+Eval:         I              S                D       
+
+id: (spkr1-002)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 8 2 2 2
+REF:  我地 啲 ****** (大概-)    星期五 下 (个) 星期五 可能 去 咩 亲子游 喔 ****** 
+HYP:  我地 啲 啲啲 大概星期 星期五 *** ***** 下下    可能 去 咩 亲子游 喔 喔喔 
+Eval:            I      S                      D   D     S                                      I      
+
+

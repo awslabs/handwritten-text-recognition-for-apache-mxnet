@@ -1,0 +1,34 @@
+<!-- $Id: mcn.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>McNemar Statistical Test</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+McNemar
+     1.0 if t[0][1] == 0 && t[1][0] == 0
+     % from X2 dist otherwise
+      - possibly a one tailed confidence value
+
+MAPSSWE
+                       _______
+                      /       \
+                     /         \
+               -----------------------------
+	                    
+    conf = 1.0 - (2.0 * (normprob((double) (fabs(*Z_stat))) - 0.50));
+            this is  a two tailed confidence level 
+
+
+SIGN
+
+    conf = compute_acc_binomial(num_b,N,0.5);
+
+Signed Rank
+
+    Same as mapsswe
+	
+The McNemar test 
+<p>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+SCORING FOR SPEAKER: 4t2
+     of ./csrnab.hyp
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          15
+ with errors                             86.7%   (  13)
+
+   with substitions                      86.7%   (  13)
+   with deletions                         0.0%   (   0)
+   with insertions                       40.0%   (   6)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   11.1%   (  45)
+
+Percent Correct           =   91.3%   ( 369)
+
+Percent Substitution      =    8.7%   (  35)
+Percent Deletions         =    0.0%   (   0)
+Percent Insertions        =    2.5%   (  10)
+Percent Word Accuracy     =   88.9%
+
+
+Ref. words                =           ( 404)
+Hyp. words                =           ( 414)
+Aligned words             =           ( 414)
+
+CONFUSION PAIRS                  Total                 (32)
+                                 With >=  1 occurances (32)
+
+   1:    3  ->  a ==> the
+   2:    2  ->  cott ==> khan
+   3:    1  ->  analysts ==> now
+   4:    1  ->  are ==> sister
+   5:    1  ->  at ==> of
+   6:    1  ->  beaubien ==> and
+   7:    1  ->  closed ==> close
+   8:    1  ->  collapses ==> collapse
+   9:    1  ->  cott ==> car
+  10:    1  ->  cott ==> card
+  11:    1  ->  cott ==> court
+  12:    1  ->  cott ==> koch
+  13:    1  ->  cott's ==> cops
+  14:    1  ->  cott's ==> cox
+  15:    1  ->  fourteen ==> forty
+  16:    1  ->  geoffrion ==> jaffray
+  17:    1  ->  kavafian ==> in
+  18:    1  ->  levesque ==> gobie
+  19:    1  ->  mesmerized ==> rise
+  20:    1  ->  misinformation ==> information
+  21:    1  ->  of ==> is
+  22:    1  ->  pencer ==> are
+  23:    1  ->  pencer ==> spencer
+  24:    1  ->  roman ==> roaming
+  25:    1  ->  shares' ==> shares
+  26:    1  ->  that ==> the
+  27:    1  ->  united ==> night
+  28:    1  ->  united ==> nine
+  29:    1  ->  unorthodox ==> orthodox
+  30:    1  ->  weil ==> wild
+  31:    1  ->  while ==> was
+  32:    1  ->  whose ==> was
+     -------
+        35
+
+
+
+INSERTIONS                       Total                 (9)
+                                 With >=  1 occurances (9)
+
+   1:    2  ->  a
+   2:    1  ->  an
+   3:    1  ->  desk
+   4:    1  ->  mafia
+   5:    1  ->  meant
+   6:    1  ->  ms.
+   7:    1  ->  of
+   8:    1  ->  pence
+   9:    1  ->  the
+     -------
+        10
+
+
+
+DELETIONS                        Total                 (0)
+                                 With >=  1 occurances (0)
+
+     -------
+         0
+
+
+
+SUBSTITUTIONS                    Total                 (25)
+                                 With >=  1 occurances (25)
+
+   1:    6  ->  cott
+   2:    3  ->  a
+   3:    2  ->  cott's
+   4:    2  ->  pencer
+   5:    2  ->  united
+   6:    1  ->  analysts
+   7:    1  ->  are
+   8:    1  ->  at
+   9:    1  ->  beaubien
+  10:    1  ->  closed
+  11:    1  ->  collapses
+  12:    1  ->  fourteen
+  13:    1  ->  geoffrion
+  14:    1  ->  kavafian
+  15:    1  ->  levesque
+  16:    1  ->  mesmerized
+  17:    1  ->  misinformation
+  18:    1  ->  of
+  19:    1  ->  roman
+  20:    1  ->  shares'
+  21:    1  ->  that
+  22:    1  ->  unorthodox
+  23:    1  ->  weil
+  24:    1  ->  while
+  25:    1  ->  whose
+     -------
+        35
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (30)
+                                 With >=  1 occurances (30)
+
+   1:    4  ->  the
+   2:    2  ->  khan
+   3:    2  ->  was
+   4:    1  ->  and
+   5:    1  ->  are
+   6:    1  ->  car
+   7:    1  ->  card
+   8:    1  ->  close
+   9:    1  ->  collapse
+  10:    1  ->  cops
+  11:    1  ->  court
+  12:    1  ->  cox
+  13:    1  ->  forty
+  14:    1  ->  gobie
+  15:    1  ->  in
+  16:    1  ->  information
+  17:    1  ->  is
+  18:    1  ->  jaffray
+  19:    1  ->  koch
+  20:    1  ->  night
+  21:    1  ->  nine
+  22:    1  ->  now
+  23:    1  ->  of
+  24:    1  ->  orthodox
+  25:    1  ->  rise
+  26:    1  ->  roaming
+  27:    1  ->  shares
+  28:    1  ->  sister
+  29:    1  ->  spencer
+  30:    1  ->  wild
+     -------
+        35
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

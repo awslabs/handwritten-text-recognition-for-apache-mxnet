@@ -1,0 +1,400 @@
+<!-- $Id: infmts.htm,v 1.2 2008/09/05 17:12:23 ajot Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>options</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="infmts_name_0">
+<A HREF="sclite.htm#sclite_name_0">Sclite</A> Input file formats: </A>
+<a href="infmts.htm#trn_fmt_name_0">trn</a>,
+<a href="infmts.htm#txt_fmt_name_0">txt</a>,
+<a href="infmts.htm#stm_fmt_name_0">stm</a>,
+<a href="infmts.htm#ctm_fmt_name_0">ctm</a>
+
+</H1>
+
+The inputs to "<a href="sclite.htm#sclite_name_0">sclite</a>" are the
+reference file and a hypothesis file(s), the text portions of which
+may be either ASCII characters or GB encoded Chinese characters.
+There are a number of different input formats permitted: 
+"<a href="infmts.htm#trn_fmt_name_0">trn</a>",
+"<a href="infmts.htm#txt_fmt_name_0">txt</a>",
+"<a href="infmts.htm#stm_fmt_name_0">stm</a>", and
+"<a href="infmts.htm#ctm_fmt_name_0">ctm</a>".
+As new scoring paradigms were created for the ARPA
+tests, accompanying formats were created to support the evaluations.
+
+<p>
+<a name="trn_fmt_name_0">
+<strong> trn - Definition of a transcript input file </strong>
+</a>
+<ul>
+<p>
+          The transcript  format  is  a  file  of  word  sequence
+          records  separated by newlines.  Each record contains a
+          word sequence, follow by the an utterance  ID  enclosed
+          in  parenthesis.   See  the  '<a href="options.htm#option_i_name_0">-i</a>'  option for a list of
+          accepted utterance id types.
+<p>
+          example.
+<ul>
+               she had your dark suit in greasy  wash  water  all
+               year (cmh_sa01)
+</ul>
+<p>
+          Transcript alternations, described above, can  be  used
+          in the word sequence by using this BNF format:
+<p>
+<ul>
+               ALTERNATE :== "{" TEXT ALT+ "}"
+<br> 
+               ALT       :== "/" TEXT
+<br>
+               TEXT      :== 1 or more whitespace separated words |
+	                    "@" | ALTERNATE
+</ul>
+<p>
+     The "@" represents a  NULL  word  in  the  transcript.   For
+     scoring  purposes,  an  error  is  not counted if the "@" is
+     aligned as an insertion.
+<p>
+     example
+<ul>
+          i've { um / uh / @ } as far as i'm concerned
+</ul>
+</ul>
+<p>
+<a name="txt_fmt_name_0">
+<strong> txt - Definition of a text input file </strong>
+</a>
+<ul>
+          This format is simply  free-form  text  with  no  page,
+          paragraphs, sentence or speaker breaks.
+</ul>
+<a name="stm_fmt_name_0">
+<strong> stm - Definition of segment time mark input file </strong>
+</a>
+<ul>
+<p>
+     This describes the segment time marked files to be used  for
+     scoring  the  output  of  speech  recognizers  via  the NIST
+     sclite() program.  This is a reference file format.
+<p>
+     The segment time mark file consists of  a  concatenation  of
+     text  segment  records from a waveform file.  Each record is
+     separated by a newline and contains: the waveform's filename
+     and  channel  identifier  [A | B], the talkers id, begin and
+     end times (in seconds), optional subset label and  the  text
+     for the segment.  Each record follows this BNF format:
+<p>
+      STM :== &lt;F&gt; &lt;C&gt; &lt;S&gt; &lt;BT&gt; &lt;ET&gt; [ &lt;LABEL&gt; ] transcript . . .
+	<ul>
+         Where :
+	 <ul>
+          &lt;F&gt;
+	   <ul>
+               The waveform  filename.   NOTE:  no  pathnames  or
+               extensions are expected.
+  	   </ul>
+          &lt;C&gt;
+	   <ul>
+               The waveform channel.   The text of the waveform channel
+		is not restricted by sclite.  The text can be any text string without
+		witespace so long as the matching string is found in both the reference
+		and hypothesis input files.
+  	   </ul>
+          &lt;S&gt;
+	   <ul>
+               The speaker id,  no  restrictions  apply  to  this
+               name.
+  	   </ul>
+          &lt;BT&gt;
+	   <ul>
+               The begin time (seconds) of the segment.
+  	   </ul>
+          &lt;ET&gt;
+	   <ul>
+               The end time (seconds) of the segment.
+  	   </ul>
+          &lt;LABEL&gt;
+	   <ul>
+               A  comma  separated  list  of  subset  identifiers
+               enclosed  in angle brackets.  Ex. "&lt;O,F,00&gt;".  See
+               "USING STM FORMAT FOR  LABELED  UTTERANCE  REPORTS
+               (LUR)" below.
+  	   </ul> 
+         transcript
+	   <ul>
+
+The transcript can take on two forms: 1) a whitespace separated list of
+words, or 2) the string "IGNORE_TIME_SEGMENT_IN_SCORING".
+<p>
+The list of
+words can contain an transcript alternation using the following
+BNF format:
+<p>
+<ul>
+          ALTERNATE :== "{" &lt;text&gt; ALT+ "}"
+	<br>
+          ALT       :== "/" &lt;text&gt;
+	<br>
+          TEXT      :== 1 thru n words | "@" | ALTERNATE
+</ul>
+<p>
+     The "@" represents a NULL word in the transcript.  For scoring
+purposes, an error is not counted if the "@" is aligned as an
+insertion.  
+<p>
+<ul>
+     Example:     "i've { um / uh / @ } as far  as i'm concerned"
+</ul>
+<p>
+When the string "IGNORE_TIME_SEGMENT_IN_SCORING" is used as the transcript,
+the process which chops the hypothesis file to matching reference segments
+ignores all hypothesis words whose time-midpoints occur within the reference
+segments beginning
+and ending time.  The effect is to declare this segments regions as 
+"out-of-bounds" for scoring, thus generation no errors from that time 
+region. 
+<p>
+<ul>
+NOTE: this only works with DP alignment of a referenc stm file
+and hypothesis ctm file.
+</ul>
+<p>
+	 </ul>
+	</ul>
+
+     Example STM file:
+	<ul>
+	  ;; comment
+	<br>
+          2345 A 2345-a 0.10 2.03 uh huh yes i thought
+	<br>
+          2345 A 2345-b 2.10 3.04 dog walking is a very
+	<br>
+          2345 A 2345-a 3.50 4.59 yes but it's worth it
+	</ul>
+
+<p>
+     The file must be sorted by the first and second  columns  in
+     ASCII order, and the fourth in numeric order.  The UNIX sort
+     command:  "sort +0 -1 +1 -2 +3nb -4"  will  sort  the  words
+     into appropriate order.
+<p>
+Lines beginning with ';;' are considered  comments  and  are
+ignored.  Blank lines are also ignored.
+<p>
+
+</ul>
+     USING STM FORMAT FOR LABELED UTTERANCE REPORTS (LUR):
+<ul>
+     Motivation:
+   <ul>
+          For the Fall '95 ARPA CSR Evaluation, it was  desirable
+          to  not  only  report overall error-rate statistics but
+          also error-rate  statistics  for  arbitrary  partitions
+          and/or  groups  of  partitions within the test set.  To
+          this end, the STM file format was  extended  to  encode
+          arbitrary subset information for each segment.
+   </ul>
+     Usage:
+   <ul>
+          The subset information is encoded by adding  two  types
+          of  information  into the STM file.  The first information
+	  type, is a special comment line, the subset information line, (SIL).
+	  The SIL defines the subset's label
+          id, a short column heading and a description.  The special
+	  comment line format is:
+	<ul>
+           ;; LABEL "&lt;ID&gt;" "&lt;COL_HD&gt;" "&lt;DESC&gt;"
+	  <ul>
+             where:
+	     <ul>
+               &lt;ID&gt;
+                 <ul>
+                    The subset id.  Used to  label  each  segment
+                    that  belongs  to  the subset.  The format is
+                    arbitrary, but without spaces.
+                 </ul>
+               &lt;COL_HD&gt; 
+                 <ul>
+                    Used as column headings in generated reports.
+                    Format is arbitrary.
+                 </ul>
+               &lt;DESC&gt; 
+                 <ul>
+                    Used for  subset  descriptions  in  generated
+                    reports.  May be of arbitrary length and for-
+                    mat.  Double  backslashes  '\\'  add  a  line
+                    feed.
+                 </ul>
+             </ul>
+          </ul>
+          The order of the SIL lines in the STM file defines  the
+          order of subset presentation the generated reports.
+          The second type of information  incorporated  into  the
+          STM file is an optional sixth field to the text segment
+          record.  The field consists of a comma  separated  list
+          of  subset ids enclosed in angle brackets.  Each unique
+          id must have a special comment line,  specified  above,
+          to  be  properly interpreted.  Otherwise the id will be
+          ignored.
+<p>
+          Each position within the label field,  separated  by  a
+          commas,  defines  a group of subsets that are presented
+          separately in the generated reports.  So for  instance,
+          the  first  group might be all segments, and the second
+          might be either male or female, and the third might  be
+          the story.  The example below shows an STM file encoded
+          with this information.
+<ul>
+               ;; LABEL "M" "Male" "Male Talkers"
+<br>
+               ;; LABEL "F" "Female" "Female Talkers"
+<br>
+               ;; LABEL "01" "Story 1" "Business news"
+<br>
+               ;; LABEL "00" "Not in Story" "Words or Phrases not
+			 contained in a story"
+<br>
+               940328 1 A 4.00 18.10 &lt;O,F,00&gt; FROM LOS ANGELES
+<br>
+               940328 1 B 18.10 25.55 &lt;O,M,01&gt; MEXICO IN TURMOIL
+
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<p>
+<a name="ctm_fmt_name_0">
+<strong> ctm - Definition of time marked conversation scoring input </strong>
+</a>
+<ul>
+<p>
+     This describes the time marked conversation input  files  to
+     be used for scoring the output of speech recognizers via the
+     NIST sclite() program.  Both the  reference  and  hypothesis
+     input files can share this format.
+<p>
+     The ctm file format is a concatenation of time mark  records
+     for  each  word  in each channel of a waveform.  The records
+     are separated with a newline.  Each word token must  have  a
+     waveform  id,  channel identifier [A | B], start time, dura-
+     tion, and word text.  Optionally a confidence score  can  be
+     appended  for  each word.  Each record follows this BNF for-
+     mat:
+<p>
+      CTM :== &lt;F&gt; &lt;C&gt; &lt;BT&gt; &lt;DUR&gt; word [ &lt;CONF&gt; ]
+<ul>
+         Where :
+<ul>
+          &lt;F&gt;  -&gt;
+<ul>
+               The waveform  filename.   NOTE:  no  pathnames  or
+               extensions are expected.
+</ul>
+          &lt;C&gt;  -&gt;
+<ul>
+               The waveform channel.  Either "A" or "B".  The text of the waveform channel
+		is not restricted by sclite.  The text can be any text string without
+		witespace so long as the matching string is found in both the reference
+		and hypothesis input files.
+</ul>
+          &lt;BT&gt; -&gt;
+<ul>
+               The begin time (seconds)  of  the  word,  measured
+               from the start time of the file.
+</ul>
+          &lt;DUR&gt;  -&gt;
+<ul>
+               The duration (seconds) of the word.
+</ul>
+          &lt;CONF&gt;  -&gt;
+<ul>
+               Optional confidence score.  It  is  proposed  that
+               this score will be used in the future.
+</ul>
+</ul>
+</ul>
+<p>
+     The file must be sorted by  the  first  three  columns:  the
+     first  and  the  second  in  ASCII order, and the third by a
+     numeric order.  The UNIX sort command: "sort  +0  -1  +1  -2
+     +2nb -3" will sort the words into appropriate order.
+<p>
+     Lines beginning with ';;' are considered  comments  and  are
+     ignored.  Blank lines are also ignored.
+<p>
+     Included below is an example:
+<ul>
+     ;;
+     <br>
+     ;;  Comments follow ';;' 
+     <br>
+     ;;
+     <br>
+     ;;  The Blank lines are ignored
+     <br>
+
+     <br>
+     ;;
+     <br>
+     7654 A 11.34 0.2  YES -6.763
+     <br>
+     7654 A 12.00 0.34 YOU -12.384530
+     <br>
+     7654 A 13.30 0.5  CAN 2.806418
+     <br>
+     7654 A 17.50 0.2  AS 0.537922
+     <br>
+           :
+     <br>
+     7654 B 1.34 0.2  I -6.763
+     <br>
+     7654 B 2.00 0.34 CAN -12.384530
+     <br>
+     7654 B 3.40 0.5  ADD 2.806418
+     <br>
+     7654 B 7.00 0.2  AS 0.537922
+     <br>
+           :
+</ul>
+<p>
+     For CTM reference files, a format extension exists to permit
+     marking  alternate  transcripts.   The  alternation uses the
+     same file format  as  described  above,  except  three  word
+     strings, "&lt;ALT_BEGIN&gt;", "&lt;ALT&gt;" and "&lt;ALT_END&gt;", are used to
+     delimit the alternation.  Each tag is  treated  as  a  word,
+     with  a conversation id, channel and "*"'s for the begin and
+     duration time.
+<p>
+     The alternation is begun using the word  "&lt;ALT_BEGIN&gt;",  and
+     terminated using the word "&lt;ALT_END&gt;".  In between the start
+     and  end,  are  at  least  2  alternative  time-marked  word
+     sequences separated by the word "&lt;ALT&gt;".  Each word sequence
+     can contain any number of words.  An empty alternative  sig-
+     nifies a null word.
+<p>
+     Below is and example alternate reference transcript for  the
+     words "uh" and "um".
+<p>
+  <ul>
+     ;;
+     <br>
+     7654 A   *    *   &lt;ALT_BEGIN&gt;
+     <br>
+     7654 A 12.00 0.34 UM
+     <br>
+     7654 A   *    *   &lt;ALT&gt;
+     <br>
+     7654 A 12.00 0.34 UH
+     <br>
+     7654 A   *    *   &lt;ALT_END&gt;
+  <ul>
+</ul>
+</ul>
+</body>
+</html>

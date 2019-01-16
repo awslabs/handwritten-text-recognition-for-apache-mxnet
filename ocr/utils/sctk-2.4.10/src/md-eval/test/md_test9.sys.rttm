@@ -1,0 +1,21 @@
+;; mdeval md_test9 sys rttm
+;; Straightforward perfectly matching filler and edit
+SPKR-INFO md_test9 1 <NA> <NA>  <NA>              adult_female spkr1s <NA>
+SEGMENT   md_test9 1 10.0 18.0  <NA>              <NA>         spkr1s <NA>
+SPEAKER   md_test9 1 10.0 18.0  <NA>              <NA>         spkr1s <NA>
+SU        md_test9 1 10.0 18.0  <NA>              statement    spkr1s <NA>
+
+LEXEME    md_test9 1 10.0  3.9  firstWord-I       lex          spkr1s <NA>
+
+IP        md_test9 1 14.0  <NA> <NA>              filler       spkr1s <NA>
+FILLER    md_test9 1 14.0  2.0  <NA>              filled_pause spkr1s <NA>
+LEXEME    md_test9 1 14.0  1.9  secondWord-Uh     fp           spkr1s <NA>
+
+LEXEME    md_test9 1 16.0  3.9  thirdWord-will    lex          spkr1s <NA>
+
+EDIT      md_test9 1 20.0  1.9  <NA>              revision     spkr1s <NA>
+LEXEME    md_test9 1 20.0  1.9  fourthWord-drive  lex          spkr1s <NA>
+IP        md_test9 1 21.9  <NA> <NA>              edit         spkr1s <NA>
+
+LEXEME    md_test9 1 22.0  3.9  fifthWord-fly     lex          spkr1s <NA>
+

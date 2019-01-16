@@ -1,0 +1,5 @@
+ERROR: Invalid channel ID; see field (3) in line 10
+ERROR: Invalid channel ID; see field (3) in line 7
+ERROR: Expected channel ID to be 1 for BN data; see field (3) in line 11
+ERROR: Invalid channel ID; see field (3) in line 13
+Validation aborted

@@ -1,0 +1,46 @@
+;; mdeval md_test4 sys rttm
+
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           child        spkr1s <NA>
+SEGMENT   md_test4 1 10.0  6.0 <NA>           <NA>         spkr1s <NA>
+SPEAKER   md_test4 1 10.0  6.0 <NA>           <NA>         spkr1s <NA>
+SU        md_test4 1 10.0  3.0 <NA>           statement    spkr1s <NA>
+LEXEME    md_test4 1 10.0  1.0 firstWord      lex          spkr1s <NA>
+LEXEME    md_test4 1 11.0  1.0 T.'s           alpha        spkr1s <NA>
+LEXEME    md_test4 1 12.0  1.0 thirdWord      acronym      spkr1s <NA>
+SU        md_test4 1 13.0  3.0 <NA>           question     spkr1s <NA>
+LEXEME    md_test4 1 13.0  1.0 fourthWord     interjection spkr1s <NA>
+LEXEME    md_test4 1 14.0  1.0 fifthWord      propernoun   spkr1s <NA>
+LEXEME    md_test4 1 15.0  1.0 sixthWord      other        spkr1s <NA>
+
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           unknown      name="<NAs>" <NA>
+SEGMENT   md_test4 1 16.0  3.0 <NA>           <NA>         name="<NAs>" <NA>
+SPEAKER   md_test4 1 16.0  3.0 <NA>           <NA>         name="<NAs>" <NA>
+SU        md_test4 1 16.0  3.0 <NA>           backchannel  name="<NAs>" <NA>
+LEXEME    md_test4 1 16.0  1.0 seventhWord    lex          name="<NAs>" <NA>
+LEXEME    md_test4 1 17.0  1.0 eighthWord     lex          name="<NAs>" <NA>
+;;LEXEME    md_test4 1 18.0  1.0 ninthWord      lex          name="<NAs>" <NA>
+
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           unknown      spkr=<sp3s> <NA>
+SEGMENT   md_test4 1 19.0 11.0 <NA>           <NA>         spkr=<sp3s> <NA>
+SPEAKER   md_test4 1 19.0 11.0 <NA>           <NA>         spkr=<sp3s> <NA>
+
+SU        md_test4 1 19.0  3.0 <NA>            question     spkr=<sp3s> <NA>
+LEXEME    md_test4 1 19.0  1.0 tenthWord       lex          spkr=<sp3s> <NA>
+IP        md_test4 1 20.0 <NA> <NA>            filler       spkr=<sp3s> <NA>
+FILLER    md_test4 1 20.0  1.0 <NA>            filled_pause spkr=<sp3s> <NA>
+LEXEME    md_test4 1 20.0  1.0 eleventhWord    fp           spkr=<sp3s> <NA>
+LEXEME    md_test4 1 21.0  1.0 twelfthWord     lex          spkr=<sp3s> <NA>
+;;LEXEME    md_test4 1 22.0  1.0 thirteenthWord  lex          spkr=<sp3s> <NA>
+;;LEXEME    md_test4 1 23.0  1.0 fourteenthWord  lex          spkr=<sp3s>  <NA>
+
+SU        md_test4 1 24.0  3.0 <NA>            question     spkr=<sp3s> <NA>
+LEXEME    md_test4 1 24.0  1.0 fifteenthWord   lex          spkr=<sp3s> <NA>
+IP        md_test4 1 25.0 <NA> <NA>            filler       spkr=<sp3s> <NA>
+FILLER    md_test4 1 25.0  1.0 <NA>            filled_pause spkr=<sp3s> <NA>
+LEXEME    md_test4 1 25.0  1.0 sixteenthWord   fp           spkr=<sp3s> <NA>
+LEXEME    md_test4 1 26.0  1.0 seventeenthWord lex          spkr=<sp3s> <NA>
+;;LEXEME    md_test4 1 27.0  1.0 eighteenthWord  lex          spkr=<sp3s> <NA>
+;;LEXEME    md_test4 1 28.0  1.0 nineteenthWord  lex          spkr=<sp3s>  <NA>
+
+SU        md_test4 1 29.0  1.0 <NA>           question     spkr=<sp3s> <NA>
+LEXEME    md_test4 1 29.0  1.0 twentiethWord  lex          spkr=<sp3s> <NA>

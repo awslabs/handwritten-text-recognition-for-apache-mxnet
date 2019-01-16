@@ -1,0 +1,67 @@
+=head1 NAME
+
+ctmValidator.pl - Script that validates a given CTM file.
+
+=head1 SYNOPSIS
+
+	ctmValidator.pl [-l <language>] [-h] -i <CTM file>
+
+=head1 DESCRIPTION
+
+This Perl program validates a given CTM file.
+Note that the program will exit after it finds all the syntax errors.
+
+=head1 USAGE
+
+Examples:
+
+	ctmValidator.pl -i ctmfile
+
+=head1 OPTIONS
+
+=over
+
+=item B<Input:>
+
+=over
+
+=item B<-i <CTM file>>
+
+The CTM file that needds to be validated.
+
+=back
+
+=item B<Options:>
+
+=over
+
+=item B<-l <language>>
+
+Check regarding the laguage (default: english).
+
+=item B<-h>
+
+Display the help.
+
+=head1 BUGS
+
+No known bugs.
+
+=head1 NOTES
+
+=head1 AUTHORS
+
+=item Jerome Ajot <jerome.ajot@nist.gov>
+
+=head1 COPYRIGHT
+
+Public Domain
+
+=head1 DISCLAIMER 
+
+This software was developed at the National Institute of Standards and Technology by employees of the Federal Government in the course of their official duties.  Pursuant to Title 17 Section 105 of the United States Code this software is not subject to copyright protection within the United States and is in the public domain. This software is an experimental system. NIST assumes no responsibility whatsoever for its use by any party.
+
+THIS SOFTWARE IS PROVIDED "AS IS." With regard to this software, NIST MAKES NO EXPRESS OR IMPLIED WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+=cut
+

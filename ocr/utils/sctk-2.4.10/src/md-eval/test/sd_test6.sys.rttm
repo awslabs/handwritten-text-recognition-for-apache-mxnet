@@ -1,0 +1,32 @@
+;; mdeval sd_test6 sys rttm
+;; See comments at top of ref rttm file.
+
+SPKR-INFO sd_test6 1 <NA> <NA> <NA>         child        spkr1s <NA>
+SEGMENT   sd_test6 1 10.0  6.0 <NA>         <NA>         spkr1s <NA>
+SPEAKER   sd_test6 1 10.0  6.0 <NA>         <NA>         spkr1s <NA>
+SU        sd_test6 1 10.0  2.0 <NA>         statement    spkr1s <NA>
+LEXEME    sd_test6 1 10.0  1.0 firstWord    lex          spkr1s <NA>
+LEXEME    sd_test6 1 11.0  1.0 T.'s         alpha        spkr1s <NA>
+SPEAKER   sd_test6 1 12.0  2.0 <NA>         <NA>         spkr1s <NA>
+SU        sd_test6 1 12.0  2.0 <NA>         statement    spkr1s <NA>
+LEXEME    sd_test6 1 12.0  1.0 thirdWord    acronym      spkr1s <NA>
+LEXEME    sd_test6 1 13.0  1.0 fourthWord   interjection spkr1s <NA>
+SU        sd_test6 1 14.0  2.0 <NA>         question     spkr1s <NA>
+LEXEME    sd_test6 1 14.0  1.0 fifthWord    propernoun   spkr1s <NA>
+LEXEME    sd_test6 1 15.0  1.0 sixthWord    other        spkr1s <NA>
+
+SPKR-INFO sd_test6 1 <NA> <NA> <NA>         unknown      spkr2s <NA>
+SEGMENT   sd_test6 1 16.0  3.0 <NA>         <NA>         spkr2s <NA>
+SPEAKER   sd_test6 1 16.0  3.0 <NA>         <NA>         spkr2s <NA>
+SU        sd_test6 1 16.0  3.0 <NA>         backchannel  spkr2s <NA>
+LEXEME    sd_test6 1 16.0  1.0 seventhWord  lex          spkr2s <NA>
+LEXEME    sd_test6 1 17.0  1.0 eighthWord   lex          spkr2s <NA>
+LEXEME    sd_test6 1 18.0  1.0 ninthWord    lex          spkr2s <NA>
+
+SPKR-INFO sd_test6 1 <NA> <NA> <NA>         adult_female spkr3s <NA>
+SEGMENT   sd_test6 1 19.0  3.0 <NA>         <NA>         spkr3s <NA>
+SPEAKER   sd_test6 1 19.0  3.0 <NA>         <NA>         spkr3s <NA>
+SU        sd_test6 1 19.0  2.0 <NA>         incomplete   spkr3s <NA>
+LEXEME    sd_test6 1 19.0  1.0 tenthWord    lex          spkr3s <NA>
+LEXEME    sd_test6 1 20.0  1.0 eleventhWord lex          spkr3s <NA>
+

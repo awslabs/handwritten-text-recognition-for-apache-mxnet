@@ -1,0 +1,80 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   sastt-case2.sys.rttm
+
+Speakers: 
+    0:  SUB48
+    1:  SUB49
+    2:  SUB57
+    3:  SUB34
+    4:  inter_segment_gap
+
+Speaker sentences   0:  SUB48   #utts: 2
+id: (SUB48-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 1 0
+REF:  TWO 
+HYP:  *** 
+Eval: D   
+
+id: (SUB48-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 4 4 3 0
+REF:  SO WE have THE a B. s. AND A  M.   s.'s 
+HYP:  SO ** have *** a L. s. *** I. HAVE s.'s 
+Eval: S  D       D     S     D   S  S         
+
+Speaker sentences   1:  SUB49   #utts: 2
+id: (SUB49-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 2 0
+REF:  TWO SHEETS 
+HYP:  *** ****** 
+Eval: D   D      
+
+id: (SUB49-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 1 2 0 0
+REF:  SHE IS (shee-) 
+HYP:  SHE IS         
+Eval: S   S          
+
+Speaker sentences   2:  SUB57   #utts: 1
+id: (SUB57-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 3 0 7 0
+REF:  OKAY BECAUSE THEN i I I'D (%uh) I'M (m-) MISSING 
+HYP:  **** ******* **** i * ***       ***      ******* 
+Eval: D    D       D      D D         D        D       
+
+Speaker sentences   3:  SUB34   #utts: 2
+id: (SUB34-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 3 0
+REF:  SHOULD BE TWO 
+HYP:  ****** ** *** 
+Eval: D      D  D   
+
+id: (SUB34-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 1 4 0
+REF:  THIS IS HIS SECOND SHEET 
+HYP:  V.   ** *** ****** ***** 
+Eval: S    D  D   D      D     
+
+Speaker sentences   4:  inter_segment_gap   #utts: 1
+id: (Inter_Segment_Gap-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 0 0 0
+
+

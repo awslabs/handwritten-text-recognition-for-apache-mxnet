@@ -1,0 +1,223 @@
+command line (run on 2004 Oct 29 at 14:17:48):  ../src/md-eval-v19a.pl -af -e -D -d -W -w -t 1.0 -l 2 -u md_test14.uem -r md_test14.ref.rttm -s md_test14.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+Word alignment and scoring details for channel 1 of file md_test14
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        firstword lex       10.00   11.95 spkr1r              firstword lex     (  10.00   11.95)   10.00   11.95 spkr1s      
+   1   -   -   0                i lex       11.95   13.90 spkr1r                      i lex     (  11.95   13.90)   11.95   13.90 spkr1s      
+   1   -   -   0       secondword lex       14.00   14.50 spkr1r             secondword lex     (  14.00   14.50)   14.00   14.50 spkr1s      
+   1   -   -   0              now lex       14.50   15.00 spkr1r                    now lex     (  14.50   15.00)   14.50   15.00 spkr1s      
+   1   -   -   0        thirdword lex       15.00   15.50 spkr1r              thirdword lex     (  15.00   15.50)   15.00   15.50 spkr1s      
+   1   -   -   0               we lex       15.50   16.00 spkr1r                     we lex     (  15.50   16.00)   15.50   16.00 spkr1s      
+   1   -   -   0       fourthword lex       16.00   16.50 spkr1r             fourthword lex     (  16.00   16.50)   16.00   16.50 spkr1s      
+   1   -   -   0             show lex       16.50   17.00 spkr1r                   show lex     (  16.50   17.00)   16.50   17.00 spkr1s      
+   1   -   -   0        fifthword lex       17.10   17.50 spkr1r              fifthword lex     (  17.10   17.50)   17.10   17.50 spkr1s      
+   1   -   -   0             will lex       17.50   17.90 spkr1r                   will lex     (  17.50   17.90)   17.50   17.90 spkr1s      
+   1   -   -   0        sixthword lex       18.00   18.50 spkr1r              sixthword lex     (  18.00   18.50)   18.00   18.50 spkr1s      
+   1   -   -   0            drive lex       18.50   19.00 spkr1r                  drive lex     (  18.50   19.00)   18.50   19.00 spkr1s      
+   1   -   -   0      seventhword lex       19.00   19.50 spkr1r            seventhword lex     (  19.00   19.50)   19.00   19.50 spkr1s      
+   1   -   -   0            there lex       19.50   20.00 spkr1r                  there lex     (  19.50   20.00)   19.50   20.00 spkr1s      
+   1   -   -   0       eighthword lex       20.10   20.55 spkr1r             eighthword lex     (  20.10   20.55)   20.10   20.55 spkr1s      
+   1   -   -   0              fly lex       20.55   21.00 spkr1r                    fly lex     (  20.55   21.00)   20.55   21.00 spkr1s      
+
+EDIT alignment and scoring details for channel 1 of file md_test14
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0         revision EDIT      18.00   20.00 spkr1r               revision EDIT    (  18.00   20.00)   18.00   20.00 spkr1s      
+
+FILLER alignment and scoring details for channel 1 of file md_test14
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0 discourse_marker FILLER    14.00   17.00 spkr1r       discourse_marker FILLER  (  14.00   17.00)   14.00   17.00 spkr1s      
+
+IP alignment and scoring details for channel 1 of file md_test14
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0           filler IP        14.00   14.00 spkr1r                 filler IP      (  14.00   14.00)   14.00   14.00 spkr1s      
+   1   -   -   0             edit IP        20.00   20.00 spkr1r                   edit IP      (  20.00   20.00)   20.00   20.00 spkr1s      
+
+Chronological display of sys data aligned with ref data for file 'md_test14', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     spkr1r                10.00         |        |
+beg SPEAKER  adult_fe spkr1r                10.00         |        |
+                                            10.00         |        |beg SPEAKER  adult_fe spkr1s=>spkr1r        10.00        
+    LEXEME   lex      FIRSTWORD             10.00   11.95 | LX1    |    LEXEME   lex      FIRSTWORD             10.00   11.95
+    LEXEME   lex      I             11.95   13.90 | LX2    |    LEXEME   lex      I             11.95   13.90
+beg FILLER   discours spkr1r                14.00         | FL1    |beg FILLER   discours spkr1s=>spkr1r        14.00        
+    IP       filler   spkr1r                14.00         | IP1    |    IP       filler   spkr1s=>spkr1r        14.00        
+    LEXEME   lex      SECONDWORD             14.00   14.50 | LX3    |    LEXEME   lex      SECONDWORD             14.00   14.50
+    LEXEME   lex      NOW             14.50   15.00 | LX4    |    LEXEME   lex      NOW             14.50   15.00
+    LEXEME   lex      THIRDWORD             15.00   15.50 | LX5    |    LEXEME   lex      THIRDWORD             15.00   15.50
+    LEXEME   lex      WE             15.50   16.00 | LX6    |    LEXEME   lex      WE             15.50   16.00
+    LEXEME   lex      FOURTHWORD             16.00   16.50 | LX7    |    LEXEME   lex      FOURTHWORD             16.00   16.50
+    LEXEME   lex      SHOW             16.50   17.00 | LX8    |    LEXEME   lex      SHOW             16.50   17.00
+end FILLER   discours spkr1r                        17.00 | FL1    |end FILLER   discours spkr1s=>spkr1r                17.00
+    LEXEME   lex      FIFTHWORD             17.10   17.50 | LX9    |    LEXEME   lex      FIFTHWORD             17.10   17.50
+    LEXEME   lex      WILL             17.50   17.90 | LX10   |    LEXEME   lex      WILL             17.50   17.90
+beg EDIT     revision spkr1r                18.00         | ED1    |beg EDIT     revision spkr1s=>spkr1r        18.00        
+    LEXEME   lex      SIXTHWORD             18.00   18.50 | LX11   |    LEXEME   lex      SIXTHWORD             18.00   18.50
+    LEXEME   lex      DRIVE             18.50   19.00 | LX12   |    LEXEME   lex      DRIVE             18.50   19.00
+    LEXEME   lex      SEVENTHWORD             19.00   19.50 | LX13   |    LEXEME   lex      SEVENTHWORD             19.00   19.50
+    LEXEME   lex      THERE             19.50   20.00 | LX14   |    LEXEME   lex      THERE             19.50   20.00
+end EDIT     revision spkr1r                        20.00 | ED1    |end EDIT     revision spkr1s=>spkr1r                20.00
+    IP       edit     spkr1r                20.00         | IP2    |    IP       edit     spkr1s=>spkr1r        20.00        
+    LEXEME   lex      EIGHTHWORD             20.10   20.55 | LX15   |    LEXEME   lex      EIGHTHWORD             20.10   20.55
+    LEXEME   lex      FLY             20.55   21.00 | LX16   |    LEXEME   lex      FLY             20.55   21.00
+end SPEAKER  adult_fe spkr1r                        28.00 |        |
+                                                    28.00 |        |end SPEAKER  adult_fe spkr1s=>spkr1r                28.00
+end SEGMENT  <na>     spkr1r                        28.00 |        |
+
+*** Performance analysis for EDITs ***  overall error SCORE = 0.00%
+
+EDIT word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               4       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection statistics -- in terms of # of EDITs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=md_test14                        1       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection confusion matrix -- in terms of # of EDITs
+           ALL - ref\sys  revision        {Miss}
+                revision       1             0  
+
+                    {FA}       0  
+
+EDIT word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    1    -    -    -      0
+           END:    0      -    -    -    1    -    -    -      0
+
+*** Performance analysis for FILLERs ***  overall error SCORE = 0.00%
+
+FILLER word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               6       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection statistics -- in terms of # of FILLERs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=md_test14                        1       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection confusion matrix -- in terms of # of FILLERs
+           ALL - ref\sys  discours        {Miss}
+        discourse_marker       1             0  
+
+                    {FA}       0  
+
+FILLER word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    1    -    -    -      0
+           END:    0      -    -    -    1    -    -    -      0
+
+*** Performance analysis for IPs ***  overall error SCORE = 0.00%
+
+IP (exact) detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection statistics -- in terms of # of IPs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=md_test14                        2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection confusion matrix -- in terms of # of IPs
+           ALL - ref\sys      edit    filler        {Miss}
+                    edit       1         0             0  
+                  filler       0         1             0  
+
+                    {FA}       0         0  
+
+IP word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for Speaker Diarization for f=md_test14 ***
+
+    EVAL TIME =     11.00 secs
+  EVAL SPEECH =     11.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =     11.00 secs (100.0 percent of evaluated time)
+SCORED SPEECH =     11.00 secs (100.0 percent of scored time)
+   EVAL WORDS =     16        
+ SCORED WORDS =     16         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     11.00 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=md_test14)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female          MISS              
+adult_female              1 / 100.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female          MISS              
+adult_female          11.00 / 100.0%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =     11.00 secs
+  EVAL SPEECH =     11.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =     11.00 secs (100.0 percent of evaluated time)
+SCORED SPEECH =     11.00 secs (100.0 percent of scored time)
+   EVAL WORDS =     16        
+ SCORED WORDS =     16         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     11.00 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_female          MISS              
+adult_female              1 / 100.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_female          MISS              
+adult_female          11.00 / 100.0%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%
+---------------------------------------------

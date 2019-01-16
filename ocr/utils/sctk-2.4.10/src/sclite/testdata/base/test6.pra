@@ -1,0 +1,93 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./mand_hyp.ctm
+
+Speakers: 
+    0:  ma_0029_a
+    1:  ma_0029_b
+
+Speaker sentences   0:  ma_0029_a   #utts: 4
+id: (ma_0029_a-000)
+File: 1
+Channel: 1
+Scores: (#C #S #D #I) 1 1 0 0
+REF:  哦   ok 
+HYP:  可能 ok 
+Eval: S       
+
+id: (ma_0029_a-001)
+File: 1
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  对 
+HYP:  对 
+Eval:    
+
+id: (ma_0029_a-002)
+File: 1
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  对 
+HYP:  对 
+Eval:    
+
+id: (ma_0029_a-003)
+File: 1
+Channel: 1
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  ok 
+HYP:  ok 
+Eval:    
+
+Speaker sentences   1:  ma_0029_b   #utts: 6
+id: (ma_0029_b-000)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 1 0 1 0
+REF:  对 因为 
+HYP:  对 **** 
+Eval:    D    
+
+id: (ma_0029_b-001)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 1 1 0 0
+REF:  他 可能- 
+HYP:  他 可能  
+Eval:    S     
+
+id: (ma_0029_b-002)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 6 1 0 0
+REF:  个 人- 气质 上 能力 啊 以及 
+HYP:  个 人  气质 上 能力 啊 以及 
+Eval:    S                        
+
+id: (ma_0029_b-003)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 1 0 0 0
+REF:  呃 
+HYP:  呃 
+Eval:    
+
+id: (ma_0029_b-004)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 11 0 0 1
+REF:  妯娌 这 **** 这个 人际 关系 这 方面 的 一些 手段 啊 
+HYP:  妯娌 这 因为 这个 人际 关系 这 方面 的 一些 手段 啊 
+Eval:         I                                           
+
+id: (ma_0029_b-005)
+File: 2
+Channel: 2
+Scores: (#C #S #D #I) 9 0 0 0
+REF:  都 影响 这个 可能 不 是 我 一个 人 
+HYP:  都 影响 这个 可能 不 是 我 一个 人 
+Eval:                                    
+
+

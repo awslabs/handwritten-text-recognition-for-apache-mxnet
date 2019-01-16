@@ -1,0 +1,5 @@
+File,Channel,RefSpeaker,SysSpeaker,isMapped,timeOverlap
+FileA,1,Speaker_gamma,Speaker_alpha,mapped,125.65
+FileA,1,Speaker_delta,Speaker_beta,mapped,12354.14
+FileA,1,Speaker_epsilon,Speaker_alpha,notmapped,5.65
+FileA,1,Speaker_delta,Speaker_theta,notmapped,0.14

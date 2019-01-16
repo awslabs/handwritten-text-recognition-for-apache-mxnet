@@ -1,0 +1,4 @@
+;; This file is an example of STM file for test purspose
+;; Do not modify if you dont know what you are doing
+ALPHA 1 OMEGA 1.0 4.0 <M> A B C
+ALPHA 1 THETA 2.0 8.0 <M> D E F G H I

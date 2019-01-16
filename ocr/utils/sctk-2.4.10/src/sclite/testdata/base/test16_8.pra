@@ -1,0 +1,81 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./stm2ctm_missing.hyp-missfile2chanB.ctm
+
+Speakers: 
+    0:  2347-a
+    1:  2347-b
+    2:  3129-a
+    3:  3129-b
+
+Speaker sentences   0:  2347-a   #utts: 2
+id: (2347-a-000)
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 1 0 7
+REF:  **** ***** ***** *** *** ** *** I'VE 
+HYP:  THEY PRIDE ABOUT A;S FAR AS I'M I    
+Eval: I    I     I     I   I   I  I   S    
+
+id: (2347-a-001)
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 2 1 0
+REF:  I FIND THAT 
+HYP:  * ARE  FINE 
+Eval: D S    S    
+
+Speaker sentences   1:  2347-b   #utts: 2
+id: (2347-b-000)
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 5 4 5 0
+REF:  UM ALL RIGHT UHHUH OH WELL   i TEND i tend to agree UM IN   
+HYP:  ** *** ***** ***** ** UH-HUH i LIKE i tend to agree I  TEND 
+Eval: D  D   D     D     D  S        S                    S  S    
+
+id: (2347-b-001)
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 12 2 1 0
+REF:  some ways i think it's UM i think IF anything a lot of UM     the 
+HYP:  some ways i think it's ** i think OF anything a lot of FALLEN the 
+Eval:                        D          S                    S          
+
+Speaker sentences   2:  3129-a   #utts: 2
+id: (3129-a-000)
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 21 14 0 10
+REF:  *** *** yeah exactly **** ** OH  DID you do the * diagnosis ***** OR was it just an assumption ****** THAT that's probably the part that *** ****** FAILED UHHUH UHHUH YEAH I KNOW UM    when working with *** THE UM    FLASHERS there is 
+HYP:  BUT AND yeah exactly WELL UH YOU DO  you do the A diagnosis NEVER OH was it just an assumption THAT'S AND  that's probably the part that THE UH-HUH AND    SO    TO    SET  A FINE THOSE when working with SEE A   FLASH YEARS    there is 
+Eval: I   I                I    I  S   S              I           I     S                            I      S                                  I   I      S      S     S     S    S S    S                       I   S   S     S                 
+
+id: (3129-a-001)
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 12 15 10 1
+REF:  UM usually A  a special **** FUSE that operates THE FLASHERS DO    YOU have a separate fuse for YOUR HIGH BEAM as opposed TO YOUR LOW BEAM DIAGRAM YEAH I DON'T EVEN KNOW IF   MY      CURRENT CARS HAVE  
+HYP:  SO usually IS a special EVER USE  that operates TO  FLASH    YEARS NOT have a separate fuse for YOU  I    MEAN as opposed ** **** *** **** ******* **** * ***** **** **** YEAR MOLDING THE     HI   GRAMS 
+Eval: S          S            I    S                  S   S        S     S                            S    S    S               D  D    D   D    D       D    D D     D    D    S    S       S       S    S     
+
+Speaker sentences   3:  3129-b   #utts: 2
+id: (3129-b-000)
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 0 0 28 0
+REF:  WELL TOM JUST TONIGHT I WAS WORKING ON MY CAR OUT OF NECESSITY AND I HAD UM UM HAD A LONG AGE-OLD PROBLEM OF MY BRIGHT LIGHTS NOT 
+HYP:  **** *** **** ******* * *** ******* ** ** *** *** ** ********* *** * *** ** ** *** * **** ******* ******* ** ** ****** ****** *** 
+Eval: D    D   D    D       D D   D       D  D  D   D   D  D         D   D D   D  D  D   D D    D       D       D  D  D      D      D   
+
+id: (3129-b-001)
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 0 0 29 0
+REF:  WORKING UM THIS IS THE TYPE OF UM SWITCH WHERE YOU FLIP THE THE LEVER THE TURN SIGNAL ON THE COLUMN AND WHEN I WOULD UM PUT IT IN 
+HYP:  ******* ** **** ** *** **** ** ** ****** ***** *** **** *** *** ***** *** **** ****** ** *** ****** *** **** * ***** ** *** ** ** 
+Eval: D       D  D    D  D   D    D  D  D      D     D   D    D   D   D     D   D    D      D  D   D      D   D    D D     D  D   D  D  
+
+

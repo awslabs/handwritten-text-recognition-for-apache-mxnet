@@ -1,0 +1,196 @@
+<SYSTEM title="./tests.hyp.utf8-3bytes" ref_fname="./tests.ref.utf8-3bytes" hyp_fname="./tests.hyp.utf8-3bytes"  format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="f">
+<PATH id="(f_0)" word_cnt="7" sequence="0">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_1)" word_cnt="7" sequence="1">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_2)" word_cnt="7" sequence="2">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_3)" word_cnt="7" sequence="3">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":I,,"त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_4)" word_cnt="7" sequence="4">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_5)" word_cnt="7" sequence="5">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+<PATH id="(f_6)" word_cnt="7" sequence="6">
+C,"ठ","ठ":C,"ड","ड":C,"ढ","ढ":C,"ण","ण":C,"त","त":C,"थ","थ":C,"द","द"
+</PATH>
+</SPEAKER>
+<SPEAKER id="g">
+<PATH id="(g_0)" word_cnt="10" sequence="7">
+C,"ऴध","ऴध":C,"ऴध","ऴध":S,"धठण","धठवत":S,"ठ","ठफमभद":S,"फमभद","शधनढध":S,"ठदत-मफण","दम":C,"यऱमडफतब","यऱमडफतब":C,"मथ","मथ":C,"बस","बस":S,"डright","यऱनवठळत"
+</PATH>
+<PATH id="(g_1)" word_cnt="10" sequence="8">
+C,"ऴध","ऴध":C,"ऴध","ऴध":S,"धठण","धठवत":S,"ठ","ठफमभद":S,"फमभद","शधनढध":S,"ठदत-मफण","दम":C,"यऱमडफतब","यऱमडफतब":C,"मथ","मथ":C,"बस","बस":S,"डright","यऱनवठळत"
+</PATH>
+</SPEAKER>
+<SPEAKER id="h">
+<PATH id="(h_0)" word_cnt="3" sequence="9">
+C,"ठ","ठ":C,"ड","ड":C,"तथ","तथ"
+</PATH>
+<PATH id="(h_1)" word_cnt="8" sequence="10">
+C,"ठ","ठ":C,"दध","दध":C,"न","न":C,"डण","डण":C,"त","त":I,,"न":C,"ळध","ळध":C,"थ","थ"
+</PATH>
+<PATH id="(h_2)" word_cnt="9" sequence="11">
+C,"ठ","ठ":C,"दध","दध":C,"न","न":C,"डण","डण":C,"त","त":C,"न","न":C,"भ","भ":I,,"ळध":C,"थ","थ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="i">
+<PATH id="(i_1)" word_cnt="5" sequence="12">
+I,,"ळध":S,"ळधनल","त":C,"नल","नल":S,"ळधत","ळध":S,"ळतभ","तभ"
+</PATH>
+<PATH id="(i_2)" word_cnt="5" sequence="13">
+I,,"ळध":S,"ळधनल","त":C,"नल","नल":S,"ळधत","ळध":S,"ळतठ","तभ"
+</PATH>
+<PATH id="(i_3)" word_cnt="5" sequence="14">
+I,,"ळध":S,"ळधत","नल":C,"नल","नल":S,"ळधत","ळध":S,"ळतठ","तभ"
+</PATH>
+<PATH id="(i_4)" word_cnt="14" sequence="15">
+C,"थन-","थनभण":C,"ळध-","ळधत":C,"थन-","थनलध":C,"-नढपल","ळनढपल":C,"-फप","बनफप":S,"-मथथतत","थतत":C,"-धनब","धनब":C,"थनभण","थन-":C,"ळधत","ळध-":C,"थनलध","थन-":C,"ळनढपल","-नढपल":C,"बनफप","-फप":S,"थतत","-मथथतत":C,"धनब","-धनब"
+</PATH>
+<PATH id="(i_5)" word_cnt="9" sequence="16">
+C,"णतफ","णतफ":D,"थन-",:C,"णतफञशनळधभऴफफ","णतफञशनळधभऴफफ":C,"लपनय","लपनय":C,"लपनय","लपनय":C,"लऴडलळनळऴळनमभ","लऴडलळनळऴळनमभ":S,"थन-","थफठद":C,"लऴडञशनळधभऴफफ","लऴडञशनळधभऴफफ":I,,"थफठद"
+</PATH>
+</SPEAKER>
+<SPEAKER id="empty">
+<PATH id="(empty-1)" word_cnt="10" sequence="17">
+I,,"ठ":I,,"ड":I,,"ढ":I,,"त":I,,"थ":I,,"द":I,,"ध":I,,"न":I,,"ऩ":I,,"प"
+</PATH>
+<PATH id="(empty-2)" word_cnt="3" sequence="18">
+I,,"ण":I,,"त":I,,"थ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="alt">
+<PATH id="(alt-1)" word_cnt="3" sequence="19">
+C,"ठ","ठ":C,"ढ","ढ":C,"ण","ण"
+</PATH>
+<PATH id="(alt-2)" word_cnt="4" sequence="20">
+C,"ठ","ठ":C,"ढ","ढ":I,,"न":C,"ण","ण"
+</PATH>
+<PATH id="(alt-3)" word_cnt="2" sequence="21">
+C,"ठ","ठ":C,"ण","ण"
+</PATH>
+<PATH id="(alt-4)" word_cnt="3" sequence="22">
+C,"ठ","ठ":C,"ढ","ढ":C,"ण","ण"
+</PATH>
+<PATH id="(alt-5)" word_cnt="3" sequence="23">
+C,"ठ","ठ":C,"ढ","ढ":C,"ण","ण"
+</PATH>
+<PATH id="(alt-6)" word_cnt="2" sequence="24">
+C,"ठ","ठ":C,"ण","ण"
+</PATH>
+<PATH id="(alt-7)" word_cnt="3" sequence="25">
+C,"ठ","ठ":C,"ण","ण":C,"त","त"
+</PATH>
+<PATH id="(alt-8)" word_cnt="3" sequence="26">
+C,"ठ","ठ":C,"ण","ण":C,"त","त"
+</PATH>
+<PATH id="(alt-9)" word_cnt="3" sequence="27">
+C,"ठ","ठ":D,"ण",:C,"ढ","ढ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od1">
+<PATH id="(od1-1)" word_cnt="3" sequence="28">
+C,"ड","ड":C,"(ढ)","":S,"ण","त"
+</PATH>
+<PATH id="(od1-2)" word_cnt="3" sequence="29">
+C,"ड","ड":C,"(ढ)","ढ":S,"ण","त"
+</PATH>
+<PATH id="(od1-3)" word_cnt="4" sequence="30">
+C,"ड","ड":C,"(ढ)","":C,"ण","ण":I,,"त"
+</PATH>
+<PATH id="(od1-4)" word_cnt="4" sequence="31">
+C,"ड","ड":C,"(ढ)","ढ":I,,"न":S,"ण","त"
+</PATH>
+<PATH id="(od1-5)" word_cnt="4" sequence="32">
+C,"ड","ड":I,,"ल":S,"(ढ)","न":S,"ण","त"
+</PATH>
+<PATH id="(od1-6)" word_cnt="3" sequence="33">
+D,"ड",:C,"(ढ)","":S,"ण","त"
+</PATH>
+<PATH id="(od1-7)" word_cnt="3" sequence="34">
+D,"ड",:C,"(ढ)","":S,"ण","थ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od2">
+<PATH id="(od2-1)" word_cnt="5" sequence="35">
+C,"(ठ)","":C,"(ढ)","":S,"ड","ल":S,"ण","ल":S,"त","ल"
+</PATH>
+<PATH id="(od2-2)" word_cnt="5" sequence="36">
+C,"(ठ)","":S,"ढ","ल":C,"(ड)","":S,"ण","ल":S,"त","ल"
+</PATH>
+<PATH id="(od2-3)" word_cnt="5" sequence="37">
+C,"(ठ)","":S,"ढ","ल":S,"ड","ल":C,"(ण)","":S,"त","ल"
+</PATH>
+<PATH id="(od2-4)" word_cnt="5" sequence="38">
+C,"(ठ)","":S,"ढ","ल":S,"ड","ल":S,"ण","ल":C,"(त)",""
+</PATH>
+<PATH id="(od2-5)" word_cnt="5" sequence="39">
+S,"ठ","ल":C,"(ढ)","":C,"(ड)","":S,"ण","ल":S,"त","ल"
+</PATH>
+<PATH id="(od2-6)" word_cnt="5" sequence="40">
+S,"ठ","ल":C,"(ढ)","":S,"ड","ल":C,"(ण)","":S,"त","ल"
+</PATH>
+<PATH id="(od2-7)" word_cnt="5" sequence="41">
+S,"ठ","ल":C,"(ढ)","":S,"ड","ल":S,"ण","ल":C,"(त)",""
+</PATH>
+<PATH id="(od2-8)" word_cnt="5" sequence="42">
+S,"ठ","ल":S,"ढ","ल":C,"(ड)","":C,"(ण)","":S,"त","ल"
+</PATH>
+<PATH id="(od2-9)" word_cnt="5" sequence="43">
+S,"ठ","ल":S,"ढ","ल":C,"(ड)","":S,"ण","ल":C,"(त)",""
+</PATH>
+<PATH id="(od2-10)" word_cnt="5" sequence="44">
+S,"ठ","ल":S,"ढ","ल":S,"ड","ल":C,"(ण)","":C,"(त)",""
+</PATH>
+</SPEAKER>
+<SPEAKER id="od3">
+<PATH id="(od3-1)" word_cnt="3" sequence="45">
+C,"ड","ड":C,"(ढ-)","":S,"ण","त"
+</PATH>
+<PATH id="(od3-2)" word_cnt="3" sequence="46">
+C,"ड","ड":C,"(ढ-)","ढ":S,"ण","त"
+</PATH>
+<PATH id="(od3-3)" word_cnt="4" sequence="47">
+C,"ड","ड":C,"(ढ-)","":C,"ण","ण":I,,"त"
+</PATH>
+<PATH id="(od3-4)" word_cnt="4" sequence="48">
+C,"ड","ड":C,"(ढ-)","ढ":I,,"न":S,"ण","त"
+</PATH>
+<PATH id="(od3-5)" word_cnt="4" sequence="49">
+C,"ड","ड":I,,"ल":S,"(ढ-)","न":S,"ण","त"
+</PATH>
+<PATH id="(od3-6)" word_cnt="3" sequence="50">
+D,"ड",:C,"(ढ-)","":S,"ण","त"
+</PATH>
+<PATH id="(od3-7)" word_cnt="3" sequence="51">
+D,"ड",:C,"(ढ-)","":S,"ण","थ"
+</PATH>
+<PATH id="(od3-8)" word_cnt="5" sequence="52">
+C,"ड","ड":C,"(ळतभ-)","ळतभ":C,"(ळधत)","ळधत":D,"ढठभ",:S,"ण","ठभण"
+</PATH>
+</SPEAKER>
+<SPEAKER id="tags">
+<PATH id="(tags-1)" word_cnt="6" sequence="53">
+C,"ठ","ठ":C,"ठठ\;a","ठठ\;a":C,"ड\;b\;b;hyp\;tag1;hyptag2","ड\;b\;b;hyp\;tag1;hyptag2":C,"ड;reftag1;","ड;hyptag1;":C,"ढ;;reftag2","ढ;;hyptag2":C,"ण;reftag1;reftag2","ण;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-2)" word_cnt="6" sequence="54">
+D,"ठ",:D,"ठठ\;a",:D,"ड\;b\;b;hyptag1;hyp\;tag2",:D,"ड;reftag1;",:D,"ढ;;reftag2",:D,"ण;reftag1;reftag2",
+</PATH>
+<PATH id="(tags-3)" word_cnt="6" sequence="55">
+I,,"ठ":I,,"ठठ\;a":I,,"ड\;b\;b;hyptag1;hyp\;tag2":I,,"ड;hyptag1;":I,,"ढ;;hyptag2":I,,"ण;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-4)" word_cnt="6" sequence="56">
+S,"ठ","z":C,"ठठ\;a","ठठ\;a":C,"ड\;b\;b;hyp\;tag1;hyptag2","ड\;b\;b;hyptag1;hyptag2":S,"ड;reftag1;","स;hyptag1;":S,"ढ;;reftag2","ष;;hyptag2":S,"ण;reftag1;reftag2","श;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-5)" word_cnt="6" sequence="57">
+S,"ठ","z":C,"ठठ\;a","ठठ\;a":C,"ड\;b\;b;hyp\;tag1;hyptag2","ड\;b\;b;hyptag1;hyptag2":S,"ड;reftag1;","स;hyptag1;":S,"ढ;;reftag2","ष;;hyptag2":S,"ण;reftag1;reftag2","श;hyptag1;hyptag2"
+</PATH>
+</SPEAKER>
+</SYSTEM>

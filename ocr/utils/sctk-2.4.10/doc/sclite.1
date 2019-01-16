@@ -1,0 +1,1498 @@
+.TH sclite 1 "" "" "" ""
+
+NAME
+sclite - score speech recognition system output
+.PP
+.PP
+
+
+NOTE: This manual page was created automatically from
+HTMl pages in the sclite/doc directory.  This manual page does not
+include output file examples.  The author suggests using a HTML browser
+for reading the sclite documentation.
+.PP
+SYNOPSIS
+sclite 
+\*L-r\*O reffile [ fmt ] 
+\*L-h\*O hypfile [ fmt [ title ] ] 
+\*LOPTIONS\*O
+.PP
+DESCRIPTION
+.PP
+The program \*Lsclite\*O is a tool
+for scoring and evaluating the output of speech recognition systems.
+Sclite is part of the \*LNIST SCTK\*O Scoring Tookit.
+The program compares the hypothesized text (HYP) output by the speech
+recognizer to the correct, or reference (REF) text.  After comparing
+REF to HYP, (a process called 
+\*Lalignment\*O),
+statistics are gathered during the \*Lscoring process\*O
+and a variety of 
+\*Lreports\*O can be produced to
+summarize the performance of the recognition system.
+
+THE ALIGNMENT PROCESS
+.PP
+The Alignment process consists of two steps: 1) selecting matching
+REF and HYP texts, and 2) performing an alignment of the reference 
+and hypothesis texts.   
+.PP
+Step 1: Selection of matching REF and HYP texts 
+.RS
+\*LSclite\*O
+accepts as input a wide variety of file formats.  The type of input
+formats define the algorithm for selecting matching REF and 
+HYP texts.  Currently sclite uses four algorithms:
+.RS
+.PP
+Utterance ID Matching: 
+.RS
+Input reference and hypothesis files in 
+"\*Ltrn\*O" transcript format can be
+aligned by either dynamic programming 
+(\*LDP\*O) or 
+\*LGNU's "diff"\*O.
+.PP
+ 
+When alignments are performed via DP, corresponding REF and HYP
+records with the same utterance id's are located in the REF and HYP
+files.  DP Alignment and scoring are then performed on each pair of
+records.  Only the utterance ID's present in the HYP file are aligned and
+scored.  This means the REF file may contain more utterance 
+records than the HYP.
+.PP
+  
+When "diff" is used for alignment, corresponding REF and HYP records
+with the same utterance id's are located in the REF and HYP files.
+Rather than execute "diff" for each pair of records, all matching REF
+and HYP pairs are re-formatted to be newline separated words and
+written to a temporary files.  Using the two temporary files, "diff"
+is then called to perform a global alignment.  The output of "diff" is
+re-chunking into REF/HYP records by applying the rule: include all
+words in the output stream up to and including the last word in the
+reference record.
+.PP
+  
+The reference file can contain extra transcripts, only needed
+transcripts are loaded.
+.RE
+.PP
+Word Time Mark Matching: 
+.RS
+When both the REF and HYP files are in the 
+"\*Lctm\*O" format,
+The first step in the alignment process is to segment both the
+reference and hypothesis word lists by locating common areas of
+silence, (i.e.  the absence of a word time mark).  Once completed, the
+resulting "segments" are aligned via dynamic programming and scored as
+usual.
+.PP
+By default, the DP alignment is performed using word-to-word distances
+measures of: 0, 3, 3, 4 for correct, insertions, deletions and
+substitutions respectively.
+.PP
+ 
+Optionally, the command line flag 
+'\*L-T\*O' forces the alignments to be
+performed using \*Ltime-mediated\*O alignments.
+.RE
+.PP
+Reference Segment Time Mark to Hypothesis Word Time Mark 
+.RS
+When the reference file format is "\*Lstm\*O"
+and the hypothesis file format is
+"\*Lctm\*O", sclite chops up the hypothesis file into regions matching
+the reference segments.  Currently, there a two methods of chopping
+the hypothesis file.  The method is dependent on the text alignment algorithm. 
+.PP
+When DP alignments are performed, the hypothesis file is segmented to
+match the reference segments by selecting the string of hypothesized
+words whose times occur before the end of each reference segment.  The
+midpoint time of a word is used to determine if the word falls within
+a segment.  DP alignments are then performed on the selected
+hypothesis words and the reference segment.
+.PP
+ 
+If the alignments are performed via "diff", pre-process the input
+reference and hypothesis texts, creating temporary reference and
+hypothesis files with one word per line.  Then use GNU's "diff"
+program to perform a global alignment on the word lists.  The output
+of "diff" is re-chunked into segments for scoring.  Alternate
+reference transcripts can not be used with "diff" alignments.
+.RE
+.PP
+Reference Segment Time Mark to Hypothesis Text file 
+.RS
+When the reference file format 
+"\*Lstm\*O" and the hypothesis file
+format "\*Ltxt\*O" are used as
+inputs, the same alignment and scoring algorithm is used as describe
+above under the label "Reference Segment Time Mark to Hypothesis Word
+Time Mark" by GNU diff alignments.
+.RE
+.RE
+.RE
+.PP
+Step 2: Text Alignments 
+.RS
+\*LSclite\*O
+can use either of two algorithms for finding alignments
+between reference and hypothesis word strings.  The first, and most
+widely accepted, uses dynamic programming (DP) and the second uses
+GNU's "diff", a FSF (Free Software Foundation) program for comparing
+text files.
+.PP
+Dynamic Programming string alignment:
+.RS
+.PP
+The DP string alignment algorithm performs a global minimization of a
+Levenshtein distance function which weights the cost of correct words,
+insertions, deletions and substitutions as 0, 3, 3 and 4 respectively.
+The computational complexity of DP is 0(NN).
+.PP
+When evaluating the output of speech recognition systems, the
+precision of generated statistics is directly correlated to the
+reference text accuracy.  But uttered words can be coarticulated or
+mumbled to where they have ambiguous transcriptions, (e.i., "what are"
+or "what're").  In order to more accurately represent ambiguous
+transcriptions, and not penalize recognition systems, the ARPA
+community agreed upon a format for specifying alternative reference
+transcriptions.  The convention, when used on the case above, allows
+the recognition system to output either transcripts, "what are" or
+"what're", and still be correct.
+.PP
+The case above handles ambiguously spoken words which are loud enough
+for the transcriber to think something should be recognized.  For
+mumbled or quietly spoken words, the ARPA community agreed to neither
+penalize systems which correctly recognized the word, nor penalize
+systems which did not.  To accommodate this, a NULL word, "@", can be
+added to an alternative reference transcript.  For example, "the" is
+often spoken quickly with little acoustic evidence.  If "the" and "@"
+are alternates, the recognition system will be given credit for
+outputting "the" but not penalized if it does not.
+.PP
+The presence of alternate transcriptions represents added
+computational complexity to the DP algorithm.  Rather than align all
+alternate reference texts to the hypothesis text, then choose the
+lowest error rate alignment, this implementation of DP aligns two word
+networks, thus reducing the computational complexity from 2^(ref_alts +
+hyp_alts) * O(N_ref * N_hyp) to O((N_ref+ref_alts) *
+(N_hyp+hyp_alts)).
+.PP
+.RS
+For a detailed explanation of DP alignment, see TIME WARPS, STRING
+EDITS, AND MACROMOLECULES: THE THEORY AND PRACTICE OF SEQUENCE
+COMPARISON, by Sankoff and Kruskal, ISBN 0-201-07809-0.
+.RE
+.PP
+As noted above, DP alignment minimizes a distance function that is applied
+to word pairs.  In addition to the "word" alignments which uses
+a distance function defined by static weights, the sclite DP alignment module can
+use two other distance functions.  The first, called \*L Time-Mediated\*O alignment
+and the second called \*L Word-Weight-Mediated\*O alignment.
+.PP
+\*LTime-Mediated Alignment\*O
+.RS
+Time-Mediated alignment is a variation of DP alignment where
+word-to-word distances are based on the time of occurence for
+individual words.  Time-mediated alignments are performed when the '<A
+href="options.htm#option_T_name_0">-T' option is exercised and the
+input formats for both the reference and hypothesis files are in "<A
+href="infmts.htm#ctm_fmt_name_0">ctm" format.
+.PP
+Time-mediated alignments are computed by replacing the
+standard word-to-word distance weights of 0, 3, 3, and 4 with measures
+based on beginning and ending word times.  The formulas for
+time-mediated word-to-word distances are:
+.PP
+.RS
+D(correct) = | T1(ref) - T1(hyp) | + | T2(ref) - T2(hyp) |
+.br
+D(insertion)  = T2(hyp) - T1(hyp)
+.br
+D(deletion)  = T2(ref) - T1(ref)
+.br
+D(substitution) = | T1(ref) - T1(hyp) | + | T2(ref) - T2(hyp) | + 0.001
+.br
+Distance for an Insertion or Deletion of the NULL Token '@' = 0.001
+.PP
+Where,
+.RS
+T1(x) is the beginning time mark of word x 
+.br
+
+T2(x) is the ending time mark of word x
+.RE
+.RE
+.PP
+.RE
+\*LWord-Weight-Mediated Alignment\*O
+.RS
+Word-weight-mediated alignment is a variation of DP alignments where word-to-word distances 
+are based on pre-defined word-weights.  Each word has a unique weight assigned
+to it, via either a word-weight-list file, using the <A
+href="options.htm#option_w_name_0">-w option, or through a
+language model file, using the \*L
+-L option.
+The formulas for word-weight-mediated word-to-word distances are:
+.PP
+.RS
+D(correct) = 0.0
+.br
+D(insertion)  = W(hyp)
+.br
+D(deletion)  = W(ref)
+.br
+D(substitution) = W(hyp) + W(ref)
+.br
+Distance for and Insertion or Deletion of the NULL Token '@' = 0.001
+.PP
+.RS
+Where W(x) is the weight assigned to word 'x'.
+.RE
+.RE
+.RE
+.RE
+.PP
+String alignments via GNU's "diff":
+.RS
+.PP
+While the DP algorithm has the advantage of flexibility, it is slow
+for aligning large chunks of text.  To address the speed concerns, an
+alternative string alignment module, which utilizes GNU's "diff", has
+been added to sclite.  The sclite program pre-processes the input
+reference and hypothesis texts, creating temporary reference and
+hypothesis files with one word per line.  Then GNU's "diff" program is
+used to perform a global alignment on the word lists and the output is
+re-chunked into utterances or text segments for scoring.
+.PP
+Alignments can be performed with "diff" in about half the time taken
+for DP alignments on the standard 300 Utterance ARPA CSRNAB test set.
+However, in the opinion of the author, "diff" has the following bad
+effects:
+.RS
+.PP
+1. it can not accommodate transcription alternations,
+.PP
+2. "diff" does not produce the same alignments as the DP alignments,
+.PP
+3. there is an increase measured error rates.
+.RE
+.RE
+.RE
+THE SCORING PROCESS 
+.RS
+After reference and hypothesis texts have been aligned, scores are
+tallied for each speaker and each ref/hyp pair.  After the tallies
+are made, a variety if output reports are generated by using the 
+'\*L-o\*O' option.  
+Here is a set of \*Lexamples\*O.
+.PP
+The categories tallied are: 
+Percent of correct words 
+= 
+# Correct words  * 100
+Percent of substituted words
+= 
+# Substituted words  * 100
+Percent of inserted words 
+= 
+# Inserted words  * 100
+Percent of deleted words 
+= 
+# Deleted words  * 100
+Percent of sentence errors 
+= 
+# incorrect ref and hyp pairs  * 100
+.PP
+ A variation in scoring called  \*L
+Weighted-Word Scoring \*O  can also be implemented by sclite.
+After \*L Word-Weight-Mediated
+Alignment, the word weights can be tallied to produce
+weighted-word scores.  The formulas for weighted-word scoring are very
+simliar to word scoring described above.  The difference is rather than
+assume each word has the same weight, 1 in the case of word scoring, 
+each individual word has a different weight.  The word scoring formulas become:
+Weighted Percent of correct words
+= 
+Sum of W(hyp) if correct  * 100
+Weighted Percent of substituted words
+= 
+Sum of W(hyp) + W(ref) if substituted  * 100
+Weighted Percent of inserted words 
+= 
+Sum of W(hyp) if inserted  * 100
+Weighted Percent of deleted words 
+= 
+Sum of W(ref) if deleted  * 100
+.RS
+W(hyp) is the weight assigned to a hypothesis word, and W(ref) is the weight
+assigned to a reference word.  Optionally deletable words have the default
+weight of 0.0.
+.RE
+.RE
+
+WORD CONFIDENCE MEASURE EVALUATION
+.RS
+Confidence scores for each hypothesized word were requested of the
+LVCSR (Large Vocabulary Speech Recognition) participants beginning
+with the April 1996 evaluation.  Each site was asked to do its analysis
+of these scores which were not processed by NIST.  A review meeting
+was held at NIST in August 1996 which resulted in a decision to apply
+an agreed upon standard metric.
+.PP
+Confidence scores as they have been implemented are associated with
+each hypothesized word.  (The issue has been raised whether for
+languages such as Mandarin, where character error rate is considered
+the primary measure of performance, the confidence ought to be
+associated with characters.)  The confidence score pc,
+associated with a word must be in the closed interval [0,1] and
+presumably, given the entropy related metric defined below, in the
+open interval (0,1).  It should represent the system's best estimate
+of the a posterior probability that the hypothesized word is
+correct. (Correct here necessarily is with respect to an alignment
+procedure of the reference and hypothesis word strings.)
+.PP
+A single metric to use in the evaluartion of confidence scores was
+adopted at the August meeting.  This is a normalized version of the
+cross entropy or mutual information.  Specifically, the metric is
+defined as:
+.PP
+.PP
+Sclite will automatically detect the presence of confidence measures 
+when reading in a hypothesis "\*Lctm\*O"
+file.  When sclite detects the confidence scores, the report genererated
+by the options "\*L-o sum\*O" has 
+an additional column containing the Normalized Cross Entropy (NCE).
+.PP
+Output graphs concerning confidence estimates are generated by using the 
+'\*L-C\*O'
+option.  A variety of graphs can be created:
+.AL
+.LI
+ DET Curve \*L Example \*O
+.LI
+ Binned Histogram\*L Example \*O
+.LI
+ Word Confidence Score Histogram
+\*L Example \*O
+.LE
+.RE
+REVISION HISTORY 
+.RS
+See \*Lrevision.txt\*O in
+the main directory of the sclite source code directory
+package.  
+.RE
+EXAMPLE USES OF \*LSCLITE\*O 
+.RS
+The \*Lsclite\*O scoring utility was
+written to be used as a standard scoring tool for the ARPA speech
+recognition benchmark tests.  Since evaluation paradigms have changed 
+over the past several years, file formats and scoring proceedures have
+changed as well.  This utility supports the following speech recognition
+benchmark tests:
+.RS
+Utterance based evaluations:
+.RS
+Resource Management
+
+.br
+
+ATIS (Airline Travel Information Systems): 
+.RE
+Found speech evaluations:
+.RS
+Hub 4 - Marketplace and Broadcast News
+
+.br
+
+Hub 5 - LVCSR Switchboard 
+.RE
+.RE
+.RE
+BUGS/COMMENTS 
+.RS
+Please contact Jon Fiscus at NIST with any bug reports or comments at
+the email address 
+\*Ljonathan.fiscus@nist.gov \*O or
+by phone, (301)-975-3182.  Please include the version number of rover,
+.RE
+.RE
+.\"  $Id: sclite.1,v 1.7 2013/04/29 20:58:48 jfiscus Exp $ 
+
+\*LSclite\*O Commandline Options
+.PP
+The commandline options for \*Lsclite\*O
+can be broken into four categories:
+.LI
+\*L Input File Options: \*O
+.RS
+\*L-e\*O,
+\*L-h\*O,
+\*L-i\*O,
+\*L-P\*O,
+\*L-r\*O,
+\*L-R\*O
+.RE
+.LI
+\*L Alignment Options: \*O
+.RS
+\*L-c\*O,
+\*L-d\*O,
+\*L-F\*O,
+\*L-L\*O
+\*L-m\*O,
+\*L-s\*O,
+\*L-S\*O,
+\*L-T\*O
+\*L-w\*O
+.RE
+.LI
+\*L Output Options: \*O
+.RS
+\*L-f\*O,
+\*L-l\*O,
+\*L-O\*O,
+\*L-p\*O
+.RE
+.LI
+\*L Scoring Report Options: \*O
+.RS
+\*L-C\*O,
+\*L-n\*O,
+\*L-o\*O
+.RE
+.LE
+.PP
+Input File Options: 
+.RS
+These options control/define the input to 
+\*Lsclite\*O.  Input can come from either
+reference and hypothesis files, or piped input from previously aligned REF and
+HYP files.
+.br
+.br
+-e  gb|euc	
+.RS
+Define the character encoding used for the text portion
+input  ref  and hyp files.  The flag "gb" stands for GB
+encoded  Chinese  and  "euc"  stands  for  EUC  encoded
+Japanese.   Both  encodings  are  2-byte  per character
+encodings.  The default, is extended ASCII.
+
+.RE
+ 
+.br
+
+-h
+hypfile [  
+\*Ltrn\*O |
+\*Ltxt\*O |
+\*Lctm\*O ] title
+.RS
+The '-h' option is a required argument which  specifies
+the   input   hypothesis  file.   The  optional format field,
+"[  \*Ltrn\*O |
+\*Ltxt\*O |
+\*Lctm\*O] "
+specifies the input file format from  the  set
+of  input  formats  described above.  The default input
+format is "\*Ltrn\*O".  When reports are generated, the "hypfile"  name will be used to identify the origins of the
+results.  If the "title" option is  used,  that  string
+will be used instead.
+.PP
+ The -h option may be used more than once to align multiple files.
+
+.RE
+ 
+.br
+
+-i [ wsj | atis | rm | swb | spu_id ] 
+.RS
+The '-i' option defines how to interpret the  utterance
+id's  used in the transcription input file format "\*Ltrn\*O"
+described above. This argument identifies the corpus of
+the utterance id:
+
+.br
+
+
+.br
+
+.VL 4m
+
+.LI "wsj -
+for Wall Street Journal and CSRNAB
+.LI "atis -
+for ATIS3
+.LI "rm | swb | spu_id -
+are synonyms which refer to generic  utterance  id
+formats  whereby  the utterance id is made up of a
+speaker code, followed by a hyphen or  underscore,
+followed by an utterance number.
+.LE
+.PP
+
+This option is only required  for  aligning  transcript
+inputs (\*Ltrn\*O).
+TBD 
+
+.RE
+ 
+.br
+
+-P
+.RS
+Alignments are read from 'stdin' as  input  to  sclite.
+The  format  of  the input must be in the "sgml" output
+format, created either by '-o sgml' or by  piped  input
+from another sclite utility.  No re-alignments are performed on the read in alignments, only scoring  reports
+can be generated.
+
+.RE
+ 
+.br
+
+-r reffile [
+\*Ltrn\*O |
+\*Lstm\*O |
+\*Lctm\*O ]
+.RS
+The '-r' option, a  required  argument,  specifies  the
+input  reference  file which the hypothesis file(s) are
+compared to.  The optional format field
+"[  \*Ltrn\*O |
+\*Lstm\*O |
+\*Lctm\*O ] "
+field specifies the
+input  file  format  from  the  set  of  input  formats
+described above.  The default input format is "\*Ltrn\*O".
+
+.RE
+ 
+.br
+
+-R	
+.RS
+Interpret the text symbols as a right-to-left language such as
+Arabic.  The default is to interpret text in a left-to-right fashion
+as in English.
+
+.RE
+ 
+.br
+
+.RE
+Alignment Options: 
+.RS
+-c [ NOASCII DH ]
+.RS
+Chop up the words into separate characters before doing
+the alignment.  It is generally not the practice of the
+ARPA community to score at the  character  level.   The
+intent  of  this option is to be able to score Mandarin
+Chinese at the character level.  The  option  "NOASCII"
+does  not  separate  characters if they are ASCII.  The
+option "DH"  deletes  hyphens  from  the  ref  and  hyp
+strings before alignment.  This option only works using
+the DP alignment algorithm.  (-c & -d are exclusive)
+
+.RE
+ 
+.br
+
+-d
+.RS
+Use \*LGNU diff\*O
+for alignments  rather  than  the  default
+dynamic programming.  (-c & -d are exclusive)
+
+.RE
+ 
+.br
+
+-F
+.RS
+Perform the  alignment  using  a  cost  function  which
+counts  fragments,  words  ending  or  beginning with a
+hyphen, as correct if the spelling  up  to  the  hyphen
+matches the spelling of the hypothesized word.
+Options -F and -d are exclusive.
+
+.RE
+ 
+.br
+
+-L LM
+.RS
+Define the \*L
+CMU-Cambridge Statistical Language Modeling Toolkit v2 language
+mode file to be 'LM'.  The LM file must be created using the
+\*Lidngram2lm\*O program.
+(See the toolkit documentation details of how
+to make the language model.)  Currently, SCTK supports 1, 2 and 3-grams.
+.PP
+ The language model is used to compute an individual weight for each
+word in the reference and hypothesis strings.  The weight is defined
+to be \*WLog2(P(word|context))\*O.  Each pair of aligned
+strings is considered to be independent, so therefore, there is
+no context for initial words in each pair.
+.PP
+The word-weights are used in two ways, first as a method to define word-to-word distances
+for \*L word-weight-mediated alignment \*O
+and second to perform \*L 
+weighted word scoring .
+.PP
+ Out-of-Vocabulary words get the default weight of 20.0, and optionally
+deletable words get a default weight of 0.0.
+
+.RE
+ 
+.br
+
+-m [ ref | hyp ]
+.RS
+When scoring a hypothesis ctm file against a  reference
+stm  file,  the  time  spans  of the two may not match,
+(i.e. the start time of the first word/segment may  not
+match  or the end time of the last word/segment may not
+match).
+.PP
+
+When this option is used, the alignment phase of  scoring
+ignores  any  segment  or  word  (depending on the
+option(s) used) which is not in the time  span  of  the
+opposite  file.   The time span of a file is defined to
+be start time of the first time mark, to the  end  time
+of the last time mark.
+.PP
+
+The "ref" option  reduces  the  reference  segments  to
+those which are within the hypothesis file time span.
+.PP
+
+The "hyp" option reduces the hypothesis words to  those
+which are within the reference file tiem span.
+.PP
+
+Both "ref" and "hyp" may be used simultaneously.
+.PP
+
+The  argument  -m  by  itself  defaults  to  '-m  ref'.
+Exclusive with -d.
+
+.RE
+ 
+.br
+ 
+-s
+.RS
+Do Case-sensitive alignments.  Otherwise all input is mapped to 
+a single case before scoring.  Of course, GB and UEX encode text
+data is never case-converted.
+
+.RE
+ 
+.br
+
+-S algo1 lexicon [ ASCIITOO ] 
+.RS
+The '-S' option performs an inferred word  segmentation
+alignment algorithm.  This  option
+is intended to be used for the LVCSR evaluation of Mandarin
+Chinese.  A problem with scoring Mandarin at  the
+word level is the lack of clearly defined words in Mandari
+text.  This option implements an algorithm which,
+given  a word segmentation for the reference string and
+a "lexicon" of legal words, computes  a  minimal  error
+rate word alignment.  The algorithm is as follows:
+
+.br
+ 
+.LI
+  Convert  the  previously  word-segmented  reference
+string into a word network.
+.LI
+ Covert the hypothesis text to a string  of  characters,
+each  character  representing  a word.  The data
+represented is then convert to a network.
+\*C
+.DS
+ex.    * --- A --- * --- T --- * --- 0 --- *
+.DE
+\*O
+.LI
+ Consider all possible sequences of letters  through
+the  network.   If  a  sequence creates a word which is
+represented in the lexicon, add an arc to  the  network
+representing the word.  The maximum characters per word
+is limited to the maximum word length in the lexicon.
+\*C
+.DS
+                     ,-------- TO -------.
+                    /                     \
+ex.    * --- A --- * --- T --- * --- 0 --- *
+        \                     /
+         `------- AT --------'
+.DE
+\*O
+.LI
+ DP Align the reference and hypothesis networks, and
+extract a minimal cost path.
+.LE
+.PP
+
+The supplied "lexicon" must be a sorted  list  of  word
+records,  each  separated by a newline.  Only the first
+column, separated by whitespace, is read  in  and  used
+for  the  lexicon.   By  default,  the  algorithm  only
+separates hypothesis characters  that  are  GB  or  EUC
+encoded.   If  the  option  "ASCIITOO"  is  used, ASCII
+hypothesis words are also converted  to  characters  in
+step 2.
+.PP
+Exclusive with -d.	  
+
+.RE
+
+.br
+
+-S algo2 lexicon [ ASCIITOO ] 
+.RS
+Perform a similar algorithm as described in '-S alog1' except
+the roles of the reference and hypothesis transcripts are reversed.
+In this algorithm, the segmentation of the hypothesis text is held
+constant, while the reference transcript undergoes the process of 
+of coversion to characters and arcs added to the network for words
+found in the lexicon.  Both "lexicon" and "ASCIITOO" have the same
+usage as in algo1.  
+.PP
+Exclusive with -d.	  
+
+.RE
+ 
+.br
+
+-T
+.RS
+The '-T' option performs  time-mediated  string  alignments  rather  than  the  traditional  word alignments.
+Currently, only alignments involving  two  "ctm"  files
+can be aligned in this manner.  The \*L main SCLITE\*O
+page describes time-mediated alignments.
+.PP
+
+Options -F and -d are exlcusive.
+
+.RE
+ 
+.br
+
+-w wwl_file
+.RS
+Define the word-weight list (WWL) file to be 'wwl_file'.  The WWL file 
+defines an arbitrary weight for each word in the lexicon.  The weights are
+used in two ways, first as a method to define word-to-word distances
+for \*L word-weight-mediated alignment \*O
+and second to perform \*L 
+weighted word scoring .
+.PP
+ If the supplied WWL filename is "unity", then no file of weights is read in.
+Instead, this is  a shorthand notation to use a weight of 1.0 for all words.
+.PP
+ Optionally deletable words get a default weight of 0.0, (even if "unity"
+is supplied as the WWL filename).
+.PP
+ The format of the WWL file is as follows. 
+.br
+
+.RS
+Comment lines begin with
+double semi-colons.  The are two forms of "special" comment lines.  The
+first defines heading labels each column in the table.  The format for this
+line is: 
+.br
+ 
+
+.RS
+ ;; 'Headings' '<COL1>' '<COL2>' '<COL3>' .... 
+.RE
+ 
+.br
+
+The label for column 1 should be "Word Spelling" since this column is the
+word's text.  The labels for columns 2 though 10 are defined by the user.
+.PP
+
+The second "special" comment line defines the default weight applied to
+out-of-vocabulary words if any exist.  The format for this line is:  
+.br
+ 
+
+.RS
+ ;; Default missing weight '<number>' 
+.RE
+ 
+.br
+
+'number' must be a floating point number. 
+.PP
+ 
+The remainder of the file consists of word records, each word record separated by
+a newline.  The format of each record is: 
+.br
+ 
+
+.RS
+ <WORD_TEXT> <WEIGHT_1> <WEIGHT_2> . . . 
+.RE
+ 
+.br
+
+There should be no whitespace at the beginning if the line, and the word
+texts can not include whitespace.  The remainder of the line are whitespace
+separated floating point weights, up to a maximum of 10 weights can 
+be assigned per word.
+.PP
+
+\*LNOTE: The current version of SCTK only utilizes the first weight.\*O
+
+.RE
+	
+
+.RE
+ 
+.br
+
+.RE
+Output Options: 
+.RS
+-f level
+.RS
+As a well behaved program, reassure the user  that  the
+program is continuing to perform it's task by providing
+the user with  some  feedback.   The  feedback  levels,
+defined by this option are: 0) no feedback, 1) processing feedback (i.e.  status of text loading  and  alignments);   2)  processing  feedback  plus  printing  out
+aligned strings.  The feedback level defaults to  0  if
+no  output options are specified using the '-o' option,
+otherwise it defaults to 1.
+.RE
+.br
+-l width
+.RS
+When printing the text alignments for the output option
+"pralign"   wrap   the  lines  at  "width"  characters.
+Default is 1000 characters.
+.RE
+.br
+-O output_dir
+.RS
+Instead of writing the output files  to  the  directory
+containing the hyp file, write the files into the directory
+"output_dir".  If the output directory does not  exist,
+all reports will be written to stdout.
+.RE
+.br
+-p
+.RS
+Write to standard out the resulting alignments so  they
+can  be piped to another sclite utility.  The format of
+the output is the same as '-o sgml'.  The options  sets
+the feedback level, with '-f' to 0.
+.RE
+.RE
+Scoring Report Options: 
+.RS
+-C [ det | bhist | hist | none ] 
+.RS
+Defines the output formats for analysis of confidence scores.
+Currently, the only way to assign confidence estimates to 
+each hyp word is through the \*Lctm\*O hypothesis file.
+Default: 'none'  
+\*L Examples. \*O
+.RE
+.br
+-n name
+.RS
+Writes all outputs using 'name' as a root filename instead of
+'hypfile'.  For multiple hypothesis files, the root filename
+is 'name'.'hypfile'
+.RE
+.br
+-o [ sum | rsum | wws | pralign | all | sgml | stdout | lur | snt | spk | dtl | prf | none ]
+.RS
+Defines the output scoring  reports  generated  by  the
+sclite.  The possible reports are:
+
+.br
+
+
+.br
+
+.VL 4m
+
+.LI " sum -
+Produce a summary of speaker performance in  terms
+of  Percents:  Correct,  Substitutions, Deletions,
+Insertions, Word Errors and  Sentence  (or  Utterance)  errors.  System averages and speaker means,
+medians and standard deviations are  computed  for
+each  percentage.   If  the report is not going to
+stdout, the output is  placed  in  a  file  called
+"<hypfile>.sys".   The  options  '-O'  and  '-n' can
+change the destination of the output file.
+\*LExample\*O
+
+.LI " rsum -
+Produce a summary similar to 'sum'  except  output
+word counts instead of percentages.  If the report
+is not going to stdout, the output is placed in  a
+file  called  .raw.  The options '-O' and
+'-n' can change  the  destination  of  the  output
+file.
+\*LExample\*O
+
+.LI " wws -
+Produce a summary similar to 'sum'  except  output
+\*Lweighted word error\*O instead of word error.  If the report
+is not going to stdout, the output is placed in  a
+file  called  .wws.  The options '-O' and
+'-n' can change  the  destination  of  the  output
+file.
+\*LExample\*O
+
+.LI " pralign  - 
+.br
+
+pra  -
+Produce a text copy of all the string  alignments.
+If  the  report is not going to stdout, the output
+is placed in a  file  called  .pra.   The
+options  '-O'  and '-n' can change the destination
+of the output file.  "pralign" and "pra" are synonyms.
+\*LExample\*O
+
+.LI " prf  -
+Produce a text copy of all the string  alignments similar
+to that produced by "pralign" except, include all relevant
+information concerning the alignments.  That is, include
+in the output things like: word beginning and ending times,
+reference 
+segment beginning and ending times, and hypothesis word 
+confidence scores.
+\*LExample\*O
+
+.LI " all -
+Produces  the  three   reports:   
+"\*Lsum\*O",
+"\*Lrsum\*O", and
+\*Lpralign\*O"
+
+.LI " stdout -
+Write all selected scoring reports to stdout.   If
+the feedback level is not specified using the '-f'
+option, the feedback level is set to 0.
+
+.LI " sgml -
+Produce a dump of the text alignments in  an  sgml
+notation.  The output consists of tags at the system, speaker, and sentence level.   Text  information  is  only  present  at the sentence level and
+consists a comma separated  list  of  word  alignments.   The  word alignments can be either of the
+following: C:"word" or  I:"word"  or  D:"word"  or
+S:"word1","word2" for correct, insertion, deletion
+and substitution respectively.  If the  report  is
+not  going  to  stdout,  the output is placed in a
+file called .sgml.  The options '-O'  and
+'-n'  can  change  the  destination  of the output
+file.
+\*LExample\*O
+
+.LI " lur -
+Produce a Labeled  Utterance  Report  (LUR)  based
+information in the reference STM file. (Note: only
+reference  files  in  STM  format   support   this
+option.)   The  LUR report is a report which tabulates overall error rate statistics and statistics
+over arbitrary subsets of the reference data, e.g.
+speaker's  sex,  audio  characteristics.   If  the
+report  is  not  going  to  stdout,  the output is
+placed  in  a  file  called  .lur.    The
+options  '-O'  and '-n' can change the destination
+of the output file.
+\*LExample\*O
+
+.LI " snt -
+Produce   a   scoring   report   file   for    all
+utterance/segments  of  a  speaker.   Within  each
+file, one per speaker,  is  a  by-utterance  error
+analysis  which  contains: the aligned text, error
+classification percentages and  other  statistics.
+If  the  report is not going to stdout, the output
+is     placed      in      a      file      called
+.   The options '-O' and
+'-n' can change the destination and  name  of  the
+output file.	 
+\*LExample\*O
+
+.LI " spk -
+Produce a  scoring  report  file  summarizing  the
+errors  made  on the speaker's utterances.  Within
+each file, one per speaker id, is a  summarization
+of  utterance and word errors along with confusion
+pair,  insertion,   deletion,   substitution   and
+falsely recognized word lists.
+If the report is not going to stdout, the output
+is      placed      in      a      file     called
+.  The options '-O'  and
+'-n'  can  change  the destination and name of the
+output file.
+\*LExample\*O
+
+.LI " dtl -
+Produce a scoring report in the same format as the
+"spk"  report  using  statistics gathered over the
+entire test set.  If the report is  not  going  to
+stdout,  the  output  is  placed  in a file called
+.dtl.  The  options  -'O'  and  '-n'  can
+change  the  destination  and  name  of the output
+file.
+\*LExample\*O
+
+.LI " none -
+Produce no output reports.
+.LE
+.PP
+
+If this option is not specified,  the  default  options
+are  "sum"  and  "stdout".   If the user wishes to have
+reports other than "sum" to be written to stdout,  then
+the  "stdout"  flag  must be used in the argument list.
+Options that are duplicated, have the effect of nullification.   So  for  instance  using  the  options  "all
+pralign" is equivalent to "sum rsum".
+Defines the output reports. Default: 'sum stdout'
+.RE
+.br
+.RS
+.\"  $Id: sclite.1,v 1.7 2013/04/29 20:58:48 jfiscus Exp $ 
+
+\*LSclite\*O Input file formats: 
+\*Ltrn\*O,
+\*Ltxt\*O,
+\*Lstm\*O,
+\*Lctm\*O
+The inputs to "\*Lsclite\*O" are the
+reference file and a hypothesis file(s), the text portions of which
+may be either ASCII characters or GB encoded Chinese characters.
+There are a number of different input formats permitted: 
+"\*Ltrn\*O",
+"\*Ltxt\*O",
+"\*Lstm\*O", and
+"\*Lctm\*O".
+As new scoring paradigms were created for the ARPA
+tests, accompanying formats were created to support the evaluations.
+.PP
+trn - Definition of a transcript input file 
+.RS
+.PP
+The transcript  format  is  a  file  of  word  sequence
+records  separated by newlines.  Each record contains a
+word sequence, follow by the an utterance  ID  enclosed
+in  parenthesis.   See  the  '\*L-i\*O'  option for a list of
+accepted utterance id types.
+.PP
+example.
+.RS
+she had your dark suit in greasy  wash  water  all
+year (cmh_sa01)
+.RE
+.PP
+Transcript alternations, described above, can  be  used
+in the word sequence by using this BNF format:
+.PP
+.RS
+ALTERNATE :== "{" TEXT ALT+ "}"
+
+.br
+ 
+ALT       :== "/" TEXT
+.br
+TEXT      :== 1 or more whitespace separated words |
+"@" | ALTERNATE
+.RE
+.PP
+The "@" represents a  NULL  word  in  the  transcript.   For
+scoring  purposes,  an  error  is  not counted if the "@" is
+aligned as an insertion.
+.PP
+example
+.RS
+i've { um / uh / @ } as far as i'm concerned
+.RE
+.RE
+.PP
+txt - Definition of a text input file 
+.RS
+This format is simply  free-form  text  with  no  page,
+paragraphs, sentence or speaker breaks.
+.RE
+stm - Definition of segment time mark input file 
+.RS
+.PP
+This describes the segment time marked files to be used  for
+scoring  the  output  of  speech  recognizers  via  the NIST
+sclite() program.  This is a reference file format.
+.PP
+The segment time mark file consists of  a  concatenation  of
+text  segment  records from a waveform file.  Each record is
+separated by a newline and contains: the waveform's filename
+and  channel  identifier  [A | B], the talkers id, begin and
+end times (in seconds), optional subset label and  the  text
+for the segment.  Each record follows this BNF format:
+.PP
+STM :== <F> <C> <S> <BT> <ET> [ <LABEL> ] transcript . . .
+.RS
+Where :
+.RS
+<F>
+.RS
+The waveform  filename.   NOTE:  no  pathnames  or
+extensions are expected.
+.RE
+<C>
+.RS
+The waveform channel.   The text of the waveform channel
+is not restricted by sclite.  The text can be any text string without
+witespace so long as the matching string is found in both the reference
+and hypothesis input files.
+.RE
+<S>
+.RS
+The speaker id,  no  restrictions  apply  to  this
+name.
+.RE
+<BT>
+.RS
+The begin time (seconds) of the segment.
+.RE
+<ET>
+.RS
+The end time (seconds) of the segment.
+.RE
+<LABEL>
+.RS
+A  comma  separated  list  of  subset  identifiers
+enclosed  in angle brackets.  Ex. "<O,F,00>".  See
+"USING STM FORMAT FOR  LABELED  UTTERANCE  REPORTS
+(LUR)" below.
+.RE
+transcript
+.RS
+The transcript can take on two forms: 1) a whitespace separated list of
+words, or 2) the string "IGNORE_TIME_SEGMENT_IN_SCORING".
+.PP
+The list of
+words can contain an transcript alternation using the following
+BNF format:
+.PP
+.RS
+ALTERNATE :== "{" <text> ALT+ "}"
+
+.br
+
+ALT       :== "/" <text>
+
+.br
+
+TEXT      :== 1 thru n words | "@" | ALTERNATE
+.RE
+.PP
+The "@" represents a NULL word in the transcript.  For scoring
+purposes, an error is not counted if the "@" is aligned as an
+insertion.  
+.PP
+.RS
+Example:     "i've { um / uh / @ } as far  as i'm concerned"
+.RE
+.PP
+When the string "IGNORE_TIME_SEGMENT_IN_SCORING" is used as the transcript,
+the process which chops the hypothesis file to matching reference segments
+ignores all hypothesis words whose time-midpoints occur within the reference
+segments beginning
+and ending time.  The effect is to declare this segments regions as 
+"out-of-bounds" for scoring, thus generation no errors from that time 
+region. 
+.PP
+.RS
+NOTE: this only works with DP alignment of a referenc stm file
+and hypothesis ctm file.
+.RE
+.PP
+.RE
+.RE
+Example STM file:
+.RS
+;; comment
+
+.br
+
+2345 A 2345-a 0.10 2.03 uh huh yes i thought
+
+.br
+
+2345 A 2345-b 2.10 3.04 dog walking is a very
+
+.br
+
+2345 A 2345-a 3.50 4.59 yes but it's worth it
+.RE
+.PP
+The file must be sorted by the first and second  columns  in
+ASCII order, and the fourth in numeric order.  The UNIX sort
+command:  "sort +0 -1 +1 -2 +3nb -4"  will  sort  the  words
+into appropriate order.
+.PP
+Lines beginning with ';;' are considered  comments  and  are
+ignored.  Blank lines are also ignored.
+.PP
+.RE
+USING STM FORMAT FOR LABELED UTTERANCE REPORTS (LUR):
+.RS
+Motivation:
+.RS
+For the Fall '95 ARPA CSR Evaluation, it was  desirable
+to  not  only  report overall error-rate statistics but
+also error-rate  statistics  for  arbitrary  partitions
+and/or  groups  of  partitions within the test set.  To
+this end, the STM file format was  extended  to  encode
+arbitrary subset information for each segment.
+.RE
+Usage:
+.RS
+The subset information is encoded by adding  two  types
+of  information  into the STM file.  The first information
+type, is a special comment line, the subset information line, (SIL).
+The SIL defines the subset's label
+id, a short column heading and a description.  The special
+comment line format is:
+.RS
+;; LABEL "<ID>" "<COL_HD>" "<DESC>"
+.RS
+where:
+.RS
+<ID>
+.RS
+The subset id.  Used to  label  each  segment
+that  belongs  to  the subset.  The format is
+arbitrary, but without spaces.
+.RE
+<COL_HD> 
+.RS
+Used as column headings in generated reports.
+Format is arbitrary.
+.RE
+<DESC> 
+.RS
+Used for  subset  descriptions  in  generated
+reports.  May be of arbitrary length and for-
+mat.  Double  backslashes  '\\'  add  a  line
+feed.
+.RE
+.RE
+.RE
+The order of the SIL lines in the STM file defines  the
+order of subset presentation the generated reports.
+The second type of information  incorporated  into  the
+STM file is an optional sixth field to the text segment
+record.  The field consists of a comma  separated  list
+of  subset ids enclosed in angle brackets.  Each unique
+id must have a special comment line,  specified  above,
+to  be  properly interpreted.  Otherwise the id will be
+ignored.
+.PP
+Each position within the label field,  separated  by  a
+commas,  defines  a group of subsets that are presented
+separately in the generated reports.  So for  instance,
+the  first  group might be all segments, and the second
+might be either male or female, and the third might  be
+the story.  The example below shows an STM file encoded
+with this information.
+.RS
+;; LABEL "M" "Male" "Male Talkers"
+.br
+;; LABEL "F" "Female" "Female Talkers"
+.br
+;; LABEL "01" "Story 1" "Business news"
+.br
+;; LABEL "00" "Not in Story" "Words or Phrases not
+contained in a story"
+.br
+940328 1 A 4.00 18.10 <O,F,00> FROM LOS ANGELES
+.br
+940328 1 B 18.10 25.55 <O,M,01> MEXICO IN TURMOIL
+.RE
+.RE
+.RE
+.RE
+.RE
+.PP
+ctm - Definition of time marked conversation scoring input 
+.RS
+.PP
+This describes the time marked conversation input  files  to
+be used for scoring the output of speech recognizers via the
+NIST sclite() program.  Both the  reference  and  hypothesis
+input files can share this format.
+.PP
+The ctm file format is a concatenation of time mark  records
+for  each  word  in each channel of a waveform.  The records
+are separated with a newline.  Each word token must  have  a
+waveform  id,  channel identifier [A | B], start time, dura-
+tion, and word text.  Optionally a confidence score  can  be
+appended  for  each word.  Each record follows this BNF for-
+mat:
+.PP
+CTM :== <F> <C> <BT> <DUR> word [ <CONF> ]
+.RS
+Where :
+.RS
+<F>  ->
+.RS
+The waveform  filename.   NOTE:  no  pathnames  or
+extensions are expected.
+.RE
+<C>  ->
+.RS
+The waveform channel.  Either "A" or "B".  The text of the waveform channel
+is not restricted by sclite.  The text can be any text string without
+witespace so long as the matching string is found in both the reference
+and hypothesis input files.
+.RE
+<BT> ->
+.RS
+The begin time (seconds)  of  the  word,  measured
+from the start time of the file.
+.RE
+<DUR>  ->
+.RS
+The duration (seconds) of the word.
+.RE
+<CONF>  ->
+.RS
+Optional confidence score.  It  is  proposed  that
+this score will be used in the future.
+.RE
+.RE
+.RE
+.PP
+The file must be sorted by  the  first  three  columns:  the
+first  and  the  second  in  ASCII order, and the third by a
+numeric order.  The UNIX sort command: "sort  +0  -1  +1  -2
++2nb -3" will sort the words into appropriate order.
+.PP
+Lines beginning with ';;' are considered  comments  and  are
+ignored.  Blank lines are also ignored.
+.PP
+Included below is an example:
+.RS
+;;
+
+.br
+
+;;  Comments follow ';;' 
+
+.br
+
+;;
+
+.br
+
+;;  The Blank lines are ignored
+
+.br
+
+
+.br
+
+;;
+
+.br
+
+7654 A 11.34 0.2  YES -6.763
+
+.br
+
+7654 A 12.00 0.34 YOU -12.384530
+
+.br
+
+7654 A 13.30 0.5  CAN 2.806418
+
+.br
+
+7654 A 17.50 0.2  AS 0.537922
+
+.br
+
+:
+
+.br
+
+7654 B 1.34 0.2  I -6.763
+
+.br
+
+7654 B 2.00 0.34 CAN -12.384530
+
+.br
+
+7654 B 3.40 0.5  ADD 2.806418
+
+.br
+
+7654 B 7.00 0.2  AS 0.537922
+
+.br
+
+:
+.RE
+.PP
+For CTM reference files, a format extension exists to permit
+marking  alternate  transcripts.   The  alternation uses the
+same file format  as  described  above,  except  three  word
+strings, "<ALT_BEGIN>", "<ALT>" and "<ALT_END>", are used to
+delimit the alternation.  Each tag is  treated  as  a  word,
+with  a conversation id, channel and "*"'s for the begin and
+duration time.
+.PP
+The alternation is begun using the word  "<ALT_BEGIN>",  and
+terminated using the word "<ALT_END>".  In between the start
+and  end,  are  at  least  2  alternative  time-marked  word
+sequences separated by the word "<ALT>".  Each word sequence
+can contain any number of words.  An empty alternative  sig-
+nifies a null word.
+.PP
+Below is and example alternate reference transcript for  the
+words "uh" and "um".
+.PP
+.RS
+;;
+
+.br
+
+7654 A   *    *   <ALT_BEGIN>
+
+.br
+
+7654 A 12.00 0.34 UM
+
+.br
+
+7654 A   *    *   <ALT>
+
+.br
+
+7654 A 12.00 0.34 UH
+
+.br
+
+7654 A   *    *   <ALT_END>
+.RS
+.RE
+.RE

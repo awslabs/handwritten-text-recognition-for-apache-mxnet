@@ -1,0 +1,177 @@
+.TH rover 1 "" "" "" ""
+WORK IN PROGRESS 
+
+NAME
+rover - Recognition Output Voting Error Reduction
+.PP
+.PP
+
+NOTE: This manual page was created automatically from
+HTMl pages in the sclite/doc directory.  This manual page does not
+include output file examples.  The author suggests using a HTML browser
+for reading the sclite documentation.
+.PP
+SYNOPSIS
+rover [ -sT -a alpha -c Nconf -f level -l width ] ( -h hypfile ctm )+ -o outfile -m meth
+.PP
+\*LInput Options \*O
+.RS
+-h hypfile ctm
+.RS
+Define the hypothesis file and it's format. This option
+must be used more than once.  Currently, only the ctm format
+is recgnized.
+.RE
+.RE
+.PP
+\*LOutput Options \*O
+.RS
+-o outfile
+
+.RS
+  Define the output file.  (Will be same format as hyps)
+.RE
+-f level
+
+.RS
+    Defines feedback mode, default is 1
+.RE
+-l width   
+
+.RS
+ Defines the line width.
+.RE
+.RE
+.PP
+\*LVoting Options \*O
+.RS
+-m meth 
+
+.RS
+ Set the voting method 'meth' to one of the following:
+
+.br
+
+
+.br
+
+oracle   -> output the fully alternated transcript
+.br
+
+meth1    -> alpha = -a , conf = -c, choose highest avg
+.br
+
+maxconf  -> \*LVoting by Using Maximum Confidence Score\*O
+.br
+
+avgconf  -> \*LVoting by Average Conf. Score\*O
+.br
+
+maxconfa -> 
+.RS
+Same as maxconf, but set the confidence score for
+the NULL transition arcs to be the number of NULL transition
+arcs in the correspondence set divided by the number of input
+systems.
+.RE
+putat    -> Output the putative hit format
+.RE
+-a alpha   
+.RS
+ Set Alpha to 'alpha'.  Alpha is the tradeoff between 
+using word occurrence counts and confidence scores.
+.RE
+-c Nconf 
+
+.RS
+ Set confidence score associated with NULL transition
+arcs to 'Nconf'.  Default: 0.0
+.RE
+.RE
+.PP
+\*LAlignment Options \*O
+.RS
+-s        
+
+.RS
+  Do Case-sensitive alignments.
+.RE
+-T  
+.RS
+  Use time information, (if available), to calculated word-to-
+word distances.
+.RE
+.RE
+.PP
+DESCRIPTION
+.PP
+Rover is a tool combine hypothesized word outputs of multiple
+recognition systems and select the best scoring word sequence. 
+Rover is part of the \*LNIST SCTK\*O Scoring Tookit. A
+number of different output formats can be generated and different
+scoring functions can be specified.  A more complete description of
+the rover system can be found in the paper \*L
+A post-processing system to yield reduced word error rates: Recognizer
+Output Voting Error Reduction (ROVER). 
+.PP
+ The ROVER system is implemented in two modules. First, the system
+outputs from two or more ASR systems are combined into a single word
+transition network. The network is created using a modification of the
+dynamic programming alignment protocol traditionally used by NIST to
+evaluate ASR technology. Once the network is generated, the second
+module evaluates each branching point using a voting scheme, which
+selects the best scoring word (with the highest number of votes) for
+the new transcription.  The following figure depicts the the overall
+system architecture.
+.PP
+The heart of the Rover program is the ability to combine system
+outputs of mulitple recognition systems using an iterative Dynamic
+Programming alignment protocol into a single, composite Word
+Transition Network (WTN).  The protocol is fully described in the
+\*L
+Section 2.1. RECOGNITION OUTPUT ALIGNMENT MODULE  of the paper.
+.PP
+Once the composite WTN is produced, each correspondence set (CS) is
+evaluated using the selected scoring function.  <A
+HREF="rover/rover.htm#Section2.2"> Section 2.2. WTN VOTING SEARCH
+MODULE: describes the voting process in detail.
+There are three voting schemes described in the paper:
+.RS
+\*L By Word Frequency \*O
+
+.RS
+ To use word frequency as the scoring function, use	the options
+'-m avgconf -a 1.0 -c 0.0'.  By setting -a to 1.0, the tradeoff
+between  word occurrences and confidence scores, only the 
+word occurrences are used.
+.RE
+.RE
+.RS
+\*L By Average Confidence Scores \*O
+
+.RS
+ The '-m avgconf' option make the voting function use
+average confidence scores.
+.RE
+.RE
+.RS
+\*L By Word Maximum Confidence Scores \*O
+
+.RS
+ The '-m maxconf' option make the voting function use
+the maximum confidence per word as the scoring metric.
+.RE
+.RE
+.RS
+.RE
+REVISION HISTORY 
+.RS
+This is the initial release.
+.RE
+BUGS/COMMENTS 
+.RS
+Please contact Jon Fiscus at NIST with any bug reports or comments at
+the email address 
+\*Ljonathan.fiscus@nist.gov \*O or
+by phone, (301)-975-3182.  Please include the version number of rover,
+.RE

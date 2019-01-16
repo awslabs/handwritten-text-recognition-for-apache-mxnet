@@ -1,0 +1,48 @@
+;; mdeval md_test12 ref rttm
+;; Three edits: in sys, first offset 1 word early, second offset two words
+;; ... late, and the third starting one word late and ending one word early.
+;; There's also an inserted edit of type restart in the sys.
+;; So, in the scoring, none of the IP's will align, and 
+;; the EDIT word offset statistics for ALL data should come out as
+;;    word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+;;             BEG:    0      -    1    1    -    1    -    -      0
+;;             END:    0      -    1    2    -    -    -    -      0
+ 
+SPKR-INFO md_test12 1 <NA> <NA>  <NA>              adult_female spkr1r <NA>
+SEGMENT   md_test12 1  9.0 19.0  <NA>              <NA>         spkr1r <NA>
+SPEAKER   md_test12 1  9.0 19.0  <NA>              <NA>         spkr1r <NA>
+SU        md_test12 1  9.0 21.0  <NA>              statement    spkr1r <NA>
+
+LEXEME    md_test12 1  9.0  1.0  WordZero          lex          spkr1r <NA>
+LEXEME    md_test12 1 10.0  1.0  firstWord         lex          spkr1r <NA>
+LEXEME    md_test12 1 11.0  1.0  secondWord        lex          spkr1r <NA>
+
+EDIT      md_test12 1 12.0  3.0  <NA>              revision     spkr1r <NA>
+LEXEME    md_test12 1 12.0  1.0  thirdWord         lex          spkr1r <NA>
+LEXEME    md_test12 1 13.0  1.0  fourthWord        lex          spkr1r <NA>
+LEXEME    md_test12 1 14.0  1.0  fifthWord         lex          spkr1r <NA>
+IP        md_test12 1 15.0  <NA> <NA>              edit         spkr1r <NA>
+
+LEXEME    md_test12 1 15.0  1.0  sixthWord         lex          spkr1r <NA>
+LEXEME    md_test12 1 16.0  1.0  seventhWord       lex          spkr1r <NA>
+LEXEME    md_test12 1 17.0  1.0  eighthWord        lex          spkr1r <NA>
+
+EDIT      md_test12 1 18.0  3.0  <NA>              revision     spkr1r <NA>
+LEXEME    md_test12 1 18.0  1.0  ninthWord         lex          spkr1r <NA>
+LEXEME    md_test12 1 19.0  1.0  tenthWord         lex          spkr1r <NA>
+LEXEME    md_test12 1 20.0  1.0  eleventhWord      lex          spkr1r <NA>
+IP        md_test12 1 21.0  <NA> <NA>              edit         spkr1r <NA>
+
+LEXEME    md_test12 1 21.0  1.0  twelfthWord       lex          spkr1r <NA>
+LEXEME    md_test12 1 22.0  1.0  thirteenthWord    lex          spkr1r <NA>
+LEXEME    md_test12 1 23.0  1.0  fourteenthWord    lex          spkr1r <NA>
+
+EDIT      md_test12 1 24.0  3.0  <NA>              revision     spkr1r <NA>
+LEXEME    md_test12 1 24.0  1.0  fifteenthWord     lex          spkr1r <NA>
+LEXEME    md_test12 1 25.0  1.0  sixteenthWord     lex          spkr1r <NA>
+LEXEME    md_test12 1 26.0  1.0  seventeenthWord   lex          spkr1r <NA>
+IP        md_test12 1 27.0  <NA> <NA>              edit         spkr1r <NA>
+
+LEXEME    md_test12 1 27.0  1.0  eighteenthWord    lex          spkr1r <NA>
+LEXEME    md_test12 1 28.0  1.0  nineteenthWord    lex          spkr1r <NA>
+LEXEME    md_test12 1 29.0  1.0  twentiethWord     lex          spkr1r <NA>

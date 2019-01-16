@@ -1,0 +1,303 @@
+command line (run on 2004 Oct 29 at 14:17:54):  ../src/md-eval-v19a.pl -af -e -D -d -W -w -t 1.0 -l 2 -u md_test25.uem -r md_test25.ref.rttm -s md_test25.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+Word alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0          amyloid lex     1028.06 1028.58 tim_johnson           amyloid lex     (1028.06 1028.58) 1028.06 1028.58 tim_johnson 
+   1   -   -   0              the lex     1028.58 1028.76 tim_johnson               the lex     (1028.58 1028.76) 1028.58 1028.76 tim_johnson 
+   1   -   -   0         abnormal lex     1028.76 1029.17 tim_johnson          abnormal lex     (1028.76 1029.17) 1028.76 1029.17 tim_johnson 
+   1   -   -   0          protein lex     1029.17 1029.52 tim_johnson           protein lex     (1029.17 1029.52) 1029.17 1029.52 tim_johnson 
+   1   -   -   0               in lex     1029.52 1029.58 tim_johnson                in lex     (1029.52 1029.58) 1029.52 1029.58 tim_johnson 
+   1   -   -   0              the lex     1029.58 1029.65 tim_johnson               the lex     (1029.58 1029.65) 1029.58 1029.65 tim_johnson 
+   1   -   -   0            brain lex     1029.65 1029.92 tim_johnson             brain lex     (1029.65 1029.92) 1029.65 1029.92 tim_johnson 
+   1   -   -   0           unless lex     1029.96 1030.21 tim_johnson            unless lex     (1029.96 1030.21) 1029.96 1030.21 tim_johnson 
+   1   -   -   0               we lex     1030.21 1030.32 tim_johnson                we lex     (1030.21 1030.32) 1030.21 1030.32 tim_johnson 
+   1   -   -   0             find lex     1030.32 1030.62 tim_johnson              find lex     (1030.32 1030.62) 1030.32 1030.62 tim_johnson 
+   1   -   -   0             well lex     1031.19 1031.42 peter_jennin             well lex     (1031.19 1031.42) 1031.19 1031.42 peter_jennin
+   1   -   -   0            those lex     1031.27 1031.42 tim_johnson             those lex     (1031.27 1031.42) 1031.27 1031.42 tim_johnson 
+   1   -   -   0          answers lex     1031.42 1031.81 tim_johnson           answers lex     (1031.42 1031.81) 1031.42 1031.81 tim_johnson 
+   1   -   -   0               so lex     1031.73 1031.90 peter_jennin               so lex     (1031.73 1031.90) 1031.73 1031.90 peter_jennin
+   1   -   -   0            we're lex     1031.81 1031.94 tim_johnson             we're lex     (1031.81 1031.94) 1031.81 1031.94 tim_johnson 
+   1   -   -   0           doomed lex     1031.94 1032.07 tim_johnson            doomed lex     (1031.94 1032.07) 1031.94 1032.07 tim_johnson 
+   1   -   -   0           remind lex     1031.90 1032.24 peter_jennin           remind lex     (1031.90 1032.24) 1031.90 1032.24 peter_jennin
+   1   -   -   0               us lex     1032.24 1032.30 peter_jennin               us lex     (1032.24 1032.30) 1032.24 1032.30 peter_jennin
+   1   -   -   0            where lex     1032.30 1032.36 peter_jennin            where lex     (1032.30 1032.36) 1032.30 1032.36 peter_jennin
+   1   -   -   0               we lex     1032.50 1032.70 peter_jennin               we lex     (1032.50 1032.70) 1032.50 1032.70 peter_jennin
+   1   -   -   0              are un-lex  1032.70 1032.79 peter_jennin              are un-lex  (1032.70 1032.79) 1032.70 1032.79 peter_jennin
+   1   -   -   0              are lex     1032.79 1032.97 peter_jennin              are lex     (1032.79 1032.97) 1032.79 1032.97 peter_jennin
+   1   -   -   0               on lex     1032.97 1033.28 peter_jennin               on lex     (1032.97 1033.28) 1032.97 1033.28 peter_jennin
+   1   -   -   0            drugs lex     1033.28 1033.65 peter_jennin            drugs lex     (1033.28 1033.65) 1033.28 1033.65 peter_jennin
+   1   -   -   0              and lex     1033.65 1033.83 peter_jennin              and lex     (1033.65 1033.83) 1033.65 1033.83 peter_jennin
+   1   -   -   0            early lex     1033.83 1034.06 peter_jennin            early lex     (1033.83 1034.06) 1033.83 1034.06 peter_jennin
+   1   -   -   0        diagnosis lex     1034.06 1034.76 peter_jennin        diagnosis lex     (1034.06 1034.76) 1034.06 1034.76 peter_jennin
+
+EDIT alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0            other EDIT    1032.70 1032.79 peter_jennin            other EDIT    (1032.70 1032.79) 1032.70 1032.79 peter_jennin
+
+FILLER alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0 discourse_marker FILLER  1031.19 1031.42 peter_jennin discourse_marker FILLER  (1031.19 1031.42) 1031.19 1031.42 peter_jennin
+   1   -   -   0 discourse_marker FILLER  1031.73 1031.90 peter_jennin discourse_marker FILLER  (1031.73 1031.90) 1031.73 1031.90 peter_jennin
+
+IP alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0           filler IP      1031.19 1031.19 peter_jennin           filler IP      (1031.19 1031.19) 1031.19 1031.19 peter_jennin
+   1   -   -   0           filler IP      1031.73 1031.73 peter_jennin           filler IP      (1031.73 1031.73) 1031.73 1031.73 peter_jennin
+   1   -   -   0             edit IP      1032.79 1032.79 peter_jennin             edit IP      (1032.79 1032.79) 1032.79 1032.79 peter_jennin
+
+SU alignment and scoring details for channel 1 of file 20010206_1830_1900_ABC_WNT
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        statement SU      1029.96 1032.07 tim_johnson         statement SU      (1029.96 1032.07) 1029.96 1032.07 tim_johnson 
+   1   -   -   0        statement SU      1031.19 1034.76 peter_jennin        statement SU      (1031.19 1034.76) 1031.19 1034.76 peter_jennin
+
+Chronological display of sys data aligned with ref data for file '20010206_1830_1900_ABC_WNT', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SPEAKER  adult_ma tim_johnson         1028.06         |        |
+                                          1028.06         |        |beg SPEAKER  adult_ma tim_johnson=>tim_jo 1028.06        
+    LEXEME   lex      AMYLOID             1028.06 1028.58 | LX1    |    LEXEME   lex      AMYLOID             1028.06 1028.58
+    CB       clausal  tim_johnson         1028.58         |        |
+    LEXEME   lex      THE             1028.58 1028.76 | LX2    |    LEXEME   lex      THE             1028.58 1028.76
+    LEXEME   lex      ABNORMAL             1028.76 1029.17 | LX3    |    LEXEME   lex      ABNORMAL             1028.76 1029.17
+    LEXEME   lex      PROTEIN             1029.17 1029.52 | LX4    |    LEXEME   lex      PROTEIN             1029.17 1029.52
+    LEXEME   lex      IN             1029.52 1029.58 | LX5    |    LEXEME   lex      IN             1029.52 1029.58
+    LEXEME   lex      THE             1029.58 1029.65 | LX6    |    LEXEME   lex      THE             1029.58 1029.65
+    LEXEME   lex      BRAIN             1029.65 1029.92 | LX7    |    LEXEME   lex      BRAIN             1029.65 1029.92
+beg SU       statemen tim_johnson         1029.96         | SU1    |beg SU       statemen tim_johnson=>tim_jo 1029.96        
+    LEXEME   lex      UNLESS             1029.96 1030.21 | LX8    |    LEXEME   lex      UNLESS             1029.96 1030.21
+    LEXEME   lex      WE             1030.21 1030.32 | LX9    |    LEXEME   lex      WE             1030.21 1030.32
+    LEXEME   lex      FIND             1030.32 1030.62 | LX10   |    LEXEME   lex      FIND             1030.32 1030.62
+end SPEAKER  adult_ma tim_johnson                 1030.62 |        |
+                                                  1030.62 |        |end SPEAKER  adult_ma tim_johnson=>tim_jo         1030.62
+beg SEGMENT  <na>     peter_jennings      1031.15         |        |
+beg SPEAKER  adult_ma peter_jennings      1031.19         |        |
+                                          1031.19         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1031.19        
+beg SU       statemen peter_jennings      1031.19         | SU2    |beg SU       statemen peter_jennings=>pet 1031.19        
+beg FILLER   discours peter_jennings      1031.19         | FL1    |beg FILLER   discours peter_jennings=>pet 1031.19        
+    IP       filler   peter_jennings      1031.19         | IP1    |    IP       filler   peter_jennings=>pet 1031.19        
+beg LEXEME   lex      WELL             1031.19         | LX11   |beg LEXEME   lex      WELL             1031.19        
+beg SPEAKER  adult_ma tim_johnson         1031.27         |        |
+                                          1031.27         |        |beg SPEAKER  adult_ma tim_johnson=>tim_jo 1031.27        
+beg LEXEME   lex      THOSE             1031.27         | LX12   |beg LEXEME   lex      THOSE             1031.27        
+end LEXEME   lex      WELL                     1031.42 | LX11   |
+end LEXEME   lex      THOSE                     1031.42 | LX12   |
+                                                  1031.42 | LX11   |end LEXEME   lex      WELL                     1031.42
+                                                  1031.42 | LX12   |end LEXEME   lex      THOSE                     1031.42
+end FILLER   discours peter_jennings              1031.42 | FL1    |end FILLER   discours peter_jennings=>pet         1031.42
+end SPEAKER  adult_ma peter_jennings              1031.42 |        |
+                                                  1031.42 |        |end SPEAKER  adult_ma peter_jennings=>pet         1031.42
+beg LEXEME   lex      ANSWERS             1031.42         | LX13   |beg LEXEME   lex      ANSWERS             1031.42        
+beg SPEAKER  adult_ma peter_jennings      1031.73         |        |
+                                          1031.73         |        |beg SPEAKER  adult_ma peter_jennings=>pet 1031.73        
+beg FILLER   discours peter_jennings      1031.73         | FL2    |beg FILLER   discours peter_jennings=>pet 1031.73        
+    IP       filler   peter_jennings      1031.73         | IP2    |    IP       filler   peter_jennings=>pet 1031.73        
+beg LEXEME   lex      SO             1031.73         | LX14   |beg LEXEME   lex      SO             1031.73        
+end LEXEME   lex      ANSWERS                     1031.81 | LX13   |end LEXEME   lex      ANSWERS                     1031.81
+    CB       clausal  tim_johnson         1031.81         |        |
+beg LEXEME   lex      WE'RE             1031.81         | LX15   |beg LEXEME   lex      WE'RE             1031.81        
+end LEXEME   lex      SO                     1031.90 | LX14   |end LEXEME   lex      SO                     1031.90
+end FILLER   discours peter_jennings              1031.90 | FL2    |end FILLER   discours peter_jennings=>pet         1031.90
+beg LEXEME   lex      REMIND             1031.90         | LX17   |beg LEXEME   lex      REMIND             1031.90        
+end LEXEME   lex      WE'RE                     1031.94 | LX15   |end LEXEME   lex      WE'RE                     1031.94
+    LEXEME   lex      DOOMED             1031.94 1032.07 | LX16   |    LEXEME   lex      DOOMED             1031.94 1032.07
+end SU       statemen tim_johnson                 1032.07 | SU1    |end SU       statemen tim_johnson=>tim_jo         1032.07
+end SPEAKER  adult_ma tim_johnson                 1032.07 |        |
+                                                  1032.07 |        |end SPEAKER  adult_ma tim_johnson=>tim_jo         1032.07
+end LEXEME   lex      REMIND                     1032.24 | LX17   |end LEXEME   lex      REMIND                     1032.24
+    LEXEME   lex      US             1032.24 1032.30 | LX18   |    LEXEME   lex      US             1032.24 1032.30
+    LEXEME   lex      WHERE             1032.30 1032.36 | LX19   |    LEXEME   lex      WHERE             1032.30 1032.36
+    LEXEME   lex      WE             1032.50 1032.70 | LX20   |    LEXEME   lex      WE             1032.50 1032.70
+beg EDIT     other    peter_jennings      1032.70         | ED1    |beg EDIT     other    peter_jennings=>pet 1032.70        
+    LEXEME   un-lex   ARE             1032.70 1032.79 | LX21   |    LEXEME   un-lex   ARE             1032.70 1032.79
+end EDIT     other    peter_jennings              1032.79 | ED1    |end EDIT     other    peter_jennings=>pet         1032.79
+    IP       edit     peter_jennings      1032.79         | IP3    |    IP       edit     peter_jennings=>pet 1032.79        
+    LEXEME   lex      ARE             1032.79 1032.97 | LX22   |    LEXEME   lex      ARE             1032.79 1032.97
+    LEXEME   lex      ON             1032.97 1033.28 | LX23   |    LEXEME   lex      ON             1032.97 1033.28
+    LEXEME   lex      DRUGS             1033.28 1033.65 | LX24   |    LEXEME   lex      DRUGS             1033.28 1033.65
+    LEXEME   lex      AND             1033.65 1033.83 | LX25   |    LEXEME   lex      AND             1033.65 1033.83
+    LEXEME   lex      EARLY             1033.83 1034.06 | LX26   |    LEXEME   lex      EARLY             1033.83 1034.06
+    LEXEME   lex      DIAGNOSIS             1034.06 1034.76 | LX27   |    LEXEME   lex      DIAGNOSIS             1034.06 1034.76
+end SU       statemen peter_jennings              1034.76 | SU2    |end SU       statemen peter_jennings=>pet         1034.76
+end SPEAKER  adult_ma peter_jennings              1034.76 |        |
+                                                  1034.76 |        |end SPEAKER  adult_ma peter_jennings=>pet         1034.76
+end SEGMENT  <na>     peter_jennings              1034.88 |        |
+
+*** Performance analysis for EDITs ***  overall error SCORE = 0.00%
+
+EDIT word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               0       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection statistics -- in terms of # of EDITs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               1       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       1       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+EDIT detection confusion matrix -- in terms of # of EDITs
+           ALL - ref\sys     other        {Miss}
+                   other       1             0  
+
+                    {FA}       0  
+
+EDIT word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    1    -    -    -      0
+           END:    0      -    -    -    1    -    -    -      0
+
+*** Performance analysis for FILLERs ***  overall error SCORE = 0.00%
+
+FILLER word coverage statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               4       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection statistics -- in terms of # of FILLERs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+FILLER detection confusion matrix -- in terms of # of FILLERs
+           ALL - ref\sys  discours        {Miss}
+        discourse_marker       2             0  
+
+                    {FA}       0  
+
+FILLER word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for IPs ***  overall error SCORE = 0.00%
+
+IP (exact) detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               3       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection statistics -- in terms of # of IPs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               3       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       3       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+IP detection confusion matrix -- in terms of # of IPs
+           ALL - ref\sys      edit    filler        {Miss}
+                    edit       1         0             0  
+                  filler       0         2             0  
+
+                    {FA}       0         0  
+
+IP word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    3    -    -    -      0
+           END:    0      -    -    -    3    -    -    -      0
+
+*** Performance analysis for SUs ***  overall error SCORE = 0.00%
+
+SU (exact) end detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection statistics -- in terms of # of SUs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL               2       0     0     0     0.00   0.00   0.00     0.00   0.00
+f=20010206_1830_1900_ABC_WNT       2       0     0     0     0.00   0.00   0.00     0.00   0.00
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  statemen        {Miss}
+               statement       2             0  
+
+                    {FA}       0  
+
+SU word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for Speaker Diarization for f=20010206_1830_1900_ABC_WNT ***
+
+    EVAL TIME =    243.11 secs
+  EVAL SPEECH =      6.13 secs (  2.5 percent of evaluated time)
+  SCORED TIME =    243.11 secs (100.0 percent of evaluated time)
+SCORED SPEECH =      6.13 secs (  2.5 percent of scored time)
+   EVAL WORDS =     27        
+ SCORED WORDS =     27         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =      6.62 secs (108.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=20010206_1830_1900_ABC_WNT)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_male            MISS              
+adult_male                2 / 100.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_male            MISS              
+adult_male             6.62 / 100.0%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =    243.11 secs
+  EVAL SPEECH =      6.13 secs (  2.5 percent of evaluated time)
+  SCORED TIME =    243.11 secs (100.0 percent of evaluated time)
+SCORED SPEECH =      6.13 secs (  2.5 percent of scored time)
+   EVAL WORDS =     27        
+ SCORED WORDS =     27         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =      6.62 secs (108.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_male            MISS              
+adult_male                2 / 100.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_male            MISS              
+adult_male             6.62 / 100.0%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%
+---------------------------------------------

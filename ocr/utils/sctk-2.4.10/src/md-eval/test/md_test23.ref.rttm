@@ -1,0 +1,43 @@
+;; mdeval md_test23 ref rttm
+
+SPKR-INFO md_test23 1 <NA> <NA> <NA>           child        spkr1r <NA>
+;; SEGMENT records are irrelevant to md-eval's scoring
+SEGMENT   md_test23 1 10.0  4.0 <NA>           <NA>         spkr1r <NA>
+
+SPEAKER   md_test23 1 10.0  1.0 <NA>           <NA>         spkr1r <NA>
+SU        md_test23 1 10.0  1.0 <NA>           statement    spkr1r <NA>
+LEXEME    md_test23 1 10.0  1.0 firstWord      lex          spkr1r <NA>
+
+;; The following SPEAKER record (11.0 through 13.0) is no-eval'd via the UEM file,
+;; where md_test22a had that time covered by a NOSCORE record.
+SPEAKER   md_test23 1 11.0  2.0 <NA>           <NA>         spkr1r <NA>
+SU        md_test23 1 11.0  1.0 <NA>           question     spkr1r <NA>
+LEXEME    md_test23 1 11.0  1.0 commercial     lex          spkr1r <NA>
+LEXEME    md_test23 1 12.0  1.0 message        lex          spkr1r <NA>
+
+SPEAKER   md_test23 1 13.0  1.0 <NA>           <NA>         spkr1r <NA>
+SU        md_test23 1 13.0  1.0 <NA>           statement    spkr1r <NA>
+LEXEME    md_test23 1 13.0  0.5 fourthWord     lex          spkr1r <NA>
+LEXEME    md_test23 1 13.5  0.5 fifthWord      lex          spkr1r <NA>
+
+SPKR-INFO md_test23 1 <NA> <NA> <NA>           adult_male   spkr2r <NA>
+SEGMENT   md_test23 1 14.0  6.0 <NA>           <NA>         spkr2r <NA>
+SPEAKER   md_test23 1 14.0  6.0 <NA>           <NA>         spkr2r <NA>
+
+SU        md_test23 1 14.0  1.0 <NA>           statement    spkr2r <NA>
+LEXEME    md_test23 1 14.0  1.0 sixthWord      lex          spkr2r <NA>
+
+SU        md_test23 1 15.0  3.0 <NA>           question     spkr2r <NA>
+LEXEME    md_test23 1 15.0  1.0 seventhWord    lex          spkr2r <NA>
+NON-LEX   md_test23 1 16.0  1.5 AhhChoo        sneeze       spkr2r <NA>
+LEXEME    md_test23 1 17.5  0.5 eighthWord    lex          spkr2r <NA>
+
+SU        md_test23 1 18.0  2.0 <NA>           statement    spkr2r <NA>
+LEXEME    md_test23 1 18.0  1.0 ninthWord      lex          spkr2r <NA>
+LEXEME    md_test23 1 19.0  1.0 tenthWord      lex          spkr2r <NA>
+
+SPEAKER   md_test23 1 20.0  3.0 <NA>           <NA>         spkr2r <NA>
+SU        md_test23 1 20.0  3.0 <NA>           question     spkr2r <NA>
+LEXEME    md_test23 1 20.0  1.0 eleventhWord   lex          spkr2r <NA>
+LEXEME    md_test23 1 21.0  1.0 twelfthWord    lex          spkr2r <NA>
+LEXEME    md_test23 1 22.0  1.0 thirteenthWord lex          spkr2r <NA>

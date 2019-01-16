@@ -1,0 +1,12 @@
+<SYSTEM title="CT-rttmstm-i-x-x" ref_fname="rttmstm.stm" hyp_fname="rttmstm.rttm" creation_date="" format="2.4" frag_corr="FALSE" opt_del="FALSE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="OMEGA">
+<PATH id="(OMEGA-000)" word_cnt="3" labels="<M>" file="ALPHA" channel="1" sequence="0" R_T1="1.000" R_T2="4.000" word_aux="h_t1+t2">
+C,"a","a",1.000+2.000:C,"b","b",2.000+3.000:C,"c","c",3.000+4.000
+</PATH>
+</SPEAKER>
+<SPEAKER id="THETA">
+<PATH id="(THETA-000)" word_cnt="6" labels="<M>" file="ALPHA" channel="1" sequence="1" R_T1="2.000" R_T2="8.000" word_aux="h_t1+t2">
+C,"d","d",2.000+3.000:C,"e","e",3.000+4.000:C,"f","f",4.000+5.000:C,"g","g",5.000+6.000:C,"h","h",6.000+7.000:C,"i","i",7.000+8.000
+</PATH>
+</SPEAKER>
+</SYSTEM>

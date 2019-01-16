@@ -1,0 +1,22 @@
+;; RTTMValidator test28.rttm - test for EDIT object with bad IP object -- IP subtype is wrong
+;; EXP-ID: expt_03f_su_eval_eng_bnews_spch_1
+
+SPKR-INFO test28 1 <NA> <NA> <NA> unknown 1 <NA>
+SPEAKER test28 1 0.670 6.540 <NA> <NA> 1 <NA>
+SU 	test28 1 0.670 3.140 <NA> statement 1 0.708209
+LEXEME 	test28 1 0.670 0.190 IT lex 1 1
+LEXEME 	test28 1 0.870 0.270 IS lex 1 1
+LEXEME 	test28 1 1.150 0.450 FIFTEEN lex 1 1
+LEXEME 	test28 1 1.610 0.370 HOURS lex 1 1
+LEXEME 	test28 1 1.990 0.600 UNIVERSAL lex 1 1
+LEXEME 	test28 1 2.600 0.410 TIME lex 1 1
+LEXEME 	test28 1 3.020 0.200 FROM lex 1 1
+LEXEME 	test28 1 3.230 0.580 WASHINGTON lex 1 1
+SU 	test28 1 3.820 3.390 <NA> statement 1 0.951884
+EDIT 	test28 1 3.820 0.390 <NA> other 1 1
+LEXEME 	test28 1 3.820 0.220 THIS lex 1 1
+LEXEME 	test28 1 4.050 0.160 IS lex 1 1
+;; the subtype for this IP object should have been edit&filler
+IP 	test28 1 4.210 <NA> <NA> filler 1 1
+FILLER 	test28 1 4.210 1.000 <NA> filled_pause 1 1
+LEXEME 	test28 1 4.210 1.000 UH lex 1 1

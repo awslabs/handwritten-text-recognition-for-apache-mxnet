@@ -1,0 +1,73 @@
+a b { c d / c / e } e f g (f_0)
+a b { c / c d / e } e f g (f_1)
+a b { c / e / c d } e f g (f_2)
+a b { c / e / c d } f g (f_3)
+a b c d { e / c / @ } f g (f_4)
+a b c d e { e / c / @ } f g (f_5)
+a b c d { e / c / @ } e f g (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+uh uh had a long { age-old / age old } problem of my bright (g_0)
+uh uh had a long { age old / age-old } problem of my bright (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+a { b / cd } { e f / ef } (h_0)
+a { b / cd / { g h i / gh i / g ih} bd } { e { i n / th } f / ef } (h_1)
+a { b / cd / { g h i / gh i / g ih} bd } { e { i n / th } f / ef } (h_2)
+;; Test a couple alternations in the hyp file
+this is the ten (i_1)
+this is the tea (i_2)
+;; Check alternations in both the ref and hyp
+{the / this} is the tea (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+{fi-/fig-} th- fi- -icks {-lk/-ik} -offee -him find the fish ticks milk fee him (i_4)
+;; Check deletions and substitutions of hyphenated words
+del fi- del_withnull { fi /@ } skip skip substitution fi- sub_withnull { fi- / @ } (i_5)
+;; Check to handle utterances without reference words 
+(empty-1)
+(empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+a { c / @ } d (alt-1)
+a { c / @ } d (alt-2)
+a { c / @ } d (alt-3)
+a { c / @ } d (alt-4)
+a { c / @ } d (alt-5)
+a { c / @ } d (alt-6)
+a d e (alt-7)
+a d @ e (alt-8)
+a d c (alt-9)
+;;; Check the handling of optionally deletable
+b (c) d (od1-1)
+b (c) d (od1-2)
+b (c) d (od1-3)
+b (c) d (od1-4)
+b (c) d (od1-5)
+b (c) d (od1-6)
+b (c) d (od1-7)
+;;; ambiguous cases
+(a) (c) b d e (od2-1)
+(a) c (b) d e (od2-2)
+(a) c b (d) e (od2-3)
+(a) c b d (e) (od2-4)
+a (c) (b) d e (od2-5)
+a (c) b (d) e (od2-6)
+a (c) b d (e) (od2-7)
+a c (b) (d) e (od2-8)
+a c (b) d (e) (od2-9)
+a c b (d) (e) (od2-10)
+;;; Fragment interactions
+b (c-) d (od3-1)
+b (c-) d (od3-2)
+b (c-) d (od3-3)
+b (c-) d (od3-4)
+b (c-) d (od3-5)
+b (c-) d (od3-6)
+b (c-) d (od3-7)
+b (ten-) (the) can d (od3-8)
+;;; Test passing through tags
+a aa\;a b\;b\;b;hyp\;tag1;hyptag2 b;reftag1 c;;reftag2 d;reftag1;reftag2 (tags-1)
+a aa\;a b\;b\;b;hyptag1;hyp\;tag2 b;reftag1 c;;reftag2 d;reftag1;reftag2 (tags-2)
+(tags-3)
+a aa\;a b\;b\;b;hyp\;tag1;hyptag2 b;reftag1 c;;reftag2 d;reftag1;reftag2 (tags-4)
+{a aa\;a b\;b\;b;hyp\;tag1;hyptag2 b;reftag1 c;;reftag2 d;reftag1;reftag2 / y y y y y y y y y y y y} (tags-5)

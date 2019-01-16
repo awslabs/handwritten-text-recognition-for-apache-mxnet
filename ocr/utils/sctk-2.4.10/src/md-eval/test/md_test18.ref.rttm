@@ -1,0 +1,48 @@
+;; mdeval md_test18 ref rttm
+;;
+;; The ref and sys carve up the time interval from 16.0 through 28.0
+;; into different numbers of SU's, with different boundaries.
+;; The expected scoring output is:
+;;    SU (exact) end detection statistics -- in terms of reference words
+;;                Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+;;         ALL       5     2     4  <ns>     6    40.00  80.00   <ns> 120.00
+;;
+;;    SU detection statistics -- in terms of # of SUs
+;;                Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+;;         ALL       5     0     2     0     2     0.00  40.00   0.00  40.00
+
+SPKR-INFO md_test18 1 <NA> <NA> <NA>            child        spkr1r <NA>
+SEGMENT   md_test18 1 10.0  6.0 <NA>            <NA>         spkr1r <NA>
+SPEAKER   md_test18 1 10.0  6.0 <NA>            <NA>         spkr1r <NA>
+
+SU        md_test18 1 10.0  3.0 <NA>            statement    spkr1r <NA>
+LEXEME    md_test18 1 10.0  1.0 firstWord       lex          spkr1r <NA>
+LEXEME    md_test18 1 11.0  1.0 T.'s            alpha        spkr1r <NA>
+LEXEME    md_test18 1 12.0  1.0 thirdWord       acronym      spkr1r <NA>
+
+SU        md_test18 1 13.0  3.0 <NA>            question     spkr1r <NA>
+LEXEME    md_test18 1 13.0  1.0 fourthWord      interjection spkr1r <NA>
+LEXEME    md_test18 1 14.0  1.0 fifthWord       propernoun   spkr1r <NA>
+LEXEME    md_test18 1 15.0  1.0 sixthWord       other        spkr1r <NA>
+
+SPKR-INFO md_test18 1 <NA> <NA> <NA>            unknown      spkr2r <NA>
+SEGMENT   md_test18 1 16.0 12.0 <NA>            <NA>         spkr2r <NA>
+SPEAKER   md_test18 1 16.0 12.0 <NA>            <NA>         spkr2r <NA>
+
+SU        md_test18 1 16.0  4.0 <NA>            statement    spkr2r <NA>
+LEXEME    md_test18 1 16.0  1.0 seventhWord     lex          spkr2r <NA>
+LEXEME    md_test18 1 17.0  1.0 eighthWord      lex          spkr2r <NA>
+LEXEME    md_test18 1 18.0  1.0 ninthWord       lex          spkr2r <NA>
+LEXEME    md_test18 1 19.0  1.0 tenthWord       lex          spkr2r <NA>
+
+SU        md_test18 1 20.0  4.0 <NA>            statement    spkr2r <NA>
+LEXEME    md_test18 1 20.0  1.0 eleventhWord    lex          spkr2r <NA>
+LEXEME    md_test18 1 21.0  1.0 twelfthWord     lex          spkr2r <NA>
+LEXEME    md_test18 1 22.0  1.0 thirteenthWord  lex          spkr2r <NA>
+LEXEME    md_test18 1 23.0  1.0 fourteenthWord  lex          spkr2r <NA>
+
+SU        md_test18 1 24.0  4.0 <NA>            statement    spkr2r <NA>
+LEXEME    md_test18 1 24.0  1.0 fifteenthWord   lex          spkr2r <NA>
+LEXEME    md_test18 1 25.0  1.0 sixteenthWord   lex          spkr2r <NA>
+LEXEME    md_test18 1 26.0  1.0 seventeenthWord lex          spkr2r <NA>
+LEXEME    md_test18 1 27.0  1.0 eighteenthWord  lex          spkr2r <NA>

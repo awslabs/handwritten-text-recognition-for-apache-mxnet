@@ -1,0 +1,74 @@
+DETAILED OVERALL REPORT FOR THE SYSTEM: test.arb2004.txt.ctm
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          45
+ with errors                              2.2%   (   1)
+
+   with substitions                       0.0%   (   0)
+   with deletions                         2.2%   (   1)
+   with insertions                        0.0%   (   0)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =    0.5%   (   1)
+
+Percent Correct           =   99.5%   ( 217)
+
+Percent Substitution      =    0.0%   (   0)
+Percent Deletions         =    0.5%   (   1)
+Percent Insertions        =    0.0%   (   0)
+Percent Word Accuracy     =   99.5%
+
+
+Ref. words                =           ( 218)
+Hyp. words                =           ( 217)
+Aligned words             =           ( 218)
+
+CONFUSION PAIRS                  Total                 (0)
+                                 With >=  1 occurances (0)
+
+     -------
+         0
+
+
+
+INSERTIONS                       Total                 (0)
+                                 With >=  1 occurances (0)
+
+     -------
+         0
+
+
+
+DELETIONS                        Total                 (1)
+                                 With >=  1 occurances (1)
+
+   1:    1  ->  yeah
+     -------
+         1
+
+
+
+SUBSTITUTIONS                    Total                 (0)
+                                 With >=  1 occurances (0)
+
+     -------
+         0
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (0)
+                                 With >=  1 occurances (0)
+
+     -------
+         0
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

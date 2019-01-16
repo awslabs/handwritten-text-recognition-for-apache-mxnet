@@ -1,0 +1,10 @@
+;; File et94_1.utm, Updated 941019
+;; Utterance-specific rules for mapping one lexical equivalent to another,
+;; for November 1994 CSR Hub and Spoke Evaluation Test Material
+;; (Applies to .lsn, not .dot)
+* name "et94_1.utm"
+* desc "November 1994 CSR Eval Test Utterance-Specific Orthographic Map"
+* copy_no_hit = 'T'
+;;
+;;
+

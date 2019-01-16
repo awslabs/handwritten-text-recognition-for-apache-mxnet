@@ -1,0 +1,121 @@
+
+
+-------------------------------------------------------------------------
+
+   These are generic installation instructions for execution 'config.sh'.
+
+   The `config.sh' shell script attempts to guess correct values for
+various system-dependent variables used during compilation.  It uses
+those values to create a `Makefile' in each directory of the package.
+It may also create one or more `.h' files containing system-dependent
+definitions.  Finally, it creates a shell script `config.status' that
+you can run in the future to recreate the current configuration, a file
+`config.cache' that saves the results of its tests to speed up
+reconfiguring, and a file `config.log' containing compiler output
+(useful mainly for debugging `config.sh').
+
+   If you need to do unusual things to compile the package, please try
+to figure out how `config.sh' could check whether to do them, and mail
+diffs or instructions to the address given in the `README' so they can
+be considered for the next release.  If at some point `config.cache'
+contains results you don't want to keep, you may remove or edit it.
+
+   The file `config.in' is used to create `config.sh' by a program
+called `autoconf'.  You only need `config.in' if you want to change
+it or regenerate `config.sh' using a newer version of `autoconf'.
+
+The simplest way to compile this package is:
+
+  1. `cd' to the directory containing the package's source code and type
+     `./config.sh' to configure the package for your system.  If you're
+     using `csh' on an old version of System V, you might need to type
+     `sh ./config.sh' instead to prevent `csh' from trying to execute
+     `config.sh' itself.
+
+     Running `config.sh' takes awhile.  While running, it prints some
+     messages telling which features it is checking for.
+
+  2. Type `make' to compile the package.
+
+  3. Optionally, type `make check' to run any self-tests that come with
+     the package.
+
+  4. Type `make install' to install the programs and any data files and
+     documentation.
+
+  5. You can remove the program binaries and object files from the
+     source directory by typing `make clean'.  To also remove the files
+     that `config.sh' created (so you can compile the package for a
+     different kind of computer), type `make distclean'.
+
+Compilers and Options
+=====================
+
+   Some systems require unusual options for compilation or linking that
+the `config.sh' script does not know about.  You can give `config.sh'
+initial values for variables by setting them in the environment.  Using
+a Bourne-compatible shell, you can do that on the command line like
+this:
+     CC=c89 CFLAGS=-O2 LIBS=-lposix ./config.sh
+
+Or on systems that have the `env' program, you can do it like this:
+     env CPPFLAGS=-I/usr/local/include LDFLAGS=-s ./config.sh
+
+Installation Names
+==================
+
+   By default, `make install' will install the package's files in
+`/usr/local/bin', `/usr/local/man', etc.  You can specify an
+installation prefix other than `/usr/local' by giving `config.sh' the
+option `--prefix=PATH'.
+
+   You can specify separate installation prefixes for
+architecture-specific files and architecture-independent files.  If you
+give `config.sh' the option `--exec-prefix=PATH', the package will use
+PATH as the prefix for installing programs and libraries.
+Documentation and other data files will still use the regular prefix.
+
+   If the package supports it, you can cause programs to be installed
+with an extra prefix or suffix on their names by giving `config.sh' the
+option `--program-prefix=PREFIX' or `--program-suffix=SUFFIX'.
+
+Sharing Defaults
+================
+
+   If you want to set default values for `config.sh' scripts to share,
+you can create a site shell script called `config.site' that gives
+default values for variables like `CC', `cache_file', and `prefix'.
+`config.sh' looks for `PREFIX/share/config.site' if it exists, then
+`PREFIX/etc/config.site' if it exists.  Or, you can set the
+`CONFIG_SITE' environment variable to the location of the site script.
+A warning: not all `config.sh' scripts look for a site script.
+
+Operation Controls
+==================
+
+   `config.sh' recognizes the following options to control how it
+operates.
+
+`--cache-file=FILE'
+     Save the results of the tests in FILE instead of `config.cache'.
+     Set FILE to `/dev/null' to disable caching, for debugging
+     `config.sh'.
+
+`--help'
+     Print a summary of the options to `config.sh', and exit.
+
+`--quiet'
+`--silent'
+`-q'
+     Do not print messages saying which checks are being made.
+
+`--srcdir=DIR'
+     Look for the package's source code in directory DIR.  Usually
+     `config.sh' can determine that directory automatically.
+
+`--version'
+     Print the version of Autoconf used to generate the `config.sh'
+     script, and exit.
+
+`config.sh' also accepts some other, not widely useful, options.
+

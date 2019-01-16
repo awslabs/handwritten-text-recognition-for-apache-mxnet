@@ -1,0 +1,207 @@
+<!-- $Id: st_opt.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>SC_STATS Command Line Options</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="options_name_0">
+<A HREF="sc_stats.htm#sc_stats_name_0">Sc_stats</A> Commandline Options</A>
+</H1>
+<p>
+The commandline options for sc_stats can be broken into four categories:
+<ol type=1>
+<li><a href="st_opt.htm#input_options_0"> Input File Options: </a>
+<ul>
+<a href="st_opt.htm#option_p_name_0">-p</a>,
+</ul>
+
+<li><a href="st_opt.htm#output_options_0"> Output Options: </a>
+<ul>
+<a href="st_opt.htm#option_e_name_0">-e</a>,
+<a href="st_opt.htm#option_n_name_0">-n</a>,
+<a href="st_opt.htm#option_O_name_0">-O</a>,
+</ul>
+<li><a href="st_opt.htm#report_options_0"> Report Generation Options: </a>
+<ul>
+<a href="st_opt.htm#option_r_name_0">-r</a>
+</ul>
+<li><a href="st_opt.htm#tests_options_0"> Statistical Test Options: </a>
+<ul>
+<a href="st_opt.htm#option_t_name_0">-t</a>
+<a href="st_opt.htm#option_v_name_0">-v</a>
+<a href="st_opt.htm#option_u_name_0">-u</a>
+<a href="st_opt.htm#option_g_name_0">-g</a>
+</ul>
+</ol>
+
+<p>
+<a name="input_options_0"><strong> Input File Options: </strong></a>
+ <UL>
+
+These options control/define the input to sc_stats.  Input must
+come from stdin and the -p option must be used.  (Forcing the user to
+use the -p option enables future expandability while maintaining backward
+compatability.)
+
+<br>
+<br>
+   <a name="option_p_name_0">-p</a>	
+   <ul>
+	  Alignments are read from 'stdin' as  input  to  sc_stats.
+          The  format  of  the input must be in the "sgml" output
+          format, created either by '-o sgml' or by  piped  input
+          from another sctk utility.  
+   </ul>
+
+</ul>
+
+<a name="output_options_0"><strong> Output Options: </strong></a>
+<ul>
+    <a name="option_e_name_0">-e desc</a>
+	<ul>
+	 Description of the ensemble of hyp files.
+	</ul>
+    <a name="option_O_name_0">-O output_dir </a>
+	<ul>
+	Writes all output files into output_dir.  Defaults to the
+	hypfile's directory
+	</ul>
+    <a name="option_n_name_0">-n name </a>
+	<ul>
+    	Writes all multiple hypothesis file reports to files beginning
+	with 'name'.  Using '-' writes to stdout. Default: 'Ensemble'
+	</ul>
+ </ul>
+
+<a name="report_options_0"><strong> Report Generation Options: </strong></a>
+<ul>
+    <a name="option_g_name_0">-g</a> [ range | grange | grange2 ] </a>
+	<ul>
+          Generate per speaker range graphs, based on the formula defined
+	  by '-f'.  The reports are written to files whose root name
+	  begins with the values defined by '-n'.  There are two graphs
+	  produced, one showing speaker performance variability across
+	  systems and the
+	  second showing system performance variablity for across speakers.
+	  <p>- The '<STRONG>range</STRONG>' graphs are an ASCII
+	representation of the
+	  of the variablity in error rates for a given speaker.  The
+	  graph is sorted be the mean of statistic computed for each speaker.
+	  <A HREF="st_out.htm#sc_out_range_0">EXAMPLE</A>
+		
+	  <p> - The '<STRONG>grange</STRONG>' graph is a gnuplot version of the same data
+	  ploted in 'range.  There are two sets of files created. 
+	  The first set, which is called '*.grange.spk.plt' and
+	  '*.grange.spk.dat', contains the gnuplot command files and
+	  data files respectively for the speaker performance variability 
+	  across systems graph.
+	  The second set, which is called '*.grange.sys.plt' and
+	  '*.grange.sys.dat', contains the gnuplot command files and
+	  data files respectively for the system
+	  performance variability across speakers graph.
+
+	  <A HREF="st_out.htm#sc_out_grange_0">EXAMPLE</A>
+
+	  <p> - The '<STRONG>grange2</STRONG>' graph is similar to the 'grange'
+	  graph except that each systems speaker word error scores are 
+	  identified by a unique symbol.
+	  <A HREF="st_out.htm#sc_out_grange2_0">EXAMPLE</A>
+	</ul>
+	<BR>
+    <a name="option_r_name_0">-r</a> [ sum | rsum | lur | es | res | none ] </a>
+	<ul>
+	<dl>
+	<dt> 
+          prn -
+	<dd>
+	  <a href="st_out.htm#st_out_prn_0">Example</a>
+	<dt> 
+          sum -
+	<dd>
+	  <a href="st_out.htm#st_out_sum_0">Example</a>
+	<dt> 
+          rsum -
+	<dd>
+	  <a href="st_out.htm#st_out_rsum_0">Example</a>
+	<dt> 
+          lur -
+	<dd>
+	  <a href="st_out.htm#st_out_lur_0">Example</a>
+	<dt> 
+          es -
+	<dd>
+	  <a href="st_out.htm#st_out_es_0">Example</a>
+	<dt> 
+          res -
+	<dd>
+	  <a href="st_out.htm#st_out_res_0">Example</a>
+	<dt> 
+          none -
+	<dd>
+               Produce no output reports, Default.
+	</dl>
+        </ul>
+</ul>
+
+<a name="tests_options_0"><strong> Statistical Test Options: </strong></a>
+<ul>
+    <a name="option_t_name_0">-t</a> [ mcn | mapsswe | sign | wilc | anovar | std4 ]
+	<ul>
+	<dl>
+	<dt> 
+          mcn -
+	<dd>
+	  Perform the McNemar Test.
+	<dt> 
+          mapsswe -
+	<dd>
+	Perform the Matched Pairs Sentence Segment Word Error Test
+	<dt> 
+          sign -
+	<dd>
+	Perform the Sign Test
+	<dt> 
+          wilc -
+	<dd>
+	Perform the Wilcoxon Signed Rank Test
+	<dt> 
+          anovar -
+	<dd>
+	Perform the Analysis of Variance by Rank Test
+	<dt> 
+          std -
+	<dd>
+        This is a shorthand notation to do the 'standard' four tests:
+	mcn, mapsswe, wilc and sign.
+	</dl>
+        </ul>
+	<BR>
+    <a name="option_v_name_0">-v</a> 
+	<UL>
+        For each test performed on a pair of systems files, output a
+	detailed analysis.
+	</UL>
+	<BR>
+    <a name="option_u_name_0">-u</a> 
+	<UL>
+	Rather than creating a comparison matrix for each test, unify
+	statistical test results into a single comparision matrix
+	</UL>
+	<BR>
+    <a name="option_u_name_0">-f</a> [ E | R | W ]  
+	<UL>
+        Use the identified formula for statistical tests: sign,
+	wilcoxon and anovar tests.  The formulas are:
+	<OL>
+		<LI> E -> Percentage Word Error
+		<LI> R -> Percentage Words Correctly Recognized
+		<LI> E -> Percentage Word Accuracy
+	</OL>
+	By default 'E'
+	</UL>
+
+</ul>
+
+</body>
+</html>

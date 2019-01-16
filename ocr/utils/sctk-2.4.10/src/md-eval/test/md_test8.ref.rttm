@@ -1,0 +1,29 @@
+;; mdeval md_test8 ref rttm
+;; one good edit, with a filler/explicit_editing_term
+;; and one edit where sys gets edit type wrong and filler type wrong
+SPKR-INFO md_test8 1 <NA> <NA> <NA>         child        spkr1r <NA>
+SEGMENT   md_test8 1 10.0  5.0 <NA>         <NA>         spkr1r <NA>
+SPEAKER   md_test8 1 10.0  5.0 <NA>         <NA>         spkr1r <NA>
+SU        md_test8 1 10.0  5.0 <NA>         statement    spkr1r <NA>
+LEXEME    md_test8 1 10.0  1.0 firstWord    lex          spkr1r <NA>
+EDIT      md_test8 1 11.0  3.0 <NA>         revision     spkr1r <NA>
+LEXEME    md_test8 1 11.0  1.0 secondWord   lex          spkr1r <NA>
+IP        md_test8 1 12.0  <NA> <NA>        edit&filler  spkr1r <NA>
+FILLER    md_test8 1 12.0  1.0 <NA>         explicit_editing_term spkr1r <NA>
+LEXEME    md_test8 1 12.0  1.0 thirdWord    lex          spkr1r <NA>
+LEXEME    md_test8 1 13.0  1.0 fourthWord   lex          spkr1r <NA>
+LEXEME    md_test8 1 14.0  1.0 fifthWord    lex          spkr1r <NA>
+
+SPKR-INFO md_test8 1 <NA> <NA> <NA>         adult_female spkr2r <NA>
+SEGMENT   md_test8 1 15.0  6.0 <NA>         <NA>         spkr2r <NA>
+SPEAKER   md_test8 1 15.0  6.0 <NA>         <NA>         spkr2r <NA>
+SU        md_test8 1 15.0  6.0 <NA>         question     spkr2r <NA>
+LEXEME    md_test8 1 15.0  1.0 sixthWord    lex          spkr2r <NA>
+EDIT      md_test8 1 16.0  3.0 <NA>         restart      spkr2r <NA>
+LEXEME    md_test8 1 16.0  1.0 seventhWord  lex          spkr2r <NA>
+IP        md_test8 1 17.0  <NA> <NA>        edit&filler  spkr2r <NA>
+FILLER    md_test8 1 17.0  1.0 <NA>         discourse_marker spkr2r <NA>
+LEXEME    md_test8 1 17.0  1.0 eighthWord   lex          spkr2r <NA>
+LEXEME    md_test8 1 18.0  1.0 ninthWord    lex          spkr2r <NA>
+LEXEME    md_test8 1 19.0  1.0 tenthWord    lex          spkr2r <NA>
+LEXEME    md_test8 1 20.0  1.0 eleventhWord lex          spkr2r <NA>

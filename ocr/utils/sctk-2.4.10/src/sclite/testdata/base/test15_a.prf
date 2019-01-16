@@ -1,0 +1,55 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./test.cantonese.ctm
+Ref file:      ./test.cantonese.stm
+Hyp file:      ./test.cantonese.ctm
+
+Speaker Count: 1
+Speakers: 
+    0:  spkr1
+
+
+Speaker sentences   0:  spkr1   utt# 0 of 3
+id: (spkr1-000)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 9 2 3 2
+Ref times: t1= 16.53 t2= 17.35
+REF:  食     左     ******  啦     我     喺     度     (<HES>) 整     野     煲汤  煲     FRED    攞     ****    汤     
+HYP:  食     左     左左  啦     我     喺喺  度     ******* ***     野     煲汤  煲     ****    攞     FRED    汤汤  
+H_T1: 11.24   11.65   11.85   12.05   12.46   12.87   13.28                   14.09   14.50   15.31           15.72   16.12   16.33   
+H_T2: 11.65   11.85   12.06   12.46   12.87   13.28   13.68                   14.50   14.90   15.72           16.12   16.33   16.53   
+CONF: 0.5000  0.5000  0.5000  0.5000  0.5000  0.5000  0.5000                  0.5000  0.5000  0.5000          0.5000  0.5000  0.5000  
+Eval:                 I                       S               D       D                               D               I       S       
+
+Speaker sentences   0:  spkr1   utt# 1 of 3
+id: (spkr1-001)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 6 1 1 1
+Ref times: t1= 20.84 t2= 21.71
+REF:  煲     煲     ******  定     佢     放学       饮     啊     嘛     
+HYP:  煲     煲     煲煲  定     佢     放学放学 饮     ***     嘛     
+H_T1: 17.35   17.79   18.00   18.22   18.66   19.09        19.53           20.40   
+H_T2: 17.79   18.00   18.22   18.66   19.09   19.53        19.97           20.84   
+CONF: 0.5000  0.5000  0.5000  0.5000  0.5000  0.5000       0.5000          0.5000  
+Eval:                 I                       S                    D               
+
+Speaker sentences   0:  spkr1   utt# 2 of 3
+id: (spkr1-002)
+File: file
+Channel: 1
+Scores: (#C #S #D #I) 8 2 2 2
+Ref times: t1= 29.92 t2= 30.72
+REF:  我地  啲     ******  (大概-)    星期五 下     (个)   星期五 可能  去     咩     亲子游 喔     ******  
+HYP:  我地  啲     啲啲  大概星期 星期五 ***     *****   下下    可能  去     咩     亲子游 喔     喔喔  
+H_T1: 25.50   25.90   26.10   26.30        26.71                     27.11     28.31   28.72   29.12   29.52     29.92   30.12   
+H_T2: 25.90   26.10   26.30   26.71        27.11                     27.51     28.72   29.12   29.52   29.92     30.12   30.32   
+CONF: 0.5000  0.5000  0.5000  0.5000       0.5000                    0.5000    0.5000  0.5000  0.5000  0.5000    0.5000  0.5000  
+Eval:                 I       S                      D       D       S                                                   I       
+
+

@@ -1,0 +1,74 @@
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_0)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_1)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_2)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_3)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_4)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_5)
+Ġ ġ Ģ ģ Ĥ ĥ Ħ (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+Ĵħ Ĵħ ħĠĵĤ ĠīĮĭĦ ĶħĨĢħ ĦĮ įıĮġīĤĬ Įĥ Ĭĸ įıĨĵĠĳĤ (g_0)
+Ĵħ Ĵħ ħĠĵĤ ĠīĮĭĦ ĶħĨĢħ ĦĮ įıĮġīĤĬ Įĥ Ĭĸ įıĨĵĠĳĤ (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+Ġ {ġĢ / ġ } { Ĥ ģ / Ĥĥ} (h_0)
+Ġ Ħħ Ĩ ġģ Ĥ Ĩ ĳħ ĥ (h_1)
+Ġ Ħħ Ĩ ġģ Ĥ Ĩ ĭ ĳħ ĥ (h_2)
+;; Test a couple alternations in the hyp file
+ĳħ {Ĥ/ĨĲ} ĨĲ {ĳħ/ĳ} Ĥĭ (i_1)
+ĳħ {Ĥ/ĨĲ} ĨĲ {ĳħ/ĳ} Ĥĭ (i_2)
+;; Check alternations in both the ref and hyp
+ĳħ { {Ĥ / @} ĨĲ {Ķ ĠĲ / Ĩ / Ĳ / @ } / ģ ĨĲ } ĨĲ {ĳħ/ĳ} Ĥĭ (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+ĥĨĭģ ĳħĤ ĥĨĲħ ĳĨĢĪĲ ĬĨīĪ ĥĤĤ ħĨĬ {ĥĨ-/ĥĨĦ-} ĳħ- ĥĨ- -ĨĢĪĲ {-īĪ/-ĨĪ} -ĮĥĥĤĤ -ħĨĬ (i_4)
+;; Check deletions and substitutions of hyphenated words
+ģĤī ģĤīĞĶĨĳħĭĴīī ĲĪĨį ĲĪĨį ĲĴġĲĳĨĳĴĳĨĮĭ ĥīĠĦ ĲĴġĞĶĨĳħĭĴīī ĥīĠĦ (i_5)
+;; Check to handle utterances without reference words 
+Ġ ġ Ģ Ĥ ĥ Ħ ħ Ĩ ĩ Ī  (empty-1)
+ģ Ĥ ĥ (empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+Ġ Ģ ģ (alt-1)
+Ġ Ģ Ĩ ģ (alt-2)
+Ġ ģ (alt-3)
+Ġ {Ģ / @} ģ (alt-4)
+Ġ {@ / Ģ} ģ (alt-5)
+Ġ {ģ / @} ģ (alt-6)
+Ġ ģ @ Ĥ (alt-7)
+Ġ ģ Ĥ (alt-8)
+Ġ {Ĥ- / @} Ģ (alt-9)
+;;; Check the handling of optionally deletable
+ġ Ĥ (od1-1)
+ġ Ģ Ĥ (od1-2)
+ġ ģ Ĥ (od1-3)
+ġ Ģ Ĩ Ĥ (od1-4)
+ġ Ĳ Ĩ Ĥ (od1-5)
+Ĥ (od1-6)
+ĥ (od1-7)
+;;;;;;;;;;;;;;;;;;;
+;;; ambiguous cases
+Ĳ Ĳ Ĳ (od2-1)
+Ĳ Ĳ Ĳ (od2-2)
+Ĳ Ĳ Ĳ (od2-3)
+Ĳ Ĳ Ĳ (od2-4)
+Ĳ Ĳ Ĳ (od2-5)
+Ĳ Ĳ Ĳ (od2-6)
+Ĳ Ĳ Ĳ (od2-7)
+Ĳ Ĳ Ĳ (od2-8)
+Ĳ Ĳ Ĳ (od2-9)
+Ĳ Ĳ Ĳ (od2-10)
+;;; Fragment interactions
+ġ Ĥ (od3-1)
+ġ Ģ Ĥ (od3-2)
+ġ ģ Ĥ (od3-3)
+ġ Ģ Ĩ Ĥ (od3-4)
+ġ Ĳ Ĩ Ĥ (od3-5)
+Ĥ (od3-6)
+ĥ (od3-7)
+ġ ĳĤĭ ĳħĤ Ġĭģ (od3-8)
+;;; Test passing through tags
+Ġ ĠĠ\;a ġ\;b\;b;hyp\;tag1;hyptag2 ġ;hyptag1 Ģ;;hyptag2 ģ;hyptag1;hyptag2 (tags-1)
+(tags-2)
+Ġ ĠĠ\;a ġ\;b\;b;hyptag1;hyp\;tag2 ġ;hyptag1 Ģ;;hyptag2 ģ;hyptag1;hyptag2 (tags-3)
+z ĠĠ\;a ġ\;b\;b;hyptag1;hyptag2 ĸ;hyptag1 ķ;;hyptag2 Ķ;hyptag1;hyptag2 (tags-4)
+{ z ĠĠ\;a ġ\;b\;b;hyptag1;hyptag2 ĸ;hyptag1 ķ;;hyptag2 Ķ;hyptag1;hyptag2 / ķ ķ ķ ķ ķ ķ ķ ķ ķ ķ ķ ķ ķ } (tags-5)

@@ -1,0 +1,23 @@
+;; This file is an example of STM file for test purspose
+;; Do not modify if you dont know what you are doing
+;; Only lines with LEXEME and lex has been concidered
+SPKR-INFO  ALPHA  1  <NA>  <NA>  <NA>  adult_male  OMEGA  <NA>
+SPKR-INFO  ALPHA  1  <NA>  <NA>  <NA>  adult_male  THETA  <NA>
+SPEAKER    ALPHA  1  1.0   1.0   <NA>  <NA>        OMEGA  <NA>
+LEXEME     ALPHA  1  1.0   1.0   {_A_/_B_B2_}     lex         OMEGA  <NA>
+SPEAKER    ALPHA  1  2.0   1.0   <NA>  <NA>        OMEGA  <NA>
+LEXEME     ALPHA  1  2.0   1.0   {_S_/_T_}     lex         OMEGA  <NA>
+SPEAKER    ALPHA  1  2.0   8.0   <NA>  <NA>        THETA  <NA>
+LEXEME     ALPHA  1  2.0   1.0   {_D_/_DD_D2_}     lex         THETA  <NA>
+LEXEME     ALPHA  1  3.0   1.0   E     lex         THETA  <NA>
+LEXEME     ALPHA  1  4.0   1.0   F     lex         THETA  <NA>
+LEXEME     ALPHA  1  5.0   1.0   {_G_/_GG_G2_}     lex         THETA  <NA>
+LEXEME     ALPHA  1  6.0   1.0   O     lex         THETA  <NA>
+SPEAKER    ALPHA  1  10.0  8.0   <NA>  <NA>        THETA  <NA>
+LEXEME     ALPHA  1  10.0  1.0   P     lex         THETA  <NA>
+LEXEME     ALPHA  1  11.0  1.0   {_J_/_JJ_J2_}     lex         THETA  <NA>
+LEXEME     ALPHA  1  12.0  1.0   Q     lex         THETA  <NA>
+LEXEME     ALPHA  1  13.0  1.0   {_L_/_LL_L2_}     lex         THETA  <NA>
+LEXEME     ALPHA  1  14.0  1.0   {_M_/_MM_M2_}     lex         THETA  <NA>
+LEXEME     ALPHA  1  15.0  1.0   R     lex         THETA  <NA>
+

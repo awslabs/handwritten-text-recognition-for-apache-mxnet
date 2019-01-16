@@ -1,0 +1,595 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   test.arb2004.txt.ctm
+Ref file:      test.arb2004.txt.stm.filt
+Hyp file:      test.arb2004.txt.ctm.filt
+Creation date: "Fri Jun  3 10:23:48 2005"
+Fragment Correct Flag Set
+Optionally Deletable Flag Set
+
+Speaker Count: 4
+Speakers: 
+    0:  test.arb2004_A_inter_segment_gap
+    1:  test.arb2004_A
+    2:  test.arb2004_B
+    3:  test.arb2004_B_inter_segment_gap
+
+Utterance Label definitions:
+    Category: id: "0" title: "" description: ""
+    Label: id: "O" title: "Overall" description: "All Segments in the test set"
+
+Speaker sentences   0:  test.arb2004_A_inter_segment_gap   utt# 0 of 4
+id: (test.arb2004_A_inter_segment_gap-000)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 0.00 t2= 1.00
+
+Speaker sentences   1:  test.arb2004_A   utt# 0 of 22
+id: (test.arb2004_A-000)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 1.00 t2= 2.00
+REF:  (%تردّد) (%تردّد) The     previous two     words   are     %>h     
+HYP:                %تردّد   The     previous two     words   are     %>h     
+H_T1: 0.00          1.05          1.28    1.39     1.50    1.61    1.73    1.84    
+H_T2: 0.00          1.16          1.39    1.50     1.61    1.72    1.84    1.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 1 of 22
+id: (test.arb2004_A-001)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 2.00 t2= 3.00
+REF:  (%تردّد) (%تردّد) The     previous two     words   are     %<yh    
+HYP:                %تردّد   The     previous two     words   are     %<yh    
+H_T1: 0.00          2.05          2.27    2.39     2.50    2.61    2.72    2.84    
+H_T2: 0.00          2.16          2.38    2.50     2.61    2.72    2.83    2.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 2 of 22
+id: (test.arb2004_A-002)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 3.00 t2= 4.00
+REF:  (%تردّد) (%تردّد) The     previous two     words   are     %>m     
+HYP:                %تردّد   The     previous two     words   are     %>m     
+H_T1: 0.00          3.05          3.27    3.39     3.50    3.61    3.72    3.84    
+H_T2: 0.00          3.16          3.38    3.50     3.61    3.72    3.83    3.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 3 of 22
+id: (test.arb2004_A-003)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 4.00 t2= 5.00
+REF:  (%تردّد) (%تردّد) The     previous two     words   are     %>ww    
+HYP:                %تردّد   The     previous two     words   are     %>ww    
+H_T1: 0.00          4.05          4.27    4.39     4.50    4.61    4.72    4.84    
+H_T2: 0.00          4.16          4.38    4.50     4.61    4.72    4.83    4.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 4 of 22
+id: (test.arb2004_A-004)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 5.00 t2= 6.00
+REF:  (%تردّد) (%تردّد) The     two     previous words   are     %hAy    
+HYP:                %تردّد   The     two     previous words   are     %hAy    
+H_T1: 0.00          5.05          5.27    5.39    5.50     5.61    5.72    5.84    
+H_T2: 0.00          5.16          5.38    5.50    5.61     5.72    5.83    5.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 5 of 22
+id: (test.arb2004_A-005)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 6.00 t2= 7.00
+REF:  (%تردّد) (%تردّد) The     two     previous words   are     %mhm    
+HYP:                %تردّد   The     two     previous words   are     %mhm    
+H_T1: 0.00          6.05          6.27    6.39    6.50     6.61    6.72    6.84    
+H_T2: 0.00          6.16          6.38    6.50    6.61     6.72    6.83    6.95    
+Eval:                                                                              
+
+Speaker sentences   1:  test.arb2004_A   utt# 6 of 22
+id: (test.arb2004_A-006)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 8 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 7.00 t2= 8.00
+REF:  اهه  اهه  The     two     previous words   are     %>hh    
+HYP:  اهه  اهه  The     two     previous words   are     %>hh    
+H_T1: 7.05    7.16    7.27    7.39    7.50     7.61    7.72    7.84    
+H_T2: 7.16    7.27    7.38    7.50    7.61     7.72    7.83    7.95    
+Eval:                                                                  
+
+Speaker sentences   1:  test.arb2004_A   utt# 7 of 22
+id: (test.arb2004_A-007)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 5 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 8.00 t2= 9.00
+REF:  The     previous word    is      %>jnby  
+HYP:  The     previous word    is      %>jnby  
+H_T1: 8.05    8.23     8.41    8.59    8.77    
+H_T2: 8.23    8.41     8.59    8.77    8.95    
+Eval:                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 8 of 22
+id: (test.arb2004_A-008)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 9 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 9.00 t2= 10.00
+REF:  The     data    betweem %tdAxl  and     %tdAxl  are     overlapping speech  
+HYP:  The     data    betweem %tdAxl  and     %tdAxl  are     overlapping speech  
+H_T1: 9.05    9.15    9.25    9.35    9.45    9.55    9.65    9.75        9.85    
+H_T2: 9.15    9.25    9.35    9.45    9.55    9.65    9.75    9.85        9.95    
+Eval:                                                                             
+
+Speaker sentences   0:  test.arb2004_A_inter_segment_gap   utt# 1 of 4
+id: (test.arb2004_A_inter_segment_gap-001)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 10.00 t2= 11.00
+
+Speaker sentences   1:  test.arb2004_A   utt# 9 of 22
+id: (test.arb2004_A-009)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 11.00 t2= 12.00
+REF:  The     previous word    is      a       silence %Smt    
+HYP:  The     previous word    is      a       silence %Smt    
+H_T1: 11.05   11.18    11.31   11.44   11.56   11.69   11.82   
+H_T2: 11.18   11.31    11.44   11.57   11.69   11.82   11.95   
+Eval:                                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 10 of 22
+id: (test.arb2004_A-010)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 12.00 t2= 13.00
+REF:  The     previous word    is      a       pause   %<nqTAE 
+HYP:  The     previous word    is      a       pause   %<nqTAE 
+H_T1: 12.05   12.18    12.31   12.44   12.56   12.69   12.82   
+H_T2: 12.18   12.31    12.44   12.57   12.69   12.82   12.95   
+Eval:                                                          
+
+Speaker sentences   0:  test.arb2004_A_inter_segment_gap   utt# 2 of 4
+id: (test.arb2004_A_inter_segment_gap-002)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 13.00 t2= 14.00
+
+Speaker sentences   1:  test.arb2004_A   utt# 11 of 22
+id: (test.arb2004_A-011)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 14.00 t2= 15.00
+REF:  The     previous word    is      a       noise   %Djp.   
+HYP:  The     previous word    is      a       noise   %Djp.   
+H_T1: 14.05   14.18    14.31   14.44   14.56   14.69   14.82   
+H_T2: 14.18   14.31    14.44   14.57   14.69   14.82   14.95   
+Eval:                                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 12 of 22
+id: (test.arb2004_A-012)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 15.00 t2= 16.00
+REF:  The     previous word    is      a       breath  %tnfs.  
+HYP:  The     previous word    is      a       breath  %tnfs.  
+H_T1: 15.05   15.18    15.31   15.44   15.56   15.69   15.82   
+H_T2: 15.18   15.31    15.44   15.57   15.69   15.82   15.95   
+Eval:                                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 13 of 22
+id: (test.arb2004_A-013)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 16.00 t2= 17.00
+REF:  The     previous word    is      a       cough   %sEAl   
+HYP:  The     previous word    is      a       cough   %sEAl   
+H_T1: 16.05   16.18    16.31   16.44   16.56   16.69   16.82   
+H_T2: 16.18   16.31    16.44   16.57   16.69   16.82   16.95   
+Eval:                                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 14 of 22
+id: (test.arb2004_A-014)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 17.00 t2= 18.00
+REF:  The     previous word    is      a       laugh   %DHk    
+HYP:  The     previous word    is      a       laugh   %DHk    
+H_T1: 17.05   17.18    17.31   17.44   17.56   17.69   17.82   
+H_T2: 17.18   17.31    17.44   17.57   17.69   17.82   17.95   
+Eval:                                                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 15 of 22
+id: (test.arb2004_A-015)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 18.00 t2= 19.00
+REF:  The     previous word    is      peopletalk %>SwAt  
+HYP:  The     previous word    is      peopletalk %>SwAt  
+H_T1: 18.05   18.20    18.35   18.50   18.65      18.80   
+H_T2: 18.20   18.35    18.50   18.65   18.80      18.95   
+Eval:                                                     
+
+Speaker sentences   1:  test.arb2004_A   utt# 16 of 22
+id: (test.arb2004_A-016)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 3 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.00 t2= 19.10
+REF:  Foreign span1   (Inside) 
+HYP:  Foreign span1   (Inside) 
+H_T1: 19.00   19.04   19.07    
+H_T2: 19.03   19.07   19.10    
+Eval:                          
+
+Speaker sentences   1:  test.arb2004_A   utt# 17 of 22
+id: (test.arb2004_A-017)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.10 t2= 19.20
+REF:  Foreign span2   outside (Inside) 
+HYP:  Foreign span2   outside (Inside) 
+H_T1: 19.11   19.13   19.15   19.17    
+H_T2: 19.13   19.15   19.17   19.19    
+Eval:                                  
+
+Speaker sentences   1:  test.arb2004_A   utt# 18 of 22
+id: (test.arb2004_A-018)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.20 t2= 19.30
+REF:  Foreign span3   (Inside) outside 
+HYP:  Foreign span3   (Inside) outside 
+H_T1: 19.20   19.23   19.25    19.27   
+H_T2: 19.22   19.25   19.27    19.29   
+Eval:                                  
+
+Speaker sentences   1:  test.arb2004_A   utt# 19 of 22
+id: (test.arb2004_A-019)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 5 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.30 t2= 19.40
+REF:  Foreign span3   (Inside) outside (Inside) 
+HYP:  Foreign span3   (Inside) outside (Inside) 
+H_T1: 19.30   19.32   19.34    19.36   19.38    
+H_T2: 19.32   19.34   19.36    19.38   19.40    
+Eval:                                           
+
+Speaker sentences   1:  test.arb2004_A   utt# 20 of 22
+id: (test.arb2004_A-020)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.40 t2= 19.50
+REF:  Foreign span3   (Inside) outside outside (Inside) 
+HYP:  Foreign span3   (Inside) outside outside (Inside) 
+H_T1: 19.40   19.42   19.43    19.45   19.46   19.48    
+H_T2: 19.42   19.44   19.45    19.47   19.48   19.50    
+Eval:                                                   
+
+Speaker sentences   1:  test.arb2004_A   utt# 21 of 22
+id: (test.arb2004_A-021)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 10 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.50 t2= 19.60
+REF:  Foreign span3   outside outside (Inside) outside outside (Inside) outside outside 
+HYP:  Foreign span3   outside outside (Inside) outside outside (Inside) outside outside 
+H_T1: 19.50   19.51   19.52   19.53   19.54    19.55   19.56   19.57    19.58   19.59   
+H_T2: 19.51   19.52   19.53   19.54   19.55    19.56   19.57   19.58    19.59   19.60   
+Eval:                                                                                   
+
+Speaker sentences   0:  test.arb2004_A_inter_segment_gap   utt# 3 of 4
+id: (test.arb2004_A_inter_segment_gap-003)
+Labels: <O>
+File: test.arb2004
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 19.60 t2= 999999.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 0 of 11
+id: (test.arb2004_B-000)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 11 0 1 0
+Attributes: Case_sensitve 
+Ref times: t1= 0.00 t2= 1.00
+REF:  (إيوه) (%تردّد) (طبعا) Make    sure    unclear works   (%تردّد) (طبعا) yeah    (طبعا) (%تردّد) 
+HYP:  (إيوه) (%تردّد) (طبعا) Make    sure    unclear works                            ****                             
+H_T1: 0.05       0.18          0.31       0.44    0.56    0.69    0.82    0.00          0.00               0.00       0.00          
+H_T2: 0.18       0.31          0.44       0.57    0.69    0.82    0.95    0.00          0.00               0.00       0.00          
+Eval:                                                                                              D                                
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 0 of 8
+id: (test.arb2004_B_inter_segment_gap-000)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 1.00 t2= 2.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 1 of 11
+id: (test.arb2004_B-001)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 2.00 t2= 3.00
+REF:  اه    inital  يآش  medial  ةآ    final   
+HYP:  اه    inital  يآش  medial  ةآ    final   
+H_T1: 2.05    2.20    2.35    2.50    2.65    2.80    
+H_T2: 2.20    2.35    2.50    2.65    2.80    2.95    
+Eval:                                                 
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 1 of 8
+id: (test.arb2004_B_inter_segment_gap-001)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 3.00 t2= 4.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 2 of 11
+id: (test.arb2004_B-002)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 4.00 t2= 5.00
+REF:  اههه inital  يأش  medial  ةأ    final   
+HYP:  اههه inital  يأش  medial  ةأ    final   
+H_T1: 4.05     4.20    4.35    4.50    4.65    4.80    
+H_T2: 4.20     4.35    4.50    4.65    4.80    4.95    
+Eval:                                                  
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 2 of 8
+id: (test.arb2004_B_inter_segment_gap-002)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 5.00 t2= 6.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 3 of 11
+id: (test.arb2004_B-003)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 6.00 t2= 7.00
+REF:  اه    inital  يإش  medial  ةإ    final   
+HYP:  اه    inital  يإش  medial  ةإ    final   
+H_T1: 6.05    6.20    6.35    6.50    6.65    6.80    
+H_T2: 6.20    6.35    6.50    6.65    6.80    6.95    
+Eval:                                                 
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 3 of 8
+id: (test.arb2004_B_inter_segment_gap-003)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 7.00 t2= 8.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 4 of 11
+id: (test.arb2004_B-004)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 8.00 t2= 9.00
+REF:  اه    inital  ياش  medial  ةا    final   
+HYP:  اه    inital  ياش  medial  ةا    final   
+H_T1: 8.05    8.20    8.35    8.50    8.65    8.80    
+H_T2: 8.20    8.35    8.50    8.65    8.80    8.95    
+Eval:                                                 
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 4 of 8
+id: (test.arb2004_B_inter_segment_gap-004)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 9.00 t2= 10.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 5 of 11
+id: (test.arb2004_B-005)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 10.00 t2= 11.00
+REF:  او    او    او    او    
+HYP:  او    او    او    او    
+H_T1: 10.05   10.28   10.50   10.73   
+H_T2: 10.28   10.51   10.73   10.96   
+Eval:                                 
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 5 of 8
+id: (test.arb2004_B_inter_segment_gap-005)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 11.00 t2= 12.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 6 of 11
+id: (test.arb2004_B-006)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 3 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 12.00 t2= 13.00
+REF:  (%تردّد) (بشتغل) (بالمناهج) 
+HYP:                                                
+H_T1: 0.00          0.00         0.00               
+H_T2: 0.00          0.00         0.00               
+Eval:                                               
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 6 of 8
+id: (test.arb2004_B_inter_segment_gap-006)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 13.00 t2= 14.00
+
+Speaker sentences   2:  test.arb2004_B   utt# 7 of 11
+id: (test.arb2004_B-007)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 14.00 t2= 15.00
+REF:  Tanween initial أبدا medial  ابدا final   ابدا 
+HYP:  Tanween initial أبدا medial  ابدا final   ابدا 
+H_T1: 14.05   14.18   14.31    14.44   14.56    14.69   14.82    
+H_T2: 14.18   14.31   14.44    14.57   14.69    14.82   14.95    
+Eval:                                                            
+
+Speaker sentences   2:  test.arb2004_B   utt# 8 of 11
+id: (test.arb2004_B-008)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 15.00 t2= 16.00
+REF:  Tanween initial إجراءات medial  اجراءات final   اجراءات 
+HYP:  Tanween initial إجراءات medial  اجراءات final   اجراءات 
+H_T1: 15.05   15.18   15.31          15.44   15.56          15.69   15.82          
+H_T2: 15.18   15.31   15.44          15.57   15.69          15.82   15.95          
+Eval:                                                                              
+
+Speaker sentences   2:  test.arb2004_B   utt# 9 of 11
+id: (test.arb2004_B-009)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 7 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 16.00 t2= 17.00
+REF:  Tanween initial اختطاف medial  اختطاف final   اختطاف 
+HYP:  Tanween initial اختطاف medial  اختطاف final   اختطاف 
+H_T1: 16.05   16.18   16.31        16.44   16.56        16.69   16.82        
+H_T2: 16.18   16.31   16.44        16.57   16.69        16.82   16.95        
+Eval:                                                                        
+
+Speaker sentences   2:  test.arb2004_B   utt# 10 of 11
+id: (test.arb2004_B-010)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 17.00 t2= 18.00
+REF:  Multiple Rules   needed  MultiRule 
+HYP:  Multiple Rules   needed  MultiRule 
+H_T1: 17.05    17.28   17.50   17.73     
+H_T2: 17.28    17.51   17.73   17.96     
+Eval:                                    
+
+Speaker sentences   3:  test.arb2004_B_inter_segment_gap   utt# 7 of 8
+id: (test.arb2004_B_inter_segment_gap-007)
+Labels: <O>
+File: test.arb2004
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+Attributes: Case_sensitve 
+Ref times: t1= 18.00 t2= 999999.00
+
+

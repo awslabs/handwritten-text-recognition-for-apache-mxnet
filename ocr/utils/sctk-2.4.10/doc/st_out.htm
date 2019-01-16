@@ -1,0 +1,328 @@
+<!-- $Id: st_out.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>Output Generated from sc_stats</TITLE></CENTER>
+
+<H1><CENTER>Outputs Generated from <A HREF="sc_stats.htm#sc_stats_name_0">sc_stats</A></CENTER></H1>
+</HEAD>
+<BODY><p><hr>
+
+<H2> <A NAME="st_out_name_0"> Introduction </A> </H2>
+<p>
+
+Sc_stats can generate the following graphs:
+<UL>
+<A HREF="st_out.htm#st_out_range_0">   range </A>, 
+<A HREF="st_out.htm#st_out_grange_0">  grange </A>,
+<A HREF="st_out.htm#st_out_grange2_0"> grange2 </A>
+</UL>
+Sc_stats can generate the following reports:
+<UL>
+<A HREF="st_out.htm#st_out_prn_0">   prn </A>, 
+<A HREF="st_out.htm#st_out_sum_0">   sum </A>, 
+<A HREF="st_out.htm#st_out_rsum_0">  rsum </A>,
+<A HREF="st_out.htm#st_out_lur_0">   lur </A>, 
+<A HREF="st_out.htm#st_out_es_0">   es </A>,
+<A HREF="st_out.htm#st_out_res_0">   res </A>
+
+</UL>
+
+<P>
+Graphs generated with the -g <A NAME="st_out_range_0"> <A HREF="st_opt.htm#option_g_name_0"> range </A> </A> option.
+<pre>
+
+                 RANGE ANALYSIS ACROSS SPEAKERS FOR THE TEST:
+                                       
+                        by Speaker Word Error Rate (%)
+
+
+
+
+              |-----------------------------------------------|
+              |   SPKR |  high  |   low  || std dev |   mean  |
+              |--------+--------+--------++---------+---------|
+              | spk8   |  42.2  |  11.4  ||   17.2  |   22.4  |
+              | spk2   |  43.3  |  11.8  ||   17.7  |   22.8  |
+              | spk3   |  40.8  |  13.5  ||   15.2  |   23.3  |
+              | spk9   |  42.6  |  12.5  ||   16.2  |   24.0  |
+              | spk1   |  44.3  |  13.1  ||   17.6  |   24.0  |
+              | spk7   |  41.9  |  13.1  ||   15.5  |   24.1  |
+              | spk6   |  43.9  |  14.5  ||   16.8  |   24.6  |
+              | spk4   |  47.8  |  13.5  ||   19.2  |   25.6  |
+              | spk0   |  45.0  |  15.6  ||   16.6  |   25.8  |
+              | spk5   |  42.2  |  12.5  ||   15.1  |   25.8  |
+              |-----------------------------------------------|
+
+
+
+
+
+
+        |------------------------------------------------------------|
+        |        |                    PERCENTAGES                    |
+        |--------+---------------------------------------------------|
+        |        |0   10   20   30   40   50   60   70   80   90  100|
+        |   SPKR ||    |    |    |    |    |    |    |    |    |    ||
+        |--------+---------------------------------------------------|
+        | spk8   |   +  -----|--------+-                             |
+        | spk2   |   +  -----|--------+-                             |
+        | spk3   |    +  -----|------+-                              |
+        | spk9   |    +  -----|-------+-                             |
+        | spk1   |   +   -----|--------+-                            |
+        | spk7   |    +  -----|-------+                              |
+        | spk6   |    +   ----|--------+                             |
+        | spk4   |   +   ------|--------+-                           |
+        | spk0   |     +  -----|-------+-                            |
+        | spk5   |     + ------|------+-                             |
+        |------------------------------------------------------------|
+
+              |-> shows the mean
+              +-> shows plus or minus one standard deviation
+
+
+
+           RANGE ANALYSIS ACROSS RECOGNITION SYSTEMS FOR THE TEST:
+                                       
+                        by Speaker Word Error Rate (%)
+
+
+
+
+             |-------------------------------------------------|
+             |   SYS    |  high  |   low  || std dev |   mean  |
+             |----------+--------+--------++---------+---------|
+             | sys2.hyp |  17.3  |  11.8  ||    1.7  |   14.2  |
+             | sys1.hyp |  22.8  |  11.4  ||    3.2  |   15.2  |
+             | sys3.hyp |  47.8  |  40.8  ||    2.0  |   43.4  |
+             |-------------------------------------------------|
+
+
+
+
+
+
+       |--------------------------------------------------------------|
+       |          |                    PERCENTAGES                    |
+       |----------+---------------------------------------------------|
+       |          |0   10   20   30   40   50   60   70   80   90  100|
+       |   SYS    ||    |    |    |    |    |    |    |    |    |    ||
+       |----------+---------------------------------------------------|
+       | sys2.hyp |      +|+                                          |
+       | sys1.hyp |      +-|+--                                       |
+       | sys3.hyp |                     +|+                           |
+       |--------------------------------------------------------------|
+
+             |-> shows the mean
+             +-> shows plus or minus one standard deviation
+</PRE>
+<P>
+Graphs generated with the -g <A NAME="st_out_grange_0"> <A HREF="st_opt.htm#option_g_name_0"> grange </A> </A> option:
+<p>
+	<CENTER> Speaker Word Error Rate for all Systems Graph</CENTER>
+	<UL>
+	<IMG SRC="gr_spk.gif">
+	<P>
+	<CENTER> System Word Error Rate for all Speakers Graph</CENTER>
+	<IMG SRC="gr_sys.gif">
+	</UL>
+
+<P>
+Graphs generated with the -g <A NAME="st_out_grange2_0"> <A HREF="st_opt.htm#option_g_name_0"> grange2 </A> </A> option:
+<p>
+	<CENTER> Speaker Word Error Rate for all Systems Graph</CENTER>
+	<UL>
+	<IMG SRC="gr2_spk.gif">
+	<P>
+	<CENTER> System Word Error Rate for all Speakers Graph</CENTER>
+	<IMG SRC="gr2_sys.gif">
+	</UL>
+<p>
+<BIG> <CENTER> <STRONG> Reports </STRONG> </CENTER> </BIG>
+Report generated with the -r  <A NAME="st_out_prn_0"> <A HREF="st_opt.htm#option_r_name_0">  prn </A> </A>  option:
+<p>
+<PRE>
+
+Common scoring speakers and segments
+Version 0.1
+ 
+Represented Systems;
+   name: bbn1.ctm.filt   Ref: h4e_97.stm.filt   Hyp: bbn1.ctm.filt
+   name: bbn2.ctm.filt   Ref: h4e_97.stm.filt   Hyp: bbn2.ctm.filt
+   name: dragon1.ctm.filt   Ref: h4e_97.stm.filt   Hyp: dragon1.ctm.filt
+ 
+ 
+Speaker: david_brancaccio
+
+Id:     (david_brancaccio-007)
+Labels: <o,f4>
+File: h4e_97
+Channel: 1
+ 
+REF:              a management shake up at  general motors' delco electronics today the company 
+bbn1.ctm.filt:    a management shake up at  general MOTORS  delco electronics today the company 
+bbn2.ctm.filt:    a management shake up AND general MOTORS  delco electronics today the company 
+dragon1.ctm.filt: a management shake up at  general MOTORS  delco electronics today the company 
+ 
+>>> REF:              announced that general manager gary dickinson will retire in january at the 
+>>> bbn1.ctm.filt:    announced THE  general manager gary DICK      will retire in january at the 
+>>> bbn2.ctm.filt:    announced THE  general manager gary DIG       will retire in january at the 
+>>> dragon1.ctm.filt: announced THE  general manager gary DICK      will retire in january at the 
+
+
+</PRE>
+<P>
+Report generated with the -r  <A NAME="st_out_sum_0"> <A HREF="st_opt.htm#option_r_name_0">  sum </A> </A>  option:
+<p>
+<PRE>
+                     ,------------------------------------.
+                     |                                    |
+                     |      Overall Scoring Summary       |
+                     |------------------------------------|
+                     |  Spkr   |sys1.hyp|sys2.hyp|sys3.hyp|
+                     |         |        |        |        |
+                     |---------+--------+--------+--------|
+                     | spk0    |  17.0  |  15.6  |  45.0  |
+                     |---------+--------+--------+--------|
+                     | spk1    |  13.1  |  14.5  |  44.3  |
+                     |---------+--------+--------+--------|
+                     | spk2    |  13.5  |  11.8  |  43.3  |
+                     |---------+--------+--------+--------|
+                     | spk3    |  13.5  |  15.6  |  40.8  |
+                     |---------+--------+--------+--------|
+                     | spk4    |  15.6  |  13.5  |  47.8  |
+                     |---------+--------+--------+--------|
+                     | spk5    |  22.8  |  12.5  |  42.2  |
+                     |---------+--------+--------+--------|
+                     | spk6    |  14.5  |  15.2  |  43.9  |
+                     |---------+--------+--------+--------|
+                     | spk7    |  13.1  |  17.3  |  41.9  |
+                     |---------+--------+--------+--------|
+                     | spk8    |  11.4  |  13.5  |  42.2  |
+                     |---------+--------+--------+--------|
+                     | spk9    |  17.0  |  12.5  |  42.6  |
+                     |====================================|
+                     | Average |  15.2  |  14.2  |  43.4  |
+                     |---------+--------+--------+--------|
+                     |  Mean   |  15.2  |  14.2  |  43.4  |
+                     | StdDev  |   3.2  |   1.7  |   2.0  |
+                     |         |        |        |        |
+                     | Median  |  14.0  |  14.0  |  42.9  |
+                     `------------------------------------'
+</PRE>
+<p>
+Report generated with the -r <A NAME="st_out_rsum_0"> <A HREF="st_opt.htm#option_r_name_0">    rsum </A> </A>  option:
+<p>
+<PRE>
+                     ,-----------------------------------.
+                     |                                   |
+                     |      Overall Scoring Summary      |
+                     |-----------------------------------|
+                     |  Spkr  |sys1.hyp|sys2.hyp|sys3.hyp|
+                     |        |        |        |        |
+                     |--------+--------+--------+--------|
+                     | spk0   |    49  |    45  |   130  |
+                     |--------+--------+--------+--------|
+                     | spk1   |    38  |    42  |   128  |
+                     |--------+--------+--------+--------|
+                     | spk2   |    39  |    34  |   125  |
+                     |--------+--------+--------+--------|
+                     | spk3   |    39  |    45  |   118  |
+                     |--------+--------+--------+--------|
+                     | spk4   |    45  |    39  |   138  |
+                     |--------+--------+--------+--------|
+                     | spk5   |    66  |    36  |   122  |
+                     |--------+--------+--------+--------|
+                     | spk6   |    42  |    44  |   127  |
+                     |--------+--------+--------+--------|
+                     | spk7   |    38  |    50  |   121  |
+                     |--------+--------+--------+--------|
+                     | spk8   |    33  |    39  |   122  |
+                     |--------+--------+--------+--------|
+                     | spk9   |    49  |    36  |   123  |
+                     |===================================|
+                     |  Sum   |   438  |   410  |  1254  |
+                     |--------+--------+--------+--------|
+                     |  Mean  |  43.8  |  41.0  | 125.4  |
+                     | StdDev |   9.3  |   5.1  |   5.7  |
+                     |        |        |        |        |
+                     | Median |  40.5  |  40.5  | 124.0  |
+                     `-----------------------------------'
+</PRE>
+<p>
+
+Report generated with the -r  <A NAME="st_out_lur_0"><A HREF="st_opt.htm#option_r_name_0">   lur </A> </A> option: 
+<p>
+<PRE>
+,----------------------------------------------------------------------------.
+|                By System Test Subset Scoring Summary                       |
+|                 For the Hub-4E Primary Systems Test                        |
+|                                                                            |
+|----------------------------------------------------------------------------|
+|                   |                  ||    1996 Hub4 Focus Conditions      |
+|-------------------+------------------++------------------+-----------------|
+|      SYSTEM       |     Overall      ||     Baseline     |   Spontaneous   |
+|                   |                  ||    Broadcast     |    Broadcast    |
+|                   |                  ||      Speech      |     Speech      |
+|                   |     #Wrd %WE     ||     #Wrd %WE     |     #Wrd %WE    |
+|============================================================================|
+|                   | Set/Subset #Words and System Average Word Error Rate   |
+|-------------------+--------------------------------------------------------|
+| dragon1.ctm.filt  | [32834]     23.1 || [13197]     13.9 | [6566]     23.4 |
+| philips1.ctm.filt | [32834]     23.3 || [13197]     14.4 | [6566]     21.7 |
+|============================================================================|
+|                   | Set/Subset #Words/Speaker and Mean Word Error Rate     |
+|-------------------+--------------------------------------------------------|
+| cu-con1.ctm.filt  |   [280]     35.2 ||   [269]     17.2 |  [547]     33.1 |
+|  limsi1.ctm.filt  |   [280]     24.4 ||   [269]     11.9 |  [547]     23.6 |
+|-------------------+--------------------------------------------------------|
+|                   | Std Dev. Set/Subset #Words/Speaker and Word Error Rate |
+|-------------------+--------------------------------------------------------|
+|   bbn1.ctm.filt   |   [410]     23.9 ||   [288]     12.9 |  [729]     13.5 |
+|   sri1.ctm.filt   |   [410]     21.3 ||   [288]     11.1 |  [729]     17.0 |
+|============================================================================|
+|                   | Median Set/Subset #Words/Speaker Word Error Rate       |
+|-------------------+--------------------------------------------------------|
+|   cmu1.ctm.filt   |   [129]     24.3 ||   [174]     11.6 |  [182]     23.7 |
+|   ogi1.ctm.filt   |   [129]     45.3 ||   [174]     24.1 |  [182]     46.7 |
+`----------------------------------------------------------------------------'
+</PRE>
+<p>
+
+
+Report generated with the -r  <A NAME="st_out_es_0"><A HREF="st_opt.htm#option_r_name_0">   es </A> </A> option: 
+<p>
+<PRE>
+    ,---------------------------------------------------------------------.
+    |                                                                     |
+    |              Executive Scoring Summary by Percentages               |
+    |                                                                     |
+    |  System  | # Snt   # Ref | Corr   Sub    Del    Ins    Err    S.Err |
+    |----------+---------------+------------------------------------------|
+    | sys1.hyp |  300    2890  | 89.6   5.8    4.6    4.8    15.2   76.0  |
+    | sys2.hyp |  300    2890  | 90.1   5.1    4.8    4.3    14.2   75.0  |
+    | sys3.hyp |  300    2890  | 68.6   17.4   14.0   12.0   43.4   98.3  |
+    `---------------------------------------------------------------------'
+</PRE>
+<p>
+
+
+Report generated with the -r  <A NAME="st_out_res_0"><A HREF="st_opt.htm#option_r_name_0">   res </A> </A> option: 
+<p>
+<PRE>
+      ,------------------------------------------------------------------.
+      |                                                                  |
+      |             Executive Scoring Summary by Word Tokens             |
+      |                                                                  |
+      |  System  | # Snt   # Ref | Corr   Sub   Del   Ins   Err    S.Err |
+      |----------+---------------+---------------------------------------|
+      | sys1.hyp |  300    2890  | 2590   167   133   138   438     228  |
+      | sys2.hyp |  300    2890  | 2605   147   138   125   410     225  |
+      | sys3.hyp |  300    2890  | 1982   502   406   346   1254    295  |
+      `------------------------------------------------------------------'
+</PRE>
+<p>
+
+
+
+
+</body>
+</html>

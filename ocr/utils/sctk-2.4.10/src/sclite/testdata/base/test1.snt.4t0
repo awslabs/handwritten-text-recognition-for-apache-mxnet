@@ -1,0 +1,370 @@
+===============================================================================
+
+                     SENTENCE LEVEL REPORT FOR THE SYSTEM:
+    Name: ./csrnab.hyp
+
+===============================================================================
+
+
+SPEAKER 4t0
+id: (4t0c0201)
+Scores: (#C #S #D #I) 25 0 0 0
+REF:  as competition in the mutual fund business grows increasingly intense more players in the industry appear 
+HYP:  as competition in the mutual fund business grows increasingly intense more players in the industry appear 
+Eval:                                                                                                           
+
+>> REF:  willing to sacrifice integrity in the name of performance 
+>> HYP:  willing to sacrifice integrity in the name of performance 
+>> Eval:                                                           
+
+Correct               =  100.0%   25   ( 25)
+Substitutions         =    0.0%    0   (  0)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  0)
+
+Ref. words            =           25   ( 25)
+Hyp. words            =           25   ( 25)
+Aligned words         =           25   ( 25)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0202)
+Scores: (#C #S #D #I) 14 7 0 1
+REF:  FOR   A  TWO    TRILLION DOLLAR business built on public confidence this trend is **** DISHEARTENING AT  best 
+HYP:  FREED TO TRYING TO       LURE   business built on public confidence this trend is THIS TIGHTENING    AND best 
+Eval: S     S  S      S        S                                                        I    S             S        
+
+>> REF:  and downright dangerous at worst 
+>> HYP:  and downright dangerous at worst 
+>> Eval:                                  
+
+Correct               =   66.7%   14   ( 39)
+Substitutions         =   33.3%    7   (  7)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    4.8%    1   (  1)
+
+Errors                =   38.1%    8   (  8)
+
+Ref. words            =           21   ( 46)
+Hyp. words            =           22   ( 47)
+Aligned words         =           22   ( 47)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0203)
+Scores: (#C #S #D #I) 34 3 1 1
+REF:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers *** 
+HYP:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers AND 
+Eval:                                                                                                          I   
+
+>> REF:  UNSAVORY FUND   sales practices at banks and THE use of high risk derivative securities in NORMALLY 
+>> HYP:  SAVE     REFUND sales practices at banks and *** use of high risk derivative securities in EARLY    
+>> Eval: S        S                                   D                                             S        
+
+>> REF:  conservative money market funds 
+>> HYP:  conservative money market funds 
+>> Eval:                                 
+
+Correct               =   89.5%   34   ( 73)
+Substitutions         =    7.9%    3   ( 10)
+Deletions             =    2.6%    1   (  1)
+Insertions            =    2.6%    1   (  2)
+
+Errors                =   13.2%    5   ( 13)
+
+Ref. words            =           38   ( 84)
+Hyp. words            =           38   ( 85)
+Aligned words         =           39   ( 86)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0204)
+Scores: (#C #S #D #I) 28 6 1 2
+REF:  and in the latest BLOW TO      public confidence in the ****** FUNDS SOMEONE AT  industry TITAN   fidelity 
+HYP:  and in the latest **** FLORIDA public confidence in the FUNDS' SOME  ON      THE industry TIGHTEN fidelity 
+Eval:                   D    S                                I      S     S       S            S                
+
+>> REF:  investments decided last friday to send ******* NEWSPAPERS thursday's prices for most fidelity funds because 
+>> HYP:  investments decided last friday to send MYSTERY PRAISED    thursday's prices for most fidelity funds because 
+>> Eval:                                         I       S                                                            
+
+>> REF:  the friday data wasn't ready 
+>> HYP:  the friday data wasn't ready 
+>> Eval:                              
+
+Correct               =   80.0%   28   (101)
+Substitutions         =   17.1%    6   ( 16)
+Deletions             =    2.9%    1   (  2)
+Insertions            =    5.7%    2   (  4)
+
+Errors                =   25.7%    9   ( 22)
+
+Ref. words            =           35   (119)
+Hyp. words            =           36   (121)
+Aligned words         =           37   (123)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0205)
+Scores: (#C #S #D #I) 36 6 0 0
+REF:  in the ensuing public humiliation suffered by fidelity this week as it was forced to FESS UP   TO  ITS  
+HYP:  in the ensuing public humiliation suffered by fidelity this week as it was forced to FAST THAT TWO IT'S 
+Eval:                                                                                      S    S    S   S    
+
+>> REF:  intentional mistake the company has sought to make clear that nobody bought or sold a fund DIRECT   FROM 
+>> HYP:  intentional mistake the company has sought to make clear that nobody bought or sold a fund DIRECTOR OF   
+>> Eval:                                                                                            S        S    
+
+>> REF:  fidelity at the wrong price 
+>> HYP:  fidelity at the wrong price 
+>> Eval:                             
+
+Correct               =   85.7%   36   (137)
+Substitutions         =   14.3%    6   ( 22)
+Deletions             =    0.0%    0   (  2)
+Insertions            =    0.0%    0   (  4)
+
+Errors                =   14.3%    6   ( 28)
+
+Ref. words            =           42   (161)
+Hyp. words            =           42   (163)
+Aligned words         =           42   (165)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0206)
+Scores: (#C #S #D #I) 36 9 3 3
+REF:  THOUGH newspapers last saturday ** ******* UNKNOWINGLY LISTED  thursday prices for about one hundred AND fifty 
+HYP:  THE    newspapers last saturday ON KNOWING THE         ILLICIT thursday prices for about one hundred *** fifty 
+Eval: S                               I  I       S           S                                             D         
+
+>> REF:  of fidelity's two hundred AND EIGHT funds the company says transactions EFFECTED  friday WERE made AT the 
+>> HYP:  of fidelity's two hundred *** MAE   funds the company says transactions EFFECTIVE friday AND  made ** the 
+>> Eval:                           D   S                                         S                S         D      
+
+>> REF:  CORRECT prices which fidelity received after it met *** NEWSPAPER DEADLINES with the wrong data early friday evening 
+>> HYP:  TREK    prices which fidelity received after it met MR. BYRD      AIRLINES  with the wrong data early friday evening 
+>> Eval: S                                                   I   S         S                                                  
+
+Correct               =   75.0%   36   (173)
+Substitutions         =   18.8%    9   ( 31)
+Deletions             =    6.3%    3   (  5)
+Insertions            =    6.3%    3   (  7)
+
+Errors                =   31.3%   15   ( 43)
+
+Ref. words            =           48   (209)
+Hyp. words            =           48   (211)
+Aligned words         =           51   (216)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0207)
+Scores: (#C #S #D #I) 19 4 4 1
+REF:  but that doesn't change the fact that most fidelity's shareholders WERE LIED   TO  in varying degrees IF THEY 
+HYP:  but that doesn't change the fact that most fidelity's shareholders **** RELIED TOO in varying degrees ** **** 
+Eval:                                                                    D    S      S                      D  D    
+
+>> REF:  LOOKED at *** THEIR  FUND      prices in newspapers last weekend 
+>> HYP:  ****** at THE LITTLE DIFFERENT prices in newspapers last weekend 
+>> Eval: D         I   S      S                                           
+
+Correct               =   70.4%   19   (192)
+Substitutions         =   14.8%    4   ( 35)
+Deletions             =   14.8%    4   (  9)
+Insertions            =    3.7%    1   (  8)
+
+Errors                =   33.3%    9   ( 52)
+
+Ref. words            =           27   (236)
+Hyp. words            =           24   (235)
+Aligned words         =           28   (244)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0208)
+Scores: (#C #S #D #I) 19 2 0 0
+REF:  the unidentified fidelity employee WHO made the decision to go with INCORRECT prices should simply have listed 
+HYP:  the unidentified fidelity employee AND made the decision to go with INCREASED prices should simply have listed 
+Eval:                                    S                                S                                          
+
+>> REF:  them as not available 
+>> HYP:  them as not available 
+>> Eval:                       
+
+Correct               =   90.5%   19   (211)
+Substitutions         =    9.5%    2   ( 37)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   (  8)
+
+Errors                =    9.5%    2   ( 54)
+
+Ref. words            =           21   (257)
+Hyp. words            =           21   (256)
+Aligned words         =           21   (265)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0209)
+Scores: (#C #S #D #I) 14 3 0 2
+REF:  that would be ******* STANDARD fidelity procedure said **** JANE   JAMIESON senior vice president at the boston 
+HYP:  that would be STUNNED IF       fidelity procedure said JEAN GENIUS AND      senior vice president at the boston 
+Eval:               I       S                                I    S      S                                            
+
+>> REF:  based company 
+>> HYP:  based company 
+>> Eval:               
+
+Correct               =   82.4%   14   (225)
+Substitutions         =   17.6%    3   ( 40)
+Deletions             =    0.0%    0   (  9)
+Insertions            =   11.8%    2   ( 10)
+
+Errors                =   29.4%    5   ( 59)
+
+Ref. words            =           17   (274)
+Hyp. words            =           19   (275)
+Aligned words         =           19   (284)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020a)
+Scores: (#C #S #D #I) 57 8 0 2
+REF:  fidelity's mistake and most of the SELF  ADMINISTERED black EYES suffered by the fund industry this year have 
+HYP:  fidelity's mistake and most of the SOUTH MINISTER     black EYE  suffered by the fund industry this year have 
+Eval:                                    S     S                  S                                                 
+
+>> REF:  one thing in common they could have been prevented if the employees involved WERE playing by the rules EITHER 
+>> HYP:  one thing in common they could have been prevented if the employees involved FOR  playing by the rules INTO   
+>> Eval:                                                                              S                         S      
+
+>> REF:  THE fund * company's internal rules or the prudent man rule that is supposed to govern the *** investment of 
+>> HYP:  A   fund A company's internal rules or the prudent man rule that is supposed to govern the NEW investment of 
+>> Eval: S        I                                                                                 I                 
+
+>> REF:  MONEY ENTRUSTED by the public to allegedly professional money managers 
+>> HYP:  MANY  INFESTED  by the public to allegedly professional money managers 
+>> Eval: S     S                                                                
+
+Correct               =   87.7%   57   (282)
+Substitutions         =   12.3%    8   ( 48)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    3.1%    2   ( 12)
+
+Errors                =   15.4%   10   ( 69)
+
+Ref. words            =           65   (339)
+Hyp. words            =           67   (342)
+Aligned words         =           67   (351)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020b)
+Scores: (#C #S #D #I) 19 2 0 0
+REF:  the PROBLEM is that IT   can become very tempting to bend or break the rules in the name of staying competitive 
+HYP:  the PAL     is that THEY can become very tempting to bend or break the rules in the name of staying competitive 
+Eval:     S               S                                                                                           
+
+Correct               =   90.5%   19   (301)
+Substitutions         =    9.5%    2   ( 50)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   ( 12)
+
+Errors                =    9.5%    2   ( 71)
+
+Ref. words            =           21   (360)
+Hyp. words            =           21   (363)
+Aligned words         =           21   (372)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020c)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  take fidelity's case as an example 
+HYP:  take fidelity's case as an example 
+Eval:                                    
+
+Correct               =  100.0%    6   (307)
+Substitutions         =    0.0%    0   ( 50)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   ( 12)
+
+Errors                =    0.0%    0   ( 71)
+
+Ref. words            =            6   (366)
+Hyp. words            =            6   (369)
+Aligned words         =            6   (378)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020d)
+Scores: (#C #S #D #I) 28 5 0 0
+REF:  someone there had to make a fast decision when a software problem resulted in BOTCHED fund prices last friday 
+HYP:  someone there had to make a fast decision when a software problem resulted in POSH    fund prices last friday 
+Eval:                                                                               S                               
+
+>> REF:  shortly before the company was due to REPORT  THE   DAY'S DATA  to the newspapers 
+>> HYP:  shortly before the company was due to REPORTS TODAY IS    DATED to the newspapers 
+>> Eval:                                       S       S     S     S                       
+
+Correct               =   84.8%   28   (335)
+Substitutions         =   15.2%    5   ( 55)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   ( 12)
+
+Errors                =   15.2%    5   ( 76)
+
+Ref. words            =           33   (399)
+Hyp. words            =           33   (402)
+Aligned words         =           33   (411)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020e)
+Scores: (#C #S #D #I) 29 4 0 0
+REF:  if fidelity had provided no prices for most of its funds the company WOULD HAVE appeared to be having a problem 
+HYP:  if fidelity had provided no prices for most of its funds the company BUT   IT   appeared to be having a problem 
+Eval:                                                                      S     S                                    
+
+>> REF:  that WASN'T SHARED  by other fund companies which of course was true 
+>> HYP:  that WAS    INSURED by other fund companies which of course was true 
+>> Eval:      S      S                                                        
+
+Correct               =   87.9%   29   (364)
+Substitutions         =   12.1%    4   ( 59)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   ( 12)
+
+Errors                =   12.1%    4   ( 80)
+
+Ref. words            =           33   (432)
+Hyp. words            =           33   (435)
+Aligned words         =           33   (444)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c020f)
+Scores: (#C #S #D #I) 21 5 0 0
+REF:  moreover investors WHO compare FUND prices and performance by using weekend newspapers would have had little 
+HYP:  moreover investors TO  compare FIND prices and performance by using weekend newspapers would have had little 
+Eval:                    S           S                                                                             
+
+>> REF:  data on fidelity funds perhaps COSTING FIDELITY   SOME new investment 
+>> HYP:  data on fidelity funds perhaps CAUSING FIDELITY'S A    new investment 
+>> Eval:                                S       S          S                   
+
+Correct               =   80.8%   21   (385)
+Substitutions         =   19.2%    5   ( 64)
+Deletions             =    0.0%    0   (  9)
+Insertions            =    0.0%    0   ( 12)
+
+Errors                =   19.2%    5   ( 85)
+
+Ref. words            =           26   (458)
+Hyp. words            =           26   (461)
+Aligned words         =           26   (470)
+
+-------------------------------------------------------------------------------
+

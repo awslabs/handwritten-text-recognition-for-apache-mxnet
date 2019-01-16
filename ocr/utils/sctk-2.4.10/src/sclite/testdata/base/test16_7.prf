@@ -1,0 +1,115 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./stm2ctm_missing.hyp-missfile2chanA.ctm
+Ref file:      ./stm2ctm_missing.ref.stm
+Hyp file:      ./stm2ctm_missing.hyp-missfile2chanA.ctm
+
+Speaker Count: 4
+Speakers: 
+    0:  2347-a
+    1:  2347-b
+    2:  3129-a
+    3:  3129-b
+
+
+Speaker sentences   0:  2347-a   utt# 0 of 2
+id: (2347-a-000)
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 1 0 7
+Ref times: t1= 0.06 t2= 3.47
+REF:  ****    *****   *****   ***     ***     **      ***     I'VE    
+HYP:  THEY    PRIDE   ABOUT   A;S     FAR     AS      I'M     I       
+H_T1: 0.05    1.02    1.65    1.94    2.12    2.38    2.48    2.83    
+H_T2: 0.29    1.31    1.93    2.11    2.37    2.47    2.82    3.47    
+Eval: I       I       I       I       I       I       I       S       
+
+Speaker sentences   0:  2347-a   utt# 1 of 2
+id: (2347-a-001)
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 0 2 1 0
+Ref times: t1= 3.47 t2= 11.04
+REF:  I       FIND    THAT    
+HYP:  *       ARE     FINE    
+H_T1:         3.48    3.69    
+H_T2:         3.68    4.16    
+Eval: D       S       S       
+
+Speaker sentences   1:  2347-b   utt# 0 of 2
+id: (2347-b-000)
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 5 4 5 0
+Ref times: t1= 0.00 t2= 20.51
+REF:  UM      ALL     RIGHT   UHHUH   OH      WELL    i       TEND    i       tend    to      agree   UM      IN      
+HYP:  **      ***     *****   *****   **      UH-HUH  i       LIKE    i       tend    to      agree   I       TEND    
+H_T1:                                         16.55   17.72   17.90   18.50   19.00   19.26   19.40   19.96   20.28   
+H_T2:                                         16.99   17.90   18.28   18.82   19.26   19.40   19.82   20.28   20.52   
+Eval: D       D       D       D       D       S               S                                       S       S       
+
+Speaker sentences   1:  2347-b   utt# 1 of 2
+id: (2347-b-001)
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 12 2 1 0
+Ref times: t1= 20.51 t2= 25.06
+REF:  some    ways    i       think   it's    UM      i       think   IF      anything a       lot     of      UM      the     
+HYP:  some    ways    i       think   it's    **      i       think   OF      anything a       lot     of      FALLEN  the     
+H_T1: 20.52   20.74   20.94   21.02   21.36           21.68   21.90   22.24   22.38    23.00   23.06   23.48   23.70   24.88   
+H_T2: 20.74   20.94   21.02   21.36   21.62           21.90   22.24   22.38   23.00    23.06   23.48   23.68   24.20   25.06   
+Eval:                                         D                       S                                        S               
+
+Speaker sentences   2:  3129-a   utt# 0 of 2
+id: (3129-a-000)
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 0 0 35 0
+Ref times: t1= 17.31 t2= 106.23
+REF:  YEAH    EXACTLY OH      DID     YOU     DO      THE     DIAGNOSIS OR      WAS     IT      JUST    AN      ASSUMPTION THAT    THAT'S  PROBABLY THE     PART    THAT    FAILED  UHHUH   UHHUH   YEAH    I       KNOW    UM      WHEN    WORKING WITH    THE     UM      FLASHERS THERE   IS      
+HYP:  ****    ******* **      ***     ***     **      ***     ********* **      ***     **      ****    **      ********** ****    ******  ******** ***     ****    ****    ******  *****   *****   ****    *       ****    **      ****    ******* ****    ***     **      ******** *****   **      
+H_T1:                                                                                                                                                                                                                                                                                                
+H_T2:                                                                                                                                                                                                                                                                                                
+Eval: D       D       D       D       D       D       D       D         D       D       D       D       D       D          D       D       D        D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D        D       D       
+
+Speaker sentences   2:  3129-a   utt# 1 of 2
+id: (3129-a-001)
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 0 0 37 0
+Ref times: t1= 106.23 t2= 127.18
+REF:  UM      USUALLY A       A       SPECIAL FUSE    THAT    OPERATES THE     FLASHERS DO      YOU     HAVE    A       SEPARATE FUSE    FOR     YOUR    HIGH    BEAM    AS      OPPOSED TO      YOUR    LOW     BEAM    DIAGRAM YEAH    I       DON'T   EVEN    KNOW    IF      MY      CURRENT CARS    HAVE    
+HYP:  **      ******* *       *       ******* ****    ****    ******** ***     ******** **      ***     ****    *       ******** ****    ***     ****    ****    ****    **      ******* **      ****    ***     ****    ******* ****    *       *****   ****    ****    **      **      ******* ****    ****    
+H_T1:                                                                                                                                                                                                                                                                                                            
+H_T2:                                                                                                                                                                                                                                                                                                            
+Eval: D       D       D       D       D       D       D       D        D       D        D       D       D       D       D        D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       D       
+
+Speaker sentences   3:  3129-b   utt# 0 of 2
+id: (3129-b-000)
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 9 0 0
+Ref times: t1= 1.54 t2= 10.17
+REF:  well    TOM     just    tonight i       was     working on      my      car     out     of      necessity AND     i       had     uh      uh      HAD     A       LONG    AGE-OLD problem of      my      BRIGHT  LIGHTS  NOT     
+HYP:  well    UM      just    tonight i       was     working on      my      car     out     of      necessity IN      i       had     uh      uh      HAVE    ALONG   WHICH   GO      problem of      my      PRIVATE LIFE    UH      
+H_T1: 1.52    1.72    2.05    2.28    2.92    3.13    3.61    3.96    4.08    4.21    4.60    4.74    4.80      5.44    5.54    5.69    5.87    6.51    7.05    7.24    7.89    8.05    8.26    8.73    8.90    9.22    9.61    10.02   
+H_T2: 1.71    2.04    2.27    2.72    3.12    3.28    3.95    4.07    4.20    4.59    4.73    4.79    5.43      5.53    5.68    5.86    6.09    6.64    7.23    7.67    8.04    8.25    8.72    8.89    9.21    9.60    10.01   10.15   
+Eval:         S                                                                                                 S                                       S       S       S       S                               S       S       S       
+
+Speaker sentences   3:  3129-b   utt# 1 of 2
+id: (3129-b-001)
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 14 11 4 0
+Ref times: t1= 10.22 t2= 19.43
+REF:  working uh      this    IS      the     TYPE    of      UM      SWITCH  where   you     FLIP    THE     THE     LEVER   THE     TURN    signal  ON      THE     column  and     WHEN    i       would   UM      PUT     it      in      
+HYP:  working uh      this    **      the     TOP     of      US      WHICH   where   you     ****    LET     UH      SOME    NEVER   TURNS   signal  **      ALMOST  column  and     THEN    i       would   **      THE     it      in      
+H_T1: 10.16   11.38   12.01           12.36   12.42   12.75   13.01   13.33   13.67   13.87           14.25   14.59   14.84   14.98   15.34   15.74           16.08   16.46   17.84   18.02   18.12   18.28           18.45   19.07   19.30   
+H_T2: 10.59   11.72   12.35           12.41   12.74   12.85   13.32   13.66   13.86   14.08           14.42   14.83   14.97   15.33   15.73   16.07           16.45   16.86   18.01   18.11   18.27   18.44           18.68   19.29   19.43   
+Eval:                         D               S               S       S                       D       S       S       S       S       S               D       S                       S                       D       S                       
+
+

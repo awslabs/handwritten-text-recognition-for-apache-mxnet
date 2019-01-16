@@ -1,0 +1,82 @@
+DETAILED OVERALL REPORT FOR THE SYSTEM: ./mand_hyp.ctm
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          10
+ with errors                             50.0%   (   5)
+
+   with substitions                      10.0%   (   1)
+   with deletions                        30.0%   (   3)
+   with insertions                       20.0%   (   2)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   14.0%   (   8)
+
+Percent Correct           =   91.2%   (  52)
+
+Percent Substitution      =    1.8%   (   1)
+Percent Deletions         =    7.0%   (   4)
+Percent Insertions        =    5.3%   (   3)
+Percent Word Accuracy     =   86.0%
+
+
+Ref. words                =           (  57)
+Hyp. words                =           (  56)
+Aligned words             =           (  60)
+
+CONFUSION PAIRS                  Total                 (1)
+                                 With >=  1 occurances (1)
+
+   1:    1  ->  哦 ==> 能
+     -------
+         1
+
+
+
+INSERTIONS                       Total                 (3)
+                                 With >=  1 occurances (3)
+
+   1:    1  ->  可
+   2:    1  ->  为
+   3:    1  ->  因
+     -------
+         3
+
+
+
+DELETIONS                        Total                 (3)
+                                 With >=  1 occurances (3)
+
+   1:    2  ->  -
+   2:    1  ->  为
+   3:    1  ->  因
+     -------
+         4
+
+
+
+SUBSTITUTIONS                    Total                 (1)
+                                 With >=  1 occurances (1)
+
+   1:    1  ->  哦
+     -------
+         1
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (1)
+                                 With >=  1 occurances (1)
+
+   1:    1  ->  能
+     -------
+         1
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

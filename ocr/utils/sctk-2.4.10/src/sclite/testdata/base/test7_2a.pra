@@ -1,0 +1,377 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./tests.hyp
+
+Speakers: 
+    0:  f
+    1:  g
+    2:  h
+    3:  i
+    4:  empty
+    5:  alt
+    6:  od1
+    7:  od2
+    8:  od3
+    9:  tags
+
+Speaker sentences   0:  f   #utts: 7
+id: (f_0)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_1)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_2)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_3)
+Scores: (#C #S #D #I) 6 0 0 1
+REF:  a b c d * f g 
+HYP:  a b c d E f g 
+Eval:         I     
+
+id: (f_4)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_5)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_6)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+Speaker sentences   1:  g   #utts: 2
+id: (g_0)
+Scores: (#C #S #D #I) 0 10 25 0
+REF:  U H U H H A D A L O N G A G E O L D P R O B L E M O  F  M    Y     B     R  I       G  H  T       
+HYP:  * * * * * * * * * * * * * * * * * * * * * * * * * UH UH HAVE ALONG WHICH GO PROBLEM OF MY PRIVATE 
+Eval: D D D D D D D D D D D D D D D D D D D D D D D D D S  S  S    S     S     S  S       S  S  S       
+
+id: (g_1)
+Scores: (#C #S #D #I) 0 10 25 0
+REF:  U H U H H A D A L O N G A G E O L D P R O B L E M O  F  M    Y     B     R  I       G  H  T       
+HYP:  * * * * * * * * * * * * * * * * * * * * * * * * * UH UH HAVE ALONG WHICH GO PROBLEM OF MY PRIVATE 
+Eval: D D D D D D D D D D D D D D D D D D D D D D D D D S  S  S    S     S     S  S       S  S  S       
+
+Speaker sentences   2:  h   #utts: 3
+id: (h_0)
+Scores: (#C #S #D #I) 3 1 0 0
+REF:  a b e F 
+HYP:  a b e D 
+Eval:       S 
+
+id: (h_1)
+Scores: (#C #S #D #I) 4 2 0 2
+REF:  a ** * B  e i N  f 
+HYP:  a GH I BD e i TH f 
+Eval:   I  I S      S    
+
+id: (h_2)
+Scores: (#C #S #D #I) 5 1 0 3
+REF:  a ** * B  e i n ** f 
+HYP:  a GH I BD e i n TH f 
+Eval:   I  I S        I    
+
+Speaker sentences   3:  i   #utts: 5
+id: (i_1)
+Scores: (#C #S #D #I) 2 3 1 0
+REF:  THIS is THE t E N  
+HYP:  TH   is IS  t * EN 
+Eval: S       S     D S  
+
+id: (i_2)
+Scores: (#C #S #D #I) 2 3 1 0
+REF:  THIS is THE t E A  
+HYP:  TH   is IS  t * EN 
+Eval: S       S     D S  
+
+id: (i_3)
+Scores: (#C #S #D #I) 2 3 1 0
+REF:  THE is THE t E A  
+HYP:  TH  is IS  t * EN 
+Eval: S      S     D S  
+
+id: (i_4)
+Scores: (#C #S #D #I) 7 0 23 7
+REF:  F I - T H - F I - - I C K S - L K - O F FEE - HIM find the fish ticks milk fee him *** *** *** ***** *** ****** **** 
+HYP:  * * * * * * * * * * * * * * * * * * * * *** * *** find the fish ticks milk fee him FI- TH- FI- -ICKS -LK -OFFEE -HIM 
+Eval: D D D D D D D D D D D D D D D D D D D D D   D D                                    I   I   I   I     I   I      I    
+
+id: (i_5)
+Scores: (#C #S #D #I) 0 8 45 0
+REF:  D E L F I - D E L _ W I T H N U L L S K I P S K I P S U B S T I T U T I O N F I - S U B _ W   I            T    H    N            U    L            L    
+HYP:  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * DEL DEL_WITHNULL SKIP SKIP SUBSTITUTION FLAG SUB_WITHNULL FLAG 
+Eval: D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D S   S            S    S    S            S    S            S    
+
+Speaker sentences   4:  empty   #utts: 2
+id: (empty-1)
+Scores: (#C #S #D #I) 0 0 0 10
+REF:  * * * * * * * * * * 
+HYP:  A B C E F G H I J K 
+Eval: I I I I I I I I I I 
+
+id: (empty-2)
+Scores: (#C #S #D #I) 0 0 0 3
+REF:  * * * 
+HYP:  D E F 
+Eval: I I I 
+
+Speaker sentences   5:  alt   #utts: 9
+id: (alt-1)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-2)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  a c * d 
+HYP:  a c I d 
+Eval:     I   
+
+id: (alt-3)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  a d 
+HYP:  a d 
+Eval:     
+
+id: (alt-4)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-5)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-6)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  a d 
+HYP:  a d 
+Eval:     
+
+id: (alt-7)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a d e 
+HYP:  a d e 
+Eval:       
+
+id: (alt-8)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a d e 
+HYP:  a d e 
+Eval:       
+
+id: (alt-9)
+Scores: (#C #S #D #I) 2 0 1 0
+REF:  a D c 
+HYP:  a * c 
+Eval:   D   
+
+Speaker sentences   6:  od1   #utts: 7
+id: (od1-1)
+Scores: (#C #S #D #I) 1 1 3 0
+REF:  b ( C ) D 
+HYP:  b * * * E 
+Eval:   D D D S 
+
+id: (od1-2)
+Scores: (#C #S #D #I) 2 1 2 0
+REF:  b ( c ) D 
+HYP:  b * c * E 
+Eval:   D   D S 
+
+id: (od1-3)
+Scores: (#C #S #D #I) 2 0 3 1
+REF:  b ( C ) d * 
+HYP:  b * * * d E 
+Eval:   D D D   I 
+
+id: (od1-4)
+Scores: (#C #S #D #I) 2 2 1 0
+REF:  b ( c ) D 
+HYP:  b * c I E 
+Eval:   D   S S 
+
+id: (od1-5)
+Scores: (#C #S #D #I) 1 3 1 0
+REF:  b ( C ) D 
+HYP:  b * S I E 
+Eval:   D S S S 
+
+id: (od1-6)
+Scores: (#C #S #D #I) 0 1 4 0
+REF:  B ( C ) D 
+HYP:  * * * * E 
+Eval: D D D D S 
+
+id: (od1-7)
+Scores: (#C #S #D #I) 0 1 4 0
+REF:  B ( C ) D 
+HYP:  * * * * F 
+Eval: D D D D S 
+
+Speaker sentences   7:  od2   #utts: 10
+id: (od2-1)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  ( A ) ( C ) B D E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-2)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  ( A ) C ( B ) D E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-3)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  ( A ) C B ( D ) E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-4)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  ( A ) C B D ( E ) 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-5)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A ( C ) ( B ) D E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-6)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A ( C ) B ( D ) E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-7)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A ( C ) B D ( E ) 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-8)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A C ( B ) ( D ) E 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-9)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A C ( B ) D ( E ) 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+id: (od2-10)
+Scores: (#C #S #D #I) 0 3 6 0
+REF:  A C B ( D ) ( E ) 
+HYP:  * * * * * * S S S 
+Eval: D D D D D D S S S 
+
+Speaker sentences   8:  od3   #utts: 8
+id: (od3-1)
+Scores: (#C #S #D #I) 1 1 4 0
+REF:  b ( C - ) D 
+HYP:  b * * * * E 
+Eval:   D D D D S 
+
+id: (od3-2)
+Scores: (#C #S #D #I) 2 1 3 0
+REF:  b ( c - ) D 
+HYP:  b * c * * E 
+Eval:   D   D D S 
+
+id: (od3-3)
+Scores: (#C #S #D #I) 2 0 4 1
+REF:  b ( C - ) d * 
+HYP:  b * * * * d E 
+Eval:   D D D D   I 
+
+id: (od3-4)
+Scores: (#C #S #D #I) 2 2 2 0
+REF:  b ( c - ) D 
+HYP:  b * c * I E 
+Eval:   D   D S S 
+
+id: (od3-5)
+Scores: (#C #S #D #I) 1 3 2 0
+REF:  b ( C - ) D 
+HYP:  b * * S I E 
+Eval:   D D S S S 
+
+id: (od3-6)
+Scores: (#C #S #D #I) 0 1 5 0
+REF:  B ( C - ) D 
+HYP:  * * * * * E 
+Eval: D D D D D S 
+
+id: (od3-7)
+Scores: (#C #S #D #I) 0 1 5 0
+REF:  B ( C - ) D 
+HYP:  * * * * * F 
+Eval: D D D D D S 
+
+id: (od3-8)
+Scores: (#C #S #D #I) 3 1 8 0
+REF:  b ( ten - ) ( the ) C A N D   
+HYP:  b * ten * * * the * * * * AND 
+Eval:   D     D D D     D D D D S   
+
+Speaker sentences   9:  tags   #utts: 5
+id: (tags-1)
+Scores: (#C #S #D #I) 4 2 7 0
+REF:  A A A ; a B ; B ;    B     b c d 
+HYP:  * * * * a * * * AA;A B;B;B b c d 
+Eval: D D D D   D D D S    S           
+
+id: (tags-2)
+Scores: (#C #S #D #I) 0 0 13 0
+REF:  A A A ; A B ; B ; B B C D 
+HYP:  * * * * * * * * * * * * * 
+Eval: D D D D D D D D D D D D D 
+
+id: (tags-3)
+Scores: (#C #S #D #I) 0 0 0 6
+REF:  * **** ***** * * * 
+HYP:  A AA;A B;B;B B C D 
+Eval: I I    I     I I I 
+
+id: (tags-4)
+Scores: (#C #S #D #I) 0 6 7 0
+REF:  A A A ; A B ; B ;    B     B C D 
+HYP:  * * * * * * * Z AA;A B;B;B Y X W 
+Eval: D D D D D D D S S    S     S S S 
+
+id: (tags-5)
+Scores: (#C #S #D #I) 1 5 6 0
+REF:  Y Y Y Y Y Y Y Y    Y     y Y Y 
+HYP:  * * * * * * Z AA;A B;B;B y X W 
+Eval: D D D D D D S S    S       S S 
+
+

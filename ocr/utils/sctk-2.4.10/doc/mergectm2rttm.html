@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#USAGE">USAGE</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#NOTES">NOTES</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+  <li><a href="#DISCLAIMER">DISCLAIMER</a></li>
+  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>mergectm2rttm.pl - Script that generate a RTTM file by merging CTM and RTTM.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>        mergectm2rttm.pl -r rttmfile -c ctmfile [ -p pathtools ]</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The script is a script which merged a ctm file and a rttm file to produce a rttm file. It takes in input a ctm file containing the lexemes information and a rttm file containing the speakers and segments information. It associates the lexemes and speakers present in the ctm according to the segments definitions from the rttm file (by segment definition, it means time intervals, filename and channel).</p>
+
+<h1 id="USAGE">USAGE</h1>
+
+<p>Examples:</p>
+
+<pre><code>        align2html-main.pl -r file.rttm -c file.ctm &gt; mergedfile.rttm</code></pre>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
+<dl>
+
+<dt id="Required-file-arguments"><b>Required file arguments:</b></dt>
+<dd>
+
+<dl>
+
+<dt id="r---rttmfile-rttmfile"><b>-r</b>, <b>--rttmfile &lt;rttmfile</b>&gt;</dt>
+<dd>
+
+<p>Path to the RTTM file.</p>
+
+</dd>
+<dt id="c---ctmfile-ctmfile"><b>-c</b>, <b>--ctmfile &lt;ctmfile</b>&gt;</dt>
+<dd>
+
+<p>Path to the CTM file.</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt id="Options"><b>Options:</b></dt>
+<dd>
+
+<dl>
+
+<dt id="p---pathtools-path"><b>-p</b>,<b>--pathtools &lt;path</b>&gt;</dt>
+<dd>
+
+<p>Path of the tools.</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt id="Other-options"><b>Other options:</b></dt>
+<dd>
+
+<dl>
+
+<dt id="h---help"><b>-h</b>, <b>--help</b></dt>
+<dd>
+
+<p>Display the help.</p>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>No known bugs.</p>
+
+<h1 id="NOTES">NOTES</h1>
+
+<p>As the script requires two other scripts: rttmSmooth.pl and rttmSort.pl, the path of the SCTK tools directory can be specified on the commandline using the &#39;-p&#39; option.</p>
+
+<p>The script checks if the two scripts are present and run the merging process. To avoid any complication, there are 3 options to run the script: (a) Run the script into its directory without the -p option, (b) Run the script from any location by specifying the path with -p and the path of the SCTK tools directory (.../stck/src/), (c) Edit the mergectm2rttm.pl line at line 184 and 185 to give the locations of the two scripts.</p>
+
+<p>The resulting rttm file is displayed in the standard output (STDOUT), by doing the redirection &#39;&gt;&#39;, it can be stored into a file.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<dl>
+
+<dt id="Jerome-Ajot-jerome.ajot-nist.gov">Jerome Ajot &lt;jerome.ajot@nist.gov&gt;</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>NIST Public Domain</p>
+
+<h1 id="DISCLAIMER">DISCLAIMER</h1>
+
+<p>This software was developed at the National Institute of Standards and Technology by employees of the Federal Government in the course of their official duties. Pursuant to Title 17 Section 105 of the United States Code this software is not subject to copyright protection within the United States and is in the public domain. This software is an experimental system. NIST assumes no responsibility whatsoever for its use by any party.</p>
+
+<p>THIS SOFTWARE IS PROVIDED &quot;AS IS.&quot; With regard to this software, NIST MAKES NO EXPRESS OR IMPLIED WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-55">Around line 55:</dt>
+<dd>
+
+<p>You forgot a &#39;=back&#39; before &#39;=head1&#39;</p>
+
+<p>You forgot a &#39;=back&#39; before &#39;=head1&#39;</p>
+
+</dd>
+<dt id="Around-line-73">Around line 73:</dt>
+<dd>
+
+<p>&#39;=item&#39; outside of any &#39;=over&#39;</p>
+
+</dd>
+<dt id="Around-line-75">Around line 75:</dt>
+<dd>
+
+<p>You forgot a &#39;=back&#39; before &#39;=head1&#39;</p>
+
+</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+

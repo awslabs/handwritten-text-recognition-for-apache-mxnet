@@ -1,0 +1,20 @@
+<SYSTEM title="isg-4-ref" ref_fname="isg.ref.rttm" hyp_fname="isg.sys.rttm" creation_date="" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="REF1">
+<PATH id="(REF1-000)" word_cnt="5" file="VT_20051027-1400" channel="1" sequence="4" R_T1="101.000" R_T2="105.800" word_aux="r_t1+t2,h_t1+t2">
+S,"t","u",101.000+101.400,101.000+101.400:C,"a","a",101.400+102.000,101.400+101.900:D,"b",,102.000+103.000,:D,"c",,103.000+104.200,:C,"f","f",104.200+105.800,104.500+105.200
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF2">
+<PATH id="(REF2-000)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="9" R_T1="103.300" R_T2="105.200" word_aux="r_t1+t2,h_t1+t2">
+C,"g","g",103.300+104.400,101.900+103.500:S,"h","d",104.100+105.200,102.800+104.000
+</PATH>
+<PATH id="(REF2-001)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="13" R_T1="105.500" R_T2="106.600" word_aux="r_t1+t2,h_t1+t2">
+C,"x","x",105.500+106.200,105.200+106.200:S,"t","z",106.200+106.600,106.200+106.900
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF3">
+<PATH id="(REF3-000)" word_cnt="2" file="NIST_20061012-1056" channel="1" sequence="16" R_T1="110.000" R_T2="111.000" word_aux="r_t1+t2,h_t1+t2">
+D,"k",,110.000+110.500,:C,"j","j",110.500+111.000,109.750+110.500
+</PATH>
+</SPEAKER>
+</SYSTEM>

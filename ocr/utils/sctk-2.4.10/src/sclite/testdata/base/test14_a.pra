@@ -1,0 +1,170 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./lvc_hypr.ctm
+
+Speakers: 
+    0:  2347-a
+    1:  2347-b
+    2:  3129-a
+    3:  3129-b
+
+Speaker sentences   0:  2347-a   #utts: 3
+id: (2347-a-000)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 14 2 1 3
+REF:  OF five thousand UM   are not ** letting that happen ** they are very aggressive ** THEY'RE uh they almost 
+HYP:  ** five thousand LOSE are not TO letting that happen UH they are very aggressive UH THERE   uh they almost 
+Eval: D                S            I                      I                           I  S                      
+
+id: (2347-a-001)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 13 4 0 3
+REF:  have what i would call a KILLER ** KILLER BEE INSTINCT and **** **** they have to be in charge 
+HYP:  have what i would call a GIRLS  TO KILL   A   B        and THEY WAYS they have to be in charge 
+Eval:                          S      I  S      S   S            I    I                              
+
+id: (2347-a-002)
+Labels: <o,wa>
+File: 2347
+Channel: a
+Scores: (#C #S #D #I) 14 7 1 5
+REF:  AND and i i think they lose a lot ** *** BY what i ****** CALL NEUTERING their husbands UHHUH oh sure ****** *** UHHUH HUH UHHUH 
+HYP:  UH  and i i think they lose a lot TO BUY OF what i CALLED NEW  DURING    their husbands ***** oh sure THAT'S THE WOMEN UH  THE   
+Eval: S                                 I  I   S         I      S    S                        D             I      I   S     S   S     
+
+Speaker sentences   1:  2347-b   #utts: 5
+id: (2347-b-000)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 5 4 5 0
+REF:  UM ALL RIGHT UHHUH OH WELL   i TEND i tend to agree UM IN   
+HYP:  ** *** ***** ***** ** UH-HUH i LIKE i tend to agree I  TEND 
+Eval: D  D   D     D     D  S        S                    S  S    
+
+id: (2347-b-001)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 12 2 1 0
+REF:  some ways i think it's UM i think IF anything a lot of UM     the 
+HYP:  some ways i think it's ** i think OF anything a lot of FALLEN the 
+Eval:                        D          S                    S          
+
+id: (2347-b-002)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 13 3 1 3
+REF:  changes that have occurred *** UM   in some ways ***** *** THEY'RE for the better because I THINK women should 
+HYP:  changes that have occurred BUY THEM in some ways THERE FOR THE     for the better because * THAT  women should 
+Eval:                            I   S                 I     I   S                              D S                  
+
+id: (2347-b-003)
+Labels: <o,na>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 14 5 2 0
+REF:  have A    choice AND i do believe in THE   BEING able to have A   choice AS to AS    far as what 
+HYP:  have MUCH choice *** i do believe in THOSE AND   able to have THE choice ** to THING far as what 
+Eval:      S           D                   S     S                  S          D     S                 
+
+id: (2347-b-004)
+Labels: <o,wa>
+File: 2347
+Channel: b
+Scores: (#C #S #D #I) 15 11 2 0
+REF:  you would like to do WITH YOUR LIFE BUT BY  the same token and i KNOW THIS    for myself because I'VE WORKED AND         i've not WORKED UM  UM  
+HYP:  you would like to do IF   YOU  LIKE TO  BUY the same token and i **** NOTICED for myself because **** OF     WOODWORKING i've not HEARD  ALL AND 
+Eval:                      S    S    S    S   S                        D    S                          D    S      S                    S      S   S   
+
+Speaker sentences   2:  3129-a   #utts: 5
+id: (3129-a-000)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 21 14 0 8
+REF:  we exactly **** ** OH  DID you do the * diagnosis ***** OR was it just an assumption ****** THAT that's probably the part that *** ****** FAILED UHHUH UHHUH YEAH I KNOW UM    when working with *** THE UM    FLASHERS there is 
+HYP:  we exactly WELL UH YOU DO  you do the A diagnosis NEVER OH was it just an assumption THAT'S AND  that's probably the part that THE UH-HUH AND    SO    TO    SET  A FINE THOSE when working with SEE A   FLASH YEARS    there is 
+Eval:            I    I  S   S              I           I     S                            I      S                                  I   I      S      S     S     S    S S    S                       I   S   S     S                 
+
+id: (3129-a-001)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 12 15 10 1
+REF:  UM usually A  a special **** FUSE that operates THE FLASHERS DO    YOU have a separate fuse for YOUR HIGH BEAM as opposed TO YOUR LOW BEAM DIAGRAM YEAH I DON'T EVEN KNOW IF   MY      CURRENT CARS HAVE  
+HYP:  SO usually IS a special EVER USE  that operates TO  FLASH    YEARS NOT have a separate fuse for YOU  I    MEAN as opposed ** **** *** **** ******* **** * ***** **** **** YEAR MOLDING THE     HI   GRAMS 
+Eval: S          S            I    S                  S   S        S     S                            S    S    S               D  D    D   D    D       D    D D     D    D    S    S       S       S    S     
+
+id: (3129-a-002)
+Labels: <o,na>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 0 0 41 0
+REF:  A SEPARATE FUSE I KNOW SOMETIMES WHEN YOU THINK THERE ARE THINGS RUNNING WHILE THEY'RE AT THE SAME UNIT LIKE THE THE HEADLAMP YOU TEND TO THINK WELL THERE'S ONE FUSE OPERATING THE WHOLE THING BUT SOMETIMES THE EXTRA AMPERAGE THAT 
+HYP:  * ******** **** * **** ********* **** *** ***** ***** *** ****** ******* ***** ******* ** *** **** **** **** *** *** ******** *** **** ** ***** **** ******* *** **** ********* *** ***** ***** *** ********* *** ***** ******** **** 
+Eval: D D        D    D D    D         D    D   D     D     D   D      D       D     D       D  D   D    D    D    D   D   D        D   D    D  D     D    D       D   D    D         D   D     D     D   D         D   D     D        D    
+
+id: (3129-a-003)
+Labels: <o,na>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 12 6 21 2
+REF:  A HIGH BEAM DRIVES AS OPPOSED TO A LOW BEAM REQUIRES THE USE OF A OF A MAYBE A HIGHER FUSE so that's a possibility IS    THIS A  A   mail order parts house that specializes ***** IN  IN  parts for ** 
+HYP:  * **** **** ****** ** ******* ** * *** **** ******** *** *** ** * ** * ***** * ****** **** so that's a possibility STILL THE  SO THE mail order parts house that specializes SMACK THE AND parts for OH 
+Eval: D D    D    D      D  D       D  D D   D    D        D   D   D  D D  D D     D D      D                            S     S    S  S                                           I     S   S             I  
+
+id: (3129-a-004)
+Labels: <o,wa>
+File: 3129
+Channel: a
+Scores: (#C #S #D #I) 17 18 1 29
+REF:  UM old imports ** WHO UM  so IT'S   not * J c *** WHITNEY or SOMEBODY  like that **** ****** * ** ** *** YEAH HAVE    YOU  FOUND ANY uh ** uh reliable import service people in ***** ***** ******* ** ** ** ** ***** *** ** *** ***** ***** the * METROPLEX OH YEAH UHHUH I'LL be ** **** ** ** **** DARNED UHHUH 
+HYP:  ** old imports DO THE AND so THAT'S not C D c WAS ME      or SOMETHING like that IT'S THAT'S A UH US THE THIS TONIGHT FROM TO    ME  uh SO uh reliable import service people in THOSE SMACK COMPLEX SO UH SO SO CALLS YET OF OUT FLASH SINCE the S A         I  SAW  OF    ALL  be TO TURN AT AT IT'S I      DON'T 
+Eval: D              I  S   S      S          I S   I   S          S                   I    I      I I  I  I   S    S       S    S     S      I                                       I     I     I       I  I  I  I  I     I   I  I   I     I         I S         S  S    S     S       I  I    I  I  I    S      S     
+
+Speaker sentences   3:  3129-b   #utts: 4
+id: (3129-b-000)
+Labels: <o,na>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 24 12 5 1
+REF:  IS not ***** EITHER it's OBVIOUSLY DOESN'T QUITE   FIT SO      IT   must be FOR      a different year SO I'LL HAVE TO TRY    TO     RETURN that as well well i had one person that i USED for years and years on this car 
+HYP:  ** not EIGHT THERE  it's ********* UH      OBVIOUS IT  DOESN'T THAT must be DISTRICT a different year ** **** **** OH THAT'S PROPER TERM   that as well well i had one person that i USE  for years and years on this car 
+Eval: D      I     S           D         S       S       S   S       S            S                         D  D    D    S  S      S      S                                                S                                    
+
+id: (3129-b-001)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 16 13 8 1
+REF:  BECAUSE I'VE OWNED this car SINCE IT      WAS NEW  and uh BUT IT'S over like in the ***** BROOK HOLLOW INDUSTRIAL district DOWN ON STEMMONS   and INWOOD area and i HADN'T USED HIM  for SOME years AND the 
+HYP:  ******* **** ABOUT this car ***** SUBJECT FOR THEY and uh *** BASE over like in the BROKE ON    THAT'S TRUE       district **** ** DOWNSTAIRS and ANYWAY area and i ****** HAD  EASY for I'VE years *** the 
+Eval: D       D    S              D     S       S   S           D   S                     I     S     S      S                   D    D  S              S                 D      S    S        S          D       
+
+id: (3129-b-002)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 18 12 3 1
+REF:  last time i called HIM   back it turned out THAT HE HAD FURTHER specialized INSTEAD of uh all IMPORT CARS HE  HAS NARROWED IT down to WHERE HE   only WORKS  on uh ** german 
+HYP:  last time i called CARDS back it turned out **** ** YET FARTHER specialized THAT    of uh all IN     FOR  CAR IS  THERE    IS down to ***** VERY only WORKED on uh IN german 
+Eval:                    S                        D    D  S   S                   S                 S      S    S   S   S        S          D     S         S            I         
+
+id: (3129-b-003)
+Labels: <o,wa>
+File: 3129
+Channel: b
+Scores: (#C #S #D #I) 19 15 8 0
+REF:  cars and german CARS i'm not sure THAT HE WORKS ON MUCH ELSE AT     ALL    BUT  HE     DOESN'T work ON BRITISH CARS  ANY   MORE    and GAVE ME THE   NAME  OF somebody else to take a look at it so UM  uh i 
+HYP:  cars and german PET  i'm not sure **** ** ***** ** **** THEY WORKED MYSELF THAT NOBODY DOES    work ** ALL     BRICK CARDS ANYMORE and **** ** EVERY NIGHT TO somebody else to take a look at it so I'M uh i 
+Eval:                 S                 D    D  D     D  D    S    S      S      S    S      S            D  S       S     S     S           D    D  S     S     S                                        S        
+
+

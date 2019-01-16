@@ -1,0 +1,51 @@
+lvc_hyp.notag.ctm
+lvc_hyp2.notag.ctm
+Filtering Files:
+   Filtering english file 'lvc_refe.notag.noat.stm', stm format
+stmValidator.pl -l english -i lvc_refe.notag.noat.stm.filt
+Validating STM file lvc_refe.notag.noat.stm.filt
+Validated
+   Filtering english file 'lvc_hyp.notag.ctm', ctm format
+   Filtering english file 'lvc_hyp2.notag.ctm', ctm format
+Scoring english Hyp 'lvc_hyp.notag.ctm.filt' against ref 'lvc_refe.notag.noat.stm.filt'
+sclite: 2.3 TK Version 1.3
+Loading Piped input. . . 1 systems loaded.
+    Writing overall detailed scoring report 'lvc_hyp.notag.ctm.filt.dtl'
+    Writing string alignments to 'lvc_hyp.notag.ctm.filt.pra'
+    Writing string alignments to 'lvc_hyp.notag.ctm.filt.prf'
+    Skipping DET Curve, no confidence scores supplied.
+    Skipping Confidence Histogram, no confidence scores supplied.
+    Skipping Scaled Binned Histogram, no confidence scores supplied.
+
+Successful Completion
+Scoring english Hyp 'lvc_hyp2.notag.ctm.filt' against ref 'lvc_refe.notag.noat.stm.filt'
+sclite: 2.3 TK Version 1.3
+Loading Piped input. . . 1 systems loaded.
+    Writing overall detailed scoring report 'lvc_hyp2.notag.ctm.filt.dtl'
+    Writing string alignments to 'lvc_hyp2.notag.ctm.filt.pra'
+    Writing string alignments to 'lvc_hyp2.notag.ctm.filt.prf'
+    Skipping DET Curve, no confidence scores supplied.
+    Skipping Confidence Histogram, no confidence scores supplied.
+    Skipping Scaled Binned Histogram, no confidence scores supplied.
+
+Successful Completion
+Running Statistical Comparison Tests
+sc_stats: 1.3
+Beginning Multi-System comparisons and reports
+    Performing the Matched Pair Sentence Segment (Word Error) Test
+    Performing the Signed Paired Comparison (Speaker Word Error Rate (%)) Test
+    Performing the Wilcoxon Signed Rank (Speaker Word Error Rate (%)) Test
+    Performing the McNemar (Sentence Error) Test
+    Printing Unified Statistical Test Reports
+        Output written to 'Ensemble.stats.unified'
+    Printing GNUPLOT Range Graphs V2
+        Output written to 'Ensemble.grange2.spk.*'
+        Output written to 'Ensemble.grange2.sys.*'
+    Skipping DET Curve, no confidence scores supplied.
+    Writing scoring report to 'Ensemble.sys'
+    Writing raw scoring report to 'Ensemble.raw'
+    Writing executive scoring report to 'Ensemble.es'
+    Writing raw executive scoring report to 'Ensemble.res'
+    Writing LUR scoring report to 'Ensemble.lur'
+
+Successful Completion

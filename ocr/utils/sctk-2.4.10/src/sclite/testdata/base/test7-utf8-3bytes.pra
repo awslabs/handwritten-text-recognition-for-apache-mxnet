@@ -1,0 +1,377 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./tests.hyp.utf8-3bytes
+
+Speakers: 
+    0:  f
+    1:  g
+    2:  h
+    3:  i
+    4:  empty
+    5:  alt
+    6:  od1
+    7:  od2
+    8:  od3
+    9:  tags
+
+Speaker sentences   0:  f   #utts: 7
+id: (f_0)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+id: (f_1)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+id: (f_2)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+id: (f_3)
+Scores: (#C #S #D #I) 6 0 0 1
+REF:  ठ ड ढ ण *** थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                 I           
+
+id: (f_4)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+id: (f_5)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+id: (f_6)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  ठ ड ढ ण त थ द 
+HYP:  ठ ड ढ ण त थ द 
+Eval:                             
+
+Speaker sentences   1:  g   #utts: 2
+id: (g_0)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  ऴध ऴध धठण    ठ             फमभद    ठदत-मफण यऱमडफतब मथ बस डRIGHT              
+HYP:  ऴध ऴध धठवत ठफमभद शधनढध दम              यऱमडफतब मथ बस यऱनवठळत 
+Eval:               S            S               S               S                                                       S                     
+
+id: (g_1)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  ऴध ऴध धठण    ठ             फमभद    ठदत-मफण यऱमडफतब मथ बस डRIGHT              
+HYP:  ऴध ऴध धठवत ठफमभद शधनढध दम              यऱमडफतब मथ बस यऱनवठळत 
+Eval:               S            S               S               S                                                       S                     
+
+Speaker sentences   2:  h   #utts: 3
+id: (h_0)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ड तथ 
+HYP:  ठ ड तथ 
+Eval:                
+
+id: (h_1)
+Scores: (#C #S #D #I) 7 0 0 1
+REF:  ठ दध न डण त *** ळध थ 
+HYP:  ठ दध न डण त न ळध थ 
+Eval:                           I              
+
+id: (h_2)
+Scores: (#C #S #D #I) 8 0 0 1
+REF:  ठ दध न डण त न भ ****** थ 
+HYP:  ठ दध न डण त न भ ळध थ 
+Eval:                                   I          
+
+Speaker sentences   3:  i   #utts: 5
+id: (i_1)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  ****** ळधनल नल ळधत ळतभ 
+HYP:  ळध त          नल ळध    तभ    
+Eval: I      S                   S         S         
+
+id: (i_2)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  ****** ळधनल नल ळधत ळतठ 
+HYP:  ळध त          नल ळध    तभ    
+Eval: I      S                   S         S         
+
+id: (i_3)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  ****** ळधत नल ळधत ळतठ 
+HYP:  ळध नल    नल ळध    तभ    
+Eval: I      S                S         S         
+
+id: (i_4)
+Scores: (#C #S #D #I) 12 2 0 0
+REF:  थन-      ळध-   थन-      -नढपल   -फप      -मथथतत -धनब थनभण ळधत थनलध ळनढपल बनफप थतत        धनब  
+HYP:  थनभण ळधत थनलध ळनढपल बनफप थतत        धनब  थन-      ळध-   थन-      -नढपल   -फप      -मथथतत -धनब 
+Eval:                                                                  S                                                                                            S                           
+
+id: (i_5)
+Scores: (#C #S #D #I) 6 1 1 1
+REF:  णतफ थन- णतफञशनळधभऴफफ लपनय लपनय लऴडलळनळऴळनमभ थन-      लऴडञशनळधभऴफफ ************ 
+HYP:  णतफ ******* णतफञशनळधभऴफफ लपनय लपनय लऴडलळनळऴळनमभ थफठद लऴडञशनळधभऴफफ थफठद 
+Eval:           D                                                                                                           S                                                 I            
+
+Speaker sentences   4:  empty   #utts: 2
+id: (empty-1)
+Scores: (#C #S #D #I) 0 0 0 10
+REF:  *** *** *** *** *** *** *** *** *** *** 
+HYP:  ठ ड ढ त थ द ध न ऩ प 
+Eval: I   I   I   I   I   I   I   I   I   I   
+
+id: (empty-2)
+Scores: (#C #S #D #I) 0 0 0 3
+REF:  *** *** *** 
+HYP:  ण त थ 
+Eval: I   I   I   
+
+Speaker sentences   5:  alt   #utts: 9
+id: (alt-1)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ढ ण 
+HYP:  ठ ढ ण 
+Eval:             
+
+id: (alt-2)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  ठ ढ *** ण 
+HYP:  ठ ढ न ण 
+Eval:         I       
+
+id: (alt-3)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  ठ ण 
+HYP:  ठ ण 
+Eval:         
+
+id: (alt-4)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ढ ण 
+HYP:  ठ ढ ण 
+Eval:             
+
+id: (alt-5)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ढ ण 
+HYP:  ठ ढ ण 
+Eval:             
+
+id: (alt-6)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  ठ ण 
+HYP:  ठ ण 
+Eval:         
+
+id: (alt-7)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ण त 
+HYP:  ठ ण त 
+Eval:             
+
+id: (alt-8)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  ठ ण त 
+HYP:  ठ ण त 
+Eval:             
+
+id: (alt-9)
+Scores: (#C #S #D #I) 2 0 1 0
+REF:  ठ ण ढ 
+HYP:  ठ *** ढ 
+Eval:     D       
+
+Speaker sentences   6:  od1   #utts: 7
+id: (od1-1)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ड (ढ) ण 
+HYP:  ड       त 
+Eval:           S   
+
+id: (od1-2)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ड (ढ) ण 
+HYP:  ड ढ   त 
+Eval:           S   
+
+id: (od1-3)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  ड (ढ) ण *** 
+HYP:  ड       ण त 
+Eval:               I   
+
+id: (od1-4)
+Scores: (#C #S #D #I) 2 1 0 1
+REF:  ड (ढ) *** ण 
+HYP:  ड ढ   न त 
+Eval:           I   S   
+
+id: (od1-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  ड *** (ढ) ण 
+HYP:  ड ल न   त 
+Eval:     I   S     S   
+
+id: (od1-6)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ड (ढ) ण 
+HYP:  ***       त 
+Eval: D         S   
+
+id: (od1-7)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ड (ढ) ण 
+HYP:  ***       थ 
+Eval: D         S   
+
+Speaker sentences   7:  od2   #utts: 10
+id: (od2-1)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (ठ) (ढ) ड ण त 
+HYP:              ल ल ल 
+Eval:             S   S   S   
+
+id: (od2-2)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (ठ) ढ (ड) ण त 
+HYP:        ल       ल ल 
+Eval:       S         S   S   
+
+id: (od2-3)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (ठ) ढ ड (ण) त 
+HYP:        ल ल       ल 
+Eval:       S   S         S   
+
+id: (od2-4)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (ठ) ढ ड ण (त) 
+HYP:        ल ल ल       
+Eval:       S   S   S         
+
+id: (od2-5)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ (ढ) (ड) ण त 
+HYP:  ल             ल ल 
+Eval: S               S   S   
+
+id: (od2-6)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ (ढ) ड (ण) त 
+HYP:  ल       ल       ल 
+Eval: S         S         S   
+
+id: (od2-7)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ (ढ) ड ण (त) 
+HYP:  ल       ल ल       
+Eval: S         S   S         
+
+id: (od2-8)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ ढ (ड) (ण) त 
+HYP:  ल ल             ल 
+Eval: S   S               S   
+
+id: (od2-9)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ ढ (ड) ण (त) 
+HYP:  ल ल       ल       
+Eval: S   S         S         
+
+id: (od2-10)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  ठ ढ ड (ण) (त) 
+HYP:  ल ल ल             
+Eval: S   S   S               
+
+Speaker sentences   8:  od3   #utts: 8
+id: (od3-1)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ड (ढ-) ण 
+HYP:  ड        त 
+Eval:            S   
+
+id: (od3-2)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ड (ढ-) ण 
+HYP:  ड ढ    त 
+Eval:            S   
+
+id: (od3-3)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  ड (ढ-) ण *** 
+HYP:  ड        ण त 
+Eval:                I   
+
+id: (od3-4)
+Scores: (#C #S #D #I) 2 1 0 1
+REF:  ड (ढ-) *** ण 
+HYP:  ड ढ    न त 
+Eval:            I   S   
+
+id: (od3-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  ड *** (ढ-) ण 
+HYP:  ड ल न    त 
+Eval:     I   S      S   
+
+id: (od3-6)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ड (ढ-) ण 
+HYP:  ***        त 
+Eval: D          S   
+
+id: (od3-7)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ड (ढ-) ण 
+HYP:  ***        थ 
+Eval: D          S   
+
+id: (od3-8)
+Scores: (#C #S #D #I) 3 1 1 0
+REF:  ड (ळतभ-) (ळधत) ढठभ ण       
+HYP:  ड ळतभ    ळधत   ********* ठभण 
+Eval:                              D         S         
+
+Speaker sentences   9:  tags   #utts: 5
+id: (tags-1)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  ठ ठठ;a ड;b;b ड ढ ण 
+HYP:  ठ ठठ;a ड;b;b ड ढ ण 
+Eval:                                  
+
+id: (tags-2)
+Scores: (#C #S #D #I) 0 0 6 0
+REF:  ठ ठठ;A ड;B;B ड ढ ण 
+HYP:  *** ******** ******* *** *** *** 
+Eval: D   D        D       D   D   D   
+
+id: (tags-3)
+Scores: (#C #S #D #I) 0 0 0 6
+REF:  *** ******** ******* *** *** *** 
+HYP:  ठ ठठ;A ड;B;B ड ढ ण 
+Eval: I   I        I       I   I   I   
+
+id: (tags-4)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  ठ ठठ;a ड;b;b ड ढ ण 
+HYP:  Z   ठठ;a ड;b;b स ष श 
+Eval: S                    S   S   S   
+
+id: (tags-5)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  ठ ठठ;a ड;b;b ड ढ ण 
+HYP:  Z   ठठ;a ड;b;b स ष श 
+Eval: S                    S   S   S   
+
+

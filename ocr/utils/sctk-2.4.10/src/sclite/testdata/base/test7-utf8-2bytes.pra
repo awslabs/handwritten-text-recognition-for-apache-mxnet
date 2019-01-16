@@ -1,0 +1,377 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./tests.hyp.utf8-2bytes
+
+Speakers: 
+    0:  f
+    1:  g
+    2:  h
+    3:  i
+    4:  empty
+    5:  alt
+    6:  od1
+    7:  od2
+    8:  od3
+    9:  tags
+
+Speaker sentences   0:  f   #utts: 7
+id: (f_0)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+id: (f_1)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+id: (f_2)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+id: (f_3)
+Scores: (#C #S #D #I) 6 0 0 1
+REF:  Ġ ġ Ģ ģ ** ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:             I        
+
+id: (f_4)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+id: (f_5)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+id: (f_6)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+HYP:  Ġ ġ Ģ ģ Ĥ ĥ Ħ 
+Eval:                      
+
+Speaker sentences   1:  g   #utts: 2
+id: (g_0)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  Ĵħ Ĵħ ħĠģ   Ġ         īĮĭĦ   ĠĦĤ-Įīģ įıĮġīĤĬ Įĥ Ĭĸ ġRIGHT        
+HYP:  Ĵħ Ĵħ ħĠĵĤ ĠīĮĭĦ ĶħĨĢħ ĦĮ          įıĮġīĤĬ Įĥ Ĭĸ įıĨĵĠĳĤ 
+Eval:           S        S          S          S                                      S              
+
+id: (g_1)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  Ĵħ Ĵħ ħĠģ   Ġ         īĮĭĦ   ĠĦĤ-Įīģ įıĮġīĤĬ Įĥ Ĭĸ ġRIGHT        
+HYP:  Ĵħ Ĵħ ħĠĵĤ ĠīĮĭĦ ĶħĨĢħ ĦĮ          įıĮġīĤĬ Įĥ Ĭĸ įıĨĵĠĳĤ 
+Eval:           S        S          S          S                                      S              
+
+Speaker sentences   2:  h   #utts: 3
+id: (h_0)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ ġ Ĥĥ 
+HYP:  Ġ ġ Ĥĥ 
+Eval:            
+
+id: (h_1)
+Scores: (#C #S #D #I) 7 0 0 1
+REF:  Ġ Ħħ Ĩ ġģ Ĥ ** ĳħ ĥ 
+HYP:  Ġ Ħħ Ĩ ġģ Ĥ Ĩ ĳħ ĥ 
+Eval:                    I          
+
+id: (h_2)
+Scores: (#C #S #D #I) 8 0 0 1
+REF:  Ġ Ħħ Ĩ ġģ Ĥ Ĩ ĭ **** ĥ 
+HYP:  Ġ Ħħ Ĩ ġģ Ĥ Ĩ ĭ ĳħ ĥ 
+Eval:                          I       
+
+Speaker sentences   3:  i   #utts: 5
+id: (i_1)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  **** ĳħĨĲ ĨĲ ĳħĤ ĳĤĭ 
+HYP:  ĳħ Ĥ       ĨĲ ĳħ   Ĥĭ   
+Eval: I    S             S      S      
+
+id: (i_2)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  **** ĳħĨĲ ĨĲ ĳħĤ ĳĤĠ 
+HYP:  ĳħ Ĥ       ĨĲ ĳħ   Ĥĭ   
+Eval: I    S             S      S      
+
+id: (i_3)
+Scores: (#C #S #D #I) 1 3 0 1
+REF:  **** ĳħĤ ĨĲ ĳħĤ ĳĤĠ 
+HYP:  ĳħ ĨĲ   ĨĲ ĳħ   Ĥĭ   
+Eval: I    S           S      S      
+
+id: (i_4)
+Scores: (#C #S #D #I) 12 2 0 0
+REF:  ĥĨ-    ĳħ-  ĥĨ-    -ĨĢĪĲ  -īĪ    -ĮĥĥĤĤ -ħĨĬ ĥĨĭģ ĳħĤ ĥĨĲħ ĳĨĢĪĲ ĬĨīĪ ĥĤĤ      ħĨĬ  
+HYP:  ĥĨĭģ ĳħĤ ĥĨĲħ ĳĨĢĪĲ ĬĨīĪ ĥĤĤ      ħĨĬ  ĥĨ-    ĳħ-  ĥĨ-    -ĨĢĪĲ  -īĪ    -ĮĥĥĤĤ -ħĨĬ 
+Eval:                                              S                                                                S                   
+
+id: (i_5)
+Scores: (#C #S #D #I) 6 1 1 1
+REF:  ģĤī ĥĨ- ģĤīĞĶĨĳħĭĴīī ĲĪĨį ĲĪĨį ĲĴġĲĳĨĳĴĳĨĮĭ ĥĨ-    ĲĴġĞĶĨĳħĭĴīī ******** 
+HYP:  ģĤī ***** ģĤīĞĶĨĳħĭĴīī ĲĪĨį ĲĪĨį ĲĴġĲĳĨĳĴĳĨĮĭ ĥīĠĦ ĲĴġĞĶĨĳħĭĴīī ĥīĠĦ 
+Eval:        D                                                                         S                                 I        
+
+Speaker sentences   4:  empty   #utts: 2
+id: (empty-1)
+Scores: (#C #S #D #I) 0 0 0 10
+REF:  ** ** ** ** ** ** ** ** ** ** 
+HYP:  Ġ ġ Ģ Ĥ ĥ Ħ ħ Ĩ ĩ Ī 
+Eval: I  I  I  I  I  I  I  I  I  I  
+
+id: (empty-2)
+Scores: (#C #S #D #I) 0 0 0 3
+REF:  ** ** ** 
+HYP:  ģ Ĥ ĥ 
+Eval: I  I  I  
+
+Speaker sentences   5:  alt   #utts: 9
+id: (alt-1)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ Ģ ģ 
+HYP:  Ġ Ģ ģ 
+Eval:          
+
+id: (alt-2)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  Ġ Ģ ** ģ 
+HYP:  Ġ Ģ Ĩ ģ 
+Eval:       I     
+
+id: (alt-3)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  Ġ ģ 
+HYP:  Ġ ģ 
+Eval:       
+
+id: (alt-4)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ Ģ ģ 
+HYP:  Ġ Ģ ģ 
+Eval:          
+
+id: (alt-5)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ Ģ ģ 
+HYP:  Ġ Ģ ģ 
+Eval:          
+
+id: (alt-6)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  Ġ ģ 
+HYP:  Ġ ģ 
+Eval:       
+
+id: (alt-7)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ ģ Ĥ 
+HYP:  Ġ ģ Ĥ 
+Eval:          
+
+id: (alt-8)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  Ġ ģ Ĥ 
+HYP:  Ġ ģ Ĥ 
+Eval:          
+
+id: (alt-9)
+Scores: (#C #S #D #I) 2 0 1 0
+REF:  Ġ ģ Ģ 
+HYP:  Ġ ** Ģ 
+Eval:    D     
+
+Speaker sentences   6:  od1   #utts: 7
+id: (od1-1)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ġ (Ģ) ģ 
+HYP:  ġ      Ĥ 
+Eval:         S  
+
+id: (od1-2)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ġ (Ģ) ģ 
+HYP:  ġ Ģ   Ĥ 
+Eval:         S  
+
+id: (od1-3)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  ġ (Ģ) ģ ** 
+HYP:  ġ      ģ Ĥ 
+Eval:            I  
+
+id: (od1-4)
+Scores: (#C #S #D #I) 2 1 0 1
+REF:  ġ (Ģ) ** ģ 
+HYP:  ġ Ģ   Ĩ Ĥ 
+Eval:         I  S  
+
+id: (od1-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  ġ ** (Ģ) ģ 
+HYP:  ġ Ĳ Ĩ   Ĥ 
+Eval:    I  S    S  
+
+id: (od1-6)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ġ (Ģ) ģ 
+HYP:  **      Ĥ 
+Eval: D       S  
+
+id: (od1-7)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ġ (Ģ) ģ 
+HYP:  **      ĥ 
+Eval: D       S  
+
+Speaker sentences   7:  od2   #utts: 10
+id: (od2-1)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (Ġ) (Ģ) ġ ģ Ĥ 
+HYP:            Ĳ Ĳ Ĳ 
+Eval:           S  S  S  
+
+id: (od2-2)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (Ġ) Ģ (ġ) ģ Ĥ 
+HYP:       Ĳ      Ĳ Ĳ 
+Eval:      S       S  S  
+
+id: (od2-3)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (Ġ) Ģ ġ (ģ) Ĥ 
+HYP:       Ĳ Ĳ      Ĳ 
+Eval:      S  S       S  
+
+id: (od2-4)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  (Ġ) Ģ ġ ģ (Ĥ) 
+HYP:       Ĳ Ĳ Ĳ      
+Eval:      S  S  S       
+
+id: (od2-5)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ (Ģ) (ġ) ģ Ĥ 
+HYP:  Ĳ           Ĳ Ĳ 
+Eval: S            S  S  
+
+id: (od2-6)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ (Ģ) ġ (ģ) Ĥ 
+HYP:  Ĳ      Ĳ      Ĳ 
+Eval: S       S       S  
+
+id: (od2-7)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ (Ģ) ġ ģ (Ĥ) 
+HYP:  Ĳ      Ĳ Ĳ      
+Eval: S       S  S       
+
+id: (od2-8)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ Ģ (ġ) (ģ) Ĥ 
+HYP:  Ĳ Ĳ           Ĳ 
+Eval: S  S            S  
+
+id: (od2-9)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ Ģ (ġ) ģ (Ĥ) 
+HYP:  Ĳ Ĳ      Ĳ      
+Eval: S  S       S       
+
+id: (od2-10)
+Scores: (#C #S #D #I) 2 3 0 0
+REF:  Ġ Ģ ġ (ģ) (Ĥ) 
+HYP:  Ĳ Ĳ Ĳ           
+Eval: S  S  S            
+
+Speaker sentences   8:  od3   #utts: 8
+id: (od3-1)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ġ (Ģ-) ģ 
+HYP:  ġ       Ĥ 
+Eval:          S  
+
+id: (od3-2)
+Scores: (#C #S #D #I) 2 1 0 0
+REF:  ġ (Ģ-) ģ 
+HYP:  ġ Ģ    Ĥ 
+Eval:          S  
+
+id: (od3-3)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  ġ (Ģ-) ģ ** 
+HYP:  ġ       ģ Ĥ 
+Eval:             I  
+
+id: (od3-4)
+Scores: (#C #S #D #I) 2 1 0 1
+REF:  ġ (Ģ-) ** ģ 
+HYP:  ġ Ģ    Ĩ Ĥ 
+Eval:          I  S  
+
+id: (od3-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  ġ ** (Ģ-) ģ 
+HYP:  ġ Ĳ Ĩ    Ĥ 
+Eval:    I  S     S  
+
+id: (od3-6)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ġ (Ģ-) ģ 
+HYP:  **       Ĥ 
+Eval: D        S  
+
+id: (od3-7)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  ġ (Ģ-) ģ 
+HYP:  **       ĥ 
+Eval: D        S  
+
+id: (od3-8)
+Scores: (#C #S #D #I) 3 1 1 0
+REF:  ġ (ĳĤĭ-) (ĳħĤ) ĢĠĭ ģ     
+HYP:  ġ ĳĤĭ    ĳħĤ   ****** Ġĭģ 
+Eval:                       D      S      
+
+Speaker sentences   9:  tags   #utts: 5
+id: (tags-1)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  Ġ ĠĠ;a ġ;b;b ġ Ģ ģ 
+HYP:  Ġ ĠĠ;a ġ;b;b ġ Ģ ģ 
+Eval:                           
+
+id: (tags-2)
+Scores: (#C #S #D #I) 0 0 6 0
+REF:  Ġ ĠĠ;A ġ;B;B ġ Ģ ģ 
+HYP:  ** ****** ****** ** ** ** 
+Eval: D  D      D      D  D  D  
+
+id: (tags-3)
+Scores: (#C #S #D #I) 0 0 0 6
+REF:  ** ****** ****** ** ** ** 
+HYP:  Ġ ĠĠ;A ġ;B;B ġ Ģ ģ 
+Eval: I  I      I      I  I  I  
+
+id: (tags-4)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  Ġ ĠĠ;a ġ;b;b ġ Ģ ģ 
+HYP:  Z  ĠĠ;a ġ;b;b ĸ ķ Ķ 
+Eval: S                S  S  S  
+
+id: (tags-5)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  Ġ ĠĠ;a ġ;b;b ġ Ģ ģ 
+HYP:  Z  ĠĠ;a ġ;b;b ĸ ķ Ķ 
+Eval: S                S  S  S  
+
+

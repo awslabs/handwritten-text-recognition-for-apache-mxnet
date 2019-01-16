@@ -1,0 +1,485 @@
+<!-- $Id: sclite.htm,v 1.2 2004/07/27 15:07:09 jfiscus Exp $ -->
+<HTML>
+<HEAD>
+<CENTER><TITLE>NIST SCLITE Scoring Package Version 1.5</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="sclite_name_0">
+NAME</A>
+</H1>
+sclite - score speech recognition system output
+<p><p><hr>
+
+<H1> 
+<A NAME="sclite_synopsis_0">
+SYNOPSIS</A>
+</H1>
+<STRONG>sclite 
+<a href="options.htm#option_r_name_0">-r</a> reffile [ fmt ] 
+<a href="options.htm#option_h_name_0">-h</a> hypfile [ fmt [ title ] ] 
+<a href="options.htm#options_name_0">OPTIONS</a>
+</STRONG>
+<p>
+<H1> <A NAME="sclite_description_0">DESCRIPTION</A></H1>
+<p>
+The program <A HREF="sclite.htm#sclite_name_0">sclite</A> is a tool
+for scoring and evaluating the output of speech recognition systems.
+Sclite is part of the <A HREF="sctk.htm">NIST SCTK</A> Scoring Tookit.
+The program compares the hypothesized text (HYP) output by the speech
+recognizer to the correct, or reference (REF) text.  After comparing
+REF to HYP, (a process called 
+<A HREF="sclite.htm#sclite_alignment_process_0">alignment</A>),
+statistics are gathered during the <A HREF="sclite.htm#scoring_process">scoring process</A>
+ and a variety of 
+<A HREF="outputs.htm#outputs_name_0">reports</A> can be produced to
+summarize the performance of the recognition system.
+
+<H1> 
+<A NAME="sclite_alignment_process_0">THE ALIGNMENT PROCESS</A>
+</H1>
+<p>
+
+The Alignment process consists of two steps: 1) selecting matching
+REF and HYP texts, and 2) performing an alignment of the reference 
+and hypothesis texts.   
+<p>
+<strong> Step 1: Selection of matching REF and HYP texts </strong>
+<UL>
+<A HREF="sclite.htm#sclite_name_0">Sclite</A>
+accepts as input a wide variety of file formats.  The type of input
+formats define the algorithm for selecting matching REF and 
+HYP texts.  Currently sclite uses four algorithms:
+<UL>
+<p>
+<strong> Utterance ID Matching: </strong>
+<UL>
+
+Input reference and hypothesis files in 
+"<a href="infmts.htm#trn_fmt_name_0">trn</a>" transcript format can be
+aligned by either dynamic programming 
+(<a href="sclite.htm#dynam_prog_0">DP</a>) or 
+<a href="sclite.htm#gnu_diff_alignment_0">GNU's "diff"</a>.
+<p> 
+When alignments are performed via DP, corresponding REF and HYP
+records with the same utterance id's are located in the REF and HYP
+files.  DP Alignment and scoring are then performed on each pair of
+records.  Only the utterance ID's present in the HYP file are aligned and
+scored.  This means the REF file may contain more utterance 
+records than the HYP.
+<p>  
+When "diff" is used for alignment, corresponding REF and HYP records
+with the same utterance id's are located in the REF and HYP files.
+Rather than execute "diff" for each pair of records, all matching REF
+and HYP pairs are re-formatted to be newline separated words and
+written to a temporary files.  Using the two temporary files, "diff"
+is then called to perform a global alignment.  The output of "diff" is
+re-chunking into REF/HYP records by applying the rule: include all
+words in the output stream up to and including the last word in the
+reference record.
+<p>  
+The reference file can contain extra transcripts, only needed
+transcripts are loaded.
+
+</UL>
+
+<p>
+
+<STRONG> Word Time Mark Matching: </STRONG>
+
+<UL>
+When both the REF and HYP files are in the 
+"<a href="infmts.htm#ctm_fmt_name_0">ctm</a>" format,
+The first step in the alignment process is to segment both the
+reference and hypothesis word lists by locating common areas of
+silence, (i.e.  the absence of a word time mark).  Once completed, the
+resulting "segments" are aligned via dynamic programming and scored as
+usual.
+<p>
+By default, the DP alignment is performed using word-to-word distances
+measures of: 0, 3, 3, 4 for correct, insertions, deletions and
+substitutions respectively.
+<p> 
+Optionally, the command line flag 
+'<a href="options.htm#option_T_name_0">-T</a>' forces the alignments to be
+performed using <A HREF="sclite.htm#time-mediated">time-mediated</A> alignments.
+
+</UL>
+
+<p>
+
+<STRONG> Reference Segment Time Mark to Hypothesis Word Time Mark </STRONG>
+
+<UL>
+When the reference file format is "<a href="infmts.htm#stm_fmt_name_0">stm</a>"
+and the hypothesis file format is
+"<a href="infmts.htm#ctm_fmt_name_0">ctm</a>", sclite chops up the hypothesis file into regions matching
+the reference segments.  Currently, there a two methods of chopping
+the hypothesis file.  The method is dependent on the text alignment algorithm. 
+
+<p>
+ 
+When DP alignments are performed, the hypothesis file is segmented to
+match the reference segments by selecting the string of hypothesized
+words whose times occur before the end of each reference segment.  The
+midpoint time of a word is used to determine if the word falls within
+a segment.  DP alignments are then performed on the selected
+hypothesis words and the reference segment.
+
+<p> 
+ 
+If the alignments are performed via "diff", pre-process the input
+reference and hypothesis texts, creating temporary reference and
+hypothesis files with one word per line.  Then use GNU's "diff"
+program to perform a global alignment on the word lists.  The output
+of "diff" is re-chunked into segments for scoring.  Alternate
+reference transcripts can not be used with "diff" alignments.
+ 
+</UL>
+<p>
+<STRONG> Reference Segment Time Mark to Hypothesis Text file </STRONG>
+<ul>
+
+When the reference file format 
+"<a href="infmts.htm#stm_fmt_name_0">stm</a>" and the hypothesis file
+format "<a href="infmts.htm#txt_fmt_name_0">txt</a>" are used as
+inputs, the same alignment and scoring algorithm is used as describe
+above under the label "Reference Segment Time Mark to Hypothesis Word
+Time Mark" by GNU diff alignments.
+
+</ul>
+</UL>
+
+
+</UL>
+<p>
+
+<strong> Step 2: Text Alignments </strong>
+
+<UL>
+<A HREF="sclite.htm#sclite_name_0">Sclite</A>
+can use either of two algorithms for finding alignments
+between reference and hypothesis word strings.  The first, and most
+widely accepted, uses dynamic programming (DP) and the second uses
+GNU's "diff", a FSF (Free Software Foundation) program for comparing
+text files.
+<p>
+<A name="dynam_prog_0">Dynamic Programming string alignment:</a>
+<UL>
+<p>
+The DP string alignment algorithm performs a global minimization of a
+Levenshtein distance function which weights the cost of correct words,
+insertions, deletions and substitutions as 0, 3, 3 and 4 respectively.
+The computational complexity of DP is 0(NN).
+<p>
+When evaluating the output of speech recognition systems, the
+precision of generated statistics is directly correlated to the
+reference text accuracy.  But uttered words can be coarticulated or
+mumbled to where they have ambiguous transcriptions, (e.i., "what are"
+or "what're").  In order to more accurately represent ambiguous
+transcriptions, and not penalize recognition systems, the ARPA
+community agreed upon a format for specifying alternative reference
+transcriptions.  The convention, when used on the case above, allows
+the recognition system to output either transcripts, "what are" or
+"what're", and still be correct.
+<p>
+The case above handles ambiguously spoken words which are loud enough
+for the transcriber to think something should be recognized.  For
+mumbled or quietly spoken words, the ARPA community agreed to neither
+penalize systems which correctly recognized the word, nor penalize
+systems which did not.  To accommodate this, a NULL word, "@", can be
+added to an alternative reference transcript.  For example, "the" is
+often spoken quickly with little acoustic evidence.  If "the" and "@"
+are alternates, the recognition system will be given credit for
+outputting "the" but not penalized if it does not.
+<p>
+The presence of alternate transcriptions represents added
+computational complexity to the DP algorithm.  Rather than align all
+alternate reference texts to the hypothesis text, then choose the
+lowest error rate alignment, this implementation of DP aligns two word
+networks, thus reducing the computational complexity from 2^(ref_alts +
+hyp_alts) * O(N_ref * N_hyp) to O((N_ref+ref_alts) *
+(N_hyp+hyp_alts)).
+<p>
+<UL>
+For a detailed explanation of DP alignment, see TIME WARPS, STRING
+EDITS, AND MACROMOLECULES: THE THEORY AND PRACTICE OF SEQUENCE
+COMPARISON, by Sankoff and Kruskal, ISBN 0-201-07809-0.
+</UL>
+<p>
+
+As noted above, DP alignment minimizes a distance function that is applied
+to word pairs.  In addition to the "word" alignments which uses
+a distance function defined by static weights, the sclite DP alignment module can
+use two other distance functions.  The first, called <B> Time-Mediated</B> alignment
+and the second called <B> Word-Weight-Mediated</B> alignment.
+<P>
+
+<A NAME="time-mediated"><B>Time-Mediated Alignment</B></A>
+<ul>
+
+Time-Mediated alignment is a variation of DP alignment where
+word-to-word distances are based on the time of occurence for
+individual words.  Time-mediated alignments are performed when the '<a
+href="options.htm#option_T_name_0">-T</a>' option is exercised and the
+input formats for both the reference and hypothesis files are in "<a
+href="infmts.htm#ctm_fmt_name_0">ctm</a>" format.
+
+<p>
+
+Time-mediated alignments are computed by replacing the
+standard word-to-word distance weights of 0, 3, 3, and 4 with measures
+based on beginning and ending word times.  The formulas for
+time-mediated word-to-word distances are:
+<p>
+
+<ul>
+D(correct) = | T1(ref) - T1(hyp) | + | T2(ref) - T2(hyp) |
+<br>
+D(insertion)  = T2(hyp) - T1(hyp)
+<br>
+D(deletion)  = T2(ref) - T1(ref)
+<br>
+D(substitution) = | T1(ref) - T1(hyp) | + | T2(ref) - T2(hyp) | + 0.001
+<br>
+ Distance for an Insertion or Deletion of the NULL Token '@' = 0.001
+<p>
+               Where,
+	<ul>
+                   T1(x) is the beginning time mark of word x <br>
+                    T2(x) is the ending time mark of word x
+	</ul>
+</ul>
+<P>
+</UL>
+
+<A NAME="word-weight-mediated"><B>Word-Weight-Mediated Alignment</B></A>
+<UL>
+
+Word-weight-mediated alignment is a variation of DP alignments where word-to-word distances 
+are based on pre-defined word-weights.  Each word has a unique weight assigned
+to it, via either a word-weight-list file, using the <a
+href="options.htm#option_w_name_0">-w</a> option, or through a
+language model file, using the <a href="options.htm#option_L_name_0">
+-L</a> option.
+
+The formulas for word-weight-mediated word-to-word distances are:
+<p>
+
+<ul>
+D(correct) = 0.0
+<br>
+D(insertion)  = W(hyp)
+<br>
+D(deletion)  = W(ref)
+<br>
+D(substitution) = W(hyp) + W(ref)
+<br>
+ Distance for and Insertion or Deletion of the NULL Token '@' = 0.001
+<p>
+<UL>
+               Where W(x) is the weight assigned to word 'x'.
+</ul>
+
+</UL>
+</UL>
+</UL>
+<p>
+<A name="gnu_diff_alignment_0"></a>
+String alignments via GNU's "diff":
+<UL>
+<p>
+While the DP algorithm has the advantage of flexibility, it is slow
+for aligning large chunks of text.  To address the speed concerns, an
+alternative string alignment module, which utilizes GNU's "diff", has
+been added to sclite.  The sclite program pre-processes the input
+reference and hypothesis texts, creating temporary reference and
+hypothesis files with one word per line.  Then GNU's "diff" program is
+used to perform a global alignment on the word lists and the output is
+re-chunked into utterances or text segments for scoring.
+<p>
+
+Alignments can be performed with "diff" in about half the time taken
+for DP alignments on the standard 300 Utterance ARPA CSRNAB test set.
+However, in the opinion of the author, "diff" has the following bad
+effects:
+
+<UL>
+<p>
+1. it can not accommodate transcription alternations,
+<p>
+2. "diff" does not produce the same alignments as the DP alignments,
+<p>
+3. there is an increase measured error rates.
+</UL>
+</UL>
+</UL>
+
+<A name="scoring_process"> <H1> THE SCORING PROCESS </H1> </A>
+
+<UL>
+After reference and hypothesis texts have been aligned, scores are
+tallied for each speaker and each ref/hyp pair.  After the tallies
+are made, a variety if output reports are generated by using the 
+'<A HREF="options.htm#option_o_name_0">-o</a>' option.  
+Here is a set of <a href="outputs.htm#output_reports_name_0">examples</a>.
+
+<P>
+The categories tallied are: 
+<CENTER>
+<Table>
+
+<TR> <TD> Percent of correct words 
+     <TD> = 
+     <TD> <U> # Correct words </U> <br> # Reference words  <TD> * 100
+<TR> <TD> Percent of substituted words
+     <TD> = 
+     <TD> <U> # Substituted words </U> <BR> # Reference words <TD> * 100
+<TR> <TD> Percent of inserted words 
+     <TD> = 
+     <TD> <U> # Inserted words </U> <BR> # Reference words <TD> * 100
+<TR> <TD> Percent of deleted words 
+     <TD> = 
+     <TD> <U> # Deleted words </U> <BR> # Reference words <TD> * 100
+<TR>
+<TR> <TD> Percent of sentence errors 
+     <TD> = 
+     <TD> <U> # incorrect ref and hyp pairs </U> <BR> # ref and hyp pairs <TD> * 100
+</TABLE>
+</CENTER>
+
+<P> A variation in scoring called <A NAME="weighted-word-scoring"> <B>
+Weighted-Word Scoring </B> </A> can also be implemented by sclite.
+After <A HREF="sclite.htm#word-weight-mediated"> Word-Weight-Mediated
+Alignment</A>, the word weights can be tallied to produce
+weighted-word scores.  The formulas for weighted-word scoring are very
+simliar to word scoring described above.  The difference is rather than
+assume each word has the same weight, 1 in the case of word scoring, 
+each individual word has a different weight.  The word scoring formulas become:
+
+<CENTER>
+<Table>
+
+<TR> <TD> Weighted Percent of correct words
+     <TD> = 
+     <TD> <U> Sum of W(hyp) if correct </U> <br> Sum of W(ref)  <TD> * 100
+<TR> <TD> Weighted Percent of substituted words
+     <TD> = 
+     <TD> <U> Sum of W(hyp) + W(ref) if substituted </U> <BR> Sum of W(ref)  <TD> * 100
+<TR> <TD> Weighted Percent of inserted words 
+     <TD> = 
+     <TD> <U> Sum of W(hyp) if inserted </U> <BR> Sum of W(ref)  <TD> * 100
+<TR> <TD> Weighted Percent of deleted words 
+     <TD> = 
+     <TD> <U> Sum of W(ref) if deleted </U> <BR> Sum of W(ref) <TD> * 100
+</TABLE>
+</CENTER>
+<UL>
+W(hyp) is the weight assigned to a hypothesis word, and W(ref) is the weight
+assigned to a reference word.  Optionally deletable words have the default
+weight of 0.0.
+</UL>
+
+</ul>
+<H1> 
+<A NAME="graphs_name_0">
+WORD CONFIDENCE MEASURE EVALUATION</A>
+</H1>
+<ul>
+
+Confidence scores for each hypothesized word were requested of the
+LVCSR (Large Vocabulary Speech Recognition) participants beginning
+with the April 1996 evaluation.  Each site was asked to do its analysis
+of these scores which were not processed by NIST.  A review meeting
+was held at NIST in August 1996 which resulted in a decision to apply
+an agreed upon standard metric.
+
+<p>
+
+Confidence scores as they have been implemented are associated with
+each hypothesized word.  (The issue has been raised whether for
+languages such as Mandarin, where character error rate is considered
+the primary measure of performance, the confidence ought to be
+associated with characters.)  The confidence score p<sub>c</sub>,
+associated with a word must be in the closed interval [0,1] and
+presumably, given the entropy related metric defined below, in the
+open interval (0,1).  It should represent the system's best estimate
+of the a posterior probability that the hypothesized word is
+correct. (Correct here necessarily is with respect to an alignment
+procedure of the reference and hypothesis word strings.)
+
+<p>
+
+A single metric to use in the evaluartion of confidence scores was
+adopted at the August meeting.  This is a normalized version of the
+cross entropy or mutual information.  Specifically, the metric is
+defined as:
+
+<p>
+<center><IMG SRC="equation.jpg"></Center>
+<p>
+
+Sclite will automatically detect the presence of confidence measures 
+when reading in a hypothesis "<a href="infmts.htm#ctm_fmt_name_0">ctm</a>"
+file.  When sclite detects the confidence scores, the report genererated
+by the options "<a href="options.htm#option_o_name_0">-o sum</a>" has 
+an additional column containing the Normalized Cross Entropy (NCE).
+
+<p>
+
+Output graphs concerning confidence estimates are generated by using the 
+'<A HREF="options.htm#option_C_name_0">-C</a>'
+option.  A variety of graphs can be created:
+
+<ol>
+<li> DET Curve <a href="outputs.htm#outputs_det_name_0"> Example </a>
+<li> Binned Histogram<a href="outputs.htm#outputs_bhist_name_0"> Example </a>
+<li> Word Confidence Score Histogram
+	<a href="outputs.htm#outputs_hist_name_0"> Example </a>
+</ol>
+
+	
+</ul> 
+<h1> REVISION HISTORY </h1>
+<ul>
+See <a href="revis.htm#revisions_name_0">revision.txt</a> in
+the main directory of the sclite source code directory
+package.  
+</ul>
+<h1> EXAMPLE USES OF <a href="sclite.htm#sclite_name_0">SCLITE</a> </h1>
+<ul>
+The <a href="sclite.htm#sclite_name_0">sclite</a> scoring utility was
+written to be used as a standard scoring tool for the ARPA speech
+recognition benchmark tests.  Since evaluation paradigms have changed 
+over the past several years, file formats and scoring proceedures have
+changed as well.  This utility supports the following speech recognition
+benchmark tests:
+<ul>
+Utterance based evaluations:
+	<ul>
+	Resource Management
+	<br>
+	ATIS (Airline Travel Information Systems): 
+	</ul>
+Found speech evaluations:
+	<ul>
+	Hub 4 - Marketplace and Broadcast News
+	<br>
+	Hub 5 - LVCSR Switchboard 
+	</ul>
+</ul>
+</ul>
+<h1> BUGS/COMMENTS </h1>
+<ul>
+
+Please contact Jon Fiscus at NIST with any bug reports or comments at
+the email address 
+<A HREF="mailto:jonathan.fiscus@nist.gov">jonathan.fiscus@nist.gov </A> or
+by phone, (301)-975-3182.  Please include the version number of rover,
+and any other relevant information such as OS, compiler, etc.  </ul>
+</ul>
+
+</BODY>
+</HTML>
+ 

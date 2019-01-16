@@ -1,0 +1,270 @@
+SCORING FOR SPEAKER: 4t0
+     of ./csrnab.hyp
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          15
+ with errors                             86.7%   (  13)
+
+   with substitions                      86.7%   (  13)
+   with deletions                        26.7%   (   4)
+   with insertions                       46.7%   (   7)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   18.6%   (  85)
+
+Percent Correct           =   84.1%   ( 385)
+
+Percent Substitution      =   14.0%   (  64)
+Percent Deletions         =    2.0%   (   9)
+Percent Insertions        =    2.6%   (  12)
+Percent Word Accuracy     =   81.4%
+
+
+Ref. words                =           ( 458)
+Hyp. words                =           ( 461)
+Aligned words             =           ( 470)
+
+CONFUSION PAIRS                  Total                 (64)
+                                 With >=  1 occurances (64)
+
+   1:    1  ->  a ==> to
+   2:    1  ->  administered ==> minister
+   3:    1  ->  at ==> and
+   4:    1  ->  at ==> the
+   5:    1  ->  botched ==> posh
+   6:    1  ->  correct ==> trek
+   7:    1  ->  costing ==> causing
+   8:    1  ->  data ==> dated
+   9:    1  ->  day's ==> is
+  10:    1  ->  deadlines ==> airlines
+  11:    1  ->  direct ==> director
+  12:    1  ->  disheartening ==> tightening
+  13:    1  ->  dollar ==> lure
+  14:    1  ->  effected ==> effective
+  15:    1  ->  eight ==> mae
+  16:    1  ->  either ==> into
+  17:    1  ->  entrusted ==> infested
+  18:    1  ->  eyes ==> eye
+  19:    1  ->  fess ==> fast
+  20:    1  ->  fidelity ==> fidelity's
+  21:    1  ->  for ==> freed
+  22:    1  ->  from ==> of
+  23:    1  ->  fund ==> different
+  24:    1  ->  fund ==> find
+  25:    1  ->  fund ==> refund
+  26:    1  ->  funds ==> some
+  27:    1  ->  have ==> it
+  28:    1  ->  incorrect ==> increased
+  29:    1  ->  it ==> they
+  30:    1  ->  its ==> it's
+  31:    1  ->  jamieson ==> and
+  32:    1  ->  jane ==> genius
+  33:    1  ->  lied ==> relied
+  34:    1  ->  listed ==> illicit
+  35:    1  ->  money ==> many
+  36:    1  ->  newspaper ==> byrd
+  37:    1  ->  newspapers ==> praised
+  38:    1  ->  normally ==> early
+  39:    1  ->  problem ==> pal
+  40:    1  ->  report ==> reports
+  41:    1  ->  self ==> south
+  42:    1  ->  shared ==> insured
+  43:    1  ->  some ==> a
+  44:    1  ->  someone ==> on
+  45:    1  ->  standard ==> if
+  46:    1  ->  the ==> a
+  47:    1  ->  the ==> today
+  48:    1  ->  their ==> little
+  49:    1  ->  though ==> the
+  50:    1  ->  titan ==> tighten
+  51:    1  ->  to ==> florida
+  52:    1  ->  to ==> too
+  53:    1  ->  to ==> two
+  54:    1  ->  trillion ==> to
+  55:    1  ->  two ==> trying
+  56:    1  ->  unknowingly ==> the
+  57:    1  ->  unsavory ==> save
+  58:    1  ->  up ==> that
+  59:    1  ->  wasn't ==> was
+  60:    1  ->  were ==> and
+  61:    1  ->  were ==> for
+  62:    1  ->  who ==> and
+  63:    1  ->  who ==> to
+  64:    1  ->  would ==> but
+     -------
+        64
+
+
+
+INSERTIONS                       Total                 (12)
+                                 With >=  1 occurances (12)
+
+   1:    1  ->  a
+   2:    1  ->  and
+   3:    1  ->  funds'
+   4:    1  ->  jean
+   5:    1  ->  knowing
+   6:    1  ->  mr.
+   7:    1  ->  mystery
+   8:    1  ->  new
+   9:    1  ->  on
+  10:    1  ->  stunned
+  11:    1  ->  the
+  12:    1  ->  this
+     -------
+        12
+
+
+
+DELETIONS                        Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:    2  ->  and
+   2:    1  ->  at
+   3:    1  ->  blow
+   4:    1  ->  if
+   5:    1  ->  looked
+   6:    1  ->  the
+   7:    1  ->  they
+   8:    1  ->  were
+     -------
+         9
+
+
+
+SUBSTITUTIONS                    Total                 (56)
+                                 With >=  1 occurances (56)
+
+   1:    3  ->  fund
+   2:    3  ->  to
+   3:    2  ->  at
+   4:    2  ->  the
+   5:    2  ->  were
+   6:    2  ->  who
+   7:    1  ->  a
+   8:    1  ->  administered
+   9:    1  ->  botched
+  10:    1  ->  correct
+  11:    1  ->  costing
+  12:    1  ->  data
+  13:    1  ->  day's
+  14:    1  ->  deadlines
+  15:    1  ->  direct
+  16:    1  ->  disheartening
+  17:    1  ->  dollar
+  18:    1  ->  effected
+  19:    1  ->  eight
+  20:    1  ->  either
+  21:    1  ->  entrusted
+  22:    1  ->  eyes
+  23:    1  ->  fess
+  24:    1  ->  fidelity
+  25:    1  ->  for
+  26:    1  ->  from
+  27:    1  ->  funds
+  28:    1  ->  have
+  29:    1  ->  incorrect
+  30:    1  ->  it
+  31:    1  ->  its
+  32:    1  ->  jamieson
+  33:    1  ->  jane
+  34:    1  ->  lied
+  35:    1  ->  listed
+  36:    1  ->  money
+  37:    1  ->  newspaper
+  38:    1  ->  newspapers
+  39:    1  ->  normally
+  40:    1  ->  problem
+  41:    1  ->  report
+  42:    1  ->  self
+  43:    1  ->  shared
+  44:    1  ->  some
+  45:    1  ->  someone
+  46:    1  ->  standard
+  47:    1  ->  their
+  48:    1  ->  though
+  49:    1  ->  titan
+  50:    1  ->  trillion
+  51:    1  ->  two
+  52:    1  ->  unknowingly
+  53:    1  ->  unsavory
+  54:    1  ->  up
+  55:    1  ->  wasn't
+  56:    1  ->  would
+     -------
+        64
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (56)
+                                 With >=  1 occurances (56)
+
+   1:    4  ->  and
+   2:    3  ->  the
+   3:    3  ->  to
+   4:    2  ->  a
+   5:    1  ->  airlines
+   6:    1  ->  but
+   7:    1  ->  byrd
+   8:    1  ->  causing
+   9:    1  ->  dated
+  10:    1  ->  different
+  11:    1  ->  director
+  12:    1  ->  early
+  13:    1  ->  effective
+  14:    1  ->  eye
+  15:    1  ->  fast
+  16:    1  ->  fidelity's
+  17:    1  ->  find
+  18:    1  ->  florida
+  19:    1  ->  for
+  20:    1  ->  freed
+  21:    1  ->  genius
+  22:    1  ->  if
+  23:    1  ->  illicit
+  24:    1  ->  increased
+  25:    1  ->  infested
+  26:    1  ->  insured
+  27:    1  ->  into
+  28:    1  ->  is
+  29:    1  ->  it
+  30:    1  ->  it's
+  31:    1  ->  little
+  32:    1  ->  lure
+  33:    1  ->  mae
+  34:    1  ->  many
+  35:    1  ->  minister
+  36:    1  ->  of
+  37:    1  ->  on
+  38:    1  ->  pal
+  39:    1  ->  posh
+  40:    1  ->  praised
+  41:    1  ->  refund
+  42:    1  ->  relied
+  43:    1  ->  reports
+  44:    1  ->  save
+  45:    1  ->  some
+  46:    1  ->  south
+  47:    1  ->  that
+  48:    1  ->  they
+  49:    1  ->  tighten
+  50:    1  ->  tightening
+  51:    1  ->  today
+  52:    1  ->  too
+  53:    1  ->  trek
+  54:    1  ->  trying
+  55:    1  ->  two
+  56:    1  ->  was
+     -------
+        64
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

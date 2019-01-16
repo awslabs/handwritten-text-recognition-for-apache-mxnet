@@ -1,0 +1,2 @@
+align_ctm_to_stm: Error: Hyp file has more data than ref file, beginning at hyp file/channel '9999' 'b'.
+sclite: Alignment failed.  Exiting.

@@ -1,0 +1,40 @@
+;; This file is an example of CTM file
+;; Do not modify if you dont know what you are doing
+SHOW_1 1 1.0 0.2 JAVA 0.98 lex unknow
+SHOW_1 1 2.0 0.2 WILL 0.97 lex unknow
+SHOW_1 1 3.0 0.2 RULES 0.96 lex unknow
+SHOW_1 1 4.0 0.2 THE 0.94 lex unknow
+SHOW_1 1 5.0 0.2 WORLD 0.92 lex unknow
+SHOW_1 2 3.0 0.2 OR 0.94 lex unknow
+SHOW_1 2 4.0 0.2 NOT 0.92 lex unknow
+SHOW_2 1 1.0 0.2 NICO 0.94 lex unknow
+SHOW_2 1 2.0 0.2 IS 0.92 lex unknow
+SHOW_2 1 3.0 0.2 HERE 0.92 lex unknow
+SHOW_2 2 1.0 0.5 (HUH) 0.92 lex unknow
+SHOW_2 2 5.0 0.5 start 0.92 lex unknow
+SHOW_2 2 * * <ALT_BEGIN> 0.92 lex unknow
+SHOW_2 2 5.5 0.2 begin 0.92 lex unknow
+SHOW_2 2 5.5 0.2 end 0.92 lex unknow
+SHOW_2 2 * * <ALT> 0.92 lex unknow
+SHOW_2 2 5.5 0.5 alt1 0.92 lex unknow
+SHOW_2 2 * * <ALT> 0.92 lex unknow
+SHOW_2 2 5.5 0.5 alt2 0.92 lex unknow
+SHOW_2 2 * * <ALT_END> 0.92 lex unknow
+SHOW_2 2 6.0 0.5 last 0.92 lex unknow
+SHOW_2 2 7.0 0.5 verylast 0.92 lex unknow
+SHOW_3 1 1.0 1.0 first 1.00 lex unknow
+SHOW_3 1 * * <ALT_BEGIN>
+SHOW_3 1 2.071 0.095 A1_1 0.987839
+SHOW_3 1 2.166 0.095 A1_2 0.987839
+SHOW_3 1 * * <ALT>
+SHOW_3 1 2.071 0.095 A2_1 0.987839
+SHOW_3 1 2.166 0.095 A2_2 0.987839
+SHOW_3 1 * * <ALT_END>
+SHOW_3 1 * * <ALT_BEGIN>
+SHOW_3 1 2.261 0.055 A3_1 0.99155
+SHOW_3 1 2.316 0.055 A3_2 0.99155
+SHOW_3 1 * * <ALT>
+SHOW_3 1 2.261 0.055 A4_1 0.99155
+SHOW_3 1 2.316 0.055 A4_2 0.99155
+SHOW_3 1 * * <ALT_END>
+SHOW_3 1 3.0 1.0 last 1.00 lex unknow

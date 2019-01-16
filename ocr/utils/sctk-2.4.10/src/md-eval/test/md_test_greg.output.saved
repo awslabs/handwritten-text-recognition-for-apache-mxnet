@@ -1,0 +1,570 @@
+command line (run on 2004 Oct 29 at 14:13:42):  ../src/md-eval-v19a.pl -af -e -D -d -W -w -t 1.0 -l 2 -u md_test_greg.uem -r md_test_greg.ref.rttm -s md_test_greg.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+Word alignment and scoring details for channel 1 of file md_test18
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        firstword lex       10.00   11.00 spkr1r              firstword lex     (  10.00   11.00)   10.00   11.00 spkr1s      
+   1   -   -   0             t.'s lex       11.00   12.00 spkr1r                   t.'s lex     (  11.00   12.00)   11.00   12.00 spkr1s      
+   1   -   -   0        thirdword lex       12.00   13.00 spkr1r              thirdword lex     (  12.00   13.00)   12.00   13.00 spkr1s      
+   1   -   -   0       fourthword lex       13.00   14.00 spkr1r             fourthword lex     (  13.00   14.00)   13.00   14.00 spkr1s      
+   1   -   -   0        fifthword lex       14.00   15.00 spkr1r              fifthword lex     (  14.00   15.00)   14.00   15.00 spkr1s      
+   1   -   -   0        sixthword lex       15.00   16.00 spkr1r              sixthword lex     (  15.00   16.00)   15.00   16.00 spkr1s      
+   1   -   -   0      seventhword lex       16.00   17.00 spkr2r            seventhword lex     (  16.00   17.00)   16.00   17.00 spkr2s      
+   1   -   -   0       eighthword lex       17.00   18.00 spkr2r             eighthword lex     (  17.00   18.00)   17.00   18.00 spkr2s      
+   1   -   -   0        ninthword lex       18.00   19.00 spkr2r              ninthword lex     (  18.00   19.00)   18.00   19.00 spkr2s      
+   1   -   -   0        tenthword lex       19.00   20.00 spkr2r              tenthword lex     (  19.00   20.00)   19.00   20.00 spkr2s      
+   1   -   -   0     eleventhword lex       20.00   21.00 spkr2r           eleventhword lex     (  20.00   21.00)   20.00   21.00 spkr2s      
+   1   -   -   0      twelfthword lex       21.00   22.00 spkr2r            twelfthword lex     (  21.00   22.00)   21.00   22.00 spkr2s      
+   1   -   -   0   thirteenthword lex       22.00   23.00 spkr2r         thirteenthword lex     (  22.00   23.00)   22.00   23.00 spkr2s      
+   1   -   -   0   fourteenthword lex       23.00   24.00 spkr2r         fourteenthword lex     (  23.00   24.00)   23.00   24.00 spkr2s      
+   1   -   -   0    fifteenthword lex       24.00   25.00 spkr2r          fifteenthword lex     (  24.00   25.00)   24.00   25.00 spkr2s      
+   1   -   -   0    sixteenthword lex       25.00   26.00 spkr2r          sixteenthword lex     (  25.00   26.00)   25.00   26.00 spkr2s      
+   1   -   -   0  seventeenthword lex       26.00   27.00 spkr2r        seventeenthword lex     (  26.00   27.00)   26.00   27.00 spkr2s      
+   1   -   -   0   eighteenthword lex       27.00   28.00 spkr2r         eighteenthword lex     (  27.00   28.00)   27.00   28.00 spkr2s      
+
+SU alignment and scoring details for channel 1 of file md_test18
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        statement SU        10.00   13.00 spkr1r              statement SU      (  10.00   13.00)   10.00   13.00 spkr1s      
+   1   -   -   0         question SU        13.00   16.00 spkr1r               question SU      (  13.00   16.00)   13.00   16.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                 statement SU      (  16.00   18.00)   16.00   18.00 spkr2s      
+   1   -   -   0        statement SU        16.00   20.00 spkr2r              statement SU      (  18.00   21.00)   18.00   21.00 spkr2s      
+   1   -   -   0        statement SU        20.00   24.00 spkr2r              statement SU      (  21.00   23.00)   21.00   23.00 spkr2s      
+   0   -   1   -              --- ---        ---     ---  ---                 statement SU      (  23.00   26.00)   23.00   26.00 spkr2s      
+   1   -   -   0        statement SU        24.00   28.00 spkr2r              statement SU      (  26.00   28.00)   26.00   28.00 spkr2s      
+
+Chronological display of sys data aligned with ref data for file 'md_test18', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     spkr1r                10.00         |        |
+beg SPEAKER  child    spkr1r                10.00         |        |
+                                            10.00         |        |beg SPEAKER  child    spkr1s=>spkr1r        10.00        
+beg SU       statemen spkr1r                10.00         | SU1    |beg SU       statemen spkr1s=>spkr1r        10.00        
+    LEXEME   lex      FIRSTWORD             10.00   11.00 | LX1    |    LEXEME   lex      FIRSTWORD             10.00   11.00
+    LEXEME   alpha    T.'S             11.00   12.00 | LX2    |    LEXEME   alpha    T.'S             11.00   12.00
+    LEXEME   acronym  THIRDWORD             12.00   13.00 | LX3    |    LEXEME   acronym  THIRDWORD             12.00   13.00
+end SU       statemen spkr1r                        13.00 | SU1    |end SU       statemen spkr1s=>spkr1r                13.00
+beg SU       question spkr1r                13.00         | SU2    |beg SU       question spkr1s=>spkr1r        13.00        
+    LEXEME   interjec FOURTHWORD             13.00   14.00 | LX4    |    LEXEME   interjec FOURTHWORD             13.00   14.00
+    LEXEME   properno FIFTHWORD             14.00   15.00 | LX5    |    LEXEME   properno FIFTHWORD             14.00   15.00
+    LEXEME   other    SIXTHWORD             15.00   16.00 | LX6    |    LEXEME   other    SIXTHWORD             15.00   16.00
+end SU       question spkr1r                        16.00 | SU2    |end SU       question spkr1s=>spkr1r                16.00
+end SPEAKER  child    spkr1r                        16.00 |        |
+                                                    16.00 |        |end SPEAKER  child    spkr1s=>spkr1r                16.00
+end SEGMENT  <na>     spkr1r                        16.00 |        |
+beg SEGMENT  <na>     spkr2r                16.00         |        |
+beg SPEAKER  unknown  spkr2r                16.00         |        |
+                                            16.00         |        |beg SPEAKER  unknown  spkr2s=>spkr2r        16.00        
+beg SU       statemen spkr2r                16.00         | SU3    |
+                                            16.00         | **FA** |beg SU       statemen spkr2s=>spkr2r        16.00        
+    LEXEME   lex      SEVENTHWORD             16.00   17.00 | LX7    |    LEXEME   lex      SEVENTHWORD             16.00   17.00
+    LEXEME   lex      EIGHTHWORD             17.00   18.00 | LX8    |    LEXEME   lex      EIGHTHWORD             17.00   18.00
+                                                    18.00 | **FA** |end SU       statemen spkr2s=>spkr2r                18.00
+                                            18.00         | SU3    |beg SU       statemen spkr2s=>spkr2r        18.00         dw=2
+    LEXEME   lex      NINTHWORD             18.00   19.00 | LX9    |    LEXEME   lex      NINTHWORD             18.00   19.00
+    LEXEME   lex      TENTHWORD             19.00   20.00 | LX10   |    LEXEME   lex      TENTHWORD             19.00   20.00
+end SU       statemen spkr2r                        20.00 | SU3    |
+beg SU       statemen spkr2r                20.00         | SU4    |
+    LEXEME   lex      ELEVENTHWORD             20.00   21.00 | LX11   |    LEXEME   lex      ELEVENTHWORD             20.00   21.00
+                                                    21.00 | SU3    |end SU       statemen spkr2s=>spkr2r                21.00 dw=1
+                                            21.00         | SU4    |beg SU       statemen spkr2s=>spkr2r        21.00         dw=1
+    LEXEME   lex      TWELFTHWORD             21.00   22.00 | LX12   |    LEXEME   lex      TWELFTHWORD             21.00   22.00
+    LEXEME   lex      THIRTEENTHWORD             22.00   23.00 | LX13   |    LEXEME   lex      THIRTEENTHWORD             22.00   23.00
+                                                    23.00 | SU4    |end SU       statemen spkr2s=>spkr2r                23.00 dw=-1
+                                            23.00         | **FA** |beg SU       statemen spkr2s=>spkr2r        23.00        
+    LEXEME   lex      FOURTEENTHWORD             23.00   24.00 | LX14   |    LEXEME   lex      FOURTEENTHWORD             23.00   24.00
+end SU       statemen spkr2r                        24.00 | SU4    |
+beg SU       statemen spkr2r                24.00         | SU5    |
+    LEXEME   lex      FIFTEENTHWORD             24.00   25.00 | LX15   |    LEXEME   lex      FIFTEENTHWORD             24.00   25.00
+    LEXEME   lex      SIXTEENTHWORD             25.00   26.00 | LX16   |    LEXEME   lex      SIXTEENTHWORD             25.00   26.00
+                                                    26.00 | **FA** |end SU       statemen spkr2s=>spkr2r                26.00
+                                            26.00         | SU5    |beg SU       statemen spkr2s=>spkr2r        26.00         dw=2
+    LEXEME   lex      SEVENTEENTHWORD             26.00   27.00 | LX17   |    LEXEME   lex      SEVENTEENTHWORD             26.00   27.00
+    LEXEME   lex      EIGHTEENTHWORD             27.00   28.00 | LX18   |    LEXEME   lex      EIGHTEENTHWORD             27.00   28.00
+end SU       statemen spkr2r                        28.00 | SU5    |end SU       statemen spkr2s=>spkr2r                28.00
+end SPEAKER  unknown  spkr2r                        28.00 |        |
+                                                    28.00 |        |end SPEAKER  unknown  spkr2s=>spkr2r                28.00
+end SEGMENT  <na>     spkr2r                        28.00 |        |
+
+Word alignment and scoring details for channel 1 of file md_test24
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   0   -   1   -              --- ---        ---     ---  ---                     xblah lex     (   1.00    2.00)    1.00    2.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     yblah lex     (   2.00    3.00)    2.00    3.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     zblah lex     (   3.00    4.00)    3.00    4.00 spkr1s      
+   1   -   -   0            xblah lex        4.00    5.00 spkr1r                  xblah lex     (   4.00    5.00)    4.00    5.00 spkr1s      
+   1   -   -   0            yblah lex        5.00    6.00 spkr1r                  yblah lex     (   5.00    6.00)    5.00    6.00 spkr1s      
+   1   -   -   0            zblah lex        6.00    7.00 spkr1r                  zblah lex     (   6.00    7.00)    6.00    7.00 spkr1s      
+   1   -   -   0            xblah lex        7.00    8.00 spkr1r                  xblah lex     (   7.00    8.00)    7.00    8.00 spkr1s      
+   1   -   -   0            yblah lex        8.00    9.00 spkr1r                  yblah lex     (   8.00    9.00)    8.00    9.00 spkr1s      
+   1   -   -   0            zblah lex        9.00   10.00 spkr1r                  zblah lex     (   9.00   10.00)    9.00   10.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                    zxblah lex     (  12.67   14.00)   12.00   13.00 spkr1s      
+   1   -   -   0            xblah lex       14.00   15.00 spkr1r                  xblah lex     (  14.00   15.00)   13.00   14.00 spkr1s      
+   1   -   -   0            yblah lex       15.00   16.00 spkr1r                  yblah lex     (  15.00   16.00)   14.00   15.00 spkr1s      
+   1   -   -   0            zblah lex       16.00   17.00 spkr1r                  zblah lex     (  16.00   17.00)   15.00   16.00 spkr1s      
+   1   -   -   0            xblah lex       17.00   18.00 spkr1r                  xblah lex     (  17.00   18.00)   16.00   17.00 spkr1s      
+   1   -   -   0            yblah lex       18.00   19.00 spkr1r                  yblah lex     (  18.00   19.00)   17.00   18.00 spkr1s      
+   1   -   -   0            zblah lex       19.00   20.00 spkr1r                  zblah lex     (  19.00   20.00)   18.00   19.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     xblah lex     (  20.00   20.80)   19.00   20.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     zblah lex     (  23.20   24.00)   23.00   24.00 spkr1s      
+   1   -   -   0            xblah lex       24.00   25.00 spkr1r                  xblah lex     (  24.00   25.00)   24.00   25.00 spkr1s      
+   1   -   -   0            yblah lex       25.00   26.00 spkr1r                  yblah lex     (  25.00   26.00)   25.00   26.00 spkr1s      
+   1   -   -   0            zblah lex       26.00   27.00 spkr1r                  zblah lex     (  26.00   27.00)   26.00   27.00 spkr1s      
+   1   -   -   0            xblah lex       27.00   28.00 spkr1r                  xblah lex     (  27.00   28.00)   27.00   28.00 spkr1s      
+   1   -   -   0            yblah lex       28.00   29.00 spkr1r                  yblah lex     (  28.00   29.00)   28.00   29.00 spkr1s      
+   1   -   -   0            zblah lex       29.00   30.00 spkr1r                  zblah lex     (  29.00   30.00)   29.00   30.00 spkr1s      
+   1   -   -   0            xblah lex       34.00   35.00 spkr1r                  xblah lex     (  34.00   35.00)   34.00   35.00 spkr1s      
+   1   -   -   0            yblah lex       35.00   36.00 spkr1r                  yblah lex     (  35.00   36.00)   35.00   36.00 spkr1s      
+   1   -   -   0            zblah lex       36.00   37.00 spkr1r                  zblah lex     (  36.00   37.00)   36.00   37.00 spkr1s      
+   1   -   -   0            xblah lex       37.00   38.00 spkr1r                  xblah lex     (  37.00   38.00)   37.00   38.00 spkr1s      
+   1   -   -   0            yblah lex       38.00   39.00 spkr1r                  yblah lex     (  38.00   39.00)   38.00   39.00 spkr1s      
+   1   -   -   0            zblah lex       39.00   40.00 spkr1r                  zblah lex     (  39.00   40.00)   39.00   40.00 spkr1s      
+   1   1   -   -            xblah lex       44.00   45.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            yblah lex       45.00   46.00 spkr1r                  yblah lex     (  45.00   46.00)   45.00   46.00 spkr1s      
+   1   -   -   0            zblah lex       46.00   47.00 spkr1r                  zblah lex     (  46.00   47.00)   46.00   47.00 spkr1s      
+   1   -   -   0            xblah lex       47.00   48.00 spkr1r                  xblah lex     (  47.00   48.00)   47.00   48.00 spkr1s      
+   1   -   -   0            yblah lex       48.00   49.00 spkr1r                  yblah lex     (  48.00   49.00)   48.00   49.00 spkr1s      
+   1   -   -   0            zblah lex       49.00   50.00 spkr1r                  zblah lex     (  49.00   50.00)   49.00   50.00 spkr1s      
+   1   1   -   -            xblah lex       54.00   55.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       55.00   56.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            zblah lex       56.00   57.00 spkr1r                  zblah lex     (  56.00   57.00)   56.00   57.00 spkr1s      
+   1   -   -   0            xblah lex       57.00   58.00 spkr1r                  xblah lex     (  57.00   58.00)   57.00   58.00 spkr1s      
+   1   -   -   0            yblah lex       58.00   59.00 spkr1r                  yblah lex     (  58.00   59.00)   58.00   59.00 spkr1s      
+   1   -   -   0            zblah lex       59.00   60.00 spkr1r                  zblah lex     (  59.00   60.00)   59.00   60.00 spkr1s      
+   1   1   -   -            xblah lex       64.00   65.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       65.00   66.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex       66.00   67.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            xblah lex       67.00   68.00 spkr1r                  xblah lex     (  67.00   68.00)   67.00   68.00 spkr1s      
+   1   -   -   0            yblah lex       68.00   69.00 spkr1r                  yblah lex     (  68.00   69.00)   68.00   69.00 spkr1s      
+   1   -   -   0            zblah lex       69.00   70.00 spkr1r                  zblah lex     (  69.00   70.00)   69.00   70.00 spkr1s      
+   1   1   -   -            xblah lex       74.00   75.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       75.00   76.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex       76.00   77.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            xblah lex       77.00   78.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            yblah lex       78.00   79.00 spkr1r                  yblah lex     (  78.00   79.00)   78.00   79.00 spkr1s      
+   1   -   -   0            zblah lex       79.00   80.00 spkr1r                  zblah lex     (  79.00   80.00)   79.00   80.00 spkr1s      
+   1   1   -   -            xblah lex       84.00   85.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       85.00   86.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex       86.00   87.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            xblah lex       87.00   88.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       88.00   89.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            zblah lex       89.00   90.00 spkr1r                  zblah lex     (  89.00   90.00)   89.00   90.00 spkr1s      
+   1   -   -   0            vblah lex       91.00   92.00 spkr1r                  vblah lex     (  91.00   92.00)   91.00   92.00 spkr1s      
+   1   1   -   -            yblah lex       92.00   93.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex       93.00   94.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            xblah lex       94.00   95.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex       95.00   96.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex       96.00   97.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            wblah lex      101.00  102.00 spkr1r                  wblah lex     ( 101.00  102.00)  101.00  102.00 spkr1s      
+   1   -   -   0            yblah lex      102.00  103.00 spkr1r                  yblah lex     ( 102.00  103.00)  102.00  103.00 spkr1s      
+   1   1   -   -            zblah lex      103.00  104.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            xblah lex      104.00  105.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex      105.00  106.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex      106.00  107.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            xblah lex      111.00  112.00 spkr1r                  xblah lex     ( 111.00  112.00)  111.00  112.00 spkr1s      
+   1   -   -   0            yblah lex      112.00  113.00 spkr1r                  yblah lex     ( 112.00  113.00)  112.00  113.00 spkr1s      
+   1   -   -   0            zblah lex      113.00  114.00 spkr1r                  zblah lex     ( 113.00  114.00)  113.00  114.00 spkr1s      
+   1   1   -   -            xblah lex      114.00  115.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            yblah lex      115.00  116.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex      116.00  117.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            xblah lex      121.00  122.00 spkr1r                  xblah lex     ( 121.00  122.00)  121.00  122.00 spkr1s      
+   1   -   -   0            yblah lex      122.00  123.00 spkr1r                  yblah lex     ( 122.00  123.00)  122.00  123.00 spkr1s      
+   1   -   -   0            zblah lex      123.00  124.00 spkr1r                  zblah lex     ( 123.00  124.00)  123.00  124.00 spkr1s      
+   1   -   -   0            xblah lex      124.00  125.00 spkr1r                  xblah lex     ( 124.00  125.00)  124.00  125.00 spkr1s      
+   1   1   -   -            yblah lex      125.00  126.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -            zblah lex      126.00  127.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            xblah lex      131.00  132.00 spkr1r                  xblah lex     ( 131.00  132.00)  131.00  132.00 spkr1s      
+   1   -   -   0            yblah lex      132.00  133.00 spkr1r                  yblah lex     ( 132.00  133.00)  132.00  133.00 spkr1s      
+   1   -   -   0            zblah lex      133.00  134.00 spkr1r                  zblah lex     ( 133.00  134.00)  133.00  134.00 spkr1s      
+   1   -   -   0            xblah lex      134.00  135.00 spkr1r                  xblah lex     ( 134.00  135.00)  134.00  135.00 spkr1s      
+   1   -   -   0            yblah lex      135.00  136.00 spkr1r                  yblah lex     ( 135.00  136.00)  135.00  136.00 spkr1s      
+   1   1   -   -            zblah lex      136.00  137.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   -   -   0            xblah lex      141.00  142.00 spkr1r                  xblah lex     ( 141.00  142.00)  141.00  142.00 spkr1s      
+   1   -   -   0            yblah lex      142.00  143.00 spkr1r                  yblah lex     ( 142.00  143.00)  142.00  143.00 spkr1s      
+   1   -   -   0            zblah lex      143.00  144.00 spkr1r                  zblah lex     ( 143.00  144.00)  143.00  144.00 spkr1s      
+   1   -   -   0            xblah lex      144.00  145.00 spkr1r                  xblah lex     ( 144.00  145.00)  144.00  145.00 spkr1s      
+   1   -   -   0            yblah lex      145.00  146.00 spkr1r                  yblah lex     ( 145.00  146.00)  145.00  146.00 spkr1s      
+   1   -   -   0            zblah lex      146.00  147.00 spkr1r                  zblah lex     ( 146.00  147.00)  146.00  147.00 spkr1s      
+   1   -   -   0            xblah lex      151.00  152.00 spkr1r                  xblah lex     ( 151.00  152.00)  151.00  152.00 spkr1s      
+   1   -   -   0            yblah lex      152.00  153.00 spkr1r                  yblah lex     ( 152.00  153.00)  152.00  153.00 spkr1s      
+   1   -   -   0            zblah lex      153.00  154.00 spkr1r                  zblah lex     ( 153.00  154.00)  153.00  154.00 spkr1s      
+   1   -   -   0            xblah lex      154.00  155.00 spkr1r                  xblah lex     ( 154.00  155.00)  154.00  155.00 spkr1s      
+   1   -   -   0            yblah lex      155.00  156.00 spkr1r                  yblah lex     ( 155.00  156.00)  155.00  156.00 spkr1s      
+   1   -   -   0            zblah lex      156.00  157.00 spkr1r                  zblah lex     ( 156.00  157.00)  156.00  157.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     xblah lex     ( 157.00  158.00)  157.00  158.00 spkr1s      
+   1   -   -   0            xblah lex      161.00  162.00 spkr1r                  xblah lex     ( 161.00  162.00)  161.00  162.00 spkr1s      
+   1   -   -   0            yblah lex      162.00  163.00 spkr1r                  yblah lex     ( 162.00  163.00)  162.00  163.00 spkr1s      
+   1   -   -   0            zblah lex      163.00  164.00 spkr1r                  zblah lex     ( 163.00  164.00)  163.00  164.00 spkr1s      
+   1   -   -   1           xxblah lex      164.00  165.00 spkr1r                  xblah lex     ( 164.00  165.00)  164.00  165.00 spkr1s      
+   1   -   -   0            yblah lex      165.00  166.00 spkr1r                  yblah lex     ( 165.00  166.00)  165.00  166.00 spkr1s      
+   1   -   -   0            zblah lex      166.00  167.00 spkr1r                  zblah lex     ( 166.00  167.00)  166.00  167.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     xblah lex     ( 167.00  168.00)  167.00  168.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     yblah lex     ( 168.00  169.00)  168.00  169.00 spkr1s      
+   1   -   -   0            xblah lex      171.00  172.00 spkr1r                  xblah lex     ( 171.00  172.00)  171.00  172.00 spkr1s      
+   1   -   -   0            yblah lex      172.00  173.00 spkr1r                  yblah lex     ( 172.00  173.00)  172.00  173.00 spkr1s      
+   1   -   -   0            zblah lex      173.00  174.00 spkr1r                  zblah lex     ( 173.00  174.00)  173.00  174.00 spkr1s      
+   1   -   -   0            xblah lex      174.00  175.00 spkr1r                  xblah lex     ( 174.00  175.00)  174.00  175.00 spkr1s      
+   1   -   -   0            yblah lex      175.00  176.00 spkr1r                  yblah lex     ( 175.00  176.00)  175.00  176.00 spkr1s      
+   1   -   -   0            zblah lex      176.00  177.00 spkr1r                  zblah lex     ( 176.00  177.00)  176.00  177.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     xblah lex     ( 177.00  178.00)  177.00  178.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     yblah lex     ( 178.00  179.00)  178.00  179.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                     zblah lex     ( 179.00  180.00)  179.00  180.00 spkr1s      
+
+SU alignment and scoring details for channel 1 of file md_test24
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        statement SU         4.00   10.00 spkr1r              statement SU      (   1.00   10.00)    1.00   10.00 spkr1s      
+   1   -   -   0        statement SU        14.00   20.00 spkr1r              statement SU      (  12.67   20.80)   12.00   20.00 spkr1s      
+   1   -   -   0        statement SU        24.00   30.00 spkr1r              statement SU      (  23.20   30.00)   23.00   30.00 spkr1s      
+   1   -   -   0        statement SU        34.00   40.00 spkr1r              statement SU      (  34.00   40.00)   34.00   40.00 spkr1s      
+   1   -   -   0        statement SU        44.00   50.00 spkr1r              statement SU      (  45.00   50.00)   45.00   50.00 spkr1s      
+   1   -   -   0        statement SU        54.00   60.00 spkr1r              statement SU      (  56.00   60.00)   56.00   60.00 spkr1s      
+   1   -   -   0        statement SU        64.00   70.00 spkr1r              statement SU      (  67.00   70.00)   67.00   70.00 spkr1s      
+   1   -   -   0        statement SU        74.00   80.00 spkr1r              statement SU      (  78.00   80.00)   78.00   80.00 spkr1s      
+   1   -   -   0        statement SU        84.00   90.00 spkr1r              statement SU      (  89.00   90.00)   89.00   90.00 spkr1s      
+   0   -   1   -              --- ---        ---     ---  ---                 statement SU      (  91.00   92.00)   91.00   92.00 spkr1s      
+   1   -   -   0        statement SU        91.00   97.00 spkr1r              statement SU      ( 101.00  103.00)  101.00  103.00 spkr1s      
+   1   1   -   -        statement SU       101.00  107.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   1   1   -   -        statement SU       111.00  117.00 spkr1r                    --- ---     (   ---     --- )    ---     ---  ---         
+   0   -   1   -              --- ---        ---     ---  ---                 statement SU      ( 111.00  114.00)  111.00  114.00 spkr1s      
+   1   -   -   0        statement SU       121.00  127.00 spkr1r              statement SU      ( 121.00  125.00)  121.00  125.00 spkr1s      
+   1   -   -   0        statement SU       131.00  137.00 spkr1r              statement SU      ( 131.00  136.00)  131.00  136.00 spkr1s      
+   1   -   -   0        statement SU       141.00  147.00 spkr1r              statement SU      ( 141.00  147.00)  141.00  147.00 spkr1s      
+   1   -   -   0        statement SU       151.00  157.00 spkr1r              statement SU      ( 151.00  158.00)  151.00  158.00 spkr1s      
+   1   -   -   0        statement SU       161.00  167.00 spkr1r              statement SU      ( 161.00  169.00)  161.00  169.00 spkr1s      
+   1   -   -   0        statement SU       171.00  177.00 spkr1r              statement SU      ( 171.00  180.00)  171.00  180.00 spkr1s      
+
+Chronological display of sys data aligned with ref data for file 'md_test24', channel '1'
+----------------------- reference ----------------------- | mapped | --------------------- system output ---------------------
+    --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend- | ref_ID |     --type-- -subtyp- -----word/spkr-----  -tbeg-  -tend-
+beg SEGMENT  <na>     spkr1r                 1.00         |        |
+beg SPEAKER  adult_ma spkr1r                 1.00         |        |
+                                             1.00         |        |beg SPEAKER  adult_ma spkr1s=>spkr1r         1.00        
+                                             1.00         | SU1    |beg SU       statemen spkr1s=>spkr1r         1.00        
+                                             1.00    2.00 |        |    LEXEME   lex      XBLAH              1.00    2.00
+                                             2.00    3.00 |        |    LEXEME   lex      YBLAH              2.00    3.00
+                                             3.00    4.00 |        |    LEXEME   lex      ZBLAH              3.00    4.00
+beg SU       statemen spkr1r                 4.00         | SU1    |
+    LEXEME   lex      XBLAH              4.00    5.00 | LX1    |    LEXEME   lex      XBLAH              4.00    5.00
+    LEXEME   lex      YBLAH              5.00    6.00 | LX2    |    LEXEME   lex      YBLAH              5.00    6.00
+    LEXEME   lex      ZBLAH              6.00    7.00 | LX3    |    LEXEME   lex      ZBLAH              6.00    7.00
+    LEXEME   lex      XBLAH              7.00    8.00 | LX4    |    LEXEME   lex      XBLAH              7.00    8.00
+    LEXEME   lex      YBLAH              8.00    9.00 | LX5    |    LEXEME   lex      YBLAH              8.00    9.00
+    LEXEME   lex      ZBLAH              9.00   10.00 | LX6    |    LEXEME   lex      ZBLAH              9.00   10.00
+end SU       statemen spkr1r                        10.00 | SU1    |end SU       statemen spkr1s=>spkr1r                10.00
+                                            12.67         | SU2    |beg SU       statemen spkr1s=>spkr1r        12.00        
+                                            12.67   14.00 |        |    LEXEME   lex      ZXBLAH             12.00   13.00
+beg SU       statemen spkr1r                14.00         | SU2    |
+    LEXEME   lex      XBLAH             14.00   15.00 | LX7    |    LEXEME   lex      XBLAH             13.00   14.00
+    LEXEME   lex      YBLAH             15.00   16.00 | LX8    |    LEXEME   lex      YBLAH             14.00   15.00
+    LEXEME   lex      ZBLAH             16.00   17.00 | LX9    |    LEXEME   lex      ZBLAH             15.00   16.00
+    LEXEME   lex      XBLAH             17.00   18.00 | LX10   |    LEXEME   lex      XBLAH             16.00   17.00
+    LEXEME   lex      YBLAH             18.00   19.00 | LX11   |    LEXEME   lex      YBLAH             17.00   18.00
+    LEXEME   lex      ZBLAH             19.00   20.00 | LX12   |    LEXEME   lex      ZBLAH             18.00   19.00
+end SU       statemen spkr1r                        20.00 | SU2    |
+                                            20.00   20.80 |        |    LEXEME   lex      XBLAH             19.00   20.00
+                                                    20.80 | SU2    |end SU       statemen spkr1s=>spkr1r                20.00
+                                            23.20         | SU3    |beg SU       statemen spkr1s=>spkr1r        23.00        
+                                            23.20   24.00 |        |    LEXEME   lex      ZBLAH             23.00   24.00
+beg SU       statemen spkr1r                24.00         | SU3    |
+    LEXEME   lex      XBLAH             24.00   25.00 | LX13   |    LEXEME   lex      XBLAH             24.00   25.00
+    LEXEME   lex      YBLAH             25.00   26.00 | LX14   |    LEXEME   lex      YBLAH             25.00   26.00
+    LEXEME   lex      ZBLAH             26.00   27.00 | LX15   |    LEXEME   lex      ZBLAH             26.00   27.00
+    LEXEME   lex      XBLAH             27.00   28.00 | LX16   |    LEXEME   lex      XBLAH             27.00   28.00
+    LEXEME   lex      YBLAH             28.00   29.00 | LX17   |    LEXEME   lex      YBLAH             28.00   29.00
+    LEXEME   lex      ZBLAH             29.00   30.00 | LX18   |    LEXEME   lex      ZBLAH             29.00   30.00
+end SU       statemen spkr1r                        30.00 | SU3    |end SU       statemen spkr1s=>spkr1r                30.00
+beg SU       statemen spkr1r                34.00         | SU4    |beg SU       statemen spkr1s=>spkr1r        34.00        
+    LEXEME   lex      XBLAH             34.00   35.00 | LX19   |    LEXEME   lex      XBLAH             34.00   35.00
+    LEXEME   lex      YBLAH             35.00   36.00 | LX20   |    LEXEME   lex      YBLAH             35.00   36.00
+    LEXEME   lex      ZBLAH             36.00   37.00 | LX21   |    LEXEME   lex      ZBLAH             36.00   37.00
+    LEXEME   lex      XBLAH             37.00   38.00 | LX22   |    LEXEME   lex      XBLAH             37.00   38.00
+    LEXEME   lex      YBLAH             38.00   39.00 | LX23   |    LEXEME   lex      YBLAH             38.00   39.00
+    LEXEME   lex      ZBLAH             39.00   40.00 | LX24   |    LEXEME   lex      ZBLAH             39.00   40.00
+end SU       statemen spkr1r                        40.00 | SU4    |end SU       statemen spkr1s=>spkr1r                40.00
+beg SU       statemen spkr1r                44.00         | SU5    |
+    LEXEME   lex      XBLAH             44.00   45.00 |        |
+                                            45.00         | SU5    |beg SU       statemen spkr1s=>spkr1r        45.00         dw=1
+    LEXEME   lex      YBLAH             45.00   46.00 | LX26   |    LEXEME   lex      YBLAH             45.00   46.00
+    LEXEME   lex      ZBLAH             46.00   47.00 | LX27   |    LEXEME   lex      ZBLAH             46.00   47.00
+    LEXEME   lex      XBLAH             47.00   48.00 | LX28   |    LEXEME   lex      XBLAH             47.00   48.00
+    LEXEME   lex      YBLAH             48.00   49.00 | LX29   |    LEXEME   lex      YBLAH             48.00   49.00
+    LEXEME   lex      ZBLAH             49.00   50.00 | LX30   |    LEXEME   lex      ZBLAH             49.00   50.00
+end SU       statemen spkr1r                        50.00 | SU5    |end SU       statemen spkr1s=>spkr1r                50.00
+beg SU       statemen spkr1r                54.00         | SU6    |
+    LEXEME   lex      XBLAH             54.00   55.00 |        |
+    LEXEME   lex      YBLAH             55.00   56.00 |        |
+                                            56.00         | SU6    |beg SU       statemen spkr1s=>spkr1r        56.00         dw=2
+    LEXEME   lex      ZBLAH             56.00   57.00 | LX33   |    LEXEME   lex      ZBLAH             56.00   57.00
+    LEXEME   lex      XBLAH             57.00   58.00 | LX34   |    LEXEME   lex      XBLAH             57.00   58.00
+    LEXEME   lex      YBLAH             58.00   59.00 | LX35   |    LEXEME   lex      YBLAH             58.00   59.00
+    LEXEME   lex      ZBLAH             59.00   60.00 | LX36   |    LEXEME   lex      ZBLAH             59.00   60.00
+end SU       statemen spkr1r                        60.00 | SU6    |end SU       statemen spkr1s=>spkr1r                60.00
+beg SU       statemen spkr1r                64.00         | SU7    |
+    LEXEME   lex      XBLAH             64.00   65.00 |        |
+    LEXEME   lex      YBLAH             65.00   66.00 |        |
+    LEXEME   lex      ZBLAH             66.00   67.00 |        |
+                                            67.00         | SU7    |beg SU       statemen spkr1s=>spkr1r        67.00         dw=3
+    LEXEME   lex      XBLAH             67.00   68.00 | LX40   |    LEXEME   lex      XBLAH             67.00   68.00
+    LEXEME   lex      YBLAH             68.00   69.00 | LX41   |    LEXEME   lex      YBLAH             68.00   69.00
+    LEXEME   lex      ZBLAH             69.00   70.00 | LX42   |    LEXEME   lex      ZBLAH             69.00   70.00
+end SU       statemen spkr1r                        70.00 | SU7    |end SU       statemen spkr1s=>spkr1r                70.00
+beg SU       statemen spkr1r                74.00         | SU8    |
+    LEXEME   lex      XBLAH             74.00   75.00 |        |
+    LEXEME   lex      YBLAH             75.00   76.00 |        |
+    LEXEME   lex      ZBLAH             76.00   77.00 |        |
+    LEXEME   lex      XBLAH             77.00   78.00 |        |
+                                            78.00         | SU8    |beg SU       statemen spkr1s=>spkr1r        78.00         dw=4
+    LEXEME   lex      YBLAH             78.00   79.00 | LX47   |    LEXEME   lex      YBLAH             78.00   79.00
+    LEXEME   lex      ZBLAH             79.00   80.00 | LX48   |    LEXEME   lex      ZBLAH             79.00   80.00
+end SU       statemen spkr1r                        80.00 | SU8    |end SU       statemen spkr1s=>spkr1r                80.00
+beg SU       statemen spkr1r                84.00         | SU9    |
+    LEXEME   lex      XBLAH             84.00   85.00 |        |
+    LEXEME   lex      YBLAH             85.00   86.00 |        |
+    LEXEME   lex      ZBLAH             86.00   87.00 |        |
+    LEXEME   lex      XBLAH             87.00   88.00 |        |
+    LEXEME   lex      YBLAH             88.00   89.00 |        |
+                                            89.00         | SU9    |beg SU       statemen spkr1s=>spkr1r        89.00         dw=5
+    LEXEME   lex      ZBLAH             89.00   90.00 | LX54   |    LEXEME   lex      ZBLAH             89.00   90.00
+end SU       statemen spkr1r                        90.00 | SU9    |end SU       statemen spkr1s=>spkr1r                90.00
+beg SU       statemen spkr1r                91.00         | SU10   |
+                                            91.00         | **FA** |beg SU       statemen spkr1s=>spkr1r        91.00        
+    LEXEME   lex      VBLAH             91.00   92.00 | LX55   |    LEXEME   lex      VBLAH             91.00   92.00
+                                                    92.00 | **FA** |end SU       statemen spkr1s=>spkr1r                92.00
+    LEXEME   lex      YBLAH             92.00   93.00 |        |
+    LEXEME   lex      ZBLAH             93.00   94.00 |        |
+    LEXEME   lex      XBLAH             94.00   95.00 |        |
+    LEXEME   lex      YBLAH             95.00   96.00 |        |
+    LEXEME   lex      ZBLAH             96.00   97.00 |        |
+end SU       statemen spkr1r                        97.00 | SU10   |
+beg SU       statemen spkr1r               101.00         | *Miss* |
+                                           101.00         | SU10   |beg SU       statemen spkr1s=>spkr1r       101.00         dw=6
+    LEXEME   lex      WBLAH            101.00  102.00 | LX61   |    LEXEME   lex      WBLAH            101.00  102.00
+    LEXEME   lex      YBLAH            102.00  103.00 | LX62   |    LEXEME   lex      YBLAH            102.00  103.00
+                                                   103.00 | SU10   |end SU       statemen spkr1s=>spkr1r               103.00 dw=2
+    LEXEME   lex      ZBLAH            103.00  104.00 |        |
+    LEXEME   lex      XBLAH            104.00  105.00 |        |
+    LEXEME   lex      YBLAH            105.00  106.00 |        |
+    LEXEME   lex      ZBLAH            106.00  107.00 |        |
+end SU       statemen spkr1r                       107.00 | *Miss* |
+beg SU       statemen spkr1r               111.00         | *Miss* |
+                                           111.00         | **FA** |beg SU       statemen spkr1s=>spkr1r       111.00        
+    LEXEME   lex      XBLAH            111.00  112.00 | LX67   |    LEXEME   lex      XBLAH            111.00  112.00
+    LEXEME   lex      YBLAH            112.00  113.00 | LX68   |    LEXEME   lex      YBLAH            112.00  113.00
+    LEXEME   lex      ZBLAH            113.00  114.00 | LX69   |    LEXEME   lex      ZBLAH            113.00  114.00
+                                                   114.00 | **FA** |end SU       statemen spkr1s=>spkr1r               114.00
+    LEXEME   lex      XBLAH            114.00  115.00 |        |
+    LEXEME   lex      YBLAH            115.00  116.00 |        |
+    LEXEME   lex      ZBLAH            116.00  117.00 |        |
+end SU       statemen spkr1r                       117.00 | *Miss* |
+beg SU       statemen spkr1r               121.00         | SU13   |beg SU       statemen spkr1s=>spkr1r       121.00        
+    LEXEME   lex      XBLAH            121.00  122.00 | LX73   |    LEXEME   lex      XBLAH            121.00  122.00
+    LEXEME   lex      YBLAH            122.00  123.00 | LX74   |    LEXEME   lex      YBLAH            122.00  123.00
+    LEXEME   lex      ZBLAH            123.00  124.00 | LX75   |    LEXEME   lex      ZBLAH            123.00  124.00
+    LEXEME   lex      XBLAH            124.00  125.00 | LX76   |    LEXEME   lex      XBLAH            124.00  125.00
+                                                   125.00 | SU13   |end SU       statemen spkr1s=>spkr1r               125.00 dw=-2
+    LEXEME   lex      YBLAH            125.00  126.00 |        |
+    LEXEME   lex      ZBLAH            126.00  127.00 |        |
+end SU       statemen spkr1r                       127.00 | SU13   |
+beg SU       statemen spkr1r               131.00         | SU14   |beg SU       statemen spkr1s=>spkr1r       131.00        
+    LEXEME   lex      XBLAH            131.00  132.00 | LX79   |    LEXEME   lex      XBLAH            131.00  132.00
+    LEXEME   lex      YBLAH            132.00  133.00 | LX80   |    LEXEME   lex      YBLAH            132.00  133.00
+    LEXEME   lex      ZBLAH            133.00  134.00 | LX81   |    LEXEME   lex      ZBLAH            133.00  134.00
+    LEXEME   lex      XBLAH            134.00  135.00 | LX82   |    LEXEME   lex      XBLAH            134.00  135.00
+    LEXEME   lex      YBLAH            135.00  136.00 | LX83   |    LEXEME   lex      YBLAH            135.00  136.00
+                                                   136.00 | SU14   |end SU       statemen spkr1s=>spkr1r               136.00 dw=-1
+    LEXEME   lex      ZBLAH            136.00  137.00 |        |
+end SU       statemen spkr1r                       137.00 | SU14   |
+beg SU       statemen spkr1r               141.00         | SU15   |beg SU       statemen spkr1s=>spkr1r       141.00        
+    LEXEME   lex      XBLAH            141.00  142.00 | LX85   |    LEXEME   lex      XBLAH            141.00  142.00
+    LEXEME   lex      YBLAH            142.00  143.00 | LX86   |    LEXEME   lex      YBLAH            142.00  143.00
+    LEXEME   lex      ZBLAH            143.00  144.00 | LX87   |    LEXEME   lex      ZBLAH            143.00  144.00
+    LEXEME   lex      XBLAH            144.00  145.00 | LX88   |    LEXEME   lex      XBLAH            144.00  145.00
+    LEXEME   lex      YBLAH            145.00  146.00 | LX89   |    LEXEME   lex      YBLAH            145.00  146.00
+    LEXEME   lex      ZBLAH            146.00  147.00 | LX90   |    LEXEME   lex      ZBLAH            146.00  147.00
+end SU       statemen spkr1r                       147.00 | SU15   |end SU       statemen spkr1s=>spkr1r               147.00
+beg SU       statemen spkr1r               151.00         | SU16   |beg SU       statemen spkr1s=>spkr1r       151.00        
+    LEXEME   lex      XBLAH            151.00  152.00 | LX91   |    LEXEME   lex      XBLAH            151.00  152.00
+    LEXEME   lex      YBLAH            152.00  153.00 | LX92   |    LEXEME   lex      YBLAH            152.00  153.00
+    LEXEME   lex      ZBLAH            153.00  154.00 | LX93   |    LEXEME   lex      ZBLAH            153.00  154.00
+    LEXEME   lex      XBLAH            154.00  155.00 | LX94   |    LEXEME   lex      XBLAH            154.00  155.00
+    LEXEME   lex      YBLAH            155.00  156.00 | LX95   |    LEXEME   lex      YBLAH            155.00  156.00
+    LEXEME   lex      ZBLAH            156.00  157.00 | LX96   |    LEXEME   lex      ZBLAH            156.00  157.00
+end SU       statemen spkr1r                       157.00 | SU16   |
+                                           157.00  158.00 |        |    LEXEME   lex      XBLAH            157.00  158.00
+                                                   158.00 | SU16   |end SU       statemen spkr1s=>spkr1r               158.00
+beg SU       statemen spkr1r               161.00         | SU17   |beg SU       statemen spkr1s=>spkr1r       161.00        
+    LEXEME   lex      XBLAH            161.00  162.00 | LX97   |    LEXEME   lex      XBLAH            161.00  162.00
+    LEXEME   lex      YBLAH            162.00  163.00 | LX98   |    LEXEME   lex      YBLAH            162.00  163.00
+    LEXEME   lex      ZBLAH            163.00  164.00 | LX99   |    LEXEME   lex      ZBLAH            163.00  164.00
+    LEXEME   lex      XXBLAH            164.00  165.00 | LX100  |    LEXEME   lex      XBLAH            164.00  165.00
+    LEXEME   lex      YBLAH            165.00  166.00 | LX101  |    LEXEME   lex      YBLAH            165.00  166.00
+    LEXEME   lex      ZBLAH            166.00  167.00 | LX102  |    LEXEME   lex      ZBLAH            166.00  167.00
+end SU       statemen spkr1r                       167.00 | SU17   |
+                                           167.00  168.00 |        |    LEXEME   lex      XBLAH            167.00  168.00
+                                           168.00  169.00 |        |    LEXEME   lex      YBLAH            168.00  169.00
+                                                   169.00 | SU17   |end SU       statemen spkr1s=>spkr1r               169.00
+beg SU       statemen spkr1r               171.00         | SU18   |beg SU       statemen spkr1s=>spkr1r       171.00        
+    LEXEME   lex      XBLAH            171.00  172.00 | LX103  |    LEXEME   lex      XBLAH            171.00  172.00
+    LEXEME   lex      YBLAH            172.00  173.00 | LX104  |    LEXEME   lex      YBLAH            172.00  173.00
+    LEXEME   lex      ZBLAH            173.00  174.00 | LX105  |    LEXEME   lex      ZBLAH            173.00  174.00
+    LEXEME   lex      XBLAH            174.00  175.00 | LX106  |    LEXEME   lex      XBLAH            174.00  175.00
+    LEXEME   lex      YBLAH            175.00  176.00 | LX107  |    LEXEME   lex      YBLAH            175.00  176.00
+    LEXEME   lex      ZBLAH            176.00  177.00 | LX108  |    LEXEME   lex      ZBLAH            176.00  177.00
+end SU       statemen spkr1r                       177.00 | SU18   |
+                                           177.00  178.00 |        |    LEXEME   lex      XBLAH            177.00  178.00
+                                           178.00  179.00 |        |    LEXEME   lex      YBLAH            178.00  179.00
+                                           179.00  180.00 |        |    LEXEME   lex      ZBLAH            179.00  180.00
+                                                   180.00 | SU18   |end SU       statemen spkr1s=>spkr1r               180.00
+end SPEAKER  adult_ma spkr1r                       180.00 |        |
+                                                   180.00 |        |end SPEAKER  adult_ma spkr1s=>spkr1r               180.00
+end SEGMENT  <na>     spkr1r                       180.00 |        |
+
+*** Performance analysis for SUs ***  overall error SCORE = 69.57%
+
+SU (exact) end detection statistics -- in terms of reference words
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              23       7     9     0    30.43  39.13   0.00    69.57  69.57
+
+SU detection statistics -- in terms of # of SUs
+                                Nref    Ndel  Nins  Nsub     %Del   %Ins   %Sub     %D+I   %Tot
+                 ALL              23       2     4     0     8.70  17.39   0.00    26.09  26.09
+f=md_test18                        5       0     2     0     0.00  40.00   0.00    40.00  40.00
+f=md_test24                       18       2     2     0    11.11  11.11   0.00    22.22  22.22
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  question  statemen        {Miss}
+                question       1         0             0  
+               statement       0        20             2  
+
+                    {FA}       0         4  
+
+SU word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -   12    2    3    1      3
+           END:    0      -    1    2   16    1    1    -      0
+
+*** Performance analysis for Speaker Diarization for f=md_test18 ***
+
+    EVAL TIME =     18.00 secs
+  EVAL SPEECH =     18.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =     18.00 secs (100.0 percent of evaluated time)
+SCORED SPEECH =     18.00 secs (100.0 percent of scored time)
+   EVAL WORDS =     18        
+ SCORED WORDS =     18         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     18.00 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=md_test18)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      child               unknown               MISS              
+child                     1 /  50.0%          0 /   0.0%          0 /   0.0%
+unknown                   0 /   0.0%          1 /  50.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    child               unknown               MISS              
+child                  6.00 /  33.3%       0.00 /   0.0%       0.00 /   0.0%
+unknown                0.00 /   0.0%      12.00 /  66.7%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for f=md_test24 ***
+
+    EVAL TIME =    179.00 secs
+  EVAL SPEECH =    179.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =    179.00 secs (100.0 percent of evaluated time)
+SCORED SPEECH =    179.00 secs (100.0 percent of scored time)
+   EVAL WORDS =    108        
+ SCORED WORDS =    108         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =    179.00 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(f=md_test24)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_male            MISS              
+adult_male                1 / 100.0%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_male            MISS              
+adult_male           179.00 / 100.0%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%
+---------------------------------------------
+
+*** Performance analysis for Speaker Diarization for ALL ***
+
+    EVAL TIME =    197.00 secs
+  EVAL SPEECH =    197.00 secs (100.0 percent of evaluated time)
+  SCORED TIME =    197.00 secs (100.0 percent of evaluated time)
+SCORED SPEECH =    197.00 secs (100.0 percent of scored time)
+   EVAL WORDS =    126        
+ SCORED WORDS =    126         (100.0 percent of evaluated words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =    197.00 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR = 0.00 percent of scored speaker time  `(ALL)
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      adult_male          child               unknown               MISS              
+adult_male                1 /  33.3%          0 /   0.0%          0 /   0.0%          0 /   0.0%
+child                     0 /   0.0%          1 /  33.3%          0 /   0.0%          0 /   0.0%
+unknown                   0 /   0.0%          0 /   0.0%          1 /  33.3%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    adult_male          child               unknown               MISS              
+adult_male           179.00 /  90.9%       0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+child                  0.00 /   0.0%       6.00 /   3.0%       0.00 /   0.0%       0.00 /   0.0%
+unknown                0.00 /   0.0%       0.00 /   0.0%      12.00 /   6.1%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------

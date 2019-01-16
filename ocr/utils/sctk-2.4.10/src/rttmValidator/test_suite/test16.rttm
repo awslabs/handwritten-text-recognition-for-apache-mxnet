@@ -1,0 +1,20 @@
+;; RTTMValidator test16.rttm - test for SU, EDIT, or FILLER object that has no tokens in it
+;; EXP-ID: expt_03f_su_eval_eng_bnews_spch_1
+
+SPKR-INFO test16 1 <NA> <NA> <NA> unknown 1 <NA>
+SPEAKER	test16 1 0.000 0.670 <NA> <NA> 1 <NA>
+LEXEME 	test16 1 0.000 0.670 IT lex 1 1
+;; this SU object doesn't cover any token
+SU test16 1 0.670 3.140 <NA> statement 1 0.708209
+SPEAKER	test16 1 3.810 3.400 <NA> <NA> 1 <NA>
+LEXEME 	test16 1 3.810 0.070 IT lex 1 1
+LEXEME 	test16 1 3.880 0.270 IS lex 1 1
+LEXEME 	test16 1 4.150 0.450 FIFTEEN lex 1 1
+LEXEME 	test16 1 4.610 0.370 HOURS lex 1 1
+LEXEME 	test16 1 4.990 0.600 UNIVERSAL lex 1 1
+LEXEME 	test16 1 5.600 0.410 TIME lex 1 1
+LEXEME 	test16 1 6.020 0.200 FROM lex 1 1
+LEXEME 	test16 1 6.230 0.580 WASHINGTON lex 1 1
+SU 	test16 1 6.820 1.780 <NA> statement 1 0.951884
+LEXEME 	test16 1 6.820 0.220 THIS lex 1 1
+LEXEME 	test16 1 7.050 0.160 IS lex 1 1

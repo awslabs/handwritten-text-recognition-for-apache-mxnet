@@ -1,0 +1,529 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./csrnab.hyp
+Ref file:      ./csrnab.ref
+Hyp file:      ./csrnab.hyp
+Word Weight Aligned by file: "./csrnab_r.blm"
+
+Speaker Count: 3
+Speakers: 
+    0:  4t0
+    1:  4t1
+    2:  4t2
+
+
+Speaker sentences   0:  4t0   utt# 0 of 15
+id: (4t0c0201)
+Scores: (#C #S #D #I) 25 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  as      competition in      the     mutual  fund    business grows   increasingly intense more    players in      the     industry appear  willing to      sacrifice integrity in      the     name    of      performance 
+HYP:  as      competition in      the     mutual  fund    business grows   increasingly intense more    players in      the     industry appear  willing to      sacrifice integrity in      the     name    of      performance 
+R_WE: 7.2844  6.0539      2.8840  1.2065  9.2239  3.8840  6.6914   4.4690  2.8840       3.8840  2.8840  2.8840  2.8840  1.2065  9.2239   4.4690  2.8840  2.8840  8.2416    2.8840    2.8840  1.2065  6.4697  1.1299  7.8840      
+H_WE: 7.2844  6.0539      2.8840  1.2065  9.2239  3.8840  6.6914   4.4690  2.8840       3.8840  2.8840  2.8840  2.8840  1.2065  9.2239   4.4690  2.8840  2.8840  8.2416    2.8840    2.8840  1.2065  6.4697  1.1299  7.8840      
+Eval:                                                                                                                                                                                                                            
+
+Speaker sentences   0:  4t0   utt# 1 of 15
+id: (4t0c0202)
+Scores: (#C #S #D #I) 14 5 2 3
+Attributes: Ref_weight Hyp_weight 
+REF:  FOR     A       TWO     TRILLION DOLLAR  **      ****    business built   on      public  confidence this    trend   is      ****    DISHEARTENING AT      best    and     downright dangerous at      worst   
+HYP:  ***     *       FREED   TO       TRYING  TO      LURE    business built   on      public  confidence this    trend   is      THIS    TIGHTENING    AND     best    and     downright dangerous at      worst   
+R_WE: 7.2844  6.0539  6.6914  6.5844   2.8840                  2.8840   4.4690  2.8840  6.4690  2.4518     3.8840  5.8840  2.8840          5.4690        2.8840  6.6914  2.8840  7.0539    2.8840    2.8840  6.6914  
+H_WE:                 20.0000 5.0967   20.0000 5.0967  20.0000 8.8693   4.4690  2.8840  6.4690  2.4518     3.8840  5.8840  2.8840  7.6405  20.0000       6.2844  10.5807 2.8840  7.0539    2.8840    2.8840  6.6914  
+Eval: D       D       S       S        S       I       I                                                                           I       S             S                                                           
+
+Speaker sentences   0:  4t0   utt# 2 of 15
+id: (4t0c0203)
+Scores: (#C #S #D #I) 34 2 2 2
+Attributes: Ref_weight Hyp_weight 
+REF:  so      far     this    year    the     industry slide   has     been    apparent in      allegations of      insider trading by      fund    managers ***     UNSAVORY FUND    sales   practices at      banks   and     THE     use     of      high    risk    derivative securities in      NORMALLY *****   conservative money   market  funds   
+HYP:  so      far     this    year    the     industry slide   has     been    apparent in      allegations of      insider trading by      fund    managers AND     SAVE     REFUND  sales   practices at      banks   and     ***     use     of      high    risk    derivative securities in      ******** EARLY   conservative money   market  funds   
+R_WE: 8.8693  1.7148  3.8840  1.4178  5.4690  9.2239   6.7709  2.8840  5.6914  5.2059   2.8840  7.7909      3.8840  7.8840  2.8840  4.4690  6.8840  6.6914           3.8840   2.8840  6.6914  2.8840    3.8840  6.6914  2.8840  3.3775  9.2239  2.8840  7.8840  2.8840  2.8840     2.8840     4.8840  7.7909           2.8840       2.8840  3.4518  4.8840  
+H_WE: 8.8693  1.7148  3.8840  1.4178  5.4690  9.2239   10.6578 2.8840  5.6914  5.2059   2.8840  7.7909      3.8840  7.8840  2.8840  4.4690  6.8840  6.6914   6.4075  20.0000  20.0000 10.4581 2.8840    3.8840  6.6914  2.8840          10.5807 2.8840  7.8840  2.8840  2.8840     2.8840     4.8840           10.3009 10.6557      2.8840  3.4518  4.8840  
+Eval:                                                                                                                                                        I       S        S                                                 D                                                                     D        I                                            
+
+Speaker sentences   0:  4t0   utt# 3 of 15
+id: (4t0c0204)
+Scores: (#C #S #D #I) 28 3 4 5
+Attributes: Ref_weight Hyp_weight 
+REF:  and     in      the     latest  BLOW    TO      public  confidence in      ***     ******  ****    **      the     FUNDS   SOMEONE AT      industry TITAN   fidelity investments decided last    friday  to      send    ******* NEWSPAPERS thursday's prices  for     most    fidelity funds   because the     friday  data    wasn't  ready   
+HYP:  and     in      the     latest  ****    FLORIDA public  confidence in      THE     FUNDS'  SOME    ON      the     *****   ******* **      industry TIGHTEN fidelity investments decided last    friday  to      send    MYSTERY PRAISED    thursday's prices  for     most    fidelity funds   because the     friday  data    wasn't  ready   
+R_WE: 6.2844  7.0539  1.2065  4.7576  4.8840  2.8840  8.2416  2.4518     3.8840                                  1.2065  9.2239  7.1319  4.4690  6.6914   4.4690  2.8840   6.2059      3.8840  2.8840  2.9372  5.2059  8.2416          2.8840     5.2059     2.8840  2.2075  3.2998  4.8840   3.4518  7.1319  4.4690  9.2239  5.2059  5.2059  3.8840  
+H_WE: 6.2844  7.0539  1.2065  4.7576          20.0000 8.1324  2.4518     3.8840  1.2065  10.7345 9.0773  7.0376  3.7148                          9.2239   20.0000 7.1324   6.2059      3.8840  2.8840  2.9372  5.2059  8.2416  20.0000 20.0000    10.4581    2.8840  2.2075  3.2998  4.8840   3.4518  7.1319  4.4690  9.2239  5.2059  5.2059  3.8840  
+Eval:                                 D       S                                  I       I       I       I               D       D       D                S                                                                    I       S                                                                                                              
+
+Speaker sentences   0:  4t0   utt# 4 of 15
+id: (4t0c0205)
+Scores: (#C #S #D #I) 36 4 2 2
+Attributes: Ref_weight Hyp_weight 
+REF:  in      the     ensuing public  humiliation suffered by      fidelity this    week    as      it      was     forced  to      FESS    ****    UP      TO      ITS     intentional mistake the     company has     sought  to      make    clear   that    nobody  bought  or      sold    a       fund    ******** DIRECT  FROM    fidelity at      the     wrong   price   
+HYP:  in      the     ensuing public  humiliation suffered by      fidelity this    week    as      it      was     forced  to      FAST    THAT    TWO     **      IT'S    intentional mistake the     company has     sought  to      make    clear   that    nobody  bought  or      sold    a       fund    DIRECTOR ******  OF      fidelity at      the     wrong   price   
+R_WE: 5.5474  1.2065  9.2239  2.8840  5.2059      2.8840   1.1299  6.8840   6.2059  5.8840  5.2059  6.0539  5.2059  5.8840  2.8840  8.2416          2.8840  2.8840  5.4874  6.4690      2.8840  3.8840  6.3728  5.4690  5.6914  2.8840  5.4874  3.8840  2.8840  7.0539  2.8840  2.8840  4.8840  2.8840  6.6914           6.6914  2.8840  6.2059   6.2059  3.8403  6.4697  4.4690  
+H_WE: 5.5474  1.2065  9.2239  2.8840  5.2059      2.8840   1.1299  6.8840   6.2059  5.8840  5.2059  6.0539  5.2059  5.8840  2.8840  10.6056 6.4923  7.0187          20.0000 10.4581     2.8840  3.8840  6.3728  5.4690  5.6914  2.8840  5.4874  3.8840  2.8840  7.0539  2.8840  2.8840  4.8840  2.8840  6.6914  20.0000          5.4543  7.6930   6.2059  3.8403  6.4697  4.4690  
+Eval:                                                                                                                               S       I       S       D       S                                                                                                                                           I        D       S                                                
+
+Speaker sentences   0:  4t0   utt# 5 of 15
+id: (4t0c0206)
+Scores: (#C #S #D #I) 36 9 3 3
+Attributes: Ref_weight Hyp_weight 
+REF:  THOUGH  newspapers last    saturday **      ******* UNKNOWINGLY LISTED  thursday prices  for     about   one     hundred AND     fifty   of      fidelity's two     hundred AND     EIGHT   funds   the     company says    transactions EFFECTED  friday  WERE    made    AT      the     CORRECT prices  which   fidelity received after   it      met     ***     NEWSPAPER DEADLINES with    the     wrong   data    early   friday  evening 
+HYP:  THE     newspapers last    saturday ON      KNOWING THE         ILLICIT thursday prices  for     about   one     hundred ***     fifty   of      fidelity's two     hundred ***     MAE     funds   the     company says    transactions EFFECTIVE friday  AND     made    **      the     TREK    prices  which   fidelity received after   it      met     MR.     BYRD      AIRLINES  with    the     wrong   data    early   friday  evening 
+R_WE: 10.4581 2.8840     2.4518  5.6914                   2.8840      2.8840  3.8840   2.8840  2.2075  6.0539  1.7925  3.8303  3.4518  7.0539  4.4690  7.8840     4.8840  3.8303  3.4518  7.0539  1.7148  4.3778  6.3728  5.4690  3.8840       2.8840    2.8840  5.2059  4.8840  3.8840  3.8403  9.2239  2.8840  5.8840  4.8840   6.2059   2.8840  2.8840  5.2059          2.8840    2.8840    2.8840  5.2059  6.4697  4.4690  5.2059  3.8840  5.2059  
+H_WE: 4.1144  9.2239     2.4518  5.6914   7.0783  20.0000 4.1144      20.0000 10.4581  2.8840  2.2075  6.0539  1.7925  3.8303          3.4518  4.4690  7.8840     4.8840  3.8303          20.0000 6.2064  4.3778  6.3728  5.4690  3.8840       20.0000   8.1324  6.4399  9.5769          3.8840  20.0000 7.4543  5.8840  4.8840   6.2059   2.8840  2.8840  5.2059  20.0000 20.0000   20.0000   8.1324  5.2059  6.4697  4.4690  5.2059  3.8840  5.2059  
+Eval: S                                   I       I       S           S                                                        D                                                  D       S                                                    S                 S               D               S                                                                 I       S         S                                                                 
+
+Speaker sentences   0:  4t0   utt# 6 of 15
+id: (4t0c0207)
+Scores: (#C #S #D #I) 19 4 4 1
+Attributes: Ref_weight Hyp_weight 
+REF:  but     that    doesn't change  the     fact    that    most    fidelity's shareholders WERE    LIED    TO      in      varying degrees IF      THEY    LOOKED  at      ***     THEIR   FUND      prices  in      newspapers last    weekend 
+HYP:  but     that    doesn't change  the     fact    that    most    fidelity's shareholders ****    RELIED  TOO     in      varying degrees **      ****    ******  at      THE     LITTLE  DIFFERENT prices  in      newspapers last    weekend 
+R_WE: 9.4543  3.8840  7.0539  2.8840  2.8840  9.2239  2.8840  7.0539  4.8840     7.8046       2.8840  4.8840  2.8840  8.2416  7.7909  2.8840  2.8840  4.4690  4.4690  2.8840          6.6914  3.8840    3.0149  5.8840  7.7909     2.4518  5.6914  
+H_WE: 9.4543  3.8840  7.0539  2.8840  2.8840  9.2239  2.8840  7.0539  4.8840     4.8840               20.0000 10.4581 5.7523  7.7909  2.8840                          6.8539  3.8403  10.7345 20.0000   7.4543  5.8840  7.7909     2.4518  5.6914  
+Eval:                                                                                         D       S       S                               D       D       D               I       S       S                                                    
+
+Speaker sentences   0:  4t0   utt# 7 of 15
+id: (4t0c0208)
+Scores: (#C #S #D #I) 19 1 1 1
+Attributes: Ref_weight Hyp_weight 
+REF:  the     unidentified fidelity employee WHO     made    the     decision to      go      with    INCORRECT ********* prices  should  simply  have    listed  them    as      not     available 
+HYP:  the     unidentified fidelity employee AND     made    the     decision to      go      with    ********* INCREASED prices  should  simply  have    listed  them    as      not     available 
+R_WE: 4.1144  9.2239       2.8840   6.2059   2.8840  4.4690  3.8840  9.2239   3.8840  8.2416  2.8840  5.2059              2.8840  5.8840  2.8840  3.8840  5.8840  3.8840  2.8840  6.0539  3.8840    
+H_WE: 4.1144  9.2239       2.8840   6.2059   6.4913  9.5769  3.8840  9.2239   3.8840  8.2416  2.8840            10.5625   7.6215  5.8840  2.8840  3.8840  5.8840  3.8840  2.8840  6.0539  3.8840    
+Eval:                                        S                                                        D         I                                                                                   
+
+Speaker sentences   0:  4t0   utt# 8 of 15
+id: (4t0c0209)
+Scores: (#C #S #D #I) 14 3 0 2
+Attributes: Ref_weight Hyp_weight 
+REF:  that    would   be      ******* STANDARD fidelity procedure said    ****    JANE    JAMIESON senior  vice    president at      the     boston  based   company 
+HYP:  that    would   be      STUNNED IF       fidelity procedure said    JEAN    GENIUS  AND      senior  vice    president at      the     boston  based   company 
+R_WE: 6.2844  7.0539  4.8840          3.8840   2.8840   6.2059    2.8840          4.8840  2.8840   2.8840  3.8840  2.8840    2.8840  3.8403  9.2239  2.8840  2.8840  
+H_WE: 6.2844  7.0539  4.8840  20.0000 8.8693   4.4690   6.2059    2.8840  20.0000 20.0000 6.2844   9.5769  3.8840  2.8840    2.8840  3.8403  9.2239  2.8840  2.8840  
+Eval:                         I       S                                   I       S       S                                                                          
+
+Speaker sentences   0:  4t0   utt# 9 of 15
+id: (4t0c020a)
+Scores: (#C #S #D #I) 57 7 1 3
+Attributes: Ref_weight Hyp_weight 
+REF:  fidelity's mistake and     most    of      the     *****   SELF     ADMINISTERED black   EYES    suffered by      the     fund    industry this    year    have    one     thing   in      common  they    could   have    been    prevented if      the     employees involved WERE    playing by      the     rules   EITHER  THE     fund    *       company's internal rules   or      the     prudent man     rule    that    is      supposed to      govern  the     ***     investment of      MONEY   ENTRUSTED by      the     public  to      allegedly professional money   managers 
+HYP:  fidelity's mistake and     most    of      the     SOUTH   MINISTER ************ black   EYE     suffered by      the     fund    industry this    year    have    one     thing   in      common  they    could   have    been    prevented if      the     employees involved FOR     playing by      the     rules   INTO    A       fund    A       company's internal rules   or      the     prudent man     rule    that    is      supposed to      govern  the     NEW     investment of      MANY    INFESTED  by      the     public  to      allegedly professional money   managers 
+R_WE: 8.4543     4.8840  3.8840  7.0539  2.1299  2.1926          9.2239   2.8840       2.8840  2.8840  2.8840   1.1299  3.2075  6.4697  6.6914   4.4690  1.4178  5.4690  5.8840  6.5844  2.8840  7.7909  2.8840  4.4690  3.8840  2.2075  5.2059    2.8840  4.4690  9.2239    2.8840   2.8840  4.8840  2.8840  3.2075  6.4697  4.4690  2.8840  6.4697          9.1751    6.7719   2.8840  4.4690  4.8840  9.2239  2.8840  2.8840  2.8840  7.0539  5.4690   2.8840  8.2416  2.8840          9.2239     3.8840  7.8840  6.2059    2.8840  3.2075  9.2239  5.2059  8.2416    2.8840       2.8840  6.2059   
+H_WE: 8.4543     4.8840  3.8840  7.0539  2.1299  2.1926  6.4697  20.0000               10.4581 20.0000 9.4543   1.1299  3.2075  6.4697  6.6914   4.4690  1.4178  5.4690  5.8840  6.5844  2.8840  7.7909  2.8840  4.4690  3.8840  2.2075  5.2059    2.8840  4.4690  9.2239    2.8840   7.4903  10.6736 2.8840  3.2075  6.4697  20.0000 6.6469  6.6914  7.3677  8.6120    10.6599  2.8840  4.4690  4.8840  9.2239  2.8840  2.8840  2.8840  7.0539  5.4690   2.8840  8.2416  2.8840  9.1458  4.4690     3.8840  10.0149 20.0000   6.4543  3.2075  9.2239  5.2059  8.2416    2.8840       2.8840  6.2059   
+Eval:                                                    I       S        D                    S                                                                                                                                                                                      S                                       S       S               I                                                                                                                           I                          S       S                                                                                 
+
+Speaker sentences   0:  4t0   utt# 10 of 15
+id: (4t0c020b)
+Scores: (#C #S #D #I) 19 2 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  the     PROBLEM is      that    IT      can     become  very    tempting to      bend    or      break   the     rules   in      the     name    of      staying competitive 
+HYP:  the     PAL     is      that    THEY    can     become  very    tempting to      bend    or      break   the     rules   in      the     name    of      staying competitive 
+R_WE: 4.1144  9.2239  4.4690  5.4690  3.3775  5.2059  2.8840  2.8840  2.8840   2.8840  8.2416  2.8840  4.8840  2.8840  6.4697  4.4690  1.2065  6.4697  1.1299  7.8840  2.8840      
+H_WE: 4.1144  20.0000 7.8693  5.4690  9.1342  10.6568 2.8840  2.8840  2.8840   2.8840  8.2416  2.8840  4.8840  2.8840  6.4697  4.4690  1.2065  6.4697  1.1299  7.8840  2.8840      
+Eval:         S                       S                                                                                                                                            
+
+Speaker sentences   0:  4t0   utt# 11 of 15
+id: (4t0c020c)
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  take    fidelity's case    as      an      example 
+HYP:  take    fidelity's case    as      an      example 
+R_WE: 10.4581 2.8840     4.8840  2.8840  6.0539  4.8840  
+H_WE: 10.4581 2.8840     4.8840  2.8840  6.0539  4.8840  
+Eval:                                                    
+
+Speaker sentences   0:  4t0   utt# 12 of 15
+id: (4t0c020d)
+Scores: (#C #S #D #I) 28 5 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  someone there   had     to      make    a       fast    decision when    a       software problem resulted in      BOTCHED fund    prices  last    friday  shortly before  the     company was     due     to      REPORT  THE     DAY'S   DATA    to      the     newspapers 
+HYP:  someone there   had     to      make    a       fast    decision when    a       software problem resulted in      POSH    fund    prices  last    friday  shortly before  the     company was     due     to      REPORTS TODAY   IS      DATED   to      the     newspapers 
+R_WE: 8.8693  4.4690  2.8840  4.4690  5.4874  3.8840  6.6914  2.8840   3.8840  2.8840  6.6914   2.8840  4.4690   2.8840  7.7909  2.8840  3.0149  5.8840  2.9372  5.2059  2.8840  3.8840  6.3728  5.4690  5.8840  2.8840  8.2416  5.8840  9.2239  2.8840  5.2059  3.7753  9.2239     
+H_WE: 8.8693  4.4690  2.8840  4.4690  5.4874  3.8840  6.6914  2.8840   3.8840  2.8840  6.6914   2.8840  4.4690   2.8840  20.0000 6.6469  3.0149  5.8840  2.9372  5.2059  2.8840  3.8840  6.3728  5.4690  5.8840  2.8840  20.0000 20.0000 7.8693  20.0000 5.0967  3.7753  9.2239     
+Eval:                                                                                                                    S                                                                                               S       S       S       S                                  
+
+Speaker sentences   0:  4t0   utt# 13 of 15
+id: (4t0c020e)
+Scores: (#C #S #D #I) 29 2 2 2
+Attributes: Ref_weight Hyp_weight 
+REF:  if      fidelity had     provided no      prices  for     most    of      its     funds   the     company WOULD   ***     **      HAVE    appeared to      be      having  a       problem that    WASN'T  SHARED  by      other   fund    companies which   of      course  was     true    
+HYP:  if      fidelity had     provided no      prices  for     most    of      its     funds   the     company *****   BUT     IT      ****    appeared to      be      having  a       problem that    WAS     INSURED by      other   fund    companies which   of      course  was     true    
+R_WE: 8.8693  4.4690   6.2059  4.4690   2.8840  3.8840  2.2075  3.2998  2.1299  3.4178  6.4690  4.3778  6.3728  5.4690                  2.1299  5.8840   2.8840  8.2416  3.8840  2.8840  6.6914  4.4690  7.0539  3.8840  2.8840  6.8840  4.8840  6.6914    2.8840  4.8840  7.8840  2.8840  5.8840  
+H_WE: 8.8693  4.4690   6.2059  4.4690   2.8840  3.8840  2.2075  3.2998  2.1299  3.4178  6.4690  4.3778  6.3728          9.6373  8.3227          10.6443  2.8840  8.2416  3.8840  2.8840  6.6914  4.4690  7.7192  20.0000 6.4543  6.8840  4.8840  6.6914    2.8840  4.8840  7.8840  2.8840  5.8840  
+Eval:                                                                                                           D       I       I       D                                                                S       S                                                                                 
+
+Speaker sentences   0:  4t0   utt# 14 of 15
+id: (4t0c020f)
+Scores: (#C #S #D #I) 21 5 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  moreover investors WHO     compare FUND    prices  and     performance by      using   weekend newspapers would   have    had     little  data    on      fidelity funds   perhaps COSTING FIDELITY   SOME    new     investment 
+HYP:  moreover investors TO      compare FIND    prices  and     performance by      using   weekend newspapers would   have    had     little  data    on      fidelity funds   perhaps CAUSING FIDELITY'S A       new     investment 
+R_WE: 10.4581  2.8840    4.8840  4.4690  2.8840  3.0149  5.8840  7.0539      3.8840  4.1299  3.8840  3.8840     5.2059  2.1299  5.8840  4.4690  2.8840  5.2059  6.4690   3.4518  7.1319  2.8840  2.8840     6.2059  4.4690  4.4690     
+H_WE: 10.4581  2.8840    5.2693  10.6056 20.0000 7.4543  5.8840  7.0539      3.8840  4.1299  3.8840  3.8840     5.2059  2.1299  5.8840  4.4690  2.8840  5.2059  6.4690   3.4518  7.1319  20.0000 8.4543     6.8394  9.0270  4.4690     
+Eval:                    S               S                                                                                                                                               S       S          S                          
+
+Speaker sentences   1:  4t1   utt# 0 of 21
+id: (4t1c0201)
+Scores: (#C #S #D #I) 17 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  yields  on      taxable money   market  mutual  funds   rose    slightly in      the     latest  week    while   tax     exempt  yields  DROPPED 
+HYP:  yields  on      taxable money   market  mutual  funds   rose    slightly in      the     latest  week    while   tax     exempt  yields  DROP    
+R_WE: 8.1324  5.2059  2.7925  5.6914  3.4518  4.8840  3.8840  3.4555  4.4690   2.8840  1.2065  4.7576  2.1299  2.4518  4.4690  2.0149  1.7148  5.2059  
+H_WE: 8.1324  5.2059  2.7925  5.6914  3.4518  4.8840  3.8840  3.4555  4.4690   2.8840  1.2065  4.7576  2.1299  2.4518  4.4690  2.0149  1.7148  9.6478  
+Eval:                                                                                                                                          S       
+
+Speaker sentences   1:  4t1   utt# 1 of 21
+id: (4t1c0202)
+Scores: (#C #S #D #I) 39 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  i.      b.      c.      donoghue's average seven   day     compound yield   on      taxable funds   rose    to      three   point   six     six     percent from    three   point   six     four    percent in      the     week    ended   tuesday according to      money   fund    report  an      ashland massachusetts newsletter 
+HYP:  i.      b.      c.      donoghue's average seven   day     compound yield   on      taxable funds   rose    to      three   point   six     six     percent from    three   point   six     four    percent in      the     week    ended   tuesday according to      money   fund    report  an      ashland massachusetts newsletter 
+R_WE: 9.4543  3.8840  2.8840  2.8840     2.8840  2.0149  2.3775  1.7925   1.2075  1.7925  2.7925  2.0149  3.4555  1.7148  5.3905  0.6630  4.5565  6.2059  3.3549  3.9398  1.7397  0.6630  4.5565  6.2059  5.8840  3.1144  1.2065  9.2239  5.2059  3.8840  2.8840    0.7925  8.2416  1.7397  2.2251  5.8840  4.8840  2.8840        2.8840     
+H_WE: 9.4543  3.8840  2.8840  2.8840     2.8840  2.0149  2.3775  1.7925   1.2075  1.7925  2.7925  2.0149  3.4555  1.7148  5.3905  0.6630  4.5565  6.2059  3.3549  3.9398  1.7397  0.6630  4.5565  6.2059  5.8840  3.1144  1.2065  9.2239  5.2059  3.8840  2.8840    0.7925  8.2416  1.7397  2.2251  5.8840  4.8840  2.8840        2.8840     
+Eval:                                                                                                                                                                                                                                                                                                                                        
+
+Speaker sentences   1:  4t1   utt# 2 of 21
+id: (4t1c0203)
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  compound yields  assume  reinvestment of      dividends 
+HYP:  compound yields  assume  reinvestment of      dividends 
+R_WE: 8.4543   4.8840  5.2059  2.8840       2.8840  7.8840    
+H_WE: 8.4543   4.8840  5.2059  2.8840       2.8840  7.8840    
+Eval:                                                         
+
+Speaker sentences   1:  4t1   utt# 3 of 21
+id: (4t1c0204)
+Scores: (#C #S #D #I) 26 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  the     average seven   day     compound yield   on      tax     free    money   funds   fell    to      two     point   ZERO    three   percent from    two     point   two     one     percent the     newsletter said    
+HYP:  the     average seven   day     compound yield   on      tax     free    money   funds   fell    to      two     point   SEVEN   three   percent from    two     point   two     one     percent the     newsletter said    
+R_WE: 4.1144  4.7576  2.0149  2.3775  1.7925   1.2075  1.7925  6.4690  2.0149  4.4690  3.4518  7.1319  3.8840  8.2416  2.9080  7.4076  2.8840  4.3778  3.9398  3.4518  2.9080  7.4076  6.5844  6.5844  6.7909  6.4697     4.4690  
+H_WE: 4.1144  4.7576  2.0149  2.3775  1.7925   1.2075  1.7925  6.4690  2.0149  4.4690  3.4518  7.1319  3.8840  8.2416  2.9080  4.6534  7.1573  4.3778  3.9398  3.4518  2.9080  7.4076  6.5844  6.5844  6.7909  6.4697     4.4690  
+Eval:                                                                                                                          S                                                                                                  
+
+Speaker sentences   1:  4t1   utt# 4 of 21
+id: (4t1c0205)
+Scores: (#C #S #D #I) 40 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  the     latest  yield   is      equivalent to      a       taxable three   point   one     seven   percent for     an      investor in      the     thirty  six     percent tax     bracket and     to      three   point   three   six     percent for     someone paying  thirty  nine    point   six     percent in      taxes   
+HYP:  the     latest  yield   is      equivalent to      a       taxable three   point   one     seven   percent for     an      investor in      the     thirty  six     percent tax     bracket and     to      three   point   three   six     percent for     someone paying  thirty  nine    point   six     percent in      taxes   
+R_WE: 4.1144  4.7576  4.8840  5.4690  5.4690     2.8840  8.2416  6.6914  5.6914  0.6630  4.6534  6.5844  3.2998  4.0368  8.6698  10.5610  2.8840  1.2065  9.2239  5.4690  3.3549  6.7909  5.6914  2.8840  7.0539  5.3905  0.6630  4.6534  7.1319  3.3549  4.0368  6.0539  4.4690  2.8840  5.4690  5.4690  4.5565  3.3549  3.1144  7.7909  
+H_WE: 4.1144  4.7576  4.8840  5.4690  5.4690     2.8840  8.2416  6.6914  5.6914  0.6630  4.6534  6.5844  3.2998  4.0368  8.6698  10.6640  2.8840  1.2065  9.2239  5.4690  3.3549  6.7909  5.6914  2.8840  7.0539  5.3905  0.6630  4.6534  7.1319  3.3549  4.0368  6.0539  4.4690  2.8840  5.4690  5.4690  4.5565  3.3549  3.1144  7.7909  
+Eval:                                                                                                                                                                                                                                                                                                                                     
+
+Speaker sentences   1:  4t1   utt# 5 of 21
+id: (4t1c0206)
+Scores: (#C #S #D #I) 35 4 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  tax     exempt  yields  typically DROP    at      this    time    of      year    because of      a       reduced supply  of      securities as      many    municipalities REACH   the     JUNE    thirty  end     of      THEIR   fiscal  year    said    walter  frank   chief   economist of      the     money   fund    report  
+HYP:  tax     exempt  yields  typically JOB     at      this    time    of      year    because of      a       reduced supply  of      securities as      many    municipalities REACHED the     AEGEAN  thirty  end     of      THE     fiscal  year    said    walter  frank   chief   economist of      the     money   fund    report  
+R_WE: 7.6469  2.0149  1.7148  5.2059    2.8840  3.8840  6.6914  5.8840  2.8840  7.8840  5.4690  1.7148  7.8840  6.6914  2.8840  2.8840  7.8840     4.8840  6.0539  3.8840         2.8840  2.8840  9.2239  3.8840  5.4690  2.8840  7.8840  3.8840  1.1299  5.4690  4.8840  2.8840  3.8840  3.8840    2.8840  2.1926  9.2239  1.7397  2.2251  
+H_WE: 7.6469  2.0149  1.7148  5.2059    20.0000 6.6469  6.6914  5.8840  2.8840  7.8840  5.4690  1.7148  7.8840  6.6914  2.8840  2.8840  7.8840     4.8840  6.0539  3.8840         20.0000 4.1144  20.0000 7.8693  5.4690  2.8840  2.1926  9.2239  1.1299  5.4690  4.8840  2.8840  3.8840  3.8840    2.8840  2.1926  9.2239  1.7397  2.2251  
+Eval:                                   S                                                                                                                                         S               S                               S                                                                                                         
+
+Speaker sentences   1:  4t1   utt# 6 of 21
+id: (4t1c0207)
+Scores: (#C #S #D #I) 19 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  taxable yields  meanwhile have    been    rising  steadily for     several months  in      response to      increases in      short   term    interest rates   
+HYP:  taxable yields  meanwhile have    been    rising  steadily for     several months  in      response to      increases in      short   term    interest rates   
+R_WE: 7.6469  5.6914  5.2059    2.8840  2.2075  5.2059  2.8840   2.8840  6.0539  2.8840  2.8840  7.7909   2.8840  8.2416    2.8840  7.7909  1.7925  4.4690   2.8840  
+H_WE: 7.6469  5.6914  5.2059    2.8840  2.2075  5.2059  2.8840   2.8840  6.0539  2.8840  2.8840  7.7909   2.8840  8.2416    2.8840  7.7909  1.7925  4.4690   2.8840  
+Eval:                                                                                                                                                                
+
+Speaker sentences   1:  4t1   utt# 7 of 21
+id: (4t1c0208)
+Scores: (#C #S #D #I) 70 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  money   fund    report  says    the     average seven   day     simple  yield   on      taxable funds   rose    to      three   point   five    nine    percent from    three   point   five    seven   percent in      the     latest  week    while   the     average thirty  day     simple  yield   increased to      three   point   five    three   percent from    three   point   four    six     percent and     the     average thirty  day     compound yield   went    to      three   point   five    nine    percent from    three   point   five    two     percent 
+HYP:  money   fund    report  says    the     average seven   day     simple  yield   on      taxable funds   rose    to      three   point   five    nine    percent from    three   point   five    seven   percent in      the     latest  week    while   the     average thirty  day     simple  yield   increased to      three   point   five    three   percent from    three   point   four    six     percent and     the     average thirty  day     compound yield   went    to      three   point   five    nine    percent from    three   point   five    two     percent 
+R_WE: 7.1324  1.7397  2.2251  5.8840  3.8840  4.7576  2.0149  2.3775  2.7148  1.1299  1.7925  2.7925  2.0149  3.4555  1.7148  5.3905  0.6630  1.7162  3.7148  2.7148  3.9398  1.7397  0.6630  1.7162  6.4690  3.2998  3.1144  1.2065  4.7576  2.1299  2.4518  4.4690  4.7576  2.9372  2.7148  2.7148  1.1299  5.4690    2.8840  5.3905  0.6630  1.7162  6.4690  4.3778  3.9398  1.7397  0.6630  7.4076  5.8840  3.3549  6.7909  3.3775  4.7576  2.9372  2.7148  1.7925   1.2075  5.4690  2.8840  5.3905  0.6630  1.7162  3.7148  2.7148  3.9398  1.7397  0.6630  1.7162  6.4690  6.5844  
+H_WE: 7.1324  1.7397  2.2251  5.8840  3.8840  4.7576  2.0149  2.3775  2.7148  1.1299  1.7925  2.7925  2.0149  3.4555  1.7148  5.3905  0.6630  1.7162  3.7148  2.7148  3.9398  1.7397  0.6630  1.7162  6.4690  3.2998  3.1144  1.2065  4.7576  2.1299  2.4518  4.4690  4.7576  2.9372  2.7148  2.7148  1.1299  5.4690    2.8840  5.3905  0.6630  1.7162  6.4690  4.3778  3.9398  1.7397  0.6630  7.4076  5.8840  3.3549  6.7909  3.3775  4.7576  2.9372  2.7148  1.7925   1.2075  5.4690  2.8840  5.3905  0.6630  1.7162  3.7148  2.7148  3.9398  1.7397  0.6630  1.7162  6.4690  6.5844  
+Eval:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+Speaker sentences   1:  4t1   utt# 8 of 21
+id: (4t1c0209)
+Scores: (#C #S #D #I) 50 3 1 1
+Attributes: Ref_weight Hyp_weight 
+REF:  although assets  of      the     taxable funds   tracked by      money   fund    report  remained stable  at      about   four    hundred seventy two     point   six     seven   billion dollars twelve  funds   that    just    began   reporting to      the     newsletter added   three   point   seven   five    billion dollars to      assets  ***     OFFSETTING WITHDRAWALS FROM    the     six     hundred sixty   funds   that    WERE    already included 
+HYP:  although assets  of      the     taxable funds   tracked by      money   fund    report  remained stable  at      about   four    hundred seventy two     point   six     seven   billion dollars twelve  funds   that    just    began   reporting to      the     newsletter added   three   point   seven   five    billion dollars to      assets  ARE     SETTING    WHICH       RALSTON the     six     hundred sixty   funds   that    ****    already included 
+R_WE: 10.4581  2.8840  2.1299  2.1926  6.4697  2.0149  7.1319  2.8840  6.8840  1.7397  2.2251  5.8840   3.8840  2.8840  6.6914  5.4690  3.1299  3.4518  3.8840  2.9080  4.5565  6.2059  3.2998  0.2224  6.6914  2.8840  4.3778  7.0539  3.8840  2.8840    2.8840  3.7753  6.4697     4.4690  3.8840  0.6630  4.6534  3.2998  6.4690  0.2224  3.0149  5.4874          4.8840     2.8840      2.8840  3.4518  9.2239  6.2059  6.2059  2.8840  4.3778  7.0539  4.8840  2.8840   
+H_WE: 10.4581  2.8840  2.1299  2.1926  6.4697  2.0149  7.1319  2.8840  6.8840  1.7397  2.2251  5.8840   3.8840  2.8840  6.6914  5.4690  3.1299  3.4518  3.8840  2.9080  4.5565  6.2059  3.2998  0.2224  6.6914  2.8840  4.3778  7.0539  3.8840  2.8840    2.8840  3.7753  6.4697     4.4690  3.8840  0.6630  4.6534  3.2998  6.4690  0.2224  3.0149  5.4874  10.9295 20.0000    8.4543      20.0000 4.1144  9.2239  6.2059  6.2059  2.8840  4.3778          10.7230 2.8840   
+Eval:                                                                                                                                                                                                                                                                                                                                                        I       S          S           S                                                       D                        
+
+Speaker sentences   1:  4t1   utt# 9 of 21
+id: (4t1c020a)
+Scores: (#C #S #D #I) 30 4 1 2
+Attributes: Ref_weight Hyp_weight 
+REF:  individual investors ****    WITHDREW just    over    two     billion dollars from    the     four    hundred fifty   two     funds   AND          INSTITUTIONAL investors pulled  about   one     point   seven   billion dollars from    two     hundred eight   funds   according to      the     ********** NEWSLETTER'S DATA    
+HYP:  individual investors WITH    JURY     just    over    two     billion dollars from    the     four    hundred fifty   two     funds   INSTITUTIONS OR            investors pulled  about   one     point   seven   billion dollars from    two     hundred eight   funds   according to      the     NEWSLETTER STATE        ****    
+R_WE: 10.4581    2.8840            4.8840   3.8840  3.8840  2.8840  6.5844  0.2224  3.9372  3.4518  9.2239  3.1299  3.4518  4.4690  6.5844  4.3778       7.0539        2.8840    4.8840  2.8840  1.7925  3.8303  4.6534  3.2998  0.2224  3.9372  3.4518  3.8303  6.2059  1.7148  7.1319    0.7925  3.7753             9.2239       2.8840  
+H_WE: 10.4581    2.8840    8.3049  20.0000  9.4543  3.8840  2.8840  6.5844  0.2224  3.9372  3.4518  9.2239  3.1299  3.4518  4.4690  6.5844  20.0000      8.4543        8.5752    4.8840  2.8840  1.7925  3.8303  4.6534  3.2998  0.2224  3.9372  3.4518  3.8303  6.2059  1.7148  7.1319    0.7925  3.7753  6.4697     20.0000              
+Eval:                      I       S                                                                                                        S            S                                                                                                                                                 I          S            D       
+
+Speaker sentences   1:  4t1   utt# 10 of 21
+id: (4t1c020b)
+Scores: (#C #S #D #I) 27 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  assets  of      tax     free    funds   declined by      nine    hundred forty   five    point   six     million dollars to      one     hundred thirteen point   nine    one     billion dollars money   FUNDS   report  said    
+HYP:  assets  of      tax     free    funds   declined by      nine    hundred forty   five    point   six     million dollars to      one     hundred thirteen point   nine    one     billion dollars money   FUND    report  said    
+R_WE: 8.4543  2.1299  7.8840  2.0149  1.7148  7.1319   2.8840  6.8840  5.4690  6.2059  2.1299  6.4690  4.5565  6.2059  0.7925  3.0149  8.2416  3.8303  6.2059   2.8840  7.4076  5.4690  6.5844  0.2224  6.6914  3.4518  7.1319  5.8840  
+H_WE: 8.4543  2.1299  7.8840  2.0149  1.7148  7.1319   2.8840  6.8840  5.4690  6.2059  2.1299  6.4690  4.5565  6.2059  0.7925  3.0149  8.2416  3.8303  6.2059   2.8840  7.4076  5.4690  6.5844  0.2224  6.6914  1.7397  2.2251  5.8840  
+Eval:                                                                                                                                                                                                           S                       
+
+Speaker sentences   1:  4t1   utt# 11 of 21
+id: (4t1c020c)
+Scores: (#C #S #D #I) 33 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  however four    new     funds   added   about   three   hundred seventy one     million dollars to      assets  indicating that    investors IN      three   hundred fifty   one     other   tax     free    funds   actually withdrew about   one     point   three   billion dollars 
+HYP:  however four    new     funds   added   about   three   hundred seventy one     million dollars to      assets  indicating that    investors AND     three   hundred fifty   one     other   tax     free    funds   actually withdrew about   one     point   three   billion dollars 
+R_WE: 10.4581 2.8840  5.8840  4.4690  7.1319  3.8840  5.4690  4.3778  3.4518  3.8840  6.5844  0.7925  3.0149  5.4874  4.8840     2.8840  7.0539    4.8840  7.7909  4.3778  3.4518  4.4690  6.5844  4.8840  2.0149  1.7148  7.1319   2.8840   3.8840  1.7925  3.8303  4.6534  7.1319  0.2224  
+H_WE: 10.4581 2.8840  5.8840  4.4690  7.1319  3.8840  5.4690  4.3778  3.4518  3.8840  6.5844  0.7925  3.0149  5.4874  4.8840     2.8840  7.0539    6.4569  6.3289  4.3778  3.4518  4.4690  6.5844  4.8840  2.0149  1.7148  7.1319   2.8840   3.8840  1.7925  3.8303  4.6534  7.1319  0.2224  
+Eval:                                                                                                                                              S                                                                                                                                         
+
+Speaker sentences   1:  4t1   utt# 12 of 21
+id: (4t1c020d)
+Scores: (#C #S #D #I) 28 0 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  average maturity of      the     taxable funds'  investments which   include treasury bills   ***     other   government securities and     commercial paper   short   term    corporate i.      o.      u.s     remained at      forty   five    days    
+HYP:  average maturity of      the     taxable funds'  investments which   include treasury bills   AND     other   government securities and     commercial paper   short   term    corporate i.      o.      u.s     remained at      forty   five    days    
+R_WE: 7.6469  2.9372   1.1299  2.1926  6.4697  5.6914  2.8840      3.8840  4.8840  3.8840   2.8840          2.8840  4.8840     2.8840     4.8840  7.0539     2.8840  2.8840  1.7925  4.4690    2.8840  3.8840  2.8840  2.8840   3.8840  6.6914  2.1299  6.4690  
+H_WE: 7.6469  2.9372   1.1299  2.1926  6.4697  5.6914  2.8840      3.8840  4.8840  3.8840   2.8840  6.4903  7.0539  4.8840     2.8840     4.8840  7.0539     2.8840  2.8840  1.7925  4.4690    2.8840  3.8840  2.8840  2.8840   3.8840  6.6914  2.1299  6.4690  
+Eval:                                                                                               I                                                                                                                                                           
+
+Speaker sentences   1:  4t1   utt# 13 of 21
+id: (4t1c020e)
+Scores: (#C #S #D #I) 20 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  average maturity of      the     tax     exempt  portfolios primarily short   term    municipal securities lengthened by      two     days    to      forty   four    days    
+HYP:  average maturity of      the     tax     exempt  portfolios primarily short   term    municipal securities lengthened by      two     days    to      forty   four    days    
+R_WE: 7.6469  2.9372   1.1299  2.1926  9.2239  2.0149  4.4690     2.8840    2.8840  1.7925  4.4690    2.8840     4.8840     2.8840  6.8840  6.5844  4.4690  8.2416  4.8840  5.8840  
+H_WE: 7.6469  2.9372   1.1299  2.1926  9.2239  2.0149  4.4690     2.8840    2.8840  1.7925  4.4690    2.8840     4.8840     2.8840  6.8840  6.5844  4.4690  8.2416  4.8840  5.8840  
+Eval:                                                                                                                                                                               
+
+Speaker sentences   1:  4t1   utt# 14 of 21
+id: (4t1c020f)
+Scores: (#C #S #D #I) 10 4 1 0
+Attributes: Ref_weight Hyp_weight 
+REF:  today's PET     PEEVE   WHY     DO      CERTAIN people  insist  on      vacationing in      the     south   of      france  
+HYP:  today's CUT     THE     ***     WIDEST  AND     people  insist  on      vacationing in      the     south   of      france  
+R_WE: 10.4581 2.8840  2.8840  3.8840  2.8840  2.8840  2.8840  2.8840  2.8840  6.4690      2.8840  1.2065  6.4697  1.1299  7.8840  
+H_WE: 10.4581 20.0000 4.1144          20.0000 6.2844  10.5807 2.8840  2.8840  6.4690      2.8840  1.2065  6.4697  1.1299  7.8840  
+Eval:         S       S       D       S       S                                                                                   
+
+Speaker sentences   1:  4t1   utt# 15 of 21
+id: (4t1c020g)
+Scores: (#C #S #D #I) 16 4 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  david   BROOKS  couldn't resist  that    **      EFFETE  phrase  in      his     june    fifteenth editorial PIECE   i       get     no      kicks   ON      this    game    
+HYP:  david   BROCK'S couldn't resist  that    IF      THE     phrase  in      his     june    fifteenth editorial P.'S    i       get     no      kicks   IN      this    game    
+R_WE: 10.4581 2.8840  2.8840   2.8840  2.8840          7.0539  2.8840  2.8840  7.7909  2.8840  3.8840    2.8840    2.8840  2.8840  3.8840  2.8840  3.8840  2.8840  6.4690  5.8840  
+H_WE: 10.4581 20.0000 10.4581  2.8840  2.8840  9.1342  4.4690  10.7345 2.8840  7.7909  2.8840  3.8840    2.8840    20.0000 9.4543  3.8840  2.8840  3.8840  5.7450  8.3009  5.8840  
+Eval:         S                                I       S                                                           S                                       S                       
+
+Speaker sentences   1:  4t1   utt# 16 of 21
+id: (4t1c020h)
+Scores: (#C #S #D #I) 6 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  what's  wrong   with    simply  southern france  
+HYP:  what's  wrong   with    simply  southern france  
+R_WE: 10.4581 2.8840  4.4690  5.2059  3.8840   2.8840  
+H_WE: 10.4581 2.8840  4.4690  5.2059  3.8840   2.8840  
+Eval:                                                  
+
+Speaker sentences   1:  4t1   utt# 17 of 21
+id: (4t1c020i)
+Scores: (#C #S #D #I) 8 0 1 0
+Attributes: Ref_weight Hyp_weight 
+REF:  could   one     vacation in      the     south   OF      new     jersey  
+HYP:  could   one     vacation in      the     south   **      new     jersey  
+R_WE: 9.4543  3.8840  6.5844   2.8840  1.2065  6.4697  1.1299  7.8840  4.4690  
+H_WE: 9.4543  3.8840  6.5844   2.8840  1.2065  6.4697          9.7169  4.4690  
+Eval:                                                  D                       
+
+Speaker sentences   1:  4t1   utt# 18 of 21
+id: (4t1c020j)
+Scores: (#C #S #D #I) 3 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  i       think   not     
+HYP:  i       think   not     
+R_WE: 9.4543  3.8840  2.8840  
+H_WE: 9.4543  3.8840  2.8840  
+Eval:                         
+
+Speaker sentences   1:  4t1   utt# 19 of 21
+id: (4t1c020k)
+Scores: (#C #S #D #I) 4 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  so      too     with    france  
+HYP:  so      too     with    france  
+R_WE: 8.8693  4.4690  2.8840  5.2059  
+H_WE: 8.8693  4.4690  2.8840  5.2059  
+Eval:                                 
+
+Speaker sentences   1:  4t1   utt# 20 of 21
+id: (4t1c020l)
+Scores: (#C #S #D #I) 22 7 1 1
+Attributes: Ref_weight Hyp_weight 
+REF:  the     practice is      almost  as      annoying as      giving  ONESELF THREE   PUBLIC   names   such    as      the     ******  ARCHITECT FRANK   WRIGHT  OR      first   lady    hillary clinton but     that's  a       PEEVE   for     another day     
+HYP:  the     practice is      almost  as      annoying as      giving  ONE     SOUTH   REPUBLIC names   such    as      the     ARCTIC  FRANC     *****   WRITE   OUR     first   lady    hillary clinton but     that's  a       PLEA    for     another day     
+R_WE: 4.1144  9.2239   2.8840  5.4690  2.8840  6.0539   2.8840  6.0539  2.8840  2.8840  7.1319   5.2059  2.8840  2.8840  6.0539          9.2239    2.8840  3.8840  2.8840  4.8840  2.8840  2.8840  2.8840  2.8840  3.8840  2.8840  6.6914  3.8840  6.0539  2.8840  
+H_WE: 4.1144  9.2239   2.8840  5.4690  2.8840  6.0539   2.8840  6.0539  6.9628  9.7140  20.0000  10.4581 2.8840  2.8840  6.0539  20.0000 20.0000           20.0000 20.0000 10.4581 2.8840  2.8840  2.8840  2.8840  3.8840  2.8840  20.0000 7.2844  6.0539  2.8840  
+Eval:                                                                   S       S       S                                        I       S         D       S       S                                                               S                               
+
+Speaker sentences   2:  4t2   utt# 0 of 15
+id: (4t2c0201)
+Scores: (#C #S #D #I) 29 1 1 3
+Attributes: Ref_weight Hyp_weight 
+REF:  COTT    corporation the     canadian bottler of      private label   soft    drinks  that    has     *****   *       ****    MESMERIZED the     stock   market  with    its     marketing gains   in      recent  years   now     has     the     short   sellers on      its     tail    
+HYP:  CAR     corporation the     canadian bottler of      private label   soft    drinks  that    has     MEANT   A       RISE    ********** the     stock   market  with    its     marketing gains   in      recent  years   now     has     the     short   sellers on      its     tail    
+R_WE: 7.8693  5.4690      2.8840  9.2239   5.2059  2.8840  7.8840  2.8840  2.8840  2.8840  2.8840  7.0539                          5.6914     2.8840  6.4697  4.8840  4.8840  5.2059  6.4690    2.8840  2.8840  7.7909  2.8840  2.8840  2.8840  5.6914  9.2239  2.7148  3.8840  6.4690  6.4690  
+H_WE: 20.0000 10.4581     2.8840  9.2239   5.2059  2.8840  7.8840  2.8840  2.8840  2.8840  2.8840  7.0539  20.0000 6.6469  20.0000            4.1144  6.4697  4.8840  4.8840  5.2059  6.4690    2.8840  2.8840  7.7909  2.8840  2.8840  2.8840  5.6914  9.2239  2.7148  3.8840  6.4690  6.4690  
+Eval: S                                                                                                    I       I       I       D                                                                                                                                                            
+
+Speaker sentences   2:  4t2   utt# 1 of 15
+id: (4t2c0202)
+Scores: (#C #S #D #I) 28 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  its     shares  fell    four    point   eight   seven   five    dollars canadian on      wednesday to      twenty  point   one     two     five    dollars on      the     toronto stock   exchange A       decline of      twenty  percent 
+HYP:  its     shares  fell    four    point   eight   seven   five    dollars canadian on      wednesday to      twenty  point   one     two     five    dollars on      the     toronto stock   exchange THE     decline of      twenty  percent 
+R_WE: 6.8693  6.4690  3.8840  3.8840  5.8840  7.4076  4.4690  3.2998  2.0027  3.9372   5.2059  6.4690    1.7148  8.2416  4.4690  4.6534  6.5844  6.5844  2.0027  6.6914  3.7148  9.2239  4.4690  4.8840   2.8840  6.6914  2.8840  7.8840  4.4690  
+H_WE: 6.8693  6.4690  3.8840  3.8840  5.8840  7.4076  4.4690  3.2998  2.0027  3.9372   5.2059  6.4690    1.7148  8.2416  4.4690  4.6534  6.5844  6.5844  2.0027  6.6914  3.7148  9.2239  4.4690  4.8840   4.3100  10.7345 2.8840  7.8840  4.4690  
+Eval:                                                                                                                                                                                                     S                                       
+
+Speaker sentences   2:  4t2   utt# 2 of 15
+id: (4t2c0203)
+Scores: (#C #S #D #I) 10 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  early   last    week    the     stock   was     trading above   thirty  dollars 
+HYP:  early   last    week    the     stock   was     trading above   thirty  dollars 
+R_WE: 9.4543  3.8840  5.6914  5.2059  6.4697  4.8840  5.8840  4.4690  2.8840  5.4690  
+H_WE: 9.4543  3.8840  5.6914  5.2059  6.4697  4.8840  5.8840  4.4690  2.8840  5.4690  
+Eval:                                                                                 
+
+Speaker sentences   2:  4t2   utt# 3 of 15
+id: (4t2c0204)
+Scores: (#C #S #D #I) 23 2 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  the     company's stock   also    plummeted wednesday in      the     UNITED  states  falling three   point   five    dollars UNITED  *****   states  to      fourteen point   five    dollars in      nasdaq  trading 
+HYP:  the     company's stock   also    plummeted wednesday in      the     NINE    states  falling three   point   five    dollars A       NIGHT   states  to      fourteen point   five    dollars in      nasdaq  trading 
+R_WE: 4.1144  4.7576    4.8840  4.8840  3.8840    2.8840    4.4690  1.2065  9.5925  1.1299  3.8840  2.8840  0.6630  1.7162  2.0027  6.6914          1.1299  3.8840  8.2416   3.8840  1.7162  2.0027  6.6914  7.7909  2.8840  
+H_WE: 4.1144  4.7576    4.8840  4.8840  3.8840    2.8840    4.4690  1.2065  8.1458  9.7868  3.8840  2.8840  0.6630  1.7162  2.0027  6.9869  20.0000 9.4543  3.8840  8.2416   3.8840  1.7162  2.0027  6.6914  7.7909  2.8840  
+Eval:                                                                       S                                                       S       I                                                                                
+
+Speaker sentences   2:  4t2   utt# 4 of 15
+id: (4t2c0205)
+Scores: (#C #S #D #I) 30 5 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  many    ANALYSTS ARE     saying  THAT    COTT    WHILE   still   expanding rapidly will    fall    short   of      its     projected growth  rate    because of      increasingly aggressive price   cutting by      its     two     largest american rivals  coca    cola    and     pepsi   cola    
+HYP:  many    NOW      SISTER  saying  THE     CARD    WAS     still   expanding rapidly will    fall    short   of      its     projected growth  rate    because of      increasingly aggressive price   cutting by      its     two     largest american rivals  coca    cola    and     pepsi   cola    
+R_WE: 9.4543  3.8840   3.8840  2.8840  2.8840  7.0539  5.4690  4.4690  2.8840    2.8840  2.8840  1.1299  3.8840  5.4690  3.4178  6.4690    2.8840  1.1299  3.8840  1.7148  7.8840       3.8840     2.8840  4.4690  2.8840  6.8840  6.4690  6.5844  2.8840   3.8840  2.8840  2.8840  3.8840  7.0539  2.8840  
+H_WE: 9.4543  10.6650  20.0000 10.4581 4.3058  20.0000 7.4543  10.5592 2.8840    2.8840  2.8840  1.1299  3.8840  5.4690  3.4178  6.4690    2.8840  1.1299  3.8840  1.7148  7.8840       3.8840     2.8840  4.4690  2.8840  6.8840  6.4690  6.5844  2.8840   3.8840  2.8840  2.8840  3.8840  7.0539  2.8840  
+Eval:         S        S               S       S       S                                                                                                                                                                                                                                                    
+
+Speaker sentences   2:  4t2   utt# 5 of 15
+id: (4t2c0206)
+Scores: (#C #S #D #I) 25 2 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  COTT    has     also    been    dogged  by      allegations that    it      has     inflated its     declared profits by      using   **      UNORTHODOX accounting practices and     that    it      is      running out     of      cash    
+HYP:  KHAN    has     also    been    dogged  by      allegations that    it      has     inflated its     declared profits by      using   AN      ORTHODOX   accounting practices and     that    it      is      running out     of      cash    
+R_WE: 7.8693  2.7148  5.6914  3.8840  5.2059  2.8840  6.8840      3.8840  3.3775  5.2059  5.6914   2.8840  6.4690   2.8840  2.8840  4.1299          3.8840     2.8840     4.4690    3.8840  7.0539  3.3775  5.2059  5.4690  2.8840  3.8840  7.8840  
+H_WE: 20.0000 7.6469  5.6914  3.8840  5.2059  2.8840  6.8840      3.8840  3.3775  5.2059  5.6914   2.8840  6.4690   2.8840  2.8840  4.1299  8.6612  20.0000    8.8693     4.4690    3.8840  7.0539  3.3775  5.2059  5.4690  2.8840  3.8840  7.8840  
+Eval: S                                                                                                                                     I       S                                                                                               
+
+Speaker sentences   2:  4t2   utt# 6 of 15
+id: (4t2c0207)
+Scores: (#C #S #D #I) 31 2 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  the     company rejects the     charges as      deliberate ***     MISINFORMATION put     out     by      short   sellers speculators who     sell    borrowed shares  hoping  the     market  price   will    fall    before  they    have    to      repay   the     SHARES' original owners  
+HYP:  the     company rejects the     charges as      deliberate MS.     INFORMATION    put     out     by      short   sellers speculators who     sell    borrowed shares  hoping  the     market  price   will    fall    before  they    have    to      repay   the     SHARES  original owners  
+R_WE: 4.1144  6.3728  5.4690  2.8840  9.2239  2.8840  6.0539             2.8840         2.8840  2.8840  3.8840  6.8840  2.7148  3.8840      2.8840  4.4690  2.8840   2.8840  3.8840  2.8840  9.2239  4.8840  4.4690  1.1299  3.8840  3.8840  4.4690  5.8840  8.2416  2.8840  9.2239  2.8840   2.8840  
+H_WE: 4.1144  6.3728  5.4690  2.8840  9.2239  2.8840  6.0539     20.0000 20.0000        10.4581 2.8840  3.8840  6.8840  2.7148  3.8840      2.8840  4.4690  2.8840   2.8840  3.8840  2.8840  9.2239  4.8840  4.4690  1.1299  3.8840  3.8840  4.4690  5.8840  8.2416  2.8840  9.7307  10.6650  2.8840  
+Eval:                                                            I       S                                                                                                                                                                                                   S                        
+
+Speaker sentences   2:  4t2   utt# 7 of 15
+id: (4t2c0208)
+Scores: (#C #S #D #I) 9 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  COTT    has     even    taken   some    of      its     detractors to      court   
+HYP:  KHAN    has     even    taken   some    of      its     detractors to      court   
+R_WE: 7.8693  2.7148  5.6914  2.8840  2.8840  4.4690  3.4178  6.4690     2.8840  8.2416  
+H_WE: 20.0000 7.6469  5.6914  2.8840  2.8840  4.4690  3.4178  6.4690     2.8840  8.2416  
+Eval: S                                                                                  
+
+Speaker sentences   2:  4t2   utt# 8 of 15
+id: (4t2c0209)
+Scores: (#C #S #D #I) 29 4 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  a       memorandum from    a       toronto research firm    equity  research associates incorporated questioning the     health  of      COTT'S  cash    flow    prompted A       suit    by      COTT    earlier this    year    seeking FOURTEEN million dollars canadian in      damages 
+HYP:  a       memorandum from    a       toronto research firm    equity  research associates incorporated questioning the     health  of      COPS    cash    flow    prompted THE     suit    by      COURT   earlier this    year    seeking FORTY    million dollars canadian in      damages 
+R_WE: 6.6469  6.6914     2.8840  6.2059  6.6914  4.4690   3.8840  2.8840  2.8840   3.8840     2.8840       3.8840      2.8840  9.2239  2.8840  7.8840  3.8840  3.8840  2.8840   2.8840  6.6914  2.8840  6.8840  5.4690  2.8840  1.4178  5.4690  2.8840   3.8840  0.7925  3.9372   5.2059  7.7909  
+H_WE: 6.6469  6.6914     2.8840  6.2059  6.6914  4.4690   3.8840  2.8840  2.8840   3.8840     2.8840       3.8840      2.8840  9.2239  2.8840  20.0000 9.4543  3.8840  2.8840   4.3100  10.7345 2.8840  10.7056 10.6536 2.8840  1.4178  5.4690  8.6622   9.3491  0.7925  3.9372   5.2059  7.7909  
+Eval:                                                                                                                                          S                                S                       S                                       S                                                 
+
+Speaker sentences   2:  4t2   utt# 9 of 15
+id: (4t2c020a)
+Scores: (#C #S #D #I) 27 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  in      addition questions have    been    raised  by      COTT'S  failure so      far     to      issue   its     annual  report  for     the     fiscal  year    that    ended   january twenty  ninth   nineteen ninety  four    
+HYP:  in      addition questions have    been    raised  by      COX     failure so      far     to      issue   its     annual  report  for     the     fiscal  year    that    ended   january twenty  ninth   nineteen ninety  four    
+R_WE: 5.5474  7.7909   2.8840    3.8840  2.2075  5.2059  2.8840  6.8840  3.8840  3.8840  1.7148  3.8840  8.2416  2.8840  6.4690  2.8840  5.8840  6.0539  9.2239  1.1299  5.4690  7.0539  3.8840  2.8840  4.4690  2.8840   2.8840  2.8840  
+H_WE: 5.5474  7.7909   2.8840    3.8840  2.2075  5.2059  2.8840  20.0000 9.4543  3.8840  1.7148  3.8840  8.2416  2.8840  6.4690  2.8840  5.8840  6.0539  9.2239  1.1299  5.4690  7.0539  3.8840  2.8840  4.4690  2.8840   2.8840  2.8840  
+Eval:                                                            S                                                                                                                                                                        
+
+Speaker sentences   2:  4t2   utt# 10 of 15
+id: (4t2c020b)
+Scores: (#C #S #D #I) 26 0 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  the     report  must    include full    financial statements and     the     assurance of      its     outside auditors coopers and     lybrand that    the     statements conform to      generally accepted accounting principles 
+HYP:  the     report  must    include full    financial statements and     the     assurance of      its     outside auditors coopers and     lybrand that    the     statements conform to      generally accepted accounting principles 
+R_WE: 4.1144  9.2239  5.8840  2.8840  3.8840  2.8840    3.8840     3.8840  3.3775  9.2239    2.8840  3.4178  6.4690  2.8840   2.8840  2.8840  7.0539  2.8840  4.2998  9.2239     3.8840  2.8840  8.2416    2.8840   2.8840     4.4690     
+H_WE: 4.1144  9.2239  5.8840  2.8840  3.8840  2.8840    3.8840     3.8840  3.3775  9.2239    2.8840  3.4178  6.4690  2.8840   2.8840  2.8840  7.0539  2.8840  4.2998  9.2239     3.8840  2.8840  8.2416    2.8840   2.8840     4.4690     
+Eval:                                                                                                                                                                                                                                     
+
+Speaker sentences   2:  4t2   utt# 11 of 15
+id: (4t2c020c)
+Scores: (#C #S #D #I) 17 1 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  COTT    invited some    canadian and     american analysts to      its     toronto headquarters wednesday to      talk    about   the     company's prospects 
+HYP:  KOCH    invited some    canadian and     american analysts to      its     toronto headquarters wednesday to      talk    about   the     company's prospects 
+R_WE: 7.8693  5.4690  2.8840  4.4690   5.2059  7.0539   3.8840   3.8840  5.4874  6.4690  4.4690       2.8840    1.7148  8.2416  2.8840  5.4690  4.7576    4.8840    
+H_WE: 20.0000 10.4581 2.8840  4.4690   5.2059  7.0539   3.8840   3.8840  5.4874  6.4690  4.4690       2.8840    1.7148  8.2416  2.8840  5.4690  4.7576    4.8840    
+Eval: S                                                                                                                                                             
+
+Speaker sentences   2:  4t2   utt# 12 of 15
+id: (4t2c020d)
+Scores: (#C #S #D #I) 15 3 0 0
+Attributes: Ref_weight Hyp_weight 
+REF:  A       university of      chicago professor ROMAN   WEIL    was     brought in      to      help    field   questions on      the     accounting matters 
+HYP:  THE     university of      chicago professor ROAMING WILD    was     brought in      to      help    field   questions on      the     accounting matters 
+R_WE: 6.6469  6.6914     2.8840  7.8840  2.8840    2.8840  2.8840  2.8840  5.8840  2.8840  7.7909  8.2416  2.8840  2.8840    3.8840  3.7148  9.2239     4.4690  
+H_WE: 4.1144  10.7345    2.8840  7.8840  2.8840    20.0000 20.0000 7.4543  5.8840  2.8840  7.7909  8.2416  2.8840  2.8840    3.8840  3.7148  9.2239     4.4690  
+Eval: S                                            S       S                                                                                                    
+
+Speaker sentences   2:  4t2   utt# 13 of 15
+id: (4t2c020e)
+Scores: (#C #S #D #I) 40 6 0 1
+Attributes: Ref_weight Hyp_weight 
+REF:  the     host    AT      the     meeting which   was     CLOSED  to      the     press   was     the     company's chairman and     chief   executive officer gerald  *****   PENCER  forty   nine    an      entrepreneur WHOSE   last    big     venture financial trustco capital limited was     one     of      the     larger  canadian business failure COLLAPSES OF      the     last    decade  
+HYP:  the     host    OF      the     meeting which   was     CLOSE   to      the     press   was     the     company's chairman and     chief   executive officer gerald  PENCE   ARE     forty   nine    an      entrepreneur WAS     last    big     venture financial trustco capital limited was     one     of      the     larger  canadian business failure COLLAPSE  IS      the     last    decade  
+R_WE: 4.1144  9.2239  2.8840  3.8403  6.4697  3.8840  4.8840  5.8840  2.8840  3.7753  9.2239  2.8840  5.8840  4.7576    4.8840   2.8840  7.0539  3.8840    2.8840  2.8840          2.8840  3.8840  4.8840  5.4690  4.8840       2.8840  2.8840  5.6914  2.8840  2.8840    3.8840  2.8840  2.8840  2.8840  5.8840  6.5844  2.1926  9.2239  2.8840   5.2059   4.4690  3.8840    2.8840  2.1926  9.2239  5.6914  
+H_WE: 4.1144  9.2239  5.6498  2.1926  6.4697  3.8840  4.8840  20.0000 5.0967  3.7753  9.2239  2.8840  5.8840  4.7576    4.8840   2.8840  7.0539  3.8840    2.8840  2.8840  20.0000 10.4581 8.6633  4.8840  5.4690  4.8840       7.6633  7.7481  5.6914  2.8840  2.8840    3.8840  2.8840  2.8840  2.8840  5.8840  6.5844  2.1926  9.2239  2.8840   5.2059   4.4690  20.0000   7.8693  4.3006  9.2239  5.6914  
+Eval:                 S                                       S                                                                                                            I       S                                            S                                                                                                                                   S         S                               
+
+Speaker sentences   2:  4t2   utt# 14 of 15
+id: (4t2c020f)
+Scores: (#C #S #D #I) 30 5 0 4
+Attributes: Ref_weight Hyp_weight 
+REF:  according to      jacques **      *****   KAVAFIAN an      analyst at      ***     ****    LEVESQUE BEAUBIEN GEOFFRION incorporated a       montreal brokerage house   represented at      the     meeting PENCER  and     other   senior  executives acknowledge that    the     company's growth  rate    would   drop    dramatically this    year    
+HYP:  according to      jacques OF      MAFIA   IN       an      analyst at      THE     DESK    GOBIE    AND      JAFFRAY   incorporated a       montreal brokerage house   represented at      the     meeting SPENCER and     other   senior  executives acknowledge that    the     company's growth  rate    would   drop    dramatically this    year    
+R_WE: 8.8693    0.7925  8.2416                  2.8840   2.8840  4.8840  2.8840                  6.6914   2.8840   2.8840    2.8840       3.8840  6.6914   2.8840    2.8840  2.8840      2.8840  3.8403  6.4697  3.8840  3.8840  7.0539  4.8840  3.8840     20.0000     4.5842  4.2998  4.7576    4.8840  1.1299  3.8840  4.8840  3.8840       2.8840  1.4178  
+H_WE: 8.8693    0.7925  8.2416  5.6633  20.0000 5.5474   9.3009  4.8840  2.8840  3.8403  20.0000 20.0000  6.2844   20.0000   9.4543       3.8840  6.6914   2.8840    2.8840  2.8840      2.8840  3.8403  6.4697  20.0000 6.2844  7.0539  4.8840  3.8840     20.0000     6.2844  4.2998  4.7576    4.8840  1.1299  3.8840  4.8840  3.8840       2.8840  1.4178  
+Eval:                           I       I       S                                I       I       S        S        S                                                                                             S                                                                                                                                             
+
+

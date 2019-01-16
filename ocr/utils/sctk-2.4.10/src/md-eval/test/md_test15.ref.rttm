@@ -1,0 +1,27 @@
+;; mdeval md_test15 ref rttm
+;; UEM takes a 1.0 sec bite out of scored time starting at 16.0 in the  filler
+;; and takes a 1.0 sec bite out of scored time starting at 19.0 in the edit
+SPKR-INFO md_test15 1 <NA> <NA>  <NA>              adult_female     spkr1r <NA>
+SEGMENT   md_test15 1 10.0 18.0  <NA>              <NA>             spkr1r <NA>
+SPEAKER   md_test15 1 10.0 18.0  <NA>              <NA>             spkr1r <NA>
+SU        md_test15 1 10.0 18.0  <NA>              statement        spkr1r <NA>
+
+LEXEME    md_test15 1 10.0  3.9  firstWord-I       lex              spkr1r <NA>
+
+IP        md_test15 1 14.0  <NA> <NA>              filler           spkr1r <NA>
+FILLER    md_test15 1 14.0  3.0  <NA>              discourse_marker spkr1r <NA>
+LEXEME    md_test15 1 14.0  1.0  secondWord-now    lex              spkr1r <NA>
+LEXEME    md_test15 1 15.0  1.0  thirdWord-we      lex              spkr1r <NA>
+;; fourthWord-show is in UEM non-scored time (two words because hyphenated)
+LEXEME    md_test15 1 16.0  1.0  fourthWord-show   lex              spkr1r <NA>
+
+LEXEME    md_test15 1 17.1  0.8  fifthWord-will    lex              spkr1r <NA>
+
+EDIT      md_test15 1 18.0  2.0  <NA>              revision         spkr1r <NA>
+LEXEME    md_test15 1 18.0  1.0  sixthWord-drive   lex              spkr1r <NA>
+;; seventhWord-there is in UEM non-scored time (two words because hyphenated)
+LEXEME    md_test15 1 19.0  1.0  seventhWord-there lex              spkr1r <NA>
+IP        md_test15 1 20.0  <NA> <NA>              edit             spkr1r <NA>
+
+LEXEME    md_test15 1 20.1  0.9  eighthWord-fly    lex              spkr1r <NA>
+

@@ -1,0 +1,571 @@
+<!-- $Id: options.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>SCLITE Command Line Options</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="options_name_0">
+<A HREF="sclite.htm#sclite_name_0">Sclite</A> Commandline Options</A>
+</H1>
+<p>
+The commandline options for <A HREF="sclite.htm#sclite_name_0">sclite</A>
+can be broken into four categories:
+<ol type=1>
+<li><a href="options.htm#input_options_0"> Input File Options: </a>
+<ul>
+<a href="options.htm#option_e_name_0">-e</a>,
+<a href="options.htm#option_h_name_0">-h</a>,
+<a href="options.htm#option_i_name_0">-i</a>,
+<a href="options.htm#option_P_name_0">-P</a>,
+<a href="options.htm#option_r_name_0">-r</a>,
+<a href="options.htm#option_R_name_0">-R</a>
+</ul>
+
+<li><a href="options.htm#alignment_options_0"> Alignment Options: </a>
+<ul>
+<a href="options.htm#option_c_name_0">-c</a>,
+<a href="options.htm#option_d_name_0">-d</a>,
+<a href="options.htm#option_F_name_0">-F</a>,
+<a href="options.htm#option_L_name_0">-L</a>
+<a href="options.htm#option_m_name_0">-m</a>,
+<a href="options.htm#option_s_name_0">-s</a>,
+<a href="options.htm#option_S_algo1_name_0">-S</a>,
+<a href="options.htm#option_T_name_0">-T</a>
+<a href="options.htm#option_w_name_0">-w</a>
+</ul>
+<li><a href="options.htm#output_options_0"> Output Options: </a>
+<ul>
+<a href="options.htm#option_f_name_0">-f</a>,
+<a href="options.htm#option_l_name_0">-l</a>,
+<a href="options.htm#option_O_name_0">-O</a>,
+<a href="options.htm#option_p_name_0">-p</a>
+</ul>
+<li><a href="options.htm#report_options_0"> Scoring Report Options: </a>
+<ul>
+<a href="options.htm#option_C_name_0">-C</a>,
+<a href="options.htm#option_n_name_0">-n</a>,
+<a href="options.htm#option_o_name_0">-o</a>
+</ul>
+</ol>
+
+
+
+<p>
+<a name="input_options_0"><strong> Input File Options: </strong></a>
+ <UL>
+
+These options control/define the input to 
+<A HREF="sclite.htm#sclite_name_0">sclite</A>.  Input can come from either
+reference and hypothesis files, or piped input from previously aligned REF and
+HYP files.
+<br>
+<br>
+   <a name="option_e_name_0">-e  gb|euc</a>	
+   <ul>
+          Define the character encoding used for the text portion
+          input  ref  and hyp files.  The flag "gb" stands for GB
+          encoded  Chinese  and  "euc"  stands  for  EUC  encoded
+          Japanese.   Both  encodings  are  2-byte  per character
+          encodings.  The default, is extended ASCII.
+   </ul> <br>
+    <a name="option_h_name_0">-h</a>
+	 hypfile [  
+<a href="infmts.htm#trn_fmt_name_0">trn</a> |
+<a href="infmts.htm#txt_fmt_name_0">txt</a> |
+<a href="infmts.htm#ctm_fmt_name_0">ctm</a> ] title
+   <ul>
+
+          The '-h' option is a required argument which  specifies
+          the   input   hypothesis  file.   The  optional format field,
+          "[  <a href="infmts.htm#trn_fmt_name_0">trn</a> |
+		<a href="infmts.htm#txt_fmt_name_0">txt</a> |
+		<a href="infmts.htm#ctm_fmt_name_0">ctm</a>] "
+	  specifies the input file format from  the  set
+          of  input  formats  described above.  The default input
+          format is "<a href="infmts.htm#trn_fmt_name_0">trn</a>".  When reports are generated, the "hypfile"  name will be used to identify the origins of the
+          results.  If the "title" option is  used,  that  string
+          will be used instead.
+
+	  <p> The -h option may be used more than once to align multiple files.
+   </ul> <br>
+    <a name="option_i_name_0">-i [ wsj | atis | rm | swb | spu_id ] </a>
+   <ul>
+          The '-i' option defines how to interpret the  utterance
+          id's  used in the transcription input file format "<a href="infmts.htm#trn_fmt_name_0">trn</a>"
+          described above. This argument identifies the corpus of
+          the utterance id:
+	  <br>
+	  <br>
+	  <dl>
+	   <dt>
+             wsj -
+           <dd>
+               for Wall Street Journal and CSRNAB
+           <dt>
+             atis -
+           <dd>
+               for ATIS3
+           <dt>
+             rm | swb | spu_id -
+           <dd>
+               are synonyms which refer to generic  utterance  id
+               formats  whereby  the utterance id is made up of a
+               speaker code, followed by a hyphen or  underscore,
+               followed by an utterance number.
+	  </dl>
+	  <p>
+          This option is only required  for  aligning  transcript
+          inputs (<a href="infmts.htm#trn_fmt_name_0">trn</a>).
+
+	    <comment> TBD </comment>
+   </ul> <br>
+   <a name="option_P_name_0">-P</a>
+   <ul>
+	  Alignments are read from 'stdin' as  input  to  sclite.
+          The  format  of  the input must be in the "sgml" output
+          format, created either by '-o sgml' or by  piped  input
+          from another sclite utility.  No re-alignments are performed on the read in alignments, only scoring  reports
+          can be generated.
+   </ul> <br>
+    <a name="option_r_name_0">-r</a> reffile [
+<a href="infmts.htm#trn_fmt_name_0">trn</a> |
+<a href="infmts.htm#stm_fmt_name_0">stm</a> |
+<a href="infmts.htm#ctm_fmt_name_0">ctm</a> ]
+   <ul>
+          The '-r' option, a  required  argument,  specifies  the
+          input  reference  file which the hypothesis file(s) are
+          compared to.  The optional format field
+	  "[  <a href="infmts.htm#trn_fmt_name_0">trn</a> |
+		<a href="infmts.htm#stm_fmt_name_0">stm</a> |
+		<a href="infmts.htm#ctm_fmt_name_0">ctm</a> ] "
+	  field specifies the
+          input  file  format  from  the  set  of  input  formats
+          described above.  The default input format is "<a href="infmts.htm#trn_fmt_name_0">trn</a>".
+   </ul> <br>
+   <a name="option_R_name_0">-R</a>	
+   <ul>
+          Interpret the text symbols as a right-to-left language such as
+	  Arabic.  The default is to interpret text in a left-to-right fashion
+	  as in English.
+   </ul> <br>
+</ul>
+<a name="alignment_options_0"><strong> Alignment Options: </strong></a>
+<ul>
+   <a name="option_c_name_0">-c [ NOASCII DH ]</a>
+   <ul>
+          Chop up the words into separate characters before doing
+          the alignment.  It is generally not the practice of the
+          ARPA community to score at the  character  level.   The
+          intent  of  this option is to be able to score Mandarin
+          Chinese at the character level.  The  option  "NOASCII"
+          does  not  separate  characters if they are ASCII.  The
+          option "DH"  deletes  hyphens  from  the  ref  and  hyp
+          strings before alignment.  This option only works using
+          the DP alignment algorithm.  (-c & -d are exclusive)
+   </ul> <br>
+   <a name="option_d_name_0">-d</a>
+   <ul>
+          Use <a href="sclite.htm#gnu_diff_alignment_0">GNU diff</a>
+	  for alignments  rather  than  the  default
+          dynamic programming.  (-c & -d are exclusive)
+
+   </ul> <br>
+    <a name="option_F_name_0">-F</a>
+   <ul>
+	  Perform the  alignment  using  a  cost  function  which
+          counts  fragments,  words  ending  or  beginning with a
+          hyphen, as correct if the spelling  up  to  the  hyphen
+          matches the spelling of the hypothesized word.
+          Options -F and -d are exclusive.
+   </ul> <br>
+    <a name="option_L_name_0">-L LM</a>
+   <ul>
+
+Define the <A HREF="../src/slm_v2/doc/toolkit_documentation.html">
+CMU-Cambridge Statistical Language Modeling Toolkit v2</A> language
+mode file to be 'LM'.  The LM file must be created using the
+<A HREF="../src/slm_v2/doc/toolkit_documentation.html#idngram2lm">idngram2lm</A> program.
+(See the toolkit documentation details of how
+to make the language model.)  Currently, SCTK supports 1, 2 and 3-grams.
+
+<P> The language model is used to compute an individual weight for each
+word in the reference and hypothesis strings.  The weight is defined
+to be <i>Log<sub>2</sub>(P(word|context))</i>.  Each pair of aligned
+strings is considered to be independent, so therefore, there is
+no context for initial words in each pair.
+
+<P>
+The word-weights are used in two ways, first as a method to define word-to-word distances
+for <A href="sclite.htm#word-weight-mediated"> word-weight-mediated alignment </A>
+and second to perform <A HREF="sclite.htm#weighted-word-scoring"> 
+weighted word scoring </A>.
+
+<P> Out-of-Vocabulary words get the default weight of 20.0, and optionally
+deletable words get a default weight of 0.0.
+
+   </ul> <br>
+    <a name="option_m_name_0">-m [ ref | hyp ]</a>
+   <ul>
+          When scoring a hypothesis ctm file against a  reference
+          stm  file,  the  time  spans  of the two may not match,
+          (i.e. the start time of the first word/segment may  not
+          match  or the end time of the last word/segment may not
+          match).
+	<p>
+          When this option is used, the alignment phase of  scoring
+          ignores  any  segment  or  word  (depending on the
+          option(s) used) which is not in the time  span  of  the
+          opposite  file.   The time span of a file is defined to
+          be start time of the first time mark, to the  end  time
+          of the last time mark.
+	<p>
+          The "ref" option  reduces  the  reference  segments  to
+          those which are within the hypothesis file time span.
+	<p>
+          The "hyp" option reduces the hypothesis words to  those
+          which are within the reference file tiem span.
+	<p>
+          Both "ref" and "hyp" may be used simultaneously.
+	<p>
+          The  argument  -m  by  itself  defaults  to  '-m  ref'.
+          Exclusive with -d.
+
+   </ul> <br> 
+   <a name="option_s_name_0">-s</a>
+   <ul>
+          Do Case-sensitive alignments.  Otherwise all input is mapped to 
+	  a single case before scoring.  Of course, GB and UEX encode text
+	  data is never case-converted.
+   </ul> <br>
+    <a name="option_S_algo1_name_0">-S algo1 lexicon [ ASCIITOO ] </a>
+	<ul>
+          The '-S' option performs an inferred word  segmentation
+          alignment algorithm.  This  option
+          is intended to be used for the LVCSR evaluation of Mandarin
+	  Chinese.  A problem with scoring Mandarin at  the
+          word level is the lack of clearly defined words in Mandari
+	  text.  This option implements an algorithm which,
+          given  a word segmentation for the reference string and
+          a "lexicon" of legal words, computes  a  minimal  error
+          rate word alignment.  The algorithm is as follows:
+	  <br> <br>
+	  <ol type=1>
+          <li>  Convert  the  previously  word-segmented  reference
+          string into a word network.
+
+          <li> Covert the hypothesis text to a string  of  characters,
+	  each  character  representing  a word.  The data
+          represented is then convert to a network.
+<pre>
+ex.    * --- A --- * --- T --- * --- 0 --- *
+</pre>
+          <li> Consider all possible sequences of letters  through
+          the  network.   If  a  sequence creates a word which is
+          represented in the lexicon, add an arc to  the  network
+          representing the word.  The maximum characters per word
+          is limited to the maximum word length in the lexicon.
+<pre>
+                     ,-------- TO -------.
+                    /                     \
+ex.    * --- A --- * --- T --- * --- 0 --- *
+        \                     /
+         `------- AT --------'
+</pre>
+          <li> DP Align the reference and hypothesis networks, and
+          extract a minimal cost path.
+	  </ol>
+	  <p>
+          The supplied "lexicon" must be a sorted  list  of  word
+          records,  each  separated by a newline.  Only the first
+          column, separated by whitespace, is read  in  and  used
+          for  the  lexicon.   By  default,  the  algorithm  only
+          separates hypothesis characters  that  are  GB  or  EUC
+          encoded.   If  the  option  "ASCIITOO"  is  used, ASCII
+          hypothesis words are also converted  to  characters  in
+          step 2.
+	  <p>Exclusive with -d.	  
+	</ul><br>
+    <a name="option_S_algo2_name_0">-S algo2 lexicon [ ASCIITOO ] </a>
+   <ul>
+          Perform a similar algorithm as described in '-S alog1' except
+          the roles of the reference and hypothesis transcripts are reversed.
+          In this algorithm, the segmentation of the hypothesis text is held
+	  constant, while the reference transcript undergoes the process of 
+          of coversion to characters and arcs added to the network for words
+	  found in the lexicon.  Both "lexicon" and "ASCIITOO" have the same
+	  usage as in algo1.  
+	  <p>Exclusive with -d.	  
+   </ul> <br>
+    <a name="option_T_name_0">-T</a>
+   <ul>
+	  The '-T' option performs  time-mediated  string  alignments  rather  than  the  traditional  word alignments.
+          Currently, only alignments involving  two  "ctm"  files
+          can be aligned in this manner.  The <A HREF="sclite.htm#time-mediated"> main SCLITE</A>
+	  page describes time-mediated alignments.
+	<p>
+        Options -F and -d are exlcusive.
+   </ul> <br>
+    <a name="option_w_name_0">-w wwl_file</a>
+   <ul>
+
+Define the word-weight list (WWL) file to be 'wwl_file'.  The WWL file 
+defines an arbitrary weight for each word in the lexicon.  The weights are
+used in two ways, first as a method to define word-to-word distances
+for <A href="sclite.htm#weighted-word-scoring"> word-weight-mediated alignment </A>
+and second to perform <A HREF="sclite.htm#word-weight-scoring"> 
+weighted word scoring </A>.
+
+<P> If the supplied WWL filename is "unity", then no file of weights is read in.
+Instead, this is  a shorthand notation to use a weight of 1.0 for all words.
+
+<P> Optionally deletable words get a default weight of 0.0, (even if "unity"
+is supplied as the WWL filename).
+
+<P> The format of the WWL file is as follows. <BR><BR>
+<UL>
+
+	    Comment lines begin with
+	    double semi-colons.  The are two forms of "special" comment lines.  The
+	    first defines heading labels each column in the table.  The format for this
+	    line is: <br> <br>
+		<UL> ;; 'Headings' '&ltCOL1&gt' '&ltCOL2&gt' '&ltCOL3&gt' .... </UL> <BR>
+	    The label for column 1 should be "Word Spelling" since this column is the
+	    word's text.  The labels for columns 2 though 10 are defined by the user.
+	    <P>
+	    The second "special" comment line defines the default weight applied to
+	    out-of-vocabulary words if any exist.  The format for this line is:  <br> <br>
+		<UL> ;; Default missing weight '&ltnumber&gt' </UL> <br>
+	    'number' must be a floating point number. 
+	    <P> 
+	    The remainder of the file consists of word records, each word record separated by
+	    a newline.  The format of each record is: <br> <br>
+		<UL> &ltWORD_TEXT&gt &ltWEIGHT_1&gt &ltWEIGHT_2&gt . . . </UL> <br>
+	    There should be no whitespace at the beginning if the line, and the word
+	    texts can not include whitespace.  The remainder of the line are whitespace
+	    separated floating point weights, up to a maximum of 10 weights can 
+	    be assigned per word.
+	    <P>
+	    <B>NOTE: The current version of SCTK only utilizes the first weight.</B>
+	</UL>	
+   </ul> <br>
+</ul>
+
+<a name="output_options_0"><strong> Output Options: </strong></a>
+<ul>
+    <a name="option_f_name_0">-f level</a>
+	<ul>
+          As a well behaved program, reassure the user  that  the
+          program is continuing to perform it's task by providing
+          the user with  some  feedback.   The  feedback  levels,
+          defined by this option are: 0) no feedback, 1) processing feedback (i.e.  status of text loading  and  alignments);   2)  processing  feedback  plus  printing  out
+          aligned strings.  The feedback level defaults to  0  if
+          no  output options are specified using the '-o' option,
+          otherwise it defaults to 1.
+	</ul>
+<br>
+    <a name="option_l_name_0">-l width</a>
+	<ul>
+          When printing the text alignments for the output option
+          "pralign"   wrap   the  lines  at  "width"  characters.
+          Default is 1000 characters.
+	</ul>
+<br>
+    <a name="option_O_name_0">-O output_dir</a>
+	<ul>
+          Instead of writing the output files  to  the  directory
+          containing the <hypfile>, write them into the directory
+          "output_dir".  If the output directory does not  exist,
+          all reports will be written to stdout.
+	</ul>
+<br>
+    <a name="option_p_name_0">-p</a>
+	<ul>
+	  Write to standard out the resulting alignments so  they
+          can  be piped to another sclite utility.  The format of
+          the output is the same as '-o sgml'.  The options  sets
+          the feedback level, with '-f' to 0.
+	</ul>
+</ul>
+
+<a name="report_options_0"><strong> Scoring Report Options: </strong></a>
+
+<ul>
+   <a name="option_C_name_0">-C [ det | bhist | hist | none ] </a>
+	<ul>
+                Defines the output formats for analysis of confidence scores.
+		Currently, the only way to assign confidence estimates to 
+		each hyp word is through the <a href="infmts.htm#ctm_fmt_name_0">ctm</a> hypothesis file.
+                Default: 'none'  
+		<a href="outputs.htm#output_graphs_name_0"> Examples. </a>
+
+	</ul>
+<br>
+    <a name="option_n_name_0">-n name</a>
+	<ul>
+	        Writes all outputs using 'name' as a root filename instead of
+                'hypfile'.  For multiple hypothesis files, the root filename
+                is 'name'.'hypfile'
+	</ul>
+<br>
+    <a name="option_o_name_0">-o</a> [ sum | rsum | wws | pralign | all | sgml | stdout | lur | snt | spk | dtl | prf | none ]
+	<ul>
+          Defines the output scoring  reports  generated  by  the
+          sclite.  The possible reports are:
+	<br>
+	<br>
+	<dl>
+	<dt> 
+          sum -
+	<dd>
+               Produce a summary of speaker performance in  terms
+               of  Percents:  Correct,  Substitutions, Deletions,
+               Insertions, Word Errors and  Sentence  (or  Utterance)  errors.  System averages and speaker means,
+               medians and standard deviations are  computed  for
+               each  percentage.   If  the report is not going to
+               stdout, the output is  placed  in  a  file  called
+               "&lthypfile&gt.sys".   The  options  '-O'  and  '-n' can
+               change the destination of the output file.
+	  <a href="outputs.htm#outputs_sum_name_0">Example</a>
+	<dt> 
+          rsum -
+	<dd>
+               Produce a summary similar to 'sum'  except  output
+               word counts instead of percentages.  If the report
+               is not going to stdout, the output is placed in  a
+               file  called  <hypfile>.raw.  The options '-O' and
+               '-n' can change  the  destination  of  the  output
+               file.
+	  <a href="outputs.htm#outputs_rsum_name_0">Example</a>
+	<dt> 
+          wws -
+	<dd>
+               Produce a summary similar to 'sum'  except  output
+               <A HREF="sclite.htm#weighted-word-scoring">weighted word error</A> instead of word error.  If the report
+               is not going to stdout, the output is placed in  a
+               file  called  <hypfile>.wws.  The options '-O' and
+               '-n' can change  the  destination  of  the  output
+               file.
+	  <a href="outputs.htm#outputs_wws_name_0">Example</a>
+	<dt> 
+          pralign  - <br>
+          pra  -
+	<dd>
+               Produce a text copy of all the string  alignments.
+               If  the  report is not going to stdout, the output
+               is placed in a  file  called  <hypfile>.pra.   The
+               options  '-O'  and '-n' can change the destination
+               of the output file.  "pralign" and "pra" are synonyms.
+	  <a href="outputs.htm#outputs_pralign_name_0">Example</a>
+	<dt> 
+          prf  -
+	<dd>
+               Produce a text copy of all the string  alignments similar
+	       to that produced by "pralign" except, include all relevant
+	       information concerning the alignments.  That is, include
+	       in the output things like: word beginning and ending times,
+	       reference 
+	       segment beginning and ending times, and hypothesis word 
+	       confidence scores.
+	  <a href="outputs.htm#outputs_prf_name_0">Example</a>
+	<dt> 
+          all -
+	<dd>
+               Produces  the  three   reports:   
+		"<a href="outputs.htm#outputs_sum_name_0">sum</a>",
+		"<a href="outputs.htm#outputs_rsum_name_0">rsum</a>", and
+	        <a href="outputs.htm#outputs_pralign_name_0">pralign</a>"
+	<dt> 
+          stdout -
+	<dd>
+               Write all selected scoring reports to stdout.   If
+               the feedback level is not specified using the '-f'
+               option, the feedback level is set to 0.
+	<dt> 
+          sgml -
+	<dd>
+               Produce a dump of the text alignments in  an  sgml
+               notation.  The output consists of tags at the system, speaker, and sentence level.   Text  information  is  only  present  at the sentence level and
+               consists a comma separated  list  of  word  alignments.   The  word alignments can be either of the
+               following: C:"word" or  I:"word"  or  D:"word"  or
+               S:"word1","word2" for correct, insertion, deletion
+               and substitution respectively.  If the  report  is
+               not  going  to  stdout,  the output is placed in a
+               file called <hypfile>.sgml.  The options '-O'  and
+               '-n'  can  change  the  destination  of the output
+               file.
+	  <a href="outputs.htm#outputs_sgml_name_0">Example</a>
+	<dt> 
+          lur -
+	<dd>
+               Produce a Labeled  Utterance  Report  (LUR)  based
+               information in the reference STM file. (Note: only
+               reference  files  in  STM  format   support   this
+               option.)   The  LUR report is a report which tabulates overall error rate statistics and statistics
+               over arbitrary subsets of the reference data, e.g.
+               speaker's  sex,  audio  characteristics.   If  the
+               report  is  not  going  to  stdout,  the output is
+               placed  in  a  file  called  <hypfile>.lur.    The
+               options  '-O'  and '-n' can change the destination
+               of the output file.
+	  <a href="outputs.htm#outputs_lur_name_0">Example</a>
+	<dt> 
+          snt -
+ 	<dd>
+              Produce   a   scoring   report   file   for    all
+               utterance/segments  of  a  speaker.   Within  each
+               file, one per speaker,  is  a  by-utterance  error
+               analysis  which  contains: the aligned text, error
+               classification percentages and  other  statistics.
+               If  the  report is not going to stdout, the output
+               is     placed      in      a      file      called
+               <hypfile>.snt.<speaker_id>.   The options '-O' and
+               '-n' can change the destination and  name  of  the
+               output file.	 
+	  <a href="outputs.htm#outputs_snt_name_0">Example</a>
+	<dt> 
+          spk -
+	<dd>
+               Produce a  scoring  report  file  summarizing  the
+               errors  made  on the speaker's utterances.  Within
+               each file, one per speaker id, is a  summarization
+               of  utterance and word errors along with confusion
+               pair,  insertion,   deletion,   substitution   and
+               falsely recognized word lists.
+                 If the report is not going to stdout, the output
+               is      placed      in      a      file     called
+               <hypfile>.spk.<speaker_id>.  The options '-O'  and
+               '-n'  can  change  the destination and name of the
+               output file.
+	  <a href="outputs.htm#outputs_spk_name_0">Example</a>
+	<dt> 
+          dtl -
+	<dd>
+               Produce a scoring report in the same format as the
+               "spk"  report  using  statistics gathered over the
+               entire test set.  If the report is  not  going  to
+               stdout,  the  output  is  placed  in a file called
+               <hypfile>.dtl.  The  options  -'O'  and  '-n'  can
+               change  the  destination  and  name  of the output
+               file.
+	  <a href="outputs.htm#outputs_dtl_name_0">Example</a>
+	<dt> 
+          none -
+	<dd>
+               Produce no output reports.
+	</dl>
+	<p>
+          If this option is not specified,  the  default  options
+          are  "sum"  and  "stdout".   If the user wishes to have
+          reports other than "sum" to be written to stdout,  then
+          the  "stdout"  flag  must be used in the argument list.
+          Options that are duplicated, have the effect of nullification.   So  for  instance  using  the  options  "all
+          pralign" is equivalent to "sum rsum".
+
+                Defines the output reports. Default: 'sum stdout'
+	</ul>
+<br>
+<ul>
+
+</body>
+</html>

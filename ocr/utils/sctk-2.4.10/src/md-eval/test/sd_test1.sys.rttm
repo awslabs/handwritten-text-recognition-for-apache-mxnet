@@ -1,0 +1,25 @@
+;; mdeval sd_test1 sys rttm
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         child        spkr1s <NA>
+
+SEGMENT   sd_test1 1 10.0  5.0 <NA>         <NA>         spkr1s <NA>
+SPEAKER   sd_test1 1 10.0  1.9 <NA>         <NA>         spkr1s <NA>
+
+SPEAKER   sd_test1 1 13.1  1.9 <NA>         <NA>         spkr1s <NA>
+
+;;SPKR-INFO sd_test1 1 <NA> <NA> <NA>         unknown      spkr2s <NA>
+;;SEGMENT   sd_test1 1 15.0  5.0 <NA>         <NA>         spkr2s <NA>
+;;SPEAKER   sd_test1 1 15.0  5.0 <NA>         <NA>         spkr2s <NA>
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         adult_female spkr3s <NA>
+SEGMENT   sd_test1 1 20.0  4.0 <NA>         <NA>         spkr3s <NA>
+SPEAKER   sd_test1 1 20.0  4.0 <NA>         <NA>         spkr3s <NA>
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         adult_female spkr4s <NA>
+SEGMENT   sd_test1 1 24.1  1.8 <NA>         <NA>         spkr4s <NA>
+SPEAKER   sd_test1 1 24.1  1.8 <NA>         <NA>         spkr4s <NA>
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         adult_female spkr5s <NA>
+SEGMENT   sd_test1 1 26.1  1.8 <NA>         <NA>         spkr5s <NA>
+SPEAKER   sd_test1 1 26.1  1.8 <NA>         <NA>         spkr5s <NA>
+

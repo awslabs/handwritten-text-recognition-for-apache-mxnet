@@ -1,0 +1,748 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   lvc_hyp.notag.ctm
+
+Speakers: 
+    0:  INTER_SEGMENT_GAP
+    1:  2347-A
+    2:  2347-B
+    3:  3129-A
+    4:  3129-B
+
+Speaker sentences   0:  INTER_SEGMENT_GAP   #utts: 50
+id: (INTER_SEGMENT_GAP-000)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 1
+REF:  **** 
+HYP:  THEY 
+Eval: I    
+
+id: (INTER_SEGMENT_GAP-001)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-002)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-003)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-004)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-005)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-006)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 1
+REF:  ** 
+HYP:  IS 
+Eval: I  
+
+id: (INTER_SEGMENT_GAP-007)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-008)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-009)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-010)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-011)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-012)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-013)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-014)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-015)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-016)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-017)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-018)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-019)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-020)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 1
+REF:  ** 
+HYP:  TO 
+Eval: I  
+
+id: (INTER_SEGMENT_GAP-021)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-022)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-023)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-024)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-025)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-026)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 1
+REF:  **** 
+HYP:  KNOW 
+Eval: I    
+
+id: (INTER_SEGMENT_GAP-027)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 3
+REF:  *** *** ** 
+HYP:  BUT AND WE 
+Eval: I   I   I  
+
+id: (INTER_SEGMENT_GAP-028)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-029)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-030)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-031)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-032)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-033)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-034)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-035)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-036)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-037)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-038)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-039)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 1
+REF:  **** 
+HYP:  IT'S 
+Eval: I    
+
+id: (INTER_SEGMENT_GAP-040)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-041)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-042)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-043)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-044)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-045)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-046)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-047)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-048)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (INTER_SEGMENT_GAP-049)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 0 0 0 0
+
+Speaker sentences   1:  2347-A   #utts: 16
+id: (2347-A-000)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 4 3 0 0
+REF:  I'VE  UM    as far as i'm CONCERNED 
+HYP:  PRIDE ABOUT as far as i'm I         
+Eval: S     S                   S         
+
+id: (2347-A-001)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 15 4 1 2
+REF:  I   FIND THAT the young women have lost so much *** because they have become more aggressive -A and more **** DOMINATING 
+HYP:  ARE FINE BUT  the young women have lost so much TOO because they have become more aggressive ** and more JOBS NEEDING    
+Eval: S   S    S                                      I                                            D           I    S          
+
+id: (2347-A-002)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 17
+REF:  ** *** * ***** **** ***** ***** **** ****** ***** * ******** ******* *** *** *** ****** 
+HYP:  IT AND I THINK THAT COMES ABOUT FROM CALLED BEING A DEFINITE FACTORY AND THE JOB MARKET 
+Eval: I  I   I I     I    I     I     I    I      I     I I        I       I   I   I   I      
+
+id: (2347-A-003)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 4 2 0 0
+REF:  NOW i would like i YES   
+HYP:  WOW i would like i GUESS 
+Eval: S                  S     
+
+id: (2347-A-004)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 21 0
+REF:  I HAVE WORKED OUTSIDE OF THE HOME AND I WAS IN ONE OF THOSE SAFE OCCUPATIONS I WAS A SCHOOL TEACHER 
+HYP:  * **** ****** ******* ** *** **** *** * *** ** *** ** ***** **** *********** * *** * ****** ******* 
+Eval: D D    D      D       D  D   D    D   D D   D  D   D  D     D    D           D D   D D      D       
+
+id: (2347-A-005)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 13 4 0 1
+REF:  and we had one child when i TAUGHT for my two year ** CAREER uh we UM THEN 
+HYP:  and we had one child when i CALLED for my two year SO WE'RE  uh we OF THAT 
+Eval:                             S                      I  S            S  S    
+
+id: (2347-A-006)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 0 0 0 0
+
+id: (2347-A-007)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 17 4 0 3
+REF:  home WITH those children and raised those children and now that my husband **** **** HAS   RETIRED I    am back ** substitute teaching which 
+HYP:  home WHAT those children and raised those children and now that my husband SAYS FREE TIRED OF      FORD am back TO substitute teaching which 
+Eval:      S                                                                     I    I    S     S       S            I                            
+
+id: (2347-A-008)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 16 3 2 3
+REF:  if anyone HAS ever been involved in *** THAT some days it's fun and SOME DAYS      you wonder why you're * even ****** BOTHERING 
+HYP:  if anyone *** ever been involved in THE BACK some days it's fun and **** SOMETIMES you wonder why you're A even BOTHER RINGS     
+Eval:           D                         I   S                           D    S                               I      I      S         
+
+id: (2347-A-009)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 8 11 0 2
+REF:  BECAUSE YOUR fighting for your life but i AM   a ***** ** FIGHTER AND  I'VE  ALWAYS BEEN       A    DISCIPLINARIAN uh I'M 
+HYP:  PLOT    YEAR fighting for your life but i HAVE a FIRED OR NOT     FORD STOOD THE    DISCIPLINE AREA AND            uh I   
+Eval: S       S                                 S      I     I  S       S    S     S      S          S    S                 S   
+
+id: (2347-A-010)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 15 6 0 0
+REF:  i'm not REAL SURE  THAT the young girls OF     TODAY are being forced into the job market as many of THEM 
+HYP:  i'm not THAT SHORT BUT  the young girls THAT'S AND   are being forced into the job market as many of THE  
+Eval:         S    S     S                    S      S                                                     S    
+
+id: (2347-A-011)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 17 4 0 2
+REF:  *** **** IMPLY i think they're going IN  BY   choice yes and and i have no problem with THAT  but i think the 
+HYP:  MAN PLOT IT    i think they're going AND LIKE choice yes and and i have no problem with THERE but i think the 
+Eval: I   I    S                           S   S                                              S                     
+
+id: (2347-A-012)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 16 5 0 1
+REF:  MALE needs to be the *** DOMINANT person and i think too many OF   the young professional WIVES IN  our small town 
+HYP:  MAIL needs to be the JOB OF       person and i think too many DOES the young professional WIFE  AND our small town 
+Eval: S                    I   S                                    S                           S     S                  
+
+id: (2347-A-013)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 14 3 0 3
+REF:  OF five thousand UM   are not ** letting that happen ** they are very aggressive ** THEY'RE uh they almost 
+HYP:  TO five thousand LOSE are not TO letting that happen UH they are very aggressive UH THERE   uh they almost 
+Eval: S                S            I                      I                           I  S                      
+
+id: (2347-A-014)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 13 5 0 2
+REF:  have what i would call a KILLER E- KILLER BEE INSTINCT and **** **** they have to be in charge 
+HYP:  have what i would call a GIRLS  TO KILL   A   B        and THEY WAYS they have to be in charge 
+Eval:                          S      S  S      S   S            I    I                              
+
+id: (2347-A-015)
+File: 2347
+Channel: A
+Scores: (#C #S #D #I) 14 7 2 5
+REF:  AND and i TH- i think they lose a lot ** *** BY what i ****** CALL NEUTERING their husbands UHHUH oh sure ****** *** UHHUH HUH UHHUH 
+HYP:  UH  and i *** i think they lose a lot TO BUY OF what i CALLED NEW  DURING    their husbands ***** oh sure THAT'S THE WOMEN UH  THE   
+Eval: S         D                           I  I   S         I      S    S                        D             I      I   S     S   S     
+
+Speaker sentences   2:  2347-B   #utts: 20
+id: (2347-B-000)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 6 4 4 0
+REF:  uh ALL RIGHT UHHUH OH WELL i TEND i tend to agree UM IN   
+HYP:  uh *** ***** ***** ** HUH  i LIKE i tend to agree I  TEND 
+Eval:    D   D     D     D  S      S                    S  S    
+
+id: (2347-B-001)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 12 2 1 0
+REF:  some ways i think it's UM i think IF anything a lot of UM     the 
+HYP:  some ways i think it's ** i think OF anything a lot of FALLEN the 
+Eval:                        D          S                    S          
+
+id: (2347-B-002)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 13 3 1 3
+REF:  changes that have occurred *** UM   in some ways ***** *** THEY'RE for the better because I THINK women should 
+HYP:  changes that have occurred BUY THEM in some ways THERE FOR THE     for the better because * THAT  women should 
+Eval:                            I   S                 I     I   S                              D S                  
+
+id: (2347-B-003)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 14 5 2 0
+REF:  have A    choice AND i do believe in THE   BEING able to have A   choice AS to AS    far as what 
+HYP:  have MUCH choice *** i do believe in THOSE AND   able to have THE choice ** to THING far as what 
+Eval:      S           D                   S     S                  S          D     S                 
+
+id: (2347-B-004)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 15 11 2 0
+REF:  you would like to do WITH YOUR LIFE BUT BY  the same token and i KNOW THIS    for myself because I'VE WORKED AND         i've not WORKED UM  UM  
+HYP:  you would like to do IF   YOU  LIKE TO  BUY the same token and i **** NOTICED for myself because **** OF     WOODWORKING i've not HEARD  ALL AND 
+Eval:                      S    S    S    S   S                        D    S                          D    S      S                    S      S   S   
+
+id: (2347-B-005)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 21 11 1 5
+REF:  THAT IT  makes it **** *** UM   SOMETIMES IT  makes LIFE more difficult I     THINK when the roles now ** **** *** ARE LESS DEFINED as far as you know what UM   women should or should not be 
+HYP:  **** CAN makes it IT'S GOT SOME OF        THE makes LIKE more difficult WHOLE THING when the roles now OR WHAT BUT I   MEAN I       as far as you know what WITH women should or should not be 
+Eval: D    S            I    I   S    S         S         S                   S     S                        I  I    I   S   S    S                               S                                  
+
+id: (2347-B-006)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 29 6 2 0
+REF:  doing that it it UM it can make LIFE more difficult THERE ARE     more things to work OUT    i know when i was working YOU  know you have ALL THESE  problems with with the child care and 
+HYP:  doing that it it IT it can make LIKE more difficult ***** THEY'RE more things to work CHOICE i know when i was working THAT know you have *** ALWAYS problems with with the child care and 
+Eval:                  S              S                   D     S                           S                                S                  D   S                                            
+
+id: (2347-B-007)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 26 7 0 4
+REF:  and with *** ** UM    PLEASING you know your boss ON  THE job SO you have added ****** STRESSES from there and then you still have all the things that UM  that you need to do ** 
+HYP:  and with ALL OF THESE THINGS   you know your boss LOT OF  job DO you have added STRESS HE       from there and then you still have all the things that ALL that you need to do IT 
+Eval:          I   I  S     S                           S   S       S                 I      S                                                               S                       I  
+
+id: (2347-B-008)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 30 3 1 2
+REF:  AT home a-  and that doesn't change you know just because YOUR YOUR   going out of the house for so many hours a day ** doesn't **** uh make those other things go away AND the 
+HYP:  ** home and and that doesn't change you know just because AND  YOU'RE going out of the house for so many hours a day HE doesn't HAVE uh make those other things go away WAS the 
+Eval: D                                                         S    S                                                     I          I                                       S       
+
+id: (2347-B-009)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 24 6 1 2
+REF:  other responsibilities are still important UM  so UM   have you have you WORKED outside * also and *** UM  feel that IT that WELL HOW  do you feel as far as uh what 
+HYP:  other responsibilities are still important BUT so WELL have you have you WORK   outside I also and ALL AND feel that IS that **** WHAT do you feel as far as uh what 
+Eval:                                            S      S                      S              I          I   S             S       D    S                                  
+
+id: (2347-B-010)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 25 6 10 2
+REF:  would be a HAPPY medium or or what would you like to see YES UHHUH UHHUH YES YES right BUT YEAH OH I  b-  i think so YES UHHUH UHHUH yeah UHHUH well what do you think ******* * THOUGH uh UM   i 
+HYP:  would be a TWICE medium or or what would you like to see *** ***** ***** *** *** right *** **** SO UH but i think so *** ***** ***** yeah YEAH  well what do you think THEY'LL I MEAN   uh THEM i 
+Eval:            S                                             D   D     D     D   D         D   D    S  S                 D   D     D          S                            I       I S         S      
+
+id: (2347-B-011)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 24 17 0 6
+REF:  DON'T know i the the one problem i guess i have AND  maybe WHAT  so many women younger WOMEN NOW ARE      CHOOSING to ***** * ***** ** GO OUTSIDE IS   i feel that in general IN  this ** SOCIETY THAT BEING AT   home is ** NOT LOOKED 
+HYP:  IS    know i the the one problem i guess i have BEEN maybe TWICE so many women younger WHEN  THE NETWORKS USING    to STILL A WHILE SO I  DON'T   KNOW i feel that in general AND this IS FOGGY   THEY HAD   BEEN home is NO I'D LOVE   
+Eval: S                                               S          S                           S     S   S        S           I     I I     I  S  S       S                           S        I  S       S    S     S            I  S   S      
+
+id: (2347-B-012)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 24 9 4 0
+REF:  UPON  AS  UM  A   job in itself WHEREAS YOU KNOW YOU   HEAR A   LOT  of WOMEN that are home saying that it is a job in itself but i know when i was working and I i 
+HYP:  POINT OUT ALL THE job in itself ******* *** **** WHERE THE  THE ROLE of TO    that are home saying that it is a job in itself but i know when i was working and * i 
+Eval: S     S   S   S                 D       D   D    S     S    S   S       S                                                                                       D   
+
+id: (2347-B-013)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 9 3 2 2
+REF:  was A- an engineer SO I   i was always with **** **** MEN UM   and they 
+HYP:  was ** an engineer ** AND i was always with THEM THEY ALL THAT and they 
+Eval:     D              D  S                     I    I    S   S             
+
+id: (2347-B-014)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 21 20 0 4
+REF:  were single many of them and i TRIED to explain TO THEM WELL MY   DAY DOESN'T END WHEN I     LEAVE   AT  i used to ** LEAVE AT     THREE keep going TO  eleven at night and *** THEY had they *** ** USED to LOOK DOWN 
+HYP:  were single many of them and i TRY   to explain OF THE  MORE LIKE A   DOZEN   AND ONE  DON'T BELIEVE BUT i used to BE SO    PRETTY LIGHT keep going FOR eleven at night and DAY HE   had they USE TO WANT to AT   HOME 
+Eval:                                S                S  S    S    S    S   S       S   S    S     S       S             I  S     S      S                S                       I   S             I   I  S       S    S    
+
+id: (2347-B-015)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 8 18 15 1
+REF:  *** ON  women THAT WERE HOME THEY'D SAY  OH I   BET  you go home AND  you know AT LEAST YOU GET OUT OF HERE AT    THREE AND  YOU   CAN GO  home and PUT YOUR FEET UP AND  WATCH SOAP OPERAS AND I   
+HYP:  ALL THE women **** **** **** ****** WEAR ON THE TELL you go home THEM you know ** ***** *** *** *** ** **** WE'VE GOT   YOUR DRINK IN  THE home and *** **** **** ** THAT JUST  SO   I      AM  NOT 
+Eval: I   S         D    D    D    D      S    S  S   S                S             D  D     D   D   D   D  D    S     S     S    S     S   S            D   D    D    D  S    S     S    S      S   S   
+
+id: (2347-B-016)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 25 11 2 5
+REF:  used to be ** *** ***** INFURIATED BE-  because they really had no **** IDEA what was involved ONCE I  GOT home NOW taking care of them running them everywhere helping with homework THE BATH THE   WHOLE you KNOW everything *** UM   and 
+HYP:  used to be IF YOU WORRY A          GOOD because they really had no DOWN OF   what was involved WANT TO GO  home NOT taking care of them running them everywhere helping with homework *** **** ABOUT WELL  you TO   everything ALL THAT and 
+Eval:            I  I   I     S          S                               I    S                      S    S  S        S                                                                     D   D    S     S         S               I   S        
+
+id: (2347-B-017)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 28 8 2 5
+REF:  i think THAT    one reason THAT so many YOUNGER women ***** feel ** ** IM-   COMPELLED to go into A PROFESSION  is that they feel THAT if they STAY   home they are not RESPECTED and that *** ** being home is not a 
+HYP:  i think SOCIETY one reason TO   so many YOUNG   women DON'T feel IT IT COMES DOWN      to go into * PROFESSIONS is that they feel BUT  if they STAYED home they are not ********* and that AND AS being home is not a 
+Eval:         S                  S            S             I          I  I  S     S                    D S                             S            S                        D                  I   I                      
+
+id: (2347-B-018)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 26 10 1 3
+REF:  RESPECTABLE UM          POSITION   in society and there's a lot of truth to that AND i don't know how you feel i don't KNOW  how you *** FELT when you were home and **** ** WHAT KIND OF FEEDBACK you GOT  
+HYP:  REAL        COMFORTABLE OPPOSITION in society and there's a lot of truth to that *** i don't know how you feel i don't DON'T how you CAN TELL when you were home and WORK ON IT   AND  HE BACKED   you GLAD 
+Eval: S           S           S                                                        D                                     S             I   S                           I    I  S    S    S  S            S    
+
+id: (2347-B-019)
+File: 2347
+Channel: B
+Scores: (#C #S #D #I) 35 16 0 6
+REF:  BUT  i can see WITH THE younger MEN that they definitely *** ARE    looking down ** UPON women that are home *** and yet * BY    THE   SAME TOKEN i think some of it is * ****** JEALOUSY you you ONCE IN A    WHILE you hear them say things like i wish i had THE  choice you 
+HYP:  THAT i can see WHAT I   younger MAN that they definitely EAT CHOICE looking down MY LAWN women that are home AND and yet I DON'T THINK SO   GOOD  i think some of it is I ALWAYS SAY      you you WANT TO THAT WALL  you hear them say things like i wish i had THAT choice you 
+Eval: S              S    S           S                        I   S                   I  S                        I           I S     S     S    S                           I I      S                S    S  S    S                                                S               
+
+Speaker sentences   3:  3129-A   #utts: 5
+id: (3129-A-000)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 20 15 0 9
+REF:  yeah exactly **** ** OH  DID you do the * diagnosis ***** OR was it just an assumption ****** THAT that's probably the part that *** ** *** FAILED UHHUH UHHUH YEAH I KNOW UM    when working with *** THE UM    FLASHERS there IS  
+HYP:  yeah exactly WELL UH YOU DO  you do the A diagnosis NEVER OH was it just an assumption THAT'S AND  that's probably the part that THE UH HUH AND    SO    TO    SET  A FINE THOSE when working with SEE A   FLASH YEARS    there WAS 
+Eval:              I    I  S   S              I           I     S                            I      S                                  I   I  I   S      S     S     S    S S    S                       I   S   S     S              S   
+
+id: (3129-A-001)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 12 15 10 1
+REF:  UM usually A  a special **** FUSE that operates THE FLASHERS DO    YOU have a separate fuse for YOUR HIGH BEAM as opposed TO YOUR LOW BEAM DIAGRAM YEAH I DON'T EVEN KNOW IF   MY      CURRENT CARS HAVE  
+HYP:  SO usually IS a special EVER USE  that operates TO  FLASH    YEARS NOT have a separate fuse for YOU  I    MEAN as opposed ** **** *** **** ******* **** * ***** **** **** YEAR MOLDING THE     HI   GRAMS 
+Eval: S          S            I    S                  S   S        S     S                            S    S    S               D  D    D   D    D       D    D D     D    D    S    S       S       S    S     
+
+id: (3129-A-002)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 0 0 41 0
+REF:  A SEPARATE FUSE I KNOW SOMETIMES WHEN YOU THINK THERE ARE THINGS RUNNING WHILE THEY'RE AT THE SAME UNIT LIKE THE THE HEADLAMP YOU TEND TO THINK WELL THERE'S ONE FUSE OPERATING THE WHOLE THING BUT SOMETIMES THE EXTRA AMPERAGE THAT 
+HYP:  * ******** **** * **** ********* **** *** ***** ***** *** ****** ******* ***** ******* ** *** **** **** **** *** *** ******** *** **** ** ***** **** ******* *** **** ********* *** ***** ***** *** ********* *** ***** ******** **** 
+Eval: D D        D    D D    D         D    D   D     D     D   D      D       D     D       D  D   D    D    D    D   D   D        D   D    D  D     D    D       D   D    D         D   D     D     D   D         D   D     D        D    
+
+id: (3129-A-003)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 12 6 21 2
+REF:  A HIGH BEAM DRIVES AS OPPOSED TO A LOW BEAM REQUIRES THE USE OF A OF A MAYBE A HIGHER FUSE so that's a possibility IS    THIS A  A   mail order parts house that specializes ***** IN  IN  parts for ** 
+HYP:  * **** **** ****** ** ******* ** * *** **** ******** *** *** ** * ** * ***** * ****** **** so that's a possibility STILL THE  SO THE mail order parts house that specializes SMACK THE AND parts for OH 
+Eval: D D    D    D      D  D       D  D D   D    D        D   D   D  D D  D D     D D      D                            S     S    S  S                                           I     S   S             I  
+
+id: (3129-A-004)
+File: 3129
+Channel: A
+Scores: (#C #S #D #I) 17 18 1 29
+REF:  UM old imports ** WHO UM  so IT'S   not * J c *** WHITNEY or SOMEBODY  like that **** ****** * ** ** *** YEAH HAVE    YOU  FOUND ANY uh ** uh reliable import service people in ***** ***** ******* ** ** ** ** ***** *** ** *** ***** ***** the * METROPLEX OH YEAH UHHUH I'LL be ** **** ** ** **** DARNED UHHUH 
+HYP:  ** old imports DO THE AND so THAT'S not C D c WAS ME      or SOMETHING like that IT'S THAT'S A UH US THE THIS TONIGHT FROM TO    ME  uh SO uh reliable import service people in THOSE SMACK COMPLEX SO UH SO SO CALLS YET OF OUT FLASH SINCE the S A         I  SAW  OF    ALL  be TO TURN AT AT IT'S I      DON'T 
+Eval: D              I  S   S      S          I S   I   S          S                   I    I      I I  I  I   S    S       S    S     S      I                                       I     I     I       I  I  I  I  I     I   I  I   I     I         I S         S  S    S     S       I  I    I  I  I    S      S     
+
+Speaker sentences   4:  3129-B   #utts: 17
+id: (3129-B-000)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 19 9 1 0
+REF:  well TOM just tonight i was working on my car out of necessity AND i had uh uh HAD A    LONG  AGE   OLD problem of my BRIGHT  LIGHTS NOT 
+HYP:  well UM  just tonight i was working on my car out of necessity IN  i had uh uh *** HAVE ALONG WHICH GO  problem of my PRIVATE LIFE   UH  
+Eval:      S                                                         S               D   S    S     S     S                 S       S      S   
+
+id: (3129-B-001)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 14 11 4 0
+REF:  working uh this IS the TYPE of UM SWITCH where you FLIP THE THE LEVER THE   TURN  signal ON THE    column and WHEN i would UM PUT it in 
+HYP:  working uh this ** the TOP  of US WHICH  where you **** LET UH  SOME  NEVER TURNS signal ** ALMOST column and THEN i would ** THE it in 
+Eval:                 D      S       S  S                D    S   S   S     S     S            D  S                 S            D  S         
+
+id: (3129-B-002)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 19 13 3 1
+REF:  the BRIGHT  LIGHT position THE LIGHTS WOULD  go out completely which is even worse THAN THEM just not getting BRIGHT AND i had PRESUMED THAT      it was THE SWITCH AND  UM   this is * uh AN 
+HYP:  the PRIVATE LIFE  position BUT WHY    SHOULD go out completely which is even worse IN   THE  just not getting RIGHT  I   i had ******** PRESENTED it was *** SWEATS THAT THAT this is A uh ** 
+Eval:     S       S              S   S      S                                            S    S                     S      S         D        S                D   S      S    S            I    D  
+
+id: (3129-B-003)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 18 9 1 1
+REF:  older car it's a seventy ** TWO MG  so i had to mail order the part uh which i HAD DONE AND  TONIGHT I     WENT OUT AND uh at 
+HYP:  older car it's a seventy TV AND THE so i had to mail order the part uh which i *** THAT IT'S AT      NIGHT TIME IN  IT  uh at 
+Eval:                          I  S   S                                              D   S    S    S       S     S    S   S         
+
+id: (3129-B-004)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 22 17 4 1
+REF:  least HOOKED IN  THE    NEW  part ** ONLY TO DISCOVER that that apparently is not THE problem it's not IN the SWITCH BECAUSE IT     DOES THE SAME THING WITH THE NEW  switch so I'LL be faced with having to return that product uh AND 
+HYP:  least ****** BUT DIDN'T THEY part OH IT   IS EVER     that that apparently is not A   problem it's not ** the ****** ******* SWEETS DID  IS  THAT THAT  THEY DID KNOW switch so ALL  be faced with having to return that product uh IN  
+Eval:       D      S   S      S         I  S    S  S                                    S                    D      D      D       S      S    S   S    S     S    S   S              S                                                   S   
+
+id: (3129-B-005)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 15 15 3 5
+REF:  hoping that uh you know that they **** WILL    ACCEPT it ALTHOUGH IT'S BEEN REMOVED FROM the BOX it's ****** OBVIOUSLY NOT  BEEN REALLY used uh I HAD DONE what DIAGNOSIS i **** **** ** COULD primarily BY    
+HYP:  hoping that uh you know that they WERE LOOKING WAS    it ******** I    WAS  BETTER  BUT  the IT  it's HONEST ABOUT     THAT ON   THE    used uh * IT  THAN what ********* i KNOW BACK TO GOOD  primarily ABOUT 
+Eval:                                   I    S       S         D        S    S    S       S        S        I      S         S    S    S              D S   S         D           I    I    I  S               S     
+
+id: (3129-B-006)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 20 11 6 3
+REF:  LOOKING AT  A    wiring DIAGRAM THAT    i did have OF the car AND UM PRETTY MUCH   decided **** had to be the problem I    talked to one MECHANIC ABOUT it AND he ******* ** SUSPECTED THE SWITCH also uh but 
+HYP:  MAKING  YOU KNOW wiring BACK    RAMPANT i did have ** the car *** ** CARS   MESSED decided THAT had to be the problem I'VE talked to one ******** ***** it *** he SUSPECT IT THIS      WAY IT'S   also uh but 
+Eval: S       S   S           S       S                  D          D   D  S      S              I                          S                  D        D        D      I       I  S         S   S                  
+
+id: (3129-B-007)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 16 15 7 1
+REF:  I'VE not YEAH I REALLY    don't KNOW what the problem MIGHT BE   IT   it THE  OTHER   switch could be the MAIN switch ITSELF UM THAT TURNS      the LIGHTS ON OR  OFF     which is ON  the *** DASHBOARD UM  it 
+HYP:  I'M  not **** * GENERALLY don't **** what the problem ***** THAT THEY it YEAH THEY'RE switch could be the SAME switch ****** ** **** THEMSELVES the CARS   A  LOT OVERALL which is ALL the BAD SPORT     BUT it 
+Eval: S        D    D S               D                     D     S    S       S    S                           S           D      D  D    S              S      S  S   S                S       I   S         S      
+
+id: (3129-B-008)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 17 17 3 2
+REF:  MIGHT be tied into the *** EQUATION SOMEHOW BUT I  i don't know i should look at that I    DON'T remember ******* SEEING ONE IN   THE  UM  IN   the DIAGRAM BUT  I'LL   HAVE to go back AND LOOK AT   
+HYP:  ABOUT be tied into the SAY SUB      AND     UH  UH i don't know i should look at that THAT I'LL  remember SITTING ON     AND THEY YEAH AND THEY the ******* BACK BURNER UH   to go back *** **** THIS 
+Eval: S                      I   S        S       S   S                                     S    S              I       S      S   S    S    S   S        D       S    S      S               D   D    S    
+
+id: (3129-B-009)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 22 14 1 4
+REF:  THAT uhhuh yeah that's a good idea **** **** *** **** WHAT I'VE TYPICALLY FOUND WHEN that uh companies are pretty good about accepting RETURNS ON   products like THAT WHEN they're not NEEDED AFTER ALL AND  i hope THAT that's the 
+HYP:  A    uhhuh yeah that's a good idea WELL THAT BUT THEY SAY  OUT  OF        ONE   TO   that uh companies are pretty good about accepting RETURN  SOME products like FOR  BUT  they're not ****** THEY  DID HAVE i hope IT   that's the 
+Eval: S                                  I    I    I   I    S    S    S         S     S                                                      S       S                  S    S                D      S     S   S           S               
+
+id: (3129-B-010)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 19 16 4 1
+REF:  case this time right exactly *** IT'S OUT  OF UM  KANSAS SOMEWHERE NO  it's not I  ALSO got A   piece of CHROME   for THE the HOOD THAT THEY HAD indicated was THE RIGHT PART for this car but uh IT 
+HYP:  case this time right exactly AND NOW  THAT I  CAN IS     INTO      NOW it's not UM I'VE got HAD piece of PROBLEMS for *** the **** A    GOOD DAY indicated was *** DRIVE CAR  for this car but uh ** 
+Eval:                              I   S    S    S  S   S      S         S            S  S        S            S            D       D    S    S    S                 D   S     S                        D  
+
+id: (3129-B-011)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 24 13 4 1
+REF:  IS   not ***** EITHER it's OBVIOUSLY DOESN'T QUITE   FIT SO      IT   must be FOR      a different year SO I'LL HAVE TO TRY    TO     RETURN that as well well i had one person that i USED for years and years on this car 
+HYP:  IT'S not EIGHT THERE  it's ********* UH      OBVIOUS IT  DOESN'T THAT must be DISTRICT a different year ** **** **** OH THAT'S PROPER TERM   that as well well i had one person that i USE  for years and years on this car 
+Eval: S        I     S           D         S       S       S   S       S            S                         D  D    D    S  S      S      S                                                S                                    
+
+id: (3129-B-012)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 18 12 3 1
+REF:  last time i called HIM   back it turned out THAT HE HAD FURTHER specialized INSTEAD of uh all IMPORT CARS HE  HAS NARROWED IT down to WHERE HE   only WORKS  on uh ** german 
+HYP:  last time i called CARDS back it turned out **** ** YET FARTHER specialized THAT    of uh all IN     FOR  CAR IS  THERE    IS down to ***** VERY only WORKED on uh IN german 
+Eval:                    S                        D    D  S   S                   S                 S      S    S   S   S        S          D     S         S            I         
+
+id: (3129-B-013)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 19 15 8 0
+REF:  cars and german CARS i'm not sure THAT HE WORKS ON MUCH ELSE AT     ALL    BUT  HE     DOESN'T work ON BRITISH CARS  ANY   MORE    and GAVE ME THE   NAME  OF somebody else to take a look at it so UM  uh i 
+HYP:  cars and german PET  i'm not sure **** ** ***** ** **** THEY WORKED MYSELF THAT NOBODY DOES    work ** ALL     BRICK CARDS ANYMORE and **** ** EVERY NIGHT TO somebody else to take a look at it so I'M uh i 
+Eval:                 S                 D    D  D     D  D    S    S      S      S    S      S            D  S       S     S     S           D    D  S     S     S                                        S        
+
+id: (3129-B-014)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 20 11 6 1
+REF:  MAY   have to check with that person AS IT turns out that one THAT shop IS   NEAR WHERE I  now * work so I'LL UM i should BE ABLE TO TAKE IT   IN    and check that part OUT  
+HYP:  MIGHT have to check with that person ** IS turns out that one PET  shop THIS YEAR WE'RE UH now I work so **** I  i should ** **** ** **** HAVE TAKEN and check that part YEAH 
+Eval: S                                    D  S                     S         S    S    S     S      I         D    S           D  D    D  D    S    S                         S    
+
+id: (3129-B-015)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 21 9 3 0
+REF:  better job of saving THE RECEIPT because UM  i didn't take IT  in right away AND LET  A   whole year GO  by uh some of the buttons DIDN'T work RIGHT WHERE YOU      had 
+HYP:  better job of saving HER SEAT    because THE i didn't take AND in right away *** THAT THE whole year AGO by uh some of the buttons DID    work ***** ***** PROPERTY had 
+Eval:                      S   S               S                 S                 D   S    S              S                             S           D     D     S            
+
+id: (3129-B-016)
+File: 3129
+Channel: B
+Scores: (#C #S #D #I) 14 8 6 1
+REF:  TO   ACTUALLY physically hold THEM down TO GET IT to RECORD OR TO         PLAY      and as it turned out it had a **** FULL YEAR'S WARRANTY and i COULD 
+HYP:  THAT SHE      physically hold IT   down ** *** ** to ****** ** PITTSBURGH CORPORATE and as it turned out it had a FOUR YEAR FOR    THE      and i ***** 
+Eval: S    S                        S         D  D   D     D      D  S          S                                       I    S    S      S              D     
+
+

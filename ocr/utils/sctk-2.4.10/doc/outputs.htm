@@ -1,0 +1,1109 @@
+<!-- $Id: outputs.htm,v 1.1.1.1 2001/03/15 17:48:49 jon Exp $ -->
+<HTML><HEAD>
+<CENTER><TITLE>outout file formats</TITLE>
+</HEAD>
+<BODY></CENTER><p><hr>
+
+<H1> 
+<A NAME="outputs_name_0">
+<strong>
+<A HREF="sclite.htm#sclite_name_0">Sclite</A> Report and graph examples
+</A>
+</strong>
+</H1>
+<p>
+<a name="output_reports_name_0"> <strong> Output Reports </strong> </a>
+<ul>
+<A HREF="sclite.htm#sclite_name_0">Sclite</A> can create the
+following output file formats via the 
+'<a href="options.htm#option_o_name_0">-o</a>' option.
+<ul>
+<a href="outputs.htm#outputs_dtl_name_0"> <strong> dtl </strong> </a>,
+<a href="outputs.htm#outputs_lur_name_0"> <strong> lur </strong> </a>,
+<a href="outputs.htm#outputs_pralign_name_0"> <strong> pralign </strong> </a>,
+<a href="outputs.htm#outputs_prf_name_0"> <strong> prf </strong> </a>,
+<a href="outputs.htm#outputs_rsum_name_0"> <strong> rsum </strong> </a>,
+<a href="outputs.htm#outputs_sgml_name_0"> <strong> sgml </strong> </a>,
+<a href="outputs.htm#outputs_spk_name_0"> <strong> spk </strong> </a>,
+<a href="outputs.htm#outputs_snt_name_0"> <strong> snt </strong> </a>,
+<a href="outputs.htm#outputs_sum_name_0"> <strong> sum </strong> </a>, and
+<a href="outputs.htm#outputs_wws_name_0"> <strong> wws </strong> </a>
+</ul>
+<p>
+<a name="outputs_dtl_name_0"> <strong> dtl </strong> </a>
+<pre>
+DETAILED OVERALL REPORT FOR THE SYSTEM: ./csrnab.hyp
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          51
+ with errors                             74.5%   (  38)
+
+   with substitions                      70.6%   (  36)
+   with deletions                        13.7%   (   7)
+   with insertions                       33.3%   (  17)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   12.0%   ( 169)
+
+Percent Correct           =   89.8%   (1263)
+
+Percent Substitution      =    9.3%   ( 131)
+Percent Deletions         =    0.9%   (  12)
+Percent Insertions        =    1.8%   (  26)
+Percent Word Accuracy     =   88.0%
+
+
+Ref. words                =           (1406)
+Hyp. words                =           (1420)
+Aligned words             =           (1432)
+
+CONFUSION PAIRS                  Total                 (128)
+                                 With >=  1 occurances (128)
+
+   1:    3  ->  a ==> the
+   2:    2  ->  cott ==> khan
+   3:    1  ->  a ==> to
+   4:    1  ->  administered ==> minister
+   5:    1  ->  analysts ==> now
+   6:    1  ->  and ==> institutions
+   7:    1  ->  architect ==> arctic
+   8:    1  ->  are ==> sister
+   9:    1  ->  at ==> and
+  10:    1  ->  at ==> of
+  11:    1  ->  at ==> the
+  12:    1  ->  beaubien ==> and
+  13:    1  ->  botched ==> posh
+  14:    1  ->  brooks ==> brock's
+  15:    1  ->  certain ==> and
+  16:    1  ->  closed ==> close
+  17:    1  ->  collapses ==> collapse
+  18:    1  ->  correct ==> trek
+  19:    1  ->  costing ==> causing
+  20:    1  ->  cott ==> car
+  21:    1  ->  cott ==> card
+  22:    1  ->  cott ==> court
+  23:    1  ->  cott ==> koch
+  24:    1  ->  cott's ==> cops
+  25:    1  ->  cott's ==> cox
+  26:    1  ->  data ==> dated
+  27:    1  ->  data ==> state
+  28:    1  ->  day's ==> is
+  29:    1  ->  deadlines ==> airlines
+  30:    1  ->  direct ==> director
+  31:    1  ->  disheartening ==> tightening
+  32:    1  ->  do ==> widest
+  33:    1  ->  dollar ==> lure
+  34:    1  ->  drop ==> job
+  35:    1  ->  dropped ==> drop
+  36:    1  ->  effected ==> effective
+  37:    1  ->  effete ==> the
+  38:    1  ->  eight ==> mae
+  39:    1  ->  either ==> into
+  40:    1  ->  entrusted ==> infested
+  41:    1  ->  eyes ==> eye
+  42:    1  ->  fess ==> fast
+  43:    1  ->  fidelity ==> fidelity's
+  44:    1  ->  for ==> freed
+  45:    1  ->  fourteen ==> forty
+  46:    1  ->  frank ==> franc
+  47:    1  ->  from ==> of
+  48:    1  ->  from ==> ralston
+  49:    1  ->  fund ==> different
+  50:    1  ->  fund ==> find
+  51:    1  ->  fund ==> refund
+  52:    1  ->  funds ==> fund
+  53:    1  ->  funds ==> some
+  54:    1  ->  geoffrion ==> jaffray
+  55:    1  ->  have ==> it
+  56:    1  ->  in ==> and
+  57:    1  ->  incorrect ==> increased
+  58:    1  ->  institutional ==> or
+  59:    1  ->  it ==> they
+  60:    1  ->  its ==> it's
+  61:    1  ->  jamieson ==> and
+  62:    1  ->  jane ==> genius
+  63:    1  ->  june ==> aegean
+  64:    1  ->  kavafian ==> in
+  65:    1  ->  levesque ==> gobie
+  66:    1  ->  lied ==> relied
+  67:    1  ->  listed ==> illicit
+  68:    1  ->  mesmerized ==> rise
+  69:    1  ->  misinformation ==> information
+  70:    1  ->  money ==> many
+  71:    1  ->  newsletter's ==> newsletter
+  72:    1  ->  newspaper ==> byrd
+  73:    1  ->  newspapers ==> praised
+  74:    1  ->  normally ==> early
+  75:    1  ->  of ==> is
+  76:    1  ->  offsetting ==> setting
+  77:    1  ->  on ==> in
+  78:    1  ->  oneself ==> one
+  79:    1  ->  or ==> our
+  80:    1  ->  peeve ==> cut
+  81:    1  ->  peeve ==> plea
+  82:    1  ->  pencer ==> are
+  83:    1  ->  pencer ==> spencer
+  84:    1  ->  piece ==> p.'s
+  85:    1  ->  problem ==> pal
+  86:    1  ->  public ==> republic
+  87:    1  ->  reach ==> reached
+  88:    1  ->  report ==> reports
+  89:    1  ->  roman ==> roaming
+  90:    1  ->  self ==> south
+  91:    1  ->  shared ==> insured
+  92:    1  ->  shares' ==> shares
+  93:    1  ->  some ==> a
+  94:    1  ->  someone ==> on
+  95:    1  ->  standard ==> if
+  96:    1  ->  that ==> the
+  97:    1  ->  the ==> a
+  98:    1  ->  the ==> today
+  99:    1  ->  their ==> little
+ 100:    1  ->  their ==> the
+ 101:    1  ->  though ==> the
+ 102:    1  ->  three ==> south
+ 103:    1  ->  titan ==> tighten
+ 104:    1  ->  to ==> florida
+ 105:    1  ->  to ==> too
+ 106:    1  ->  to ==> two
+ 107:    1  ->  trillion ==> to
+ 108:    1  ->  two ==> trying
+ 109:    1  ->  united ==> night
+ 110:    1  ->  united ==> nine
+ 111:    1  ->  unknowingly ==> the
+ 112:    1  ->  unorthodox ==> orthodox
+ 113:    1  ->  unsavory ==> save
+ 114:    1  ->  up ==> that
+ 115:    1  ->  wasn't ==> was
+ 116:    1  ->  weil ==> wild
+ 117:    1  ->  were ==> and
+ 118:    1  ->  were ==> for
+ 119:    1  ->  while ==> was
+ 120:    1  ->  who ==> and
+ 121:    1  ->  who ==> to
+ 122:    1  ->  whose ==> was
+ 123:    1  ->  why ==> the
+ 124:    1  ->  withdrawals ==> which
+ 125:    1  ->  withdrew ==> jury
+ 126:    1  ->  would ==> but
+ 127:    1  ->  wright ==> write
+ 128:    1  ->  zero ==> seven
+     -------
+       131
+
+
+
+INSERTIONS                       Total                 (22)
+                                 With >=  1 occurances (22)
+
+   1:    3  ->  a
+   2:    2  ->  and
+   3:    2  ->  the
+   4:    1  ->  an
+   5:    1  ->  are
+   6:    1  ->  desk
+   7:    1  ->  funds'
+   8:    1  ->  if
+   9:    1  ->  jean
+  10:    1  ->  knowing
+  11:    1  ->  mafia
+  12:    1  ->  meant
+  13:    1  ->  mr.
+  14:    1  ->  ms.
+  15:    1  ->  mystery
+  16:    1  ->  new
+  17:    1  ->  of
+  18:    1  ->  on
+  19:    1  ->  pence
+  20:    1  ->  stunned
+  21:    1  ->  this
+  22:    1  ->  with
+     -------
+        26
+
+
+
+DELETIONS                        Total                 (10)
+                                 With >=  1 occurances (10)
+
+   1:    2  ->  and
+   2:    2  ->  were
+   3:    1  ->  at
+   4:    1  ->  blow
+   5:    1  ->  if
+   6:    1  ->  looked
+   7:    1  ->  of
+   8:    1  ->  pet
+   9:    1  ->  the
+  10:    1  ->  they
+     -------
+        12
+
+
+
+SUBSTITUTIONS                    Total                 (106)
+                                 With >=  1 occurances (106)
+
+   1:    6  ->  cott
+   2:    4  ->  a
+   3:    3  ->  at
+   4:    3  ->  fund
+   5:    3  ->  to
+   6:    2  ->  cott's
+   7:    2  ->  data
+   8:    2  ->  from
+   9:    2  ->  funds
+  10:    2  ->  peeve
+  11:    2  ->  pencer
+  12:    2  ->  the
+  13:    2  ->  their
+  14:    2  ->  united
+  15:    2  ->  were
+  16:    2  ->  who
+  17:    1  ->  administered
+  18:    1  ->  analysts
+  19:    1  ->  and
+  20:    1  ->  architect
+  21:    1  ->  are
+  22:    1  ->  beaubien
+  23:    1  ->  botched
+  24:    1  ->  brooks
+  25:    1  ->  certain
+  26:    1  ->  closed
+  27:    1  ->  collapses
+  28:    1  ->  correct
+  29:    1  ->  costing
+  30:    1  ->  day's
+  31:    1  ->  deadlines
+  32:    1  ->  direct
+  33:    1  ->  disheartening
+  34:    1  ->  do
+  35:    1  ->  dollar
+  36:    1  ->  drop
+  37:    1  ->  dropped
+  38:    1  ->  effected
+  39:    1  ->  effete
+  40:    1  ->  eight
+  41:    1  ->  either
+  42:    1  ->  entrusted
+  43:    1  ->  eyes
+  44:    1  ->  fess
+  45:    1  ->  fidelity
+  46:    1  ->  for
+  47:    1  ->  fourteen
+  48:    1  ->  frank
+  49:    1  ->  geoffrion
+  50:    1  ->  have
+  51:    1  ->  in
+  52:    1  ->  incorrect
+  53:    1  ->  institutional
+  54:    1  ->  it
+  55:    1  ->  its
+  56:    1  ->  jamieson
+  57:    1  ->  jane
+  58:    1  ->  june
+  59:    1  ->  kavafian
+  60:    1  ->  levesque
+  61:    1  ->  lied
+  62:    1  ->  listed
+  63:    1  ->  mesmerized
+  64:    1  ->  misinformation
+  65:    1  ->  money
+  66:    1  ->  newsletter's
+  67:    1  ->  newspaper
+  68:    1  ->  newspapers
+  69:    1  ->  normally
+  70:    1  ->  of
+  71:    1  ->  offsetting
+  72:    1  ->  on
+  73:    1  ->  oneself
+  74:    1  ->  or
+  75:    1  ->  piece
+  76:    1  ->  problem
+  77:    1  ->  public
+  78:    1  ->  reach
+  79:    1  ->  report
+  80:    1  ->  roman
+  81:    1  ->  self
+  82:    1  ->  shared
+  83:    1  ->  shares'
+  84:    1  ->  some
+  85:    1  ->  someone
+  86:    1  ->  standard
+  87:    1  ->  that
+  88:    1  ->  though
+  89:    1  ->  three
+  90:    1  ->  titan
+  91:    1  ->  trillion
+  92:    1  ->  two
+  93:    1  ->  unknowingly
+  94:    1  ->  unorthodox
+  95:    1  ->  unsavory
+  96:    1  ->  up
+  97:    1  ->  wasn't
+  98:    1  ->  weil
+  99:    1  ->  while
+ 100:    1  ->  whose
+ 101:    1  ->  why
+ 102:    1  ->  withdrawals
+ 103:    1  ->  withdrew
+ 104:    1  ->  would
+ 105:    1  ->  wright
+ 106:    1  ->  zero
+     -------
+       131
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (106)
+                                 With >=  1 occurances (106)
+
+   1:   10  ->  the
+   2:    7  ->  and
+   3:    3  ->  to
+   4:    3  ->  was
+   5:    2  ->  a
+   6:    2  ->  in
+   7:    2  ->  is
+   8:    2  ->  khan
+   9:    2  ->  of
+  10:    2  ->  south
+  11:    1  ->  aegean
+  12:    1  ->  airlines
+  13:    1  ->  arctic
+  14:    1  ->  are
+  15:    1  ->  brock's
+  16:    1  ->  but
+  17:    1  ->  byrd
+  18:    1  ->  car
+  19:    1  ->  card
+  20:    1  ->  causing
+  21:    1  ->  close
+  22:    1  ->  collapse
+  23:    1  ->  cops
+  24:    1  ->  court
+  25:    1  ->  cox
+  26:    1  ->  cut
+  27:    1  ->  dated
+  28:    1  ->  different
+  29:    1  ->  director
+  30:    1  ->  drop
+  31:    1  ->  early
+  32:    1  ->  effective
+  33:    1  ->  eye
+  34:    1  ->  fast
+  35:    1  ->  fidelity's
+  36:    1  ->  find
+  37:    1  ->  florida
+  38:    1  ->  for
+  39:    1  ->  forty
+  40:    1  ->  franc
+  41:    1  ->  freed
+  42:    1  ->  fund
+  43:    1  ->  genius
+  44:    1  ->  gobie
+  45:    1  ->  if
+  46:    1  ->  illicit
+  47:    1  ->  increased
+  48:    1  ->  infested
+  49:    1  ->  information
+  50:    1  ->  institutions
+  51:    1  ->  insured
+  52:    1  ->  into
+  53:    1  ->  it
+  54:    1  ->  it's
+  55:    1  ->  jaffray
+  56:    1  ->  job
+  57:    1  ->  jury
+  58:    1  ->  koch
+  59:    1  ->  little
+  60:    1  ->  lure
+  61:    1  ->  mae
+  62:    1  ->  many
+  63:    1  ->  minister
+  64:    1  ->  newsletter
+  65:    1  ->  night
+  66:    1  ->  nine
+  67:    1  ->  now
+  68:    1  ->  on
+  69:    1  ->  one
+  70:    1  ->  or
+  71:    1  ->  orthodox
+  72:    1  ->  our
+  73:    1  ->  p.'s
+  74:    1  ->  pal
+  75:    1  ->  plea
+  76:    1  ->  posh
+  77:    1  ->  praised
+  78:    1  ->  ralston
+  79:    1  ->  reached
+  80:    1  ->  refund
+  81:    1  ->  relied
+  82:    1  ->  reports
+  83:    1  ->  republic
+  84:    1  ->  rise
+  85:    1  ->  roaming
+  86:    1  ->  save
+  87:    1  ->  setting
+  88:    1  ->  seven
+  89:    1  ->  shares
+  90:    1  ->  sister
+  91:    1  ->  some
+  92:    1  ->  spencer
+  93:    1  ->  state
+  94:    1  ->  that
+  95:    1  ->  they
+  96:    1  ->  tighten
+  97:    1  ->  tightening
+  98:    1  ->  today
+  99:    1  ->  too
+ 100:    1  ->  trek
+ 101:    1  ->  trying
+ 102:    1  ->  two
+ 103:    1  ->  which
+ 104:    1  ->  widest
+ 105:    1  ->  wild
+ 106:    1  ->  write
+     -------
+       131
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+
+</pre>
+<p>
+<a name="outputs_lur_name_0"> <strong> lur </strong> </a>
+<pre>
+,-------------------------------------------------------------------.
+|                       System: ./lvc_hyp.ctm                       |
+|                                                                   |
+|   Overall          ->                  Overall Scores             |
+|   With Alt         ->         Segments Containing Alternations    |
+|    NO Alt          ->          Segments Without Alternations      |
+|                                                                   |
+|                                                                   |
+|-------------------------------------------------------------------|
+|             |                 ||           Alternations           |
+|-------------+-----------------++-----------------+----------------|
+|    SPKR     |     Overall     ||    With Alt     |     NO Alt     |
+|             |     #Wrd %WE    ||     #Wrd %WE    |    #Wrd %WE    |
+|-------------+-----------------++-----------------+----------------|
+|   2347-a    |  [250]     51.2 ||  [124]     45.2 | [126]     57.1 |
+|-------------+-----------------++-----------------+----------------|
+|   2347-b    |  [637]     43.6 ||  [442]     37.8 | [195]     56.9 |
+|-------------+-----------------++-----------------+----------------|
+|   3129-a    |  [188]     89.4 ||  [108]     90.7 |  [80]     87.5 |
+|-------------+-----------------++-----------------+----------------|
+|   3129-b    |  [704]     51.6 ||  [635]     52.0 |  [69]     47.8 |
+|===================================================================|
+| Set Sum/Avg | [1779]     52.7 || [1309]     49.7 | [470]     60.9 |
+|-------------+-----------------++-----------------+----------------|
+|    Mean     |  [444]     58.9 ||  [327]     56.4 | [117]     62.3 |
+|   StdDev    |  [263]     20.6 ||  [256]     23.6 |  [57]     17.3 |
+|             |                 ||                 |                |
+|   Median    |  [443]     51.4 ||  [283]     48.6 | [103]     57.0 |
+`-------------------------------------------------------------------'
+</pre>
+<p>
+<a name="outputs_pralign_name_0"> <strong> pralign </strong> </a>
+<pre>
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./csrnab.hyp
+
+Speakers: 
+    0:  4t0
+    1:  4t1
+    2:  4t2
+
+Speaker sentences   0:  4t0   #utts: 15
+id: (4t0c0201)
+Scores: (#C #S #D #I) 25 0 0 0
+REF:  as competition in the mutual fund business grows increasingly intense more players in the industry appear willing to sacrifice integrity in the name of performance 
+HYP:  as competition in the mutual fund business grows increasingly intense more players in the industry appear willing to sacrifice integrity in the name of performance 
+Eval:                                                                                                                                                                     
+
+id: (4t0c0202)
+Scores: (#C #S #D #I) 14 7 0 1
+REF:  FOR   A  TWO    TRILLION DOLLAR business built on public confidence this trend is **** DISHEARTENING AT  best and downright dangerous at worst 
+HYP:  FREED TO TRYING TO       LURE   business built on public confidence this trend is THIS TIGHTENING    AND best and downright dangerous at worst 
+Eval: S     S  S      S        S                                                        I    S             S                                         
+
+id: (4t0c0203)
+Scores: (#C #S #D #I) 34 3 1 1
+REF:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers *** UNSAVORY FUND   sales practices at banks and THE use of high risk derivative securities in NORMALLY conservative money market funds 
+HYP:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers AND SAVE     REFUND sales practices at banks and *** use of high risk derivative securities in EARLY    conservative money market funds 
+Eval:                                                                                                          I   S        S                                   D                                             S                                        
+</pre>
+<p>
+<a name="outputs_prf_name_0"> <strong> prf </strong> </a>
+<pre>
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./lvc_hyp.ctm
+Ref file:      ./lvc_ref.stm
+Hyp file:      ./lvc_hyp.ctm
+
+Speaker Count: 4
+Speakers: 
+    0:  2347-a
+    1:  2347-b
+    2:  3129-a
+    3:  3129-b
+
+Utterance Label definitions:
+    Category: id: "0" title: "" description: ""
+    Category: id: "1" title: "Alternations" description: "Segments W or W/O Alternations"
+    Label: id: "O" title: "Overall" description: "Overall Scores"
+    Label: id: "WA" title: "With Alt" description: "Segments Containing Alternations"
+    Label: id: "NA" title: "NO Alt" description: "Segments Without Alternations"
+
+Speaker sentences   0:  2347-a   #utts: 16
+id: (2347-a-000)
+Labels: <o,wa>
+Scores: (#C #S #D #I) 4 3 0 1
+Ref times: t1= 1.06 t2= 3.47
+REF:  ****    I'VE    UM      as      far     as      i'm     CONCERNED 
+HYP:  THEY    PRIDE   ABOUT   as      far     as      i'm     I         
+H_T1: 0.05    1.02    1.65    1.94    2.12    2.38    2.48    2.83      
+H_T2: 0.29    1.31    1.93    2.11    2.37    2.47    2.82    3.47      
+Eval: I       S       S                                       S         
+
+id: (2347-a-001)
+Labels: <o,wa>
+Scores: (#C #S #D #I) 15 4 0 2
+Ref times: t1= 3.47 t2= 11.04
+REF:  I       FIND    THAT    the     young   women   have    lost    so      much    ***     because they    have    become  more    aggressive and     more    ****    DOMINATING 
+HYP:  ARE     FINE    BUT     the     young   women   have    lost    so      much    TOO     because they    have    become  more    aggressive and     more    JOBS    NEEDING    
+H_T1: 3.48    3.69    4.17    4.38    4.44    4.81    5.18    5.46    5.87    6.18    7.28    7.42    7.99    8.15    8.32    8.78    9.20       9.81    10.02   10.22   10.60      
+H_T2: 3.68    4.16    4.37    4.43    4.80    5.17    5.45    5.86    6.17    6.81    7.41    7.98    8.14    8.31    8.77    9.19    9.80       10.01   10.21   10.59   11.05      
+Eval: S       S       S                                                               I                                                                          I       S          
+
+id: (2347-a-002)
+Labels: <o,na>
+Scores: (#C #S #D #I) 0 0 0 17
+Ref times: t1= 11.06 t2= 15.84
+REF:  **      ***     *       *****   ****    *****   *****   ****    ******  *****   *       ******** ******* ***     ***     ***     ******  
+HYP:  IT      AND     I       THINK   THAT    COMES   ABOUT   FROM    CALLED  BEING   A       DEFINITE FACTORY AND     THE     JOB     MARKET  
+H_T1: 11.06   11.14   11.28   11.40   11.71   11.93   12.33   12.68   13.01   13.32   13.73   13.80    14.33   14.90   15.06   15.12   15.47   
+H_T2: 11.13   11.27   11.39   11.70   11.92   12.32   12.67   13.00   13.31   13.72   13.79   14.32    14.89   15.05   15.11   15.46   15.83   
+Eval: I       I       I       I       I       I       I       I       I       I       I       I        I       I       I       I       I       
+</pre>
+<p>
+<a name="outputs_rsum_name_0"> <strong> rsum </strong> </a>
+<pre>
+
+
+
+                     SYSTEM SUMMARY PERCENTAGES by SPEAKER                      
+
+,--------------------------------------------------------------.
+|                         ./csrnab.hyp                         |
+|--------------------------------------------------------------|
+| SPKR | # Snt # Wrd | Corr    Sub    Del    Ins    Err  S.Err |
+|------+-------------+-----------------------------------------|
+| 4t0  |   15    458 |  385     64      9     12     85     13 |
+|------+-------------+-----------------------------------------|
+| 4t1  |   21    544 |  509     32      3      4     39     12 |
+|------+-------------+-----------------------------------------|
+| 4t2  |   15    404 |  369     35      0     10     45     13 |
+|==============================================================|
+| Sum  |   51   1406 | 1263    131     12     26    169     38 |
+|==============================================================|
+| Mean | 17.0  468.7 |421.0   43.7    4.0    8.7   56.3   12.7 |
+| S.D. |  3.5   70.6 | 76.6   17.7    4.6    4.2   25.0    0.6 |
+|Median| 15.0  458.0 |385.0   35.0    3.0   10.0   45.0   13.0 |
+`--------------------------------------------------------------'
+</pre>
+<p>
+<a name="outputs_sgml_name_0"> <strong> sgml </strong> </a>
+<pre>
+&ltSYSTEM title="csrnab.hyp" ref_fname="csrnab.ref" hyp_fname="csrnab.hyp" creation_date="Thu Oct 17 10:41:57 1996" format="2.0"&gt
+&ltSPEAKER id="4t0"&gt
+&ltPATH id="(4t0c0201)" word_cnt="25"&gt
+C,"as","as":C,"competition","competition":C,"in","in":C,"the","the":C,"mutual","mutual":C,"fund","fund":C,"business","business":C,"grows","grows":C,"increasingly","increasingly":C,"intense","intense":C,"more","more":C,"players","players":C,"in","in":C,"the","the":C,"industry","industry":C,"appear","appear":C,"willing","willing":C,"to","to":C,"sacrifice","sacrifice":C,"integrity","integrity":C,"in","in":C,"the","the":C,"name","name":C,"of","of":C,"performance","performance"
+&lt/PATH&gt
+&ltPATH id="(4t0c0202)" word_cnt="22"&gt
+S,"for","freed":S,"a","to":S,"two","trying":S,"trillion","to":S,"dollar","lure":C,"business","business":C,"built","built":C,"on","on":C,"public","public":C,"confidence","confidence":C,"this","this":C,"trend","trend":C,"is","is":I,,"this":S,"disheartening","tightening":S,"at","and":C,"best","best":C,"and","and":C,"downright","downright":C,"dangerous","dangerous":C,"at","at":C,"worst","worst"
+&lt/PATH&gt
+&ltPATH id="(4t0c0203)" word_cnt="39"&gt
+C,"so","so":C,"far","far":C,"this","this":C,"year","year":C,"the","the":C,"industry","industry":C,"slide","slide":C,"has","has":C,"been","been":C,"apparent","apparent":C,"in","in":C,"allegations","allegations":C,"of","of":C,"insider","insider":C,"trading","trading":C,"by","by":C,"fund","fund":C,"managers","managers":I,,"and":S,"unsavory","save":S,"fund","refund":C,"sales","sales":C,"practices","practices":C,"at","at":C,"banks","banks":C,"and","and":D,"the",:C,"use","use":C,"of","of":C,"high","high":C,"risk","risk":C,"derivative","derivative":C,"securities","securities":C,"in","in":S,"normally","early":C,"conservative","conservative":C,"money","money":C,"market","market":C,"funds","funds"
+&lt/PATH&gt
+&lt/SPEAKER&gt
+&lt/SYSTEM&gt
+</pre>
+<p>
+<a name="outputs_snt_name_0"> <strong> snt </strong> </a>
+<pre>
+===============================================================================
+
+                     SENTENCE LEVEL REPORT FOR THE SYSTEM:
+    Name: ./csrnab.hyp
+
+===============================================================================
+
+
+SPEAKER 4t0
+id: (4t0c0201)
+Scores: (#C #S #D #I) 25 0 0 0
+REF:  as competition in the mutual fund business grows increasingly intense more players in the industry appear 
+HYP:  as competition in the mutual fund business grows increasingly intense more players in the industry appear 
+Eval:                                                                                                           
+
+>> REF:  willing to sacrifice integrity in the name of performance 
+>> HYP:  willing to sacrifice integrity in the name of performance 
+>> Eval:                                                           
+
+Correct               =  100.0%   25   ( 25)
+Substitutions         =    0.0%    0   (  0)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    0.0%    0   (  0)
+
+Errors                =    0.0%    0   (  0)
+
+Ref. words            =           25   ( 25)
+Hyp. words            =           25   ( 25)
+Aligned words         =           25   ( 25)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0202)
+Scores: (#C #S #D #I) 14 7 0 1
+REF:  FOR   A  TWO    TRILLION DOLLAR business built on public confidence this trend is **** DISHEARTENING AT  best 
+HYP:  FREED TO TRYING TO       LURE   business built on public confidence this trend is THIS TIGHTENING    AND best 
+Eval: S     S  S      S        S                                                        I    S             S        
+
+>> REF:  and downright dangerous at worst 
+>> HYP:  and downright dangerous at worst 
+>> Eval:                                  
+
+Correct               =   66.7%   14   ( 39)
+Substitutions         =   33.3%    7   (  7)
+Deletions             =    0.0%    0   (  0)
+Insertions            =    4.8%    1   (  1)
+
+Errors                =   38.1%    8   (  8)
+
+Ref. words            =           21   ( 46)
+Hyp. words            =           22   ( 47)
+Aligned words         =           22   ( 47)
+
+-------------------------------------------------------------------------------
+
+id: (4t0c0203)
+Scores: (#C #S #D #I) 34 3 1 1
+REF:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers *** 
+HYP:  so far this year the industry slide has been apparent in allegations of insider trading by fund managers AND 
+Eval:                                                                                                          I   
+
+>> REF:  UNSAVORY FUND   sales practices at banks and THE use of high risk derivative securities in NORMALLY 
+>> HYP:  SAVE     REFUND sales practices at banks and *** use of high risk derivative securities in EARLY    
+>> Eval: S        S                                   D                                             S        
+
+>> REF:  conservative money market funds 
+>> HYP:  conservative money market funds 
+>> Eval:                                 
+
+Correct               =   89.5%   34   ( 73)
+Substitutions         =    7.9%    3   ( 10)
+Deletions             =    2.6%    1   (  1)
+Insertions            =    2.6%    1   (  2)
+
+Errors                =   13.2%    5   ( 13)
+
+Ref. words            =           38   ( 84)
+Hyp. words            =           38   ( 85)
+Aligned words         =           39   ( 86)
+</pre>
+<p>
+<a name="outputs_sum_name_0"> <strong> sum </strong> </a>
+<pre>
+              SYSTEM SUMMARY PERCENTAGES by SPEAKER 
+
+,----------------------------------------------------------------.
+|                          ./csrnab.hyp                          |
+|----------------------------------------------------------------|
+| SPKR   | # Snt # Wrd | Corr    Sub    Del    Ins    Err  S.Err |
+|--------+-------------+-----------------------------------------|
+| 4t0    |   15    458 | 84.1   14.0    2.0    2.6   18.6   86.7 |
+|--------+-------------+-----------------------------------------|
+| 4t1    |   21    544 | 93.6    5.9    0.6    0.7    7.2   57.1 |
+|--------+-------------+-----------------------------------------|
+| 4t2    |   15    404 | 91.3    8.7    0.0    2.5   11.1   86.7 |
+|================================================================|
+| Sum/Avg|   51   1406 | 89.8    9.3    0.9    1.8   12.0   74.5 |
+|================================================================|
+|  Mean  | 17.0  468.7 | 89.7    9.5    0.8    1.9   12.3   76.8 |
+|  S.D.  |  3.5   70.6 |  5.0    4.1    1.0    1.0    5.8   17.0 |
+| Median | 15.0  458.0 | 91.3    8.7    0.6    2.5   11.1   86.7 |
+`----------------------------------------------------------------'
+</pre>
+
+Or, when word confidence scores are present: 
+
+<pre>
+
+                     SYSTEM SUMMARY PERCENTAGES by SPEAKER                      
+
+  ,-------------------------------------------------------------------------.
+  |                             ./lvc_hypc.ctm                              |
+  |-------------------------------------------------------------------------|
+  | SPKR   | # Snt # Wrd | Corr    Sub    Del    Ins    Err  S.Err |  NCE   |
+  |--------+-------------+-----------------------------------------+--------|
+  | 2347-a |   16    250 | 66.4   24.0    9.6   17.6   51.2   93.8 |  0.256 |
+  |--------+-------------+-----------------------------------------+--------|
+  | 2347-b |   20    637 | 64.8   27.5    7.7    8.5   43.6  100.0 |  0.174 |
+  |--------+-------------+-----------------------------------------+--------|
+  | 3129-a |    5    188 | 33.0   28.2   38.8   22.3   89.4  100.0 |  0.145 |
+  |--------+-------------+-----------------------------------------+--------|
+  | 3129-b |   20    704 | 52.8   35.8   11.4    4.4   51.6  100.0 |  0.197 |
+  |=========================================================================|
+  | Sum/Avg|   61   1779 | 56.9   30.4   12.7    9.6   52.7   98.4 |  0.205 |
+  |=========================================================================|
+  |  Mean  | 15.3  444.8 | 54.3   28.9   16.9   13.2   58.9   98.4 |  0.193 |
+  |  S.D.  |  7.1  263.3 | 15.4    5.0   14.7    8.2   20.6    3.1 |  0.047 |
+  | Median | 18.0  443.5 | 58.8   27.8   10.5   13.0   51.4  100.0 |  0.186 |
+  `-------------------------------------------------------------------------'
+
+</pre>
+
+<p>
+<a name="outputs_spk_name_0"> <strong> spk </strong> </a>
+<pre>
+SCORING FOR SPEAKER: 4t0
+     of ./csrnab.hyp
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                          15
+ with errors                             86.7%   (  13)
+
+   with substitions                      86.7%   (  13)
+   with deletions                        26.7%   (   4)
+   with insertions                       46.7%   (   7)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   18.6%   (  85)
+
+Percent Correct           =   84.1%   ( 385)
+
+Percent Substitution      =   14.0%   (  64)
+Percent Deletions         =    2.0%   (   9)
+Percent Insertions        =    2.6%   (  12)
+Percent Word Accuracy     =   81.4%
+
+
+Ref. words                =           ( 458)
+Hyp. words                =           ( 461)
+Aligned words             =           ( 470)
+
+CONFUSION PAIRS                  Total                 (64)
+                                 With >=  1 occurances (64)
+
+   1:    1  ->  a ==> to
+   2:    1  ->  administered ==> minister
+   3:    1  ->  at ==> and
+   4:    1  ->  at ==> the
+   5:    1  ->  botched ==> posh
+   6:    1  ->  correct ==> trek
+   7:    1  ->  costing ==> causing
+   8:    1  ->  data ==> dated
+   9:    1  ->  day's ==> is
+  10:    1  ->  deadlines ==> airlines
+  11:    1  ->  direct ==> director
+  12:    1  ->  disheartening ==> tightening
+  13:    1  ->  dollar ==> lure
+  14:    1  ->  effected ==> effective
+  15:    1  ->  eight ==> mae
+  16:    1  ->  either ==> into
+  17:    1  ->  entrusted ==> infested
+  18:    1  ->  eyes ==> eye
+  19:    1  ->  fess ==> fast
+  20:    1  ->  fidelity ==> fidelity's
+  21:    1  ->  for ==> freed
+  22:    1  ->  from ==> of
+  23:    1  ->  fund ==> different
+  24:    1  ->  fund ==> find
+  25:    1  ->  fund ==> refund
+  26:    1  ->  funds ==> some
+  27:    1  ->  have ==> it
+  28:    1  ->  incorrect ==> increased
+  29:    1  ->  it ==> they
+  30:    1  ->  its ==> it's
+  31:    1  ->  jamieson ==> and
+  32:    1  ->  jane ==> genius
+  33:    1  ->  lied ==> relied
+  34:    1  ->  listed ==> illicit
+  35:    1  ->  money ==> many
+  36:    1  ->  newspaper ==> byrd
+  37:    1  ->  newspapers ==> praised
+  38:    1  ->  normally ==> early
+  39:    1  ->  problem ==> pal
+  40:    1  ->  report ==> reports
+  41:    1  ->  self ==> south
+  42:    1  ->  shared ==> insured
+  43:    1  ->  some ==> a
+  44:    1  ->  someone ==> on
+  45:    1  ->  standard ==> if
+  46:    1  ->  the ==> a
+  47:    1  ->  the ==> today
+  48:    1  ->  their ==> little
+  49:    1  ->  though ==> the
+  50:    1  ->  titan ==> tighten
+  51:    1  ->  to ==> florida
+  52:    1  ->  to ==> too
+  53:    1  ->  to ==> two
+  54:    1  ->  trillion ==> to
+  55:    1  ->  two ==> trying
+  56:    1  ->  unknowingly ==> the
+  57:    1  ->  unsavory ==> save
+  58:    1  ->  up ==> that
+  59:    1  ->  wasn't ==> was
+  60:    1  ->  were ==> and
+  61:    1  ->  were ==> for
+  62:    1  ->  who ==> and
+  63:    1  ->  who ==> to
+  64:    1  ->  would ==> but
+     -------
+        64
+
+
+
+INSERTIONS                       Total                 (12)
+                                 With >=  1 occurances (12)
+
+   1:    1  ->  a
+   2:    1  ->  and
+   3:    1  ->  funds'
+   4:    1  ->  jean
+   5:    1  ->  knowing
+   6:    1  ->  mr.
+   7:    1  ->  mystery
+   8:    1  ->  new
+   9:    1  ->  on
+  10:    1  ->  stunned
+  11:    1  ->  the
+  12:    1  ->  this
+     -------
+        12
+
+
+
+DELETIONS                        Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:    2  ->  and
+   2:    1  ->  at
+   3:    1  ->  blow
+   4:    1  ->  if
+   5:    1  ->  looked
+   6:    1  ->  the
+   7:    1  ->  they
+   8:    1  ->  were
+     -------
+         9
+
+
+
+SUBSTITUTIONS                    Total                 (56)
+                                 With >=  1 occurances (56)
+
+   1:    3  ->  fund
+   2:    3  ->  to
+   3:    2  ->  at
+   4:    2  ->  the
+   5:    2  ->  were
+   6:    2  ->  who
+   7:    1  ->  a
+   8:    1  ->  administered
+   9:    1  ->  botched
+  10:    1  ->  correct
+  11:    1  ->  costing
+  12:    1  ->  data
+  13:    1  ->  day's
+  14:    1  ->  deadlines
+  15:    1  ->  direct
+  16:    1  ->  disheartening
+  17:    1  ->  dollar
+  18:    1  ->  effected
+  19:    1  ->  eight
+  20:    1  ->  either
+  21:    1  ->  entrusted
+  22:    1  ->  eyes
+  23:    1  ->  fess
+  24:    1  ->  fidelity
+  25:    1  ->  for
+  26:    1  ->  from
+  27:    1  ->  funds
+  28:    1  ->  have
+  29:    1  ->  incorrect
+  30:    1  ->  it
+  31:    1  ->  its
+  32:    1  ->  jamieson
+  33:    1  ->  jane
+  34:    1  ->  lied
+  35:    1  ->  listed
+  36:    1  ->  money
+  37:    1  ->  newspaper
+  38:    1  ->  newspapers
+  39:    1  ->  normally
+  40:    1  ->  problem
+  41:    1  ->  report
+  42:    1  ->  self
+  43:    1  ->  shared
+  44:    1  ->  some
+  45:    1  ->  someone
+  46:    1  ->  standard
+  47:    1  ->  their
+  48:    1  ->  though
+  49:    1  ->  titan
+  50:    1  ->  trillion
+  51:    1  ->  two
+  52:    1  ->  unknowingly
+  53:    1  ->  unsavory
+  54:    1  ->  up
+  55:    1  ->  wasn't
+  56:    1  ->  would
+     -------
+        64
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (56)
+                                 With >=  1 occurances (56)
+
+   1:    4  ->  and
+   2:    3  ->  the
+   3:    3  ->  to
+   4:    2  ->  a
+   5:    1  ->  airlines
+   6:    1  ->  but
+   7:    1  ->  byrd
+   8:    1  ->  causing
+   9:    1  ->  dated
+  10:    1  ->  different
+  11:    1  ->  director
+  12:    1  ->  early
+  13:    1  ->  effective
+  14:    1  ->  eye
+  15:    1  ->  fast
+  16:    1  ->  fidelity's
+  17:    1  ->  find
+  18:    1  ->  florida
+  19:    1  ->  for
+  20:    1  ->  freed
+  21:    1  ->  genius
+  22:    1  ->  if
+  23:    1  ->  illicit
+  24:    1  ->  increased
+  25:    1  ->  infested
+  26:    1  ->  insured
+  27:    1  ->  into
+  28:    1  ->  is
+  29:    1  ->  it
+  30:    1  ->  it's
+  31:    1  ->  little
+  32:    1  ->  lure
+  33:    1  ->  mae
+  34:    1  ->  many
+  35:    1  ->  minister
+  36:    1  ->  of
+  37:    1  ->  on
+  38:    1  ->  pal
+  39:    1  ->  posh
+  40:    1  ->  praised
+  41:    1  ->  refund
+  42:    1  ->  relied
+  43:    1  ->  reports
+  44:    1  ->  save
+  45:    1  ->  some
+  46:    1  ->  south
+  47:    1  ->  that
+  48:    1  ->  they
+  49:    1  ->  tighten
+  50:    1  ->  tightening
+  51:    1  ->  today
+  52:    1  ->  too
+  53:    1  ->  trek
+  54:    1  ->  trying
+  55:    1  ->  two
+  56:    1  ->  was
+     -------
+        64
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+
+</pre>
+<p>
+
+</ul>
+
+<a name="outputs_wws_name_0"> <strong> wws </strong> </a>
+<pre>
+
+
+
+                     SYSTEM SUMMARY PERCENTAGES by SPEAKER                      
+
+
+
+     **********************************************************************     
+     *****      Percentages Computed using Weighted Word Scoring      *****     
+     **********************************************************************     
+
+                  ** Weights defined by file: './csrnab_r.blm'                  
+
+       ,----------------------------------------------------------------.
+       |                          ./csrnab.hyp                          |
+       |----------------------------------------------------------------|
+       | SPKR   | # Snt # Wrd | Corr    Sub    Del    Ins    Err  S.Err |
+       |--------+-------------+-----------------------------------------|
+       | 4t0    |   15    458 | 91.0   46.9    4.7   12.3   63.8   86.7 |
+       |--------+-------------+-----------------------------------------|
+       | 4t1    |   21    544 | 96.5   24.3    0.8    2.7   27.8   57.1 |
+       |--------+-------------+-----------------------------------------|
+       | 4t2    |   15    404 | 98.1   34.2    0.3    8.9   43.4   86.7 |
+       |================================================================|
+       | Sum/Avg|   51   1406 | 95.1   34.9    1.9    7.8   44.6   74.5 |
+       |================================================================|
+       |  Mean  | 17.0  468.7 | 95.2   35.1    1.9    8.0   45.0   76.8 |
+       |  S.D.  |  3.5   70.6 |  3.7   11.3    2.4    4.9   18.1   17.0 |
+       | Median | 15.0  458.0 | 96.5   34.2    0.8    8.9   43.4   86.7 |
+       `----------------------------------------------------------------'
+
+</pre>
+
+<a name="outputs_det_name_0"> <strong> DET Curve </strong> </a>
+<p>
+<img src="det.gif"> 
+<p>
+
+<a name="outputs_bhist_name_0"> <strong> Binned Histogram </strong> </a>
+<p> <img src="bhist.gif"> <p>
+
+<a name="outputs_hist_name_0"> <strong> Word Confidence Score Histogram </strong> </a>
+<p> <img src="hist.gif"> <p>
+
+
+</body>
+</html>

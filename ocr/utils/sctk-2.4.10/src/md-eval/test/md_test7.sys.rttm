@@ -1,0 +1,133 @@
+;; mdeval md_test7 sys rttm
+;;
+;; See comments at the top of md_test7.ref.rttm for explanations.
+
+SPKR-INFO md_test7 1  <NA>  <NA> <NA>         adult_male   spkr1s <NA>
+SEGMENT   md_test7 1   1.0 179.0 <NA>         <NA>         spkr1s <NA>
+SPEAKER   md_test7 1   1.0 179.0 <NA>         <NA>         spkr1s <NA>
+
+SU        md_test7 1   1.0   9.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1   1.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   2.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   3.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   4.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   5.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   6.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   7.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   8.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1   9.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  12.0   8.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  12.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  13.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  14.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  15.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  16.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  17.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  18.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  19.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  23.0   7.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  23.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  24.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  25.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  26.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  27.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  28.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  29.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  34.0   6.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  34.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  35.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  36.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  37.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  38.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  39.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  45.0   5.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  45.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  46.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  47.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  48.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  49.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  56.0   4.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  56.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  57.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  58.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  59.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  67.0   3.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  67.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  68.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  69.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  78.0   2.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  78.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1  79.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  89.0   1.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  89.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1  91.0   1.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1  91.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 101.0   2.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 101.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 102.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 111.0   3.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 111.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 112.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 113.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 121.0   4.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 121.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 122.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 123.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 124.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 131.0   5.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 131.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 132.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 133.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 134.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 135.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 141.0   6.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 141.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 142.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 143.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 144.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 145.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 146.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 151.0   7.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 151.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 152.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 153.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 154.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 155.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 156.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 157.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 161.0   8.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 161.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 162.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 163.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 164.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 165.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 166.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 167.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 168.0   1.0 blah         lex          spkr1s <NA>
+
+SU        md_test7 1 171.0   9.0 <NA>         statement    spkr1s <NA>
+LEXEME    md_test7 1 171.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 172.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 173.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 174.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 175.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 176.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 177.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 178.0   1.0 blah         lex          spkr1s <NA>
+LEXEME    md_test7 1 179.0   1.0 blah         lex          spkr1s <NA>

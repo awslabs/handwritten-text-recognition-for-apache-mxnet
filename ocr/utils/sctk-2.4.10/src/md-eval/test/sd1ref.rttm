@@ -1,0 +1,36 @@
+;; mdeval sd_test1 ref rttm
+;; this exercises speaker diarization
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         child        spkr1r <NA>
+
+SEGMENT   sd_test1 1 10.0  5.0 <NA>         <NA>         spkr1r <NA>
+SPEAKER   sd_test1 1 10.0  1.9 <NA>         <NA>         spkr1r <NA>
+
+SPEAKER   sd_test1 1 13.1  1.9 <NA>         <NA>         spkr1r <NA>
+
+;; spkr2 begins at the exact end of a uem segment.
+;; and ends at the exact beginning of another uem segment.
+;; spkr2 is in no-eval time via the UEM file and should not count.
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         unknown      spkr2r <NA>
+SEGMENT   sd_test1 1 15.0  5.0 <NA>         <NA>         spkr2r <NA>
+SPEAKER   sd_test1 1 15.0  5.0 <NA>         <NA>         spkr2r <NA>
+
+NON-LEX   sd_test1 1 17.0  1.0 hhhhhhh      breath       spkr2r <NA>
+
+
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         adult_female spkr3r <NA>
+SEGMENT   sd_test1 1 20.0  4.0 <NA>         <NA>         spkr3r <NA>
+SPEAKER   sd_test1 1 20.0  4.0 <NA>         <NA>         spkr3r <NA>
+
+NON-LEX   sd_test1 1 21.0  1.0 hahHah       laugh        spkr3r <NA>
+
+;; spkr4 occurs entirely in time that is no-eval via the UEM file
+;; spkr4 should not count
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>         adult_female spkr4r <NA>
+SEGMENT   sd_test1 1 24.1  1.8 <NA>         <NA>         spkr4r <NA>
+SPEAKER   sd_test1 1 24.1  1.8 <NA>         <NA>         spkr4r <NA>
+
+;; spkr5 is in evaluated time via the UEM file, so spkr5 counts
+SPKR-INFO sd_test1 1 <NA> <NA> <NA>           adult_female spkr5r <NA>
+SEGMENT   sd_test1 1 26.1  1.8 <NA>           <NA>         spkr5r <NA>
+SPEAKER   sd_test1 1 26.1  1.8 <NA>           <NA>         spkr5r <NA>

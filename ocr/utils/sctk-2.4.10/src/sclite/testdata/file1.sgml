@@ -1,0 +1,10 @@
+<SYSTEM title="scoring/itmono_8.ctm" ref_fname="/usr/local/storage/ac-storage/asrcore/tasks/scoring/ref/all/all.ihm.sort.stm.filt" hyp_fname="scoring/itmono_8.ctm.filt" creation_date="Wed Aug  1 17:23:44 2007" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="100">
+<PATH id="(100-000)" word_cnt="0" labels="<o,unknown,n1>" file="nist_20051024-0930_h09_100" channel="1" sequence="11652" R_T1="0.00" R_T2="1.0000" word_aux="h_t1+t2,h_conf">
+I,,"s.",3017.540+3017.790,0.500000
+</PATH>
+<PATH id="(100-123)" word_cnt="13" labels="<o,unknown,n1>" file="nist_20051024-0930_h09_100" channel="1" sequence="11653" R_T1="3015.197" R_T2="3018.540" word_aux="h_t1+t2,h_conf">
+C,"yeah","yeah",3015.620+3015.880,0.500000:D,"how",,,:S,"do","but",3015.880+3016.000,0.500000:C,"we","we",3016.000+3016.110,0.500000:S,"handle","have",3016.110+3016.305,0.500000:S,"how","not",3016.305+3016.500,0.500000:S,"do","had",3016.500+3016.700,0.500000:C,"we","we",3016.700+3016.830,0.500000:C,"(ha-)","had",3016.830+3016.980,0.500000:D,"address",,,:C,"that","that",3017.330+3017.540,0.500000:I,,"s.",3017.540+3017.790,0.500000:I,,"a.",3017.790+3017.930,0.500000
+</PATH>
+</SPEAKER>
+</SYSTEM>

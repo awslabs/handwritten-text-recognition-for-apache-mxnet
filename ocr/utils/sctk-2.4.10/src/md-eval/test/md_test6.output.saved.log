@@ -1,0 +1,6 @@
+
+WARNING:  A REF metadata event is being deleted that covers evaluated reference LEXEMEs
+    (type=SU, subtype=incomplete, spkr=spkr3r, TBEG=19.0, TEND=22)
+
+WARNING:  A SYS metadata event is being deleted that covers evaluated reference LEXEMEs
+    (type=SU, subtype=incomplete, spkr=spkr3s, TBEG=19.0, TEND=22)

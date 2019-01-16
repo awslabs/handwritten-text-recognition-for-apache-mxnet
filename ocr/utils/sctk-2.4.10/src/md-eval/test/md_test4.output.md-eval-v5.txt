@@ -1,0 +1,152 @@
+md-eval run on 2004 Apr 14 at 19:48:50
+command line:  /data/data1/greg/md-eval-v5.pl -D -W -w -t 1.0 -l 2 -u md_test4.uem -r md_test4.ref.rttm -s md_test4.sys.rttm
+
+Word-based metadata alignment, max gap between matching words = 1.0 sec
+
+Metadata evaluation parameters:
+    word-optimized metadata mapping
+        max gap between matching metadata events = 0.1 words
+        max extent to match for SU's = 2 words
+
+Speaker Diarization evaluation parameters:
+    The max time to extend no-score zones for NON-LEX exclusions is 0.5 sec
+    The no-score collar at SPEAKER boundaries is 0 sec
+
+Exclusion zones for evaluation and scoring are:
+                             -----MetaData-----        -----SpkrData-----
+     exclusion set name:     DEFAULT    DEFAULT        DEFAULT    DEFAULT
+     token type/subtype      no-eval   no-score        no-eval   no-score
+             (UEM)              X                         X
+         LEXEME/frag                      X                          
+         LEXEME/un-lex                    X                          
+        NON-LEX/breath                                              X
+        NON-LEX/cough                                               X
+        NON-LEX/laugh                                               X
+        NON-LEX/lipsmack                                            X
+        NON-LEX/other                                               X
+        NON-LEX/sneeze                                              X
+        NOSCORE/<na>            X         X               X         X
+ NO_RT_METADATA/<na>            X                                    
+             SU/unannotated               X                          
+
+FILLER alignment and scoring details for channel 1 of file md_test4
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0     filled_pause FILLER    20.00   21.00 spkr=<sp3r>      filled_pause FILLER  (  20.00   21.00)   20.00   21.00 spkr=<sp3s> 
+   1   -   -   0     filled_pause FILLER    25.00   26.00 spkr=<sp3r>      filled_pause FILLER  (  25.00   26.00)   25.00   26.00 spkr=<sp3s> 
+
+IP alignment and scoring details for channel 1 of file md_test4
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0           filler IP        20.00   20.00 spkr=<sp3r>            filler IP      (  20.00   20.00)   20.00   20.00 spkr=<sp3s> 
+   1   -   -   0           filler IP        25.00   25.00 spkr=<sp3r>            filler IP      (  25.00   25.00)   25.00   25.00 spkr=<sp3s> 
+
+SU alignment and scoring details for channel 1 of file md_test4
+ ref del ins sub      REF:  token type       tbeg    tend speaker           SYS:  token type       Rtbeg   Rtend     tbeg    tend sys-speaker 
+   1   -   -   0        statement SU        10.00   13.00 spkr1r              statement SU      (  10.00   13.00)   10.00   13.00 spkr1s      
+   1   -   -   0         question SU        13.00   16.00 spkr1r               question SU      (  13.00   16.00)   13.00   16.00 spkr1s      
+   1   -   -   0      backchannel SU        16.00   19.00 name="<nar>"      backchannel SU      (  16.00   19.00)   16.00   19.00 name="<nas>"
+   1   1   -   -         question SU        19.00   24.00 spkr=<sp3r>               --- ---     (   ---     --- )    ---     ---  ---         
+   0   -   1   -              --- ---        ---     ---  ---                  question SU      (  19.00   22.00)   19.00   22.00 spkr=<sp3s> 
+   1   1   -   -         question SU        24.00   29.00 spkr=<sp3r>               --- ---     (   ---     --- )    ---     ---  ---         
+   0   -   1   -              --- ---        ---     ---  ---                  question SU      (  24.00   27.00)   24.00   27.00 spkr=<sp3s> 
+   1   -   -   0         question SU        29.00   30.00 spkr=<sp3r>          question SU      (  29.00   30.00)   29.00   30.00 spkr=<sp3s> 
+
+*** Performance analysis for EDITs ***
+
+*** Performance analysis for FILLERs ***
+
+FILLER word coverage statistics -- in terms of reference words
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       2     0     0  <ns>     0     0.00   0.00   <ns>   0.00
+
+FILLER detection statistics -- in terms of # of FILLERs
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       2     0     0     0     0     0.00   0.00   0.00   0.00
+
+FILLER detection confusion matrix -- in terms of # of FILLERs
+           ALL - ref\sys  filled_p        {Miss}
+            filled_pause       2             0  
+
+                    {FA}       0  
+
+FILLER word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for IPs ***
+
+IP (exact) detection statistics -- in terms of reference words
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       2     0     0  <ns>     0     0.00   0.00   <ns>   0.00
+
+IP detection statistics -- in terms of # of IPs
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       2     0     0     0     0     0.00   0.00   0.00   0.00
+
+IP detection confusion matrix -- in terms of # of IPs
+           ALL - ref\sys    filler        {Miss}
+                  filler       2             0  
+
+                    {FA}       0  
+
+IP word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    2    -    -    -      0
+           END:    0      -    -    -    2    -    -    -      0
+
+*** Performance analysis for SUs ***
+
+SU (exact) end detection statistics -- in terms of reference words
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       4     0     2  <ns>     2     0.00  50.00   <ns>  50.00
+
+SU detection statistics -- in terms of # of SUs
+              Nref  Ndel  Nins  Nsub  Nerr     %Del   %Ins   %Sub   %Err
+       ALL       6     2     2     0     4    33.33  33.33   0.00  66.67
+
+SU detection confusion matrix -- in terms of # of SUs
+           ALL - ref\sys  backchan  question  statemen        {Miss}
+             backchannel       1         0         0             0  
+                question       0         2         0             2  
+               statement       0         0         1             0  
+
+                    {FA}       0         2         0  
+
+SU word offset statistics for ALL data
+  word offsets:  <-3     -3   -2   -1    0    1    2    3     >3
+           BEG:    0      -    -    -    4    -    -    -      0
+           END:    0      -    -    -    4    -    -    -      0
+
+*** Performance analysis for Speaker Diarization ***
+
+   TOTAL TIME =     16.99 secs
+ TOTAL SPEECH =     16.99 secs (100.0 percent of total time)
+  SCORED TIME =     16.99 secs (100.0 percent of total time)
+SCORED SPEECH =     16.99 secs (100.0 percent of scored time)
+  TOTAL WORDS =     17        
+ SCORED WORDS =     17         (100.0 percent of total words)
+---------------------------------------------
+MISSED SPEECH =      0.00 secs (  0.0 percent of scored time)
+FALARM SPEECH =      0.00 secs (  0.0 percent of scored time)
+ MISSED WORDS =      0         (  0.0 percent of scored words)
+---------------------------------------------
+SCORED SPEAKER TIME =     16.99 secs (100.0 percent of scored speech)
+MISSED SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+FALARM SPEAKER TIME =      0.00 secs (  0.0 percent of scored speaker time)
+ SPEAKER ERROR TIME =      0.00 secs (  0.0 percent of scored speaker time)
+SPEAKER ERROR WORDS =      0         (  0.0 percent of scored speaker words)
+---------------------------------------------
+ OVERALL SPEAKER DIARIZATION ERROR SCORE = 0.00 percent of scored speaker time
+---------------------------------------------
+ Speaker type confusion matrix -- speaker weighted
+  REF\SYS (count)      child               unknown               MISS              
+child                     1 /  33.3%          0 /   0.0%          0 /   0.0%
+unknown                   0 /   0.0%          2 /  66.7%          0 /   0.0%
+  FALSE ALARM             0 /   0.0%          0 /   0.0%
+---------------------------------------------
+ Speaker type confusion matrix -- time weighted
+  REF\SYS (seconds)    child               unknown               MISS              
+child                  6.00 /  35.3%       0.00 /   0.0%       0.00 /   0.0%
+unknown                0.00 /   0.0%      10.99 /  64.7%       0.00 /   0.0%
+  FALSE ALARM          0.00 /   0.0%       0.00 /   0.0%
+---------------------------------------------

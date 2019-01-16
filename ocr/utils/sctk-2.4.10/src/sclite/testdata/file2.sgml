@@ -1,0 +1,10 @@
+<SYSTEM title="scoring/itword_20.ctm" ref_fname="/usr/local/storage/ac-storage/asrcore/tasks/scoring/ref/all/all.ihm.sort.stm.filt" hyp_fname="scoring/itword_20.ctm.filt" creation_date="Sun Aug  5 02:42:37 2007" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="100">
+<PATH id="(100-000)" word_cnt="0" labels="<o,unknown,n1>" file="nist_20051024-0930_h09_100" channel="1" sequence="11652" R_T1="0.00" R_T2="1.0000" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(100-123)" word_cnt="11" labels="<o,unknown,n1>" file="nist_20051024-0930_h09_100" channel="1" sequence="11653" R_T1="3015.197" R_T2="3018.540" word_aux="h_t1+t2,h_conf">
+C,"yeah","yeah",3015.650+3015.870,0.500000:D,"how",,,:S,"do","but",3015.870+3016.000,0.500000:C,"we","we",3016.000+3016.110,0.500000:S,"handle","have",3016.110+3016.295,0.500000:S,"how","not",3016.295+3016.480,0.500000:S,"do","and",3016.480+3016.700,0.500000:C,"we","we",3016.700+3016.860,0.500000:C,"(ha-)","",0.000+0.000,0.000000:S,"address","that's",3017.510+3017.760,0.500000:S,"that","right",3017.760+3017.930,0.500000
+</PATH>
+</SPEAKER>
+</SYSTEM>

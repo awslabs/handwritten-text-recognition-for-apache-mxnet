@@ -1,0 +1,17 @@
+<SYSTEM title="CT-basic" ref_fname="basic.trn" hyp_fname="basic.trn" creation_date="" format="2.4" frag_corr="FALSE" opt_del="FALSE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="paf">
+<PATH id="(paf_405)" word_cnt="5" sequence="0">
+C,"i","i":C,"wasn't","wasn't":C,"aware","aware":C,"of","of":C,"this","this"
+</PATH>
+</SPEAKER>
+<SPEAKER id="hop">
+<PATH id="(hop_806)" word_cnt="4" sequence="1">
+C,"i'm","i'm":C,"happy","happy":C,"today","today":C,"?","?"
+</PATH>
+</SPEAKER>
+<SPEAKER id="sep">
+<PATH id="(sep_005)" word_cnt="5" sequence="2">
+C,"a","a":C,"separe","separe":C,"o","o":C,"separe","separe":C,"end","end"
+</PATH>
+</SPEAKER>
+</SYSTEM>

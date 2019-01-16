@@ -1,0 +1,10 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:607:1: warning: return type defaults to 'int' [-Wimplicit-int]
+configure: In function 'main':
+configure:694:67: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+configure:694:67: warning: incompatible implicit declaration of built-in function 'exit'
+configure:694:67: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:695:1: warning: incompatible implicit declaration of built-in function 'exit'
+configure:695:1: note: include '<stdlib.h>' or provide a declaration of 'exit'

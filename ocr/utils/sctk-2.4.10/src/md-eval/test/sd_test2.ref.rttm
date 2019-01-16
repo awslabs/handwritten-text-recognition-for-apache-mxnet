@@ -1,0 +1,46 @@
+;; mdeval sd_test2 ref rttm
+;; Test cases for no-score zone extension for speaker diarization
+
+SPKR-INFO sd_test2 1 <NA> <NA> <NA>         child        spkr1r <NA>
+
+SEGMENT   sd_test2 1 10.0  5.0 <NA>         <NA>         spkr1r <NA>
+SU        sd_test2 1 10.0  4.0 <NA>         statement    spkr1r <NA>
+SPEAKER   sd_test2 1 10.0  1.9 <NA>         <NA>         spkr1r <NA>
+LEXEME    sd_test2 1 10.0  1.0 firstWord    lex          spkr1r <NA>
+LEXEME    sd_test2 1 11.0  0.8 secondWord   lex          spkr1r <NA>
+
+SPKR-INFO sd_test2 1 <NA> <NA> <NA>         adult_male     spkr2r <NA>
+SU        sd_test2 1 11.9  2.1 <NA>         statement    spkr2r <NA>
+SPEAKER   sd_test2 1 11.9  3.1 <NA>         <NA>         spkr2r <NA>
+;; noscore zone should be 11.9 through 13.2
+;; 11.9 is a SPEAKER boundary in the ref, and 13.2 is a word boundary
+NON-LEX   sd_test2 1 12.0  1.0 ahtChoo      sneeze       spkr2r <NA>
+
+LEXEME    sd_test2 1 13.2  0.8 thirdWord    lex          spkr2r <NA>
+SU        sd_test2 1 14.0  1.0 <NA>         statement    spkr2r <NA>
+LEXEME    sd_test2 1 14.0  1.0 fourthWord   lex          spkr2r <NA>
+
+
+SPKR-INFO sd_test2 1 <NA> <NA> <NA>         unknown      spkr3r <NA>
+SEGMENT   sd_test2 1 15.0  5.0 <NA>         <NA>         spkr3r <NA>
+SU        sd_test2 1 15.0  5.0 <NA>         statement    spkr3r <NA>
+SPEAKER   sd_test2 1 15.0  5.0 <NA>         <NA>         spkr3r <NA>
+LEXEME    sd_test2 1 15.0  1.0 fifthWord    lex          spkr3r <NA>
+
+;; noscore zone should be 16.5 through 18.5 (extension limits) 
+NON-LEX   sd_test2 1 17.0  1.0 hhhhhhh      breath       spkr3r <NA>
+
+LEXEME    sd_test2 1 19.0  1.0 sixthWord    other        spkr3r <NA>
+
+
+SPKR-INFO sd_test2 1 <NA> <NA> <NA>         adult_female spkr4r <NA>
+SEGMENT   sd_test2 1 20.0  4.0 <NA>         <NA>         spkr4r <NA>
+SPEAKER   sd_test2 1 20.0  4.0 <NA>         <NA>         spkr4r <NA>
+SU        sd_test2 1 20.0  4.0 <NA>         backchannel  spkr4r <NA>
+LEXEME    sd_test2 1 20.0  0.6 seventhWord  lex          spkr4r <NA>
+;; noscore zone should be 20.6 through 22.4 (word boundaries)
+NON-LEX   sd_test2 1 21.0  1.0 hahHah       laugh        spkr4r <NA>
+LEXEME    sd_test2 1 22.4  0.6 eighthWord   lex          spkr4r <NA>
+
+LEXEME    sd_test2 1 23.0  1.0 ninthWord    lex          spkr4r <NA>
+

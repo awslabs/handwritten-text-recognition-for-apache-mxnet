@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rover>
+	<input title="generic-1" filename="generic-1.rttm" />
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="100.500" et="101.000" speaker="SYS1" input="generic-1">Y</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="101.000" et="101.400" speaker="SYS1" input="generic-1">U</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="101.400" et="101.900" speaker="SYS1" input="generic-1">A</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="101.900" et="103.500" speaker="SYS1" input="generic-1">G</word>
+		<word bt="102.800" et="104.000" speaker="SYS2" input="generic-1">D</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="104.500" et="105.200" speaker="SYS2" input="generic-1">F</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="105.200" et="106.200" speaker="SYS2" input="generic-1">X</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="106.200" et="106.900" speaker="SYS2" input="generic-1">Z</word>
+	</putative>
+	<putative file="VT_20051027-1400" channel="1">
+		<word bt="106.900" et="107.300" speaker="SYS2" input="generic-1">Y</word>
+	</putative>
+</rover>

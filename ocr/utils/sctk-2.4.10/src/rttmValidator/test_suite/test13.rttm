@@ -1,0 +1,19 @@
+;; RTTMValidator test13.rttm - test for illegal LEXEME subtype; test for illegal A/P subtype
+;; EXP-ID: expt_03f_su_eval_eng_bnews_spch_1
+
+SPKR-INFO test13 1 <NA> <NA> <NA> unknown 1 <NA>
+SPEAKER	test13 1 0.670 3.540 <NA> <NA> 1 <NA>
+SU 	test13 1 0.670 3.140 <NA> statement 1 0.708209
+LEXEME 	test13 1 0.670 0.190 IT lex 1 1
+LEXEME 	test13 1 0.870 0.270 IS lex 1 1
+LEXEME 	test13 1 1.150 0.450 FIFTEEN lex 1 1
+;; bad LEXEME subtype
+LEXEME 	test13 1 1.610 0.370 HOURS sdfsdf 1 1
+LEXEME 	test13 1 1.990 0.600 UNIVERSAL lex 1 1
+LEXEME 	test13 1 2.600 0.410 TIME lex 1 1
+LEXEME 	test13 1 3.020 0.200 FROM lex 1 1
+LEXEME 	test13 1 3.230 0.580 WASHINGTON lex 1 1
+SU 	test13 1 3.820 1.780 <NA> statement 1 0.951884
+A/P	test13 1 3.820 0.390 <NA> other 1 1.
+LEXEME 	test13 1 3.820 0.220 THIS lex 1 1
+LEXEME 	test13 1 4.050 0.160 IS lex 1 1

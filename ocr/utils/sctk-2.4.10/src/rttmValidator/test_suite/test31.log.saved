@@ -1,0 +1,4 @@
+../src/RTTMValidator-v04.pl (version v04) run on 2004 Apr 22 at 16:49:21
+command line:  ../src/RTTMValidator-v04.pl (version v04) -i test31.rttm
+ERROR: FILLER (4.220, 5.22) doesn't have any IP at 4.220; see line 22
+Validation aborted

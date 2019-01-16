@@ -1,0 +1,5 @@
+comb 1 comb 0 1 a b- (c-) (d)
+comb 1 comb 1 2 <> A B C D
+f    1 f    0 1 <> a b { c d / c / e } e f g 
+f    1 f    1 2 <> a b c d e f g 
+f    1 f    3 4 <> 

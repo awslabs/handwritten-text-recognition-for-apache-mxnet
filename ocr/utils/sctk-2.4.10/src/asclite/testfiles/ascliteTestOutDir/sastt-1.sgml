@@ -1,0 +1,23 @@
+<SYSTEM title="sastt-1" ref_fname="sastt.ref.rttm" hyp_fname="sastt.sys.rttm" creation_date="" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="REF1">
+<PATH id="(REF1-000)" word_cnt="5" file="VT_20051027-1400" channel="1" sequence="2" R_T1="101.000" R_T2="105.800" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+S,"t","u",101.000+101.400,101.000+101.400,SYS1,false:C,"a","a",101.400+102.000,101.400+101.900,SYS1,false:D,"b",,102.000+103.000,,,:D,"c",,103.000+104.200,,,:S,"f","f",104.200+105.800,104.500+105.200,SYS2,true
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF2">
+<PATH id="(REF2-000)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="7" R_T1="103.300" R_T2="105.200" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+S,"g","g",103.300+104.400,101.900+103.500,SYS1,true:S,"h","d",104.100+105.200,102.800+104.000,SYS2,false
+</PATH>
+<PATH id="(REF2-001)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="11" R_T1="105.500" R_T2="106.600" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+C,"x","x",105.500+106.200,105.200+106.200,SYS2,false:S,"t","z",106.200+106.600,106.200+106.900,SYS2,false
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="1" file="VT_20051027-1400" channel="1" sequence="12" R_T1="100.500" R_T2="101.000" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+I,,"y",,100.500+101.000,SYS1,false
+</PATH>
+<PATH id="(Inter_Segment_Gap-001)" word_cnt="1" file="VT_20051027-1400" channel="1" sequence="13" R_T1="106.600" R_T2="107.300" word_aux="r_t1+t2,h_t1+t2,h_spkr,h_isSpkrSub">
+I,,"y",,106.900+107.300,SYS2,false
+</PATH>
+</SPEAKER>
+</SYSTEM>

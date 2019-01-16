@@ -1,0 +1,12 @@
+;;
+;;  File: test.cantonese.glm
+;;  Desc: This file contains the transcript filtering rules for Babel Cantonese evaluations
+;;
+;;  Date: 20120905
+;;         - initial creation 
+;;
+;;  Hesitation mappings
+左    => [ 一下 ]
+red   => [_blue]
+IGNORE_TIME_SEGMENT_IN_SCORING => IGNORETIMESEGMENTINSCORING
+_     => [ ]

@@ -1,0 +1,31 @@
+;; mdeval md_test1 ref rttm
+;; Syntactically and semantically legal. No edits. No fillers.
+;; Three speakers (of different types), four SU's, all scoreable lexeme subtypes
+
+SPKR-INFO md_test1 1 <NA> <NA> <NA>         child        spkr1r <NA>
+SEGMENT   md_test1 1 10.0  6.0 <NA>         <NA>         spkr1r <NA>
+SPEAKER   md_test1 1 10.0  6.0 <NA>         <NA>         spkr1r <NA>
+SU        md_test1 1 10.0  3.0 <NA>         statement    spkr1r <NA>
+LEXEME    md_test1 1 10.0  1.0 firstWord    lex          spkr1r <NA>
+LEXEME    md_test1 1 11.0  1.0 T.'s         alpha        spkr1r <NA>
+LEXEME    md_test1 1 12.0  1.0 thirdWord    acronym      spkr1r <NA>
+SU        md_test1 1 13.0  3.0 <NA>         question     spkr1r <NA>
+LEXEME    md_test1 1 13.0  1.0 fourthWord   interjection spkr1r <NA>
+LEXEME    md_test1 1 14.0  1.0 fifthWord    propernoun   spkr1r <NA>
+LEXEME    md_test1 1 15.0  1.0 sixthWord    other        spkr1r <NA>
+
+SPKR-INFO md_test1 1 <NA> <NA> <NA>         unknown      spkr2r <NA>
+SEGMENT   md_test1 1 16.0  3.0 <NA>         <NA>         spkr2r <NA>
+SPEAKER   md_test1 1 16.0  3.0 <NA>         <NA>         spkr2r <NA>
+SU        md_test1 1 16.0  3.0 <NA>         backchannel  spkr2r <NA>
+LEXEME    md_test1 1 16.0  1.0 seventhWord  lex          spkr2r <NA>
+LEXEME    md_test1 1 17.0  1.0 eighthWord   lex          spkr2r <NA>
+LEXEME    md_test1 1 18.0  1.0 ninthWord    lex          spkr2r <NA>
+
+SPKR-INFO md_test1 1 <NA> <NA> <NA>         adult_female spkr3r <NA>
+SEGMENT   md_test1 1 19.0  3.0 <NA>         <NA>         spkr3r <NA>
+SPEAKER   md_test1 1 19.0  3.0 <NA>         <NA>         spkr3r <NA>
+SU        md_test1 1 19.0  2.0 <NA>         incomplete   spkr3r <NA>
+LEXEME    md_test1 1 19.0  1.0 tenthWord    lex          spkr3r <NA>
+LEXEME    md_test1 1 20.0  1.0 eleventhWord lex          spkr3r <NA>
+

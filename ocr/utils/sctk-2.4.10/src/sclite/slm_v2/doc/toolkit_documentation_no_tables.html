@@ -1,0 +1,1273 @@
+<HTML>
+<HEAD>
+<TITLE>
+Language Modeling Toolkit
+</TITLE>
+</HEAD>
+
+
+<BODY>
+<body bgcolor="ffffff">
+<H1 align=center> 
+The CMU-Cambridge Statistical Language Modeling Toolkit v2
+</H1> 
+
+<H2>
+Contents
+</H2>
+
+<UL>
+<LI> <a href="#introduction">Introduction</a> 
+
+<LI> <a href="#changes">Changes from Version 1</a> 
+
+<LI> <a href="#installing">Installing the Toolkit</a>
+
+<LI> <a href="#terminology">Terminology and File Formats</a> 
+
+<LI> <a href="#tools">The Tools</a> 
+<UL>
+  <LI> <a href="#text2wfreq"><tt>text2wfreq</tt></a>
+  <LI> <a href="#wfreq2vocab"><tt>wfreq2vocab</tt></a>
+  <LI> <a href="#text2wngram"><tt>text2wngram</tt></a>
+  <LI> <a href="#text2idngram"><tt>text2idngram</tt></a>
+  <LI> <a href="#ngram2mgram"><tt>ngram2mgram</tt></a>
+  <LI> <a href="#wngram2idngram"><tt>wngram2idngram</tt></a>
+  <LI> <a href="#idngram2stats"><tt>idngram2stats</tt></a>
+  <LI> <a href="#mergeidngram"><tt>mergeidngram</tt></a>
+  <LI> <a href="#idngram2lm"><tt>idngram2lm</tt></a>
+  <LI> <a href="#binlm2arpa"><tt>binlm2arpa</tt></a>
+  <LI> <a href="#evallm"><tt>evallm</tt></a>
+  <LI> <a href="#interpolate"><tt>interpolate</tt></a>
+</UL>
+
+<LI> <a href="#typical_use">Typical Usage</a> 
+
+<LI> <a href="#discounting_strategies">Discounting Strategies</a>
+
+<LI> <a href="#latest">Up-to-date Information</a>
+
+<LI> <a href="#feedback">Feedback</a> 
+</UL>
+
+<p>If you want to get started making language models as quickly as
+possible, you should <a href="#installing">install</a> the toolkit and
+then read the <a href="#typical_use">Typical Use</a> section.</p>
+
+<hr size=4>
+
+
+<H2>
+<a name="introduction">
+Introduction
+</H2>
+
+<p>Version 1 of the Carnegie Mellon University Statistical Language
+Modeling toolkit was written by <a
+href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/roni/WWW/HomePage.html">Roni
+Rosenfeld</a>, and released in 1994. It is available by ftp from <a
+href="ftp://ftp.cs.cmu.edu/project/fgdata/CMU_SLM_Toolkit_V1.0_release.tar.Z">here</a>.
+Here is a excerpt from its README file:</p>
+
+<pre>
+
+                Overview of the CMU SLM Toolkit, Rev 1.0
+                ========================================
+
+  The Carnegie Mellon Statistical Language Modeling (CMU SLM) Toolkit
+is a set of unix software tools designed to facilitate language
+modeling work in the research community.
+
+  Some of the tools are used to process general textual data into:
+    - word frequency lists and vocabularies
+    - word bigram and trigram counts
+    - vocabulary-specific word bigram and trigram counts
+    - bigram- and trigram-related statistics
+    - various Backoff bigram and trigram language models
+
+  Others use the resulted language models to compute:
+    - perplexity
+    - Out-Of-Vocabulary (OOV) rate
+    - bigram- and trigram-hit ratios
+    - distribution of Backoff cases
+    - annotation of test data with language scores
+
+</pre>
+
+<p>Version 2 of the toolkit seeks to maintain the structure of version
+1, to include all (or very nearly all) of the functionality of
+version 1, and to provide useful improvements in terms of
+functionality and efficiency. The key differences between this version
+and version 1 are described in the <a href="#changes">next section</a>.</p>
+
+<hr size=4>
+
+<H2>
+<a name="changes">
+Changes from Version 1
+</H2>
+
+<H3>
+Efficient pre-processing tools
+</H3>
+
+<p>The tools used to generate vocabulariesm, and to process the <a
+href="#text_stream">text stream</a> which is used as training data
+into a <a href="#idngram_file">id n-gram file</a> to serve as input to
+<a href="#idngram2lm"><tt>idngram2lm</tt></a> have been completely
+re-written, in order to increase their efficiency.</p>
+
+<p>All of the tools have been written in C, so there is no longer the
+reliance on shell scripts and UNIX tools such as <tt>sort</tt> and
+<tt>awk</tt>. The tools now run much faster, due to requiring much less
+disk I/O, although they do now require more RAM than the tools of
+version 1.</p>
+
+<H3>
+Multiple discounting strategies
+</H3>
+
+<p>Version 1 of the toolkit allowed only Good-Turing discounting to be
+used in the construction of the models. Version 2 allows any of the
+following discounting strategies:</p>
+
+<UL>
+<LI><a href="#good_turing">Good Turing discounting</a>
+<LI><a href="#witten_bell">Witten Bell discounting</a>
+<LI><a href="#absolute">Absolute discounting</a>
+<LI><a href="#linear">Linear discounting</a>
+</UL>
+
+<H3>
+Use of n-grams with arbitrary n
+</H3>
+
+<p> The tools in the toolkit are no longer limited to the construction
+and testing of bigram and trigram language models. As larger corpora,
+and faster machines with more memory become available, it is becoming
+more interesting to examine 4-grams, 5-grams, etc. The tools in
+version 2 of this toolkit enable these models to be constructed and
+evaluated.</p> 
+
+<H3>
+Interactive language model evaluation
+</H3>
+
+<p>The program <a href="#evallm"><tt>evallm</tt></a> is used to test the
+language models produced by the toolkit. Commands to this program are
+read in from the standard input after the language model has been
+read, so the user can issue commands interactively, rather than simply
+from the shell command line. This means that if the user wants to
+calculate the perplexity of a particular language model with respect
+to several different texts, the language model only needs to be read
+once.</p>
+
+<H3>
+Evaluation of ARPA format language models
+</H3>
+Version 2 of the toolkit includes the ability to calculate perplexities
+of ARPA format language models.
+
+<H3>
+Handling of context cues
+</H3>
+
+<p>In version 1, the tags <SAMP>&lt;s&gt;</SAMP>, <SAMP>
+&lt;p&gt;</SAMP>, and <SAMP>&lt;art&gt;</SAMP> were all hard-wired to
+represent <a href="#context_cues_file">context cues</a>, and the tag <SAMP>&lt;s&gt;</SAMP> was
+required to be in the vocabulary. In version 2, one may have any
+number of context cues (or none at all), and they may be represented
+by any symbols one chooses. The context cues are a subset of the
+vocabulary, and are specified in a <a
+href="#context_cues_file">context cue file</a>.</p>
+
+<p>In order to produce the same behaviour from version 2 as from
+version 1, the context cues file should contain the following
+lines:</p>
+
+<pre>&lts&gt
+&ltp&gt
+&ltart&gt</pre>
+
+<H3>
+Compact data storage
+</H3>
+
+<p>The data structures used to store the n-grams are more compact than
+those of version 1, with the result that language models construction
+is a less memory intensive task.  For example, for a trigram language
+model, version 1 required 12 bytes per bigram and 4 bytes per
+trigram. Version 2 requires only 8 bytes per bigram and 4 bytes per
+trigram.</p>
+
+<H3>
+Support for <tt>gzip</tt> compression 
+</H3>
+<p>As well as the <tt>compress</tt> <a href="#compression">data
+compression</a> utility used in version 1 of the toolkit, there is now
+also support for <tt>gzip</tt>.</p>
+
+<H3>
+Confidence interval capping
+</H3>
+
+Confidence interval capping has been omitted from version 2 of the
+toolkit.
+
+<H3>
+<a name="forced_backoff">
+Forced back-off
+</H3>
+
+
+<a name="forced_back_off_incexc">
+
+
+The tool used for evaluating language models allows the user to
+specify a set of <i>forced back-off</i> parameters.  There may be
+items in the vocabulary (especially context cues and the "unknown"
+symbol) from which we may want to back-off all the time. For example,
+if we see the word string A &lts&gt B (where <tt>&lts&gt</tt>
+is a context cue indicating a sentence boundary), then instead of
+predicting the probability of <tt>B</tt> based on the full context
+(P(B | A &lts&gt)), we may wish to disregard the information before
+the sentence boundary. Therefore we might want to back-off to the
+bigram distribution P(B | &lts&gt) (<i>inclusive</i> forced back-off)
+or even to the unigram distribution P(B) (<i>exclusive</i> forced
+back-off).  Version 2 supports both types of forced back-off for
+arbitrary vocabulary items.
+
+
+<p>The <a href="#evallm"><tt>evallm</tt></a> program allows the user to
+specify either inclusive or exclusive forced back-off, as well as a
+list of words from which to enforce back-off.</p>
+
+
+<H2>
+<a name="installing">
+Installing the Toolkit
+</H2>
+
+<p>For "big-endian" machines (eg those running HP-UX, IRIX, SunOS,
+Solaris) the installation procedure is simply to change into the
+<tt>src/</tt> directory and type</p>
+
+<pre>
+make install
+</pre>
+
+The executables will then be copied into the <tt>bin/</tt> directory, and the
+library file <tt>SLM2.a</tt> will be copied into the <tt>lib/</tt> directory.
+
+For "little-endian" machines (eg those running Ultrix, Linux) the
+variable <tt>BYTESWAP_FLAG</tt> will need to be set in the Makefile. This can
+be done by editing <tt>src/Makefile</tt> directly, so that the line
+
+<pre>
+#BYTESWAP_FLAG  = -DSLM_SWAP_BYTES
+</pre>
+
+is changed to 
+
+<pre>
+BYTESWAP_FLAG  = -DSLM_SWAP_BYTES
+</pre>
+
+<p>Then the program can be installed as before.</p>
+<p>If you are unsure of the "endian-ness" of your machine, then the shell
+script <tt>endian.sh</tt> should be able to provide some assistance.</p>
+
+<p>In case of problems, then more information can be found by examining
+<tt>src/Makefile</tt>.</p>
+
+<a name="stdmem">
+
+<p>Before building the executables, it might be worth adjusting the
+value of <tt>STD_MEM</tt> in the file <tt>src/toolkit.h</tt>. This
+value controls the default amount of memory (in MB) that the programs
+will attempt to assign for the large buffers used by some of the
+programs (this value can, of course, be overridden at the command
+line). The result is that the final process sizes will be a few MB
+bigger than this value. The more memory that can be grabbed, the
+faster the programs will run. The default value is 100, but if the
+machines which the tools will be run on contain less, or much more
+memory than this, then this value should be adjusted to reflect
+this.</p>
+
+<hr size=4>
+
+<H2>
+<a name="terminology">
+Terminology and File Formats
+</H2>
+
+
+<a name="text_stream"></a>
+<a name="word_freq"></a>
+<a name="word_ngram"></a>
+<a name="vocab_file">
+<a name="context_cues_file">
+<a name="idngram_file">
+<a name="binlm_file">
+<a name="arpalm_file">
+<a name="forced_backoff_file">
+
+
+<pre>
+    Name                    Description                    Typical file
+                                                            extension
+              An ASCII file containing text. It may
+ Text stream  or may not have markers to indicate     .text
+              context cues, and white space can be
+              used freely.
+
+              An ASCII file containing a list of
+ Word         words, and the number of times that
+ frequency    they occurred. This list is not sorted; .wfreq
+ file         it will generally be used as the input
+              to wfreq2vocab, which does not require
+              sorted input.
+
+ Word n-gram  ASCII file containing an alphabetically
+ file         sorted list of n-tuples of words, along .w3gram, .w4gram etc.
+              with the number of occurrences
+
+              
+              ASCII file containing a list of         .vocab.20K,
+ Vocabulary   vocabulary words. Comments may also be  .vocab.60K etc.,
+ file         included - any line beginning ## is     depending on the size
+              considered a comment. The vocabulary is of the vocabulary.
+              limited in size to 65535 words.         
+
+              ASCII file containing the list of words
+              which are to be considered "context
+              cues". These are words which provide
+ Context cues useful context information for the
+ file         n-grams, but which are not to be        .ccs
+              predicted by the language model.
+              Typical examples would be &lts&gt and &ltp&gt,
+              the begin sentence, and begin paragraph
+              tags.
+
+              ASCII or binary (by default) file
+              containing a numerically sorted list of
+ Id n-gram    n-tuples of numbers, corresponding to   .id3gram.bin,
+ file         the mapping of the word n-grams         .id4gram.ascii etc.
+              relative to the vocabulary. Out of
+              vocabulary (OOV) words are mapped to
+              the number 0.
+
+              Binary file containing all the n-gram
+ Binary       counts, together with discounting
+ language     information and back-off weights. Can   .binlm
+ model file   be read by evallm and used to generate
+              word probabilities quickly.
+
+ ARPA         ASCII file containing the language
+ language     model probabilities in ARPA-standard    .arpa
+ model file   format.
+
+              ASCII file containing a list of 
+Probability   probabilities (one per line). The       .fprobs
+ stream       probabilities correspond the the
+              probability for each word in a 
+              specific text stream, with
+	      context-cues and OOVs removed.
+
+              ASCII file containing a list of
+ Forced       vocabulary words from which to enforce
+ back-off     back-off, together with either an 'i'   .fblist
+ file         or an 'e' to indicate inclusive or
+              exclusive forced back-off respectively.
+</pre>
+
+<a name="compression">
+<p>These files may all be written are read by all the tools in
+compressed or uncompressed mode. Specifically, if a filename is given
+a <tt>.Z</tt> extension, then it will be read from the specified file
+via a <tt>zcat</tt> pipe, or written via a <tt>compress</tt> pipe. If
+a filename is given a <tt>.gz</tt>, it will be read from the specified
+file via a <tt>gunzip</tt> pipe, or written via a <tt>gzip</tt> pipe. If
+either of these compression schemes are to be used, then the relevant
+tools (ie <tt>zcat</tt>, and <tt>compress</tt> or <tt>gzip</tt>) must
+be available on the system, and pointed to by the path.</p>
+
+<p>If a filename argument is given as <tt>-</tt> then it is assumed to
+represent either the standard input, or standard output (according to
+context). Any file read from the standard input is assumed to be
+uncompressed, and therefore, all desired compression and decompression
+should take place in a pipe: <tt>zcat &lt abc.Z | abc2xyz | compress &gt
+xyz.Z</tt></p>
+
+
+<hr size=4>
+
+<H2>
+<a name="tools"> 
+The Tools
+</H2>
+
+<p> Note that in addition to the command line options mentioned, all
+the tools also support <tt>-help</tt> and <tt>-version</tt>.</p>
+
+<H3>
+<a name="text2wfreq">
+<tt>
+<center>
+<font size=+5>
+text2wfreq
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : <a href="#text_stream">Text stream</a> </p>
+
+<p><strong>Output</strong> : List of every word which occurred in the text,
+along with its number of occurrences.</o>
+
+<p><strong>Notes</strong> : Uses a hash-table to provide an efficient method of
+counting word occurrences. Output list is not sorted (due to
+"randomness" of the hash-table), but can be easily sorted into the
+user's desired order by the UNIX <tt>sort</tt> command. In any case, the output does not need to be sorted in order to serve as input for <a href="#wfreq2vocab"><tt>wfreq2vocab</tt></a>.</p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>text2wfreq [ -hash 1000000 ]
+           [ -verbosity 2 ]
+           < .text > .wfreq
+</pre>
+
+<p> Higher values for the <tt>-hash</tt> parameter require more
+memory, but can reduce computation time. </p>
+
+<H3>
+<a name="wfreq2vocab">
+<tt>
+<center>
+<font size=+5>
+wfreq2vocab
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : A word unigram file, as produced by <tt><a
+href="#text2wfreq">text2wfreq</a></tt> </p> 
+
+<p><strong>Output</strong> : A <a href="#vocab_file">vocabulary file</a>.
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>wfreq2vocab [ -top 20000 | -gt 10]
+            [ -records 1000000 ]
+            [ -verbosity 2]
+            < .wfreq > .vocab
+</pre>
+
+<p> The <tt>-top</tt> parameter allows the user to specify the size of
+the vocabulary; if the program is called with the command <tt>-top 20000</tt>,
+then the vocabulary will consist of the most common 20,000 words.</p>
+
+<p> The <tt>-gt</tt> parameter allows the user to specify the number
+of times that a word must occur to be included in the vocabulary; if
+the program is called with the command <tt>-gt 10</tt>, then the
+vocabulary will consist of all the words which occurred more than 10
+times.</p>
+
+<p>If neither the <tt>-gt</tt>, nor the <tt>-top</tt> parameters are
+specified, then the program runs with the default setting of taking the
+top 20,000 words.</p>
+
+<p>The <tt>-records</tt> parameter allows the user to specify how many
+of the word and count records to allocate memory for. If the number of
+words in the input exceeds this number, then the program will fail, but
+a high number will obviously result in a higher memory requirement.</p>
+
+<H3>
+<a name="text2wngram">
+<tt>
+<center>
+<font size=+5>
+text2wngram
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : <a href="#text_stream">Text stream</a>  </p>
+
+<p><strong>Output</strong> : List of every <a href="#word_ngram">word n-gram</a> 
+which occurred in the text, along with its number of occurrences.</p>
+
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>text2wngram [ -n 3 ]
+            [ -temp /usr/tmp/ ]
+            [ -chars n ]
+            [ -words m ]
+            [ -verbosity 2 ]
+            < .text > .wngram
+</pre>
+
+
+<p>The maximum numbers of charactors and words that can be stored in
+the buffer are given by the <tt>-chars</tt> and <tt>-words</tt>
+options. The default number of characters and words are chosen so that the
+memory requirement of the program is approximately that of
+<tt>STD_MEM</tt>, and the number of charactors is seven times greater
+than the number of words. </p>
+
+<p>The <tt>-temp</tt> option allows the user to specify where the
+program should store its temporary files.</p>
+
+<H3>
+<a name="text2idngram">
+<tt>
+<center>
+<font size=+5>
+text2idngram
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : <a href="#text_stream">Text stream</a>, plus a <a
+href="#vocab_file">vocabulary file</a>.  </p>
+
+<p><strong>Output</strong> : List of every <a href="#idngram_file">id n-gram</a> 
+which occurred in the text, along with its number of occurrences.</p>
+
+<p><strong>Notes</strong> : Maps each word in the <a href="#text_stream">text
+stream</a> to a short integer as soon as it has been read, thus
+enabling more n-grams to be stored and sorted in memory. </p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>text2idngram -vocab .vocab
+           [ -buffer 100 ]
+           [ -temp /usr/tmp/ ]
+           [ -files 25 ]
+           [ -n 3 ]
+           [ -write_ascii ]
+           [ -fof_size 10 ]
+           [ -verbosity 2 ]
+           < .text > .idngram 
+</pre>
+
+<p> By default, the id n-gram file is written out as binary file,
+unless the <tt>-write_ascii</tt> switch is used.</p>
+
+<p>The size of the buffer which is used to store the n-grams can be
+specified using the <tt>-buffer</tt> parameter. This value is in
+megabytes, and the default value can be changed from 100 by changing
+the value of <tt>STD_MEM</tt> in the file
+<tt>src/toolkit.h</tt> before compiling the
+toolkit.
+
+<p>The program will also report the frequency of frequency of n-grams,
+and the corresponding recommended value for the <tt>-spec_num</tt> parameters
+of <a href="#idngram2lm"><tt>idngram2lm</tt></a>. The
+<tt>-fof_size</tt> parameter allows the user to specify the length of
+this list. A value of 0 will result in no list being displayed.</p>
+
+<p>The <tt>-temp</tt> option allows the user to specify where the
+program should store its temporary files.</p>
+
+<p>In the case of really huge quantities of data, it may be the case
+that more temporary files are generated than can be opened at one time
+by the filing system. In this case, the temporary files will be merged
+in chunks, and the <tt>-files</tt> parameter can be used to specify
+how many files are allowed to be open at one time.</p>
+
+<H3>
+<a name="ngram2mgram">
+<tt>
+<center>
+<font size=+5>
+ngram2mgram
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : Either a <a href="#word_ngram">word n-gram file</a>,
+or an <a href="#idngram_file">id n-gram file</a>. </p>
+
+<p><strong>Output</strong> : Either a <a href="#word_ngram">word m-gram file</a>,
+or an <a href="#id_ngram">id m-gram file</a>, where m < n.  </p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>ngram2mgram -n N -m M
+          [ -binary | -ascii | -words ]
+          < .ngram > .mgram
+</pre>
+
+<p> The <tt>-binary</tt>, <tt>-ascii</tt>, <tt>-words</tt> correspond
+to the format of the input and output (Note that the output file will
+be in the same format as the input file). <tt>-ascii</tt> and
+<tt>-binary</tt> denote <a href="#idngram_file">id n-gram files</a>, in
+ASCII and binary formats respectively, and <tt>-words</tt> denotes
+a <a href="#word_ngram">word n-gram file</a>.
+
+<H3>
+<a name="wngram2idngram">
+<tt>
+<center>
+<font size=+5>
+wngram2idngram
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : <a href="#word_ngram">Word n-gram file</a>, plus a <a
+href="#vocab_file">vocabulary file</a>.  </p>
+
+<p><strong>Output</strong> : List of every <a href="#idngram_file">id n-gram</a>
+which occurred in the text, along with its number of occurrences, in
+either ASCII or binary format.</p>
+
+<p><strong>Note</strong> : For this program to be successful, it is important
+that the vocabulary file is in alphabetical order. If you are using
+vocabularies generated by the <tt><a href="#wfreq2vocab">wfreq2vocab</a></tt> tool then this should not be
+an issue, as they will already be alphabetically sorted.</p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>wngram2idngram -vocab .vocab
+              [ -buffer 100 ]
+              [ -hash 200000 ]
+              [ -temp /usr/tmp/ ]
+              [ -files 30 ]
+              [ -verbosity 2 ]
+              [ -n 3 ]
+              [ -write_ascii ]
+              < .wngram > .idngram
+</pre>
+
+<p>The size of the buffer which is used to store the n-grams can be
+specified using the <tt>-buffer</tt> parameter. This value is in
+megabytes, and the default value can be changed from 100 by changing
+the value of <tt>STD_MEM</tt> in the file
+<tt>src/toolkit.h</tt> before compiling the
+toolkit.
+
+<p>The program will also report the frequency of frequency of n-grams,
+and the corresponding recommended value for the <tt>-spec_num</tt> parameters
+of <a href="#idngram2lm"><tt>idngram2lm</tt></a>. The
+<tt>-fof_size</tt> parameter allows the user to specify the length of
+this list. A value of 0 will result in no list being displayed.</p>
+
+
+<p> Higher values for the <tt>-hash</tt> parameter require more
+memory, but can reduce computation time. </p>
+
+<p>The <tt>-temp</tt> option allows the user to specify where the
+program should store its temporary files.</p>
+
+<p> The <tt>-files</tt> parameter is used to specify the number of
+files which can be open at one time. </p>
+
+<H3>
+<a name="idngram2stats">
+<tt>
+<center>
+<font size=+5>
+idngram2stats
+</font>
+</center>
+</tt>
+</H3>
+
+<p><strong>Input</strong> : An id n-gram file (in either binary (by default) or
+ASCII (if specified) mode).</p>
+
+<p><strong>Output</strong> : A list of the frequency-of-frequencies for each of
+the 2-grams, ... , n-grams, which can enable the user to choose
+appropriate cut-offs, and to specify appropriate memory requirements
+with the <tt>-spec_num</tt> option in <a
+href="#idngram2lm"><tt>idngram2lm</tt></a>.
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>idngram2stats [ -n 3 ]
+              [ -fof_size 50 ]
+              [ -verbosity 2 ]
+              [ -ascii_input ]
+              < .idngram > .stats
+</pre>
+
+<H3>
+<a name="mergeidngram">
+<tt>
+<center>
+<font size=+5>
+mergeidngram
+</font>
+</center>
+</tt>
+</H3>
+
+<p> <strong>Input</strong> : A set of id n-gram files (in either binary (by default) or
+ASCII (if specified) format - note that they should all be in the same
+format, however).</p>
+
+<p> <strong>Output</strong> : One id n-gram file (in either binary (by default) or
+ASCII (if specified) format), containing the merged id n-grams from the
+input files.
+
+<p> <strong>Notes</strong> : This utility can also be used to convert id n-gram
+files between ascii and binary formats.</p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>mergeidngram [ -n 3 ]
+             [ -ascii_input ]   
+             [ -ascii_output ]   
+             .idngram_1 .idngram_2 ... .idngram_N > .idngram
+</pre>
+
+<H3>
+<a name="idngram2lm">
+<tt>
+<center>
+<font size=+5>
+idngram2lm
+</font>
+</center>
+</tt>
+</H3>
+
+<p> <strong>Input</strong> : An id n-gram file (in either binary (by default) or
+ASCII (if specified) format), a vocabulary file, and (optionally) a
+<a href="#context_cues_file">context cues file</a>. Additional command
+line parameters will specify the cutoffs, the  <a href="#discounting_strategies">discounting strategy</a> and
+parameters, etc. </p>
+
+<p> <strong>Output</strong> : A language model, in either binary format (to be read by
+<a href="#evallm"><tt>evallm</tt></a>), or in ARPA format.
+</p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>idngram2lm -idngram .idngram
+           -vocab .vocab
+           -arpa .arpa | -binary .binlm
+         [ -context .ccs ]
+         [ -calc_mem | -buffer 100 | -spec_num y ... z ]
+         [ -vocab_type 1 ]
+         [ -oov_fraction 0.5 ]
+         [ -linear | -absolute | -good_turing | -witten_bell ]
+         [ -disc_ranges 1 7 7 ] 
+         [ -cutoffs 0 ... 0 ]
+         [ -min_unicount 0 ]
+         [ -zeroton_fraction 1.0 ]
+         [ -ascii_input | -bin_input ]
+         [ -n 3 ]  
+         [ -verbosity 2 ]
+         [ -four_byte_counts ]
+         [ -two_byte_bo_weights
+            [ -min_bo_weight -3.2 ] [ -max_bo_weight 2.5 ] 
+            [ -out_of_range_bo_weights 10000 ] ]
+</pre>
+
+<p> The <tt>-context</tt> parameter allows the user to specify a file
+containing a list of words within the vocabulary which will serve as
+context cues (for example, markers which indicate the beginnings of
+sentences and paragraphs).</p>
+
+<p> <tt> -calc_mem, -buffer</tt> and <tt>-spec_num x y ... z</tt> are
+options to dictate how it is decided how much memory should be
+allocated for the n-gram counts data structure. <tt>-calc_mem</tt>
+demands that the id n-gram file should be read twice, so that we can
+accurately calculate the amount of memory required. <tt>-buffer</tt>
+allows the user to specify an amount of memory to grab, and divides
+this memory equally between the 2,3, ..., n-gram
+tables. <tt>-spec_num</tt> allows the user to specify exactly how many
+2-grams, 3-grams, ... , and n-grams will need to be stored. The
+default is <tt>-buffer <a href="#stdmem">STD_MEM</a></tt>.</p>
+
+<p>The toolkit provides for three types of vocabulary, which each handle
+out-of-vocabulary (OOV) words in different ways, and which are
+specified using the <tt>-vocab_type</tt> flag.</p>
+
+<p>A <i>closed vocabulary</i> (<tt>-vocab_type 0</tt>) model does not
+make any provision for OOVs. Any such words which appear in either the
+training or test data will cause an error. This type of model might be
+used in a command/control environment where the vocabulary is
+restricted to the number of commands that the system understands, and
+we can therefore guarantee that no OOVs will occur in the training or
+test data. </p>
+
+<p>An <i>open vocabulary</i> model allows for OOVs to occur; out of
+vocabulary words are all mapped to the same symbol. Two types of open
+vocabulary model are implemented in the toolkit. The first type
+(<tt>-vocab_type 1</tt>) treats this symbol the same way as any other
+word in the vocabulary. The second type (<tt>-vocab_type 2</tt>) of
+open vocabulary model is to cover situations where no OOVs occurred in
+the training data, but we wish to allow for the situation where they
+could occur in the test data. This situation could occur, for example,
+if we have a limited amount of training data, and we choose a
+vocabulary which provides 100% coverage of the training set. In this
+case, an arbitrary proportion of the discount probability mass
+(specified by the <tt>-oov_fraction</tt> option) is reserved for OOV
+words.</p>
+
+
+<p> The <a href="#discounting_strategies">discounting strategy</a> and
+its parameters are specified by the <tt>-linear</tt>,
+<tt>-absolute</tt>, <tt>-good_turing</tt> and <tt>-witten_bell</tt>
+options. With Good Turing discounting, one can also specify the range
+over which discounting occurs, using the <tt>-disc_ranges</tt>
+option.</p>
+
+<p> The user can specify the cutoffs for the 2-grams, 3-grams, ...,
+n-grams by using the <tt>-cutoffs</tt> parameter. A cutoff of <i>K</i> means
+that > n-grams occurring <i>K</i> or fewer times are discarded. If the
+parameter is omitted, then all the cutoffs are set to zero. </p>
+
+The <tt>-zeroton_fraction</tt> option specifies that P(zeroton) (the unigram
+probability assigned to a vocabulary word that did not occurred at all
+in the training data) will be at least that fraction of P(singleton) (the
+probability assigned to a vocabulary word that occurred exactly once
+in the training data).
+
+<p>By default, the n-gram counts are stored in two bytes by use of a
+count table (this allows the counts to exceed 65535, while keeping the
+data structures used to store the model compact). However, if more
+than 65535 <strong>distinct</strong> counts need to be stored (very
+unlikely, unless constructing 4-gram or higher language models using
+Good-Turing discounting), the -four_byte_counts option will need to be
+used.</p>
+
+<p> The floating point values of the back-off weights may
+be stored as two-byte integers, by using the <tt>-two_byte_alphas</tt>
+switch. This will introduce slight rounding errors, and so should only
+be used if memory is short. The <tt>-min_alpha</tt>,
+<tt>-max_alpha</tt> and <tt>-out_of_range_alphas</tt> are parameters
+used by the functions for using two-byte alphas. Their values should
+only be altered if the program instructs it. For further details, see
+the comments in the source file <tt>src/two_byte_alphas.c</tt>.
+
+
+
+<H3>
+<a name="binlm2arpa">
+<tt>
+<center>
+<font size=+5>
+binlm2arpa
+</font>
+</center>
+</tt>
+</H3>
+
+<p> <strong>Input</strong> : A binary format language model, as generated by <a
+href="#idngram2lm"><tt>idngram2lm</tt></a>. </p>
+
+<p> <strong>Output</strong> : An ARPA format language model.</p>
+
+<p><strong>Command Line Syntax:</strong></p>
+
+<pre>binlm2arpa -binary .binlm
+           -arpa .arpa 
+         [ -verbosity 2 ]
+</pre>
+
+<H3>
+<a name="evallm">
+<tt>
+<center>
+<font size=+5>
+evallm
+</font>
+</center>
+</tt>
+</H3>
+
+<p> <strong>Input</strong> : A binary or ARPA format language model, as
+generated by <a href="#idngram2lm"><tt>idngram2lm</tt></a>. In
+addition, one may also specify a <a href="#text_stream">text
+stream</a> to be used to compute the perplexity of the language
+model. The ARPA format language model does not contain information as
+to which words are context cues, so if an ARPA format lanaguage model
+is used, then a <a href="#context_cues_file">context cues</a> file may
+be specified as well.</p>
+
+<p> <strong>Output</strong> : The program can run in one of two modes. </p>
+<UL> 
+<LI> compute-PP - Output is the perplexity of the language model with
+respect to the input <a href="#text_stream">text stream</a>.
+<LI> validate - Output is confirmation or denial that the sum of the
+probabilities of each of the words in the context supplied by the user
+sums to one.
+</UL>
+
+<p> <strong>Command Line Syntax:</strong></p>
+
+<pre>evallm [ -binary .binlm | 
+         -arpa .arpa [ -context .ccs ] ]</pre>
+
+
+
+<p><strong>Notes:</strong> <tt>evallm</tt> can receive and process commands
+interactively. When it is run, it loads the language model specified
+at the command line, and waits for instructions from the user. The
+user may specify one of the following commands: </p>
+
+<UL>
+<LI> <strong><tt>perplexity</tt></strong><br>
+Computes the perplexity of a given text. May optionally specify words
+from which to <a href="#forced_backoff">force back-off</a>.<br><br>
+Syntax: <br>
+<pre>perplexity -text .text
+         [ -probs .fprobs ]
+         [ -oovs .oov_file ]
+         [ -annotate .annotation_file ]         
+         [ -backoff_from_unk_inc | -backoff_from_unk_exc ]
+         [ -backoff_from_ccs_inc | -backoff_from_ccs_exc ] 
+         [ -backoff_from_list .fblist ]
+         [ -include_unks ] </pre> 
+
+If the <tt>-probs</tt> parameter is specified, then each individual
+word probability will be written out to the specified <a
+href="#prob_stream">probability stream</a> file.<br> If the
+<tt>-oovs</tt> parameter is specified, then any out-of-vocabulary
+(OOV) words which are encountered in the test set will be written out
+to the specified file. <br>
+
+If the <tt>-annotate</tt> parameter is used, then an annotation file
+will be created, containing information on the probability of each
+word in the test set according to the language model, as well as the
+back-off class for each event. The back-off classes can be interpreted
+as follows: Assume we have a trigram language model, and are trying to
+predict P(C | A B). Then back-off class "3" means that the trigram "A
+B C" is contained in the model, and the probability was predicted
+based on that trigram. "3-2" and "3x2" mean that the model backed-off
+and predicted the probability based on the bigram "B C"; "3-2" means
+that the context "A B" was found (so a back-off weight was applied),
+"3x2" means that the context "A B" was not found.<br>
+
+
+To <a
+href="#forced_backoff">force back-off</a> from all unknown words, use
+the <tt>-backoff_from_unk_inc</tt> or <tt>-backoff_from_unk_exc</tt>
+flag (the difference being the difference between <a href="#forced_back_off_incexc">inclusive or
+exclusive forced back-off</a>). To force back-off from all context-cues, use the
+<tt>-backoff_from_ccs_inc</tt> or <tt>-backoff_from_ccs_inc</tt> flag.
+One can also specify a list of words from which to back-off, by
+storing this list in a <a href="#forced_backoff_file">forced back-off
+list file</a> and using the <tt>-backoff_from_list</tt> switch.  <br>
+
+<tt>-include_unks</tt> results in a perplexity
+calculation in which the probability estimates for the unkown word are
+included.<br> 
+
+<LI> <strong><tt>validate</tt></strong><br> Calculate
+the sum of the probabilities of all the words in the vocabulary given
+the context specified by the user.<br><br> Syntax: <br> 
+
+<pre>validate [ -backoff_from_unk_inc | -backoff_from_unk_exc ]
+         [ -backoff_from_ccs_inc | -backoff_from_ccs_exc ] 
+         [ -backoff_from_list .fblist ]
+           word1 word2 ... word_(n-1)
+</pre>
+Where n is the n in n-gram.
+<br>
+
+<LI> <strong><tt>help</tt></strong><br>
+Displays a help message.<br><br>
+Syntax: <br>
+<pre>help</pre>
+<LI> <strong><tt>quit</tt></strong><br>
+Exits the program.<br><br>
+Syntax: <br>
+<pre>quit</pre>
+</UL>
+
+
+<p> Since the commands are read from standard input, a command file
+can be piped into it directly, thus removing the need for the program
+to run interactively: </p>
+
+<pre>echo "perplexity -text b.text" | evallm -binary a.binlm</pre>
+
+
+<H3>
+<a name="interpolate">
+<tt>
+<center>
+<font size=+5>
+interpolate
+</font>
+</center>
+</tt>
+</H3>
+
+<p> <strong>Input</strong> : Files containing <a
+href="#prob_stream">probability streams</a>, as generated by the
+<tt>-probs</tt> option of the <tt>perplexity</tt> command of <a
+href="#evallm"><tt>evallm</tt></a>. Alternatively these probabilities
+could be generated from a seperate piece of code, which assigns word
+probabilities according to some other language model, for example a
+cache-based LM. This probability stream can then be linearly
+interpolated with one from a standard n-gram model using this
+tool.</p>
+
+<p> <strong>Output</strong> : An optimal set of interpolation weights
+for these probability streams, and (optionally) a probability stream
+corresponding to the linear combination of all the input streams,
+according to the optimal weights. The optimal weights are calculated
+using the expectation maximisation (EM) algorithm.</p>
+
+<p> <strong>Command Line Syntax</strong> :
+
+<pre>interpolate +[-] model1.fprobs +[-] model2.fprobs ... 
+        [ -test_all | -test_first n | -test_last n | -cv ]
+        [ -tag .tags ]
+        [ -captions .captions ]
+        [ -in_lambdas .lambdas ]
+        [ -out_lambdas .lambdas ]
+        [ -stop_ratio 0.999 ]
+        [ -probs .fprobs ]
+        [ -max_probs 6000000 ]</pre>
+
+
+<p> The probability stream filenames are prefaced with a <tt>+</tt> (or a
+<tt>+-</tt> to indicate that the weighting of that model should be
+fixed).</p>
+
+
+<p> There are a range of options to determine which part of the data
+is used to calculate the weights, and which is used to test them. One
+can test the perplexity of the interpolated model based on all the
+data, using the <tt>-test_all</tt> option, in which case a set of
+lambdas must also be specified with the <tt>-lambda</tt> option (ie
+the lambdas are pre-specified, and not calculated by the program). One
+can specify that the first or last n items are the test set by use of
+the <tt>-test_first n</tt> or <tt>-test_last n</tt> options. Or one
+can perform two-way cross validation using the <tt>-cv</tt> option. If
+none of these are specified then the whole of the data is used for
+weight estimation.</p>
+
+<p> By default, the initial interpolation weights are fixed as
+1/number_of_models, but alternative values can be stored in a file and
+used via the <tt>-in_lambdas</tt> option.</p>
+
+<p> The <tt>-probs</tt> switch allows the user to specify a filename
+in which to store the combined probability stream. The optimal lambdas
+can also be stored in a file by use of the <tt>-out_lambdas</tt>
+command.</p>
+
+<p>The program stops when the ratio of the test-set perplexity between
+two successive iterations is above the value specified in the
+<tt>-stop_ratio</tt> option.</p>
+
+<p> The data can be partitioned into different classes (with
+optimisation being performed seperately on each class) using the
+<tt>-tags</tt> parameter. The tags file will contain an integer for
+each item in the probability streams corresponding to the class that
+the item belongs to. A file specified using the <tt>-captions</tt>
+option will allow the user to attach names to each of the
+classes. There should be one line in the captions file for each tag,
+with each line corresponding to the name of the tag.</p>
+
+<p> The amount of memory allocated to store the probability streams is
+dictated by the <tt>-max_probs</tt> option, which indicates the
+maximum number of probabilities allowed in one stream. </p>
+
+<p><strong>Note:</strong> For an example use and output of a previous
+version of this program (with slightly different syntax), see Appendix
+B of <a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/roni/WWW/thesis.ps"><strong>R. Rosenfeld</strong> <i>Adaptive Statistical Language
+Modeling: A Statistical Approach</i></a> PhD Thesis, School of Computer
+Science, Carnegie Mellon University, April 1994. Published as Techical
+Report CMU-CS-94-138 </p>
+
+<hr size=4>
+
+
+
+
+<H2>
+<a name="typical_use">
+Typical Usage
+</H2>
+
+<center><img src="toolkit_framework.gif"  alt="Simplified toolkit framework - 8KB"></center>
+
+<p>Given a large corpus of text in a file <tt>a.text</tt>, but no
+specified vocabulary<p>
+
+<UL>
+<LI> Compute the word unigram counts <br><br>
+<tt>
+cat a.text | <a href="#text2wfreq">text2wfreq</a> > a.wfreq
+</tt><pre>
+</pre>
+<LI> Convert the word unigram counts into a vocabulary consisting of
+the 20,000 most common words <br><br>
+<tt>
+cat a.wfreq | <a href="#wfreq2vocab">wfreq2vocab</a> -top 20000 > a.vocab
+</tt><pre>
+</pre>
+<LI> Generate a binary id 3-gram of the training text, based on this
+vocabulary<br><br>
+<tt>
+cat a.text | <a href="#text2idngram">text2idngram</a> -vocab a.vocab > a.idngram
+</tt><pre>
+</pre>
+<LI> Convert the idngram into a binary format language model <br><br>
+<tt>
+<a href="#idngram2lm">idngram2lm</a> -idngram a.idngram.bin -vocab a.vocab -binary a.binlm
+</tt><pre>
+</pre>
+<LI> Compute the perplexity of the language model, with respect to
+some test text <tt>b.text</tt><br><br>
+<tt>
+<a href="#evallm">evallm</a> -binary a.binlm<br>
+Reading in language model from file a.binlm<br>
+
+Done.<br>
+
+evallm : perplexity -text b.text <br>
+Computing perplexity of the language model with respect <br>
+   to the text b.text <br>
+Perplexity = 128.15, Entropy = 7.00 bits <br>
+Computation based on 8842804 words. <br>
+Number of 3-grams hit = 6806674  (76.97%)<br>
+Number of 2-grams hit = 1766798  (19.98%) <br>
+Number of 1-grams hit = 269332  (3.05%)<br>
+1218322 OOVs (12.11%) and 576763 context cues were removed from the calculation. <br>
+evallm : quit
+</tt>
+</UL>
+
+<p>Alternatively, some of these processes can be piped together:</p>
+<pre>cat a.text | text2wfreq | wfreq2vocab -top 20000 > a.vocab
+cat a.text | text2idngram -vocab a.vocab | \
+   idngram2lm -vocab a.vocab -idngram - \
+   -binary a.binlm -spec_num 5000000 15000000
+echo "perplexity -text b.text" | evallm -binary a.binlm 
+</pre>
+
+<hr size=4>
+
+<H2>
+<a name="discounting_strategies">
+Discounting Strategies
+</H2>
+
+<p>Discounting is the process of replacing the original counts with
+modified counts so as to redistribute the probability mass from the
+more commonly observed events to the less frequent and unseen
+events. If the actual number of occurrences of an event <i>E</i> (such
+as a bigram or trigram occurrence) is <i>c</i>(<i>E</i>), then the
+modified count is <i>d</i>(<i>c</i>(<i>E</i>))<i>c</i>(<i>E</i>),
+where <i>d</i>(<i>c</i>(<i>E</i>)) is known as the discount ratio.</p>
+
+<H3>
+<a name="good_turing">
+Good Turing discounting
+</H3>
+
+<p>Good Turing discounting defines <i>d</i>(<i>r</i>) =
+(<i>r</i>+1)<i>n</i>(<i>r</i>+1) / <i>rn</i>(<i>r</i>) where
+<i>n</i>(<i>r</i>) is the number of events which occur <i>r</i> times.</p>
+
+<p>The discounting is only applied to counts which occur fewer than
+<i>K</i> times, where typically <i>K</i> is chosen to be around
+7. This is the "discounting range" which is specified using the
+<tt>-disc_ranges</tt> parameter of the <a
+href="#idngram2lm"><tt>idngram2lm</tt></a> program.</p>
+
+
+<p>For further details see "<i>Estimation of Probabilities from Sparse Data
+for the Language Model Component of a Speech Recognizer</i>", <strong>Slava
+M. Katz</strong>, in "IEEE Transactions on Acoustics, Speech and Signal
+Processing", volume ASSP-35, pages 400-401, March 1987.</p>
+
+
+<H3>
+<a name="witten_bell">
+Witten Bell discounting
+</H3>
+
+<p>The discounting scheme which we refer to here as "Witten Bell
+discounting" is that which is referred to as type C in "<i>The
+Zero-Frequency Problem: Estimating the Probabilities of Novel Events
+in Adaptive Text Compression</i>", <strong>Ian H. Witten and Timothy
+C. Bell</strong>, in "IEEE Transactions on Information Theory, Vol 37,
+No. 4, July 1991".</p>
+
+<p>The discounting ratio is not dependent on the event's count,
+but on <i>t</i>, the number of types which followed the
+particular context. It defines <i>d</i>(<i>r,t</i>) =
+<i>n</i>/(<i>n</i> + <i>t</i>), where <i>n</i> is the size of the
+training set in words. This is equivalent to setting P(<i>w</i> |
+<i>h</i>) = <i>c</i> / (<i>n</i> + <i>t</i>) (where <i>w</i> is a
+word, <i>h</i> is the history and <i>c</i> is the number of
+occurrences of <i>w</i> in the context <i>h</i>), for events that have
+been seen, and P(<i>w</i> | <i>h</i>) = <i>t</i> / (<i>n</i> +
+<i>t</i>) for unseen events.</p>
+
+<H3>
+<a name="absolute">
+Absolute discounting
+</H3>
+
+<p>Absolute discounting defines <i>d</i>(<i>r</i>) =
+(<i>r</i>-<i>b</i>)/<i>r</i>. Typically
+<i>b</i>=<i>n</i>(1)/(<i>n</i>(1)+2<i>n</i>(2)). The discounting is
+applied to all counts.</p>
+
+<p>This is, of course, equivalent to simply subtracting the constant
+<i>b</i> from each count.</p>
+
+<H3>
+<a name="linear">
+Linear discounting
+</H3>
+
+<p>Linear discounting defines <i>d</i>(<i>r</i>) = 1 -
+(<i>n</i>(1)/<i>C</i>), where <i>C</i> is the total number of
+events. The discounting is applied to all counts.</p>
+
+<p>For further details of both linear and absolute discounting, see
+"<i>On structuring probabilistic dependencies in stochastic language
+modeling</i>", <strong>H. Ney, U. Essen and R. Kneser</strong> in "Computer
+Speech and Language", volume 8(1), pages 1-28, 1994.
+
+<hr size=4>
+
+<H2>
+<a name="latest">
+Up-to-date Information
+</H2>
+
+The latest news on updates, bug fixes etc. can be found <a
+href="http://svr-www.eng.cam.ac.uk/~prc14/toolkit.html">here</a>.
+
+<hr size=4>
+
+<H2>
+<a name="feedback">
+Feedback
+</H2>
+
+<p>Any comments, questions or bug reports concerning the toolkit should
+be addressed to <a href="mailto:prc14@eng.cam.ac.uk">Philip
+Clarkson</a>.</p>
+
+
+<hr size=4>
+
+<address>Philip Clarkson - prc14@eng.cam.ac.uk</address>
+
+</HTML>
+
+
+
+

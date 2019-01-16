@@ -1,0 +1,60 @@
+;; mdeval md_test4 ref rttm
+;; This test file has some odd speaker names,
+;; and will test that md-eval counts Nref for
+;;   "SU exact detection statistics in terms of words"
+;; the same as Nref for "SU detection in terms of # of SU's"
+;; This is an important test of getting that logic correct.
+
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           child        spkr1r <NA>
+SEGMENT   md_test4 1 10.0  6.0 <NA>           <NA>         spkr1r <NA>
+SPEAKER   md_test4 1 10.0  6.0 <NA>           <NA>         spkr1r <NA>
+SU        md_test4 1 10.0  3.0 <NA>           statement    spkr1r <NA>
+LEXEME    md_test4 1 10.0  1.0 firstWord      lex          spkr1r <NA>
+LEXEME    md_test4 1 11.0  1.0 T.'s           alpha        spkr1r <NA>
+LEXEME    md_test4 1 12.0  1.0 thirdWord      acronym      spkr1r <NA>
+SU        md_test4 1 13.0  3.0 <NA>           question     spkr1r <NA>
+LEXEME    md_test4 1 13.0  1.0 fourthWord     interjection spkr1r <NA>
+LEXEME    md_test4 1 14.0  1.0 fifthWord      propernoun   spkr1r <NA>
+LEXEME    md_test4 1 15.0  1.0 sixthWord      other        spkr1r <NA>
+;; Can the scanner handle this oddly formatted speakername?
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           unknown      name="<NAr>" <NA>
+SEGMENT   md_test4 1 16.0  3.0 <NA>           <NA>         name="<NAr>" <NA>
+SPEAKER   md_test4 1 16.0  3.0 <NA>           <NA>         name="<NAr>" <NA>
+
+;; In the sys file, the last word of this SU will be omitted
+SU        md_test4 1 16.0  3.0 <NA>           backchannel  name="<NAr>" <NA>
+LEXEME    md_test4 1 16.0  1.0 seventhWord    lex          name="<NAr>" <NA>
+LEXEME    md_test4 1 17.0  1.0 eighthWord     lex          name="<NAr>" <NA>
+LEXEME    md_test4 1 18.0  1.0 ninthWord      lex          name="<NAr>" <NA>
+
+;; How about this speakername?
+SPKR-INFO md_test4 1 <NA> <NA> <NA>           unknown      spkr=<sp3r> <NA>
+SEGMENT   md_test4 1 19.0 11.0 <NA>           <NA>         spkr=<sp3r> <NA>
+SPEAKER   md_test4 1 19.0 11.0 <NA>           <NA>         spkr=<sp3r> <NA>
+
+;; In the UEM file, the last 1.51 words of this SU will be no-eval'd
+;; and in the sys file the last two words of it will be omitted
+SU        md_test4 1 19.0  5.00 <NA>            question     spkr=<sp3r> <NA>
+LEXEME    md_test4 1 19.0  1.0  tenthWord       lex          spkr=<sp3r> <NA>
+IP        md_test4 1 20.0 <NA>  <NA>            filler       spkr=<sp3r> <NA>
+FILLER    md_test4 1 20.0  1.0  <NA>            filled_pause spkr=<sp3r> <NA>
+LEXEME    md_test4 1 20.0  1.0  eleventhWord    fp           spkr=<sp3r> <NA>
+LEXEME    md_test4 1 21.0  1.0  twelfthWord     lex          spkr=<sp3r> <NA>
+LEXEME    md_test4 1 22.0  1.0  thirteenthWord  lex          spkr=<sp3r> <NA>
+LEXEME    md_test4 1 23.0  1.0 fourteenthWord  lex          spkr=<sp3r>  <NA>
+
+;; The following ref SU is a duplicate of the preceding ref SU
+;; In the UEM file, the last 1.50 words of this SU will be no-eval'd
+;;      rather than the last 1.51
+;; and in the sys file the last two words of it will be omitted
+SU        md_test4 1 24.0  5.00 <NA>            question     spkr=<sp3r> <NA>
+LEXEME    md_test4 1 24.0  1.0  fifteenthWord   lex          spkr=<sp3r> <NA>
+IP        md_test4 1 25.0 <NA>  <NA>            filler       spkr=<sp3r> <NA>
+FILLER    md_test4 1 25.0  1.0  <NA>            filled_pause spkr=<sp3r> <NA>
+LEXEME    md_test4 1 25.0  1.0  sixteenthWord   fp           spkr=<sp3r> <NA>
+LEXEME    md_test4 1 26.0  1.0  seventeenthWord lex          spkr=<sp3r> <NA>
+LEXEME    md_test4 1 27.0  1.0  eighteenthWord  lex          spkr=<sp3r> <NA>
+LEXEME    md_test4 1 28.0  1.0 nineteenthWord  lex          spkr=<sp3r>  <NA>
+
+SU        md_test4 1 29.0  1.0 <NA>           question     spkr=<sp3r> <NA>
+LEXEME    md_test4 1 29.0  1.0 twentiethWord  lex          spkr=<sp3r> <NA>

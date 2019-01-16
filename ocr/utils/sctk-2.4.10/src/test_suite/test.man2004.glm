@@ -1,0 +1,23 @@
+;;
+;;  File: ma20040921.glm
+;;  Desc: This file contains the transcript filtering rules for the RT-04
+;;        Mandarin Evaluation.
+;;
+;;  Date: 20040921
+;;         - Added LEXEMES initial creation 
+;;  Date: 970904
+;;         - initial creation 
+;;
+;;  Hesitation mappings
+%ÚÀ%        =>  [ %HESITATION ]
+%ßÀ%        =>  [ %HESITATION ]
+%àÅ%        =>  [ %HESITATION ]
+%ºÇ%        =>  [ %HESITATION ]
+%ßí%        =>  [ %HESITATION ]
+;;
+ÚÀ        =>  [ %HESITATION ]
+ßÀ        =>  [ %HESITATION ]
+àÅ        =>  [ %HESITATION ]
+ºÇ        =>  [ %HESITATION ]
+ßí        =>  [ %HESITATION ]
+

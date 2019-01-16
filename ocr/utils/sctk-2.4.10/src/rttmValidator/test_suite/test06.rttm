@@ -1,0 +1,21 @@
+;; RTTMValidator test06.rttm - test for illegal start time field value
+;; EXP-ID: expt_03f_su_eval_eng_bnews_spch_1
+
+;; SPKR-INFO should not have any start time
+SPKR-INFO test06 1 7.000 <NA> <NA> unknown 1 <NA>
+SPEAKER	test06 1 0.670 3.540 <NA> <NA> 1 <NA>
+;; start time field can't be negative
+SU 	test06 1 -0.670 3.140 <NA> statement 1 0.708209
+;; start time field must be a non-negative number
+LEXEME 	test06 1 sdfsdf 0.190 IT lex 1 1
+LEXEME 	test06 1 0.8df 0.270 IS lex 1 1
+LEXEME 	test06 1 1.150 0.450 FIFTEEN lex 1 1
+LEXEME 	test06 1 1.610 0.370 HOURS lex 1 1
+LEXEME 	test06 1 1.990 0.600 UNIVERSAL lex 1 1
+LEXEME 	test06 1 2.600 0.410 TIME lex 1 1
+LEXEME 	test06 1 3.020 0.200 FROM lex 1 1
+LEXEME 	test06 1 3.230 0.580 WASHINGTON lex 1 1
+SU 	test06 1 3.820 1.780 <NA> statement 1 0.951884
+LEXEME 	test06 1 3.820 0.220 THIS lex 1 1
+LEXEME 	test06 1 4.050 0.160 IS lex 1 1
+LEXEME 	test06 1 5 0.160 IS lex 1 1

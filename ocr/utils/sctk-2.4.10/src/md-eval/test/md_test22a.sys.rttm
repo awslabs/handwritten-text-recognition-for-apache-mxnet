@@ -1,0 +1,43 @@
+;; mdeval md_test22a sys rttm
+
+SPKR-INFO md_test22a 1 <NA> <NA> <NA>           child        spkr1s <NA>
+;; The SEGMENT records are irrelevant to md-eval's scoring
+SEGMENT   md_test22a 1 10.0  4.0 <NA>           <NA>         spkr1s <NA>
+
+SPEAKER   md_test22a 1 10.0  4.0 <NA>           <NA>         spkr1s <NA>
+SU        md_test22a 1 10.0  1.0 <NA>           statement    spkr1s <NA>
+LEXEME    md_test22a 1 10.0  1.0 firstWord      lex          spkr1s <NA>
+
+SU        md_test22a 1 11.0  1.0 <NA>           question     spkr1s <NA>
+LEXEME    md_test22a 1 11.0  1.0 commercial     lex          spkr1s <NA>
+LEXEME    md_test22a 1 12.0  1.0 message        lex          spkr1s <NA>
+
+SU        md_test22a 1 13.0  1.0 <NA>           statement    spkr1s <NA>
+LEXEME    md_test22a 1 13.0  0.5 fourthWord     lex          spkr1s <NA>
+LEXEME    md_test22a 1 13.5  0.5 fifthWord      lex          spkr1s <NA>
+
+SPKR-INFO md_test22a 1 <NA> <NA> <NA>           adult_male   spkr2s <NA>
+SEGMENT   md_test22a 1 14.0  9.0 <NA>           <NA>         spkr2s <NA>
+SPEAKER   md_test22a 1 14.0  9.0 <NA>           <NA>         spkr2s <NA>
+
+SU        md_test22a 1 14.0  1.0 <NA>           statement    spkr2s <NA>
+LEXEME    md_test22a 1 14.0  1.0 sixthWord      lex          spkr2s <NA>
+
+;; This SU is scored and eval'd despite non-lex covering its midpoint time
+;; The NON-LEX also covers midpoint of SPEAKER record starting at 14.0
+SU        md_test22a 1 15.0  3.0 <NA>           question     spkr2s <NA>
+LEXEME    md_test22a 1 15.0  1.0 seventhWord    lex          spkr2s <NA>
+NON-LEX   md_test22a 1 16.0  1.5 AhhChoo        sneeze       spkr2s <NA>
+LEXEME    md_test22a 1 17.5  0.5 eighthWord    lex          spkr2s <NA>
+
+;; This SU is scored and eval'd, and contains the midpoint time
+;; of the SEGMENT and SPEAKER beginning at 14.0
+SU        md_test22a 1 18.0  2.0 <NA>           statement    spkr2s <NA>
+LEXEME    md_test22a 1 18.0  1.0 ninthWord      lex          spkr2s <NA>
+LEXEME    md_test22a 1 19.0  1.0 tenthWord      lex          spkr2s <NA>
+
+;; UEM eval'd time ends at 21.0 -- before mid-point time of this SU
+SU        md_test22a 1 20.0  3.0 <NA>           question     spkr2s <NA>
+LEXEME    md_test22a 1 20.0  1.0 eleventhWord   lex          spkr2s <NA>
+LEXEME    md_test22a 1 21.0  1.0 twelfthWord    lex          spkr2s <NA>
+LEXEME    md_test22a 1 22.0  1.0 thirteenthWord lex          spkr2s <NA>

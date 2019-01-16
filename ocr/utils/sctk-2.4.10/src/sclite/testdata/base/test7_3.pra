@@ -1,0 +1,377 @@
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   ./tests.hyp
+
+Speakers: 
+    0:  f
+    1:  g
+    2:  h
+    3:  i
+    4:  empty
+    5:  alt
+    6:  od1
+    7:  od2
+    8:  od3
+    9:  tags
+
+Speaker sentences   0:  f   #utts: 7
+id: (f_0)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_1)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_2)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_3)
+Scores: (#C #S #D #I) 6 0 0 1
+REF:  a b c d * f g 
+HYP:  a b c d E f g 
+Eval:         I     
+
+id: (f_4)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_5)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+id: (f_6)
+Scores: (#C #S #D #I) 7 0 0 0
+REF:  a b c d e f g 
+HYP:  a b c d e f g 
+Eval:               
+
+Speaker sentences   1:  g   #utts: 2
+id: (g_0)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  uh uh HAD  A     LONG  AGE-OLD problem of my BRIGHT  
+HYP:  uh uh HAVE ALONG WHICH GO      problem of my PRIVATE 
+Eval:       S    S     S     S                     S       
+
+id: (g_1)
+Scores: (#C #S #D #I) 5 5 0 0
+REF:  uh uh HAD  A     LONG  AGE-OLD problem of my BRIGHT  
+HYP:  uh uh HAVE ALONG WHICH GO      problem of my PRIVATE 
+Eval:       S    S     S     S                     S       
+
+Speaker sentences   2:  h   #utts: 3
+id: (h_0)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a b ef 
+HYP:  a b ef 
+Eval:        
+
+id: (h_1)
+Scores: (#C #S #D #I) 7 0 0 1
+REF:  a gh i bd e * th f 
+HYP:  a gh i bd e I th f 
+Eval:             I      
+
+id: (h_2)
+Scores: (#C #S #D #I) 8 0 0 1
+REF:  a gh i bd e i n ** f 
+HYP:  a gh i bd e i n TH f 
+Eval:                 I    
+
+Speaker sentences   3:  i   #utts: 5
+id: (i_1)
+Scores: (#C #S #D #I) 3 0 1 0
+REF:  this is THE ten 
+HYP:  this is *** ten 
+Eval:         D       
+
+id: (i_2)
+Scores: (#C #S #D #I) 2 1 1 0
+REF:  this is THE TEA 
+HYP:  this is *** TEN 
+Eval:         D   S   
+
+id: (i_3)
+Scores: (#C #S #D #I) 2 1 1 0
+REF:  this is THE TEA 
+HYP:  this is *** TEN 
+Eval:         D   S   
+
+id: (i_4)
+Scores: (#C #S #D #I) 12 2 0 0
+REF:  fi-  th- fi-  -icks -lk  -OFFEE -him find the fish ticks milk FEE    him  
+HYP:  find the fish ticks milk FEE    him  fi-  th- fi-  -icks -lk  -OFFEE -him 
+Eval:                          S                                    S           
+
+id: (i_5)
+Scores: (#C #S #D #I) 6 1 1 1
+REF:  del FI- del_withnull skip skip substitution FI-  sub_withnull **** 
+HYP:  del *** del_withnull skip skip substitution FLAG sub_withnull FLAG 
+Eval:     D                                       S                 I    
+
+Speaker sentences   4:  empty   #utts: 2
+id: (empty-1)
+Scores: (#C #S #D #I) 0 0 0 10
+REF:  * * * * * * * * * * 
+HYP:  A B C E F G H I J K 
+Eval: I I I I I I I I I I 
+
+id: (empty-2)
+Scores: (#C #S #D #I) 0 0 0 3
+REF:  * * * 
+HYP:  D E F 
+Eval: I I I 
+
+Speaker sentences   5:  alt   #utts: 9
+id: (alt-1)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-2)
+Scores: (#C #S #D #I) 3 0 0 1
+REF:  a c * d 
+HYP:  a c I d 
+Eval:     I   
+
+id: (alt-3)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  a d 
+HYP:  a d 
+Eval:     
+
+id: (alt-4)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-5)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a c d 
+HYP:  a c d 
+Eval:       
+
+id: (alt-6)
+Scores: (#C #S #D #I) 2 0 0 0
+REF:  a d 
+HYP:  a d 
+Eval:     
+
+id: (alt-7)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a d e 
+HYP:  a d e 
+Eval:       
+
+id: (alt-8)
+Scores: (#C #S #D #I) 3 0 0 0
+REF:  a d e 
+HYP:  a d e 
+Eval:       
+
+id: (alt-9)
+Scores: (#C #S #D #I) 2 0 1 0
+REF:  a D c 
+HYP:  a * c 
+Eval:   D   
+
+Speaker sentences   6:  od1   #utts: 7
+id: (od1-1)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  b (C) D 
+HYP:  b *** E 
+Eval:   D   S 
+
+id: (od1-2)
+Scores: (#C #S #D #I) 1 2 0 0
+REF:  b (C) D 
+HYP:  b C   E 
+Eval:   S   S 
+
+id: (od1-3)
+Scores: (#C #S #D #I) 2 0 1 1
+REF:  b (C) d * 
+HYP:  b *** d E 
+Eval:   D     I 
+
+id: (od1-4)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  b * (C) D 
+HYP:  b C I   E 
+Eval:   I S   S 
+
+id: (od1-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  b * (C) D 
+HYP:  b S I   E 
+Eval:   I S   S 
+
+id: (od1-6)
+Scores: (#C #S #D #I) 0 1 2 0
+REF:  B (C) D 
+HYP:  * *** E 
+Eval: D D   S 
+
+id: (od1-7)
+Scores: (#C #S #D #I) 0 1 2 0
+REF:  B (C) D 
+HYP:  * *** F 
+Eval: D D   S 
+
+Speaker sentences   7:  od2   #utts: 10
+id: (od2-1)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  (A) (C) B D E 
+HYP:  *** *** S S S 
+Eval: D   D   S S S 
+
+id: (od2-2)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  (A) C (B) D E 
+HYP:  *** * S   S S 
+Eval: D   D S   S S 
+
+id: (od2-3)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  (A) C B (D) E 
+HYP:  *** * S S   S 
+Eval: D   D S S   S 
+
+id: (od2-4)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  (A) C B D (E) 
+HYP:  *** * S S S   
+Eval: D   D S S S   
+
+id: (od2-5)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A (C) (B) D E 
+HYP:  * *** S   S S 
+Eval: D D   S   S S 
+
+id: (od2-6)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A (C) B (D) E 
+HYP:  * *** S S   S 
+Eval: D D   S S   S 
+
+id: (od2-7)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A (C) B D (E) 
+HYP:  * *** S S S   
+Eval: D D   S S S   
+
+id: (od2-8)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A C (B) (D) E 
+HYP:  * * S   S   S 
+Eval: D D S   S   S 
+
+id: (od2-9)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A C (B) D (E) 
+HYP:  * * S   S S   
+Eval: D D S   S S   
+
+id: (od2-10)
+Scores: (#C #S #D #I) 0 3 2 0
+REF:  A C B (D) (E) 
+HYP:  * * S S   S   
+Eval: D D S S   S   
+
+Speaker sentences   8:  od3   #utts: 8
+id: (od3-1)
+Scores: (#C #S #D #I) 1 1 1 0
+REF:  b (C-) D 
+HYP:  b **** E 
+Eval:   D    S 
+
+id: (od3-2)
+Scores: (#C #S #D #I) 1 2 0 0
+REF:  b (C-) D 
+HYP:  b C    E 
+Eval:   S    S 
+
+id: (od3-3)
+Scores: (#C #S #D #I) 2 0 1 1
+REF:  b (C-) d * 
+HYP:  b **** d E 
+Eval:   D      I 
+
+id: (od3-4)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  b * (C-) D 
+HYP:  b C I    E 
+Eval:   I S    S 
+
+id: (od3-5)
+Scores: (#C #S #D #I) 1 2 0 1
+REF:  b * (C-) D 
+HYP:  b S I    E 
+Eval:   I S    S 
+
+id: (od3-6)
+Scores: (#C #S #D #I) 0 1 2 0
+REF:  B (C-) D 
+HYP:  * **** E 
+Eval: D D    S 
+
+id: (od3-7)
+Scores: (#C #S #D #I) 0 1 2 0
+REF:  B (C-) D 
+HYP:  * **** F 
+Eval: D D    S 
+
+id: (od3-8)
+Scores: (#C #S #D #I) 1 3 1 0
+REF:  b (TEN-) (THE) CAN D   
+HYP:  b ****** TEN   THE AND 
+Eval:   D      S     S   S   
+
+Speaker sentences   9:  tags   #utts: 5
+id: (tags-1)
+Scores: (#C #S #D #I) 6 0 0 0
+REF:  a aa;a b;b;b b c d 
+HYP:  a aa;a b;b;b b c d 
+Eval:                    
+
+id: (tags-2)
+Scores: (#C #S #D #I) 0 0 6 0
+REF:  A AA;A B;B;B B C D 
+HYP:  * **** ***** * * * 
+Eval: D D    D     D D D 
+
+id: (tags-3)
+Scores: (#C #S #D #I) 0 0 0 6
+REF:  * **** ***** * * * 
+HYP:  A AA;A B;B;B B C D 
+Eval: I I    I     I I I 
+
+id: (tags-4)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  A aa;a b;b;b B C D 
+HYP:  Z aa;a b;b;b Y X W 
+Eval: S            S S S 
+
+id: (tags-5)
+Scores: (#C #S #D #I) 2 4 0 0
+REF:  A aa;a b;b;b B C D 
+HYP:  Z aa;a b;b;b Y X W 
+Eval: S            S S S 
+
+

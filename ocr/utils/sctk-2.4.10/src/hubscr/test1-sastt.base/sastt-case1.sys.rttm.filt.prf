@@ -1,0 +1,77 @@
+NIST_TEXT_ALIGNMENT
+VERSION 0.1
+
+
+		DUMP OF SYSTEM ALIGNMENT STRUCTURE
+
+System name:   sastt-case1.sys.rttm
+Ref file:      sastt-case1.ref.rttm.filt
+Hyp file:      sastt-case1.sys.rttm.filt
+Creation date: "Mon May 11 13:31:08 2009"
+Fragment Correct Flag Set
+Optionally Deletable Flag Set
+
+Speaker Count: 3
+Speakers: 
+    0:  fe016
+    1:  Ref1
+    2:  Ref2
+
+
+Speaker sentences   0:  fe016   utt# 0 of 1
+id: (fe016-000)
+File: ICSI_20011030-1030_d*_NONE
+Channel: 1
+Scores: (#C #S #D #I) 18 0 0 0
+Ref times: t1= 1.00 t2= 31.00
+REF:  so      so      so      so      (me-me-) she     is      s.'s    john    recursive (she)   (is)    (she)   (is)    (she)   (is)    (she)   (is)    
+R_T1: 1.00    1.50    2.00    2.50    3.00     5.00    5.50    6.00    7.00    8.00      9.00    9.50    10.00   11.00   12.00   12.50   13.00   14.00   
+R_T2: 1.50    2.00    2.50    3.00    4.00     5.50    6.00    7.00    8.00    9.00      9.50    10.00   11.00   12.00   12.50   13.00   14.00   15.00   
+HYP:  so      so      so      so      (me-me-) she     is      s.'s    john    recursive                                                                 
+H_T1: 1.00    1.50    2.00    2.50    3.00     5.00    5.50    6.00    7.00    8.00      0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    
+H_T2: 1.50    2.00    2.50    3.00    4.00     5.50    6.00    7.00    8.00    9.00      0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    
+Eval:                                                                                                                                                    
+
+Speaker sentences   1:  Ref1   utt# 0 of 1
+id: (Ref1-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 1 2 2 1
+Ref times: t1= 100.00 t2= 105.80
+REF:  *       T       a       B       C       F       
+R_T1:         101.00  101.40  102.00  103.00  104.20  
+R_T2:         101.40  102.00  103.00  104.20  105.80  
+HYP:  Y       U       a       *       *       F       
+H_T1: 100.50  101.00  101.40                  104.50  
+H_T2: 101.00  101.40  101.90                  105.20  
+Eval: I       S               D       D       S       
+
+Speaker sentences   2:  Ref2   utt# 0 of 2
+id: (Ref2-000)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 0 2 0 0
+Ref times: t1= 103.30 t2= 105.20
+REF:  G       H       
+R_T1: 103.30  104.10  
+R_T2: 104.10  105.20  
+HYP:  G       D       
+H_T1: 101.90  102.80  
+H_T2: 103.50  104.00  
+Eval: S       S       
+
+Speaker sentences   2:  Ref2   utt# 1 of 2
+id: (Ref2-001)
+File: VT_20051027-1400
+Channel: 1
+Scores: (#C #S #D #I) 1 1 0 1
+Ref times: t1= 105.50 t2= 107.50
+REF:  x       *       T       
+R_T1: 105.50          106.20  
+R_T2: 106.20          107.50  
+HYP:  x       Z       Y       
+H_T1: 105.20  106.20  106.90  
+H_T2: 106.20  106.90  107.30  
+Eval:         I       S       
+
+

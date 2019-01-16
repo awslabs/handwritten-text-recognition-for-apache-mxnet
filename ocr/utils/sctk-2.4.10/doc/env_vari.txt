@@ -1,0 +1,9 @@
+File: env_vari.txt
+Desc: This file describes the debugging environment variables used in sctk.
+
+
+name: WWL_PRINT_DEFAULT
+	Value: defined or not
+	Action: Prints a message each time a default weight is supplied
+	        for a word not in a Word Weight List file.
+

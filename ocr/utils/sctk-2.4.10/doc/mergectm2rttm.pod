@@ -1,0 +1,86 @@
+=head1 NAME
+
+mergectm2rttm.pl - Script that generate a RTTM file by merging CTM and RTTM.
+
+=head1 SYNOPSIS
+
+	mergectm2rttm.pl -r rttmfile -c ctmfile [ -p pathtools ]
+
+=head1 DESCRIPTION
+
+The script is a script which merged a ctm file and a rttm file to produce a rttm file. It takes in input a ctm file containing the lexemes information and a rttm file containing the speakers and segments information. It associates the lexemes and speakers present in the ctm according to the segments definitions from the rttm file (by segment definition, it means time intervals, filename and channel).
+
+=head1 USAGE
+
+Examples:
+
+	align2html-main.pl -r file.rttm -c file.ctm > mergedfile.rttm
+
+=head1 OPTIONS
+
+=over
+
+=item B<Required file arguments:>
+
+=over
+
+=item B<-r>, B<--rttmfile <rttmfile>>
+
+Path to the RTTM file.
+
+=item B<-c>, B<--ctmfile <ctmfile>>
+
+Path to the CTM file.
+
+=back
+
+=item B<Options:>
+
+=over
+
+=item B<-p>,B<--pathtools <path>>
+
+Path of the tools.
+
+=back
+
+=item B<Other options:>
+
+=over
+
+=item B<-h>, B<--help>
+
+Display the help.
+
+=head1 BUGS
+
+No known bugs.
+
+=head1 NOTES
+
+As the script requires two other scripts: rttmSmooth.pl and rttmSort.pl, the path of the SCTK tools directory can be specified on the commandline using the '-p' option.
+
+The script checks if the two scripts are present and run the merging process.
+To avoid any complication, there are 3 options to run the script:
+(a) Run the script into its directory without the -p option,
+(b) Run the script from any location by specifying the path with -p and the  path of the SCTK tools directory (.../stck/src/),
+(c) Edit the mergectm2rttm.pl line at line 184 and 185 to give the locations of the two scripts.
+
+The resulting rttm file is displayed in the standard output (STDOUT), by doing the redirection '>', it can be stored into a file.
+
+=head1 AUTHORS
+
+=item Jerome Ajot <jerome.ajot@nist.gov>
+
+=head1 COPYRIGHT
+
+NIST Public Domain
+
+=head1 DISCLAIMER 
+
+This software was developed at the National Institute of Standards and Technology by employees of the Federal Government in the course of their official duties.  Pursuant to Title 17 Section 105 of the United States Code this software is not subject to copyright protection within the United States and is in the public domain. This software is an experimental system. NIST assumes no responsibility whatsoever for its use by any party.
+
+THIS SOFTWARE IS PROVIDED "AS IS." With regard to this software, NIST MAKES NO EXPRESS OR IMPLIED WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+=cut
+

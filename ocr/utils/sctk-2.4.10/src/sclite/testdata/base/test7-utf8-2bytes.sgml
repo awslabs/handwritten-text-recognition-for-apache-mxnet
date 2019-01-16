@@ -1,0 +1,196 @@
+<SYSTEM title="./tests.hyp.utf8-2bytes" ref_fname="./tests.ref.utf8-2bytes" hyp_fname="./tests.hyp.utf8-2bytes"  format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="f">
+<PATH id="(f_0)" word_cnt="7" sequence="0">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_1)" word_cnt="7" sequence="1">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_2)" word_cnt="7" sequence="2">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_3)" word_cnt="7" sequence="3">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":I,,"Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_4)" word_cnt="7" sequence="4">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_5)" word_cnt="7" sequence="5">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+<PATH id="(f_6)" word_cnt="7" sequence="6">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ģ","Ģ":C,"ģ","ģ":C,"Ĥ","Ĥ":C,"ĥ","ĥ":C,"Ħ","Ħ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="g">
+<PATH id="(g_0)" word_cnt="10" sequence="7">
+C,"Ĵħ","Ĵħ":C,"Ĵħ","Ĵħ":S,"ħĠģ","ħĠĵĤ":S,"Ġ","ĠīĮĭĦ":S,"īĮĭĦ","ĶħĨĢħ":S,"ĠĦĤ-Įīģ","ĦĮ":C,"įıĮġīĤĬ","įıĮġīĤĬ":C,"Įĥ","Įĥ":C,"Ĭĸ","Ĭĸ":S,"ġright","įıĨĵĠĳĤ"
+</PATH>
+<PATH id="(g_1)" word_cnt="10" sequence="8">
+C,"Ĵħ","Ĵħ":C,"Ĵħ","Ĵħ":S,"ħĠģ","ħĠĵĤ":S,"Ġ","ĠīĮĭĦ":S,"īĮĭĦ","ĶħĨĢħ":S,"ĠĦĤ-Įīģ","ĦĮ":C,"įıĮġīĤĬ","įıĮġīĤĬ":C,"Įĥ","Įĥ":C,"Ĭĸ","Ĭĸ":S,"ġright","įıĨĵĠĳĤ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="h">
+<PATH id="(h_0)" word_cnt="3" sequence="9">
+C,"Ġ","Ġ":C,"ġ","ġ":C,"Ĥĥ","Ĥĥ"
+</PATH>
+<PATH id="(h_1)" word_cnt="8" sequence="10">
+C,"Ġ","Ġ":C,"Ħħ","Ħħ":C,"Ĩ","Ĩ":C,"ġģ","ġģ":C,"Ĥ","Ĥ":I,,"Ĩ":C,"ĳħ","ĳħ":C,"ĥ","ĥ"
+</PATH>
+<PATH id="(h_2)" word_cnt="9" sequence="11">
+C,"Ġ","Ġ":C,"Ħħ","Ħħ":C,"Ĩ","Ĩ":C,"ġģ","ġģ":C,"Ĥ","Ĥ":C,"Ĩ","Ĩ":C,"ĭ","ĭ":I,,"ĳħ":C,"ĥ","ĥ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="i">
+<PATH id="(i_1)" word_cnt="5" sequence="12">
+I,,"ĳħ":S,"ĳħĨĲ","Ĥ":C,"ĨĲ","ĨĲ":S,"ĳħĤ","ĳħ":S,"ĳĤĭ","Ĥĭ"
+</PATH>
+<PATH id="(i_2)" word_cnt="5" sequence="13">
+I,,"ĳħ":S,"ĳħĨĲ","Ĥ":C,"ĨĲ","ĨĲ":S,"ĳħĤ","ĳħ":S,"ĳĤĠ","Ĥĭ"
+</PATH>
+<PATH id="(i_3)" word_cnt="5" sequence="14">
+I,,"ĳħ":S,"ĳħĤ","ĨĲ":C,"ĨĲ","ĨĲ":S,"ĳħĤ","ĳħ":S,"ĳĤĠ","Ĥĭ"
+</PATH>
+<PATH id="(i_4)" word_cnt="14" sequence="15">
+C,"ĥĨ-","ĥĨĭģ":C,"ĳħ-","ĳħĤ":C,"ĥĨ-","ĥĨĲħ":C,"-ĨĢĪĲ","ĳĨĢĪĲ":C,"-īĪ","ĬĨīĪ":S,"-ĮĥĥĤĤ","ĥĤĤ":C,"-ħĨĬ","ħĨĬ":C,"ĥĨĭģ","ĥĨ-":C,"ĳħĤ","ĳħ-":C,"ĥĨĲħ","ĥĨ-":C,"ĳĨĢĪĲ","-ĨĢĪĲ":C,"ĬĨīĪ","-īĪ":S,"ĥĤĤ","-ĮĥĥĤĤ":C,"ħĨĬ","-ħĨĬ"
+</PATH>
+<PATH id="(i_5)" word_cnt="9" sequence="16">
+C,"ģĤī","ģĤī":D,"ĥĨ-",:C,"ģĤīĞĶĨĳħĭĴīī","ģĤīĞĶĨĳħĭĴīī":C,"ĲĪĨį","ĲĪĨį":C,"ĲĪĨį","ĲĪĨį":C,"ĲĴġĲĳĨĳĴĳĨĮĭ","ĲĴġĲĳĨĳĴĳĨĮĭ":S,"ĥĨ-","ĥīĠĦ":C,"ĲĴġĞĶĨĳħĭĴīī","ĲĴġĞĶĨĳħĭĴīī":I,,"ĥīĠĦ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="empty">
+<PATH id="(empty-1)" word_cnt="10" sequence="17">
+I,,"Ġ":I,,"ġ":I,,"Ģ":I,,"Ĥ":I,,"ĥ":I,,"Ħ":I,,"ħ":I,,"Ĩ":I,,"ĩ":I,,"Ī"
+</PATH>
+<PATH id="(empty-2)" word_cnt="3" sequence="18">
+I,,"ģ":I,,"Ĥ":I,,"ĥ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="alt">
+<PATH id="(alt-1)" word_cnt="3" sequence="19">
+C,"Ġ","Ġ":C,"Ģ","Ģ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-2)" word_cnt="4" sequence="20">
+C,"Ġ","Ġ":C,"Ģ","Ģ":I,,"Ĩ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-3)" word_cnt="2" sequence="21">
+C,"Ġ","Ġ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-4)" word_cnt="3" sequence="22">
+C,"Ġ","Ġ":C,"Ģ","Ģ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-5)" word_cnt="3" sequence="23">
+C,"Ġ","Ġ":C,"Ģ","Ģ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-6)" word_cnt="2" sequence="24">
+C,"Ġ","Ġ":C,"ģ","ģ"
+</PATH>
+<PATH id="(alt-7)" word_cnt="3" sequence="25">
+C,"Ġ","Ġ":C,"ģ","ģ":C,"Ĥ","Ĥ"
+</PATH>
+<PATH id="(alt-8)" word_cnt="3" sequence="26">
+C,"Ġ","Ġ":C,"ģ","ģ":C,"Ĥ","Ĥ"
+</PATH>
+<PATH id="(alt-9)" word_cnt="3" sequence="27">
+C,"Ġ","Ġ":D,"ģ",:C,"Ģ","Ģ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od1">
+<PATH id="(od1-1)" word_cnt="3" sequence="28">
+C,"ġ","ġ":C,"(Ģ)","":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od1-2)" word_cnt="3" sequence="29">
+C,"ġ","ġ":C,"(Ģ)","Ģ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od1-3)" word_cnt="4" sequence="30">
+C,"ġ","ġ":C,"(Ģ)","":C,"ģ","ģ":I,,"Ĥ"
+</PATH>
+<PATH id="(od1-4)" word_cnt="4" sequence="31">
+C,"ġ","ġ":C,"(Ģ)","Ģ":I,,"Ĩ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od1-5)" word_cnt="4" sequence="32">
+C,"ġ","ġ":I,,"Ĳ":S,"(Ģ)","Ĩ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od1-6)" word_cnt="3" sequence="33">
+D,"ġ",:C,"(Ģ)","":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od1-7)" word_cnt="3" sequence="34">
+D,"ġ",:C,"(Ģ)","":S,"ģ","ĥ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="od2">
+<PATH id="(od2-1)" word_cnt="5" sequence="35">
+C,"(Ġ)","":C,"(Ģ)","":S,"ġ","Ĳ":S,"ģ","Ĳ":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-2)" word_cnt="5" sequence="36">
+C,"(Ġ)","":S,"Ģ","Ĳ":C,"(ġ)","":S,"ģ","Ĳ":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-3)" word_cnt="5" sequence="37">
+C,"(Ġ)","":S,"Ģ","Ĳ":S,"ġ","Ĳ":C,"(ģ)","":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-4)" word_cnt="5" sequence="38">
+C,"(Ġ)","":S,"Ģ","Ĳ":S,"ġ","Ĳ":S,"ģ","Ĳ":C,"(Ĥ)",""
+</PATH>
+<PATH id="(od2-5)" word_cnt="5" sequence="39">
+S,"Ġ","Ĳ":C,"(Ģ)","":C,"(ġ)","":S,"ģ","Ĳ":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-6)" word_cnt="5" sequence="40">
+S,"Ġ","Ĳ":C,"(Ģ)","":S,"ġ","Ĳ":C,"(ģ)","":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-7)" word_cnt="5" sequence="41">
+S,"Ġ","Ĳ":C,"(Ģ)","":S,"ġ","Ĳ":S,"ģ","Ĳ":C,"(Ĥ)",""
+</PATH>
+<PATH id="(od2-8)" word_cnt="5" sequence="42">
+S,"Ġ","Ĳ":S,"Ģ","Ĳ":C,"(ġ)","":C,"(ģ)","":S,"Ĥ","Ĳ"
+</PATH>
+<PATH id="(od2-9)" word_cnt="5" sequence="43">
+S,"Ġ","Ĳ":S,"Ģ","Ĳ":C,"(ġ)","":S,"ģ","Ĳ":C,"(Ĥ)",""
+</PATH>
+<PATH id="(od2-10)" word_cnt="5" sequence="44">
+S,"Ġ","Ĳ":S,"Ģ","Ĳ":S,"ġ","Ĳ":C,"(ģ)","":C,"(Ĥ)",""
+</PATH>
+</SPEAKER>
+<SPEAKER id="od3">
+<PATH id="(od3-1)" word_cnt="3" sequence="45">
+C,"ġ","ġ":C,"(Ģ-)","":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od3-2)" word_cnt="3" sequence="46">
+C,"ġ","ġ":C,"(Ģ-)","Ģ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od3-3)" word_cnt="4" sequence="47">
+C,"ġ","ġ":C,"(Ģ-)","":C,"ģ","ģ":I,,"Ĥ"
+</PATH>
+<PATH id="(od3-4)" word_cnt="4" sequence="48">
+C,"ġ","ġ":C,"(Ģ-)","Ģ":I,,"Ĩ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od3-5)" word_cnt="4" sequence="49">
+C,"ġ","ġ":I,,"Ĳ":S,"(Ģ-)","Ĩ":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od3-6)" word_cnt="3" sequence="50">
+D,"ġ",:C,"(Ģ-)","":S,"ģ","Ĥ"
+</PATH>
+<PATH id="(od3-7)" word_cnt="3" sequence="51">
+D,"ġ",:C,"(Ģ-)","":S,"ģ","ĥ"
+</PATH>
+<PATH id="(od3-8)" word_cnt="5" sequence="52">
+C,"ġ","ġ":C,"(ĳĤĭ-)","ĳĤĭ":C,"(ĳħĤ)","ĳħĤ":D,"ĢĠĭ",:S,"ģ","Ġĭģ"
+</PATH>
+</SPEAKER>
+<SPEAKER id="tags">
+<PATH id="(tags-1)" word_cnt="6" sequence="53">
+C,"Ġ","Ġ":C,"ĠĠ\;a","ĠĠ\;a":C,"ġ\;b\;b;hyp\;tag1;hyptag2","ġ\;b\;b;hyp\;tag1;hyptag2":C,"ġ;reftag1;","ġ;hyptag1;":C,"Ģ;;reftag2","Ģ;;hyptag2":C,"ģ;reftag1;reftag2","ģ;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-2)" word_cnt="6" sequence="54">
+D,"Ġ",:D,"ĠĠ\;a",:D,"ġ\;b\;b;hyptag1;hyp\;tag2",:D,"ġ;reftag1;",:D,"Ģ;;reftag2",:D,"ģ;reftag1;reftag2",
+</PATH>
+<PATH id="(tags-3)" word_cnt="6" sequence="55">
+I,,"Ġ":I,,"ĠĠ\;a":I,,"ġ\;b\;b;hyptag1;hyp\;tag2":I,,"ġ;hyptag1;":I,,"Ģ;;hyptag2":I,,"ģ;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-4)" word_cnt="6" sequence="56">
+S,"Ġ","z":C,"ĠĠ\;a","ĠĠ\;a":C,"ġ\;b\;b;hyp\;tag1;hyptag2","ġ\;b\;b;hyptag1;hyptag2":S,"ġ;reftag1;","ĸ;hyptag1;":S,"Ģ;;reftag2","ķ;;hyptag2":S,"ģ;reftag1;reftag2","Ķ;hyptag1;hyptag2"
+</PATH>
+<PATH id="(tags-5)" word_cnt="6" sequence="57">
+S,"Ġ","z":C,"ĠĠ\;a","ĠĠ\;a":C,"ġ\;b\;b;hyp\;tag1;hyptag2","ġ\;b\;b;hyptag1;hyptag2":S,"ġ;reftag1;","ĸ;hyptag1;":S,"Ģ;;reftag2","ķ;;hyptag2":S,"ģ;reftag1;reftag2","Ķ;hyptag1;hyptag2"
+</PATH>
+</SPEAKER>
+</SYSTEM>

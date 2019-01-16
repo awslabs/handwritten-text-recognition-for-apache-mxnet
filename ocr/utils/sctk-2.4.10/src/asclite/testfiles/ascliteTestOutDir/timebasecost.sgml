@@ -1,0 +1,33 @@
+<SYSTEM title="timebasecost" ref_fname="isg.ref.rttm" hyp_fname="isg.sys.rttm" creation_date="" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="REF1">
+<PATH id="(REF1-000)" word_cnt="5" file="VT_20051027-1400" channel="1" sequence="4" R_T1="101.000" R_T2="105.800" word_aux="r_t1+t2,h_t1+t2">
+S,"t","u",101.000+101.400,101.000+101.400:C,"a","a",101.400+102.000,101.400+101.900:S,"b","g",102.000+103.000,101.900+103.500:S,"c","d",103.000+104.200,102.800+104.000:D,"f",,104.200+105.800,
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF2">
+<PATH id="(REF2-000)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="9" R_T1="103.300" R_T2="105.200" word_aux="r_t1+t2,h_t1+t2">
+D,"g",,103.300+104.400,:S,"h","f",104.100+105.200,104.500+105.200
+</PATH>
+<PATH id="(REF2-001)" word_cnt="2" file="VT_20051027-1400" channel="1" sequence="13" R_T1="105.500" R_T2="106.600" word_aux="r_t1+t2,h_t1+t2">
+C,"x","x",105.500+106.200,105.200+106.200:S,"t","z",106.200+106.600,106.200+106.900
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF3">
+<PATH id="(REF3-000)" word_cnt="2" file="NIST_20061012-1056" channel="1" sequence="16" R_T1="110.000" R_T2="111.000" word_aux="r_t1+t2,h_t1+t2">
+S,"k","j",110.000+110.500,109.750+110.500:D,"j",,110.500+111.000,
+</PATH>
+</SPEAKER>
+<SPEAKER id="REF4">
+<PATH id="(REF4-000)" word_cnt="1" file="NIST_20061012-1056" channel="1" sequence="19" R_T1="112.000" R_T2="113.000" word_aux="r_t1+t2,h_t1+t2">
+D,"l",,112.000+113.000,
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="1" file="VT_20051027-1400" channel="1" sequence="20" R_T1="100.500" R_T2="101.000" word_aux="r_t1+t2,h_t1+t2">
+I,,"y",,100.500+101.000
+</PATH>
+<PATH id="(Inter_Segment_Gap-001)" word_cnt="1" file="VT_20051027-1400" channel="1" sequence="21" R_T1="106.600" R_T2="107.300" word_aux="r_t1+t2,h_t1+t2">
+I,,"y",,106.900+107.300
+</PATH>
+</SPEAKER>
+</SYSTEM>

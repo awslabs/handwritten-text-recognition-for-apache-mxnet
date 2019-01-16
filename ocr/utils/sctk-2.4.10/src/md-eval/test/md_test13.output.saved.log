@@ -1,0 +1,6 @@
+
+
+FATAL ERROR -- negative metadata duration in file md_test13,'
+    input RTTM record is: 'SEGMENT   md_test13 1 10.0 -6.0 <NA>         <NA>         spkr1s <NA>
+'
+

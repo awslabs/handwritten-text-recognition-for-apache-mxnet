@@ -1,0 +1,73 @@
+ठ ड { ढ ण / ढ / त } त थ द (f_0)
+ठ ड { ढ / ढ ण / त } त थ द (f_1)
+ठ ड { ढ / त / ढ ण } त थ द (f_2)
+ठ ड { ढ / त / ढ ण } थ द (f_3)
+ठ ड ढ ण { त / ढ / @ } थ द (f_4)
+ठ ड ढ ण त { त / ढ / @ } थ द (f_5)
+ठ ड ढ ण { त / ढ / @ } त थ द (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+ऴध ऴध धठण ठ फमभद { ठदत-मफण / ठदत मफण } यऱमडफतब मथ बस डright (g_0)
+ऴध ऴध धठण ठ फमभद { ठदत मफण / ठदत-मफण } यऱमडफतब मथ बस डright (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+ठ { ड / ढण } { त थ / तथ } (h_0)
+ठ { ड / ढण / { द ध न / दध न / द नध} डण } { त { न भ / ळध } थ / तथ } (h_1)
+ठ { ड / ढण / { द ध न / दध न / द नध} डण } { त { न भ / ळध } थ / तथ } (h_2)
+;; Test a couple alternations in the hyp file
+ळधनल नल ळधत ळतभ (i_1)
+ळधनल नल ळधत ळतठ (i_2)
+;; Check alternations in both the ref and hyp
+{ळधत / ळधनल} नल ळधत ळतठ (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+{थन-/थनद-} ळध- थन- -नढपल {-फप/-नप} -मथथतत -धनब थनभण ळधत थनलध ळनढपल बनफप थतत धनब (i_4)
+;; Check deletions and substitutions of hyphenated words
+णतफ थन- णतफञशनळधभऴफफ { थन /@ } लपनय लपनय लऴडलळनळऴळनमभ थन- लऴडञशनळधभऴफफ { थन- / @ } (i_5)
+;; Check to handle utterances without reference words 
+(empty-1)
+(empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+ठ { ढ / @ } ण (alt-1)
+ठ { ढ / @ } ण (alt-2)
+ठ { ढ / @ } ण (alt-3)
+ठ { ढ / @ } ण (alt-4)
+ठ { ढ / @ } ण (alt-5)
+ठ { ढ / @ } ण (alt-6)
+ठ ण त (alt-7)
+ठ ण @ त (alt-8)
+ठ ण ढ (alt-9)
+;;; Check the handling of optionally deletable
+ड (ढ) ण (od1-1)
+ड (ढ) ण (od1-2)
+ड (ढ) ण (od1-3)
+ड (ढ) ण (od1-4)
+ड (ढ) ण (od1-5)
+ड (ढ) ण (od1-6)
+ड (ढ) ण (od1-7)
+;;; ambiguous cases
+(ठ) (ढ) ड ण त (od2-1)
+(ठ) ढ (ड) ण त (od2-2)
+(ठ) ढ ड (ण) त (od2-3)
+(ठ) ढ ड ण (त) (od2-4)
+ठ (ढ) (ड) ण त (od2-5)
+ठ (ढ) ड (ण) त (od2-6)
+ठ (ढ) ड ण (त) (od2-7)
+ठ ढ (ड) (ण) त (od2-8)
+ठ ढ (ड) ण (त) (od2-9)
+ठ ढ ड (ण) (त) (od2-10)
+;;; Fragment interactions
+ड (ढ-) ण (od3-1)
+ड (ढ-) ण (od3-2)
+ड (ढ-) ण (od3-3)
+ड (ढ-) ण (od3-4)
+ड (ढ-) ण (od3-5)
+ड (ढ-) ण (od3-6)
+ड (ढ-) ण (od3-7)
+ड (ळतभ-) (ळधत) ढठभ ण (od3-8)
+;;; Test passing through tags
+ठ ठठ\;a ड\;b\;b;hyp\;tag1;hyptag2 ड;reftag1 ढ;;reftag2 ण;reftag1;reftag2 (tags-1)
+ठ ठठ\;a ड\;b\;b;hyptag1;hyp\;tag2 ड;reftag1 ढ;;reftag2 ण;reftag1;reftag2 (tags-2)
+(tags-3)
+ठ ठठ\;a ड\;b\;b;hyp\;tag1;hyptag2 ड;reftag1 ढ;;reftag2 ण;reftag1;reftag2 (tags-4)
+{ठ ठठ\;a ड\;b\;b;hyp\;tag1;hyptag2 ड;reftag1 ढ;;reftag2 ण;reftag1;reftag2 / स स स स स स स स स स स स} (tags-5)

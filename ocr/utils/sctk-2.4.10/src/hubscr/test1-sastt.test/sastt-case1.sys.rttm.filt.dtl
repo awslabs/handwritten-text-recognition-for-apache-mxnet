@@ -1,0 +1,91 @@
+DETAILED OVERALL REPORT FOR THE SYSTEM: sastt-case1.sys.rttm
+
+SENTENCE RECOGNITION PERFORMANCE
+
+ sentences                                           4
+ with errors                             75.0%   (   3)
+
+   with substitions                      75.0%   (   3)
+   with deletions                        25.0%   (   1)
+   with insertions                       50.0%   (   2)
+
+
+WORD RECOGNITION PERFORMANCE
+
+Percent Total Error       =   33.3%   (   9)
+
+Percent Correct           =   74.1%   (  20)
+
+Percent Substitution      =   18.5%   (   5)
+Percent Deletions         =    7.4%   (   2)
+Percent Insertions        =    7.4%   (   2)
+Percent Word Accuracy     =   66.7%
+
+
+Ref. words                =           (  27)
+Hyp. words                =           (  27)
+Aligned words             =           (  29)
+
+CONFUSION PAIRS                  Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:    1  ->  f ==> f
+   2:    1  ->  g ==> g
+   3:    1  ->  h ==> d
+   4:    1  ->  t ==> u
+   5:    1  ->  t ==> y
+     -------
+         5
+
+
+
+INSERTIONS                       Total                 (2)
+                                 With >=  1 occurances (2)
+
+   1:    1  ->  y
+   2:    1  ->  z
+     -------
+         2
+
+
+
+DELETIONS                        Total                 (2)
+                                 With >=  1 occurances (2)
+
+   1:    1  ->  b
+   2:    1  ->  c
+     -------
+         2
+
+
+
+SUBSTITUTIONS                    Total                 (4)
+                                 With >=  1 occurances (4)
+
+   1:    2  ->  t
+   2:    1  ->  f
+   3:    1  ->  g
+   4:    1  ->  h
+     -------
+         5
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:    1  ->  d
+   2:    1  ->  f
+   3:    1  ->  g
+   4:    1  ->  u
+   5:    1  ->  y
+     -------
+         5
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
+

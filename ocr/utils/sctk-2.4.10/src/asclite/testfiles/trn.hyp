@@ -1,0 +1,77 @@
+a b c d e f g (f_0)
+a b c d e f g (f_1)
+a b c d e f g (f_2)
+a b c d e f g (f_3)
+a b c d e f g (f_4)
+a b c d e f g (f_5)
+a b c d e f g (f_6)
+;;;
+;;; This case fails if the alignment doesn't to an in-order traversal
+;;; to initialize the alignment matrix
+uh uh have along which go problem of my private (g_0)
+uh uh have along which go problem of my private (g_1)
+;;;
+;;; Make sure two networks can be aligned together
+a {bc / b } { e d / ef} (h_0)
+a gh i bd e i th f (h_1)
+a gh i bd e i n th f (h_2)
+;; Test a couple alternations in the hyp file
+th {e/is} is {th/t} en (i_1)
+th {e/is} is {th/t} en (i_2)
+;; Check alternations in both the ref and hyp
+th { {e / @} is {w as / i / s / @ } / d is } is {th/t} en (i_3)
+;; Check hyphenations (and alternations) in the ref and hyp to see if the '-F' fragment correct flag 
+find the fish ticks milk fee him {fi-/fig-} th- fi- -icks {-lk/-ik} -offee -him (i_4)
+;; Check deletions and substitutions of hyphenated words
+del del_withnull skip skip substitution flag sub_withnull flag (i_5)
+;; Check to handle utterances without reference words 
+a b c e f g h i j k  (empty-1)
+d e f (empty-2)
+;; Check some alternations in the hypothesis as well as in the reference
+a c d (alt-1)
+a c i d (alt-2)
+a d (alt-3)
+;; Fix later a {c / @} d (alt-4)
+;; Fix later a {@ / c} d (alt-5)
+a {d / @} d (alt-6)
+a d @ e (alt-7)
+a d e (alt-8)
+a {e- / @} c (alt-9)
+;;; Check the handling of optionally deletable
+b e (od1-1)
+b c e (od1-2)
+b d e (od1-3)
+b c i e (od1-4)
+b s i e (od1-5)
+e (od1-6)
+f (od1-7)
+;;;;;;;;;;;;;;;;;;;
+;;; ambiguous cases
+s s s (od2-1)
+s s s (od2-2)
+s s s (od2-3)
+s s s (od2-4)
+s s s (od2-5)
+s s s (od2-6)
+s s s (od2-7)
+s s s (od2-8)
+s s s (od2-9)
+s s s (od2-10)
+;;; Fragment interactions
+b e (od3-1)
+b c e (od3-2)
+b d e (od3-3)
+b c i e (od3-4)
+b s i e (od3-5)
+e (od3-6)
+f (od3-7)
+b ten the and (od3-8)
+;;; Test passing through tags
+;;;a aa\;a b\;b\;b;hyp\;tag1;hyptag2 b;hyptag1 c;;hyptag2 d;hyptag1;hyptag2 (tags-1)
+;;;(tags-2)
+;;;a aa\;a b\;b\;b;hyptag1;hyp\;tag2 b;hyptag1 c;;hyptag2 d;hyptag1;hyptag2 (tags-3)
+;;;z aa\;a b\;b\;b;hyptag1;hyptag2 y;hyptag1 x;;hyptag2 w;hyptag1;hyptag2 (tags-4)
+;;;{ z aa\;a b\;b\;b;hyptag1;hyptag2 y;hyptag1 x;;hyptag2 w;hyptag1;hyptag2 / x x x x x x x x x x x x x } (tags-5)
+;;; Testing combinations for -s -F and -D!
+A B   C    D  (comb-1) 
+a b- (c-) (d) (comb-2)
