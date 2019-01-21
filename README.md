@@ -5,11 +5,11 @@ These notebooks have been created by [Jonathan Chung](https://github.com/jonomon
 ![](https://cdn-images-1.medium.com/max/1000/1*nJ-ePgwhOjOhFH3lJuSuFA.png)
 
 The pipeline is composed of 3 steps:
-- Detecting the handwritten area in a form [[blog post](https://medium.com/apache-mxnet/page-segmentation-with-gluon-dcb4e5955e2)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/paragraph_segmentation_dcnn.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/paragraph_segmentation_dcnn.py)]
-- Detecting lines of handwritten texts [[blog post](https://medium.com/apache-mxnet/handwriting-ocr-line-segmentation-with-gluon-7af419f3a3d8)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/line_segmentation.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/line_segmentation.py)]
-- Recognising characters and applying a language model to correct errors. [[blog post](https://medium.com/apache-mxnet/handwriting-ocr-handwriting-recognition-and-language-modeling-with-mxnet-gluon-4c7165788c67)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/handwriting_recognition.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/handwriting_line_recognition.py)]
+- Detecting the handwritten area in a form [[blog post](https://medium.com/apache-mxnet/page-segmentation-with-gluon-dcb4e5955e2)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/1_b_paragraph_segmentation_dcnn.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/paragraph_segmentation_dcnn.py)]
+- Detecting lines of handwritten texts [[blog post](https://medium.com/apache-mxnet/handwriting-ocr-line-segmentation-with-gluon-7af419f3a3d8)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/2_line_word_segmentation.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/word_and_line_segmentation.py)]
+- Recognising characters and applying a language model to correct errors. [[blog post](https://medium.com/apache-mxnet/handwriting-ocr-handwriting-recognition-and-language-modeling-with-mxnet-gluon-4c7165788c67)], [[jupyter notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/3_handwriting_recognition.ipynb)], [[python script](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/handwriting_line_recognition.py)]
 
-The entire inference pipeline can be found in this [notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/handwriting_ocr.ipynb). See the *pretrained models* section for the pretrained models.
+The entire inference pipeline can be found in this [notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/0_handwriting_ocr.ipynb). See the *pretrained models* section for the pretrained models.
 
 A recorded talk detailing the approach is available on youtube. [[video](https://www.youtube.com/watch?v=xDcOdif4lj0)]
 
@@ -17,15 +17,18 @@ The corresponding slides are available on slideshare. [[slides](https://www.slid
 
 ## Pretrained models:
 
-- {[deletion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/deletion_costs.txt), [insertion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/insertion_costs.txt), [substitute](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/substitute_costs.txt)}_costs.txt: text files containing matrixes of weights used by the weighted edit distance (in class [OcrDistanceMeasure](https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/utils/lexicon_search.py)). Files were generated with [this notebook](https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/model_distance.ipynb).
-- [handwriting_line_sl_160_a_512_o_2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/handwriting_line_sl_160_a_512_o_2.params): pre-trained models for CNN-biLSTM for handwriting detection. Model was generated with [this file](https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/handwriting_line_recognition.py). With the following command: `python handwriting_line_recognition.py --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 512 -sl 160`
-- [word_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/word_segmentation2.params) generates word crops. It was generated with [this  file](https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/word_segmentation.py). With the following command: `python line_segmentation.py --min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401`
-- [paragraph_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/paragraph_segmentation2.params) generates a region of handwritten text. It was generated with [this file](https://github.com/ThomasDelteil/Gluon_OCR_LSTM_CTC/blob/language_model/paragraph_segmentation_dcnn.py) with the following commands:
 
-    * `python paragraph_segmentation_dcnn.py -r 0.001 -e 301 -n cnn_mse.params`
-    * `python paragraph_segmentation_dcnn.py -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params`
+You can get the models by running `python get_models.py`:
 
-- [GoogleNews-vectors-negative300.bin.gz](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/GoogleNews-vectors-negative300.bin.gz): a word2vec model that is used by pycontractions. This was saved here for convenience purposes. 
+- {[deletion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/deletion_costs.txt), [insertion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/insertion_costs.txt), [substitute](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/substitute_costs.txt)}_costs.txt: text files containing matrixes of weights used by the weighted edit distance (in class [OcrDistanceMeasure](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/utils/lexicon_search.py)). Files were generated with [this notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/5_a_character_error_distance.ipynb).
+- [paragraph_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/paragraph_segmentation2.params) generates a region of handwritten text. It was generated with [this file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/paragraph_segmentation_dcnn.py) with the following commands:
+
+    * `python -m ocr.paragraph_segmentation_dcnn -g 0 -r 0.001 -e 181 -n cnn_mse.params -y 0.15`
+    * `python -m ocr.paragraph_segmentation_dcnn -g 0 -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params`
+    
+- [word_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/word_segmentation2.params) generates word crops. It was generated with [this  file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/word_and_line_segmentation.py). With the following command: `python -m ocr.word_and_line_segmentation--min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401`
+
+- [handwriting_line_sl_160_a_512_o_2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/handwriting_line_sl_160_a_512_o_2.params): pre-trained models for CNN-biLSTM for handwriting detection. Model was generated with [this file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/handwriting_line_recognition.py). With the following command: `python -m ocr.handwriting_line_recognition --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 512 -sl 160 -g 1`
 
 ## Sample results
 

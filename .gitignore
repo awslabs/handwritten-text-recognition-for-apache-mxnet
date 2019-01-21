@@ -5,9 +5,9 @@ dataset/*
 credentials.json
 logs/*
 nohup.out
-model_checkpoint/*
+model_checkpoint/*.params
 *.bin.gz
 *__pycache__*
 tmp/*
-utils/sctk-*/
+ocr/utils/sctk-*/
 models/*
