@@ -9,5 +9,5 @@ model_checkpoint/*.params
 *.bin.gz
 *__pycache__*
 tmp/*
-utils/sctk-*/
+ocr/utils/sctk-*/
 models/*
