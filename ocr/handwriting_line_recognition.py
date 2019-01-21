@@ -234,6 +234,8 @@ def augment_transform(image, label):
     sy = random.uniform(1. - random_x_scaling, 1. + random_x_scaling)
 
     s = random.uniform(-random_shearing, random_shearing)
+    gamma = random.uniform(0.001, random_gamma)
+    image = exposure.adjust_gamma(image, gamma)
 
     st = skimage_tf.AffineTransform(scale=(sx, sy),
                                     shear=s,
@@ -360,6 +362,8 @@ if __name__ == "__main__":
                         help="Randomly scale the image in the y direction")
     parser.add_argument("-p", "--random_shearing", default=0.5,
                         help="Randomly shear the image in radians (+ or -)")
+    parser.add_argument("-ga", "--random_gamma", default=1,
+                        help="Randomly update gamma of image (+ or -)")
 
     parser.add_argument("-d", "--log_dir", default="./logs",
                         help="Directory to store the log files")
@@ -399,6 +403,7 @@ if __name__ == "__main__":
     random_y_translation, random_x_translation = float(args.random_x_translation), float(args.random_y_translation)
     random_y_scaling, random_x_scaling = float(args.random_y_scaling), float(args.random_x_scaling)
     random_shearing = float(args.random_shearing)
+    random_gamma = float(args.random_gamma)
     
     log_dir = args.log_dir
     checkpoint_dir, checkpoint_name = args.checkpoint_dir, args.checkpoint_name
