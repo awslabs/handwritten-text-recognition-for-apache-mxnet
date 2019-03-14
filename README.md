@@ -2,6 +2,37 @@
 
 These notebooks have been created by [Jonathan Chung](https://github.com/jonomon), as part of his internship as Applied Scientist @ Amazon AI, in collaboration with [Thomas Delteil](https://github.com/ThomasDelteil) who built the original prototype.
 
+## Setup
+
+`git clone https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet --recursive`
+
+You need to install SCLITE for WER evaluation
+You can follow the following bash script from this folder:
+
+```bash
+cd ..
+git clone https://github.com/usnistgov/SCTK
+cd SCTK
+export CXXFLAGS="-std=c++11" && make config
+make all
+make check
+make install
+make doc
+cd -
+```
+
+You also need hsnwlib
+
+```bash
+pip install pybind11 numpy setuptools
+cd ..
+git clone https://github.com/nmslib/hnswlib
+cd hnswlib/python_bindings
+python setup.py install
+cd ../..
+```
+
+
 ![](https://cdn-images-1.medium.com/max/1000/1*nJ-ePgwhOjOhFH3lJuSuFA.png)
 
 The pipeline is composed of 3 steps:

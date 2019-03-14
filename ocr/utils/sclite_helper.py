@@ -1,32 +1,36 @@
 import os
 import subprocess
 import re
+import uuid
 
-class Sclite_helper():
+class ScliteHelper():
     '''
     The Sclite helper class calculates the word error rate (WER) and charater error rate (CER)
     given a predicted and actual text.
-
     This class uses sclite2.4 (ftp://jaguar.ncsl.nist.gov/pub/sctk-2.4.10-20151007-1312Z.tar.bz2)
     and formats the data according.
-
     Parameters
     ----------
     sclite_location: optional, default="sctk-2.4.10/bin"
         Location of the sclite_program
-
     tmp_file_location: optional, default=tmp
         folder to store the temporary text files.
     '''
 
-    def __init__(self, sclite_location=os.path.join("ocr", "utils", "sctk-2.4.10", "bin"),
-                 tmp_file_location="tmp"):
+    def __init__(self, sclite_location=os.path.join("..", "SCTK", "bin"),
+                 tmp_file_location="tmp", use_uuid=True):
         # Check if sclite exists
         assert os.path.isdir(sclite_location), "{} does not exist".format(sclite_location)
         sclite_error = "{} doesn't contain sclite".format(sclite_location)
-        assert self._test_sclite(sclite_location), sclite_error
-        self.sclite_location = sclite_location
-
+        retries = 10
+        for i in range(retries):
+            if self._test_sclite(sclite_location):
+                break
+            elif i == retries-1:
+                raise sclite_error
+        self.sclite_location = sclite_location 
+        if use_uuid:
+            tmp_file_location += "/" + str(uuid.uuid4())
         # Check if tmp_file_location exists
         if not os.path.isdir(tmp_file_location):
             os.makedirs(tmp_file_location)
@@ -68,21 +72,16 @@ class Sclite_helper():
     def _run_sclite(self, predicted_filename, actual_filename, mode, output):
         '''
         Run command line for sclite.
-
         Parameters
         ---------
         predicted_filename: str
             file containing output string of the network  
-
         actual_filename: str
             file containing string of the label
-
         mode: string, Options = ["CER", "WER"]
             Choose between CER or WER
-
         output: string, Options = ["print", "string"]
             Choose between printing the output or returning a string 
-
         Returns
         -------
         
@@ -101,13 +100,19 @@ class Sclite_helper():
         if mode == "WER":
             pass # Word error rate is by default
         
-        if mode == "CER":
-            command_line.append("-c")
-        if output == "print":
-            subprocess.call(command_line)
-        elif output == "string":
-            cmd = subprocess.Popen(command_line, stdout=subprocess.PIPE)
-            return cmd.stdout
+        retries = 10
+        
+        for i in range(retries):
+            try:
+                if mode == "CER":
+                    command_line.append("-c")
+                if output == "print":
+                    subprocess.call(command_line)
+                elif output == "string":
+                    cmd = subprocess.Popen(command_line, stdout=subprocess.PIPE)
+                    return cmd.stdout
+            except:
+                print("There was an error")
 
     def _print_error_rate_summary(self, mode, predicted_filename="predicted.txt",
                                   actual_filename="actual.txt"):
@@ -125,17 +130,14 @@ class Sclite_helper():
                                   actual_filename="actual.txt"):
         '''
         Get the error rate by analysing the output of sclite
-
         Parameters
         ----------
         mode: string, Options = ["CER", "WER"]
             Choose between CER or WER
-
         Returns
         -------
         number: int
            The number of characters or words depending on the mode selected. 
-
         error_rate: float
         '''
         number = None
@@ -143,7 +145,7 @@ class Sclite_helper():
         output_file = self._run_sclite(predicted_filename, actual_filename,
                                        mode, output="string")
 
-        match_tar = r'.*Mean.*\|.* (\d*.\d) \| (\d*.\d).*'
+        match_tar = r'.*Mean.*\|.* (\d*.\d) .* (\d*.\d).* \|'
         for line in output_file.readlines():
             match = re.match(match_tar, line.decode('utf-8'), re.M|re.I)
             if match:
@@ -156,12 +158,10 @@ class Sclite_helper():
                            actual_filename="actual.txt"):
         '''
         Run command line for sclite.
-
         Parameters
         ---------
         predicted_filename: str, default: predicted.txt
             filename of the predicted file
-
         actual_filename: str, default: actual.txt
             filename of the actual file
         '''            
@@ -205,7 +205,7 @@ class Sclite_helper():
         return self._get_error_rate(mode="CER")
 
 if __name__ == "__main__":
-    cls = Sclite_helper()
+    cls = ScliteHelper()
     actual1 = 'Jonathan loves to eat apples. This is the second sentence.'
     predicted1 = 'Jonothon loves to eot. This is the second santense.'
     

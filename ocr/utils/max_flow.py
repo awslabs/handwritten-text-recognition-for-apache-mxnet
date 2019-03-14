@@ -1,45 +1,8 @@
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 # source: https://brilliant.org/wiki/ford-fulkerson-algorithm/
 
-# def get_max_flow_graph(prob):
-#     fn = FlowNetwork()
-#     fn.add_vertex('source')
-#     fn.add_vertex('drain')
-#     for i in range(prob.shape[0]):
-#         for j in range(prob.shape[1]):
-#             vertex = str(i) + "_" + str(j)
-#             fn.add_vertex(vertex)
-#             if i > 0:
-#                 for k in range(prob.shape[1]):
-#                     previous_vertex = str(i - 1) + "_" + str(k)
-#                     fn.add_edge(previous_vertex, vertex, w=prob[k, i])
-#             else:
-#                 fn.add_edge("source", vertex, w=prob[j, i])
-                
-#     for i in range(prob.shape[1]):
-#         fn.add_edge(str(prob.shape[0] - 1)+"_" + str(i), 'drain', w=0)
-#     flow = fn.max_flow(source="source", sink="drain")
-
-# def max_flow(prob):
-#     '''
-#     Uses a maximum flow network to obtain multiple possible candidates for the sentence.
-#     1) Parse each word based spaces (if max probability is a space)
-#     2) Build a max flow network for each word
-#     3) Obtain candidates for each word and compare them to a spell checker.
-#     '''
-#     word_probs = []
-#     for i in range(prob.shape[1]):
-#         prob_i = prob[0, i, :]
-#         if np.argmax(prob_i) == alphabet_dict[" "]:
-#             probs = np.array(word_probs)
-#             get_max_flow_graph(probs)
-#         word_probs.append(prob_i)
-        
-#     predicted_text = topK_decode(np.argmax(prob, axis=2))[0]
-    
-#     output = ""
-#     for word in predicted_text.split(" "):
-#         output += simple_spellcheck(word) + " "
-#     return output
 
 class Edge(object):  
     def __init__(self, u, v, w):

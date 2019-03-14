@@ -1,3 +1,6 @@
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 import numpy as np
 from skimage.draw import line_aa
 import matplotlib.pyplot as plt

@@ -1,3 +1,6 @@
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 import difflib
 import logging
 import math
@@ -15,7 +18,7 @@ from .handwriting_line_recognition import Network as HandwritingRecognitionNet, 
 from .handwriting_line_recognition import decode as decoder_handwriting, alphabet_encoding
 
 from .utils.iam_dataset import IAMDataset, crop_handwriting_page
-from .utils.sclite_helper import Sclite_helper
+from .utils.sclite_helper import ScliteHelper
 from .utils.word_to_line import sort_bbs_line_by_line, crop_line_images
 
 # Setup
@@ -37,9 +40,9 @@ rnn_hidden_states = 512
 rnn_layers = 2
 max_seq_len = 160
 
-recognition_model = "models/handwriting_line_sl_160_a_512_o_2.params"
+recognition_model = "models/handwriting_line8.params.params"
 paragraph_segmentation_model = "models/paragraph_segmentation2.params"
-word_segmentation_model = "models/word_segmentation.params"
+word_segmentation_model = "models/word_segmentation2.params"
 
 def get_arg_max(prob):
     '''
@@ -77,7 +80,7 @@ if __name__ == '__main__':
     logging.info("data loaded.")
 
 
-    sclite = Sclite_helper()
+    sclite = ScliteHelper()
     for i in tqdm(range(len(test_ds))):
         image, text = test_ds[i]
         resized_image = paragraph_segmentation_transform(image, image_size=form_size)

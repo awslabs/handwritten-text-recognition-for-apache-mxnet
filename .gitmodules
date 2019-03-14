@@ -1,0 +1,3 @@
+[submodule "ocr/utils/CTCDecoder"]
+	path = ocr/utils/CTCDecoder
+	url = https://github.com/githubharald/CTCDecoder
