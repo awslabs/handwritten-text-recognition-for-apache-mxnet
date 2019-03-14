@@ -48,18 +48,7 @@ The corresponding slides are available on slideshare. [[slides](https://www.slid
 
 ## Pretrained models:
 
-
 You can get the models by running `python get_models.py`:
-
-- {[deletion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/deletion_costs.txt), [insertion](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/insertion_costs.txt), [substitute](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/substitute_costs.txt)}_costs.txt: text files containing matrixes of weights used by the weighted edit distance (in class [OcrDistanceMeasure](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/utils/lexicon_search.py)). Files were generated with [this notebook](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/5_a_character_error_distance.ipynb).
-- [paragraph_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/paragraph_segmentation2.params) generates a region of handwritten text. It was generated with [this file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/paragraph_segmentation_dcnn.py) with the following commands:
-
-    * `python -m ocr.paragraph_segmentation_dcnn -g 0 -r 0.001 -e 181 -n cnn_mse.params -y 0.15`
-    * `python -m ocr.paragraph_segmentation_dcnn -g 0 -r 0.0001 -l iou -e 150 -n cnn_iou.params -f cnn_mse.params`
-    
-- [word_segmentation2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/word_segmentation2.params) generates word crops. It was generated with [this  file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/word_and_line_segmentation.py). With the following command: `python -m ocr.word_and_line_segmentation--min_c 0.01 --overlap_thres 0.10 --topk 150 --epoch 401`
-
-- [handwriting_line_sl_160_a_512_o_2.params](https://s3.us-east-2.amazonaws.com/gluon-ocr/models/handwriting_line_sl_160_a_512_o_2.params): pre-trained models for CNN-biLSTM for handwriting detection. Model was generated with [this file](https://github.com/ThomasDelteil/HandwrittenTextRecognition_MXNet/blob/master/ocr/scripts/handwriting_line_recognition.py). With the following command: `python -m ocr.handwriting_line_recognition --epochs 501 -n handwriting_line.params -g 1 -l 0.0001 -x 0.1 -y 0.1 -j 0.15 -k 0.15 -p 0.75 -o 2 -a 512 -sl 160 -g 1`
 
 ## Sample results
 
@@ -102,9 +91,3 @@ The greedy, lexicon search, and beam search outputs present similar and reasonab
 
 ![](https://cdn-images-1.medium.com/max/2000/1*8lnqqlqomgdGshJB12dW1Q.png)
 
-## SClite installation
-1) Download sctk-2.4.10 ftp://jaguar.ncsl.nist.gov/pub/sctk-2.4.10-20151007-1312Z.tar.bz2
-2) Put it into the utils folder
-3) Untar sctk-2.4.10
-4) Install sctk-2.4.10 by following sctk-2.4.10/INSTALL
-5) Check sctk-2.4.10/bin contains built programs
