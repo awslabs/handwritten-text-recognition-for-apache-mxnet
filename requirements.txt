@@ -1,2 +1,6 @@
 leven==1.0.4
 mxnet==1.4.0
+gluonnlp==0.9.0
+protobuf==3.8.0
+mxboard==0.1.0
+sacremoses==0.0.43
