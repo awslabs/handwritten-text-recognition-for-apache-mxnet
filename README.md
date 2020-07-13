@@ -31,7 +31,7 @@ cd hnswlib/python_bindings
 python setup.py install
 cd ../..
 ```
-
+if "AssertionError: Please enter credentials for the IAM dataset in credentials.json or as arguments" occurs rename credentials.json.example and to credentials.json with your username and password.
 ## Overview 
 
 ![](https://cdn-images-1.medium.com/max/1000/1*nJ-ePgwhOjOhFH3lJuSuFA.png)
