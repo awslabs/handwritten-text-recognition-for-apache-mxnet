@@ -16,6 +16,7 @@ import pandas as pd
 import zipfile
 import matplotlib.pyplot as plt
 import logging
+import requests
 
 from mxnet.gluon.data import dataset
 from mxnet import nd
@@ -154,7 +155,7 @@ class IAMDataset(dataset.ArrayDataset):
             parse_method, _parse_methods)
         assert parse_method in _parse_methods, error_message
         self._parse_method = parse_method
-        url_partial = "http://www.fki.inf.unibe.ch/DBs/iamDB/data/{data_type}/{filename}.tgz"
+        url_partial = "http://fki.tic.heia-fr.ch/DBs/iamDB/data/{filename}.tgz"
         if self._parse_method == "form":
             self._data_urls = [url_partial.format(data_type="forms", filename="forms" + a) for a in ["A-D", "E-H", "I-Z"]]
         elif self._parse_method == "form_bb":
@@ -165,7 +166,7 @@ class IAMDataset(dataset.ArrayDataset):
             self._data_urls = [url_partial.format(data_type="lines", filename="lines")]
         elif self._parse_method == "word":
             self._data_urls = [url_partial.format(data_type="words", filename="words")]
-        self._xml_url = "http://www.fki.inf.unibe.ch/DBs/iamDB/data/xml/xml.tgz"
+        self._xml_url = "http://fki.tic.heia-fr.ch/DBs/iamDB/data/xml.tgz"
 
         if credentials == None:
             if os.path.isfile(os.path.join(os.path.dirname(__file__), '..','..', 'credentials.json')):
@@ -250,16 +251,21 @@ class IAMDataset(dataset.ArrayDataset):
         url: str
             The url of the file you want to download.
         '''
-        password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
-        password_mgr.add_password(None, url, self._credentials[0], self._credentials[1])
-        handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
-        opener = urllib.request.build_opener(handler)
-        urllib.request.install_opener(opener)
-        opener.open(url)
+        session = requests.Session()
+        data = {"email": self._credentials[0], "password": self._credentials[1]}
+        login_url = "https://fki.tic.heia-fr.ch/login"
+        login_response = session.post(login_url, data=data)
         filename = os.path.basename(url)
-        print("Downloading {}: ".format(filename)) 
-        urllib.request.urlretrieve(url, reporthook=self._reporthook,
-                                   filename=os.path.join(self._root, filename))[0]
+        print("Downloading {}: ".format(filename))
+        with session.get(url, stream=True) as get_response:
+            get_response.raise_for_status()
+            with open(os.path.join(self._root, filename), 'wb') as f:
+                for count, chunk in enumerate(get_response.iter_content(chunk_size=8192)):
+                    self._reporthook(count=count, block_size=8192, total_size=float(get_response.headers["Content-Length"]))
+                    # If you have chunk encoded response uncomment if
+                    # and set chunk_size parameter to None.
+                    # if chunk:
+                    f.write(chunk)
         sys.stdout.write("\n")
 
     def _download_xml(self):
@@ -284,13 +290,13 @@ class IAMDataset(dataset.ArrayDataset):
     def _download_subject_list(self):
         ''' Helper function to download and extract the subject list of the IAM database
         '''
-        url = "http://www.fki.inf.unibe.ch/DBs/iamDB/tasks/largeWriterIndependentTextLineRecognitionTask.zip"
+        url = "https://fki.tic.heia-fr.ch/static/zip/largeWriterIndependentTextLineRecognitionTask.zip"
         archive_file = os.path.join(self._root, os.path.basename(url))
         if not os.path.isfile(archive_file):
             logging.info("Downloding subject list from {}".format(url))
             self._download(url)
             self._extract(archive_file, archive_type="zip", output_dir="subject")
-    
+
     def _pre_process_image(self, img_in):
         im = cv2.imread(img_in, cv2.IMREAD_GRAYSCALE)
         if np.size(im) == 1: # skip if the image data is corrupt.
