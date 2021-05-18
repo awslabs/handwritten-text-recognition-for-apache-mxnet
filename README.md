@@ -1,14 +1,5 @@
 # Handwritten Text Recognition (OCR) with MXNet Gluon
 
-
-## Getting Started
-
-To run this JumpStart 1P Solution and have the infrastructure deploy to your AWS account you will need to create an active SageMaker Studio instance (see [Onboard to Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-onboard.html)). When your Studio instance is *Ready*, use the instructions in [SageMaker JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html) to 1-Click Launch the solution.
-
-The solution artifacts are included in this GitHub repository for reference. 
-
-Note: Solutions are available in most regions including us-west-2, and us-east-1.
-
 ## Local Setup
 
 `git clone https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet --recursive`
