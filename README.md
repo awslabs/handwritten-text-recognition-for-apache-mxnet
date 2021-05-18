@@ -1,8 +1,15 @@
-# Handwritten Text Recognition (OCR) with MXNet Gluon 
+# Handwritten Text Recognition (OCR) with MXNet Gluon
 
-These notebooks have been created by [Jonathan Chung](https://github.com/jonomon), as part of his internship as Applied Scientist @ Amazon AI, in collaboration with [Thomas Delteil](https://github.com/ThomasDelteil) who built the original prototype.
 
-## Setup
+## Getting Started
+
+To run this JumpStart 1P Solution and have the infrastructure deploy to your AWS account you will need to create an active SageMaker Studio instance (see [Onboard to Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-onboard.html)). When your Studio instance is *Ready*, use the instructions in [SageMaker JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html) to 1-Click Launch the solution.
+
+The solution artifacts are included in this GitHub repository for reference. 
+
+Note: Solutions are available in most regions including us-west-2, and us-east-1.
+
+## Local Setup
 
 `git clone https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet --recursive`
 
@@ -32,6 +39,7 @@ python setup.py install
 cd ../..
 ```
 if "AssertionError: Please enter credentials for the IAM dataset in credentials.json or as arguments" occurs rename credentials.json.example and to credentials.json with your username and password.
+
 ## Overview 
 
 ![](https://cdn-images-1.medium.com/max/1000/1*nJ-ePgwhOjOhFH3lJuSuFA.png)
