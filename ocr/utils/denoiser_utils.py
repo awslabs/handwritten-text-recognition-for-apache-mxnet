@@ -64,7 +64,7 @@ class SequenceGenerator:
         output_tokens = best_tokens[0]
         best_tokens_ = []
         for tokens in best_tokens:
-            dist = leven.levenshtein(sentence, ' '.join(self.detokenizer(tokens)))
+            dist = leven.levenshtein(sentence, ''.join(self.detokenizer(tokens)))
             if dist < best_dist:
                 best_dist = dist
                 best_tokens_ =[tokens]
@@ -100,7 +100,7 @@ class SequenceGenerator:
                 if ppl < best_ppl:
                     output_tokens = tokens
                     best_ppl = ppl
-        output = ' '.join(self.detokenizer(output_tokens))
+        output = ''.join(self.detokenizer(output_tokens))
 
 
         # Heuristic #6
